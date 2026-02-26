@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Activity Assignments on MIT OpenCourseWare</title>
+    <link>/resources/activity-assignments/</link>
+    <description>Recent content in Activity Assignments on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/activity-assignments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Warm Up 01 Problems</title>
+      <link>/resources/mit6_1200j_s24_wu01-probs_pdf/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit6_1200j_s24_wu01-probs_pdf/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Warm Up 02 Problems</title>
+      <link>/resources/mit6_1200j_s24_wu02-probs_pdf/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit6_1200j_s24_wu02-probs_pdf/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Warm Up 03 Problems</title>
+      <link>/resources/mit6_1200j_s24_wu03-probs_pdf/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit6_1200j_s24_wu03-probs_pdf/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Warm Up 04 Problems</title>
+      <link>/resources/mit6_1200j_s24_wu04-probs_pdf/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit6_1200j_s24_wu04-probs_pdf/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Warm Up 05 Problems</title>
+      <link>/resources/mit6_1200j_s24_wu05-probs_pdf/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit6_1200j_s24_wu05-probs_pdf/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Warm Up 06 Problems</title>
+      <link>/resources/mit6_1200j_s24_wu06-probs_pdf/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit6_1200j_s24_wu06-probs_pdf/data.json</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Warm Up 07 Problems</title>
+      <link>/resources/mit6_1200j_s24_wu07-probs_pdf/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/mit6_1200j_s24_wu07-probs_pdf/data.json</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

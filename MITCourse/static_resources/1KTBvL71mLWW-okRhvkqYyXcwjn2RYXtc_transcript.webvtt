@@ -1,0 +1,5003 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.395 align:middle line:90%
+[SQUEAKING]
+
+00:00:02.395 --> 00:00:04.311 align:middle line:90%
+[RUSTLING]
+
+00:00:04.311 --> 00:00:05.748 align:middle line:90%
+[CLICKING]
+
+00:00:05.748 --> 00:00:11.017 align:middle line:90%
+
+
+00:00:11.017 --> 00:00:14.070 align:middle line:84%
+ZACHARY ABEL: Good
+morning, good morning.
+
+00:00:14.070 --> 00:00:16.430 align:middle line:90%
+Afternoon, I guess, technically.
+
+00:00:16.430 --> 00:00:19.460 align:middle line:84%
+Welcome to lecture
+15 of 6.1200--
+
+00:00:19.460 --> 00:00:20.310 align:middle line:90%
+6.120.
+
+00:00:20.310 --> 00:00:22.730 align:middle line:84%
+Again, I still don't
+know how to call it.
+
+00:00:22.730 --> 00:00:26.960 align:middle line:84%
+Today we are talking about
+relations and counting.
+
+00:00:26.960 --> 00:00:29.070 align:middle line:84%
+And there's a bunch of
+scary stuff on the board.
+
+00:00:29.070 --> 00:00:31.340 align:middle line:90%
+Ignore that.
+
+00:00:31.340 --> 00:00:32.689 align:middle line:90%
+Wonderful.
+
+00:00:32.689 --> 00:00:36.110 align:middle line:84%
+So first thing we're
+talking about is relations.
+
+00:00:36.110 --> 00:00:40.940 align:middle line:84%
+And relations are a very
+useful tool, very useful term,
+
+00:00:40.940 --> 00:00:44.300 align:middle line:84%
+generalizing the
+idea of a function.
+
+00:00:44.300 --> 00:00:47.150 align:middle line:84%
+So let's see what
+we mean by that.
+
+00:00:47.150 --> 00:00:47.940 align:middle line:90%
+Let's see.
+
+00:00:47.940 --> 00:00:52.010 align:middle line:90%
+So-- yes.
+
+00:00:52.010 --> 00:01:01.470 align:middle line:84%
+So a relation R is a subset of
+A cross B. A and B are sets.
+
+00:01:01.470 --> 00:01:03.070 align:middle line:90%
+They can be any sets you want.
+
+00:01:03.070 --> 00:01:06.863 align:middle line:84%
+R is going to be a
+subset of pairs, where
+
+00:01:06.863 --> 00:01:08.280 align:middle line:84%
+the first element
+is taken from A,
+
+00:01:08.280 --> 00:01:10.510 align:middle line:84%
+the second element
+is taken from B.
+
+00:01:10.510 --> 00:01:13.080 align:middle line:84%
+It might be all the pairs,
+none of the pairs, some subset
+
+00:01:13.080 --> 00:01:14.760 align:middle line:90%
+of the pairs.
+
+00:01:14.760 --> 00:01:18.300 align:middle line:84%
+All we know is that we need all
+three of these pieces of data.
+
+00:01:18.300 --> 00:01:28.780 align:middle line:84%
+A relation consists of,
+first of all, a domain A,
+
+00:01:28.780 --> 00:01:43.980 align:middle line:84%
+which is any set, a
+codomain B, which is a set,
+
+00:01:43.980 --> 00:01:50.250 align:middle line:84%
+and a subset R,
+subset of A cross B.
+
+00:01:50.250 --> 00:01:53.920 align:middle line:84%
+So you need to know what is your
+domain, what is your codomain,
+
+00:01:53.920 --> 00:01:56.513 align:middle line:84%
+and which pairs are
+part of your relation.
+
+00:01:56.513 --> 00:01:59.130 align:middle line:90%
+
+
+00:01:59.130 --> 00:02:01.332 align:middle line:84%
+This generalizes the
+idea of a function
+
+00:02:01.332 --> 00:02:02.790 align:middle line:84%
+because you can
+think of a function
+
+00:02:02.790 --> 00:02:05.710 align:middle line:84%
+as you have your inputs,
+you have your outputs,
+
+00:02:05.710 --> 00:02:08.100 align:middle line:84%
+and your function
+specifies which
+
+00:02:08.100 --> 00:02:11.100 align:middle line:84%
+inputs map to which outputs
+by just encoding them
+
+00:02:11.100 --> 00:02:13.260 align:middle line:90%
+in a pair like this.
+
+00:02:13.260 --> 00:02:16.440 align:middle line:84%
+Let me give a more
+concrete example.
+
+00:02:16.440 --> 00:02:17.910 align:middle line:90%
+Here we go.
+
+00:02:17.910 --> 00:02:20.770 align:middle line:84%
+So imagine we have
+these three sets.
+
+00:02:20.770 --> 00:02:22.690 align:middle line:84%
+We have the set of
+students that are Luke,
+
+00:02:22.690 --> 00:02:25.230 align:middle line:90%
+Geralt, Quentin, and Willow.
+
+00:02:25.230 --> 00:02:28.290 align:middle line:84%
+And we have some classes that
+these magic students might take
+
+00:02:28.290 --> 00:02:30.240 align:middle line:90%
+in a magic school, I guess--
+
+00:02:30.240 --> 00:02:34.170 align:middle line:84%
+chemistry, sports,
+literature, and 6.1200.
+
+00:02:34.170 --> 00:02:36.120 align:middle line:90%
+Totally makes sense.
+
+00:02:36.120 --> 00:02:39.730 align:middle line:84%
+And we have some magic profs--
+we have Galadriel, Zelda,
+
+00:02:39.730 --> 00:02:43.050 align:middle line:90%
+Eda, and Doctor Strange.
+
+00:02:43.050 --> 00:02:44.500 align:middle line:90%
+So we have some sets.
+
+00:02:44.500 --> 00:02:47.400 align:middle line:84%
+We might specify a
+relation, let's call it
+
+00:02:47.400 --> 00:02:49.470 align:middle line:84%
+the learning
+relation, L, which is
+
+00:02:49.470 --> 00:02:53.380 align:middle line:84%
+going to be a subset of
+students across classes.
+
+00:02:53.380 --> 00:02:55.530 align:middle line:84%
+So it's going to be all
+pairs where you have
+
+00:02:55.530 --> 00:02:58.060 align:middle line:90%
+a student who's taking a class.
+
+00:02:58.060 --> 00:03:02.140 align:middle line:84%
+And in this case, it looks like
+we have these students taking
+
+00:03:02.140 --> 00:03:03.290 align:middle line:90%
+these classes.
+
+00:03:03.290 --> 00:03:05.570 align:middle line:84%
+It looks like Luke
+is taking chemistry.
+
+00:03:05.570 --> 00:03:07.700 align:middle line:90%
+Luke is also taking literature.
+
+00:03:07.700 --> 00:03:09.910 align:middle line:84%
+Geralt is taking
+chemistry and sports
+
+00:03:09.910 --> 00:03:12.370 align:middle line:90%
+and literature, et cetera.
+
+00:03:12.370 --> 00:03:14.860 align:middle line:84%
+So we need all three of
+these pieces of information--
+
+00:03:14.860 --> 00:03:18.310 align:middle line:84%
+the domain, the codomain,
+and the set of pairs in order
+
+00:03:18.310 --> 00:03:20.350 align:middle line:90%
+to specify this relation.
+
+00:03:20.350 --> 00:03:22.510 align:middle line:84%
+Likewise, here's
+another relation--
+
+00:03:22.510 --> 00:03:25.640 align:middle line:84%
+which classes are being
+taught by which professors.
+
+00:03:25.640 --> 00:03:30.220 align:middle line:84%
+So this is a subset of
+classes times professors.
+
+00:03:30.220 --> 00:03:34.210 align:middle line:84%
+And it's saying that this
+class chemistry is being
+
+00:03:34.210 --> 00:03:35.900 align:middle line:90%
+taught by this professor, Eda.
+
+00:03:35.900 --> 00:03:39.050 align:middle line:84%
+Sports is being taught by
+Strange, lit by Galadriel,
+
+00:03:39.050 --> 00:03:41.110 align:middle line:84%
+and 6.1200 is being
+taught by Zach--
+
+00:03:41.110 --> 00:03:42.260 align:middle line:90%
+I mean Zelda.
+
+00:03:42.260 --> 00:03:43.330 align:middle line:90%
+[SOFT LAUGHTER]
+
+00:03:43.330 --> 00:03:44.160 align:middle line:90%
+Thank you.
+
+00:03:44.160 --> 00:03:46.720 align:middle line:90%
+
+
+00:03:46.720 --> 00:03:49.250 align:middle line:90%
+This might look pretty familiar.
+
+00:03:49.250 --> 00:03:54.010 align:middle line:84%
+This is almost how we define
+directed graphs, right?
+
+00:03:54.010 --> 00:03:57.920 align:middle line:84%
+You have some set of
+vertices or whatnot,
+
+00:03:57.920 --> 00:03:59.570 align:middle line:84%
+and you have some
+edges between them.
+
+00:03:59.570 --> 00:04:02.470 align:middle line:84%
+This is a very closely
+related concept.
+
+00:04:02.470 --> 00:04:08.380 align:middle line:84%
+And just like with graphs,
+that representation
+
+00:04:08.380 --> 00:04:11.390 align:middle line:84%
+isn't the most useful
+way to represent it.
+
+00:04:11.390 --> 00:04:14.560 align:middle line:84%
+It's kind of hard to
+see who's taking what
+
+00:04:14.560 --> 00:04:16.579 align:middle line:84%
+and visualize and
+think about it.
+
+00:04:16.579 --> 00:04:18.470 align:middle line:90%
+So let's draw it instead.
+
+00:04:18.470 --> 00:04:23.170 align:middle line:84%
+So we already said here we have
+the learning relation, L. We
+
+00:04:23.170 --> 00:04:24.880 align:middle line:90%
+said Luke is taking chemistry.
+
+00:04:24.880 --> 00:04:27.520 align:middle line:84%
+And I'm going to draw it
+with a directed arrow.
+
+00:04:27.520 --> 00:04:29.900 align:middle line:90%
+Luke is also taking literature.
+
+00:04:29.900 --> 00:04:34.900 align:middle line:84%
+Geralt is taking
+chemistry and sports.
+
+00:04:34.900 --> 00:04:38.590 align:middle line:84%
+Geralt is taking
+also literature.
+
+00:04:38.590 --> 00:04:41.540 align:middle line:84%
+Then Quentin is
+taking sports and lit.
+
+00:04:41.540 --> 00:04:44.800 align:middle line:84%
+Quentin is taking
+sports and lit.
+
+00:04:44.800 --> 00:04:47.060 align:middle line:90%
+And Willow is taking lit.
+
+00:04:47.060 --> 00:04:51.340 align:middle line:84%
+And apparently no one is taking
+6.1200 at this magic school--
+
+00:04:51.340 --> 00:04:52.880 align:middle line:90%
+shame for them.
+
+00:04:52.880 --> 00:04:56.640 align:middle line:84%
+But this is a very clear
+representation in my mind.
+
+00:04:56.640 --> 00:04:59.250 align:middle line:84%
+But again, it's representing
+the same information.
+
+00:04:59.250 --> 00:05:01.700 align:middle line:84%
+And we can see that, in
+fact, this is exactly
+
+00:05:01.700 --> 00:05:08.030 align:middle line:84%
+a directed graph where
+the vertices are,
+
+00:05:08.030 --> 00:05:10.530 align:middle line:84%
+what is it, students
+union classes.
+
+00:05:10.530 --> 00:05:12.330 align:middle line:90%
+Those are allowed vertices.
+
+00:05:12.330 --> 00:05:14.240 align:middle line:84%
+And it just has the
+special form where
+
+00:05:14.240 --> 00:05:17.870 align:middle line:84%
+each one of our directed arrows
+always goes from a student
+
+00:05:17.870 --> 00:05:19.050 align:middle line:90%
+to a class.
+
+00:05:19.050 --> 00:05:22.130 align:middle line:84%
+But otherwise, it's
+just a directed graph.
+
+00:05:22.130 --> 00:05:23.070 align:middle line:90%
+Does that make sense?
+
+00:05:23.070 --> 00:05:25.430 align:middle line:84%
+Let's quickly draw
+the other one.
+
+00:05:25.430 --> 00:05:28.700 align:middle line:84%
+So we have chemistry
+being taught by Eda.
+
+00:05:28.700 --> 00:05:34.760 align:middle line:84%
+We have sports being taught
+by Strange, lit by Galadriel,
+
+00:05:34.760 --> 00:05:37.610 align:middle line:90%
+and 6.1200 by Zelda.
+
+00:05:37.610 --> 00:05:43.430 align:middle line:84%
+So this is the
+teaching relation.
+
+00:05:43.430 --> 00:05:47.780 align:middle line:84%
+Are we clear on what
+these examples are?
+
+00:05:47.780 --> 00:05:50.360 align:middle line:90%
+Wonderful.
+
+00:05:50.360 --> 00:05:55.370 align:middle line:84%
+So for notation, there are
+lots of different notations
+
+00:05:55.370 --> 00:05:57.950 align:middle line:84%
+that are used for relations
+because relations are
+
+00:05:57.950 --> 00:06:00.170 align:middle line:90%
+used in lots of different ways.
+
+00:06:00.170 --> 00:06:02.206 align:middle line:84%
+But here are some
+common notations.
+
+00:06:02.206 --> 00:06:04.910 align:middle line:90%
+
+
+00:06:04.910 --> 00:06:09.950 align:middle line:84%
+So if R is a
+relation from A to B,
+
+00:06:09.950 --> 00:06:19.550 align:middle line:84%
+then we might write a relates to
+b to mean that the pair a comma
+
+00:06:19.550 --> 00:06:22.680 align:middle line:84%
+b is one of the pairs
+in our relation,
+
+00:06:22.680 --> 00:06:27.180 align:middle line:84%
+one of the directed edges in
+our graph, because, like I said,
+
+00:06:27.180 --> 00:06:30.860 align:middle line:84%
+the relation is really about
+specifying which pairs relate
+
+00:06:30.860 --> 00:06:32.130 align:middle line:90%
+and which pairs don't.
+
+00:06:32.130 --> 00:06:33.177 align:middle line:90%
+It's a yes/no question.
+
+00:06:33.177 --> 00:06:34.260 align:middle line:90%
+Some of the pairs are yes.
+
+00:06:34.260 --> 00:06:35.550 align:middle line:90%
+Some of the pairs are no.
+
+00:06:35.550 --> 00:06:39.980 align:middle line:84%
+And so we might write a relates
+to b with this infix notation
+
+00:06:39.980 --> 00:06:42.350 align:middle line:90%
+to say that a relates to b.
+
+00:06:42.350 --> 00:06:45.260 align:middle line:84%
+We're saying the same thing,
+just with different notation.
+
+00:06:45.260 --> 00:06:53.040 align:middle line:84%
+And this might remind you of
+things like 3 is less than 7.
+
+00:06:53.040 --> 00:06:56.730 align:middle line:84%
+A set S is a subset
+of a set T. This
+
+00:06:56.730 --> 00:06:59.290 align:middle line:84%
+less-than relation, this
+subset equal relation,
+
+00:06:59.290 --> 00:07:00.850 align:middle line:90%
+these are relations.
+
+00:07:00.850 --> 00:07:02.880 align:middle line:84%
+And this general
+notion of relation
+
+00:07:02.880 --> 00:07:05.740 align:middle line:84%
+is a way to generalize
+concepts like this.
+
+00:07:05.740 --> 00:07:08.670 align:middle line:84%
+And so this is why we sometimes
+have our infix notation
+
+00:07:08.670 --> 00:07:12.270 align:middle line:84%
+like that, so we can think about
+whatever other relation we're
+
+00:07:12.270 --> 00:07:14.370 align:middle line:84%
+talking about similar
+to how we think
+
+00:07:14.370 --> 00:07:16.770 align:middle line:90%
+about these more familiar ones.
+
+00:07:16.770 --> 00:07:17.495 align:middle line:90%
+All right.
+
+00:07:17.495 --> 00:07:20.670 align:middle line:90%
+
+
+00:07:20.670 --> 00:07:23.530 align:middle line:84%
+We can also think
+of R as a predicate.
+
+00:07:23.530 --> 00:07:28.770 align:middle line:90%
+We can say R of a comma b.
+
+00:07:28.770 --> 00:07:32.070 align:middle line:84%
+So if R is a predicate that
+takes two arguments and spits
+
+00:07:32.070 --> 00:07:34.290 align:middle line:84%
+out true or false,
+this is another way
+
+00:07:34.290 --> 00:07:36.453 align:middle line:84%
+you can think of specifying
+a subset of pairs.
+
+00:07:36.453 --> 00:07:39.000 align:middle line:90%
+
+
+00:07:39.000 --> 00:07:44.620 align:middle line:84%
+So R a, b is true when a,
+b is part of our relation,
+
+00:07:44.620 --> 00:07:45.845 align:middle line:90%
+and it's false when it's not.
+
+00:07:45.845 --> 00:07:50.530 align:middle line:90%
+
+
+00:07:50.530 --> 00:08:00.640 align:middle line:84%
+And phrase-wise, we might
+say that a relates to b.
+
+00:08:00.640 --> 00:08:04.360 align:middle line:90%
+Again, means the same thing--
+
+00:08:04.360 --> 00:08:08.620 align:middle line:90%
+means that a, b is in R.
+
+00:08:08.620 --> 00:08:12.340 align:middle line:84%
+At its core, we are just trying
+to give one bit of information
+
+00:08:12.340 --> 00:08:13.220 align:middle line:90%
+for each pair.
+
+00:08:13.220 --> 00:08:15.830 align:middle line:84%
+Either this pair relates,
+or this pair doesn't.
+
+00:08:15.830 --> 00:08:17.810 align:middle line:84%
+This pair is in our
+set or it's not.
+
+00:08:17.810 --> 00:08:20.210 align:middle line:84%
+This pair satisfies our
+predicate or it doesn't.
+
+00:08:20.210 --> 00:08:23.680 align:middle line:84%
+All different ways of
+saying the same thing.
+
+00:08:23.680 --> 00:08:25.070 align:middle line:90%
+Does that make sense?
+
+00:08:25.070 --> 00:08:26.500 align:middle line:90%
+Wonderful.
+
+00:08:26.500 --> 00:08:29.410 align:middle line:84%
+And by the way, when
+we say "relation" here,
+
+00:08:29.410 --> 00:08:33.909 align:middle line:84%
+specifically we're talking
+about binary relation.
+
+00:08:33.909 --> 00:08:36.133 align:middle line:84%
+Yeah, that should say
+a binary relation.
+
+00:08:36.133 --> 00:08:40.062 align:middle line:90%
+
+
+00:08:40.062 --> 00:08:41.770 align:middle line:84%
+But all the relations
+we're going to talk
+
+00:08:41.770 --> 00:08:43.280 align:middle line:90%
+about today are binary.
+
+00:08:43.280 --> 00:08:47.890 align:middle line:84%
+But it's the same relation
+as in relational database.
+
+00:08:47.890 --> 00:08:50.410 align:middle line:84%
+You can imagine that
+this kind of thing
+
+00:08:50.410 --> 00:08:53.450 align:middle line:84%
+is exactly how a database
+stores its information.
+
+00:08:53.450 --> 00:08:55.630 align:middle line:84%
+In this case, we're only
+talking about databases
+
+00:08:55.630 --> 00:08:58.600 align:middle line:90%
+with two columns.
+
+00:08:58.600 --> 00:09:03.590 align:middle line:84%
+So learning has a column for
+student and a column for class.
+
+00:09:03.590 --> 00:09:06.440 align:middle line:84%
+And there's a row every time
+a student is taking a class.
+
+00:09:06.440 --> 00:09:07.430 align:middle line:90%
+That's all this is.
+
+00:09:07.430 --> 00:09:08.226 align:middle line:90%
+It's a database.
+
+00:09:08.226 --> 00:09:13.990 align:middle line:90%
+
+
+00:09:13.990 --> 00:09:16.420 align:middle line:90%
+Yes.
+
+00:09:16.420 --> 00:09:19.450 align:middle line:90%
+So I said earlier that--
+
+00:09:19.450 --> 00:09:22.060 align:middle line:90%
+here, let's go back up here--
+
+00:09:22.060 --> 00:09:25.370 align:middle line:84%
+that relations are a
+generalization of functions.
+
+00:09:25.370 --> 00:09:26.955 align:middle line:84%
+And let's see what
+we mean by that.
+
+00:09:26.955 --> 00:09:30.010 align:middle line:90%
+
+
+00:09:30.010 --> 00:09:41.470 align:middle line:84%
+So definition--
+relation R from A to B
+
+00:09:41.470 --> 00:09:53.750 align:middle line:84%
+is a function precisely when
+every element on the left side
+
+00:09:53.750 --> 00:10:04.430 align:middle line:84%
+relates to, at most, one
+element on the right side.
+
+00:10:04.430 --> 00:10:07.910 align:middle line:84%
+So if everything in
+the left set appears
+
+00:10:07.910 --> 00:10:10.400 align:middle line:84%
+on the left side of
+at most one pair,
+
+00:10:10.400 --> 00:10:12.900 align:middle line:84%
+it's the source of
+at most one arrow.
+
+00:10:12.900 --> 00:10:20.450 align:middle line:84%
+So another way to say
+that is every a in A
+
+00:10:20.450 --> 00:10:24.655 align:middle line:90%
+has at most one arrow out.
+
+00:10:24.655 --> 00:10:27.680 align:middle line:90%
+
+
+00:10:27.680 --> 00:10:31.190 align:middle line:84%
+All right, so
+these two examples,
+
+00:10:31.190 --> 00:10:33.790 align:middle line:84%
+is this learning
+relation a function?
+
+00:10:33.790 --> 00:10:36.530 align:middle line:90%
+
+
+00:10:36.530 --> 00:10:39.432 align:middle line:90%
+Who can tell me why?
+
+00:10:39.432 --> 00:10:41.932 align:middle line:84%
+AUDIENCE: One of the students
+has multiple arrows going out.
+
+00:10:41.932 --> 00:10:43.610 align:middle line:84%
+ZACHARY ABEL: Yeah,
+we have a student
+
+00:10:43.610 --> 00:10:45.300 align:middle line:90%
+with multiple arrows going out.
+
+00:10:45.300 --> 00:10:47.430 align:middle line:84%
+That's precisely what
+we need to avoid.
+
+00:10:47.430 --> 00:10:50.360 align:middle line:84%
+Its function says
+each node on the left
+
+00:10:50.360 --> 00:10:53.000 align:middle line:84%
+is supposed to have at
+most one arrow going out,
+
+00:10:53.000 --> 00:10:54.390 align:middle line:90%
+and this fails that.
+
+00:10:54.390 --> 00:10:57.350 align:middle line:90%
+Is this a function?
+
+00:10:57.350 --> 00:10:59.330 align:middle line:90%
+Yeah.
+
+00:10:59.330 --> 00:11:03.020 align:middle line:84%
+Every class has at most one
+arrow out, so it's a function.
+
+00:11:03.020 --> 00:11:08.930 align:middle line:84%
+If I deleted this arrow, so now
+we only have these three arrows
+
+00:11:08.930 --> 00:11:14.330 align:middle line:84%
+and no one's teaching 6.1200,
+is this still a function?
+
+00:11:14.330 --> 00:11:18.600 align:middle line:84%
+Yeah, it's fine-- at most one
+arrow, not exactly one arrow.
+
+00:11:18.600 --> 00:11:21.450 align:middle line:84%
+So that's still fine even
+if that arrow is missing.
+
+00:11:21.450 --> 00:11:25.880 align:middle line:84%
+But I'm going to put it back
+because that's our example.
+
+00:11:25.880 --> 00:11:28.400 align:middle line:90%
+Let's see.
+
+00:11:28.400 --> 00:11:37.490 align:middle line:84%
+When R is a function, we'll
+write R of a equals b to mean--
+
+00:11:37.490 --> 00:11:40.125 align:middle line:90%
+
+
+00:11:40.125 --> 00:11:43.270 align:middle line:84%
+means that a, b is
+in the relation.
+
+00:11:43.270 --> 00:11:48.640 align:middle line:84%
+And so R of a is the element
+that a points to if it exists.
+
+00:11:48.640 --> 00:11:52.440 align:middle line:84%
+R of a might be undefined
+if the function doesn't have
+
+00:11:52.440 --> 00:11:54.190 align:middle line:90%
+any arrow out at this point.
+
+00:11:54.190 --> 00:11:56.980 align:middle line:84%
+But if there's only one,
+we can just call it R of a.
+
+00:11:56.980 --> 00:11:59.300 align:middle line:84%
+This is the usual function
+notation that we're used to.
+
+00:11:59.300 --> 00:12:08.100 align:middle line:90%
+
+
+00:12:08.100 --> 00:12:11.400 align:middle line:84%
+Let's make that
+even more precise.
+
+00:12:11.400 --> 00:12:17.105 align:middle line:84%
+Let's look at the
+function f from R to R.
+
+00:12:17.105 --> 00:12:18.480 align:middle line:84%
+By the way, when
+it's a function,
+
+00:12:18.480 --> 00:12:21.510 align:middle line:84%
+we can use this more
+specific notation,
+
+00:12:21.510 --> 00:12:25.380 align:middle line:84%
+f is a function from R to
+R. We use the arrow instead
+
+00:12:25.380 --> 00:12:29.670 align:middle line:90%
+of f is a subset of R cross R.
+
+00:12:29.670 --> 00:12:32.790 align:middle line:84%
+So let's define the
+function where f of x
+
+00:12:32.790 --> 00:12:37.140 align:middle line:84%
+is 1 over x squared,
+the kind of function you
+
+00:12:37.140 --> 00:12:40.710 align:middle line:84%
+might see in a precalculus
+class or something.
+
+00:12:40.710 --> 00:12:44.070 align:middle line:84%
+Everyone agrees
+this is a function?
+
+00:12:44.070 --> 00:12:45.430 align:middle line:90%
+Well, I mean, kind of.
+
+00:12:45.430 --> 00:12:49.020 align:middle line:84%
+How is it a function by
+our definition of relation?
+
+00:12:49.020 --> 00:12:51.330 align:middle line:84%
+We're supposed to
+specify a domain--
+
+00:12:51.330 --> 00:12:53.530 align:middle line:90%
+check-- a codomain-- check--
+
+00:12:53.530 --> 00:12:55.120 align:middle line:90%
+and a set of pairs.
+
+00:12:55.120 --> 00:12:56.860 align:middle line:90%
+So what are the set of pairs?
+
+00:12:56.860 --> 00:13:00.450 align:middle line:84%
+In this case, the
+set of pairs is
+
+00:13:00.450 --> 00:13:07.680 align:middle line:84%
+going to be x comma y in R
+cross R such that y equals 1
+
+00:13:07.680 --> 00:13:09.810 align:middle line:90%
+over x squared.
+
+00:13:09.810 --> 00:13:14.790 align:middle line:84%
+It's just the set of pairs
+that satisfy our relation.
+
+00:13:14.790 --> 00:13:16.500 align:middle line:90%
+Another way to write this--
+
+00:13:16.500 --> 00:13:25.290 align:middle line:84%
+x comma 1 over x squared, where
+x is a real number without 0
+
+00:13:25.290 --> 00:13:28.710 align:middle line:84%
+because we're not
+allowed to divide by 0.
+
+00:13:28.710 --> 00:13:30.633 align:middle line:90%
+All right, so f is a function.
+
+00:13:30.633 --> 00:13:32.550 align:middle line:84%
+Here's a way to write
+it in terms of the pairs
+
+00:13:32.550 --> 00:13:33.305 align:middle line:90%
+like we've said.
+
+00:13:33.305 --> 00:13:37.150 align:middle line:90%
+
+
+00:13:37.150 --> 00:13:39.010 align:middle line:84%
+And it's totally
+fine that f of 0
+
+00:13:39.010 --> 00:13:41.710 align:middle line:84%
+isn't defined because,
+again, you can't divide by 0.
+
+00:13:41.710 --> 00:13:44.750 align:middle line:84%
+f says each input has
+at most one output.
+
+00:13:44.750 --> 00:13:46.840 align:middle line:84%
+And it just so happens
+that the input 0
+
+00:13:46.840 --> 00:13:48.940 align:middle line:90%
+has no outputs, which is fine.
+
+00:13:48.940 --> 00:13:51.400 align:middle line:84%
+Sometimes you do want
+everything to have--
+
+00:13:51.400 --> 00:13:54.250 align:middle line:90%
+every input to have an output.
+
+00:13:54.250 --> 00:13:56.660 align:middle line:84%
+So we have a different
+term for that.
+
+00:13:56.660 --> 00:14:06.310 align:middle line:84%
+We'll say that a
+relation is total if
+
+00:14:06.310 --> 00:14:15.923 align:middle line:84%
+and only if every a in A
+has at least one arrow out.
+
+00:14:15.923 --> 00:14:21.430 align:middle line:90%
+
+
+00:14:21.430 --> 00:14:24.910 align:middle line:84%
+In other words, for
+every a on the left side,
+
+00:14:24.910 --> 00:14:28.340 align:middle line:84%
+there's at least one b on the
+right side that it relates to.
+
+00:14:28.340 --> 00:14:30.920 align:middle line:84%
+Everything on the left
+has some arrow going out,
+
+00:14:30.920 --> 00:14:32.380 align:middle line:90%
+possibly multiple.
+
+00:14:32.380 --> 00:14:33.675 align:middle line:90%
+That's what we call total.
+
+00:14:33.675 --> 00:14:38.090 align:middle line:90%
+
+
+00:14:38.090 --> 00:14:41.180 align:middle line:90%
+Are our examples here total?
+
+00:14:41.180 --> 00:14:44.630 align:middle line:90%
+Is this one total.
+
+00:14:44.630 --> 00:14:47.900 align:middle line:84%
+Yeah, everything on the
+left has one arrow out--
+
+00:14:47.900 --> 00:14:50.210 align:middle line:90%
+has at least one arrow out.
+
+00:14:50.210 --> 00:14:53.730 align:middle line:84%
+Here, everything on the left
+has at least one arrow out.
+
+00:14:53.730 --> 00:14:54.462 align:middle line:90%
+Excellent.
+
+00:14:54.462 --> 00:14:56.990 align:middle line:90%
+
+
+00:14:56.990 --> 00:14:58.405 align:middle line:90%
+Is this function total?
+
+00:14:58.405 --> 00:15:04.143 align:middle line:90%
+
+
+00:15:04.143 --> 00:15:05.072 align:middle line:90%
+AUDIENCE: No.
+
+00:15:05.072 --> 00:15:05.780 align:middle line:90%
+ZACHARY ABEL: No?
+
+00:15:05.780 --> 00:15:07.652 align:middle line:90%
+Why not?
+
+00:15:07.652 --> 00:15:09.110 align:middle line:90%
+AUDIENCE: 0 has no arrow out.
+
+00:15:09.110 --> 00:15:12.030 align:middle line:84%
+ZACHARY ABEL: 0 has no arrow
+out. f of 0 doesn't exist.
+
+00:15:12.030 --> 00:15:14.750 align:middle line:84%
+There is nothing that 0
+relates to on the right.
+
+00:15:14.750 --> 00:15:19.820 align:middle line:84%
+OK, let's give a
+different example.
+
+00:15:19.820 --> 00:15:28.520 align:middle line:84%
+Let's define g from the set
+of R without 0 to the set of R
+
+00:15:28.520 --> 00:15:30.710 align:middle line:90%
+without 0--
+
+00:15:30.710 --> 00:15:33.260 align:middle line:90%
+this is supposed to be a set--
+
+00:15:33.260 --> 00:15:38.840 align:middle line:84%
+where we're going to define
+g of x is 1 over x squared.
+
+00:15:38.840 --> 00:15:43.070 align:middle line:90%
+All right, same function, right?
+
+00:15:43.070 --> 00:15:45.890 align:middle line:90%
+Same set of pairs.
+
+00:15:45.890 --> 00:15:48.373 align:middle line:90%
+Is this function g total?
+
+00:15:48.373 --> 00:15:53.960 align:middle line:90%
+
+
+00:15:53.960 --> 00:15:59.000 align:middle line:84%
+I saw exactly two nods and
+a bunch of blank stares.
+
+00:15:59.000 --> 00:16:02.030 align:middle line:90%
+That is all right.
+
+00:16:02.030 --> 00:16:04.490 align:middle line:84%
+Someone who's-- oh, a
+couple of more nods.
+
+00:16:04.490 --> 00:16:07.815 align:middle line:84%
+Someone who's nodding, can
+you tell me why g is total?
+
+00:16:07.815 --> 00:16:08.315 align:middle line:90%
+Yes.
+
+00:16:08.315 --> 00:16:11.850 align:middle line:84%
+AUDIENCE: It's total because,
+like in the previous example,
+
+00:16:11.850 --> 00:16:15.440 align:middle line:84%
+0 [INAUDIBLE] arrow out
+because 0 isn't an option.
+
+00:16:15.440 --> 00:16:16.250 align:middle line:90%
+[INAUDIBLE]
+
+00:16:16.250 --> 00:16:19.730 align:middle line:90%
+
+
+00:16:19.730 --> 00:16:20.820 align:middle line:90%
+ZACHARY ABEL: Right.
+
+00:16:20.820 --> 00:16:23.630 align:middle line:84%
+So they were saying,
+since 0 is no longer
+
+00:16:23.630 --> 00:16:27.410 align:middle line:84%
+an option as an input,
+all of the inputs
+
+00:16:27.410 --> 00:16:30.050 align:middle line:84%
+that we're allowed to choose
+do have a valid output assigned
+
+00:16:30.050 --> 00:16:31.250 align:middle line:90%
+to them.
+
+00:16:31.250 --> 00:16:35.850 align:middle line:90%
+So this function g is total.
+
+00:16:35.850 --> 00:16:43.110 align:middle line:84%
+This function f is not total,
+even though it's exactly
+
+00:16:43.110 --> 00:16:47.280 align:middle line:84%
+the same set of pairs
+for both f and g.
+
+00:16:47.280 --> 00:16:50.160 align:middle line:84%
+It's exactly the same
+set of real comma real,
+
+00:16:50.160 --> 00:16:54.450 align:middle line:84%
+or x comma 1 over x squared,
+for all the nonzero values of x.
+
+00:16:54.450 --> 00:16:58.120 align:middle line:84%
+All we've done is change
+the domain and codomain.
+
+00:16:58.120 --> 00:17:00.990 align:middle line:84%
+And this goes to show that
+you need all three parts
+
+00:17:00.990 --> 00:17:02.470 align:middle line:90%
+of that definition of relation.
+
+00:17:02.470 --> 00:17:04.990 align:middle line:84%
+You need to know what
+set you're mapping from,
+
+00:17:04.990 --> 00:17:09.150 align:middle line:84%
+what set you're mapping to, and
+what all of your related pairs
+
+00:17:09.150 --> 00:17:09.670 align:middle line:90%
+are.
+
+00:17:09.670 --> 00:17:12.240 align:middle line:84%
+All three of those
+pieces of information
+
+00:17:12.240 --> 00:17:14.460 align:middle line:84%
+are important to
+determine things
+
+00:17:14.460 --> 00:17:17.430 align:middle line:84%
+like whether it's a
+function, whether it's total.
+
+00:17:17.430 --> 00:17:19.950 align:middle line:90%
+Does that make sense?
+
+00:17:19.950 --> 00:17:21.790 align:middle line:90%
+Awesome.
+
+00:17:21.790 --> 00:17:26.880 align:middle line:90%
+Now there's-- oh, by the way--
+
+00:17:26.880 --> 00:17:29.250 align:middle line:84%
+oh, also, these
+often go together.
+
+00:17:29.250 --> 00:17:37.360 align:middle line:84%
+So a total function
+means it has--
+
+00:17:37.360 --> 00:17:40.840 align:middle line:84%
+so total means everything on the
+left has at least one arrow out.
+
+00:17:40.840 --> 00:17:44.830 align:middle line:84%
+Function means everything on the
+left has at most one arrow out.
+
+00:17:44.830 --> 00:17:48.870 align:middle line:84%
+So if you put those
+together, total function
+
+00:17:48.870 --> 00:18:02.850 align:middle line:84%
+has exactly one arrow
+out for each a in A.
+
+00:18:02.850 --> 00:18:05.920 align:middle line:84%
+And secretly, when
+mathematicians say "function,"
+
+00:18:05.920 --> 00:18:09.180 align:middle line:84%
+they usually mean
+total function.
+
+00:18:09.180 --> 00:18:13.390 align:middle line:84%
+Usually, the fact that some
+inputs don't have outputs,
+
+00:18:13.390 --> 00:18:16.000 align:middle line:84%
+that's supposed to
+be a special case.
+
+00:18:16.000 --> 00:18:18.600 align:middle line:84%
+And the default
+when we say function
+
+00:18:18.600 --> 00:18:20.850 align:middle line:84%
+is that everything
+on the left has
+
+00:18:20.850 --> 00:18:23.190 align:middle line:90%
+a definite output on the right.
+
+00:18:23.190 --> 00:18:26.110 align:middle line:84%
+So when mathematicians
+say "function,"
+
+00:18:26.110 --> 00:18:29.050 align:middle line:90%
+we usually mean total function.
+
+00:18:29.050 --> 00:18:32.240 align:middle line:84%
+When we're not assuming
+that a function is total,
+
+00:18:32.240 --> 00:18:35.360 align:middle line:84%
+mathematicians will often
+say "partial function."
+
+00:18:35.360 --> 00:18:54.760 align:middle line:90%
+
+
+00:18:54.760 --> 00:18:56.560 align:middle line:84%
+So partial function
+means a function
+
+00:18:56.560 --> 00:18:58.750 align:middle line:90%
+that isn't necessarily total.
+
+00:18:58.750 --> 00:19:00.560 align:middle line:90%
+It might be total.
+
+00:19:00.560 --> 00:19:03.100 align:middle line:84%
+Confusingly, a total
+function is an example
+
+00:19:03.100 --> 00:19:04.700 align:middle line:90%
+of a partial function.
+
+00:19:04.700 --> 00:19:06.920 align:middle line:90%
+Partial does not mean not total.
+
+00:19:06.920 --> 00:19:10.000 align:middle line:84%
+Partial does not mean that
+it's definitely missing inputs.
+
+00:19:10.000 --> 00:19:12.970 align:middle line:84%
+Partial just means that
+you're not assuming
+
+00:19:12.970 --> 00:19:15.550 align:middle line:90%
+there aren't missing inputs.
+
+00:19:15.550 --> 00:19:18.440 align:middle line:84%
+So by our definitions
+that we've set out today,
+
+00:19:18.440 --> 00:19:21.190 align:middle line:84%
+partial function
+just means function.
+
+00:19:21.190 --> 00:19:22.960 align:middle line:84%
+And total function
+means function
+
+00:19:22.960 --> 00:19:25.095 align:middle line:84%
+that has nothing missing,
+no inputs missing.
+
+00:19:25.095 --> 00:19:27.970 align:middle line:90%
+
+
+00:19:27.970 --> 00:19:31.030 align:middle line:84%
+From now on in this class,
+whenever we use the word
+
+00:19:31.030 --> 00:19:35.440 align:middle line:84%
+"function," we're going to
+try to specify whether we mean
+
+00:19:35.440 --> 00:19:39.070 align:middle line:84%
+a total function or whether
+we're allowed to have some
+
+00:19:39.070 --> 00:19:42.320 align:middle line:84%
+missing inputs because usually
+when we say "function,"
+
+00:19:42.320 --> 00:19:44.740 align:middle line:84%
+we're going to mean
+total function.
+
+00:19:44.740 --> 00:19:47.300 align:middle line:84%
+And so let's decide from
+now on in this class,
+
+00:19:47.300 --> 00:19:49.810 align:middle line:84%
+at least when we give
+problem statements to you,
+
+00:19:49.810 --> 00:19:53.890 align:middle line:84%
+that the word "function" on
+its own is hereby ambiguous.
+
+00:19:53.890 --> 00:19:56.590 align:middle line:84%
+Whenever we say "function," we
+should really be telling you,
+
+00:19:56.590 --> 00:19:58.060 align:middle line:90%
+do we mean total function?
+
+00:19:58.060 --> 00:20:01.110 align:middle line:84%
+Or do we mean function that
+may or may not be total?
+
+00:20:01.110 --> 00:20:04.990 align:middle line:90%
+
+
+00:20:04.990 --> 00:20:07.210 align:middle line:84%
+So if you see it on
+a problem set or test
+
+00:20:07.210 --> 00:20:09.800 align:middle line:84%
+and it's not qualified
+like that, please ask.
+
+00:20:09.800 --> 00:20:11.510 align:middle line:90%
+We want to clarify that for you.
+
+00:20:11.510 --> 00:20:14.740 align:middle line:84%
+We're not trying to
+be tricky with edge
+
+00:20:14.740 --> 00:20:16.040 align:middle line:90%
+cases of this definition.
+
+00:20:16.040 --> 00:20:19.250 align:middle line:84%
+If you see "function" on its own
+without qualifiers, please ask.
+
+00:20:19.250 --> 00:20:19.870 align:middle line:90%
+Yes?
+
+00:20:19.870 --> 00:20:23.320 align:middle line:84%
+AUDIENCE: On top,
+[INAUDIBLE] like--
+
+00:20:23.320 --> 00:20:27.860 align:middle line:84%
+it says that the relationship
+is total if every a in A
+
+00:20:27.860 --> 00:20:29.074 align:middle line:90%
+has at least one.
+
+00:20:29.074 --> 00:20:31.915 align:middle line:84%
+On the bottom, it's total
+if it has exactly one arrow.
+
+00:20:31.915 --> 00:20:35.840 align:middle line:84%
+ZACHARY ABEL: So a relation is
+total if everything on the left
+
+00:20:35.840 --> 00:20:37.650 align:middle line:90%
+has at least one arrow out.
+
+00:20:37.650 --> 00:20:41.108 align:middle line:90%
+A relation is a total function--
+
+00:20:41.108 --> 00:20:42.820 align:middle line:90%
+AUDIENCE: Oh.
+
+00:20:42.820 --> 00:20:45.530 align:middle line:84%
+ZACHARY ABEL: --if its total
+and also a function, which
+
+00:20:45.530 --> 00:20:48.030 align:middle line:84%
+means that everything on the
+left has exactly one arrow out.
+
+00:20:48.030 --> 00:20:51.140 align:middle line:90%
+Great question.
+
+00:20:51.140 --> 00:20:51.850 align:middle line:90%
+All right.
+
+00:20:51.850 --> 00:20:57.050 align:middle line:90%
+
+
+00:20:57.050 --> 00:20:59.078 align:middle line:84%
+Yeah, sorry that partial
+function does not
+
+00:20:59.078 --> 00:21:01.370 align:middle line:84%
+mean function that isn't
+total, even though that's what
+
+00:21:01.370 --> 00:21:02.490 align:middle line:90%
+it sounds like it should be.
+
+00:21:02.490 --> 00:21:03.990 align:middle line:84%
+Partial function
+just means function
+
+00:21:03.990 --> 00:21:05.640 align:middle line:90%
+that may or may not be total.
+
+00:21:05.640 --> 00:21:07.015 align:middle line:90%
+Naming things is hard.
+
+00:21:07.015 --> 00:21:09.920 align:middle line:90%
+
+
+00:21:09.920 --> 00:21:13.100 align:middle line:84%
+Or rather, using bad names
+that someone else has already
+
+00:21:13.100 --> 00:21:15.050 align:middle line:90%
+defined for us is hard.
+
+00:21:15.050 --> 00:21:17.540 align:middle line:90%
+I would change it if I could.
+
+00:21:17.540 --> 00:21:21.830 align:middle line:84%
+Anyway-- (SING-SONGY)
+do, do, do, do.
+
+00:21:21.830 --> 00:21:23.450 align:middle line:90%
+Great.
+
+00:21:23.450 --> 00:21:28.440 align:middle line:84%
+We have similar terminology for
+arrows in instead of arrows out.
+
+00:21:28.440 --> 00:21:30.560 align:middle line:84%
+So far, we've looked at
+total and function, which
+
+00:21:30.560 --> 00:21:32.630 align:middle line:84%
+are talking about how
+many arrows are coming out
+
+00:21:32.630 --> 00:21:34.670 align:middle line:90%
+of the left side.
+
+00:21:34.670 --> 00:21:39.020 align:middle line:84%
+We can also ask how many arrows
+are coming into the right side.
+
+00:21:39.020 --> 00:21:42.840 align:middle line:84%
+So we'll say that R, which is
+a relation between A and B,
+
+00:21:42.840 --> 00:21:56.930 align:middle line:84%
+is injective if and only if
+every element on the right side
+
+00:21:56.930 --> 00:22:03.410 align:middle line:90%
+has at most one arrow in.
+
+00:22:03.410 --> 00:22:15.650 align:middle line:84%
+And we'll call it surjective
+if and only if every b in B
+
+00:22:15.650 --> 00:22:22.170 align:middle line:90%
+has at least one arrow in.
+
+00:22:22.170 --> 00:22:26.670 align:middle line:84%
+So injective means you never
+hit the same thing twice.
+
+00:22:26.670 --> 00:22:30.000 align:middle line:84%
+Surjective means you
+hit everything possibly
+
+00:22:30.000 --> 00:22:32.550 align:middle line:90%
+more than once.
+
+00:22:32.550 --> 00:22:37.400 align:middle line:84%
+Back to these examples,
+is L injective?
+
+00:22:37.400 --> 00:22:40.678 align:middle line:90%
+
+
+00:22:40.678 --> 00:22:42.720 align:middle line:84%
+In other words, does
+everything on the right side
+
+00:22:42.720 --> 00:22:45.720 align:middle line:90%
+have at most one arrow in?
+
+00:22:45.720 --> 00:22:46.710 align:middle line:90%
+No.
+
+00:22:46.710 --> 00:22:47.620 align:middle line:90%
+Thumbs down.
+
+00:22:47.620 --> 00:22:49.560 align:middle line:90%
+Thank you.
+
+00:22:49.560 --> 00:22:54.070 align:middle line:84%
+For example, chemistry
+has multiple arrows in.
+
+00:22:54.070 --> 00:22:57.010 align:middle line:84%
+That alone is enough to show
+that it's not injective.
+
+00:22:57.010 --> 00:22:59.370 align:middle line:90%
+Is it surjective?
+
+00:22:59.370 --> 00:23:00.370 align:middle line:90%
+Also no.
+
+00:23:00.370 --> 00:23:01.270 align:middle line:90%
+Another thumbs down.
+
+00:23:01.270 --> 00:23:02.700 align:middle line:90%
+Thank you.
+
+00:23:02.700 --> 00:23:07.080 align:middle line:84%
+It's not surjective because
+6.1200 doesn't have any arrows
+
+00:23:07.080 --> 00:23:07.620 align:middle line:90%
+in.
+
+00:23:07.620 --> 00:23:10.330 align:middle line:84%
+Surjective means you're supposed
+to hit everything on the right,
+
+00:23:10.330 --> 00:23:11.410 align:middle line:90%
+and we don't.
+
+00:23:11.410 --> 00:23:14.740 align:middle line:84%
+So this is neither
+surjective nor injective,
+
+00:23:14.740 --> 00:23:18.270 align:middle line:90%
+whereas this is both.
+
+00:23:18.270 --> 00:23:21.370 align:middle line:84%
+Everything on the right
+has at least one arrow
+
+00:23:21.370 --> 00:23:24.560 align:middle line:84%
+in-- so it's subjective--
+and at most one arrow in.
+
+00:23:24.560 --> 00:23:25.516 align:middle line:90%
+So it's injective.
+
+00:23:25.516 --> 00:23:34.330 align:middle line:90%
+
+
+00:23:34.330 --> 00:23:39.040 align:middle line:84%
+Now, one of the reasons we're
+defining all of these similar
+
+00:23:39.040 --> 00:23:41.120 align:middle line:90%
+confusing-sounding terms--
+
+00:23:41.120 --> 00:23:44.680 align:middle line:84%
+apologies for that--
+is that we have
+
+00:23:44.680 --> 00:23:48.910 align:middle line:84%
+some theorems that these
+terms are enough to help us
+
+00:23:48.910 --> 00:23:50.960 align:middle line:84%
+relate the sizes
+of various sets.
+
+00:23:50.960 --> 00:23:55.390 align:middle line:84%
+So we have our first
+theorem of the day.
+
+00:23:55.390 --> 00:24:05.500 align:middle line:84%
+If A and B are finite sets
+and R, a relation from A to B,
+
+00:24:05.500 --> 00:24:08.846 align:middle line:90%
+is a total injection--
+
+00:24:08.846 --> 00:24:15.670 align:middle line:90%
+
+
+00:24:15.670 --> 00:24:18.430 align:middle line:84%
+so if we have finite sets
+and a total injection
+
+00:24:18.430 --> 00:24:20.060 align:middle line:90%
+from the first to the second--
+
+00:24:20.060 --> 00:24:28.810 align:middle line:84%
+then the size of A is
+at most the size of B.
+
+00:24:28.810 --> 00:24:32.330 align:middle line:84%
+If we can find a total injection
+from one set to another set,
+
+00:24:32.330 --> 00:24:35.020 align:middle line:84%
+then the set on the left
+is smaller or at most
+
+00:24:35.020 --> 00:24:35.930 align:middle line:90%
+the same size.
+
+00:24:35.930 --> 00:24:38.190 align:middle line:84%
+And let's draw a
+picture to see why.
+
+00:24:38.190 --> 00:24:42.340 align:middle line:90%
+
+
+00:24:42.340 --> 00:24:44.980 align:middle line:84%
+So total injection means
+that everything on the left
+
+00:24:44.980 --> 00:24:46.820 align:middle line:90%
+has at least one arrow out.
+
+00:24:46.820 --> 00:24:48.370 align:middle line:90%
+Total means that.
+
+00:24:48.370 --> 00:24:51.235 align:middle line:84%
+And injection means we never hit
+the same thing on the right side
+
+00:24:51.235 --> 00:24:51.735 align:middle line:90%
+twice.
+
+00:24:51.735 --> 00:24:55.690 align:middle line:90%
+
+
+00:24:55.690 --> 00:24:58.460 align:middle line:84%
+So there's always an arrow
+out on the left side.
+
+00:24:58.460 --> 00:25:02.530 align:middle line:84%
+And there's at most one
+arrow out on the right side.
+
+00:25:02.530 --> 00:25:06.130 align:middle line:84%
+And so all this is saying is
+that the number of elements
+
+00:25:06.130 --> 00:25:09.430 align:middle line:84%
+on the left is at most
+the number of arrows
+
+00:25:09.430 --> 00:25:12.640 align:middle line:84%
+because everything on the left
+has at least one arrow out.
+
+00:25:12.640 --> 00:25:15.370 align:middle line:84%
+And the number of
+elements on the right side
+
+00:25:15.370 --> 00:25:18.950 align:middle line:84%
+is at least the number of arrows
+because everything on the right
+
+00:25:18.950 --> 00:25:20.900 align:middle line:90%
+has at most one arrow out.
+
+00:25:20.900 --> 00:25:22.740 align:middle line:90%
+So that's why this is true.
+
+00:25:22.740 --> 00:25:25.430 align:middle line:84%
+Size of A is less or equal to
+the number of arrows, which
+
+00:25:25.430 --> 00:25:28.850 align:middle line:84%
+is less or equal to the
+size of B. So often,
+
+00:25:28.850 --> 00:25:31.710 align:middle line:84%
+when you want to show that one
+set is smaller than another set,
+
+00:25:31.710 --> 00:25:33.830 align:middle line:84%
+you just define a total
+injection between them,
+
+00:25:33.830 --> 00:25:35.690 align:middle line:90%
+and that's your proof.
+
+00:25:35.690 --> 00:25:43.880 align:middle line:84%
+Similarly, on the other
+side of things, theorem 2--
+
+00:25:43.880 --> 00:25:51.650 align:middle line:84%
+let's see-- if, again,
+A and B are finite sets
+
+00:25:51.650 --> 00:26:09.110 align:middle line:84%
+and R is a surjective
+function, then the size of A
+
+00:26:09.110 --> 00:26:12.470 align:middle line:84%
+is greater or equal
+to the size of B.
+
+00:26:12.470 --> 00:26:15.630 align:middle line:84%
+And I claim that's just
+exactly this picture but
+
+00:26:15.630 --> 00:26:18.310 align:middle line:90%
+in the opposite direction.
+
+00:26:18.310 --> 00:26:20.400 align:middle line:84%
+Instead of total
+meaning everything
+
+00:26:20.400 --> 00:26:23.340 align:middle line:84%
+on the left has an
+arrow out, we have
+
+00:26:23.340 --> 00:26:25.590 align:middle line:84%
+surjective, which means
+everything on the right
+
+00:26:25.590 --> 00:26:27.150 align:middle line:90%
+has an arrow in.
+
+00:26:27.150 --> 00:26:30.150 align:middle line:84%
+And instead of
+injection, which means
+
+00:26:30.150 --> 00:26:32.950 align:middle line:84%
+everything on the right,
+has at most one out--
+
+00:26:32.950 --> 00:26:36.870 align:middle line:84%
+or sorry, at most one in,
+we have function, which says
+
+00:26:36.870 --> 00:26:41.500 align:middle line:84%
+everything on the left
+has at most one arrow out.
+
+00:26:41.500 --> 00:26:44.470 align:middle line:84%
+So we've just swapped
+the roles of in and out.
+
+00:26:44.470 --> 00:26:46.620 align:middle line:84%
+That's really all that
+happened to translate
+
+00:26:46.620 --> 00:26:47.915 align:middle line:90%
+this theorem to that theorem.
+
+00:26:47.915 --> 00:26:50.940 align:middle line:90%
+
+
+00:26:50.940 --> 00:26:55.656 align:middle line:84%
+And by our powers
+combined, definition--
+
+00:26:55.656 --> 00:26:58.470 align:middle line:90%
+
+
+00:26:58.470 --> 00:27:11.550 align:middle line:84%
+if R is injective, surjective,
+total, and a function,
+
+00:27:11.550 --> 00:27:15.960 align:middle line:84%
+if it has all four
+of these properties,
+
+00:27:15.960 --> 00:27:18.186 align:middle line:84%
+then we say that
+R is a bijection.
+
+00:27:18.186 --> 00:27:24.090 align:middle line:90%
+
+
+00:27:24.090 --> 00:27:26.140 align:middle line:84%
+So that's the
+definition of bijection.
+
+00:27:26.140 --> 00:27:29.760 align:middle line:84%
+Bijection means you have all
+four of these nice properties.
+
+00:27:29.760 --> 00:27:33.190 align:middle line:84%
+To summarize, everything on the
+left has exactly one arrow out.
+
+00:27:33.190 --> 00:27:36.690 align:middle line:84%
+Everything on the right
+has exactly one arrow in.
+
+00:27:36.690 --> 00:27:48.150 align:middle line:84%
+And theorem-- if R from
+A to B is a bijection,
+
+00:27:48.150 --> 00:27:52.860 align:middle line:84%
+then the size of A
+equals the size of B.
+
+00:27:52.860 --> 00:27:55.140 align:middle line:84%
+All we're doing is applying
+both of these theorems,
+
+00:27:55.140 --> 00:27:56.530 align:middle line:90%
+and we get both inequalities.
+
+00:27:56.530 --> 00:27:59.910 align:middle line:90%
+So the sets have the same size.
+
+00:27:59.910 --> 00:28:02.610 align:middle line:84%
+All right, so bijection
+is the main tool
+
+00:28:02.610 --> 00:28:06.270 align:middle line:84%
+that we're going to be using in
+the second half of this lecture
+
+00:28:06.270 --> 00:28:09.930 align:middle line:90%
+to compare the sizes of sets.
+
+00:28:09.930 --> 00:28:11.090 align:middle line:90%
+Questions about that?
+
+00:28:11.090 --> 00:28:13.680 align:middle line:90%
+
+
+00:28:13.680 --> 00:28:16.500 align:middle line:90%
+Wonderful.
+
+00:28:16.500 --> 00:28:20.850 align:middle line:84%
+So next, I want to talk
+about a couple special kinds
+
+00:28:20.850 --> 00:28:22.270 align:middle line:90%
+of relations.
+
+00:28:22.270 --> 00:28:26.460 align:middle line:84%
+So first of all, I never
+said that the sets A and B
+
+00:28:26.460 --> 00:28:30.060 align:middle line:84%
+have to be disjoint
+or even distinct.
+
+00:28:30.060 --> 00:28:35.830 align:middle line:84%
+So let's look at
+the special case
+
+00:28:35.830 --> 00:28:43.110 align:middle line:84%
+where A equals B. So R is a
+subset of A cross A. We call
+
+00:28:43.110 --> 00:28:54.450 align:middle line:90%
+this a binary relation on A.
+
+00:28:54.450 --> 00:28:57.120 align:middle line:84%
+And this, I claim, is
+basically exactly how
+
+00:28:57.120 --> 00:28:59.460 align:middle line:90%
+we define directed graphs.
+
+00:28:59.460 --> 00:29:03.450 align:middle line:84%
+You have a set of nodes,
+which in this case is A
+
+00:29:03.450 --> 00:29:06.030 align:middle line:84%
+and serves as both our
+domain and codomain.
+
+00:29:06.030 --> 00:29:11.800 align:middle line:84%
+And you have a set of
+directed edges between them,
+
+00:29:11.800 --> 00:29:12.650 align:middle line:90%
+and that's it.
+
+00:29:12.650 --> 00:29:14.540 align:middle line:84%
+That's how we define
+directed graph.
+
+00:29:14.540 --> 00:29:19.480 align:middle line:84%
+So a relation on a is basically
+identical to a directed graph
+
+00:29:19.480 --> 00:29:22.720 align:middle line:84%
+whose vertices
+are A, which means
+
+00:29:22.720 --> 00:29:25.930 align:middle line:84%
+that all of the directed graph
+examples we've already talked
+
+00:29:25.930 --> 00:29:30.250 align:middle line:84%
+about, like who follows whom
+on Twitter, like reachability
+
+00:29:30.250 --> 00:29:36.190 align:middle line:84%
+in Google Maps, all of those
+digraphs are also relations.
+
+00:29:36.190 --> 00:29:41.920 align:middle line:84%
+They're relations on the set
+of Twitter users or locations
+
+00:29:41.920 --> 00:29:44.950 align:middle line:90%
+in Google Maps.
+
+00:29:44.950 --> 00:29:46.810 align:middle line:84%
+Another good example
+that I really
+
+00:29:46.810 --> 00:29:51.370 align:middle line:84%
+like of a relation on
+a set is the relation
+
+00:29:51.370 --> 00:29:54.710 align:middle line:84%
+of who likes whom, not like
+romantically or anything,
+
+00:29:54.710 --> 00:29:57.050 align:middle line:84%
+just as a person,
+who likes whom.
+
+00:29:57.050 --> 00:29:58.523 align:middle line:90%
+Fix a moment in time.
+
+00:29:58.523 --> 00:30:00.940 align:middle line:84%
+Everyone measures who they
+like among all the other people
+
+00:30:00.940 --> 00:30:01.700 align:middle line:90%
+in the world.
+
+00:30:01.700 --> 00:30:03.730 align:middle line:90%
+Bam, you have your relation.
+
+00:30:03.730 --> 00:30:05.800 align:middle line:84%
+And the reason I like
+it is that it has tons
+
+00:30:05.800 --> 00:30:08.290 align:middle line:90%
+and tons of chaotic structure.
+
+00:30:08.290 --> 00:30:11.420 align:middle line:84%
+For example, if I
+like you, that doesn't
+
+00:30:11.420 --> 00:30:13.620 align:middle line:84%
+mean that you like
+me back necessarily,
+
+00:30:13.620 --> 00:30:15.930 align:middle line:84%
+especially this week when
+the problem set's a bit long.
+
+00:30:15.930 --> 00:30:17.780 align:middle line:90%
+Apologies.
+
+00:30:17.780 --> 00:30:20.510 align:middle line:84%
+If I like you and
+you like them, that
+
+00:30:20.510 --> 00:30:23.060 align:middle line:90%
+doesn't mean that I like them.
+
+00:30:23.060 --> 00:30:24.510 align:middle line:90%
+Not always, right?
+
+00:30:24.510 --> 00:30:26.790 align:middle line:84%
+That first example, I like
+you means you like me,
+
+00:30:26.790 --> 00:30:29.810 align:middle line:84%
+that's what we're going to
+call symmetry in a little bit.
+
+00:30:29.810 --> 00:30:32.100 align:middle line:84%
+That second example, "if
+I like you, you like them,
+
+00:30:32.100 --> 00:30:34.550 align:middle line:84%
+that means I like them,"
+we call that transitivity.
+
+00:30:34.550 --> 00:30:37.590 align:middle line:84%
+So this graph is neither
+symmetric nor transitive.
+
+00:30:37.590 --> 00:30:40.220 align:middle line:90%
+It's also not reflexive.
+
+00:30:40.220 --> 00:30:42.360 align:middle line:84%
+There are days when
+I don't like myself,
+
+00:30:42.360 --> 00:30:44.960 align:middle line:84%
+so I wouldn't have a
+self-loop in this graph.
+
+00:30:44.960 --> 00:30:47.460 align:middle line:84%
+Now, I don't mean that in like
+a "cry for help" kind of way.
+
+00:30:47.460 --> 00:30:50.430 align:middle line:84%
+But you know, some days you're
+a little down on yourself.
+
+00:30:50.430 --> 00:30:51.030 align:middle line:90%
+It can happen.
+
+00:30:51.030 --> 00:30:51.650 align:middle line:90%
+It's OK.
+
+00:30:51.650 --> 00:30:55.140 align:middle line:84%
+If it happens too
+much, you have support.
+
+00:30:55.140 --> 00:30:56.185 align:middle line:90%
+Please seek it out.
+
+00:30:56.185 --> 00:30:58.250 align:middle line:90%
+[SOFT LAUGHTER]
+
+00:30:58.250 --> 00:30:59.520 align:middle line:90%
+So funny story.
+
+00:30:59.520 --> 00:31:02.600 align:middle line:84%
+I gave this same example
+a couple years ago.
+
+00:31:02.600 --> 00:31:06.230 align:middle line:84%
+I got the same half-hearted
+chuckle that we got just now.
+
+00:31:06.230 --> 00:31:08.521 align:middle line:84%
+And then someone went home
+and wrote about it on "MIT
+
+00:31:08.521 --> 00:31:09.063 align:middle line:90%
+Confessions."
+
+00:31:09.063 --> 00:31:10.520 align:middle line:90%
+[LAUGHTER]
+
+00:31:10.520 --> 00:31:12.390 align:middle line:84%
+I don't remember
+exactly what they said,
+
+00:31:12.390 --> 00:31:14.543 align:middle line:84%
+but they maybe left off
+some of the context.
+
+00:31:14.543 --> 00:31:17.330 align:middle line:90%
+
+
+00:31:17.330 --> 00:31:19.410 align:middle line:84%
+And then, for the
+next couple days,
+
+00:31:19.410 --> 00:31:23.070 align:middle line:84%
+I was getting multiple Facebook
+messages from multiple friends,
+
+00:31:23.070 --> 00:31:25.340 align:middle line:90%
+'Zach, are you OK?'
+
+00:31:25.340 --> 00:31:28.400 align:middle line:84%
+'I know we haven't caught up in
+a while, but I'm here to chat.
+
+00:31:28.400 --> 00:31:31.410 align:middle line:84%
+And I'd love to talk
+to if you're available.
+
+00:31:31.410 --> 00:31:33.110 align:middle line:90%
+I hope you're doing well.'
+
+00:31:33.110 --> 00:31:35.875 align:middle line:84%
+And I just want to
+say I felt loved.
+
+00:31:35.875 --> 00:31:37.130 align:middle line:90%
+[LAUGHTER]
+
+00:31:37.130 --> 00:31:39.300 align:middle line:84%
+So thank you to
+whoever did that.
+
+00:31:39.300 --> 00:31:41.185 align:middle line:84%
+But maybe let's
+not have a repeat.
+
+00:31:41.185 --> 00:31:43.130 align:middle line:90%
+[LAUGHTER]
+
+00:31:43.130 --> 00:31:44.560 align:middle line:90%
+Anyway, back to graphs.
+
+00:31:44.560 --> 00:31:47.450 align:middle line:90%
+
+
+00:31:47.450 --> 00:31:49.520 align:middle line:84%
+So one of the main
+reasons we want
+
+00:31:49.520 --> 00:31:53.330 align:middle line:84%
+to look at relations on a
+set is because we already
+
+00:31:53.330 --> 00:31:56.420 align:middle line:84%
+have lots of examples, and
+especially lots of examples
+
+00:31:56.420 --> 00:32:00.890 align:middle line:84%
+that we don't necessarily
+think of as graphs.
+
+00:32:00.890 --> 00:32:04.580 align:middle line:84%
+For example, A equals
+B is a relation
+
+00:32:04.580 --> 00:32:07.200 align:middle line:90%
+that we use all the time.
+
+00:32:07.200 --> 00:32:11.400 align:middle line:84%
+A is congruent to B
+mod 10 is a relation
+
+00:32:11.400 --> 00:32:14.100 align:middle line:84%
+on the set of natural
+numbers, of integers
+
+00:32:14.100 --> 00:32:16.890 align:middle line:84%
+that we use all the time
+and don't necessarily
+
+00:32:16.890 --> 00:32:18.010 align:middle line:90%
+think of as a graph.
+
+00:32:18.010 --> 00:32:20.410 align:middle line:90%
+But it's definitely a relation.
+
+00:32:20.410 --> 00:32:22.870 align:middle line:84%
+It's also a graph because
+that's secretly the same thing.
+
+00:32:22.870 --> 00:32:26.040 align:middle line:84%
+But the way you think about
+it can change if you want to.
+
+00:32:26.040 --> 00:32:34.140 align:middle line:84%
+Likewise, A less equal B. We
+have set A is a subset of set B.
+
+00:32:34.140 --> 00:32:39.660 align:middle line:84%
+We have A divides B. Lots
+of examples of relations
+
+00:32:39.660 --> 00:32:43.110 align:middle line:84%
+that we want to be
+able to talk about.
+
+00:32:43.110 --> 00:32:46.420 align:middle line:84%
+Another good example
+is reachability.
+
+00:32:46.420 --> 00:32:47.693 align:middle line:90%
+So if G is a digraph.
+
+00:32:47.693 --> 00:32:51.990 align:middle line:90%
+
+
+00:32:51.990 --> 00:32:57.000 align:middle line:84%
+And if V and W are
+nodes of our graph,
+
+00:32:57.000 --> 00:32:59.023 align:middle line:84%
+then we can define
+the walk relation.
+
+00:32:59.023 --> 00:33:05.790 align:middle line:90%
+
+
+00:33:05.790 --> 00:33:08.170 align:middle line:90%
+Sorry, that was out of order.
+
+00:33:08.170 --> 00:33:10.890 align:middle line:84%
+If G is a digraph, we can
+define the walk relation
+
+00:33:10.890 --> 00:33:15.240 align:middle line:84%
+on the set of vertices of
+our graph, where we define
+
+00:33:15.240 --> 00:33:21.113 align:middle line:84%
+that V relates to W
+under this walk relation
+
+00:33:21.113 --> 00:33:22.530 align:middle line:84%
+that we're going
+to call G prime--
+
+00:33:22.530 --> 00:33:34.350 align:middle line:84%
+or sorry, G star if and only if
+there exists a walk from V to W.
+
+00:33:34.350 --> 00:33:37.980 align:middle line:84%
+That's a relation we
+can define on a digraph,
+
+00:33:37.980 --> 00:33:39.530 align:middle line:90%
+and it's a really useful one.
+
+00:33:39.530 --> 00:33:44.670 align:middle line:90%
+
+
+00:33:44.670 --> 00:33:47.440 align:middle line:84%
+One thing I want to warn you
+about, we started with a graph.
+
+00:33:47.440 --> 00:33:50.280 align:middle line:90%
+We defined a relation, G star.
+
+00:33:50.280 --> 00:33:53.760 align:middle line:84%
+We know that relations
+on this set of vertices
+
+00:33:53.760 --> 00:33:56.940 align:middle line:84%
+can be thought of as a graph
+on that set of vertices.
+
+00:33:56.940 --> 00:34:01.990 align:middle line:84%
+We're not necessarily
+talking about the same graph.
+
+00:34:01.990 --> 00:34:03.700 align:middle line:84%
+This relation, G
+star, is something
+
+00:34:03.700 --> 00:34:07.990 align:middle line:84%
+we constructed from this digraph
+G. But the graph we constructed
+
+00:34:07.990 --> 00:34:09.940 align:middle line:84%
+isn't necessarily the
+same as the graph G
+
+00:34:09.940 --> 00:34:11.330 align:middle line:90%
+that we started with.
+
+00:34:11.330 --> 00:34:14.780 align:middle line:84%
+So it can be a little confusing
+thinking of, oh, that's a graph,
+
+00:34:14.780 --> 00:34:19.480 align:middle line:84%
+and that's also a graph that
+was constructed from this other.
+
+00:34:19.480 --> 00:34:21.130 align:middle line:90%
+It's fun to think about.
+
+00:34:21.130 --> 00:34:23.072 align:middle line:84%
+But just a warning,
+even though we're
+
+00:34:23.072 --> 00:34:24.489 align:middle line:84%
+talking about two
+different graphs
+
+00:34:24.489 --> 00:34:26.139 align:middle line:84%
+on the same set
+of vertices, they
+
+00:34:26.139 --> 00:34:28.169 align:middle line:84%
+might actually be
+two different graphs.
+
+00:34:28.169 --> 00:34:30.880 align:middle line:90%
+
+
+00:34:30.880 --> 00:34:31.420 align:middle line:90%
+Cool.
+
+00:34:31.420 --> 00:34:34.480 align:middle line:84%
+So there are two special
+kinds of relations
+
+00:34:34.480 --> 00:34:36.730 align:middle line:84%
+on a set that are
+especially useful because we
+
+00:34:36.730 --> 00:34:38.060 align:middle line:90%
+have lots of examples.
+
+00:34:38.060 --> 00:34:41.199 align:middle line:84%
+And it's useful to be able
+to generalize those examples.
+
+00:34:41.199 --> 00:34:45.710 align:middle line:84%
+The first one I
+want to talk about
+
+00:34:45.710 --> 00:34:47.733 align:middle line:84%
+is called an
+equivalence relation.
+
+00:34:47.733 --> 00:34:51.489 align:middle line:90%
+
+
+00:34:51.489 --> 00:34:54.610 align:middle line:84%
+And some of the
+examples I wrote down,
+
+00:34:54.610 --> 00:35:01.360 align:middle line:84%
+for example a equals b or
+a is congruent to b mod 10,
+
+00:35:01.360 --> 00:35:04.556 align:middle line:84%
+these are somehow capturing
+this idea of sameness.
+
+00:35:04.556 --> 00:35:11.800 align:middle line:84%
+a and b are the same. a and b
+have the same remainder, mod 10.
+
+00:35:11.800 --> 00:35:13.960 align:middle line:84%
+If we're talking
+about connectivity
+
+00:35:13.960 --> 00:35:18.070 align:middle line:84%
+in an undirected graph,
+we say that two nodes
+
+00:35:18.070 --> 00:35:20.140 align:middle line:84%
+are connected with
+each other, meaning
+
+00:35:20.140 --> 00:35:22.690 align:middle line:84%
+there's a walk from
+one to the other, which
+
+00:35:22.690 --> 00:35:26.180 align:middle line:84%
+means that they belong to
+the same connected component.
+
+00:35:26.180 --> 00:35:29.560 align:middle line:84%
+There's another idea
+of sameness there.
+
+00:35:29.560 --> 00:35:33.160 align:middle line:84%
+So an equivalence
+relation is an idea
+
+00:35:33.160 --> 00:35:37.180 align:middle line:84%
+that generalizes this
+idea of sameness.
+
+00:35:37.180 --> 00:35:39.560 align:middle line:84%
+And so let's see
+if we can do that.
+
+00:35:39.560 --> 00:35:43.150 align:middle line:84%
+What does it mean to
+somehow encapsulate
+
+00:35:43.150 --> 00:35:46.340 align:middle line:84%
+that the two things are somehow
+equivalent to each other,
+
+00:35:46.340 --> 00:35:49.240 align:middle line:90%
+even if they're not identical?
+
+00:35:49.240 --> 00:35:53.800 align:middle line:84%
+And it turns out
+there are three easy--
+
+00:35:53.800 --> 00:35:58.240 align:middle line:84%
+by "easy," I mean possibly
+confusing, but I apologize--
+
+00:35:58.240 --> 00:36:02.670 align:middle line:84%
+three easily stated properties
+that a relation might have.
+
+00:36:02.670 --> 00:36:04.880 align:middle line:84%
+And if it has all
+three, then I claim
+
+00:36:04.880 --> 00:36:07.700 align:middle line:84%
+it captures everything
+it needs to capture
+
+00:36:07.700 --> 00:36:09.870 align:middle line:90%
+about this idea of sameness.
+
+00:36:09.870 --> 00:36:14.240 align:middle line:84%
+Everything I've just
+said is extremely vague.
+
+00:36:14.240 --> 00:36:16.250 align:middle line:90%
+Let's make it precise.
+
+00:36:16.250 --> 00:36:23.000 align:middle line:84%
+So let's say that R is
+a relation on A. We're
+
+00:36:23.000 --> 00:36:27.040 align:middle line:90%
+going to say R is reflexive.
+
+00:36:27.040 --> 00:36:32.000 align:middle line:90%
+
+
+00:36:32.000 --> 00:36:41.870 align:middle line:84%
+This means that for all a
+in A, a relates to itself.
+
+00:36:41.870 --> 00:36:45.240 align:middle line:84%
+Reflexive means everything
+relates to itself.
+
+00:36:45.240 --> 00:36:47.250 align:middle line:84%
+Everything should be
+the same as itself
+
+00:36:47.250 --> 00:36:48.750 align:middle line:90%
+if sameness means anything.
+
+00:36:48.750 --> 00:36:52.490 align:middle line:84%
+So this is definitely something
+we would want to have.
+
+00:36:52.490 --> 00:36:55.520 align:middle line:84%
+In terms of a digraph, it
+means that every vertex
+
+00:36:55.520 --> 00:36:58.770 align:middle line:90%
+has a self-loop.
+
+00:36:58.770 --> 00:37:10.320 align:middle line:84%
+All right, next one, R
+is symmetric if and only
+
+00:37:10.320 --> 00:37:22.050 align:middle line:84%
+if for all a and b in our set,
+a relates to b if and only if b
+
+00:37:22.050 --> 00:37:24.330 align:middle line:90%
+relates to a.
+
+00:37:24.330 --> 00:37:27.370 align:middle line:84%
+So symmetry is saying
+that order doesn't matter.
+
+00:37:27.370 --> 00:37:30.840 align:middle line:84%
+If I'm your friend,
+then you're my friend--
+
+00:37:30.840 --> 00:37:32.765 align:middle line:90%
+so Facebook, not Twitter.
+
+00:37:32.765 --> 00:37:35.260 align:middle line:90%
+
+
+00:37:35.260 --> 00:37:35.760 align:middle line:90%
+Cool.
+
+00:37:35.760 --> 00:37:40.290 align:middle line:84%
+In terms of digraph, remember
+a relation is always a digraph.
+
+00:37:40.290 --> 00:37:43.150 align:middle line:84%
+This means that every time we
+have an edge in one direction,
+
+00:37:43.150 --> 00:37:46.590 align:middle line:84%
+we also have the edge
+in the other direction.
+
+00:37:46.590 --> 00:37:49.770 align:middle line:84%
+All right, so symmetric
+means order doesn't matter.
+
+00:37:49.770 --> 00:37:59.590 align:middle line:84%
+And finally, R is transitive
+if and only if for all a,
+
+00:37:59.590 --> 00:38:06.210 align:middle line:84%
+b, and c in A, if a
+relates to b and b
+
+00:38:06.210 --> 00:38:10.145 align:middle line:84%
+relates to c, then
+a relates to c.
+
+00:38:10.145 --> 00:38:13.080 align:middle line:90%
+
+
+00:38:13.080 --> 00:38:16.050 align:middle line:84%
+So if this is the same
+as that, and that's
+
+00:38:16.050 --> 00:38:18.720 align:middle line:84%
+the same as this
+other thing, then this
+
+00:38:18.720 --> 00:38:21.900 align:middle line:84%
+should be the same
+as this other thing--
+
+00:38:21.900 --> 00:38:24.420 align:middle line:84%
+another thing that we
+might want to be true
+
+00:38:24.420 --> 00:38:27.750 align:middle line:84%
+if we're trying to capture
+what we mean by sameness.
+
+00:38:27.750 --> 00:38:30.960 align:middle line:84%
+In terms of graphs, it
+means that any time we
+
+00:38:30.960 --> 00:38:36.960 align:middle line:84%
+have a walk of length 2,
+then there was already
+
+00:38:36.960 --> 00:38:40.620 align:middle line:84%
+a directed edge from
+the start to the end.
+
+00:38:40.620 --> 00:38:42.637 align:middle line:84%
+If you can get from here
+to there and from there
+
+00:38:42.637 --> 00:38:44.970 align:middle line:84%
+to this other place, then you
+can get straight from here
+
+00:38:44.970 --> 00:38:48.430 align:middle line:90%
+to this other place.
+
+00:38:48.430 --> 00:38:51.060 align:middle line:84%
+And both of these examples
+that I mentioned--
+
+00:38:51.060 --> 00:38:54.170 align:middle line:90%
+all three of these examples--
+
+00:38:54.170 --> 00:38:57.824 align:middle line:90%
+same connected component.
+
+00:38:57.824 --> 00:39:01.270 align:middle line:90%
+
+
+00:39:01.270 --> 00:39:04.660 align:middle line:84%
+So these circled relations,
+I claim, all have all three
+
+00:39:04.660 --> 00:39:06.220 align:middle line:90%
+of these properties.
+
+00:39:06.220 --> 00:39:10.100 align:middle line:84%
+Every number is congruent
+to itself mod 10.
+
+00:39:10.100 --> 00:39:12.740 align:middle line:84%
+If two numbers are congruent
+to each other mod 10,
+
+00:39:12.740 --> 00:39:15.370 align:middle line:84%
+then they're congruent
+the other way mod 10.
+
+00:39:15.370 --> 00:39:18.110 align:middle line:84%
+And if a and b are congruent
+and b and c are congruent,
+
+00:39:18.110 --> 00:39:21.880 align:middle line:84%
+then a and c are
+congruent mod 10.
+
+00:39:21.880 --> 00:39:24.518 align:middle line:84%
+And you can check that
+all of those examples
+
+00:39:24.518 --> 00:39:25.310 align:middle line:90%
+have this property.
+
+00:39:25.310 --> 00:39:30.760 align:middle line:84%
+And in fact, I claim that these
+three properties are enough.
+
+00:39:30.760 --> 00:39:36.250 align:middle line:84%
+Unfortunately, I have to put the
+definition very far away from--
+
+00:39:36.250 --> 00:39:41.110 align:middle line:84%
+or sorry, the theorem very
+far away from that definition.
+
+00:39:41.110 --> 00:39:42.180 align:middle line:90%
+We'll make it work.
+
+00:39:42.180 --> 00:39:48.820 align:middle line:90%
+
+
+00:39:48.820 --> 00:39:51.430 align:middle line:90%
+Bye, eraser
+
+00:39:51.430 --> 00:39:57.216 align:middle line:84%
+OK, definition-- R is an
+equivalence relation--
+
+00:39:57.216 --> 00:40:02.080 align:middle line:90%
+
+
+00:40:02.080 --> 00:40:11.320 align:middle line:84%
+relation-- if and only if R
+is all three of those things--
+
+00:40:11.320 --> 00:40:13.900 align:middle line:90%
+symmetric--
+
+00:40:13.900 --> 00:40:20.316 align:middle line:84%
+sorry, reflexive,
+symmetric, and transitive.
+
+00:40:20.316 --> 00:40:25.570 align:middle line:90%
+
+
+00:40:25.570 --> 00:40:27.640 align:middle line:84%
+And we have a
+theorem that backs up
+
+00:40:27.640 --> 00:40:31.090 align:middle line:84%
+my claim that says this is
+all we need for sameness.
+
+00:40:31.090 --> 00:40:44.020 align:middle line:84%
+Theorem-- if R, which is a
+relation on A, is an equivalence
+
+00:40:44.020 --> 00:40:44.806 align:middle line:90%
+relation--
+
+00:40:44.806 --> 00:40:47.740 align:middle line:90%
+
+
+00:40:47.740 --> 00:40:52.730 align:middle line:84%
+if R is an equivalence
+relation, then R
+
+00:40:52.730 --> 00:41:03.120 align:middle line:84%
+partitions A into some
+collection of subsets, A1 union
+
+00:41:03.120 --> 00:41:06.750 align:middle line:90%
+A2 union A3 union, and so on.
+
+00:41:06.750 --> 00:41:12.860 align:middle line:84%
+And this is going to be
+a disjoint union such
+
+00:41:12.860 --> 00:41:26.660 align:middle line:84%
+that every a in A belongs to
+exactly one of our subsets.
+
+00:41:26.660 --> 00:41:28.970 align:middle line:84%
+That's what it means
+to be a partition,
+
+00:41:28.970 --> 00:41:31.340 align:middle line:84%
+that we're breaking A
+into smaller pieces, where
+
+00:41:31.340 --> 00:41:36.410 align:middle line:84%
+every element of A is in
+exactly one of our pieces
+
+00:41:36.410 --> 00:41:43.040 align:middle line:84%
+such that a relates to
+b if and only if a and b
+
+00:41:43.040 --> 00:41:45.793 align:middle line:90%
+are in the same subset.
+
+00:41:45.793 --> 00:41:49.550 align:middle line:90%
+
+
+00:41:49.550 --> 00:41:51.770 align:middle line:84%
+So any time we have an
+equivalence relation
+
+00:41:51.770 --> 00:41:55.700 align:middle line:84%
+that satisfies these three
+axioms, then that exactly
+
+00:41:55.700 --> 00:41:59.850 align:middle line:84%
+forms a partition which tells us
+precisely what our relation is.
+
+00:41:59.850 --> 00:42:02.340 align:middle line:84%
+Our relation just says
+you're related if and only
+
+00:42:02.340 --> 00:42:04.940 align:middle line:90%
+if you're in the same subset.
+
+00:42:04.940 --> 00:42:08.810 align:middle line:84%
+For example, if we're talking
+about congruence mod 10,
+
+00:42:08.810 --> 00:42:13.370 align:middle line:84%
+the parts of our partition
+are, well, we have the set
+
+00:42:13.370 --> 00:42:18.710 align:middle line:90%
+0, 10, minus 10, 20, minus 20.
+
+00:42:18.710 --> 00:42:21.060 align:middle line:90%
+This is one part of a partition.
+
+00:42:21.060 --> 00:42:24.260 align:middle line:84%
+Everything in the set is
+congruent to everything else
+
+00:42:24.260 --> 00:42:28.940 align:middle line:84%
+in the set and not congruent
+to anything outside the set.
+
+00:42:28.940 --> 00:42:32.510 align:middle line:84%
+Then, we also have 1
+and 11 and negative 9
+
+00:42:32.510 --> 00:42:35.390 align:middle line:90%
+and 21 and negative 19.
+
+00:42:35.390 --> 00:42:37.693 align:middle line:84%
+Here's another part
+of our partition.
+
+00:42:37.693 --> 00:42:39.110 align:middle line:84%
+All of these numbers
+are congruent
+
+00:42:39.110 --> 00:42:42.710 align:middle line:84%
+to each other and congruent
+to none of the other numbers.
+
+00:42:42.710 --> 00:42:48.060 align:middle line:84%
+And in total, there
+are 10 of these parts.
+
+00:42:48.060 --> 00:42:50.680 align:middle line:84%
+So anytime we have an
+equivalence relation,
+
+00:42:50.680 --> 00:42:55.170 align:middle line:84%
+we can partition our
+set into subsets.
+
+00:42:55.170 --> 00:42:57.825 align:middle line:84%
+That exactly tells us
+what our relation is.
+
+00:42:57.825 --> 00:42:58.325 align:middle line:90%
+Yes?
+
+00:42:58.325 --> 00:43:00.330 align:middle line:84%
+AUDIENCE: What's the
+union with the dot?
+
+00:43:00.330 --> 00:43:02.470 align:middle line:84%
+ZACHARY ABEL: Yeah, so the
+union with the dot here,
+
+00:43:02.470 --> 00:43:04.530 align:middle line:84%
+the dot is there to
+emphasize that we're
+
+00:43:04.530 --> 00:43:07.800 align:middle line:84%
+taking the union of
+sets that are disjoint,
+
+00:43:07.800 --> 00:43:11.500 align:middle line:84%
+that no element is in
+multiple of these sets.
+
+00:43:11.500 --> 00:43:13.180 align:middle line:84%
+I know I wrote it
+out here in words.
+
+00:43:13.180 --> 00:43:17.580 align:middle line:84%
+But I like to emphasize
+it in the formula as well.
+
+00:43:17.580 --> 00:43:19.140 align:middle line:84%
+When we're talking
+about connectivity
+
+00:43:19.140 --> 00:43:25.227 align:middle line:84%
+in an undirected graph, being
+connected to each other,
+
+00:43:25.227 --> 00:43:27.060 align:middle line:84%
+a pair of vertices are
+connected if and only
+
+00:43:27.060 --> 00:43:30.270 align:middle line:84%
+if they're in the same
+connected component.
+
+00:43:30.270 --> 00:43:32.520 align:middle line:84%
+And so the connected
+components form
+
+00:43:32.520 --> 00:43:36.330 align:middle line:90%
+the pieces of our partition.
+
+00:43:36.330 --> 00:43:38.620 align:middle line:84%
+So we've seen multiple
+examples of this.
+
+00:43:38.620 --> 00:43:41.110 align:middle line:84%
+This is just making this more
+general and more abstract.
+
+00:43:41.110 --> 00:43:47.680 align:middle line:84%
+Any time we satisfy all three
+of those axioms, we get this.
+
+00:43:47.680 --> 00:43:50.500 align:middle line:90%
+All right.
+
+00:43:50.500 --> 00:43:53.440 align:middle line:84%
+so the other kind of subset
+I want to talk about--
+
+00:43:53.440 --> 00:43:57.730 align:middle line:90%
+
+
+00:43:57.730 --> 00:44:01.070 align:middle line:84%
+actually, before that, we
+have a couple more examples.
+
+00:44:01.070 --> 00:44:07.480 align:middle line:84%
+We had this example of a
+less equal b, a divides b,
+
+00:44:07.480 --> 00:44:12.730 align:middle line:84%
+set A is a subset of set B.
+These are other common relations
+
+00:44:12.730 --> 00:44:13.970 align:middle line:90%
+that we work with.
+
+00:44:13.970 --> 00:44:17.990 align:middle line:84%
+And these are not
+equivalence relations.
+
+00:44:17.990 --> 00:44:19.540 align:middle line:90%
+We know that 2 divides 10.
+
+00:44:19.540 --> 00:44:21.410 align:middle line:90%
+But 10 doesn't divide 2.
+
+00:44:21.410 --> 00:44:23.620 align:middle line:84%
+So it's not symmetric
+like we wanted
+
+00:44:23.620 --> 00:44:25.480 align:middle line:90%
+with equivalence relations.
+
+00:44:25.480 --> 00:44:31.390 align:middle line:84%
+But in many ways, a divides b
+behaves a lot like a less equal
+
+00:44:31.390 --> 00:44:33.620 align:middle line:90%
+b or "a" subset of b.
+
+00:44:33.620 --> 00:44:36.760 align:middle line:90%
+There's some commonality there.
+
+00:44:36.760 --> 00:44:41.560 align:middle line:84%
+And that commonality we're
+going to define as what
+
+00:44:41.560 --> 00:44:43.020 align:middle line:90%
+are called weak partial orders.
+
+00:44:43.020 --> 00:45:03.460 align:middle line:90%
+
+
+00:45:03.460 --> 00:45:04.790 align:middle line:90%
+So weak partial order.
+
+00:45:04.790 --> 00:45:12.170 align:middle line:84%
+Our goal is going to be,
+behaves like a less or equal b,
+
+00:45:12.170 --> 00:45:17.260 align:middle line:84%
+A is a subset of B, a
+divides b, et cetera.
+
+00:45:17.260 --> 00:45:20.440 align:middle line:84%
+So let's see if we can capture
+what these all have in common
+
+00:45:20.440 --> 00:45:23.020 align:middle line:90%
+and prove something about them.
+
+00:45:23.020 --> 00:45:27.640 align:middle line:90%
+So again-- OK, so let's see.
+
+00:45:27.640 --> 00:45:32.150 align:middle line:90%
+R is a weak partial order--
+
+00:45:32.150 --> 00:45:37.183 align:middle line:84%
+weak partial order--
+if and only if R is--
+
+00:45:37.183 --> 00:45:40.540 align:middle line:90%
+
+
+00:45:40.540 --> 00:45:42.890 align:middle line:90%
+are these all reflexive?
+
+00:45:42.890 --> 00:45:45.450 align:middle line:84%
+Is a number always less
+or equal to itself?
+
+00:45:45.450 --> 00:45:47.000 align:middle line:90%
+Does it divide itself?
+
+00:45:47.000 --> 00:45:48.630 align:middle line:90%
+Is a set a subset of itself?
+
+00:45:48.630 --> 00:45:49.190 align:middle line:90%
+Yes.
+
+00:45:49.190 --> 00:45:53.150 align:middle line:90%
+So these are all reflexive.
+
+00:45:53.150 --> 00:45:56.060 align:middle line:84%
+So let's add that to
+our desired definition
+
+00:45:56.060 --> 00:45:57.540 align:middle line:90%
+for weak partial order.
+
+00:45:57.540 --> 00:45:59.370 align:middle line:84%
+We already said
+it's not symmetric.
+
+00:45:59.370 --> 00:46:02.030 align:middle line:84%
+So we're probably going to
+have to replace that somehow.
+
+00:46:02.030 --> 00:46:04.340 align:middle line:90%
+Are these transitive?
+
+00:46:04.340 --> 00:46:08.240 align:middle line:84%
+If a less equal b and b less
+equal c, is a less equal c?
+
+00:46:08.240 --> 00:46:10.110 align:middle line:90%
+Yeah, same for subset.
+
+00:46:10.110 --> 00:46:11.250 align:middle line:90%
+Same for divides.
+
+00:46:11.250 --> 00:46:12.220 align:middle line:90%
+So let's put that.
+
+00:46:12.220 --> 00:46:16.490 align:middle line:90%
+
+
+00:46:16.490 --> 00:46:19.700 align:middle line:84%
+So this is looking very
+similar to the definition
+
+00:46:19.700 --> 00:46:21.120 align:middle line:90%
+of equivalence relation.
+
+00:46:21.120 --> 00:46:22.370 align:middle line:90%
+We're going to make one tweak.
+
+00:46:22.370 --> 00:46:24.740 align:middle line:84%
+Instead of requiring
+it to be symmetric,
+
+00:46:24.740 --> 00:46:31.280 align:middle line:84%
+we're going to require it
+to be antisymmetric, which
+
+00:46:31.280 --> 00:46:33.090 align:middle line:90%
+does not mean not symmetric.
+
+00:46:33.090 --> 00:46:34.410 align:middle line:90%
+It's a different concept.
+
+00:46:34.410 --> 00:46:37.370 align:middle line:90%
+Let's define that.
+
+00:46:37.370 --> 00:46:49.550 align:middle line:84%
+So R is antisymmetric
+means for all a
+
+00:46:49.550 --> 00:47:03.590 align:middle line:84%
+and b, if a relates to b and b
+relates to a, then a equals b.
+
+00:47:03.590 --> 00:47:06.410 align:middle line:84%
+So the only way that you
+relate in both directions
+
+00:47:06.410 --> 00:47:10.040 align:middle line:84%
+is if you're comparing
+yourself to yourself.
+
+00:47:10.040 --> 00:47:12.540 align:middle line:84%
+That is certainly
+true for less equal.
+
+00:47:12.540 --> 00:47:15.510 align:middle line:84%
+If we know that a is less equal
+b and a is greater or equal b,
+
+00:47:15.510 --> 00:47:17.390 align:middle line:90%
+then a equals b.
+
+00:47:17.390 --> 00:47:19.530 align:middle line:84%
+That's true for a
+subset, as well.
+
+00:47:19.530 --> 00:47:22.590 align:middle line:84%
+If we have two sets and each of
+them is a subset of the other,
+
+00:47:22.590 --> 00:47:25.310 align:middle line:84%
+then they're exactly
+the same set.
+
+00:47:25.310 --> 00:47:27.300 align:middle line:84%
+And so this is going
+to be our axiom.
+
+00:47:27.300 --> 00:47:32.660 align:middle line:84%
+If r is reflexive, antisymmetric
+like that, and transitive,
+
+00:47:32.660 --> 00:47:35.040 align:middle line:84%
+we're going to define that
+to be a weak partial order.
+
+00:47:35.040 --> 00:47:38.300 align:middle line:84%
+And that's going to be
+our notion of behaving
+
+00:47:38.300 --> 00:47:41.320 align:middle line:90%
+like these familiar examples.
+
+00:47:41.320 --> 00:47:43.842 align:middle line:84%
+And so why is a weak
+partial order useful?
+
+00:47:43.842 --> 00:47:45.050 align:middle line:90%
+What can we prove about them?
+
+00:47:45.050 --> 00:47:47.320 align:middle line:90%
+What can we do with them?
+
+00:47:47.320 --> 00:47:51.250 align:middle line:84%
+Well, just like
+equivalence relations had
+
+00:47:51.250 --> 00:47:56.470 align:middle line:84%
+a different characterization in
+terms of partitions of a set,
+
+00:47:56.470 --> 00:48:00.140 align:middle line:84%
+we can prove that equivalence
+relations-- sorry,
+
+00:48:00.140 --> 00:48:05.240 align:middle line:84%
+prove that weak partial
+orders are related to DAGs.
+
+00:48:05.240 --> 00:48:14.200 align:middle line:90%
+Claim-- yes.
+
+00:48:14.200 --> 00:48:30.670 align:middle line:84%
+If G is a digraph, then
+the walk relation G star
+
+00:48:30.670 --> 00:48:37.910 align:middle line:84%
+is a weak partial order
+if and only if G is a DAG.
+
+00:48:37.910 --> 00:48:44.310 align:middle line:90%
+
+
+00:48:44.310 --> 00:48:45.990 align:middle line:84%
+So the point of
+weak partial order
+
+00:48:45.990 --> 00:48:49.830 align:middle line:84%
+is that we can put
+things in somewhat
+
+00:48:49.830 --> 00:48:52.830 align:middle line:90%
+increasing order of size.
+
+00:48:52.830 --> 00:48:56.220 align:middle line:84%
+If a is less than b-- less equal
+b, less equal c, less equal d,
+
+00:48:56.220 --> 00:49:00.450 align:middle line:84%
+less equal e, what we want to
+avoid is coming back around
+
+00:49:00.450 --> 00:49:06.810 align:middle line:84%
+and e is less equal a
+because, as it turns out,
+
+00:49:06.810 --> 00:49:13.380 align:middle line:84%
+that's going to break
+some of these axioms.
+
+00:49:13.380 --> 00:49:18.960 align:middle line:84%
+And so all we're saying is that
+satisfying these three axioms
+
+00:49:18.960 --> 00:49:24.360 align:middle line:84%
+is equivalent to being the
+walk relation on a DAG.
+
+00:49:24.360 --> 00:49:28.560 align:middle line:84%
+And DAGs were defined by
+not having directed cycles.
+
+00:49:28.560 --> 00:49:32.253 align:middle line:84%
+All right, we're not going
+to prove this, but it's true.
+
+00:49:32.253 --> 00:49:34.295 align:middle line:84%
+You can come ask me about
+it later if you'd like.
+
+00:49:34.295 --> 00:49:36.820 align:middle line:90%
+
+
+00:49:36.820 --> 00:49:39.890 align:middle line:90%
+Last definition for now--
+
+00:49:39.890 --> 00:49:41.175 align:middle line:90%
+once again, I apologize.
+
+00:49:41.175 --> 00:49:42.675 align:middle line:84%
+There are lots of
+definitions today.
+
+00:49:42.675 --> 00:49:47.860 align:middle line:90%
+
+
+00:49:47.860 --> 00:49:51.220 align:middle line:84%
+But I want to bring our
+attention to this word
+
+00:49:51.220 --> 00:49:51.980 align:middle line:90%
+"partial."
+
+00:49:51.980 --> 00:49:56.650 align:middle line:84%
+A weak partial order, just like
+we had partial function that
+
+00:49:56.650 --> 00:50:00.160 align:middle line:84%
+might be missing values,
+a weak partial order
+
+00:50:00.160 --> 00:50:02.710 align:middle line:90%
+might be missing comparisons.
+
+00:50:02.710 --> 00:50:10.135 align:middle line:84%
+For example, the set
+2, 1 and the set 2,
+
+00:50:10.135 --> 00:50:16.600 align:middle line:90%
+7, is one a subset of the other?
+
+00:50:16.600 --> 00:50:18.945 align:middle line:84%
+No, in neither
+direction is that true.
+
+00:50:18.945 --> 00:50:23.650 align:middle line:90%
+
+
+00:50:23.650 --> 00:50:26.680 align:middle line:84%
+So here are two
+sets, and neither
+
+00:50:26.680 --> 00:50:31.840 align:middle line:84%
+is related to the other one
+under this subset relation.
+
+00:50:31.840 --> 00:50:35.780 align:middle line:84%
+So this is a pair that
+cannot be compared.
+
+00:50:35.780 --> 00:50:41.060 align:middle line:84%
+So if R is a weak
+partial order, we'll
+
+00:50:41.060 --> 00:50:50.030 align:middle line:84%
+say that a and b are
+comparable if and only
+
+00:50:50.030 --> 00:50:53.910 align:middle line:84%
+if the relation goes in at
+least one of the two directions,
+
+00:50:53.910 --> 00:50:57.470 align:middle line:84%
+a relates to b or
+b relates to a.
+
+00:50:57.470 --> 00:50:59.246 align:middle line:90%
+Otherwise, they're incomparable.
+
+00:50:59.246 --> 00:51:08.000 align:middle line:90%
+
+
+00:51:08.000 --> 00:51:10.610 align:middle line:84%
+So these two sets,
+2, 1 and 2, 7,
+
+00:51:10.610 --> 00:51:15.410 align:middle line:84%
+are incomparable under
+this subset equal relation.
+
+00:51:15.410 --> 00:51:16.550 align:middle line:90%
+All right?
+
+00:51:16.550 --> 00:51:31.040 align:middle line:84%
+And now, finally, a
+weak partial order
+
+00:51:31.040 --> 00:51:38.810 align:middle line:84%
+is called a total
+order if and only
+
+00:51:38.810 --> 00:51:45.046 align:middle line:90%
+if every pair is comparable.
+
+00:51:45.046 --> 00:51:47.870 align:middle line:90%
+
+
+00:51:47.870 --> 00:51:50.340 align:middle line:84%
+So whenever you
+have two elements,
+
+00:51:50.340 --> 00:51:52.170 align:middle line:84%
+you can always
+put them in order.
+
+00:51:52.170 --> 00:51:54.560 align:middle line:84%
+One of them is less or
+equal to the other one.
+
+00:51:54.560 --> 00:51:58.010 align:middle line:84%
+So that's certainly true
+for the less equal relation.
+
+00:51:58.010 --> 00:52:01.290 align:middle line:84%
+It's not true for
+the subset relation.
+
+00:52:01.290 --> 00:52:03.470 align:middle line:84%
+And it's not true for
+the divides relation.
+
+00:52:03.470 --> 00:52:07.430 align:middle line:84%
+2 and 3 are incomparable
+under the divides relation.
+
+00:52:07.430 --> 00:52:12.320 align:middle line:84%
+But if every pair
+can be compared,
+
+00:52:12.320 --> 00:52:15.200 align:middle line:90%
+then it's called a total order.
+
+00:52:15.200 --> 00:52:17.390 align:middle line:84%
+And if you have a total
+order, then really all you
+
+00:52:17.390 --> 00:52:21.270 align:middle line:84%
+have is just an entire line
+of them organized by size.
+
+00:52:21.270 --> 00:52:25.410 align:middle line:84%
+A total order is the most
+structure you can have.
+
+00:52:25.410 --> 00:52:28.766 align:middle line:84%
+It's just everything is ordered,
+and there's no ambiguity.
+
+00:52:28.766 --> 00:52:31.410 align:middle line:90%
+
+
+00:52:31.410 --> 00:52:34.980 align:middle line:84%
+All right, so that
+is everything I
+
+00:52:34.980 --> 00:52:38.790 align:middle line:84%
+wanted to say on the relations
+side of things today.
+
+00:52:38.790 --> 00:52:42.210 align:middle line:84%
+Now let's move on to the
+other part of today's lecture,
+
+00:52:42.210 --> 00:52:45.360 align:middle line:90%
+which is counting.
+
+00:52:45.360 --> 00:52:48.670 align:middle line:84%
+And I don't mean counting
+like 1, 2, 3, 4, 5.
+
+00:52:48.670 --> 00:52:51.240 align:middle line:84%
+I assume all of us are
+capable of counting
+
+00:52:51.240 --> 00:52:55.050 align:middle line:90%
+at least to 300 or so.
+
+00:52:55.050 --> 00:53:02.700 align:middle line:84%
+No, but by "counting," I
+mean counting the size a set.
+
+00:53:02.700 --> 00:53:05.700 align:middle line:84%
+If you want to
+know-- like, here's
+
+00:53:05.700 --> 00:53:08.590 align:middle line:84%
+a comically large
+deck of playing cards.
+
+00:53:08.590 --> 00:53:10.750 align:middle line:84%
+How many different ways
+are there to shuffle them?
+
+00:53:10.750 --> 00:53:12.480 align:middle line:84%
+How many different
+orderings are there
+
+00:53:12.480 --> 00:53:14.770 align:middle line:90%
+for the 52 cards in the deck?
+
+00:53:14.770 --> 00:53:18.060 align:middle line:90%
+Here's one of those orderings.
+
+00:53:18.060 --> 00:53:19.743 align:middle line:84%
+Here's a different
+one, et cetera.
+
+00:53:19.743 --> 00:53:21.910 align:middle line:84%
+How many orderings are there
+for this deck of cards?
+
+00:53:21.910 --> 00:53:23.095 align:middle line:90%
+Does anyone know?
+
+00:53:23.095 --> 00:53:23.595 align:middle line:90%
+Yes?
+
+00:53:23.595 --> 00:53:25.086 align:middle line:90%
+AUDIENCE: 52 factorial.
+
+00:53:25.086 --> 00:53:28.330 align:middle line:84%
+ZACHARY ABEL: 52
+factorial, absolutely.
+
+00:53:28.330 --> 00:53:38.890 align:middle line:84%
+So the number of orders for a
+deck of cards is 52 factorial.
+
+00:53:38.890 --> 00:53:40.890 align:middle line:84%
+And we'll see why
+later in this course,
+
+00:53:40.890 --> 00:53:43.410 align:middle line:84%
+or later in this
+lecture in fact.
+
+00:53:43.410 --> 00:53:52.620 align:middle line:84%
+How many trees are there
+whose vertices are exactly
+
+00:53:52.620 --> 00:53:58.830 align:middle line:90%
+the set 1, 2, 3, up to n?
+
+00:53:58.830 --> 00:54:01.980 align:middle line:90%
+Does anyone know?
+
+00:54:01.980 --> 00:54:03.370 align:middle line:90%
+I'd honestly be surprised.
+
+00:54:03.370 --> 00:54:05.520 align:middle line:90%
+It's not an easy problem.
+
+00:54:05.520 --> 00:54:07.620 align:middle line:84%
+But this is the kind
+of problem that we're
+
+00:54:07.620 --> 00:54:09.910 align:middle line:84%
+going to try to
+be able to answer
+
+00:54:09.910 --> 00:54:12.550 align:middle line:84%
+and we're going to look at
+techniques for trying to answer.
+
+00:54:12.550 --> 00:54:15.660 align:middle line:84%
+In this case, the number of
+trees on that set of vertices
+
+00:54:15.660 --> 00:54:19.480 align:middle line:84%
+is n to the n minus
+2, which I love.
+
+00:54:19.480 --> 00:54:20.723 align:middle line:90%
+I find that kind of magical.
+
+00:54:20.723 --> 00:54:22.390 align:middle line:84%
+There are lots of
+cool ways to prove it.
+
+00:54:22.390 --> 00:54:23.590 align:middle line:84%
+We're not going to
+prove it together,
+
+00:54:23.590 --> 00:54:25.390 align:middle line:84%
+but come ask me if
+you're interested.
+
+00:54:25.390 --> 00:54:26.997 align:middle line:84%
+But these are the
+kinds of questions
+
+00:54:26.997 --> 00:54:28.080 align:middle line:90%
+we're going to try to ask.
+
+00:54:28.080 --> 00:54:29.490 align:middle line:90%
+Here's a set of things.
+
+00:54:29.490 --> 00:54:32.150 align:middle line:90%
+How many things are there?
+
+00:54:32.150 --> 00:54:36.540 align:middle line:84%
+And to get us a little more
+in the mood for counting,
+
+00:54:36.540 --> 00:54:40.700 align:middle line:84%
+I have a short story I want to
+tell you, the parable of the two
+
+00:54:40.700 --> 00:54:41.790 align:middle line:90%
+shepherds.
+
+00:54:41.790 --> 00:54:42.870 align:middle line:90%
+No one calls it that.
+
+00:54:42.870 --> 00:54:45.050 align:middle line:90%
+That's just me.
+
+00:54:45.050 --> 00:54:50.360 align:middle line:84%
+So this first shepherd-- this
+first shepherd, every morning,
+
+00:54:50.360 --> 00:54:52.980 align:middle line:84%
+has to let the sheep out
+to graze every evening,
+
+00:54:52.980 --> 00:54:55.650 align:middle line:84%
+bring the sheep back in to
+protect them from wolves,
+
+00:54:55.650 --> 00:54:56.150 align:middle line:90%
+I guess.
+
+00:54:56.150 --> 00:54:59.060 align:middle line:90%
+I don't know what shepherds do.
+
+00:54:59.060 --> 00:55:01.430 align:middle line:84%
+But unfortunately,
+the shepherd does not
+
+00:55:01.430 --> 00:55:05.360 align:middle line:84%
+know how to count
+grade-school style, 1, 2, 3.
+
+00:55:05.360 --> 00:55:09.380 align:middle line:84%
+The shepherd doesn't have
+words for numbers above 3.
+
+00:55:09.380 --> 00:55:13.550 align:middle line:84%
+So how do they make sure that
+all of their 50-something sheep
+
+00:55:13.550 --> 00:55:16.580 align:middle line:84%
+go out in the morning and come
+back in the evening if they
+
+00:55:16.580 --> 00:55:18.470 align:middle line:90%
+can't count the sheep?
+
+00:55:18.470 --> 00:55:21.800 align:middle line:84%
+And a classic answer to
+this, which may or may not
+
+00:55:21.800 --> 00:55:26.372 align:middle line:84%
+have historical merit,
+but all mathematicians
+
+00:55:26.372 --> 00:55:28.330 align:middle line:84%
+who have studied counting
+have heard this story
+
+00:55:28.330 --> 00:55:31.060 align:middle line:84%
+at least once, the
+classic example is
+
+00:55:31.060 --> 00:55:33.260 align:middle line:84%
+every time you let a
+sheep out of the pen,
+
+00:55:33.260 --> 00:55:36.130 align:middle line:90%
+you put a pebble in your pocket.
+
+00:55:36.130 --> 00:55:37.580 align:middle line:90%
+Another sheep, another pebble.
+
+00:55:37.580 --> 00:55:38.830 align:middle line:90%
+Another sheep, another pebble.
+
+00:55:38.830 --> 00:55:41.247 align:middle line:84%
+At the end of the day, when
+you're bringing the sheep back
+
+00:55:41.247 --> 00:55:43.030 align:middle line:84%
+in, every time a
+sheep comes in, you
+
+00:55:43.030 --> 00:55:45.370 align:middle line:84%
+take a pebble out
+of your pocket.
+
+00:55:45.370 --> 00:55:48.290 align:middle line:84%
+And when all the
+sheep have come in,
+
+00:55:48.290 --> 00:55:50.890 align:middle line:84%
+that's the same moment that
+all the pebbles are out
+
+00:55:50.890 --> 00:55:51.920 align:middle line:90%
+of your pocket.
+
+00:55:51.920 --> 00:55:53.320 align:middle line:84%
+So when your pocket
+is empty, you
+
+00:55:53.320 --> 00:55:54.760 align:middle line:90%
+know there are no more sheep.
+
+00:55:54.760 --> 00:55:58.910 align:middle line:84%
+And vice versa, if there are
+pebbles left in your pocket,
+
+00:55:58.910 --> 00:56:02.050 align:middle line:84%
+there are still sheep out there,
+and you have to go find them.
+
+00:56:02.050 --> 00:56:04.640 align:middle line:84%
+If your pocket is empty and
+there are more sheep coming in,
+
+00:56:04.640 --> 00:56:06.598 align:middle line:84%
+well, something weird
+happened and you probably
+
+00:56:06.598 --> 00:56:08.020 align:middle line:90%
+stole from your neighbor.
+
+00:56:08.020 --> 00:56:11.590 align:middle line:84%
+But the point is, for these
+next couple of lectures
+
+00:56:11.590 --> 00:56:15.320 align:middle line:84%
+in our counting unit, we
+count with correspondences.
+
+00:56:15.320 --> 00:56:17.680 align:middle line:84%
+We count with
+bijections, which we
+
+00:56:17.680 --> 00:56:21.100 align:middle line:90%
+defined on one of these boards.
+
+00:56:21.100 --> 00:56:23.180 align:middle line:84%
+If we can set up a
+one-to-one correspondence,
+
+00:56:23.180 --> 00:56:25.820 align:middle line:84%
+everything in this set
+corresponds to everything
+
+00:56:25.820 --> 00:56:28.080 align:middle line:84%
+in this set and
+everyone has a partner,
+
+00:56:28.080 --> 00:56:31.160 align:middle line:84%
+no one has two partners, no
+one is missing a partner,
+
+00:56:31.160 --> 00:56:34.820 align:middle line:84%
+then there are the same number
+of things on both sides.
+
+00:56:34.820 --> 00:56:36.620 align:middle line:84%
+What that shepherd
+is doing is basically
+
+00:56:36.620 --> 00:56:38.620 align:middle line:84%
+making sure that there's
+always a correspondence
+
+00:56:38.620 --> 00:56:41.570 align:middle line:84%
+between sheep that are out there
+and pebbles in their pocket.
+
+00:56:41.570 --> 00:56:45.120 align:middle line:84%
+They don't have to keep track
+of what that correspondence is.
+
+00:56:45.120 --> 00:56:46.790 align:middle line:90%
+And in fact, it might change.
+
+00:56:46.790 --> 00:56:52.010 align:middle line:84%
+If you initially put a pebble in
+your pocket for sheep Deborah.
+
+00:56:52.010 --> 00:56:54.470 align:middle line:84%
+you're not keeping track
+of which pebble corresponds
+
+00:56:54.470 --> 00:56:55.190 align:middle line:90%
+to sheep Deborah.
+
+00:56:55.190 --> 00:56:56.607 align:middle line:84%
+So when Deborah
+comes back in, you
+
+00:56:56.607 --> 00:56:59.490 align:middle line:84%
+might remove the pebble
+that was assigned to Sandy.
+
+00:56:59.490 --> 00:57:03.950 align:middle line:84%
+I don't know why I'm
+picking these names.
+
+00:57:03.950 --> 00:57:07.940 align:middle line:84%
+But you don't care what that
+correspondence is, as long
+
+00:57:07.940 --> 00:57:10.580 align:middle line:84%
+as there is a correspondence
+between pebbles in your pocket
+
+00:57:10.580 --> 00:57:13.130 align:middle line:84%
+and sheep that
+are still grazing.
+
+00:57:13.130 --> 00:57:17.270 align:middle line:84%
+So the moral here is we
+count with correspondences.
+
+00:57:17.270 --> 00:57:20.118 align:middle line:84%
+The second shepherd--
+this second shepherd
+
+00:57:20.118 --> 00:57:20.910 align:middle line:90%
+knows how to count.
+
+00:57:20.910 --> 00:57:22.370 align:middle line:84%
+That's totally
+fine, not a problem.
+
+00:57:22.370 --> 00:57:23.890 align:middle line:90%
+We have language.
+
+00:57:23.890 --> 00:57:27.100 align:middle line:84%
+But the shepherd has an
+overeager apprentice.
+
+00:57:27.100 --> 00:57:29.240 align:middle line:84%
+This apprentice runs in
+one evening and says,
+
+00:57:29.240 --> 00:57:31.960 align:middle line:84%
+master, I brought all
+40 sheep into the pen.
+
+00:57:31.960 --> 00:57:34.010 align:middle line:90%
+And the shepherd looks confused.
+
+00:57:34.010 --> 00:57:34.820 align:middle line:90%
+What do you mean?
+
+00:57:34.820 --> 00:57:37.600 align:middle line:90%
+We only have 38 sheep.
+
+00:57:37.600 --> 00:57:40.282 align:middle line:84%
+Don't worry, master,
+I rounded them up.
+
+00:57:40.282 --> 00:57:41.728 align:middle line:90%
+[SOFT LAUGHTER]
+
+00:57:41.728 --> 00:57:44.140 align:middle line:90%
+
+
+00:57:44.140 --> 00:57:44.840 align:middle line:90%
+Thank you.
+
+00:57:44.840 --> 00:57:45.350 align:middle line:90%
+No moral.
+
+00:57:45.350 --> 00:57:47.694 align:middle line:90%
+I just like bad puns.
+
+00:57:47.694 --> 00:57:49.622 align:middle line:90%
+[SOFT LAUGHTER]
+
+00:57:49.622 --> 00:57:51.070 align:middle line:90%
+
+
+00:57:51.070 --> 00:57:52.430 align:middle line:90%
+I heard one groan.
+
+00:57:52.430 --> 00:57:53.420 align:middle line:90%
+Thank you very much.
+
+00:57:53.420 --> 00:57:56.320 align:middle line:90%
+That warms my heart.
+
+00:57:56.320 --> 00:57:59.840 align:middle line:84%
+And now that we're in a great
+mood, let's talk about counting.
+
+00:57:59.840 --> 00:58:01.712 align:middle line:90%
+[LAUGHTER]
+
+00:58:01.712 --> 00:58:02.650 align:middle line:90%
+
+
+00:58:02.650 --> 00:58:07.720 align:middle line:84%
+All right, so let's actually
+talk about counting.
+
+00:58:07.720 --> 00:58:09.340 align:middle line:90%
+Here.
+
+00:58:09.340 --> 00:58:10.820 align:middle line:90%
+First of all, why do we care?
+
+00:58:10.820 --> 00:58:16.460 align:middle line:84%
+Why are these tools that we need
+in a computer science class?
+
+00:58:16.460 --> 00:58:18.620 align:middle line:84%
+Why do we care about
+counting things?
+
+00:58:18.620 --> 00:58:22.660 align:middle line:84%
+Well, often when we're analyzing
+the runtime of an algorithm,
+
+00:58:22.660 --> 00:58:24.988 align:middle line:84%
+we're doing some steps
+some number of times.
+
+00:58:24.988 --> 00:58:27.030 align:middle line:84%
+And we need to be able to
+count how many times we
+
+00:58:27.030 --> 00:58:30.368 align:middle line:84%
+do that step in order to bound
+the runtime of the algorithm
+
+00:58:30.368 --> 00:58:31.535 align:middle line:90%
+and prove that it runs fast.
+
+00:58:31.535 --> 00:58:35.770 align:middle line:90%
+
+
+00:58:35.770 --> 00:58:38.730 align:middle line:84%
+It's also useful for
+things like probability.
+
+00:58:38.730 --> 00:58:42.490 align:middle line:84%
+Probability is built very
+heavily on top of counting.
+
+00:58:42.490 --> 00:58:43.950 align:middle line:84%
+And all of our
+counting techniques
+
+00:58:43.950 --> 00:58:47.110 align:middle line:84%
+will transfer over to
+probability techniques, as well.
+
+00:58:47.110 --> 00:58:50.460 align:middle line:84%
+And that'll be useful after quiz
+2, which is coming up next week
+
+00:58:50.460 --> 00:58:51.110 align:middle line:90%
+by the way.
+
+00:58:51.110 --> 00:58:54.690 align:middle line:90%
+
+
+00:58:54.690 --> 00:58:58.230 align:middle line:84%
+But let's learn--
+where my chalk is.
+
+00:58:58.230 --> 00:59:00.420 align:middle line:90%
+Found it.
+
+00:59:00.420 --> 00:59:03.270 align:middle line:84%
+Let's learn some
+techniques for counting.
+
+00:59:03.270 --> 00:59:10.350 align:middle line:84%
+The first one I want to mention
+is called the product rule,
+
+00:59:10.350 --> 00:59:21.970 align:middle line:84%
+which says that for finite sets
+A and B, the size of A cross B
+
+00:59:21.970 --> 00:59:25.480 align:middle line:84%
+equals the size of A
+times the size of B.
+
+00:59:25.480 --> 00:59:29.500 align:middle line:84%
+Remember, A cross B is the set
+of all possible pairs where
+
+00:59:29.500 --> 00:59:33.130 align:middle line:84%
+the first element is in A and
+the second element is in B.
+
+00:59:33.130 --> 00:59:35.770 align:middle line:84%
+So the number of ways to
+choose an element from A
+
+00:59:35.770 --> 00:59:37.780 align:middle line:84%
+and then choose
+an element from B
+
+00:59:37.780 --> 00:59:41.860 align:middle line:84%
+is the size of A
+times the size of B.
+
+00:59:41.860 --> 00:59:43.950 align:middle line:90%
+And this generalizes, as well.
+
+00:59:43.950 --> 00:59:51.700 align:middle line:90%
+
+
+00:59:51.700 --> 00:59:58.000 align:middle line:84%
+If we have n different
+sets and we're
+
+00:59:58.000 --> 01:00:02.560 align:middle line:84%
+looking at ordered sequences
+where the first element comes
+
+01:00:02.560 --> 01:00:04.090 align:middle line:84%
+from A1, the second
+element comes
+
+01:00:04.090 --> 01:00:06.230 align:middle line:84%
+from A2, the third
+element from A3,
+
+01:00:06.230 --> 01:00:09.880 align:middle line:84%
+and all the way down, the
+number of such sequences
+
+01:00:09.880 --> 01:00:13.990 align:middle line:84%
+is just the size of A1
+times the size of A2,
+
+01:00:13.990 --> 01:00:18.250 align:middle line:90%
+all the way to the size of An.
+
+01:00:18.250 --> 01:00:20.200 align:middle line:84%
+So if we have to
+choose an element of A1
+
+01:00:20.200 --> 01:00:23.080 align:middle line:84%
+and then choose an element of A2
+and then choose an element of A3
+
+01:00:23.080 --> 01:00:25.720 align:middle line:84%
+and all the way down,
+the number of ways
+
+01:00:25.720 --> 01:00:28.210 align:middle line:84%
+we can make that
+choice in its entirety
+
+01:00:28.210 --> 01:00:32.170 align:middle line:84%
+is size of A1 times
+size of A2 times size
+
+01:00:32.170 --> 01:00:33.730 align:middle line:90%
+of A3 all the way down.
+
+01:00:33.730 --> 01:00:49.570 align:middle line:84%
+For example, the number of
+length n binary sequences--
+
+01:00:49.570 --> 01:00:51.700 align:middle line:84%
+so a binary sequence
+is a sequence
+
+01:00:51.700 --> 01:00:54.520 align:middle line:84%
+of zeros and ones,
+just zeros and ones.
+
+01:00:54.520 --> 01:00:56.680 align:middle line:84%
+And we're asking, how
+many length n binary
+
+01:00:56.680 --> 01:00:58.510 align:middle line:90%
+sequences are there?
+
+01:00:58.510 --> 01:01:01.210 align:middle line:84%
+Well, the set of length
+n binary sequences
+
+01:01:01.210 --> 01:01:09.970 align:middle line:84%
+is 0, 1 times 0, 1
+times 0, 1 n times.
+
+01:01:09.970 --> 01:01:12.980 align:middle line:84%
+This is precisely the
+set of binary sequences.
+
+01:01:12.980 --> 01:01:14.720 align:middle line:84%
+This is what we mean
+by binary sequence.
+
+01:01:14.720 --> 01:01:16.500 align:middle line:90%
+First element is a 0 or a 1.
+
+01:01:16.500 --> 01:01:19.620 align:middle line:84%
+Second element is a 0 or
+a 1, all the way down.
+
+01:01:19.620 --> 01:01:21.170 align:middle line:84%
+And the generalized
+product rule--
+
+01:01:21.170 --> 01:01:26.060 align:middle line:84%
+or sorry, the general
+version of the product rule
+
+01:01:26.060 --> 01:01:29.750 align:middle line:84%
+says that this set,
+the size of this set
+
+01:01:29.750 --> 01:01:34.925 align:middle line:84%
+is just the size of 0,
+1 times the size of 0,
+
+01:01:34.925 --> 01:01:45.890 align:middle line:84%
+1 all the way down, which is 2
+times 2 times 2 times 2 n times.
+
+01:01:45.890 --> 01:01:49.610 align:middle line:84%
+So there are 2 to the n
+binary sequences of length n.
+
+01:01:49.610 --> 01:01:51.680 align:middle line:90%
+Does that make sense?
+
+01:01:51.680 --> 01:01:53.570 align:middle line:90%
+Wonderful.
+
+01:01:53.570 --> 01:01:56.725 align:middle line:84%
+Next, let's look at
+the bijection rule.
+
+01:01:56.725 --> 01:02:11.390 align:middle line:90%
+
+
+01:02:11.390 --> 01:02:19.890 align:middle line:84%
+If there exists a
+bijection from A to B,
+
+01:02:19.890 --> 01:02:22.860 align:middle line:90%
+then A and B have the same size.
+
+01:02:22.860 --> 01:02:24.655 align:middle line:84%
+This is what that first
+shepherd was doing.
+
+01:02:24.655 --> 01:02:26.530 align:middle line:84%
+If there exists a
+bijection between two sets,
+
+01:02:26.530 --> 01:02:28.447 align:middle line:84%
+the sets have the same
+size because we're just
+
+01:02:28.447 --> 01:02:30.510 align:middle line:90%
+pairing them up one to one.
+
+01:02:30.510 --> 01:02:31.540 align:middle line:90%
+No one is repeated.
+
+01:02:31.540 --> 01:02:33.960 align:middle line:90%
+No one is excluded.
+
+01:02:33.960 --> 01:02:45.960 align:middle line:84%
+And as an example of this, how
+many subsets of 1 through n
+
+01:02:45.960 --> 01:02:46.655 align:middle line:90%
+are there?
+
+01:02:46.655 --> 01:02:51.390 align:middle line:90%
+
+
+01:02:51.390 --> 01:02:53.580 align:middle line:84%
+So if we're looking at
+all of the subsets of 1
+
+01:02:53.580 --> 01:02:55.620 align:middle line:90%
+through n of any length--
+
+01:02:55.620 --> 01:02:57.970 align:middle line:84%
+could be length 0, where we
+take none of the elements;
+
+01:02:57.970 --> 01:02:59.723 align:middle line:84%
+length n, where we
+take all the elements;
+
+01:02:59.723 --> 01:03:01.140 align:middle line:84%
+or any length in
+between, where we
+
+01:03:01.140 --> 01:03:03.190 align:middle line:84%
+take some of the
+elements and not others--
+
+01:03:03.190 --> 01:03:05.520 align:middle line:90%
+how many subsets are there?
+
+01:03:05.520 --> 01:03:08.260 align:middle line:84%
+Well, let's use
+the bijection rule.
+
+01:03:08.260 --> 01:03:17.820 align:middle line:84%
+I claim set of
+subsets of 1 through n
+
+01:03:17.820 --> 01:03:27.450 align:middle line:90%
+is in bijection with Bn.
+
+01:03:27.450 --> 01:03:31.638 align:middle line:90%
+And I'm going to define this.
+
+01:03:31.638 --> 01:03:40.440 align:middle line:84%
+Bn is binary
+sequences of length n.
+
+01:03:40.440 --> 01:03:42.790 align:middle line:84%
+So the thing we counted
+in the last example,
+
+01:03:42.790 --> 01:03:44.850 align:middle line:84%
+I claim that the set of
+subsets of 1 through n
+
+01:03:44.850 --> 01:03:50.310 align:middle line:84%
+is in bijection with the set of
+those length n binary sequences.
+
+01:03:50.310 --> 01:03:54.240 align:middle line:84%
+And to prove that, we can
+just define our function
+
+01:03:54.240 --> 01:03:57.000 align:middle line:84%
+and verify that
+it's a bijection.
+
+01:03:57.000 --> 01:04:07.410 align:middle line:84%
+So given a binary sequence b1,
+b2, bn, where each of these
+
+01:04:07.410 --> 01:04:13.560 align:middle line:84%
+is 0 or 1, I'm going
+to map that to a subset
+
+01:04:13.560 --> 01:04:23.760 align:middle line:84%
+of 1 through n, i in 1 through
+n, such that bi equals 1.
+
+01:04:23.760 --> 01:04:28.140 align:middle line:84%
+We send it to the subset of
+indices that have value 1.
+
+01:04:28.140 --> 01:04:30.180 align:middle line:84%
+So you can think
+of this as a set--
+
+01:04:30.180 --> 01:04:32.530 align:middle line:84%
+as a sequence of
+binary decisions.
+
+01:04:32.530 --> 01:04:35.410 align:middle line:84%
+Do we keep element
+1 or throw it away?
+
+01:04:35.410 --> 01:04:37.620 align:middle line:84%
+Do we keep element
+2 or throw it away?
+
+01:04:37.620 --> 01:04:38.550 align:middle line:90%
+All the way down.
+
+01:04:38.550 --> 01:04:45.720 align:middle line:84%
+For example, 0, 1;
+0; 0, 1; 1, if n
+
+01:04:45.720 --> 01:04:52.916 align:middle line:84%
+is 6, then this
+maps to the subset
+
+01:04:52.916 --> 01:05:00.120 align:middle line:84%
+2, 5, and 6 because those are
+the indices that have ones.
+
+01:05:00.120 --> 01:05:03.010 align:middle line:84%
+All right, and we're
+not going to do it now.
+
+01:05:03.010 --> 01:05:04.500 align:middle line:84%
+But you can verify
+that this gives
+
+01:05:04.500 --> 01:05:09.160 align:middle line:84%
+a bijection between the set
+Bn and the set of subsets of 1
+
+01:05:09.160 --> 01:05:09.660 align:middle line:90%
+through n.
+
+01:05:09.660 --> 01:05:13.180 align:middle line:90%
+
+
+01:05:13.180 --> 01:05:16.386 align:middle line:90%
+Claim-- this is a bijection.
+
+01:05:16.386 --> 01:05:19.120 align:middle line:90%
+
+
+01:05:19.120 --> 01:05:22.570 align:middle line:84%
+You'll see more examples in
+your homework of what details
+
+01:05:22.570 --> 01:05:25.240 align:middle line:84%
+we would need to check to verify
+more carefully that this really
+
+01:05:25.240 --> 01:05:28.240 align:middle line:90%
+is a bijection.
+
+01:05:28.240 --> 01:05:31.790 align:middle line:84%
+But intuitively, they're
+encoding the same information.
+
+01:05:31.790 --> 01:05:35.630 align:middle line:84%
+Each number from 1 through n
+is either included or excluded.
+
+01:05:35.630 --> 01:05:37.460 align:middle line:90%
+That's a binary decision.
+
+01:05:37.460 --> 01:05:40.640 align:middle line:90%
+The i-th bit is either 1 or 0.
+
+01:05:40.640 --> 01:05:42.080 align:middle line:90%
+That's a binary decision.
+
+01:05:42.080 --> 01:05:45.310 align:middle line:84%
+So we're just corresponding
+those two things.
+
+01:05:45.310 --> 01:05:46.335 align:middle line:90%
+All right, next.
+
+01:05:46.335 --> 01:05:48.940 align:middle line:90%
+
+
+01:05:48.940 --> 01:05:51.650 align:middle line:84%
+We have the product
+rule, the bijection rule.
+
+01:05:51.650 --> 01:05:53.025 align:middle line:90%
+Now we have the sum rule.
+
+01:05:53.025 --> 01:06:03.640 align:middle line:90%
+
+
+01:06:03.640 --> 01:06:11.780 align:middle line:84%
+Sum rule says that if
+A and B are disjoint,
+
+01:06:11.780 --> 01:06:15.620 align:middle line:84%
+so they have no
+elements in common,
+
+01:06:15.620 --> 01:06:19.820 align:middle line:84%
+then the size of A
+union B is the size of A
+
+01:06:19.820 --> 01:06:26.940 align:middle line:90%
+plus the size of B.
+
+01:06:26.940 --> 01:06:31.970 align:middle line:84%
+So if I have five
+cards in my right hand
+
+01:06:31.970 --> 01:06:34.760 align:middle line:84%
+and three cards in
+my left hand, and I
+
+01:06:34.760 --> 01:06:37.260 align:middle line:84%
+don't have any
+cards in both hands,
+
+01:06:37.260 --> 01:06:38.510 align:middle line:90%
+then I'm holding eight cards--
+
+01:06:38.510 --> 01:06:39.370 align:middle line:90%
+5 plus 3.
+
+01:06:39.370 --> 01:06:42.170 align:middle line:90%
+
+
+01:06:42.170 --> 01:06:46.550 align:middle line:84%
+And more generally,
+if I'm taking
+
+01:06:46.550 --> 01:06:52.310 align:middle line:84%
+the size of a disjoint
+union of n things,
+
+01:06:52.310 --> 01:06:55.910 align:middle line:84%
+if all of these Ai's are
+disjoint with each other,
+
+01:06:55.910 --> 01:07:01.880 align:middle line:84%
+then this is the size of A1 plus
+the size of A2 plus the size
+
+01:07:01.880 --> 01:07:03.980 align:middle line:90%
+of An.
+
+01:07:03.980 --> 01:07:05.695 align:middle line:90%
+And let's see that in action.
+
+01:07:05.695 --> 01:07:13.370 align:middle line:90%
+
+
+01:07:13.370 --> 01:07:19.790 align:middle line:84%
+OK, so all of us who have not
+been using password managers
+
+01:07:19.790 --> 01:07:22.490 align:middle line:84%
+all our lives have
+frequently been told,
+
+01:07:22.490 --> 01:07:26.480 align:middle line:84%
+choose another password that has
+these specific requirements that
+
+01:07:26.480 --> 01:07:27.360 align:middle line:90%
+has this length.
+
+01:07:27.360 --> 01:07:28.860 align:middle line:90%
+It must use a special character.
+
+01:07:28.860 --> 01:07:31.220 align:middle line:84%
+It has to do all this other
+stuff, which just makes it
+
+01:07:31.220 --> 01:07:33.950 align:middle line:90%
+harder for me to remember it.
+
+01:07:33.950 --> 01:07:37.530 align:middle line:84%
+Anyway, I'm going to
+play that role now.
+
+01:07:37.530 --> 01:07:55.130 align:middle line:84%
+How many passwords have length
+between 6 and 8 inclusive,
+
+01:07:55.130 --> 01:08:04.660 align:middle line:84%
+start with a capital
+letter, and the rest
+
+01:08:04.660 --> 01:08:14.850 align:middle line:84%
+are capital or lowercase
+letters and/or digits.
+
+01:08:14.850 --> 01:08:17.560 align:middle line:90%
+
+
+01:08:17.560 --> 01:08:19.700 align:middle line:84%
+The digits aren't
+capital or lowercase.
+
+01:08:19.700 --> 01:08:20.840 align:middle line:90%
+They're just digits.
+
+01:08:20.840 --> 01:08:23.510 align:middle line:84%
+So how many passwords have
+length between 6 and 8,
+
+01:08:23.510 --> 01:08:28.090 align:middle line:84%
+start with a capital letter,
+and then finish with whatever
+
+01:08:28.090 --> 01:08:31.630 align:middle line:90%
+letters or digits you want?
+
+01:08:31.630 --> 01:08:34.810 align:middle line:84%
+And with this, it's
+useful to break it up
+
+01:08:34.810 --> 01:08:38.710 align:middle line:84%
+into cases based on the
+length of your password.
+
+01:08:38.710 --> 01:08:41.770 align:middle line:90%
+I claim that the set W--
+
+01:08:41.770 --> 01:08:47.740 align:middle line:84%
+I called it W in the notes for
+some reason, W for "password"--
+
+01:08:47.740 --> 01:08:56.170 align:middle line:84%
+I claim that W is the disjoint
+union of the set of passwords
+
+01:08:56.170 --> 01:08:59.020 align:middle line:84%
+of length 6 that satisfy
+the other properties,
+
+01:08:59.020 --> 01:09:00.850 align:middle line:84%
+set of passwords of
+length 7, and set
+
+01:09:00.850 --> 01:09:02.380 align:middle line:90%
+of passwords of length 8.
+
+01:09:02.380 --> 01:09:05.649 align:middle line:84%
+So if we can count each
+of these three subsets,
+
+01:09:05.649 --> 01:09:08.640 align:middle line:84%
+then we add them up
+and get the size of W.
+
+01:09:08.640 --> 01:09:10.770 align:middle line:90%
+And let's see if we can do that.
+
+01:09:10.770 --> 01:09:13.680 align:middle line:90%
+So what is the size of W6?
+
+01:09:13.680 --> 01:09:17.903 align:middle line:84%
+How many passwords
+satisfy this property?
+
+01:09:17.903 --> 01:09:21.870 align:middle line:90%
+
+
+01:09:21.870 --> 01:09:29.859 align:middle line:84%
+Well, I claim the set W6
+itself as a set is, well,
+
+01:09:29.859 --> 01:09:36.689 align:middle line:84%
+first of all, the set of capital
+letters for the first entry
+
+01:09:36.689 --> 01:09:44.220 align:middle line:84%
+times the set of
+letters or digits
+
+01:09:44.220 --> 01:09:47.310 align:middle line:84%
+to the fifth for the
+other five entries.
+
+01:09:47.310 --> 01:09:49.420 align:middle line:84%
+This is exactly
+what this set is.
+
+01:09:49.420 --> 01:09:51.340 align:middle line:84%
+The first entry has to
+be a capital letter.
+
+01:09:51.340 --> 01:09:55.860 align:middle line:84%
+The other five characters
+can be anything from the set.
+
+01:09:55.860 --> 01:10:00.880 align:middle line:84%
+So we have this
+product of six sets.
+
+01:10:00.880 --> 01:10:04.480 align:middle line:84%
+And that brings us back to
+the regular product rule.
+
+01:10:04.480 --> 01:10:07.690 align:middle line:84%
+So by the product
+rule, the size of W6
+
+01:10:07.690 --> 01:10:09.890 align:middle line:84%
+is, well, how many
+capital letters are there?
+
+01:10:09.890 --> 01:10:10.730 align:middle line:90%
+I think that's 26.
+
+01:10:10.730 --> 01:10:13.240 align:middle line:90%
+
+
+01:10:13.240 --> 01:10:16.010 align:middle line:84%
+And then how many letters
+and digits are there?
+
+01:10:16.010 --> 01:10:18.767 align:middle line:90%
+26, 26, and 10, so that's 50--
+
+01:10:18.767 --> 01:10:22.990 align:middle line:90%
+62 to the fifth.
+
+01:10:22.990 --> 01:10:25.755 align:middle line:84%
+We just use the regular
+product rule to get this.
+
+01:10:25.755 --> 01:10:31.000 align:middle line:90%
+
+
+01:10:31.000 --> 01:10:34.233 align:middle line:84%
+And we can do the same
+thing for W7 and W8.
+
+01:10:34.233 --> 01:10:46.000 align:middle line:90%
+
+
+01:10:46.000 --> 01:10:51.100 align:middle line:84%
+W7 is going to be 26 times
+62, this time to the sixth
+
+01:10:51.100 --> 01:10:53.500 align:middle line:84%
+because there are six
+extra digits after the--
+
+01:10:53.500 --> 01:10:56.420 align:middle line:84%
+extra characters
+after the first one.
+
+01:10:56.420 --> 01:11:04.300 align:middle line:84%
+And the size of W8 is 26
+times 62 to the seventh.
+
+01:11:04.300 --> 01:11:10.840 align:middle line:84%
+So by the sum rule, since
+W is the disjoint union
+
+01:11:10.840 --> 01:11:16.180 align:middle line:84%
+of these three different sets,
+the size of W is the size of W6
+
+01:11:16.180 --> 01:11:24.130 align:middle line:84%
+plus the size of W7 plus the
+size of W8, which is 26 times
+
+01:11:24.130 --> 01:11:29.380 align:middle line:84%
+62 to the fifth, plus 26 times
+62 to the sixth, plus 26 times
+
+01:11:29.380 --> 01:11:32.740 align:middle line:90%
+62 to the seventh.
+
+01:11:32.740 --> 01:11:36.050 align:middle line:84%
+So we use the sum rule to break
+it up into three separate cases,
+
+01:11:36.050 --> 01:11:38.720 align:middle line:84%
+and then use the product
+rule for each of those cases.
+
+01:11:38.720 --> 01:11:41.140 align:middle line:90%
+Did that make sense?
+
+01:11:41.140 --> 01:11:42.130 align:middle line:90%
+Wonderful.
+
+01:11:42.130 --> 01:11:42.870 align:middle line:90%
+All right.
+
+01:11:42.870 --> 01:11:46.180 align:middle line:90%
+
+
+01:11:46.180 --> 01:11:49.780 align:middle line:84%
+So this is a common
+strategy here.
+
+01:11:49.780 --> 01:11:56.320 align:middle line:84%
+Notice that we're using the sum
+rule when what we mean is "or."
+
+01:11:56.320 --> 01:11:58.760 align:middle line:84%
+You can choose a
+password of length six
+
+01:11:58.760 --> 01:12:03.930 align:middle line:84%
+or a password of length seven
+or a password of length eight.
+
+01:12:03.930 --> 01:12:09.290 align:middle line:90%
+So "or" means sum.
+
+01:12:09.290 --> 01:12:13.190 align:middle line:84%
+For product rule, you have
+to choose a capital letter
+
+01:12:13.190 --> 01:12:16.140 align:middle line:84%
+and then choose one
+of these characters
+
+01:12:16.140 --> 01:12:17.940 align:middle line:84%
+and then choose one
+of these characters
+
+01:12:17.940 --> 01:12:19.898 align:middle line:84%
+and then choose one
+of these characters.
+
+01:12:19.898 --> 01:12:21.440 align:middle line:84%
+I forget how many
+times I've said it,
+
+01:12:21.440 --> 01:12:23.990 align:middle line:90%
+but five times for this part.
+
+01:12:23.990 --> 01:12:25.990 align:middle line:90%
+We multiply when we mean "and."
+
+01:12:25.990 --> 01:12:31.940 align:middle line:90%
+
+
+01:12:31.940 --> 01:12:37.880 align:middle line:84%
+Said differently, if I have 10
+shirts and 6 pants in my closet,
+
+01:12:37.880 --> 01:12:41.490 align:middle line:84%
+if I want to choose an
+article of clothing,
+
+01:12:41.490 --> 01:12:46.490 align:middle line:84%
+I can choose a shirt
+or a pair of pants.
+
+01:12:46.490 --> 01:12:47.900 align:middle line:90%
+And there are 16 options--
+
+01:12:47.900 --> 01:12:50.630 align:middle line:90%
+10 plus 6.
+
+01:12:50.630 --> 01:12:51.660 align:middle line:90%
+"Or" means add.
+
+01:12:51.660 --> 01:12:53.660 align:middle line:84%
+On the other hand, if I'm
+trying to put together
+
+01:12:53.660 --> 01:12:55.440 align:middle line:84%
+an outfit for the
+day, I have to choose
+
+01:12:55.440 --> 01:12:58.380 align:middle line:90%
+a shirt and a pair of pants.
+
+01:12:58.380 --> 01:12:59.770 align:middle line:90%
+"And" means multiply.
+
+01:12:59.770 --> 01:13:03.150 align:middle line:84%
+It's 10 times 6 options,
+so I have 60 outfits.
+
+01:13:03.150 --> 01:13:04.870 align:middle line:84%
+Maybe not all of
+those look good.
+
+01:13:04.870 --> 01:13:06.480 align:middle line:84%
+But I wear the same
+pants every day
+
+01:13:06.480 --> 01:13:09.660 align:middle line:90%
+anyway, so it doesn't matter.
+
+01:13:09.660 --> 01:13:11.500 align:middle line:90%
+Does this make sense?
+
+01:13:11.500 --> 01:13:15.750 align:middle line:84%
+Generally speaking, "or"
+means add, "and" means times.
+
+01:13:15.750 --> 01:13:17.130 align:middle line:90%
+OK.
+
+01:13:17.130 --> 01:13:20.160 align:middle line:84%
+The last example I want
+to talk about today
+
+01:13:20.160 --> 01:13:22.415 align:middle line:84%
+is called the
+generalized product rule.
+
+01:13:22.415 --> 01:13:29.850 align:middle line:90%
+
+
+01:13:29.850 --> 01:13:33.630 align:middle line:84%
+And example first-- in fact, an
+example we mentioned earlier.
+
+01:13:33.630 --> 01:13:38.890 align:middle line:84%
+How many different permutations
+are there for a set of 52 cards?
+
+01:13:38.890 --> 01:13:42.040 align:middle line:84%
+How many different orderings
+are there for a set of 52 cards?
+
+01:13:42.040 --> 01:13:45.088 align:middle line:84%
+Let's talk through
+this together.
+
+01:13:45.088 --> 01:13:45.880 align:middle line:90%
+Here are the cards.
+
+01:13:45.880 --> 01:13:49.180 align:middle line:84%
+I can't hold them all at once
+with my notes and my chalk.
+
+01:13:49.180 --> 01:13:51.780 align:middle line:90%
+So bye, bye, cards.
+
+01:13:51.780 --> 01:14:00.960 align:middle line:84%
+So how many permutations
+of the 52 cards?
+
+01:14:00.960 --> 01:14:02.590 align:middle line:90%
+Well, let's think about it.
+
+01:14:02.590 --> 01:14:05.470 align:middle line:84%
+Let's choose the
+first card first.
+
+01:14:05.470 --> 01:14:08.110 align:middle line:84%
+Which card is going to go at
+the beginning of our list?
+
+01:14:08.110 --> 01:14:12.150 align:middle line:84%
+Well, how many
+options do we have?
+
+01:14:12.150 --> 01:14:14.140 align:middle line:84%
+We have the whole
+deck to play with.
+
+01:14:14.140 --> 01:14:18.400 align:middle line:84%
+OK, I think I do want
+to hold the cards.
+
+01:14:18.400 --> 01:14:19.900 align:middle line:84%
+We have the whole
+deck to play with.
+
+01:14:19.900 --> 01:14:23.310 align:middle line:84%
+We can choose any one of
+the cards as our first card.
+
+01:14:23.310 --> 01:14:25.893 align:middle line:90%
+Yeah, maybe I choose this one.
+
+01:14:25.893 --> 01:14:27.310 align:middle line:84%
+I'm doing a magic
+trick to myself.
+
+01:14:27.310 --> 01:14:29.190 align:middle line:90%
+I don't know what card this is.
+
+01:14:29.190 --> 01:14:30.960 align:middle line:84%
+So the 9 of spades
+is going to be
+
+01:14:30.960 --> 01:14:33.930 align:middle line:90%
+the first card in our ordering.
+
+01:14:33.930 --> 01:14:36.060 align:middle line:90%
+So this was the 9 of spades.
+
+01:14:36.060 --> 01:14:39.300 align:middle line:84%
+And we had 52
+options for it, yeah?
+
+01:14:39.300 --> 01:14:39.880 align:middle line:90%
+Great.
+
+01:14:39.880 --> 01:14:42.040 align:middle line:84%
+That goes at the
+beginning of our order.
+
+01:14:42.040 --> 01:14:45.210 align:middle line:90%
+What's the next card we pick?
+
+01:14:45.210 --> 01:14:49.470 align:middle line:84%
+Well how many options
+do we have left?
+
+01:14:49.470 --> 01:14:50.555 align:middle line:90%
+Just shout it out.
+
+01:14:50.555 --> 01:14:51.340 align:middle line:90%
+AUDIENCE: 51.
+
+01:14:51.340 --> 01:14:52.550 align:middle line:90%
+ZACHARY ABEL: 51, yeah.
+
+01:14:52.550 --> 01:14:54.830 align:middle line:90%
+We have 51 options.
+
+01:14:54.830 --> 01:14:57.463 align:middle line:84%
+Maybe we choose this
+one, without dropping
+
+01:14:57.463 --> 01:14:58.130 align:middle line:90%
+all the others--
+
+01:14:58.130 --> 01:14:59.210 align:middle line:90%
+8 of clubs.
+
+01:14:59.210 --> 01:15:04.270 align:middle line:84%
+Great, that's the second card
+in our order, 8 of clubs.
+
+01:15:04.270 --> 01:15:06.920 align:middle line:84%
+Now let's all watch as
+I do this 50 more times.
+
+01:15:06.920 --> 01:15:09.010 align:middle line:90%
+No.
+
+01:15:09.010 --> 01:15:11.290 align:middle line:90%
+But we get the idea.
+
+01:15:11.290 --> 01:15:13.550 align:middle line:84%
+The next card, the third
+card in my ordering--
+
+01:15:13.550 --> 01:15:15.320 align:middle line:84%
+well, I've used
+two cards already.
+
+01:15:15.320 --> 01:15:19.180 align:middle line:84%
+I have to choose one of
+the remaining 50 cards,
+
+01:15:19.180 --> 01:15:22.720 align:middle line:90%
+then 49, then 48--
+
+01:15:22.720 --> 01:15:24.320 align:middle line:90%
+then 2, then 1.
+
+01:15:24.320 --> 01:15:28.180 align:middle line:84%
+This is the number of
+choices I have at each stage.
+
+01:15:28.180 --> 01:15:30.740 align:middle line:84%
+So it feels like,
+by the product rule,
+
+01:15:30.740 --> 01:15:35.770 align:middle line:84%
+this answer should be 52
+times 51 times 50 times
+
+01:15:35.770 --> 01:15:37.430 align:middle line:90%
+49, and so on--
+
+01:15:37.430 --> 01:15:41.350 align:middle line:90%
+52 factorial.
+
+01:15:41.350 --> 01:15:45.820 align:middle line:84%
+The weird thing, though, is that
+this isn't the product rule.
+
+01:15:45.820 --> 01:15:47.800 align:middle line:84%
+Product rule says
+you have some set
+
+01:15:47.800 --> 01:15:50.180 align:middle line:84%
+of options at the
+beginning, which is true.
+
+01:15:50.180 --> 01:15:53.080 align:middle line:84%
+We have the set of 52
+cards at the beginning.
+
+01:15:53.080 --> 01:15:55.480 align:middle line:84%
+But then we're supposed to
+have the same set of options
+
+01:15:55.480 --> 01:15:57.940 align:middle line:90%
+for the next entry every time.
+
+01:15:57.940 --> 01:16:01.300 align:middle line:84%
+But the set of options we
+have in the second round
+
+01:16:01.300 --> 01:16:05.180 align:middle line:84%
+depends on which card we
+picked in the first round.
+
+01:16:05.180 --> 01:16:08.140 align:middle line:84%
+There are always 51 options
+because we've always excluded
+
+01:16:08.140 --> 01:16:10.070 align:middle line:90%
+one card from the first round.
+
+01:16:10.070 --> 01:16:13.510 align:middle line:84%
+But the set of options
+changes depending on what
+
+01:16:13.510 --> 01:16:15.940 align:middle line:90%
+we picked in the first round.
+
+01:16:15.940 --> 01:16:17.930 align:middle line:84%
+So this isn't
+straight-up product rule.
+
+01:16:17.930 --> 01:16:19.960 align:middle line:84%
+The set of permutations
+is not just
+
+01:16:19.960 --> 01:16:24.560 align:middle line:84%
+a set of 52 cards times a set of
+51 cards times set of 50 cards,
+
+01:16:24.560 --> 01:16:27.790 align:middle line:84%
+even though the number
+of options at each stage
+
+01:16:27.790 --> 01:16:29.030 align:middle line:90%
+is always the same.
+
+01:16:29.030 --> 01:16:31.520 align:middle line:84%
+And that's what the generalized
+product rule does for us.
+
+01:16:31.520 --> 01:16:34.930 align:middle line:84%
+It basically says, if
+the number of options
+
+01:16:34.930 --> 01:16:39.640 align:middle line:84%
+at every step of the process
+is always consistent,
+
+01:16:39.640 --> 01:16:43.340 align:middle line:84%
+even if this particular set
+of those options might change,
+
+01:16:43.340 --> 01:16:46.000 align:middle line:84%
+then the number of ways
+to make your choices
+
+01:16:46.000 --> 01:16:49.390 align:middle line:84%
+is just the product of the
+number of choices at each stage.
+
+01:16:49.390 --> 01:16:54.230 align:middle line:90%
+
+
+01:16:54.230 --> 01:17:00.580 align:middle line:84%
+So this is the
+generalized product rule.
+
+01:17:00.580 --> 01:17:03.830 align:middle line:90%
+
+
+01:17:03.830 --> 01:17:17.690 align:middle line:84%
+If A is a set of
+length k sequences
+
+01:17:17.690 --> 01:17:29.030 align:middle line:84%
+where there are n1 choices
+for the first entry, for a1,
+
+01:17:29.030 --> 01:17:45.800 align:middle line:84%
+and two choices for a2, no
+matter what a1 was chosen,
+
+01:17:45.800 --> 01:17:50.180 align:middle line:90%
+et cetera, exactly--
+
+01:17:50.180 --> 01:17:56.360 align:middle line:84%
+sorry, exactly ni
+choices for ai,
+
+01:17:56.360 --> 01:18:01.850 align:middle line:84%
+for the i-th entry
+in our sequence,
+
+01:18:01.850 --> 01:18:11.120 align:middle line:84%
+no matter what a1 through
+ai minus 1 were chosen,
+
+01:18:11.120 --> 01:18:15.350 align:middle line:84%
+and all the way down
+to nk at the end--
+
+01:18:15.350 --> 01:18:18.830 align:middle line:84%
+so if earlier choices don't
+change the number of options
+
+01:18:18.830 --> 01:18:20.303 align:middle line:90%
+we have in later steps--
+
+01:18:20.303 --> 01:18:23.570 align:middle line:90%
+
+
+01:18:23.570 --> 01:18:31.430 align:middle line:84%
+then the size of A is
+n1 times n2 up to nk.
+
+01:18:31.430 --> 01:18:33.290 align:middle line:90%
+Sound good?
+
+01:18:33.290 --> 01:18:34.100 align:middle line:90%
+Cool.
+
+01:18:34.100 --> 01:18:37.550 align:middle line:84%
+We will get more practice
+with that next time.
+
+01:18:37.550 --> 01:18:38.700 align:middle line:90%
+And I will see you then.
+
+01:18:38.700 --> 01:18:40.450 align:middle line:90%
+Thank you.
+
+01:18:40.450 --> 01:18:46.000 align:middle line:90%

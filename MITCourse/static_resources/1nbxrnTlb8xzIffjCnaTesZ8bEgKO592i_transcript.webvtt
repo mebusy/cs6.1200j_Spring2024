@@ -1,0 +1,5139 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.415 align:middle line:90%
+[SQUEAKING]
+
+00:00:02.415 --> 00:00:04.347 align:middle line:90%
+[RUSTLING]
+
+00:00:04.347 --> 00:00:07.245 align:middle line:90%
+[CLICKING]
+
+00:00:07.245 --> 00:00:10.460 align:middle line:90%
+
+
+00:00:10.460 --> 00:00:12.870 align:middle line:84%
+Erik Demaine: All right,
+welcome back to 6.1200.
+
+00:00:12.870 --> 00:00:16.370 align:middle line:84%
+Today we are talking
+about number theory.
+
+00:00:16.370 --> 00:00:20.040 align:middle line:84%
+And number is, I guess, an
+old word here for integers,
+
+00:00:20.040 --> 00:00:22.460 align:middle line:90%
+in modern terminology.
+
+00:00:22.460 --> 00:00:27.170 align:middle line:84%
+This set black
+board bold z, which
+
+00:00:27.170 --> 00:00:28.890 align:middle line:84%
+is all positive and
+negative integers.
+
+00:00:28.890 --> 00:00:31.280 align:middle line:84%
+Although mostly we think
+about natural numbers,
+
+00:00:31.280 --> 00:00:33.470 align:middle line:90%
+the non-negative integers.
+
+00:00:33.470 --> 00:00:35.970 align:middle line:90%
+Number theory is a big topic.
+
+00:00:35.970 --> 00:00:38.990 align:middle line:84%
+We're going to spend three
+lectures on it, today and two
+
+00:00:38.990 --> 00:00:40.370 align:middle line:90%
+next week.
+
+00:00:40.370 --> 00:00:43.040 align:middle line:84%
+And it's a really
+important branch of--
+
+00:00:43.040 --> 00:00:46.700 align:middle line:84%
+subbranch, I guess, or related
+branch of discrete mathematics
+
+00:00:46.700 --> 00:00:49.310 align:middle line:84%
+in particular, because it's
+found a lot of applications
+
+00:00:49.310 --> 00:00:53.060 align:middle line:84%
+in modern days in cryptography
+and error correction,
+
+00:00:53.060 --> 00:00:54.950 align:middle line:84%
+when you use your
+cell phone, probably
+
+00:00:54.950 --> 00:00:58.610 align:middle line:84%
+several different
+things in that software
+
+00:00:58.610 --> 00:01:00.890 align:middle line:84%
+is using number theory at
+some level to do crypto,
+
+00:01:00.890 --> 00:01:03.800 align:middle line:84%
+to access your bank,
+to do error correction,
+
+00:01:03.800 --> 00:01:07.760 align:middle line:84%
+to talk over radio waves,
+all sorts of fun things.
+
+00:01:07.760 --> 00:01:09.380 align:middle line:84%
+Number theory is
+also extremely old.
+
+00:01:09.380 --> 00:01:12.220 align:middle line:84%
+It's probably the oldest
+branch of mathematics, though,
+
+00:01:12.220 --> 00:01:15.640 align:middle line:84%
+past 4,000 years it's a little
+hard to tell exactly what people
+
+00:01:15.640 --> 00:01:16.490 align:middle line:90%
+were doing.
+
+00:01:16.490 --> 00:01:20.020 align:middle line:84%
+But in particular, the
+Babylonians, 3,800 years ago,
+
+00:01:20.020 --> 00:01:22.720 align:middle line:90%
+were doing number theory.
+
+00:01:22.720 --> 00:01:28.460 align:middle line:84%
+Pythagoras, 2,500 years
+ago, is doing number theory.
+
+00:01:28.460 --> 00:01:30.880 align:middle line:84%
+It had a lot of
+exciting activity
+
+00:01:30.880 --> 00:01:33.500 align:middle line:90%
+in the middle of last century.
+
+00:01:33.500 --> 00:01:37.300 align:middle line:84%
+Hardy is one of
+the famous number
+
+00:01:37.300 --> 00:01:40.660 align:middle line:90%
+theorists of near our time.
+
+00:01:40.660 --> 00:01:43.540 align:middle line:84%
+He wrote, "Number theory is
+great because it's one science
+
+00:01:43.540 --> 00:01:47.830 align:middle line:84%
+whose very remoteness from human
+activities should keep it gentle
+
+00:01:47.830 --> 00:01:48.770 align:middle line:90%
+and clean."
+
+00:01:48.770 --> 00:01:50.500 align:middle line:84%
+He was a pacifist,
+and he wanted to do
+
+00:01:50.500 --> 00:01:53.720 align:middle line:84%
+math that was completely useless
+from the perspective of warfare.
+
+00:01:53.720 --> 00:01:57.500 align:middle line:84%
+Sadly, that's not the case
+for number theory anymore,
+
+00:01:57.500 --> 00:01:58.520 align:middle line:90%
+but it used to be.
+
+00:01:58.520 --> 00:02:01.170 align:middle line:90%
+
+
+00:02:01.170 --> 00:02:04.020 align:middle line:84%
+But the things we'll be doing
+here are pretty fundamental.
+
+00:02:04.020 --> 00:02:06.950 align:middle line:84%
+Today, we're going to talk
+about divisibility and something
+
+00:02:06.950 --> 00:02:09.180 align:middle line:84%
+called GCD, which you
+may have heard of before.
+
+00:02:09.180 --> 00:02:10.680 align:middle line:90%
+It's a pretty basic notion.
+
+00:02:10.680 --> 00:02:11.850 align:middle line:90%
+Both of these are.
+
+00:02:11.850 --> 00:02:16.610 align:middle line:84%
+But we're going to define
+everything carefully and prove
+
+00:02:16.610 --> 00:02:19.800 align:middle line:84%
+all sorts of cool properties
+about divisibility,
+
+00:02:19.800 --> 00:02:23.600 align:middle line:84%
+and use it to solve at
+least one fun problem.
+
+00:02:23.600 --> 00:02:29.690 align:middle line:84%
+So the notation for
+divisibility is a divides b.
+
+00:02:29.690 --> 00:02:31.670 align:middle line:90%
+We use a vertical bar.
+
+00:02:31.670 --> 00:02:33.950 align:middle line:84%
+We use a vertical bar
+for a few other things
+
+00:02:33.950 --> 00:02:36.300 align:middle line:84%
+like absolute value
+and set notation,
+
+00:02:36.300 --> 00:02:38.600 align:middle line:90%
+so try not to be too confused.
+
+00:02:38.600 --> 00:02:42.320 align:middle line:84%
+This will only be for
+a couple of weeks.
+
+00:02:42.320 --> 00:02:46.790 align:middle line:84%
+Divisibility means
+a evenly divides b,
+
+00:02:46.790 --> 00:02:50.000 align:middle line:90%
+or b is evenly divisible by a.
+
+00:02:50.000 --> 00:02:58.200 align:middle line:84%
+So for example, let's say,
+2 divides 4 is an example.
+
+00:02:58.200 --> 00:03:01.900 align:middle line:90%
+
+
+00:03:01.900 --> 00:03:04.090 align:middle line:84%
+But in general,
+what we would like
+
+00:03:04.090 --> 00:03:08.560 align:middle line:90%
+is a formal definition of this.
+
+00:03:08.560 --> 00:03:12.730 align:middle line:84%
+So we'll say a divides b If
+there exists some integer
+
+00:03:12.730 --> 00:03:24.200 align:middle line:84%
+multiple such that b
+is that multiple of a,
+
+00:03:24.200 --> 00:03:28.010 align:middle line:90%
+so b equals k times a.
+
+00:03:28.010 --> 00:03:30.940 align:middle line:84%
+Very important that this is an
+integer, otherwise, over reals
+
+00:03:30.940 --> 00:03:34.720 align:middle line:84%
+this is always the
+case pretty much.
+
+00:03:34.720 --> 00:03:37.480 align:middle line:84%
+And we define divisibility
+in terms of multiplication,
+
+00:03:37.480 --> 00:03:39.500 align:middle line:90%
+instead of division.
+
+00:03:39.500 --> 00:03:43.910 align:middle line:84%
+You could divide
+both sides by a here.
+
+00:03:43.910 --> 00:03:45.430 align:middle line:84%
+And so, for example,
+this is saying
+
+00:03:45.430 --> 00:03:47.240 align:middle line:90%
+b divided by a is an integer.
+
+00:03:47.240 --> 00:03:49.360 align:middle line:84%
+But that's not such
+a great definition
+
+00:03:49.360 --> 00:03:51.770 align:middle line:84%
+because it doesn't work well
+when you try to divide by 0.
+
+00:03:51.770 --> 00:03:54.920 align:middle line:84%
+This definition works
+even when a is zero,
+
+00:03:54.920 --> 00:03:57.810 align:middle line:84%
+and if you do
+division, it doesn't.
+
+00:03:57.810 --> 00:04:00.690 align:middle line:84%
+So that's why we define
+divisibility this way.
+
+00:04:00.690 --> 00:04:05.960 align:middle line:84%
+So more interesting examples
+are 2 divides n means what
+
+00:04:05.960 --> 00:04:10.670 align:middle line:90%
+we have been saying, n is even.
+
+00:04:10.670 --> 00:04:13.550 align:middle line:84%
+Whenever we say n is even, what
+we really mean is 2 divides n.
+
+00:04:13.550 --> 00:04:18.649 align:middle line:84%
+There's some integer
+multiple of 2 that equals n.
+
+00:04:18.649 --> 00:04:28.850 align:middle line:84%
+Some other weirder cases,
+every natural number negative n
+
+00:04:28.850 --> 00:04:31.010 align:middle line:90%
+divides n.
+
+00:04:31.010 --> 00:04:33.110 align:middle line:84%
+It's maybe not so
+intuitive what divisibility
+
+00:04:33.110 --> 00:04:35.970 align:middle line:84%
+means for negative numbers,
+but here are some examples.
+
+00:04:35.970 --> 00:04:38.880 align:middle line:84%
+We allow this integer
+multiple k to be negative.
+
+00:04:38.880 --> 00:04:41.150 align:middle line:84%
+So in particular,
+k can be minus 1,
+
+00:04:41.150 --> 00:04:45.320 align:middle line:84%
+and minus 1 times
+negative n is n.
+
+00:04:45.320 --> 00:04:48.890 align:middle line:84%
+Also n divides n, but that's
+a little less exciting.
+
+00:04:48.890 --> 00:04:54.700 align:middle line:84%
+Another fun fact is that
+every number divides 0.
+
+00:04:54.700 --> 00:04:57.410 align:middle line:84%
+This is also maybe not
+the most intuitive,
+
+00:04:57.410 --> 00:04:59.740 align:middle line:84%
+but it comes from the
+definition. k in particular,
+
+00:04:59.740 --> 00:05:00.860 align:middle line:90%
+can be 0.
+
+00:05:00.860 --> 00:05:04.150 align:middle line:84%
+And if you take 0
+times n you get 0.
+
+00:05:04.150 --> 00:05:06.915 align:middle line:90%
+So everything divides 0.
+
+00:05:06.915 --> 00:05:10.660 align:middle line:84%
+A number also divides its
+negative, things like that.
+
+00:05:10.660 --> 00:05:12.310 align:middle line:84%
+A consequence of
+these two things
+
+00:05:12.310 --> 00:05:14.980 align:middle line:90%
+together is that 0 is even.
+
+00:05:14.980 --> 00:05:17.380 align:middle line:84%
+If you were ever
+worried about whether 0
+
+00:05:17.380 --> 00:05:20.920 align:middle line:84%
+was an exception to
+evenness in the alternation
+
+00:05:20.920 --> 00:05:22.940 align:middle line:90%
+of these numbers.
+
+00:05:22.940 --> 00:05:24.970 align:middle line:90%
+Yes, this is even.
+
+00:05:24.970 --> 00:05:25.610 align:middle line:90%
+This is even.
+
+00:05:25.610 --> 00:05:26.290 align:middle line:90%
+This is even.
+
+00:05:26.290 --> 00:05:30.272 align:middle line:84%
+Because in particular,
+2 divides 0.
+
+00:05:30.272 --> 00:05:32.480 align:middle line:84%
+Everything divides 0, but
+in particular, 2 divides 0.
+
+00:05:32.480 --> 00:05:37.360 align:middle line:84%
+That's the meaning
+of even, OK, great.
+
+00:05:37.360 --> 00:05:43.060 align:middle line:84%
+Let's state some theorems
+about divisibility.
+
+00:05:43.060 --> 00:05:45.470 align:middle line:84%
+I'm going to call these
+divisibility facts.
+
+00:05:45.470 --> 00:05:49.660 align:middle line:84%
+We're going to use them
+several times today.
+
+00:05:49.660 --> 00:05:55.313 align:middle line:84%
+Let's say we have two numbers
+divisible by the same thing.
+
+00:05:55.313 --> 00:06:02.430 align:middle line:90%
+
+
+00:06:02.430 --> 00:06:15.000 align:middle line:84%
+We call this d is a
+common divisor of a and b.
+
+00:06:15.000 --> 00:06:21.060 align:middle line:84%
+So if d divides a and d divides
+b, we call it a common divisor.
+
+00:06:21.060 --> 00:06:29.340 align:middle line:84%
+Then I claim, for example, d
+divides a plus b, their sum.
+
+00:06:29.340 --> 00:06:29.977 align:middle line:90%
+Why?
+
+00:06:29.977 --> 00:06:31.560 align:middle line:84%
+This is very easy
+to prove if you just
+
+00:06:31.560 --> 00:06:32.830 align:middle line:90%
+work through the definition.
+
+00:06:32.830 --> 00:06:41.640 align:middle line:84%
+So let's say a equals j times
+d, and b equals k times d.
+
+00:06:41.640 --> 00:06:44.020 align:middle line:84%
+For some integers j and
+k, they might be the same.
+
+00:06:44.020 --> 00:06:45.600 align:middle line:90%
+They might be different.
+
+00:06:45.600 --> 00:06:49.730 align:middle line:84%
+Then a plus b, well, it's just
+the sum of these two things,
+
+00:06:49.730 --> 00:06:50.230 align:middle line:90%
+right?
+
+00:06:50.230 --> 00:06:55.820 align:middle line:84%
+It's j plus k times
+d, not very hard.
+
+00:06:55.820 --> 00:07:03.980 align:middle line:84%
+More generally, d divides
+sa plus tb for any integers
+
+00:07:03.980 --> 00:07:04.690 align:middle line:90%
+s And t.
+
+00:07:04.690 --> 00:07:08.630 align:middle line:90%
+
+
+00:07:08.630 --> 00:07:13.250 align:middle line:84%
+This is just a simple
+extension of this property.
+
+00:07:13.250 --> 00:07:23.750 align:middle line:84%
+I guess you can write this
+thing equals sj plus tk times d.
+
+00:07:23.750 --> 00:07:27.750 align:middle line:84%
+And it turns out this
+structure is interesting.
+
+00:07:27.750 --> 00:07:32.360 align:middle line:84%
+It's what we call an
+integer linear combination.
+
+00:07:32.360 --> 00:07:35.275 align:middle line:84%
+And this is a concept we will
+also be using throughout today.
+
+00:07:35.275 --> 00:07:39.470 align:middle line:90%
+
+
+00:07:39.470 --> 00:07:42.510 align:middle line:84%
+So much so that I'm
+going to give an acronym.
+
+00:07:42.510 --> 00:07:46.413 align:middle line:84%
+I don't usually like
+acronyms, but this is so long,
+
+00:07:46.413 --> 00:07:48.080 align:middle line:84%
+that it's going to
+save me a ton of work
+
+00:07:48.080 --> 00:07:50.800 align:middle line:84%
+to write ILC for Integer
+Linear Combination.
+
+00:07:50.800 --> 00:07:54.130 align:middle line:84%
+If you know linear algebra,
+this is just linear combination,
+
+00:07:54.130 --> 00:07:56.470 align:middle line:84%
+but where the coefficients
+need to be integers.
+
+00:07:56.470 --> 00:07:58.750 align:middle line:90%
+So it's exactly this notion.
+
+00:07:58.750 --> 00:08:02.460 align:middle line:84%
+So an integer linear
+combination of a and b
+
+00:08:02.460 --> 00:08:10.740 align:middle line:84%
+is some number s times a plus
+t times b for any s and t
+
+00:08:10.740 --> 00:08:12.660 align:middle line:90%
+that are integers.
+
+00:08:12.660 --> 00:08:14.340 align:middle line:84%
+So if I give you
+two numbers a and b,
+
+00:08:14.340 --> 00:08:16.548 align:middle line:84%
+we'll only be doing integer
+linear combinations today
+
+00:08:16.548 --> 00:08:21.430 align:middle line:84%
+of two numbers, then this is
+what they always look like.
+
+00:08:21.430 --> 00:08:24.390 align:middle line:84%
+And given two numbers, there's
+some numbers you can construct
+
+00:08:24.390 --> 00:08:27.780 align:middle line:84%
+via integer linear combinations
+and some you can't.
+
+00:08:27.780 --> 00:08:30.240 align:middle line:84%
+Actually fun fact,
+divisibility is
+
+00:08:30.240 --> 00:08:33.150 align:middle line:84%
+like integer linear
+combinations of one number.
+
+00:08:33.150 --> 00:08:36.929 align:middle line:84%
+This is saying b is an integer
+linear combination of just a.
+
+00:08:36.929 --> 00:08:40.530 align:middle line:84%
+But that's so special
+we call it divisibility.
+
+00:08:40.530 --> 00:08:43.260 align:middle line:84%
+Two numbers is where integer
+linear combinations really
+
+00:08:43.260 --> 00:08:45.120 align:middle line:90%
+get interesting.
+
+00:08:45.120 --> 00:08:50.310 align:middle line:84%
+All right, so to motivate
+these concepts more,
+
+00:08:50.310 --> 00:08:56.600 align:middle line:84%
+turns out these are key concepts
+to solving a famous puzzle, it's
+
+00:08:56.600 --> 00:09:02.760 align:middle line:84%
+at least 80, 90 years old,
+called the water-pouring puzzle,
+
+00:09:02.760 --> 00:09:07.610 align:middle line:84%
+but it became particularly
+famous through Die Hard
+
+00:09:07.610 --> 00:09:09.360 align:middle line:90%
+3, Die Hard with a Vengeance.
+
+00:09:09.360 --> 00:09:11.130 align:middle line:84%
+So we're going to
+watch a little clip.
+
+00:09:11.130 --> 00:09:15.240 align:middle line:84%
+And if this clip is not
+included in this video,
+
+00:09:15.240 --> 00:09:19.730 align:middle line:84%
+you can go stream or purchase
+Die Hard with a Vengeance
+
+00:09:19.730 --> 00:09:23.000 align:middle line:84%
+and start at the one-hour mark,
+and you will see an exchange
+
+00:09:23.000 --> 00:09:23.970 align:middle line:90%
+like the following.
+
+00:09:23.970 --> 00:09:26.150 align:middle line:84%
+So we have, of
+course, John McClane
+
+00:09:26.150 --> 00:09:30.980 align:middle line:84%
+here, who's trying to
+save Manhattan along
+
+00:09:30.980 --> 00:09:33.470 align:middle line:84%
+with his friend Zeus,
+who's an electrician who
+
+00:09:33.470 --> 00:09:37.273 align:middle line:84%
+just happens to get brought
+into this whole chaos.
+
+00:09:37.273 --> 00:09:38.690 align:middle line:84%
+Basically, the bad
+guys are trying
+
+00:09:38.690 --> 00:09:41.940 align:middle line:84%
+to distract the good guys by
+forcing them to solve puzzles,
+
+00:09:41.940 --> 00:09:43.128 align:middle line:90%
+so here we go.
+
+00:09:43.128 --> 00:09:45.170 align:middle line:84%
+All right, so we're going
+to focus on the problem
+
+00:09:45.170 --> 00:09:49.173 align:middle line:84%
+at hand, which we can
+formalize as follows.
+
+00:09:49.173 --> 00:09:55.840 align:middle line:90%
+
+
+00:09:55.840 --> 00:10:04.450 align:middle line:84%
+So we have two jugs, we'll
+say, of capacity a and b,
+
+00:10:04.450 --> 00:10:05.990 align:middle line:84%
+and we'll assume
+they're integers.
+
+00:10:05.990 --> 00:10:13.330 align:middle line:84%
+And in the example that saves
+Manhattan, we have a equals 5,
+
+00:10:13.330 --> 00:10:15.400 align:middle line:90%
+and B equals 3.
+
+00:10:15.400 --> 00:10:20.950 align:middle line:84%
+And we'd like to represent
+some number, in this case 4,
+
+00:10:20.950 --> 00:10:25.780 align:middle line:84%
+by a sequence of
+pouring operations.
+
+00:10:25.780 --> 00:10:29.950 align:middle line:84%
+So how could we represent
+this water-pouring problem
+
+00:10:29.950 --> 00:10:33.850 align:middle line:84%
+using techniques that we
+have from previous lectures?
+
+00:10:33.850 --> 00:10:34.665 align:middle line:90%
+Any ideas?
+
+00:10:34.665 --> 00:10:40.000 align:middle line:90%
+
+
+00:10:40.000 --> 00:10:41.600 align:middle line:90%
+I heard something.
+
+00:10:41.600 --> 00:10:42.100 align:middle line:90%
+Yeah?
+
+00:10:42.100 --> 00:10:43.142 align:middle line:90%
+AUDIENCE: State machines.
+
+00:10:43.142 --> 00:10:44.630 align:middle line:84%
+Erik Demaine: State
+machines, good,
+
+00:10:44.630 --> 00:10:47.030 align:middle line:90%
+so we'll use a state machine.
+
+00:10:47.030 --> 00:10:52.130 align:middle line:84%
+And so we'll have
+a state x and y,
+
+00:10:52.130 --> 00:10:57.950 align:middle line:84%
+means that there's currently x
+gallons in the first jug and y
+
+00:10:57.950 --> 00:11:12.470 align:middle line:84%
+gallons in the second jug, or
+let's say the amounts in each
+
+00:11:12.470 --> 00:11:16.400 align:middle line:90%
+jug/
+
+00:11:16.400 --> 00:11:24.500 align:middle line:84%
+So we start at the
+state 0,0, let's say.
+
+00:11:24.500 --> 00:11:26.270 align:middle line:90%
+The jug started empty.
+
+00:11:26.270 --> 00:11:28.610 align:middle line:84%
+We're given infinite
+water supply
+
+00:11:28.610 --> 00:11:31.490 align:middle line:84%
+because they're at a
+fountain, conveniently.
+
+00:11:31.490 --> 00:11:36.830 align:middle line:84%
+And let's see, we want
+to finish at a state that
+
+00:11:36.830 --> 00:11:38.760 align:middle line:90%
+has 4 in one of the two values.
+
+00:11:38.760 --> 00:11:42.350 align:middle line:84%
+And as John McClane said, it
+has to be in the bigger one,
+
+00:11:42.350 --> 00:11:45.100 align:middle line:84%
+in this case, because
+4 is bigger than 3.
+
+00:11:45.100 --> 00:11:47.950 align:middle line:90%
+So we'd like to--
+
+00:11:47.950 --> 00:11:54.100 align:middle line:84%
+goal is to get to
+4 comma something.
+
+00:11:54.100 --> 00:11:57.080 align:middle line:84%
+And the tricky part is to write
+down the transitions here.
+
+00:11:57.080 --> 00:12:06.190 align:middle line:84%
+So let's write down some of
+the transitions, transitions.
+
+00:12:06.190 --> 00:12:13.420 align:middle line:84%
+So given x and y, what are
+some of the things I could do?
+
+00:12:13.420 --> 00:12:15.580 align:middle line:90%
+Any suggestions?
+
+00:12:15.580 --> 00:12:18.170 align:middle line:84%
+I have some partially
+filled jars.
+
+00:12:18.170 --> 00:12:24.130 align:middle line:84%
+These are two jars of 5 and 3
+pumpkins capacity, respectively.
+
+00:12:24.130 --> 00:12:26.780 align:middle line:90%
+Maybe I'm at some position here.
+
+00:12:26.780 --> 00:12:29.020 align:middle line:90%
+What could I do to these drugs?
+
+00:12:29.020 --> 00:12:29.875 align:middle line:90%
+Yeah, in the back.
+
+00:12:29.875 --> 00:12:30.880 align:middle line:90%
+AUDIENCE: Fill one to the top.
+
+00:12:30.880 --> 00:12:32.297 align:middle line:84%
+Erik Demaine: Fill
+one to the top.
+
+00:12:32.297 --> 00:12:33.350 align:middle line:90%
+I go to the fountain.
+
+00:12:33.350 --> 00:12:36.100 align:middle line:84%
+I pour it up until it's
+completely filled, or this one,
+
+00:12:36.100 --> 00:12:37.910 align:middle line:90%
+I could go to the filled point.
+
+00:12:37.910 --> 00:12:39.110 align:middle line:90%
+Other suggestions?
+
+00:12:39.110 --> 00:12:39.966 align:middle line:90%
+Yeah?
+
+00:12:39.966 --> 00:12:40.758 align:middle line:90%
+AUDIENCE: Empty it.
+
+00:12:40.758 --> 00:12:43.020 align:middle line:84%
+Erik Demaine: Empty, I
+could empty one of the jars.
+
+00:12:43.020 --> 00:12:44.750 align:middle line:84%
+Well, hopefully I
+won't need that.
+
+00:12:44.750 --> 00:12:49.460 align:middle line:84%
+So in the transitions, this
+corresponds to going to,
+
+00:12:49.460 --> 00:12:53.780 align:middle line:84%
+I guess, a, y if I
+fill the first one.
+
+00:12:53.780 --> 00:12:58.100 align:middle line:84%
+Or I could go to x, b if
+I fill the second one.
+
+00:12:58.100 --> 00:13:04.260 align:middle line:84%
+I could empty by going to 0,
+7 if I empty the first one.
+
+00:13:04.260 --> 00:13:07.130 align:middle line:90%
+Or I could go to x, 0.
+
+00:13:07.130 --> 00:13:08.980 align:middle line:90%
+So these are all--
+
+00:13:08.980 --> 00:13:09.480 align:middle line:90%
+sorry.
+
+00:13:09.480 --> 00:13:13.640 align:middle line:84%
+This is all
+transitions from x, y.
+
+00:13:13.640 --> 00:13:15.080 align:middle line:90%
+Anything else?
+
+00:13:15.080 --> 00:13:16.130 align:middle line:90%
+Yeah?
+
+00:13:16.130 --> 00:13:18.410 align:middle line:90%
+AUDIENCE: You could put them--
+
+00:13:18.410 --> 00:13:21.380 align:middle line:84%
+you could switch one the jugs
+in one of them to the other one.
+
+00:13:21.380 --> 00:13:23.480 align:middle line:84%
+Erik Demaine: I could pour
+the contents of one jug
+
+00:13:23.480 --> 00:13:25.800 align:middle line:90%
+into the other, cool, yeah.
+
+00:13:25.800 --> 00:13:28.110 align:middle line:84%
+So here, for example,
+I filled up a 3.
+
+00:13:28.110 --> 00:13:29.360 align:middle line:90%
+I poured in 3.
+
+00:13:29.360 --> 00:13:33.090 align:middle line:84%
+I could fill this one up
+again and pour it in again.
+
+00:13:33.090 --> 00:13:37.730 align:middle line:84%
+And at some point, I'll run
+out of capacity in this jug.
+
+00:13:37.730 --> 00:13:40.120 align:middle line:84%
+And that's an event
+that I can detect when
+
+00:13:40.120 --> 00:13:42.550 align:middle line:90%
+I reach level with this jug.
+
+00:13:42.550 --> 00:13:46.210 align:middle line:84%
+So to write that down more
+carefully, given x, y,
+
+00:13:46.210 --> 00:13:49.460 align:middle line:84%
+we can transition
+to one of two cases.
+
+00:13:49.460 --> 00:13:53.500 align:middle line:84%
+Either we get to completely
+empty the left jug
+
+00:13:53.500 --> 00:13:57.790 align:middle line:84%
+into the right jug, so
+this would be x plus y.
+
+00:13:57.790 --> 00:14:01.880 align:middle line:84%
+But that's only possible if
+it fits in the second jug
+
+00:14:01.880 --> 00:14:04.600 align:middle line:84%
+if x plus y is less
+than or equal to b.
+
+00:14:04.600 --> 00:14:07.100 align:middle line:84%
+Otherwise-- I have
+to do arithmetic.
+
+00:14:07.100 --> 00:14:08.440 align:middle line:90%
+This is too hard.
+
+00:14:08.440 --> 00:14:14.260 align:middle line:84%
+--we move over b
+minus y or something.
+
+00:14:14.260 --> 00:14:21.620 align:middle line:84%
+So we have x minus b
+minus y, b, otherwise.
+
+00:14:21.620 --> 00:14:23.750 align:middle line:84%
+If we end up filling
+up the second one,
+
+00:14:23.750 --> 00:14:27.880 align:middle line:84%
+then this is how much of the
+original x that I started with
+
+00:14:27.880 --> 00:14:29.650 align:middle line:90%
+remains.
+
+00:14:29.650 --> 00:14:33.850 align:middle line:84%
+And you can do the-- there's
+one more rule, which is
+
+00:14:33.850 --> 00:14:35.360 align:middle line:90%
+if I pour from right to left.
+
+00:14:35.360 --> 00:14:40.970 align:middle line:84%
+Those are available state
+transitions in this puzzle.
+
+00:14:40.970 --> 00:14:43.140 align:middle line:84%
+And now maybe I've talked
+about it long enough.
+
+00:14:43.140 --> 00:14:46.015 align:middle line:84%
+You have some intuition
+on how to solve this.
+
+00:14:46.015 --> 00:14:48.650 align:middle line:90%
+
+
+00:14:48.650 --> 00:14:53.275 align:middle line:84%
+Start empty, any suggestions on
+how to construct the number 3?
+
+00:14:53.275 --> 00:14:56.270 align:middle line:90%
+
+
+00:14:56.270 --> 00:14:57.770 align:middle line:90%
+Yeah.
+
+00:14:57.770 --> 00:15:01.710 align:middle line:84%
+AUDIENCE: So you fill
+up the 5-gallon jug.
+
+00:15:01.710 --> 00:15:04.550 align:middle line:84%
+Erik Demaine: Just fill
+up the 5-gallon jug, OK.
+
+00:15:04.550 --> 00:15:07.492 align:middle line:84%
+AUDIENCE: And transfer
+it to the 3-gallon jug.
+
+00:15:07.492 --> 00:15:09.950 align:middle line:84%
+Erik Demaine: OK, we're going
+to transfer the 3-gallon jug,
+
+00:15:09.950 --> 00:15:11.910 align:middle line:84%
+until the 3-gallon
+jug is exactly empty,
+
+00:15:11.910 --> 00:15:13.915 align:middle line:84%
+which if you're using
+water, it would be level.
+
+00:15:13.915 --> 00:15:15.290 align:middle line:84%
+AUDIENCE: Empty
+the 3-gallon jug.
+
+00:15:15.290 --> 00:15:17.300 align:middle line:84%
+Erik Demaine: OK,
+empty the 4-gallon jug.
+
+00:15:17.300 --> 00:15:20.370 align:middle line:84%
+AUDIENCE: And transfer the
+2 into the 4-gallon jug.
+
+00:15:20.370 --> 00:15:21.990 align:middle line:84%
+Erik Demaine: OK,
+move the 2 over.
+
+00:15:21.990 --> 00:15:24.530 align:middle line:84%
+This now feels like
+Towers of Hanoi, OK.
+
+00:15:24.530 --> 00:15:25.520 align:middle line:90%
+AUDIENCE: Fill the 5.
+
+00:15:25.520 --> 00:15:27.150 align:middle line:90%
+Erik Demaine: Fill the 5.
+
+00:15:27.150 --> 00:15:29.060 align:middle line:90%
+AUDIENCE: And then transfer.
+
+00:15:29.060 --> 00:15:33.600 align:middle line:84%
+Erik Demaine: And then
+transfer like this from 5 to--
+
+00:15:33.600 --> 00:15:35.810 align:middle line:90%
+did I get the right number?
+
+00:15:35.810 --> 00:15:36.450 align:middle line:90%
+There we go.
+
+00:15:36.450 --> 00:15:38.780 align:middle line:84%
+Water's particularly
+unsettled today.
+
+00:15:38.780 --> 00:15:41.510 align:middle line:84%
+All right, so we've got 5
+on the right if I can count.
+
+00:15:41.510 --> 00:15:44.750 align:middle line:84%
+And we fill over here,
+until this one is filled.
+
+00:15:44.750 --> 00:15:46.716 align:middle line:84%
+And now we've got
+the number 4, yay.
+
+00:15:46.716 --> 00:15:49.750 align:middle line:90%
+
+
+00:15:49.750 --> 00:15:55.730 align:middle line:84%
+That's how we save Manhattan
+with this water-pouring problem
+
+00:15:55.730 --> 00:16:01.900 align:middle line:84%
+but while the bad guys are off
+stealing money from the bank.
+
+00:16:01.900 --> 00:16:04.040 align:middle line:84%
+But sometimes this
+puzzle isn't solvable,
+
+00:16:04.040 --> 00:16:05.603 align:middle line:90%
+so let's take another example.
+
+00:16:05.603 --> 00:16:11.140 align:middle line:90%
+
+
+00:16:11.140 --> 00:16:16.340 align:middle line:84%
+Let's say we want a
+equals 6, b equals 4,
+
+00:16:16.340 --> 00:16:20.530 align:middle line:90%
+and we want the number 3.
+
+00:16:20.530 --> 00:16:21.377 align:middle line:90%
+Is this possible?
+
+00:16:21.377 --> 00:16:23.210 align:middle line:84%
+I already gave away
+that this is impossible.
+
+00:16:23.210 --> 00:16:25.480 align:middle line:90%
+Why is it impossible?
+
+00:16:25.480 --> 00:16:28.390 align:middle line:90%
+Any feelings?
+
+00:16:28.390 --> 00:16:31.540 align:middle line:84%
+Hint, it has something
+to do with this stuff.
+
+00:16:31.540 --> 00:16:33.130 align:middle line:90%
+Yeah.
+
+00:16:33.130 --> 00:16:35.760 align:middle line:84%
+AUDIENCE: There are no
+integer linear combinations.
+
+00:16:35.760 --> 00:16:38.390 align:middle line:84%
+Is it possible that there
+were 6 and 4 [INAUDIBLE]
+
+00:16:38.390 --> 00:16:39.890 align:middle line:84%
+Erik Demaine: OK,
+you said there are
+
+00:16:39.890 --> 00:16:43.770 align:middle line:84%
+no integer linear combinations
+where of 6 and 4 that make 3.
+
+00:16:43.770 --> 00:16:44.790 align:middle line:90%
+That is true.
+
+00:16:44.790 --> 00:16:47.360 align:middle line:84%
+But this problem isn't
+directly about integer linear
+
+00:16:47.360 --> 00:16:48.800 align:middle line:90%
+combinations, is it?
+
+00:16:48.800 --> 00:16:49.435 align:middle line:90%
+I don't know.
+
+00:16:49.435 --> 00:16:54.260 align:middle line:90%
+
+
+00:16:54.260 --> 00:16:55.400 align:middle line:90%
+Yeah?
+
+00:16:55.400 --> 00:16:58.040 align:middle line:84%
+AUDIENCE: There's no way to
+get an odd number out of this.
+
+00:16:58.040 --> 00:17:01.683 align:middle line:84%
+Erik Demaine: There's no way to
+get an odd number from these two
+
+00:17:01.683 --> 00:17:02.183 align:middle line:90%
+gallons.
+
+00:17:02.183 --> 00:17:04.849 align:middle line:90%
+
+
+00:17:04.849 --> 00:17:07.069 align:middle line:90%
+Both of you are correct.
+
+00:17:07.069 --> 00:17:10.819 align:middle line:84%
+The simpler reason,
+in this case,
+
+00:17:10.819 --> 00:17:12.883 align:middle line:84%
+is it's impossible
+to get an odd amount.
+
+00:17:12.883 --> 00:17:15.640 align:middle line:90%
+
+
+00:17:15.640 --> 00:17:17.390 align:middle line:84%
+I guess, the proof of
+both of these things
+
+00:17:17.390 --> 00:17:19.829 align:middle line:84%
+is you look at all the
+possible transitions,
+
+00:17:19.829 --> 00:17:24.200 align:middle line:84%
+and you observe that if you
+start with a and b being even,
+
+00:17:24.200 --> 00:17:26.210 align:middle line:84%
+you can never
+construct an odd number
+
+00:17:26.210 --> 00:17:27.960 align:middle line:90%
+by adding and subtracting.
+
+00:17:27.960 --> 00:17:29.810 align:middle line:84%
+All we're doing here
+are taking numbers
+
+00:17:29.810 --> 00:17:32.480 align:middle line:84%
+that we've constructed, adding
+them and/or subtracting them
+
+00:17:32.480 --> 00:17:34.370 align:middle line:90%
+with a and b or each other.
+
+00:17:34.370 --> 00:17:36.080 align:middle line:84%
+And so if you start
+with even numbers,
+
+00:17:36.080 --> 00:17:37.660 align:middle line:84%
+you add and subtract
+them, you always
+
+00:17:37.660 --> 00:17:39.260 align:middle line:90%
+stay within the even numbers.
+
+00:17:39.260 --> 00:17:41.050 align:middle line:84%
+But also, as you
+were saying, if you
+
+00:17:41.050 --> 00:17:43.570 align:middle line:84%
+start with an integer linear
+combination of a and b,
+
+00:17:43.570 --> 00:17:46.480 align:middle line:84%
+all you can get are integer
+linear combinations of a and b.
+
+00:17:46.480 --> 00:17:51.610 align:middle line:84%
+So here is a key lemma
+about this puzzle
+
+00:17:51.610 --> 00:17:56.110 align:middle line:84%
+and why that is
+impossible, more generally,
+
+00:17:56.110 --> 00:18:07.240 align:middle line:84%
+is all reachable amounts
+in this puzzle, are integer
+
+00:18:07.240 --> 00:18:12.010 align:middle line:90%
+linear combinations of a and b.
+
+00:18:12.010 --> 00:18:13.125 align:middle line:90%
+Let's prove this.
+
+00:18:13.125 --> 00:18:16.450 align:middle line:90%
+
+
+00:18:16.450 --> 00:18:19.290 align:middle line:84%
+Any suggestions on how to
+prove a property like this?
+
+00:18:19.290 --> 00:18:22.495 align:middle line:90%
+
+
+00:18:22.495 --> 00:18:24.620 align:middle line:84%
+If you remember all the
+way back to state machines,
+
+00:18:24.620 --> 00:18:26.480 align:middle line:84%
+hopefully you've been
+studying for the test.
+
+00:18:26.480 --> 00:18:27.860 align:middle line:90%
+State machines are on the test.
+
+00:18:27.860 --> 00:18:29.030 align:middle line:90%
+This lecture is not.
+
+00:18:29.030 --> 00:18:32.155 align:middle line:90%
+That will be on quiz 2.
+
+00:18:32.155 --> 00:18:33.030 align:middle line:90%
+AUDIENCE: Invariance.
+
+00:18:33.030 --> 00:18:35.956 align:middle line:84%
+Erik Demaine: Invariance,
+yeah, in particular--
+
+00:18:35.956 --> 00:18:38.940 align:middle line:90%
+
+
+00:18:38.940 --> 00:18:41.290 align:middle line:84%
+this is a statement
+about invariance.
+
+00:18:41.290 --> 00:18:50.910 align:middle line:84%
+This is saying, for all
+reachable x, y, x and y
+
+00:18:50.910 --> 00:18:55.770 align:middle line:84%
+are integer linear
+combinations of a and b.
+
+00:18:55.770 --> 00:18:58.750 align:middle line:84%
+So this is an
+invariant property.
+
+00:18:58.750 --> 00:19:00.070 align:middle line:90%
+This is a state predicate.
+
+00:19:00.070 --> 00:19:01.612 align:middle line:84%
+We want to prove
+that it's invariant,
+
+00:19:01.612 --> 00:19:04.830 align:middle line:84%
+that it's true for all reachable
+states starting from 0, 0.
+
+00:19:04.830 --> 00:19:11.490 align:middle line:84%
+And we usually do that using
+the invariant principle which
+
+00:19:11.490 --> 00:19:13.240 align:middle line:90%
+requires two steps.
+
+00:19:13.240 --> 00:19:15.450 align:middle line:90%
+One is base case.
+
+00:19:15.450 --> 00:19:19.290 align:middle line:84%
+We need to check that this
+predicate holds initially.
+
+00:19:19.290 --> 00:19:22.810 align:middle line:84%
+And the initial
+state for us is 0, 0.
+
+00:19:22.810 --> 00:19:26.250 align:middle line:84%
+And we observe that 0 is
+indeed, a linear combination
+
+00:19:26.250 --> 00:19:32.530 align:middle line:84%
+of a and b, namely 0 times
+a plus 0 times b, great.
+
+00:19:32.530 --> 00:19:33.920 align:middle line:90%
+Base case is true.
+
+00:19:33.920 --> 00:19:36.280 align:middle line:84%
+And so now we just
+need the inductive
+
+00:19:36.280 --> 00:19:39.280 align:middle line:84%
+step, or the I guess,
+the preserved, the fact
+
+00:19:39.280 --> 00:19:40.926 align:middle line:84%
+that this predicate
+is preserved.
+
+00:19:40.926 --> 00:19:44.230 align:middle line:90%
+
+
+00:19:44.230 --> 00:19:47.320 align:middle line:84%
+So suppose that
+we're at some state
+
+00:19:47.320 --> 00:19:53.890 align:middle line:84%
+x and y, where the predicate is
+true, so x equals sa plus tb,
+
+00:19:53.890 --> 00:19:59.590 align:middle line:84%
+and y equals s prime
+a plus t prime b.
+
+00:19:59.590 --> 00:20:03.710 align:middle line:84%
+And then we just look at all
+of the available transitions.
+
+00:20:03.710 --> 00:20:07.120 align:middle line:84%
+And we show that every
+number that you can make,
+
+00:20:07.120 --> 00:20:13.390 align:middle line:84%
+is indeed an integer linear
+combination of a and b.
+
+00:20:13.390 --> 00:20:14.870 align:middle line:90%
+So let's do one example.
+
+00:20:14.870 --> 00:20:17.520 align:middle line:90%
+We can construct x plus y.
+
+00:20:17.520 --> 00:20:26.650 align:middle line:84%
+x plus y, we can rewrite as
+s plus s prime times a and t
+
+00:20:26.650 --> 00:20:29.380 align:middle line:90%
+plus t prime times b.
+
+00:20:29.380 --> 00:20:33.185 align:middle line:84%
+So that's if this transition
+happens to be possible,
+
+00:20:33.185 --> 00:20:35.560 align:middle line:84%
+it may not be possible because
+there's this if condition.
+
+00:20:35.560 --> 00:20:38.962 align:middle line:84%
+But if we show that every
+number we could possibly build
+
+00:20:38.962 --> 00:20:40.420 align:middle line:84%
+has this property,
+then, of course,
+
+00:20:40.420 --> 00:20:42.510 align:middle line:84%
+all the ones that we
+can actually reach also
+
+00:20:42.510 --> 00:20:44.250 align:middle line:90%
+have this property.
+
+00:20:44.250 --> 00:20:51.920 align:middle line:84%
+So x plus y is indeed an integer
+linear combination of a and b,
+
+00:20:51.920 --> 00:20:52.420 align:middle line:90%
+et cetera.
+
+00:20:52.420 --> 00:20:55.890 align:middle line:90%
+
+
+00:20:55.890 --> 00:20:58.878 align:middle line:84%
+OK, I don't want to prove it
+for every single transition
+
+00:20:58.878 --> 00:21:00.670 align:middle line:84%
+here, just because
+there's a bunch of them.
+
+00:21:00.670 --> 00:21:03.087 align:middle line:84%
+But for example, a is indeed
+an integer linear combination
+
+00:21:03.087 --> 00:21:03.610 align:middle line:90%
+of a and b.
+
+00:21:03.610 --> 00:21:05.500 align:middle line:90%
+It's 1 times a plus 0 times b.
+
+00:21:05.500 --> 00:21:06.940 align:middle line:90%
+This one looks messier.
+
+00:21:06.940 --> 00:21:09.600 align:middle line:84%
+It's actually just
+x plus y minus b.
+
+00:21:09.600 --> 00:21:10.960 align:middle line:90%
+So it's almost the same.
+
+00:21:10.960 --> 00:21:12.550 align:middle line:90%
+You just add a minus 1 here.
+
+00:21:12.550 --> 00:21:14.370 align:middle line:84%
+But the general property
+we're using here
+
+00:21:14.370 --> 00:21:16.410 align:middle line:84%
+is, that all of the
+constructible numbers
+
+00:21:16.410 --> 00:21:21.360 align:middle line:84%
+here are integer linear
+combinations of x, y a and b.
+
+00:21:21.360 --> 00:21:22.360 align:middle line:90%
+OK, I lied.
+
+00:21:22.360 --> 00:21:25.060 align:middle line:84%
+We're using integer linear
+combinations of four things.
+
+00:21:25.060 --> 00:21:28.430 align:middle line:84%
+But all of the x and y's are
+also integer linear combinations
+
+00:21:28.430 --> 00:21:29.010 align:middle line:90%
+of a and b.
+
+00:21:29.010 --> 00:21:31.610 align:middle line:84%
+So what we're really taking
+is integer linear combinations
+
+00:21:31.610 --> 00:21:34.530 align:middle line:84%
+of integer linear
+combinations of a and b.
+
+00:21:34.530 --> 00:21:37.100 align:middle line:84%
+And it turns out
+that if you take
+
+00:21:37.100 --> 00:21:40.880 align:middle line:84%
+two integer linear combinations
+of a and b like, x and y,
+
+00:21:40.880 --> 00:21:43.130 align:middle line:84%
+and you add them
+together, or in general
+
+00:21:43.130 --> 00:21:44.940 align:middle line:84%
+take an integer linear
+combination of them,
+
+00:21:44.940 --> 00:21:48.150 align:middle line:84%
+you still get an integer
+linear combination of a and b.
+
+00:21:48.150 --> 00:21:49.620 align:middle line:90%
+As you can see from this proof.
+
+00:21:49.620 --> 00:21:51.287 align:middle line:84%
+It's actually pretty
+much the same proof
+
+00:21:51.287 --> 00:21:52.700 align:middle line:90%
+we were doing over here.
+
+00:21:52.700 --> 00:21:55.910 align:middle line:84%
+This was integer linear
+combinations of one number, d.
+
+00:21:55.910 --> 00:21:58.070 align:middle line:84%
+And divisibility
+was preserved even
+
+00:21:58.070 --> 00:22:00.900 align:middle line:84%
+when you took integer linear
+combinations, so same idea.
+
+00:22:00.900 --> 00:22:03.390 align:middle line:84%
+And for any puzzle where
+you have that property,
+
+00:22:03.390 --> 00:22:04.912 align:middle line:84%
+you can only
+construct numbers that
+
+00:22:04.912 --> 00:22:06.870 align:middle line:84%
+are integer and linear
+combinations of a and b.
+
+00:22:06.870 --> 00:22:10.610 align:middle line:84%
+Now, for this puzzle, you can
+actually construct all of them
+
+00:22:10.610 --> 00:22:13.010 align:middle line:90%
+that fit in the jars.
+
+00:22:13.010 --> 00:22:16.860 align:middle line:84%
+So I'll just mention
+this as a claim.
+
+00:22:16.860 --> 00:22:21.140 align:middle line:84%
+And if we have time at the
+end, we'll come back to it.
+
+00:22:21.140 --> 00:22:38.610 align:middle line:84%
+We can obtain a value x
+if and only if, let's say,
+
+00:22:38.610 --> 00:22:44.400 align:middle line:84%
+x is an integer linear
+combination of a and b
+
+00:22:44.400 --> 00:22:50.340 align:middle line:84%
+and 0 is less than or
+equal to x, is less than
+
+00:22:50.340 --> 00:22:55.090 align:middle line:90%
+or equal to max of a and b.
+
+00:22:55.090 --> 00:23:00.510 align:middle line:84%
+So we might try to
+prove that later.
+
+00:23:00.510 --> 00:23:03.300 align:middle line:84%
+So now the central
+question is, how
+
+00:23:03.300 --> 00:23:06.780 align:middle line:84%
+do we know whether one number
+is an integer linear combination
+
+00:23:06.780 --> 00:23:07.710 align:middle line:90%
+of two other numbers?
+
+00:23:07.710 --> 00:23:12.030 align:middle line:84%
+And when it is, can we actually
+construct the values s And t,
+
+00:23:12.030 --> 00:23:15.130 align:middle line:90%
+so that sa plus tb equals x?
+
+00:23:15.130 --> 00:23:17.250 align:middle line:84%
+Because that's what
+we needed to solve
+
+00:23:17.250 --> 00:23:19.860 align:middle line:90%
+this puzzle was some way to--
+
+00:23:19.860 --> 00:23:21.900 align:middle line:84%
+we were only given
+the capacities
+
+00:23:21.900 --> 00:23:23.830 align:middle line:84%
+of the jars and
+the target value.
+
+00:23:23.830 --> 00:23:25.735 align:middle line:90%
+And now we want to represent--
+
+00:23:25.735 --> 00:23:27.110 align:middle line:84%
+let's check that
+this is actually
+
+00:23:27.110 --> 00:23:28.713 align:middle line:90%
+possible for this example.
+
+00:23:28.713 --> 00:23:36.380 align:middle line:90%
+
+
+00:23:36.380 --> 00:23:39.030 align:middle line:84%
+Sorry, not this example, the
+one that's actually solvable.
+
+00:23:39.030 --> 00:23:45.570 align:middle line:84%
+So for this solvable
+puzzle, 4 equals 2 times 5,
+
+00:23:45.570 --> 00:23:48.990 align:middle line:90%
+that's 10, minus 2 times 3.
+
+00:23:48.990 --> 00:23:51.650 align:middle line:90%
+That's 6.
+
+00:23:51.650 --> 00:23:53.160 align:middle line:90%
+10 minus 6 is 4.
+
+00:23:53.160 --> 00:23:55.740 align:middle line:84%
+So that's intuitively why
+this puzzle is solvable.
+
+00:23:55.740 --> 00:23:57.230 align:middle line:90%
+Although that's not a proof.
+
+00:23:57.230 --> 00:23:58.790 align:middle line:84%
+I mean, we just
+saw that it wasn't
+
+00:23:58.790 --> 00:24:00.680 align:middle line:90%
+limited by this same issue.
+
+00:24:00.680 --> 00:24:03.920 align:middle line:84%
+So for example, if we
+started with 6 and 4,
+
+00:24:03.920 --> 00:24:10.140 align:middle line:84%
+we know by this lemma, because
+2 divides 4 and 2 divides 6,
+
+00:24:10.140 --> 00:24:12.380 align:middle line:84%
+2 will divide any integer
+linear combination,
+
+00:24:12.380 --> 00:24:17.400 align:middle line:84%
+and therefore, any reachable
+value in this puzzle.
+
+00:24:17.400 --> 00:24:19.190 align:middle line:90%
+And 2 does not divide 3.
+
+00:24:19.190 --> 00:24:20.580 align:middle line:90%
+3 is odd, not even.
+
+00:24:20.580 --> 00:24:22.460 align:middle line:84%
+And so we will never
+be able to reach 3
+
+00:24:22.460 --> 00:24:24.310 align:middle line:84%
+because all the reachable
+states are even.
+
+00:24:24.310 --> 00:24:28.710 align:middle line:84%
+That's a corollary
+now of this lemma, OK.
+
+00:24:28.710 --> 00:24:32.550 align:middle line:84%
+OK, but in the good
+case, and the bad case
+
+00:24:32.550 --> 00:24:35.850 align:middle line:84%
+is easy to see, I guess,
+how do we know whether we're
+
+00:24:35.850 --> 00:24:37.120 align:middle line:90%
+in a good case or a bad case?
+
+00:24:37.120 --> 00:24:39.662 align:middle line:84%
+How do we know whether x is a
+integer linear combination of a
+
+00:24:39.662 --> 00:24:41.680 align:middle line:90%
+and b, given x and a and b?
+
+00:24:41.680 --> 00:24:45.690 align:middle line:84%
+That is the purpose of--
+well, some motivation
+
+00:24:45.690 --> 00:24:46.900 align:middle line:90%
+for the rest of this lecture.
+
+00:24:46.900 --> 00:24:49.710 align:middle line:84%
+We can use it for
+all sorts of things.
+
+00:24:49.710 --> 00:24:53.880 align:middle line:84%
+All right, and I claim that
+this is going to be true if
+
+00:24:53.880 --> 00:24:59.660 align:middle line:84%
+and only if this
+property is true.
+
+00:24:59.660 --> 00:25:05.160 align:middle line:90%
+
+
+00:25:05.160 --> 00:25:08.020 align:middle line:84%
+So now I'm going to restate
+this in terms of divisibility.
+
+00:25:08.020 --> 00:25:10.620 align:middle line:84%
+This equivalence is
+not obvious, so we'll
+
+00:25:10.620 --> 00:25:12.750 align:middle line:90%
+prove it by the end of today.
+
+00:25:12.750 --> 00:25:14.760 align:middle line:84%
+So what we really
+want to show is,
+
+00:25:14.760 --> 00:25:16.860 align:middle line:84%
+that every common
+divisor of a and b--
+
+00:25:16.860 --> 00:25:18.780 align:middle line:84%
+remember this is
+our definition of d
+
+00:25:18.780 --> 00:25:26.300 align:middle line:84%
+is a common divisor, a common
+divisor of a and b, divides a
+
+00:25:26.300 --> 00:25:30.320 align:middle line:84%
+and it divides b --then
+it should also divide x.
+
+00:25:30.320 --> 00:25:34.980 align:middle line:84%
+So in the example, we saw that 2
+was a common divisor of 4 and 6,
+
+00:25:34.980 --> 00:25:38.660 align:middle line:84%
+and so 2 better divide
+anything that we make.
+
+00:25:38.660 --> 00:25:40.810 align:middle line:84%
+What are the common
+divisors of 5 and 3?
+
+00:25:40.810 --> 00:25:43.400 align:middle line:90%
+
+
+00:25:43.400 --> 00:25:44.185 align:middle line:90%
+3 doesn't work.
+
+00:25:44.185 --> 00:25:44.810 align:middle line:90%
+5 doesn't work.
+
+00:25:44.810 --> 00:25:45.800 align:middle line:90%
+2 doesn't work.
+
+00:25:45.800 --> 00:25:47.010 align:middle line:90%
+3 doesn't work.
+
+00:25:47.010 --> 00:25:49.520 align:middle line:90%
+I guess 1 is the common divisor.
+
+00:25:49.520 --> 00:25:52.700 align:middle line:90%
+And 1 divides everything.
+
+00:25:52.700 --> 00:25:59.930 align:middle line:84%
+So yeah, this is true
+in our good case.
+
+00:25:59.930 --> 00:26:02.750 align:middle line:84%
+And this, we can rewrite
+in yet another way,
+
+00:26:02.750 --> 00:26:05.720 align:middle line:90%
+which motivates our next topic.
+
+00:26:05.720 --> 00:26:10.393 align:middle line:90%
+The GCD of a and b divides x.
+
+00:26:10.393 --> 00:26:11.810 align:middle line:84%
+So I claim, in
+particular, this is
+
+00:26:11.810 --> 00:26:13.520 align:middle line:84%
+going to be a way
+to tell whether x
+
+00:26:13.520 --> 00:26:15.380 align:middle line:84%
+is an integer linear
+combination of a and b.
+
+00:26:15.380 --> 00:26:17.660 align:middle line:84%
+You compute something
+called the GCD of a and b,
+
+00:26:17.660 --> 00:26:20.260 align:middle line:84%
+and you see whether
+it divides x.
+
+00:26:20.260 --> 00:26:21.675 align:middle line:90%
+So let's talk about GCD.
+
+00:26:21.675 --> 00:26:36.640 align:middle line:90%
+
+
+00:26:36.640 --> 00:26:38.390 align:middle line:90%
+GCD is another acronym.
+
+00:26:38.390 --> 00:26:41.220 align:middle line:84%
+It stands for Greatest
+Common Divisor.
+
+00:26:41.220 --> 00:26:46.240 align:middle line:90%
+
+
+00:26:46.240 --> 00:26:53.710 align:middle line:84%
+I assume it comes from
+Britain, in particular,
+
+00:26:53.710 --> 00:26:57.490 align:middle line:84%
+where they use "great"
+to indicate large.
+
+00:26:57.490 --> 00:27:00.700 align:middle line:84%
+So we might call this the
+largest common divisor
+
+00:27:00.700 --> 00:27:04.065 align:middle line:84%
+or the biggest common divisor,
+all synonyms for the same thing.
+
+00:27:04.065 --> 00:27:11.350 align:middle line:90%
+
+
+00:27:11.350 --> 00:27:15.520 align:middle line:84%
+I'm going to give two
+equivalent definitions of GCD.
+
+00:27:15.520 --> 00:27:18.850 align:middle line:84%
+To me, the more
+intuitive one is this.
+
+00:27:18.850 --> 00:27:29.690 align:middle line:90%
+
+
+00:27:29.690 --> 00:27:33.620 align:middle line:84%
+But it's a little bit uglier
+because it has a special case.
+
+00:27:33.620 --> 00:27:36.350 align:middle line:84%
+So what I'd like to say,
+is the GCD of a and b,
+
+00:27:36.350 --> 00:27:40.190 align:middle line:84%
+is the largest integer d such
+that d divides a and d divides b
+
+00:27:40.190 --> 00:27:43.250 align:middle line:84%
+And again, this
+is common divisor.
+
+00:27:43.250 --> 00:27:45.170 align:middle line:84%
+d is a common
+divisor of a and b.
+
+00:27:45.170 --> 00:27:47.270 align:middle line:84%
+And I want it to be the
+largest common divisor.
+
+00:27:47.270 --> 00:27:48.890 align:middle line:90%
+That would be GCD.
+
+00:27:48.890 --> 00:27:53.000 align:middle line:84%
+But there's one annoying special
+case, which really won't matter
+
+00:27:53.000 --> 00:27:55.530 align:middle line:84%
+for the rest of the lecture,
+but to be technically correct,
+
+00:27:55.530 --> 00:27:59.070 align:middle line:84%
+we should say, what happens when
+you compute the GCD of 0 and 0?
+
+00:27:59.070 --> 00:28:03.030 align:middle line:84%
+Because remember, every
+integer d divides 0.
+
+00:28:03.030 --> 00:28:04.380 align:middle line:90%
+Everything divides 0.
+
+00:28:04.380 --> 00:28:08.390 align:middle line:84%
+So what's the largest
+divisor of 0 and 0?
+
+00:28:08.390 --> 00:28:09.830 align:middle line:90%
+I mean, infinity?
+
+00:28:09.830 --> 00:28:10.410 align:middle line:90%
+I don't know.
+
+00:28:10.410 --> 00:28:13.380 align:middle line:84%
+It's like there is no such
+integer that's the largest.
+
+00:28:13.380 --> 00:28:15.470 align:middle line:90%
+So there is no largest integer.
+
+00:28:15.470 --> 00:28:17.590 align:middle line:84%
+So in this case, it turns
+out the right thing is
+
+00:28:17.590 --> 00:28:19.880 align:middle line:90%
+to define GCD of 0, 0 to be 0.
+
+00:28:19.880 --> 00:28:22.450 align:middle line:84%
+That will be a little
+counterintuitive maybe,
+
+00:28:22.450 --> 00:28:27.160 align:middle line:84%
+until you see the
+next definition.
+
+00:28:27.160 --> 00:28:31.300 align:middle line:90%
+So here's another definition.
+
+00:28:31.300 --> 00:28:38.260 align:middle line:84%
+GCD is the only
+non-negative common divisor
+
+00:28:38.260 --> 00:28:48.090 align:middle line:84%
+of a and b divisible by all
+common divisors of a and b.
+
+00:28:48.090 --> 00:29:00.670 align:middle line:90%
+
+
+00:29:00.670 --> 00:29:05.080 align:middle line:84%
+So another way to think about
+the greatest common divisor,
+
+00:29:05.080 --> 00:29:08.620 align:middle line:84%
+is it's greatest in terms of
+the divisibility relation,
+
+00:29:08.620 --> 00:29:12.340 align:middle line:84%
+the one that is
+the most divisible
+
+00:29:12.340 --> 00:29:15.290 align:middle line:90%
+by other common divisors.
+
+00:29:15.290 --> 00:29:18.490 align:middle line:84%
+So it turns out there's going
+to be one common divisor that's
+
+00:29:18.490 --> 00:29:22.360 align:middle line:84%
+both non-negative and is
+divisible by all common divisors
+
+00:29:22.360 --> 00:29:23.920 align:middle line:90%
+of a and b.
+
+00:29:23.920 --> 00:29:31.390 align:middle line:84%
+So in these examples, for
+4 and 6, GCD of 6 and 4,
+
+00:29:31.390 --> 00:29:32.955 align:middle line:90%
+is going to be 2.
+
+00:29:32.955 --> 00:29:35.950 align:middle line:90%
+
+
+00:29:35.950 --> 00:29:37.930 align:middle line:90%
+Because the only-- let's see.
+
+00:29:37.930 --> 00:29:43.090 align:middle line:84%
+The common divisors, what
+are all the common divisors
+
+00:29:43.090 --> 00:29:46.645 align:middle line:90%
+between 4 and 6?
+
+00:29:46.645 --> 00:29:49.190 align:middle line:84%
+It may be obvious
+that there's two.
+
+00:29:49.190 --> 00:29:53.590 align:middle line:84%
+There's minus 2,
+there's 1 and minus 1.
+
+00:29:53.590 --> 00:29:56.000 align:middle line:90%
+0 divides nothing except itself.
+
+00:29:56.000 --> 00:29:57.790 align:middle line:84%
+And you can check
+all the numbers
+
+00:29:57.790 --> 00:29:59.800 align:middle line:90%
+between negative 6 and 6.
+
+00:29:59.800 --> 00:30:01.990 align:middle line:90%
+Those are the possible divisors.
+
+00:30:01.990 --> 00:30:05.960 align:middle line:84%
+And these are the only ones
+that divide both a and b.
+
+00:30:05.960 --> 00:30:10.490 align:middle line:84%
+And the largest
+non-negative 1 here is 2.
+
+00:30:10.490 --> 00:30:13.270 align:middle line:84%
+And also it has the
+property that all
+
+00:30:13.270 --> 00:30:17.380 align:middle line:84%
+of these other common
+divisors divide 2.
+
+00:30:17.380 --> 00:30:19.890 align:middle line:84%
+So whichever way you
+want to think about it,
+
+00:30:19.890 --> 00:30:21.140 align:middle line:90%
+you can use either definition.
+
+00:30:21.140 --> 00:30:22.600 align:middle line:84%
+I'm not going to prove
+that these definitions are
+
+00:30:22.600 --> 00:30:23.060 align:middle line:90%
+equivalent.
+
+00:30:23.060 --> 00:30:24.727 align:middle line:84%
+We're just going to
+take it as an axiom.
+
+00:30:24.727 --> 00:30:26.440 align:middle line:90%
+But you can prove it.
+
+00:30:26.440 --> 00:30:29.350 align:middle line:90%
+This may be an exercise.
+
+00:30:29.350 --> 00:30:31.808 align:middle line:84%
+But when we're proving
+things about GCD,
+
+00:30:31.808 --> 00:30:33.850 align:middle line:84%
+we can use either of these
+definitions, whichever
+
+00:30:33.850 --> 00:30:35.530 align:middle line:90%
+is more convenient.
+
+00:30:35.530 --> 00:30:44.950 align:middle line:84%
+So let's do one more
+interesting example,
+
+00:30:44.950 --> 00:30:54.280 align:middle line:84%
+which is GCD of, I think,
+I want to do 0 first, 0, a.
+
+00:30:54.280 --> 00:30:57.637 align:middle line:84%
+So suppose I want to
+compute GCD of two numbers.
+
+00:30:57.637 --> 00:30:58.845 align:middle line:90%
+Maybe I should put a b there.
+
+00:30:58.845 --> 00:31:01.780 align:middle line:90%
+
+
+00:31:01.780 --> 00:31:04.870 align:middle line:90%
+And one of them is 0.
+
+00:31:04.870 --> 00:31:08.780 align:middle line:84%
+Any guesses what the GCD
+of 0 and b should be?
+
+00:31:08.780 --> 00:31:10.455 align:middle line:90%
+Remember, everything divides 0.
+
+00:31:10.455 --> 00:31:20.170 align:middle line:90%
+
+
+00:31:20.170 --> 00:31:20.670 align:middle line:90%
+AUDIENCE: b.
+
+00:31:20.670 --> 00:31:24.540 align:middle line:84%
+Erik Demaine: b, it's a
+good guess, almost right.
+
+00:31:24.540 --> 00:31:26.525 align:middle line:90%
+What if b was negative 7?
+
+00:31:26.525 --> 00:31:31.350 align:middle line:90%
+
+
+00:31:31.350 --> 00:31:33.270 align:middle line:84%
+This should be
+absolute value of b.
+
+00:31:33.270 --> 00:31:36.540 align:middle line:84%
+So if we want to handle
+positive and negative things,
+
+00:31:36.540 --> 00:31:38.610 align:middle line:84%
+this turns out to
+be the right answer.
+
+00:31:38.610 --> 00:31:41.927 align:middle line:90%
+Here is a mini proof.
+
+00:31:41.927 --> 00:31:43.510 align:middle line:84%
+There are two things
+we want to check.
+
+00:31:43.510 --> 00:31:48.210 align:middle line:84%
+One is that absolute value of b
+is a common divisor of 0 and b.
+
+00:31:48.210 --> 00:31:50.290 align:middle line:84%
+So well, the
+absolute value of b--
+
+00:31:50.290 --> 00:31:53.710 align:middle line:84%
+this gets notationally
+pretty gross --divides 0.
+
+00:31:53.710 --> 00:31:56.340 align:middle line:84%
+That's true because
+everything divides 0.
+
+00:31:56.340 --> 00:32:00.280 align:middle line:84%
+And absolute value of
+b divides b, namely,
+
+00:32:00.280 --> 00:32:03.000 align:middle line:84%
+when we let k be
+negative 1 or 1,
+
+00:32:03.000 --> 00:32:07.325 align:middle line:84%
+depending on whether b was
+positive or negative or 0.
+
+00:32:07.325 --> 00:32:09.870 align:middle line:90%
+
+
+00:32:09.870 --> 00:32:12.840 align:middle line:84%
+Cool, so good it is
+a common divisor.
+
+00:32:12.840 --> 00:32:17.260 align:middle line:90%
+
+
+00:32:17.260 --> 00:32:19.048 align:middle line:84%
+And now I want to
+claim that it's
+
+00:32:19.048 --> 00:32:20.590 align:middle line:84%
+the greatest common
+divisor according
+
+00:32:20.590 --> 00:32:22.340 align:middle line:90%
+to the second definition.
+
+00:32:22.340 --> 00:32:24.130 align:middle line:84%
+So let's suppose that
+we had some number
+
+00:32:24.130 --> 00:32:30.850 align:middle line:84%
+d which divides 0
+and which divides b.
+
+00:32:30.850 --> 00:32:32.750 align:middle line:90%
+So d divides 0, and d divides b.
+
+00:32:32.750 --> 00:32:36.430 align:middle line:84%
+Then I claim, in
+particular, d also
+
+00:32:36.430 --> 00:32:40.930 align:middle line:90%
+divides the absolute value of b.
+
+00:32:40.930 --> 00:32:43.780 align:middle line:84%
+Because if you divide a number,
+you also divide its negation,
+
+00:32:43.780 --> 00:32:47.050 align:middle line:84%
+just by negating the value k
+that you're multiplying by.
+
+00:32:47.050 --> 00:32:49.060 align:middle line:84%
+If I take k times
+d, and I get b,
+
+00:32:49.060 --> 00:32:52.540 align:middle line:84%
+then I take negative k times d,
+And I get absolute value of b
+
+00:32:52.540 --> 00:32:54.790 align:middle line:90%
+if b happened to be negative.
+
+00:32:54.790 --> 00:32:58.418 align:middle line:84%
+OK, so that means if you're
+a common divisor of 0
+
+00:32:58.418 --> 00:33:00.710 align:middle line:84%
+and b, then you're also a
+common divisor of this thing,
+
+00:33:00.710 --> 00:33:03.850 align:middle line:84%
+and that was our second
+definition of GCD.
+
+00:33:03.850 --> 00:33:07.020 align:middle line:84%
+So great, this
+means your greatest.
+
+00:33:07.020 --> 00:33:10.470 align:middle line:90%
+
+
+00:33:10.470 --> 00:33:16.930 align:middle line:84%
+OK, now the question arises, how
+do we compute GCD of a and b?
+
+00:33:16.930 --> 00:33:22.710 align:middle line:84%
+Because I claimed, over here,
+that what we need to check
+
+00:33:22.710 --> 00:33:25.420 align:middle line:90%
+is whether GCD of ab divides x.
+
+00:33:25.420 --> 00:33:28.510 align:middle line:84%
+So given a and b, we need to
+be able to compute this thing.
+
+00:33:28.510 --> 00:33:30.310 align:middle line:84%
+How do we find the
+greatest common divisor?
+
+00:33:30.310 --> 00:33:32.310 align:middle line:84%
+It turns out there's a
+great algorithm to do it.
+
+00:33:32.310 --> 00:33:35.620 align:middle line:84%
+And the base case of
+that algorithm is this.
+
+00:33:35.620 --> 00:33:38.320 align:middle line:84%
+If we can get one of
+the numbers down to 0,
+
+00:33:38.320 --> 00:33:41.550 align:middle line:90%
+then we found the GCD.
+
+00:33:41.550 --> 00:33:44.310 align:middle line:84%
+So our goal now is
+given some big numbers,
+
+00:33:44.310 --> 00:33:46.980 align:middle line:90%
+to make them smaller somehow.
+
+00:33:46.980 --> 00:33:57.210 align:middle line:84%
+And the big idea here to make a
+GCD algorithm, is subtraction.
+
+00:33:57.210 --> 00:33:59.700 align:middle line:84%
+How do we make numbers
+smaller with arithmetic?
+
+00:33:59.700 --> 00:34:01.750 align:middle line:84%
+Subtraction or division
+seem like good ideas.
+
+00:34:01.750 --> 00:34:05.760 align:middle line:84%
+We're going to use both,
+starting with subtraction.
+
+00:34:05.760 --> 00:34:14.975 align:middle line:84%
+So I claim GCD of ab
+equals GCD of a minus b.
+
+00:34:14.975 --> 00:34:21.430 align:middle line:90%
+b for all integers ab.
+
+00:34:21.430 --> 00:34:24.170 align:middle line:90%
+
+
+00:34:24.170 --> 00:34:27.137 align:middle line:84%
+So if a and b are big
+numbers, this is pretty cool.
+
+00:34:27.137 --> 00:34:29.179 align:middle line:84%
+This is saying we can
+subtract one of the numbers
+
+00:34:29.179 --> 00:34:32.780 align:middle line:84%
+from the other, and we
+get the same GCD somehow.
+
+00:34:32.780 --> 00:34:37.670 align:middle line:84%
+We'll prove this in a
+second, well, now, actually.
+
+00:34:37.670 --> 00:34:39.060 align:middle line:84%
+I'll leave a little
+bit of space.
+
+00:34:39.060 --> 00:34:40.944 align:middle line:90%
+Let's do a proof.
+
+00:34:40.944 --> 00:34:45.650 align:middle line:90%
+
+
+00:34:45.650 --> 00:34:49.280 align:middle line:84%
+So then we're going to turn
+this into an algorithm.
+
+00:34:49.280 --> 00:34:51.210 align:middle line:84%
+But let's first see
+why this is the case.
+
+00:34:51.210 --> 00:34:58.050 align:middle line:84%
+So this is a
+statement about GCD.
+
+00:34:58.050 --> 00:35:01.670 align:middle line:84%
+GCD is this
+complicated definition.
+
+00:35:01.670 --> 00:35:05.760 align:middle line:84%
+It's a little easier to think
+about all common divisors.
+
+00:35:05.760 --> 00:35:08.160 align:middle line:84%
+If you think about the
+common divisors of a and b,
+
+00:35:08.160 --> 00:35:09.720 align:middle line:84%
+those are all the
+numbers d, where
+
+00:35:09.720 --> 00:35:11.220 align:middle line:84%
+d divides a and d
+divides b, and you
+
+00:35:11.220 --> 00:35:13.900 align:middle line:84%
+think of the common
+divisors of a minus b and b,
+
+00:35:13.900 --> 00:35:16.180 align:middle line:90%
+I claim these sets are the same.
+
+00:35:16.180 --> 00:35:25.740 align:middle line:84%
+So the set of common
+divisors of a and b,
+
+00:35:25.740 --> 00:35:37.650 align:middle line:84%
+equals the set of common
+divisors of a minus b and b.
+
+00:35:37.650 --> 00:35:39.420 align:middle line:84%
+OK, this is a kind
+of proof we actually
+
+00:35:39.420 --> 00:35:43.170 align:middle line:90%
+haven't seen in this class yet.
+
+00:35:43.170 --> 00:35:46.380 align:middle line:84%
+This is the brace,
+not a minus sign.
+
+00:35:46.380 --> 00:35:48.940 align:middle line:84%
+When you want to prove
+two sets are equal,
+
+00:35:48.940 --> 00:35:51.450 align:middle line:84%
+a very common template
+for such a proof
+
+00:35:51.450 --> 00:35:54.630 align:middle line:84%
+is to show that every
+element of this set
+
+00:35:54.630 --> 00:35:57.750 align:middle line:84%
+is also an element of this
+set that, if you recall back
+
+00:35:57.750 --> 00:35:59.830 align:middle line:84%
+to our set definitions
+in lecture 1,
+
+00:35:59.830 --> 00:36:02.700 align:middle line:84%
+is that this set is
+contained in this set
+
+00:36:02.700 --> 00:36:05.730 align:middle line:84%
+and also to prove that every
+element of the second set
+
+00:36:05.730 --> 00:36:07.120 align:middle line:90%
+is an element of the first set.
+
+00:36:07.120 --> 00:36:10.360 align:middle line:84%
+That's saying the second set
+is a subset of the first set.
+
+00:36:10.360 --> 00:36:15.450 align:middle line:84%
+So we're going to do
+a proof in two parts.
+
+00:36:15.450 --> 00:36:19.110 align:middle line:84%
+Part one is to show containment,
+that the first set is
+
+00:36:19.110 --> 00:36:21.240 align:middle line:90%
+contained in the second set.
+
+00:36:21.240 --> 00:36:26.190 align:middle line:84%
+Part two, over here,
+is to show containment
+
+00:36:26.190 --> 00:36:27.610 align:middle line:90%
+in the other direction.
+
+00:36:27.610 --> 00:36:30.600 align:middle line:84%
+This set is a
+superset of this set.
+
+00:36:30.600 --> 00:36:35.110 align:middle line:84%
+If I can prove that these sets
+are equal, then in particular,
+
+00:36:35.110 --> 00:36:37.750 align:middle line:84%
+the maximum element of
+these sets, if it exists,
+
+00:36:37.750 --> 00:36:38.968 align:middle line:90%
+is also going to be equal.
+
+00:36:38.968 --> 00:36:41.010 align:middle line:84%
+If you have two identical
+sets, you take the max,
+
+00:36:41.010 --> 00:36:42.468 align:middle line:84%
+you're going to
+get the same thing.
+
+00:36:42.468 --> 00:36:45.040 align:middle line:84%
+Now, I'm using the
+first definition here.
+
+00:36:45.040 --> 00:36:46.690 align:middle line:84%
+Of course, there's
+this one case.
+
+00:36:46.690 --> 00:36:49.560 align:middle line:84%
+when the two numbers are 0,
+then there is no maximum.
+
+00:36:49.560 --> 00:36:51.270 align:middle line:84%
+Because all integers
+actually, will
+
+00:36:51.270 --> 00:36:53.800 align:middle line:90%
+be common divisors of 0 and 0.
+
+00:36:53.800 --> 00:36:56.260 align:middle line:84%
+But in that case, again,
+if the sets are equal,
+
+00:36:56.260 --> 00:36:57.630 align:middle line:90%
+that means that a and b--
+
+00:36:57.630 --> 00:36:59.470 align:middle line:90%
+or these numbers must be 0.
+
+00:36:59.470 --> 00:37:01.870 align:middle line:84%
+And then of course, these
+numbers are also all 0,
+
+00:37:01.870 --> 00:37:06.120 align:middle line:84%
+And this statement is trivially
+true when everything is 0.
+
+00:37:06.120 --> 00:37:08.980 align:middle line:84%
+It's just saying GCD of
+0, 0 equals GCD of 0, 0.
+
+00:37:08.980 --> 00:37:09.970 align:middle line:90%
+That one I'm fine with.
+
+00:37:09.970 --> 00:37:11.740 align:middle line:84%
+But as long as we're
+not in the 0, 0 case,
+
+00:37:11.740 --> 00:37:13.210 align:middle line:90%
+these sets will be finite.
+
+00:37:13.210 --> 00:37:15.670 align:middle line:84%
+And if they're equal, then
+their maximums will be the same.
+
+00:37:15.670 --> 00:37:17.610 align:middle line:90%
+So this is all I need to show.
+
+00:37:17.610 --> 00:37:19.540 align:middle line:90%
+Let's do it in two parts.
+
+00:37:19.540 --> 00:37:21.690 align:middle line:84%
+So first, we
+suppose that we have
+
+00:37:21.690 --> 00:37:23.470 align:middle line:90%
+a common divisor of a and b.
+
+00:37:23.470 --> 00:37:29.670 align:middle line:84%
+So that means d divides a and
+d divides b for some number b.
+
+00:37:29.670 --> 00:37:34.410 align:middle line:84%
+Well, I claim that
+also d divides a minus
+
+00:37:34.410 --> 00:37:38.520 align:middle line:84%
+b because a minus b is an
+integer linear combination of a
+
+00:37:38.520 --> 00:37:39.310 align:middle line:90%
+and b.
+
+00:37:39.310 --> 00:37:42.310 align:middle line:84%
+And we had, over here, in
+our divisibility facts,
+
+00:37:42.310 --> 00:37:44.160 align:middle line:84%
+if d divides a and
+d divides b, then
+
+00:37:44.160 --> 00:37:47.770 align:middle line:84%
+d divides every integer
+linear combination of a and b.
+
+00:37:47.770 --> 00:37:51.360 align:middle line:84%
+So we're plugging in S equals
+1, t equals minus 1 here,
+
+00:37:51.360 --> 00:37:56.170 align:middle line:84%
+and we get that d
+divides a minus b, great
+
+00:37:56.170 --> 00:38:01.120 align:middle line:84%
+So we have d divides a,
+and d divides a minus b.
+
+00:38:01.120 --> 00:38:06.380 align:middle line:84%
+So in other words, we have
+divides a and d divides a minus
+
+00:38:06.380 --> 00:38:08.040 align:middle line:90%
+b and that--
+
+00:38:08.040 --> 00:38:10.610 align:middle line:90%
+sorry, wrong one.
+
+00:38:10.610 --> 00:38:11.980 align:middle line:90%
+I wanted d divides b.
+
+00:38:11.980 --> 00:38:14.870 align:middle line:90%
+
+
+00:38:14.870 --> 00:38:18.770 align:middle line:84%
+And this is the meaning of
+a common divisor of a minus
+
+00:38:18.770 --> 00:38:19.950 align:middle line:90%
+b and b.
+
+00:38:19.950 --> 00:38:22.040 align:middle line:84%
+So we assumed that d was
+a common divisor of this,
+
+00:38:22.040 --> 00:38:24.290 align:middle line:84%
+and we proved that d was a
+common divisor of these two
+
+00:38:24.290 --> 00:38:25.020 align:middle line:90%
+numbers.
+
+00:38:25.020 --> 00:38:26.790 align:middle line:90%
+Therefore, we have containment.
+
+00:38:26.790 --> 00:38:31.250 align:middle line:84%
+Every element in this set,
+is contained in this set.
+
+00:38:31.250 --> 00:38:34.280 align:middle line:84%
+Now let's prove the
+reverse, and that will imply
+
+00:38:34.280 --> 00:38:36.150 align:middle line:90%
+that these sets are equal.
+
+00:38:36.150 --> 00:38:42.380 align:middle line:84%
+So now suppose that d divides
+a minus b, and d divides b.
+
+00:38:42.380 --> 00:38:46.360 align:middle line:84%
+Then I want to show
+that d divides a.
+
+00:38:46.360 --> 00:38:49.040 align:middle line:90%
+
+
+00:38:49.040 --> 00:38:51.890 align:middle line:90%
+Why?
+
+00:38:51.890 --> 00:38:54.680 align:middle line:90%
+Any suggestions?
+
+00:38:54.680 --> 00:38:56.875 align:middle line:84%
+Can I use integer
+linear combinations?
+
+00:38:56.875 --> 00:38:58.518 align:middle line:90%
+Yeah.
+
+00:38:58.518 --> 00:39:01.390 align:middle line:84%
+AUDIENCE: [INAUDIBLE] Like
+t equals 0 in front of it.
+
+00:39:01.390 --> 00:39:03.490 align:middle line:90%
+Erik Demaine: T equals 0.
+
+00:39:03.490 --> 00:39:06.410 align:middle line:84%
+I agree, if I put t
+equals 0 and s equals 1,
+
+00:39:06.410 --> 00:39:09.440 align:middle line:84%
+then this is an integer
+linear combination of a and b.
+
+00:39:09.440 --> 00:39:11.900 align:middle line:84%
+But in this case, I don't
+know that d divides a.
+
+00:39:11.900 --> 00:39:13.580 align:middle line:84%
+That's actually what
+I want to prove.
+
+00:39:13.580 --> 00:39:17.180 align:middle line:84%
+So I can't use integer linear
+combinations of a and b.
+
+00:39:17.180 --> 00:39:17.972 align:middle line:90%
+But--
+
+00:39:17.972 --> 00:39:20.200 align:middle line:84%
+AUDIENCE: Yeah, you can't
+do it with a minus b.
+
+00:39:20.200 --> 00:39:22.450 align:middle line:84%
+Erik Demaine: I can take an
+integer linear combination
+
+00:39:22.450 --> 00:39:23.470 align:middle line:90%
+of a minus b and b.
+
+00:39:23.470 --> 00:39:32.410 align:middle line:84%
+If I do 1 times this plus 1
+times this, a minus b times 1
+
+00:39:32.410 --> 00:39:37.270 align:middle line:90%
+plus 1 times b is a.
+
+00:39:37.270 --> 00:39:44.110 align:middle line:84%
+So in other words, because this
+equals the sum a minus b plus b,
+
+00:39:44.110 --> 00:39:46.870 align:middle line:84%
+and because I know that d is
+a common divisor of a minus
+
+00:39:46.870 --> 00:39:50.050 align:middle line:84%
+b and b, I know
+that d also divides
+
+00:39:50.050 --> 00:39:53.270 align:middle line:84%
+any integer linear combination
+of those two numbers,
+
+00:39:53.270 --> 00:39:57.040 align:middle line:90%
+and in particular, a, cool.
+
+00:39:57.040 --> 00:40:01.100 align:middle line:84%
+So both of these are using
+the divisibility facts
+
+00:40:01.100 --> 00:40:03.120 align:middle line:84%
+that if you have
+a common divisor,
+
+00:40:03.120 --> 00:40:07.070 align:middle line:84%
+you also divide all integer
+linear combinations of those two
+
+00:40:07.070 --> 00:40:09.320 align:middle line:90%
+numbers.
+
+00:40:09.320 --> 00:40:11.180 align:middle line:84%
+So in particular,
+this means we have
+
+00:40:11.180 --> 00:40:13.320 align:middle line:90%
+d divides a and d divides b.
+
+00:40:13.320 --> 00:40:15.560 align:middle line:84%
+I'm just taking this
+thing that we proved
+
+00:40:15.560 --> 00:40:17.840 align:middle line:90%
+and this thing that we assumed.
+
+00:40:17.840 --> 00:40:20.270 align:middle line:90%
+And this says we have a common--
+
+00:40:20.270 --> 00:40:23.130 align:middle line:84%
+it's saying if we had a common
+divisor of a minus b and b,
+
+00:40:23.130 --> 00:40:26.270 align:middle line:84%
+we also have a common
+divisor of a and b.
+
+00:40:26.270 --> 00:40:28.670 align:middle line:84%
+So that says every
+element in this second set
+
+00:40:28.670 --> 00:40:30.450 align:middle line:90%
+is an element of the first set.
+
+00:40:30.450 --> 00:40:33.090 align:middle line:84%
+And because we have containment
+in both directions, in fact,
+
+00:40:33.090 --> 00:40:35.400 align:middle line:84%
+these two sets must be
+exactly the same set.
+
+00:40:35.400 --> 00:40:38.250 align:middle line:84%
+So if you ever have to prove
+that two sets are equal,
+
+00:40:38.250 --> 00:40:41.270 align:middle line:84%
+I recommend a common
+template is to do it
+
+00:40:41.270 --> 00:40:47.510 align:middle line:84%
+in two halves like
+this, OK, great.
+
+00:40:47.510 --> 00:40:49.310 align:middle line:84%
+So I claim we can
+get an algorithm out
+
+00:40:49.310 --> 00:40:55.250 align:middle line:84%
+of this, out of this subtraction
+idea and GCD of 0, b.
+
+00:40:55.250 --> 00:40:58.090 align:middle line:90%
+
+
+00:40:58.090 --> 00:41:00.465 align:middle line:84%
+So let's just do
+an example of that.
+
+00:41:00.465 --> 00:41:01.840 align:middle line:84%
+I won't write a
+careful algorithm
+
+00:41:01.840 --> 00:41:05.020 align:middle line:84%
+because we're
+going to do better.
+
+00:41:05.020 --> 00:41:08.530 align:middle line:84%
+Let's say we want
+to do GCD of 9, 6.
+
+00:41:08.530 --> 00:41:11.230 align:middle line:90%
+
+
+00:41:11.230 --> 00:41:17.010 align:middle line:84%
+OK, oh, and maybe I want
+to write another fact here.
+
+00:41:17.010 --> 00:41:19.540 align:middle line:90%
+
+
+00:41:19.540 --> 00:41:22.330 align:middle line:90%
+Does it matter?
+
+00:41:22.330 --> 00:41:24.970 align:middle line:90%
+Yeah, I do.
+
+00:41:24.970 --> 00:41:31.270 align:middle line:84%
+So GCD of a, b is also
+equal to GCD of b,
+
+00:41:31.270 --> 00:41:35.740 align:middle line:84%
+a by symmetry of this
+definition, a and b
+
+00:41:35.740 --> 00:41:38.950 align:middle line:84%
+can be swapped, and you
+get exactly the same things
+
+00:41:38.950 --> 00:41:40.480 align:middle line:90%
+we're talking about.
+
+00:41:40.480 --> 00:41:45.280 align:middle line:84%
+And if I apply this subtraction
+lemma with the elements
+
+00:41:45.280 --> 00:41:50.570 align:middle line:84%
+swapped, what I get is
+GCD of the first argument,
+
+00:41:50.570 --> 00:41:53.270 align:middle line:84%
+which is b, minus
+the second argument,
+
+00:41:53.270 --> 00:41:57.420 align:middle line:84%
+which is a, comma the
+second argument, which is a.
+
+00:41:57.420 --> 00:42:02.100 align:middle line:84%
+So all these things are equal,
+just from the same subtraction
+
+00:42:02.100 --> 00:42:04.410 align:middle line:90%
+lemma and using the symmetry.
+
+00:42:04.410 --> 00:42:05.970 align:middle line:84%
+But what this is
+saying is either
+
+00:42:05.970 --> 00:42:08.280 align:middle line:84%
+I can subtract the second
+argument from the first
+
+00:42:08.280 --> 00:42:13.530 align:middle line:84%
+and get a minus b, or
+I can also rewrite this
+
+00:42:13.530 --> 00:42:17.260 align:middle line:90%
+as GCD of a, b minus a.
+
+00:42:17.260 --> 00:42:19.980 align:middle line:84%
+Alternatively, I could leave
+the first argument alone
+
+00:42:19.980 --> 00:42:22.450 align:middle line:84%
+and subtract it from
+the second argument.
+
+00:42:22.450 --> 00:42:24.670 align:middle line:84%
+So I'm free to subtract
+whichever way I want.
+
+00:42:24.670 --> 00:42:26.160 align:middle line:84%
+And I find it much
+easier to think
+
+00:42:26.160 --> 00:42:27.870 align:middle line:84%
+about non-negative
+numbers, so I'm always
+
+00:42:27.870 --> 00:42:30.640 align:middle line:84%
+going to subtract the smaller
+number from the bigger number.
+
+00:42:30.640 --> 00:42:32.170 align:middle line:90%
+I can do it either way.
+
+00:42:32.170 --> 00:42:37.470 align:middle line:90%
+So let's do it for 9, 6.
+
+00:42:37.470 --> 00:42:40.300 align:middle line:84%
+So I'm going to
+subtract 6 from 9.
+
+00:42:40.300 --> 00:42:40.990 align:middle line:90%
+And I get.
+
+00:42:40.990 --> 00:42:42.720 align:middle line:90%
+This is equal to--
+
+00:42:42.720 --> 00:42:45.460 align:middle line:90%
+so this would be a minus b.
+
+00:42:45.460 --> 00:42:48.240 align:middle line:90%
+This one minus this one is 3.
+
+00:42:48.240 --> 00:42:49.830 align:middle line:90%
+9 minus 6 is 3.
+
+00:42:49.830 --> 00:42:52.110 align:middle line:84%
+The second argument
+stays the same.
+
+00:42:52.110 --> 00:42:53.800 align:middle line:84%
+OK, I still don't
+know the answer,
+
+00:42:53.800 --> 00:42:54.890 align:middle line:84%
+so I'm going to
+keep subtracting.
+
+00:42:54.890 --> 00:42:56.682 align:middle line:84%
+In this case, I'll take
+the smaller number,
+
+00:42:56.682 --> 00:42:58.340 align:middle line:84%
+subtract it from
+the larger number.
+
+00:42:58.340 --> 00:43:03.100 align:middle line:84%
+So this is b minus a, I guess,
+replacing b with b minus a,
+
+00:43:03.100 --> 00:43:06.880 align:middle line:90%
+I get GCD of--
+
+00:43:06.880 --> 00:43:09.170 align:middle line:90%
+sorry, I wanted.
+
+00:43:09.170 --> 00:43:10.210 align:middle line:90%
+Yeah, 3, 3.
+
+00:43:10.210 --> 00:43:13.210 align:middle line:90%
+
+
+00:43:13.210 --> 00:43:15.310 align:middle line:90%
+Subtract 3 from 6, I get 3.
+
+00:43:15.310 --> 00:43:16.700 align:middle line:90%
+OK, that looks pretty easy.
+
+00:43:16.700 --> 00:43:19.070 align:middle line:84%
+I'm guessing GCD
+of 3 and 3 is 3.
+
+00:43:19.070 --> 00:43:23.590 align:middle line:84%
+But if we go all the way,
+we can subtract one of them
+
+00:43:23.590 --> 00:43:24.500 align:middle line:90%
+from the other.
+
+00:43:24.500 --> 00:43:28.670 align:middle line:84%
+I guess, I want to do b minus
+a again, and we get 3, 0.
+
+00:43:28.670 --> 00:43:30.820 align:middle line:90%
+And this we actually analyzed.
+
+00:43:30.820 --> 00:43:33.520 align:middle line:90%
+Over here, we said GCD--
+
+00:43:33.520 --> 00:43:37.090 align:middle line:84%
+oh, I got it backwards.
+--but of 0 comma something,
+
+00:43:37.090 --> 00:43:39.050 align:middle line:84%
+is the absolute
+value of something.
+
+00:43:39.050 --> 00:43:41.510 align:middle line:90%
+So absolute value of 3 is 3.
+
+00:43:41.510 --> 00:43:48.610 align:middle line:84%
+And so GCD of 3,
+0 is 3, OK, great.
+
+00:43:48.610 --> 00:43:54.360 align:middle line:90%
+Another example, GCD of 1, 100.
+
+00:43:54.360 --> 00:43:56.380 align:middle line:84%
+OK, well, I'll take
+the smaller one,
+
+00:43:56.380 --> 00:43:57.790 align:middle line:90%
+subtract it from the larger one.
+
+00:43:57.790 --> 00:44:02.000 align:middle line:90%
+I get GCD of 1, 99.
+
+00:44:02.000 --> 00:44:05.170 align:middle line:84%
+OK, now, I subtract 1
+from the larger number,
+
+00:44:05.170 --> 00:44:10.840 align:middle line:90%
+I get GCD of 1, 98, and so on.
+
+00:44:10.840 --> 00:44:12.280 align:middle line:84%
+I won't bore you
+with the details.
+
+00:44:12.280 --> 00:44:14.050 align:middle line:90%
+In the end, the answer is 1.
+
+00:44:14.050 --> 00:44:19.200 align:middle line:84%
+But this is a very slow way
+to arrive at the answer of 1.
+
+00:44:19.200 --> 00:44:23.770 align:middle line:84%
+I have to do 100 steps to
+figure out the GCD of 1, 100.
+
+00:44:23.770 --> 00:44:26.320 align:middle line:84%
+So the number of steps
+you get in this algorithm,
+
+00:44:26.320 --> 00:44:28.120 align:middle line:84%
+which I haven't
+precisely defined,
+
+00:44:28.120 --> 00:44:32.460 align:middle line:84%
+is going to be roughly,
+at least in the worst
+
+00:44:32.460 --> 00:44:38.530 align:middle line:84%
+case, the sum of a and b,
+or the maximum of a and b,
+
+00:44:38.530 --> 00:44:40.950 align:middle line:84%
+it doesn't matter, up
+to constant factors.
+
+00:44:40.950 --> 00:44:46.288 align:middle line:84%
+And this is what we would call a
+slow algorithm in number theory.
+
+00:44:46.288 --> 00:44:48.330 align:middle line:84%
+Because generally, we want
+to think about numbers
+
+00:44:48.330 --> 00:44:52.070 align:middle line:90%
+that are huge, 100 bits long.
+
+00:44:52.070 --> 00:44:56.170 align:middle line:84%
+If you have 100-bit long
+number, that is as large as 2
+
+00:44:56.170 --> 00:45:00.220 align:middle line:84%
+to the 100, and that's
+a very large number.
+
+00:45:00.220 --> 00:45:05.390 align:middle line:84%
+It's big, roughly the number of
+particles in the known universe.
+
+00:45:05.390 --> 00:45:07.730 align:middle line:84%
+I think that's about 2
+to the 128 or something.
+
+00:45:07.730 --> 00:45:11.300 align:middle line:84%
+So we don't want to spend that
+much time to compute this.
+
+00:45:11.300 --> 00:45:17.830 align:middle line:84%
+In fact, we can do a lot better
+using a better technique, which
+
+00:45:17.830 --> 00:45:19.180 align:middle line:90%
+is division.
+
+00:45:19.180 --> 00:45:23.740 align:middle line:84%
+So we've seen here, the
+idea that we can subtract
+
+00:45:23.740 --> 00:45:26.478 align:middle line:84%
+one number from the
+other, but if we subtract,
+
+00:45:26.478 --> 00:45:28.270 align:middle line:84%
+and then we subtract,
+and then we subtract,
+
+00:45:28.270 --> 00:45:30.860 align:middle line:84%
+and we subtract, that sounds
+a lot like division, right?
+
+00:45:30.860 --> 00:45:32.740 align:middle line:84%
+This is like the bad
+way to do division
+
+00:45:32.740 --> 00:45:36.470 align:middle line:84%
+is to repeatedly subtract
+one number from the other.
+
+00:45:36.470 --> 00:45:39.500 align:middle line:84%
+And that's exactly what
+happens in the 100, 1 case.
+
+00:45:39.500 --> 00:45:42.470 align:middle line:84%
+We have to subtract 1 from
+100, subtract it from 99,
+
+00:45:42.470 --> 00:45:48.820 align:middle line:84%
+keep subtracting 1, until the
+left-hand side becomes larger
+
+00:45:48.820 --> 00:45:49.990 align:middle line:90%
+than the right-hand side.
+
+00:45:49.990 --> 00:45:51.100 align:middle line:90%
+And then we could stop.
+
+00:45:51.100 --> 00:45:55.080 align:middle line:84%
+In fact, they become equal
+because 1 divides 100.
+
+00:45:55.080 --> 00:45:58.780 align:middle line:84%
+But in general, we want to keep
+subtracting until we go beyond,
+
+00:45:58.780 --> 00:46:01.510 align:middle line:84%
+or we would go beyond
+what we can afford.
+
+00:46:01.510 --> 00:46:02.980 align:middle line:90%
+And that's exactly division.
+
+00:46:02.980 --> 00:46:08.820 align:middle line:84%
+So let me give you a very
+precise version of division
+
+00:46:08.820 --> 00:46:19.570 align:middle line:84%
+with something called
+the division theorem.
+
+00:46:19.570 --> 00:46:24.490 align:middle line:84%
+This is one of the core
+theorems in number theory.
+
+00:46:24.490 --> 00:46:25.720 align:middle line:90%
+We won't prove it here.
+
+00:46:25.720 --> 00:46:28.950 align:middle line:90%
+It's kind of tedious.
+
+00:46:28.950 --> 00:46:35.580 align:middle line:84%
+For every integer n, and for
+every positive integer d--
+
+00:46:35.580 --> 00:46:47.040 align:middle line:84%
+so I'm going to write z plus to
+mean d is greater than 0 --there
+
+00:46:47.040 --> 00:46:49.163 align:middle line:90%
+is a unique--
+
+00:46:49.163 --> 00:46:54.020 align:middle line:90%
+
+
+00:46:54.020 --> 00:46:58.380 align:middle line:84%
+and usually we would write this
+as exists exclamation mark.
+
+00:46:58.380 --> 00:46:59.820 align:middle line:90%
+There is a unique.
+
+00:46:59.820 --> 00:47:02.520 align:middle line:84%
+So this means there
+is, exclamation mark.
+
+00:47:02.520 --> 00:47:03.600 align:middle line:90%
+It's really exists.
+
+00:47:03.600 --> 00:47:05.120 align:middle line:90%
+But there's only one of them.
+
+00:47:05.120 --> 00:47:13.970 align:middle line:84%
+--there exists a unique
+pair of integers q and r--
+
+00:47:13.970 --> 00:47:16.520 align:middle line:84%
+I don't want the
+parentheses, actually.
+
+00:47:16.520 --> 00:47:27.410 align:middle line:84%
+I want to say those are
+both integers --such that n
+
+00:47:27.410 --> 00:47:32.960 align:middle line:90%
+equals q times d plus r.
+
+00:47:32.960 --> 00:47:38.990 align:middle line:84%
+and r is between 0 and
+strictly less than d.
+
+00:47:38.990 --> 00:47:44.390 align:middle line:84%
+OK, you actually have seen this
+in other terms probably before.
+
+00:47:44.390 --> 00:47:48.360 align:middle line:84%
+This q is what we would
+call the quotient.
+
+00:47:48.360 --> 00:47:52.992 align:middle line:84%
+And this r is what we
+call the remainder.
+
+00:47:52.992 --> 00:47:54.700 align:middle line:84%
+I'm sure you've heard
+those terms before.
+
+00:47:54.700 --> 00:47:58.590 align:middle line:84%
+This is like a very precise way
+to say what division gives us
+
+00:47:58.590 --> 00:48:00.190 align:middle line:90%
+in all cases.
+
+00:48:00.190 --> 00:48:05.730 align:middle line:84%
+Given a numerator
+and a denominator,
+
+00:48:05.730 --> 00:48:10.907 align:middle line:84%
+that's why they're called n and
+d here, and as long as d is not
+
+00:48:10.907 --> 00:48:13.240 align:middle line:84%
+0, we're going to Furthermore
+assume that it's positive,
+
+00:48:13.240 --> 00:48:15.990 align:middle line:84%
+so it's easier to
+think about, then
+
+00:48:15.990 --> 00:48:18.120 align:middle line:84%
+there's a unique quotient
+and remainder you
+
+00:48:18.120 --> 00:48:21.705 align:middle line:90%
+get from dividing a over b.
+
+00:48:21.705 --> 00:48:27.270 align:middle line:84%
+A q is how many whole copies of
+d you can fit inside n, and r
+
+00:48:27.270 --> 00:48:29.400 align:middle line:90%
+is whatever's left over.
+
+00:48:29.400 --> 00:48:32.250 align:middle line:84%
+So that's roughly a
+proof that this is true.
+
+00:48:32.250 --> 00:48:35.490 align:middle line:84%
+And if you think about what
+the remainder should be,
+
+00:48:35.490 --> 00:48:36.910 align:middle line:90%
+it could be 0.
+
+00:48:36.910 --> 00:48:39.640 align:middle line:84%
+And the 0 case, that's
+when we have divisibility.
+
+00:48:39.640 --> 00:48:42.750 align:middle line:84%
+If d divides n, if
+n equals q times
+
+00:48:42.750 --> 00:48:46.740 align:middle line:84%
+d, that's exactly
+divisibility if there's no r.
+
+00:48:46.740 --> 00:48:48.270 align:middle line:90%
+That's when r equals 0.
+
+00:48:48.270 --> 00:48:49.700 align:middle line:90%
+That's what we get.
+
+00:48:49.700 --> 00:48:52.790 align:middle line:84%
+But in general, we know that
+r should also be less than d.
+
+00:48:52.790 --> 00:48:55.160 align:middle line:84%
+Because if there
+was d left over,
+
+00:48:55.160 --> 00:48:57.810 align:middle line:90%
+we would just increase q by 1.
+
+00:48:57.810 --> 00:48:59.520 align:middle line:90%
+That would be a whole copy of d.
+
+00:48:59.520 --> 00:49:02.450 align:middle line:84%
+So the remainder is always going
+to be between 0 and strictly
+
+00:49:02.450 --> 00:49:03.217 align:middle line:90%
+less than d.
+
+00:49:03.217 --> 00:49:05.840 align:middle line:90%
+
+
+00:49:05.840 --> 00:49:09.960 align:middle line:84%
+I guess the interesting part
+here, is that there's only one--
+
+00:49:09.960 --> 00:49:12.830 align:middle line:84%
+sorry, I should have
+put an i in unique.
+
+00:49:12.830 --> 00:49:15.560 align:middle line:90%
+There's only one way to do this.
+
+00:49:15.560 --> 00:49:17.090 align:middle line:84%
+That with these
+conditions, there's
+
+00:49:17.090 --> 00:49:21.140 align:middle line:90%
+only one quotient and remainder,
+
+00:49:21.140 --> 00:49:30.140 align:middle line:84%
+OK, I also want to give you
+some definitions, some notation,
+
+00:49:30.140 --> 00:49:35.270 align:middle line:84%
+which is for the quotient,
+we write the numerator
+
+00:49:35.270 --> 00:49:38.690 align:middle line:90%
+div d div for division.
+
+00:49:38.690 --> 00:49:46.410 align:middle line:84%
+And for the remainder, we write
+n rem d, rem for remainder.
+
+00:49:46.410 --> 00:49:49.710 align:middle line:84%
+This is also sometimes
+called n mod d.
+
+00:49:49.710 --> 00:49:51.540 align:middle line:84%
+So if you ever see
+that, we probably
+
+00:49:51.540 --> 00:49:52.690 align:middle line:90%
+won't use it in this form.
+
+00:49:52.690 --> 00:49:55.148 align:middle line:84%
+We're going to use mod to mean
+a slightly related, slightly
+
+00:49:55.148 --> 00:49:56.370 align:middle line:90%
+different notion.
+
+00:49:56.370 --> 00:49:59.340 align:middle line:84%
+Also, in the textbook,
+they write rem
+
+00:49:59.340 --> 00:50:03.690 align:middle line:84%
+as a two-argument
+function but same idea.
+
+00:50:03.690 --> 00:50:06.720 align:middle line:84%
+So we're going to use
+division theorem a lot
+
+00:50:06.720 --> 00:50:12.450 align:middle line:84%
+from now on and as a way to
+reduce our numbers again,
+
+00:50:12.450 --> 00:50:14.950 align:middle line:84%
+in a more powerful
+way than subtraction.
+
+00:50:14.950 --> 00:50:18.390 align:middle line:84%
+So we would like to do
+subtraction repeatedly.
+
+00:50:18.390 --> 00:50:20.470 align:middle line:90%
+And what will we be left with?
+
+00:50:20.470 --> 00:50:22.410 align:middle line:84%
+We'll be left with
+the remainder.
+
+00:50:22.410 --> 00:50:25.240 align:middle line:84%
+If you keep subtracting until
+you can't subtract anymore,
+
+00:50:25.240 --> 00:50:27.660 align:middle line:90%
+that's remainder.
+
+00:50:27.660 --> 00:50:29.105 align:middle line:90%
+So let's do that.
+
+00:50:29.105 --> 00:50:32.340 align:middle line:90%
+
+
+00:50:32.340 --> 00:50:34.522 align:middle line:84%
+I probably still need
+these divisibility facts,
+
+00:50:34.522 --> 00:50:35.480 align:middle line:90%
+so I'll leave it there.
+
+00:50:35.480 --> 00:50:51.431 align:middle line:90%
+
+
+00:50:51.431 --> 00:50:57.085 align:middle line:90%
+So this is GCD division theorem.
+
+00:50:57.085 --> 00:51:01.208 align:middle line:90%
+
+
+00:51:01.208 --> 00:51:03.500 align:middle line:84%
+Let's suppose a is less than
+or equal to b is less than
+
+00:51:03.500 --> 00:51:05.083 align:middle line:90%
+or equal to 1.
+
+00:51:05.083 --> 00:51:07.537 align:middle line:90%
+
+
+00:51:07.537 --> 00:51:08.370 align:middle line:90%
+Is that what I want?
+
+00:51:08.370 --> 00:51:09.192 align:middle line:90%
+No.
+
+00:51:09.192 --> 00:51:10.650 align:middle line:84%
+Other way around,
+that seems weird.
+
+00:51:10.650 --> 00:51:12.095 align:middle line:90%
+It'd be weird to be at most 1.
+
+00:51:12.095 --> 00:51:13.470 align:middle line:84%
+I want things to
+be non-negative,
+
+00:51:13.470 --> 00:51:16.393 align:middle line:84%
+so I'm going to assume a is
+the bigger one of a and b.
+
+00:51:16.393 --> 00:51:17.810 align:middle line:84%
+And I want to
+compute GCD of a, b.
+
+00:51:17.810 --> 00:51:21.263 align:middle line:90%
+
+
+00:51:21.263 --> 00:51:23.180 align:middle line:84%
+And I'm going to assume
+we haven't gotten down
+
+00:51:23.180 --> 00:51:26.930 align:middle line:84%
+to 0, in particular,
+because I can't divide by 0,
+
+00:51:26.930 --> 00:51:29.203 align:middle line:84%
+but also because when
+we get to 0, we're done.
+
+00:51:29.203 --> 00:51:30.870 align:middle line:84%
+If one of the numbers
+is 0, we're happy.
+
+00:51:30.870 --> 00:51:32.537 align:middle line:84%
+So let's assume they're
+both at least 1,
+
+00:51:32.537 --> 00:51:35.000 align:middle line:84%
+and let's assume, by symmetry,
+that the one on the left
+
+00:51:35.000 --> 00:51:40.130 align:middle line:84%
+is bigger or equal, then
+I claim GCD of a, b,
+
+00:51:40.130 --> 00:51:42.550 align:middle line:90%
+is GCD of a remainder b, b.
+
+00:51:42.550 --> 00:51:47.170 align:middle line:90%
+
+
+00:51:47.170 --> 00:51:52.420 align:middle line:84%
+So before, we had a minus b,
+and now we have a remainder b.
+
+00:51:52.420 --> 00:51:53.810 align:middle line:90%
+Seems like a small difference.
+
+00:51:53.810 --> 00:51:57.460 align:middle line:84%
+And indeed, the proof
+is basically the same.
+
+00:51:57.460 --> 00:51:59.050 align:middle line:84%
+I'm going to do a
+proof sketch, which
+
+00:51:59.050 --> 00:52:07.420 align:middle line:84%
+is to say, well, GCD of a, b is
+equal to GCD of a minus b, b.
+
+00:52:07.420 --> 00:52:11.080 align:middle line:84%
+And if we apply by the
+subtraction theorem,
+
+00:52:11.080 --> 00:52:17.680 align:middle line:84%
+which we just did over there,
+and if we apply the subtraction
+
+00:52:17.680 --> 00:52:20.380 align:middle line:84%
+theorem again, we can subtract
+the right argument from the left
+
+00:52:20.380 --> 00:52:26.110 align:middle line:84%
+one, again, a minus 2b,
+b and so on, eventually,
+
+00:52:26.110 --> 00:52:32.760 align:middle line:84%
+we get to GCD of a
+minus a div b times b.
+
+00:52:32.760 --> 00:52:35.410 align:middle line:90%
+
+
+00:52:35.410 --> 00:52:39.860 align:middle line:84%
+a div b is how many whole
+copies of b I can fit into a.
+
+00:52:39.860 --> 00:52:42.260 align:middle line:84%
+And so if I take that
+number, multiply it
+
+00:52:42.260 --> 00:52:46.520 align:middle line:84%
+by b, that's how much I
+can subtract away before a
+
+00:52:46.520 --> 00:52:49.760 align:middle line:84%
+would go negative if I
+subtracted one more time.
+
+00:52:49.760 --> 00:52:53.540 align:middle line:84%
+And what I'll be left with,
+is exactly the remainder,
+
+00:52:53.540 --> 00:53:01.010 align:middle line:90%
+a minus a rem b times--
+
+00:53:01.010 --> 00:53:04.190 align:middle line:90%
+oh, no times, comma b.
+
+00:53:04.190 --> 00:53:06.150 align:middle line:84%
+If I subtract off
+that many copies of b,
+
+00:53:06.150 --> 00:53:11.140 align:middle line:84%
+I will be left with a remainder
+b, sorry, no, a minus.
+
+00:53:11.140 --> 00:53:13.730 align:middle line:90%
+
+
+00:53:13.730 --> 00:53:20.330 align:middle line:84%
+That's what we're
+writing here, in fact.
+
+00:53:20.330 --> 00:53:22.730 align:middle line:90%
+Let me rewrite this.
+
+00:53:22.730 --> 00:53:31.100 align:middle line:84%
+We have n, or maybe
+I'll write it as a or b.
+
+00:53:31.100 --> 00:53:32.450 align:middle line:90%
+Let me stick with that.
+
+00:53:32.450 --> 00:53:36.170 align:middle line:84%
+What this over
+here is saying is,
+
+00:53:36.170 --> 00:53:47.620 align:middle line:84%
+n div d times d plus
+n rem d equals to n.
+
+00:53:47.620 --> 00:53:50.920 align:middle line:84%
+I'm just rewriting this formula
+using the notations for q and r.
+
+00:53:50.920 --> 00:53:59.050 align:middle line:84%
+And if I rearrange this, I get
+that n minus n div d times d
+
+00:53:59.050 --> 00:54:02.800 align:middle line:90%
+equals n rem d.
+
+00:54:02.800 --> 00:54:04.970 align:middle line:84%
+And that's exactly
+what I'm using here.
+
+00:54:04.970 --> 00:54:07.460 align:middle line:84%
+The remainder is what you
+get, what's left over.
+
+00:54:07.460 --> 00:54:12.130 align:middle line:84%
+If you take the numerator and
+subtract off the div many copies
+
+00:54:12.130 --> 00:54:13.250 align:middle line:90%
+of the denominator.
+
+00:54:13.250 --> 00:54:14.693 align:middle line:90%
+So I use dot, dot, dot here.
+
+00:54:14.693 --> 00:54:16.610 align:middle line:84%
+You can't really use
+dot, dot, dot in a proof.
+
+00:54:16.610 --> 00:54:18.360 align:middle line:84%
+Technically, this is
+a proof by induction.
+
+00:54:18.360 --> 00:54:21.970 align:middle line:84%
+But I think, hopefully, you're
+familiar enough with induction
+
+00:54:21.970 --> 00:54:24.230 align:middle line:84%
+that you could turn this
+into a formal proof.
+
+00:54:24.230 --> 00:54:29.080 align:middle line:90%
+It's not hard, OK.
+
+00:54:29.080 --> 00:54:31.420 align:middle line:90%
+So we can divide.
+
+00:54:31.420 --> 00:54:36.510 align:middle line:84%
+And this will make this
+GCD algorithm much faster.
+
+00:54:36.510 --> 00:54:40.750 align:middle line:84%
+Because now if I want to
+say, compute GCD of 1, 100,
+
+00:54:40.750 --> 00:54:46.380 align:middle line:84%
+this is the same thing
+as GCD of 100, 1.
+
+00:54:46.380 --> 00:54:52.080 align:middle line:84%
+And what that says is,
+I can divide 100 by 1
+
+00:54:52.080 --> 00:54:53.590 align:middle line:90%
+and see what the remainder is.
+
+00:54:53.590 --> 00:54:56.490 align:middle line:84%
+Well, 1 divides 100,
+so the remainder is 0.
+
+00:54:56.490 --> 00:55:01.380 align:middle line:84%
+So I instantly get that
+this is GCD of 0, 1.
+
+00:55:01.380 --> 00:55:04.330 align:middle line:90%
+Boom, I'm done.
+
+00:55:04.330 --> 00:55:08.040 align:middle line:84%
+This GCD of 0 comma
+anything is the anything.
+
+00:55:08.040 --> 00:55:10.480 align:middle line:84%
+So in one step
+now, one division,
+
+00:55:10.480 --> 00:55:12.480 align:middle line:84%
+instead of having to do
+a bunch of subtractions,
+
+00:55:12.480 --> 00:55:14.340 align:middle line:90%
+I compute the GCD.
+
+00:55:14.340 --> 00:55:18.370 align:middle line:84%
+Great, let's write this
+down as an algorithm.
+
+00:55:18.370 --> 00:55:40.240 align:middle line:90%
+
+
+00:55:40.240 --> 00:55:42.160 align:middle line:84%
+This is called
+Euclid's algorithm,
+
+00:55:42.160 --> 00:55:43.536 align:middle line:90%
+or the Euclidean algorithm.
+
+00:55:43.536 --> 00:55:48.430 align:middle line:90%
+
+
+00:55:48.430 --> 00:55:50.710 align:middle line:84%
+It's called Euclid's algorithm
+because Euclid was not
+
+00:55:50.710 --> 00:55:52.960 align:middle line:84%
+the first to discover
+it, of course,
+
+00:55:52.960 --> 00:55:57.670 align:middle line:84%
+but he's still pretty
+early, around 300 BCE.
+
+00:55:57.670 --> 00:56:01.870 align:middle line:84%
+But I'll mention an earlier
+version in a moment.
+
+00:56:01.870 --> 00:56:13.390 align:middle line:84%
+So what this does is it computes
+GCD of a, b for a greater
+
+00:56:13.390 --> 00:56:15.918 align:middle line:84%
+than or equal to b greater
+than or equal to 0.
+
+00:56:15.918 --> 00:56:17.960 align:middle line:84%
+OK I'm going to assume
+everything's non-negative.
+
+00:56:17.960 --> 00:56:20.260 align:middle line:84%
+If it's negative,
+just negate it.
+
+00:56:20.260 --> 00:56:22.570 align:middle line:84%
+I'm going to assume the
+left argument is bigger
+
+00:56:22.570 --> 00:56:24.250 align:middle line:90%
+than the right one or equal.
+
+00:56:24.250 --> 00:56:26.960 align:middle line:84%
+If it's the other way
+around, swap a and b,
+
+00:56:26.960 --> 00:56:31.540 align:middle line:84%
+so this is enough for computing
+GCD of any two integers.
+
+00:56:31.540 --> 00:56:35.580 align:middle line:84%
+And I'm going to write this,
+of course, as a state machine.
+
+00:56:35.580 --> 00:56:39.540 align:middle line:84%
+So in general, I'm going to have
+a pair of integers, a and b,
+
+00:56:39.540 --> 00:56:42.060 align:middle line:84%
+where a is greater
+than or equal to b
+
+00:56:42.060 --> 00:56:44.940 align:middle line:90%
+is greater than or equal to 0.
+
+00:56:44.940 --> 00:56:49.290 align:middle line:84%
+So I guess I should
+say the states are
+
+00:56:49.290 --> 00:56:56.260 align:middle line:84%
+x, y where x is greater or equal
+to y, is greater or equal to 0.
+
+00:56:56.260 --> 00:57:12.390 align:middle line:84%
+And then the transitions,
+go from x, y to x rem y--
+
+00:57:12.390 --> 00:57:13.660 align:middle line:90%
+oh, wrong order.
+
+00:57:13.660 --> 00:57:19.560 align:middle line:90%
+
+
+00:57:19.560 --> 00:57:24.360 align:middle line:90%
+--y, x rem y.
+
+00:57:24.360 --> 00:57:26.170 align:middle line:84%
+OK, almost the same
+as this theorem,
+
+00:57:26.170 --> 00:57:32.410 align:middle line:84%
+except I'm going to rewrite
+this as GCD of b, a rem b,
+
+00:57:32.410 --> 00:57:35.200 align:middle line:84%
+just flip the
+arguments because I
+
+00:57:35.200 --> 00:57:36.790 align:middle line:84%
+would like the left
+argument to always
+
+00:57:36.790 --> 00:57:38.390 align:middle line:90%
+be greater than or equal to--
+
+00:57:38.390 --> 00:57:40.723 align:middle line:84%
+I would like the left argument
+to be always greater than
+
+00:57:40.723 --> 00:57:42.970 align:middle line:90%
+or equal to the right argument.
+
+00:57:42.970 --> 00:57:46.370 align:middle line:84%
+And if I do them in this order,
+if x was greater or equal to y,
+
+00:57:46.370 --> 00:57:49.040 align:middle line:84%
+I do this division, this
+division will, of course,
+
+00:57:49.040 --> 00:57:51.130 align:middle line:84%
+be less than y,
+and so the left one
+
+00:57:51.130 --> 00:57:53.290 align:middle line:84%
+will be bigger than
+the right one, actually
+
+00:57:53.290 --> 00:57:56.620 align:middle line:90%
+strictly in that case.
+
+00:57:56.620 --> 00:58:01.240 align:middle line:84%
+So that's basically just
+following this rule repeatedly,
+
+00:58:01.240 --> 00:58:04.390 align:middle line:90%
+and those are my transitions.
+
+00:58:04.390 --> 00:58:10.450 align:middle line:84%
+Now, this only works
+when y is bigger than 0.
+
+00:58:10.450 --> 00:58:22.540 align:middle line:84%
+If y is 0 at x, 0, we
+return x as the GCD.
+
+00:58:22.540 --> 00:58:25.270 align:middle line:90%
+That's the final state.
+
+00:58:25.270 --> 00:58:27.820 align:middle line:84%
+Or these are various
+final states, any x,
+
+00:58:27.820 --> 00:58:29.270 align:middle line:90%
+0 is going to be a final state.
+
+00:58:29.270 --> 00:58:30.687 align:middle line:84%
+There's no transition
+out of there
+
+00:58:30.687 --> 00:58:32.560 align:middle line:84%
+because we're not
+allowed to divide by 0.
+
+00:58:32.560 --> 00:58:35.260 align:middle line:84%
+Because I wrote this for
+all y greater than 0 rule.
+
+00:58:35.260 --> 00:58:40.800 align:middle line:84%
+But in that situation, we
+know the GCD of 0, b or b,
+
+00:58:40.800 --> 00:58:43.770 align:middle line:84%
+0 is the absolute value of
+b because everything here
+
+00:58:43.770 --> 00:58:45.570 align:middle line:90%
+is non-negative.
+
+00:58:45.570 --> 00:58:48.120 align:middle line:90%
+The answer is x at that point.
+
+00:58:48.120 --> 00:58:52.110 align:middle line:90%
+So why does this work?
+
+00:58:52.110 --> 00:58:55.380 align:middle line:84%
+Well, because we just
+proved an invariant
+
+00:58:55.380 --> 00:59:01.120 align:middle line:90%
+that as this machine runs--
+
+00:59:01.120 --> 00:59:07.140 align:middle line:84%
+I want to say p of x, y is
+the state predicate, which
+
+00:59:07.140 --> 00:59:14.010 align:middle line:84%
+is the GCD of x, y
+equals the GCD of a, b.
+
+00:59:14.010 --> 00:59:17.130 align:middle line:90%
+
+
+00:59:17.130 --> 00:59:19.380 align:middle line:84%
+We designed the change
+in arguments here.
+
+00:59:19.380 --> 00:59:22.680 align:middle line:84%
+We started with a, b, so
+this is true initially.
+
+00:59:22.680 --> 00:59:25.830 align:middle line:84%
+In our initial state, a,
+b, of course, GCD of a, b
+
+00:59:25.830 --> 00:59:27.340 align:middle line:90%
+equals GCD of a, b.
+
+00:59:27.340 --> 00:59:29.780 align:middle line:84%
+And then every time
+we do a transition
+
+00:59:29.780 --> 00:59:32.450 align:middle line:84%
+and we do this division
+and take the remainder,
+
+00:59:32.450 --> 00:59:39.050 align:middle line:84%
+we know that the GCDs are
+equal by this theorem.
+
+00:59:39.050 --> 00:59:40.780 align:middle line:84%
+And that's exactly
+what this tells us.
+
+00:59:40.780 --> 00:59:43.820 align:middle line:84%
+And so this is
+saying, this theorem
+
+00:59:43.820 --> 00:59:47.010 align:middle line:84%
+tells us that this state
+predicate is preserved.
+
+00:59:47.010 --> 00:59:49.130 align:middle line:84%
+And because it holds
+initially, that
+
+00:59:49.130 --> 00:59:57.560 align:middle line:84%
+means it's invariant,
+OK, true initially,
+
+00:59:57.560 --> 01:00:04.070 align:middle line:84%
+and it's preserved
+by this theorem.
+
+01:00:04.070 --> 01:00:06.140 align:middle line:84%
+And so by the
+invariant principle,
+
+01:00:06.140 --> 01:00:09.980 align:middle line:84%
+we know that this will remain
+true for any reachable state x,
+
+01:00:09.980 --> 01:00:13.490 align:middle line:84%
+y, we'll have GCD of
+x, y equal GCD of a, b.
+
+01:00:13.490 --> 01:00:18.300 align:middle line:84%
+And furthermore, when we
+get to a final state--
+
+01:00:18.300 --> 01:00:19.555 align:middle line:90%
+so this is the final state.
+
+01:00:19.555 --> 01:00:25.550 align:middle line:90%
+
+
+01:00:25.550 --> 01:00:29.790 align:middle line:84%
+--we know that this answer is
+correct because GCD of x, 0
+
+01:00:29.790 --> 01:00:32.140 align:middle line:90%
+equals x for non-negative x.
+
+01:00:32.140 --> 01:00:36.690 align:middle line:90%
+So this is partial correctness.
+
+01:00:36.690 --> 01:00:45.720 align:middle line:84%
+If we get to a final
+state, GCD of x, 0
+
+01:00:45.720 --> 01:00:51.240 align:middle line:84%
+equals x for x greater than
+or equal to 0 by this theorem
+
+01:00:51.240 --> 01:00:54.060 align:middle line:90%
+that we proved.
+
+01:00:54.060 --> 01:01:00.030 align:middle line:84%
+So if this machine
+terminates, we're done.
+
+01:01:00.030 --> 01:01:02.640 align:middle line:84%
+And I claim this
+machine does terminate.
+
+01:01:02.640 --> 01:01:07.333 align:middle line:84%
+So let's prove termination
+in a couple of ways.
+
+01:01:07.333 --> 01:01:12.360 align:middle line:90%
+
+
+01:01:12.360 --> 01:01:14.620 align:middle line:84%
+So how do we prove
+termination of state machines?
+
+01:01:14.620 --> 01:01:19.840 align:middle line:84%
+We define some value,
+some function of states,
+
+01:01:19.840 --> 01:01:23.140 align:middle line:84%
+that's an integer, a
+non-negative integer,
+
+01:01:23.140 --> 01:01:25.400 align:middle line:84%
+and we show that it
+strictly decreases.
+
+01:01:25.400 --> 01:01:28.820 align:middle line:84%
+That's our main tool for proving
+termination of algorithms.
+
+01:01:28.820 --> 01:01:35.570 align:middle line:84%
+So for example, we could
+take the function x plus y.
+
+01:01:35.570 --> 01:01:37.556 align:middle line:90%
+This strictly decreases.
+
+01:01:37.556 --> 01:01:44.300 align:middle line:90%
+
+
+01:01:44.300 --> 01:01:45.470 align:middle line:90%
+Why?
+
+01:01:45.470 --> 01:01:47.430 align:middle line:90%
+Just think about a transition.
+
+01:01:47.430 --> 01:01:49.260 align:middle line:90%
+We start with x, y.
+
+01:01:49.260 --> 01:01:50.940 align:middle line:90%
+y doesn't change.
+
+01:01:50.940 --> 01:01:53.250 align:middle line:84%
+And then the other term
+in the sum used to be x,
+
+01:01:53.250 --> 01:01:55.580 align:middle line:84%
+and then it becomes
+x remainder y.
+
+01:01:55.580 --> 01:02:00.420 align:middle line:84%
+So we're dividing x by y, so x
+gets smaller in that process.
+
+01:02:00.420 --> 01:02:01.880 align:middle line:84%
+And so the sum of
+these two values,
+
+01:02:01.880 --> 01:02:05.660 align:middle line:84%
+is going to be smaller
+than the sum of x and y.
+
+01:02:05.660 --> 01:02:06.690 align:middle line:90%
+So that's cool.
+
+01:02:06.690 --> 01:02:09.110 align:middle line:84%
+We now know that this
+algorithm terminates.
+
+01:02:09.110 --> 01:02:15.530 align:middle line:84%
+But stating it
+using this function,
+
+01:02:15.530 --> 01:02:19.880 align:middle line:84%
+is not so great because it tells
+us that the number of steps
+
+01:02:19.880 --> 01:02:25.750 align:middle line:90%
+is at most, a plus b.
+
+01:02:25.750 --> 01:02:27.110 align:middle line:90%
+But that's not great.
+
+01:02:27.110 --> 01:02:29.080 align:middle line:90%
+That's what we had before.
+
+01:02:29.080 --> 01:02:33.800 align:middle line:84%
+From our slow algorithm, we
+got a running time of a plus b.
+
+01:02:33.800 --> 01:02:34.833 align:middle line:90%
+So that's still true.
+
+01:02:34.833 --> 01:02:36.500 align:middle line:84%
+It's an upper bound
+on the running time.
+
+01:02:36.500 --> 01:02:38.292 align:middle line:84%
+But I claim that, in
+fact, our running time
+
+01:02:38.292 --> 01:02:44.410 align:middle line:84%
+is much smaller by
+a more clever proof.
+
+01:02:44.410 --> 01:02:46.976 align:middle line:90%
+Let me erase subtraction.
+
+01:02:46.976 --> 01:03:09.250 align:middle line:90%
+
+
+01:03:09.250 --> 01:03:19.150 align:middle line:84%
+So I claim, in fact,
+If we look at the bit
+
+01:03:19.150 --> 01:03:24.240 align:middle line:84%
+count of x and the bit
+count of y in summation,
+
+01:03:24.240 --> 01:03:26.236 align:middle line:90%
+this also strictly decreases.
+
+01:03:26.236 --> 01:03:31.400 align:middle line:90%
+
+
+01:03:31.400 --> 01:03:32.640 align:middle line:90%
+What is the bit count?
+
+01:03:32.640 --> 01:03:35.940 align:middle line:84%
+This is if you write x in
+binary, how many bits are there?
+
+01:03:35.940 --> 01:03:38.930 align:middle line:84%
+What's the length of the
+binary representation of x?
+
+01:03:38.930 --> 01:03:47.300 align:middle line:84%
+This is essentially 1 plus
+log base 2 of x ceiling.
+
+01:03:47.300 --> 01:03:51.530 align:middle line:84%
+A little gross, but
+asymptotically, this
+
+01:03:51.530 --> 01:03:55.550 align:middle line:90%
+is log base 2 of x.
+
+01:03:55.550 --> 01:03:57.360 align:middle line:84%
+Or when you use
+asymptotic notation,
+
+01:03:57.360 --> 01:03:59.722 align:middle line:84%
+you don't even need the
+base because it only makes
+
+01:03:59.722 --> 01:04:00.930 align:middle line:90%
+a constant factor difference.
+
+01:04:00.930 --> 01:04:04.770 align:middle line:84%
+So this is roughly log
+of x is theta log of x.
+
+01:04:04.770 --> 01:04:06.830 align:middle line:90%
+This is theta log of y.
+
+01:04:06.830 --> 01:04:17.360 align:middle line:84%
+And so the number of steps
+is order log x plus log y.
+
+01:04:17.360 --> 01:04:19.020 align:middle line:90%
+And that's really good.
+
+01:04:19.020 --> 01:04:20.940 align:middle line:90%
+That's exponentially faster.
+
+01:04:20.940 --> 01:04:25.210 align:middle line:84%
+Sorry, I should have written
+log a plus log b because that's
+
+01:04:25.210 --> 01:04:27.520 align:middle line:90%
+where we start is a, b.
+
+01:04:27.520 --> 01:04:29.120 align:middle line:84%
+So if I give you
+two numbers a and b,
+
+01:04:29.120 --> 01:04:33.790 align:middle line:84%
+I can compute the GCD in roughly
+logarithmically many divisions.
+
+01:04:33.790 --> 01:04:38.390 align:middle line:84%
+Whereas before, we did a plus
+b, now we have log a plus log b.
+
+01:04:38.390 --> 01:04:40.880 align:middle line:84%
+So that's what we call an
+exponential improvement.
+
+01:04:40.880 --> 01:04:44.470 align:middle line:84%
+And this is what we would
+call a fast algorithm.
+
+01:04:44.470 --> 01:04:47.500 align:middle line:84%
+Because now if I have 100-bit
+integer, it only takes me--
+
+01:04:47.500 --> 01:04:51.770 align:middle line:84%
+or two 100-bit integers it
+only takes me around 100 steps.
+
+01:04:51.770 --> 01:04:53.650 align:middle line:84%
+Whereas before, it was
+taking me 2 to the 100
+
+01:04:53.650 --> 01:04:56.380 align:middle line:90%
+steps, big difference.
+
+01:04:56.380 --> 01:04:58.130 align:middle line:90%
+OK, why is this true?
+
+01:04:58.130 --> 01:05:02.170 align:middle line:84%
+Why is bit count of x plus bit
+count of y strictly decreasing?
+
+01:05:02.170 --> 01:05:13.360 align:middle line:84%
+Because I claim-- let's just say
+because x rem y is less than x
+
+01:05:13.360 --> 01:05:14.450 align:middle line:90%
+over 2.
+
+01:05:14.450 --> 01:05:17.860 align:middle line:84%
+This is another
+fact about division.
+
+01:05:17.860 --> 01:05:25.310 align:middle line:84%
+I think the intuition here
+is y is smaller than x
+
+01:05:25.310 --> 01:05:26.820 align:middle line:90%
+when we're doing this division.
+
+01:05:26.820 --> 01:05:31.550 align:middle line:84%
+And so we can remove at least
+one whole copy of y from x.
+
+01:05:31.550 --> 01:05:36.030 align:middle line:84%
+And maybe we remove
+more, but yeah,
+
+01:05:36.030 --> 01:05:38.910 align:middle line:84%
+you can think about if
+y is more than 1/2 x,
+
+01:05:38.910 --> 01:05:41.550 align:middle line:84%
+then just in the first step,
+we've removed 1/2 of x.
+
+01:05:41.550 --> 01:05:44.840 align:middle line:84%
+And so we've gotten down
+to less than x over 2.
+
+01:05:44.840 --> 01:05:49.290 align:middle line:84%
+If x is smaller, if y
+is really small, like 1,
+
+01:05:49.290 --> 01:05:51.360 align:middle line:84%
+then we're going to be
+able to eat all of x.
+
+01:05:51.360 --> 01:05:54.710 align:middle line:84%
+In both cases, you'll end
+up eating at least 1/2 of x
+
+01:05:54.710 --> 01:05:58.600 align:middle line:84%
+And so in general, the remainder
+will be less than 1/2 of x over
+
+01:05:58.600 --> 01:05:59.100 align:middle line:90%
+2.
+
+01:05:59.100 --> 01:06:01.850 align:middle line:84%
+And so if we start with
+x, and in the next step
+
+01:06:01.850 --> 01:06:03.890 align:middle line:84%
+we get to x over
+2 or smaller, that
+
+01:06:03.890 --> 01:06:06.600 align:middle line:84%
+means we removed one bit from
+the binary representation.
+
+01:06:06.600 --> 01:06:10.130 align:middle line:84%
+Or if you think about it in log
+base 2, if we halve the number,
+
+01:06:10.130 --> 01:06:11.880 align:middle line:90%
+log base 2 goes down by 1.
+
+01:06:11.880 --> 01:06:15.620 align:middle line:84%
+So even with the ceiling,
+it goes down by 1.
+
+01:06:15.620 --> 01:06:22.480 align:middle line:84%
+So that's why this Euclid
+algorithm is fast and good.
+
+01:06:22.480 --> 01:06:23.560 align:middle line:90%
+That's why we love it.
+
+01:06:23.560 --> 01:06:26.570 align:middle line:84%
+I have for you a little
+animation of the algorithm,
+
+01:06:26.570 --> 01:06:28.400 align:middle line:84%
+and then we'll talk
+about extensions.
+
+01:06:28.400 --> 01:06:34.700 align:middle line:84%
+So here, on the screen, we're
+computing GCD of 189 and 606.
+
+01:06:34.700 --> 01:06:38.890 align:middle line:84%
+If we think of that as
+a rectangle, 189 by 606,
+
+01:06:38.890 --> 01:06:45.160 align:middle line:84%
+then doing a division
+is like square packing.
+
+01:06:45.160 --> 01:06:50.860 align:middle line:84%
+So here, if we have
+an a by b rectangle,
+
+01:06:50.860 --> 01:06:55.570 align:middle line:84%
+and b is the smaller
+one, then a b by b square
+
+01:06:55.570 --> 01:06:57.230 align:middle line:90%
+is like subtracting off b.
+
+01:06:57.230 --> 01:07:00.050 align:middle line:84%
+And so if you think of
+the whole rectangle,
+
+01:07:00.050 --> 01:07:02.150 align:middle line:84%
+it's how many squares
+can I subtract off?
+
+01:07:02.150 --> 01:07:04.640 align:middle line:84%
+And what we'll be left
+with is the remainder.
+
+01:07:04.640 --> 01:07:06.470 align:middle line:84%
+Because one dimension
+stays the same,
+
+01:07:06.470 --> 01:07:09.020 align:middle line:84%
+the other dimension gets
+reduced to the remainder.
+
+01:07:09.020 --> 01:07:11.620 align:middle line:84%
+So hopefully that's clear why
+the geometric view of squares
+
+01:07:11.620 --> 01:07:14.162 align:middle line:84%
+is the same as what we've been
+doing with Euclid's algorithm.
+
+01:07:14.162 --> 01:07:15.470 align:middle line:90%
+Makes for a much nicer picture.
+
+01:07:15.470 --> 01:07:17.670 align:middle line:84%
+And then you take
+that rectangle,
+
+01:07:17.670 --> 01:07:20.770 align:middle line:84%
+and you flip it so that the
+horizontal dimension is bigger.
+
+01:07:20.770 --> 01:07:22.943 align:middle line:84%
+You take off as many
+squares as you can,
+
+01:07:22.943 --> 01:07:25.360 align:middle line:84%
+and you flip, and you take off
+as many squares as you can.
+
+01:07:25.360 --> 01:07:26.110 align:middle line:90%
+Here's just one.
+
+01:07:26.110 --> 01:07:27.390 align:middle line:90%
+That's just a subtraction.
+
+01:07:27.390 --> 01:07:28.163 align:middle line:90%
+You flip.
+
+01:07:28.163 --> 01:07:29.830 align:middle line:84%
+You take off as many
+squares as you can.
+
+01:07:29.830 --> 01:07:32.550 align:middle line:84%
+You're left with a
+remainder of 3 by 6.
+
+01:07:32.550 --> 01:07:34.690 align:middle line:84%
+And now here we
+get even division,
+
+01:07:34.690 --> 01:07:36.880 align:middle line:84%
+and so one of the
+dimensions becomes 0.
+
+01:07:36.880 --> 01:07:43.390 align:middle line:84%
+And then the GCD of
+3 and 0 is 3, cool.
+
+01:07:43.390 --> 01:07:45.280 align:middle line:90%
+So if that helps, great.
+
+01:07:45.280 --> 01:07:46.650 align:middle line:90%
+If not, don't worry.
+
+01:07:46.650 --> 01:07:49.020 align:middle line:84%
+Hopefully, you can
+now compute GCD.
+
+01:07:49.020 --> 01:07:50.800 align:middle line:84%
+We will do another
+example in a second.
+
+01:07:50.800 --> 01:07:53.760 align:middle line:84%
+I would like to first
+strengthen this algorithm
+
+01:07:53.760 --> 01:07:56.370 align:middle line:90%
+and make it do more.
+
+01:07:56.370 --> 01:07:59.190 align:middle line:84%
+Because remember, we
+wanted to compute GCD.
+
+01:07:59.190 --> 01:07:59.940 align:middle line:90%
+Why?
+
+01:07:59.940 --> 01:08:04.120 align:middle line:84%
+We wanted to see whether
+GCD of a, b divided x.
+
+01:08:04.120 --> 01:08:06.240 align:middle line:84%
+Because if the GCD
+of a, b divides
+
+01:08:06.240 --> 01:08:10.920 align:middle line:84%
+x, then all common divisors
+of a and b will divide x.
+
+01:08:10.920 --> 01:08:13.410 align:middle line:84%
+And the reason we
+cared about that is I
+
+01:08:13.410 --> 01:08:15.160 align:middle line:84%
+claimed it was the
+same thing as x
+
+01:08:15.160 --> 01:08:17.777 align:middle line:84%
+being an integer linear
+combination of a and b.
+
+01:08:17.777 --> 01:08:19.819 align:middle line:84%
+But where did the integer
+linear combinations go?
+
+01:08:19.819 --> 01:08:22.609 align:middle line:84%
+All we've done so far
+is compute GCD of a, b.
+
+01:08:22.609 --> 01:08:25.180 align:middle line:84%
+Well, it turns out
+there's a connection.
+
+01:08:25.180 --> 01:08:32.109 align:middle line:84%
+And the connection is called
+Bézout's theorem or lemma.
+
+01:08:32.109 --> 01:08:34.510 align:middle line:84%
+It's called Bézout's
+lemma because Bézout's is
+
+01:08:34.510 --> 01:08:37.930 align:middle line:84%
+like the last person
+to discover it
+
+01:08:37.930 --> 01:08:43.939 align:middle line:84%
+in 1779, after another French
+mathematician, Méziriac in 1624,
+
+01:08:43.939 --> 01:08:49.760 align:middle line:84%
+and after two Indian
+mathematicians around 500 ACE.
+
+01:08:49.760 --> 01:08:51.229 align:middle line:90%
+But we call it Bézout's lemma.
+
+01:08:51.229 --> 01:09:01.090 align:middle line:90%
+
+
+01:09:01.090 --> 01:09:03.340 align:middle line:90%
+This is the connection.
+
+01:09:03.340 --> 01:09:07.120 align:middle line:84%
+GCD of a, b is an integer
+linear combination of a and b.
+
+01:09:07.120 --> 01:09:11.410 align:middle line:84%
+And we can prove this using
+Euclid's algorithm, which
+
+01:09:11.410 --> 01:09:14.279 align:middle line:90%
+is pretty cool.
+
+01:09:14.279 --> 01:09:18.895 align:middle line:84%
+We're going to, by
+Euclid's algorithm.
+
+01:09:18.895 --> 01:09:30.240 align:middle line:90%
+
+
+01:09:30.240 --> 01:09:34.410 align:middle line:90%
+OK, let me do this quickly.
+
+01:09:34.410 --> 01:09:37.029 align:middle line:84%
+Let's assume a is greater
+or equal to b, again.
+
+01:09:37.029 --> 01:09:38.859 align:middle line:84%
+If not, we can
+just swap a and b.
+
+01:09:38.859 --> 01:09:41.350 align:middle line:84%
+And I guess, we'll assume
+greater than or equal to 0.
+
+01:09:41.350 --> 01:09:44.880 align:middle line:84%
+So we can apply
+Euclid's algorithm.
+
+01:09:44.880 --> 01:09:47.640 align:middle line:84%
+Euclid's algorithm
+tells us, or the theorem
+
+01:09:47.640 --> 01:09:50.819 align:middle line:84%
+we proved before Euclid's
+algorithm, tells us GCD of a, b
+
+01:09:50.819 --> 01:09:55.535 align:middle line:90%
+equals GCD of b, a rem b.
+
+01:09:55.535 --> 01:09:58.680 align:middle line:90%
+
+
+01:09:58.680 --> 01:10:03.325 align:middle line:90%
+And we can use induction now.
+
+01:10:03.325 --> 01:10:08.010 align:middle line:90%
+
+
+01:10:08.010 --> 01:10:15.190 align:middle line:90%
+By strong induction on a plus b.
+
+01:10:15.190 --> 01:10:18.700 align:middle line:84%
+So this is very similar to
+what we were saying here.
+
+01:10:18.700 --> 01:10:21.230 align:middle line:90%
+x plus y strictly decreases.
+
+01:10:21.230 --> 01:10:24.050 align:middle line:84%
+That's all we need for
+induction to work here.
+
+01:10:24.050 --> 01:10:27.400 align:middle line:84%
+So we're assuming by
+induction, that if a plus
+
+01:10:27.400 --> 01:10:30.730 align:middle line:84%
+b is smaller than the current
+value, then GCD of a, b
+
+01:10:30.730 --> 01:10:33.370 align:middle line:84%
+is an integer linear
+combination of a and b.
+
+01:10:33.370 --> 01:10:35.650 align:middle line:84%
+And so here, we
+have GCD of a and b,
+
+01:10:35.650 --> 01:10:38.780 align:middle line:84%
+and we've reduced it to
+GCD of some smaller values,
+
+01:10:38.780 --> 01:10:40.310 align:middle line:90%
+or whose sum is smaller.
+
+01:10:40.310 --> 01:10:44.620 align:middle line:84%
+And so we can apply strong
+induction to this pair.
+
+01:10:44.620 --> 01:10:48.460 align:middle line:84%
+And so we'll get that this GCD
+is an integer linear combination
+
+01:10:48.460 --> 01:10:50.320 align:middle line:90%
+of its arguments.
+
+01:10:50.320 --> 01:10:54.255 align:middle line:90%
+So let's continue here.
+
+01:10:54.255 --> 01:10:58.120 align:middle line:90%
+
+
+01:10:58.120 --> 01:11:08.560 align:middle line:84%
+So by strong induction, we
+get that GCD of b, a rem b,
+
+01:11:08.560 --> 01:11:16.110 align:middle line:84%
+is an integer linear
+combination of b and a rem b.
+
+01:11:16.110 --> 01:11:18.330 align:middle line:84%
+And this value, of
+course, is equal to GCD
+
+01:11:18.330 --> 01:11:22.360 align:middle line:90%
+of a, b, by this equality.
+
+01:11:22.360 --> 01:11:25.110 align:middle line:84%
+And so we get that
+the GCD we care about,
+
+01:11:25.110 --> 01:11:27.690 align:middle line:84%
+is an integer linear
+combination, not of a and b
+
+01:11:27.690 --> 01:11:32.370 align:middle line:84%
+but of this reduced
+version, b and a rem b.
+
+01:11:32.370 --> 01:11:35.910 align:middle line:84%
+That's kind of annoying,
+but it turns out
+
+01:11:35.910 --> 01:11:44.212 align:middle line:84%
+a rem b is an integer linear
+combination of a and b.
+
+01:11:44.212 --> 01:11:44.712 align:middle line:90%
+Why?
+
+01:11:44.712 --> 01:11:47.430 align:middle line:90%
+By the division theorem.
+
+01:11:47.430 --> 01:11:49.750 align:middle line:84%
+I actually wrote
+it out over here.
+
+01:11:49.750 --> 01:11:57.690 align:middle line:84%
+We wrote that n rem d is
+n minus something times d.
+
+01:11:57.690 --> 01:12:01.470 align:middle line:84%
+That is, this thing is an
+integer linear combination
+
+01:12:01.470 --> 01:12:03.810 align:middle line:90%
+of n And d.
+
+01:12:03.810 --> 01:12:07.380 align:middle line:84%
+And so if I'm doing
+a rem b, I get
+
+01:12:07.380 --> 01:12:12.990 align:middle line:84%
+that it's a minus
+something, the div, times b.
+
+01:12:12.990 --> 01:12:17.630 align:middle line:84%
+So that's an integer linear
+combination of a and b.
+
+01:12:17.630 --> 01:12:21.140 align:middle line:90%
+So what we're left with is--
+
+01:12:21.140 --> 01:12:23.750 align:middle line:84%
+we have that this GCD
+that we care about
+
+01:12:23.750 --> 01:12:26.060 align:middle line:84%
+is an integer linear
+combination of b
+
+01:12:26.060 --> 01:12:28.730 align:middle line:84%
+and something else that is an
+integer linear combination of a
+
+01:12:28.730 --> 01:12:29.610 align:middle line:90%
+and b.
+
+01:12:29.610 --> 01:12:33.140 align:middle line:84%
+So in other words, we have
+an integer linear combination
+
+01:12:33.140 --> 01:12:37.580 align:middle line:84%
+of two integer linear
+combinations of a and b.
+
+01:12:37.580 --> 01:12:39.800 align:middle line:84%
+Because b is definitely an
+integer linear combination
+
+01:12:39.800 --> 01:12:40.320 align:middle line:90%
+of a and b.
+
+01:12:40.320 --> 01:12:42.560 align:middle line:90%
+It's 0 times a plus 1 times b.
+
+01:12:42.560 --> 01:12:45.350 align:middle line:84%
+a rem b is an integer linear
+combination, as written
+
+01:12:45.350 --> 01:12:46.140 align:middle line:90%
+over there.
+
+01:12:46.140 --> 01:12:49.100 align:middle line:84%
+And so now we're just taking
+an integer linear combination
+
+01:12:49.100 --> 01:12:50.430 align:middle line:90%
+of those two things.
+
+01:12:50.430 --> 01:12:57.470 align:middle line:84%
+And that's also an integer
+linear combination of a and b,
+
+01:12:57.470 --> 01:13:00.770 align:middle line:90%
+as we showed before.
+
+01:13:00.770 --> 01:13:03.680 align:middle line:84%
+So that's maybe a
+little abstract,
+
+01:13:03.680 --> 01:13:05.370 align:middle line:90%
+but it does prove the theorem.
+
+01:13:05.370 --> 01:13:11.260 align:middle line:84%
+Now I'm going to turn that into
+an algorithm, cool algorithm,
+
+01:13:11.260 --> 01:13:22.440 align:middle line:84%
+maybe over here, which
+is called the Pulverizer.
+
+01:13:22.440 --> 01:13:25.360 align:middle line:90%
+
+
+01:13:25.360 --> 01:13:28.088 align:middle line:84%
+I mentioned Euclid's algorithm
+was discovered before Euclid.
+
+01:13:28.088 --> 01:13:30.130 align:middle line:84%
+In fact, a stronger version
+of Euclid's algorithm
+
+01:13:30.130 --> 01:13:32.560 align:middle line:84%
+called the Pulverizer,
+was described
+
+01:13:32.560 --> 01:13:37.190 align:middle line:84%
+by Aryabhata, an Indian
+mathematician, around 500 ACE,
+
+01:13:37.190 --> 01:13:40.090 align:middle line:90%
+so a long time ago.
+
+01:13:40.090 --> 01:13:45.890 align:middle line:84%
+And he called it Kuttaka, which
+is Sanskrit for pulverization.
+
+01:13:45.890 --> 01:13:47.900 align:middle line:84%
+So we're going to call
+this the Pulverizer.
+
+01:13:47.900 --> 01:13:51.560 align:middle line:84%
+Most people call this the
+extended Euclidean algorithm.
+
+01:13:51.560 --> 01:13:58.060 align:middle line:90%
+
+
+01:13:58.060 --> 01:14:02.210 align:middle line:84%
+And it's basically,
+run Euclid's algorithm
+
+01:14:02.210 --> 01:14:05.080 align:middle line:84%
+but also keep in mind, what's
+going on in Bézout's lemma
+
+01:14:05.080 --> 01:14:07.490 align:middle line:84%
+and always keep track
+of x and y as an integer
+
+01:14:07.490 --> 01:14:10.430 align:middle line:84%
+and linear combination
+of a and b.
+
+01:14:10.430 --> 01:14:13.370 align:middle line:90%
+OK, so that's the intuition.
+
+01:14:13.370 --> 01:14:18.127 align:middle line:84%
+As a state machine, it's quite
+simple, kind of simple, a,1,
+
+01:14:18.127 --> 01:14:25.460 align:middle line:84%
+0 b, 0, 1 is where we start
+because a equals 1 times a plus
+
+01:14:25.460 --> 01:14:30.780 align:middle line:84%
+0 times b, and b equals
+0 times a plus 1 times b.
+
+01:14:30.780 --> 01:14:32.390 align:middle line:84%
+So that's how we
+represent a and b
+
+01:14:32.390 --> 01:14:36.120 align:middle line:84%
+as integer linear combinations
+of a and b, pretty trivial.
+
+01:14:36.120 --> 01:14:38.410 align:middle line:84%
+And then our transitions,
+if we have x,
+
+01:14:38.410 --> 01:14:46.430 align:middle line:84%
+s, t so this means x equals
+s times a plus t times b.
+
+01:14:46.430 --> 01:14:51.600 align:middle line:84%
+And we have y, u, v.
+So in other words,
+
+01:14:51.600 --> 01:14:56.690 align:middle line:84%
+we've represented y as
+u times s plus v times--
+
+01:14:56.690 --> 01:15:02.990 align:middle line:90%
+sorry, v times a plus v times b.
+
+01:15:02.990 --> 01:15:05.100 align:middle line:90%
+Then we transition to--
+
+01:15:05.100 --> 01:15:09.670 align:middle line:90%
+
+
+01:15:09.670 --> 01:15:10.820 align:middle line:90%
+oh, that's a mistake.
+
+01:15:10.820 --> 01:15:13.640 align:middle line:90%
+This should be y, u, v.
+
+01:15:13.640 --> 01:15:16.010 align:middle line:84%
+As usual, we just copy
+y to the left argument.
+
+01:15:16.010 --> 01:15:16.970 align:middle line:90%
+We don't change it.
+
+01:15:16.970 --> 01:15:23.290 align:middle line:90%
+And then x changes to x rem y.
+
+01:15:23.290 --> 01:15:28.030 align:middle line:84%
+And then it turns
+out you can write,
+
+01:15:28.030 --> 01:15:31.150 align:middle line:84%
+you can figure
+out how x rem y is
+
+01:15:31.150 --> 01:15:35.290 align:middle line:84%
+relative to-- as a linear
+combination of a and b
+
+01:15:35.290 --> 01:15:36.255 align:middle line:90%
+like this.
+
+01:15:36.255 --> 01:15:39.048 align:middle line:90%
+
+
+01:15:39.048 --> 01:15:40.215 align:middle line:90%
+It's kind of a little gross.
+
+01:15:40.215 --> 01:15:47.890 align:middle line:90%
+
+
+01:15:47.890 --> 01:15:54.140 align:middle line:84%
+So we started with representing
+x as s times a plus t times b.
+
+01:15:54.140 --> 01:15:56.560 align:middle line:84%
+And we take s, and
+we subtract off
+
+01:15:56.560 --> 01:16:00.910 align:middle line:84%
+a corrective term, which is
+x div y times either u or v,
+
+01:16:00.910 --> 01:16:03.950 align:middle line:84%
+where u or v is
+what represented y.
+
+01:16:03.950 --> 01:16:08.300 align:middle line:84%
+If you work it out, that's
+exactly what we were doing here.
+
+01:16:08.300 --> 01:16:14.180 align:middle line:84%
+We started with one number, and
+we subtracted off the div times
+
+01:16:14.180 --> 01:16:15.600 align:middle line:90%
+what we had before.
+
+01:16:15.600 --> 01:16:18.890 align:middle line:84%
+So if you stare at this
+equation long enough,
+
+01:16:18.890 --> 01:16:22.250 align:middle line:84%
+this is exactly what we're
+doing but in integer linear
+
+01:16:22.250 --> 01:16:26.390 align:middle line:90%
+combination space of a and b.
+
+01:16:26.390 --> 01:16:29.900 align:middle line:84%
+So I'm not going to
+justify this anymore.
+
+01:16:29.900 --> 01:16:32.520 align:middle line:84%
+And I won't even
+show an example.
+
+01:16:32.520 --> 01:16:34.430 align:middle line:90%
+But it gives you--
+
+01:16:34.430 --> 01:16:37.610 align:middle line:84%
+this is a particular
+way to compute it.
+
+01:16:37.610 --> 01:16:40.110 align:middle line:84%
+And I will say at the
+beginning of an example,
+
+01:16:40.110 --> 01:16:48.450 align:middle line:84%
+if you have 5, 1, 0 3, 0, 1,
+and you run this a few times,
+
+01:16:48.450 --> 01:16:59.270 align:middle line:84%
+you get to 2, 1 minus
+1, 1 minus 1, 2.
+
+01:16:59.270 --> 01:17:04.840 align:middle line:84%
+And this part tells us
+that 1 equals minus 1 times
+
+01:17:04.840 --> 01:17:08.420 align:middle line:90%
+5 plus 2 times 3.
+
+01:17:08.420 --> 01:17:09.910 align:middle line:90%
+I hope that is correct.
+
+01:17:09.910 --> 01:17:14.020 align:middle line:90%
+Minus 5 plus 6 is 1, yep.
+
+01:17:14.020 --> 01:17:17.080 align:middle line:84%
+OK, So this is how
+you represent 1
+
+01:17:17.080 --> 01:17:19.610 align:middle line:84%
+as an integer linear
+combination of 5 and 3.
+
+01:17:19.610 --> 01:17:23.710 align:middle line:84%
+1 is interesting because
+it's the GCD of 5 and 3.
+
+01:17:23.710 --> 01:17:25.930 align:middle line:84%
+This is connecting
+to the water pouring.
+
+01:17:25.930 --> 01:17:28.090 align:middle line:84%
+Water pouring, we
+had a container
+
+01:17:28.090 --> 01:17:29.900 align:middle line:90%
+of size 5, container of size 3.
+
+01:17:29.900 --> 01:17:31.100 align:middle line:90%
+Their GCD is 1.
+
+01:17:31.100 --> 01:17:35.050 align:middle line:84%
+They have basically no common
+divisors except 1 and minus 1.
+
+01:17:35.050 --> 01:17:38.290 align:middle line:84%
+And we can represent the GCD as
+an integer linear combination
+
+01:17:38.290 --> 01:17:41.150 align:middle line:90%
+of 5 and 3, namely this one.
+
+01:17:41.150 --> 01:17:43.750 align:middle line:84%
+Therefore, we can represent 4
+as an integer linear combination
+
+01:17:43.750 --> 01:17:44.330 align:middle line:90%
+of 5 and 3.
+
+01:17:44.330 --> 01:17:47.830 align:middle line:84%
+We just multiply both sides
+by 4, and we get minus 4 times
+
+01:17:47.830 --> 01:17:51.980 align:middle line:84%
+5 plus 8 times 3,
+is one way to do it.
+
+01:17:51.980 --> 01:17:55.280 align:middle line:84%
+And that gives you at least
+a way to solve this problem.
+
+01:17:55.280 --> 01:17:58.900 align:middle line:84%
+It turns out you can
+take eight copies of 3
+
+01:17:58.900 --> 01:18:01.620 align:middle line:84%
+and subtract off
+four copies of 5.
+
+01:18:01.620 --> 01:18:03.200 align:middle line:90%
+How do I do that?
+
+01:18:03.200 --> 01:18:06.870 align:middle line:84%
+Well, I just fill this
+up 8 times in total.
+
+01:18:06.870 --> 01:18:11.820 align:middle line:84%
+And each time I pour all that
+I can into the thing of size 5.
+
+01:18:11.820 --> 01:18:15.890 align:middle line:84%
+And each time it overflows,
+I empty out the 5.
+
+01:18:15.890 --> 01:18:18.320 align:middle line:84%
+And so that's exactly
+how I can build
+
+01:18:18.320 --> 01:18:22.760 align:middle line:84%
+any integer linear
+combination of 5 and 3
+
+01:18:22.760 --> 01:18:25.470 align:middle line:84%
+as long as one side is positive
+and the other is negative,
+
+01:18:25.470 --> 01:18:27.800 align:middle line:84%
+which turns out to
+be necessary, then
+
+01:18:27.800 --> 01:18:32.297 align:middle line:84%
+you can just take that many
+copies of filling up one bucket,
+
+01:18:32.297 --> 01:18:34.130 align:middle line:84%
+pouring it into the
+other, removing whenever
+
+01:18:34.130 --> 01:18:38.360 align:middle line:84%
+it overflows, and you will get
+exactly the number you wanted.
+
+01:18:38.360 --> 01:18:44.180 align:middle line:84%
+For these numbers, pours of
+3 into 5, will give you one.
+
+01:18:44.180 --> 01:18:46.460 align:middle line:84%
+If you multiply this by
+4, I get the number 4,
+
+01:18:46.460 --> 01:18:50.210 align:middle line:90%
+and I save Manhattan, great.
+
+01:18:50.210 --> 01:18:53.530 align:middle line:84%
+Good luck on your
+quiz on Thursday.
+
+01:18:53.530 --> 01:18:59.000 align:middle line:90%

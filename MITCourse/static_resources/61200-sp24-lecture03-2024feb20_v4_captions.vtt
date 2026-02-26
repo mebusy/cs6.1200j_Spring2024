@@ -1,0 +1,5542 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.430 align:middle line:90%
+[SQUEAKING]
+
+00:00:02.430 --> 00:00:04.374 align:middle line:90%
+[RUSTLING]
+
+00:00:04.374 --> 00:00:07.290 align:middle line:90%
+[CLICKING]
+
+00:00:07.290 --> 00:00:10.538 align:middle line:90%
+
+
+00:00:10.538 --> 00:00:12.330 align:middle line:84%
+ERIC DEMAINE: All right,
+let's get started.
+
+00:00:12.330 --> 00:00:14.100 align:middle line:90%
+Welcome back to 6.1200.
+
+00:00:14.100 --> 00:00:18.540 align:middle line:84%
+I am the second of the three
+lecturers in this class.
+
+00:00:18.540 --> 00:00:20.570 align:middle line:90%
+You can call me Eric.
+
+00:00:20.570 --> 00:00:23.090 align:middle line:84%
+And Brynmor will
+be on next week.
+
+00:00:23.090 --> 00:00:26.810 align:middle line:84%
+So today we are going to
+continue our theme of induction
+
+00:00:26.810 --> 00:00:30.210 align:middle line:84%
+and prove some even cooler and
+stronger forms of induction.
+
+00:00:30.210 --> 00:00:33.360 align:middle line:84%
+Just a recap of where
+we were last time,
+
+00:00:33.360 --> 00:00:37.310 align:middle line:84%
+as we've seen, we're growing
+our catalog of different proof
+
+00:00:37.310 --> 00:00:40.700 align:middle line:84%
+techniques of how to prove
+different types of theorems,
+
+00:00:40.700 --> 00:00:42.960 align:middle line:90%
+almost by like a cookbook.
+
+00:00:42.960 --> 00:00:45.330 align:middle line:84%
+If you want to cook this,
+here's how you get started.
+
+00:00:45.330 --> 00:00:48.150 align:middle line:84%
+And so here's a brief
+summary of this.
+
+00:00:48.150 --> 00:00:50.310 align:middle line:84%
+If the theorem you want
+to prove starts with,
+
+00:00:50.310 --> 00:00:53.660 align:middle line:84%
+"there exists something," then
+a natural way to prove that is
+
+00:00:53.660 --> 00:00:55.470 align:middle line:90%
+by example or by construction.
+
+00:00:55.470 --> 00:01:00.470 align:middle line:84%
+You construct a particular x
+star and prove that P of x star
+
+00:01:00.470 --> 00:01:01.320 align:middle line:90%
+is true.
+
+00:01:01.320 --> 00:01:03.170 align:middle line:84%
+And if you can do
+that, then you've
+
+00:01:03.170 --> 00:01:05.700 align:middle line:84%
+proved that there exists
+an x, where P of x is true.
+
+00:01:05.700 --> 00:01:07.800 align:middle line:84%
+It's straightforward,
+but it lets you unwrap--
+
+00:01:07.800 --> 00:01:10.050 align:middle line:84%
+if I give you an expression
+that starts with "exists,"
+
+00:01:10.050 --> 00:01:12.680 align:middle line:84%
+then you know your first step
+is try to figure out an x where
+
+00:01:12.680 --> 00:01:14.540 align:middle line:90%
+this is true.
+
+00:01:14.540 --> 00:01:17.300 align:middle line:84%
+And of course, to prove
+P of x star you probably
+
+00:01:17.300 --> 00:01:19.920 align:middle line:90%
+recursively use this cookbook.
+
+00:01:19.920 --> 00:01:22.430 align:middle line:84%
+If you want to
+prove a universal,
+
+00:01:22.430 --> 00:01:26.750 align:middle line:84%
+one common way-- if you want to
+prove for all x, P of x is true,
+
+00:01:26.750 --> 00:01:29.640 align:middle line:84%
+typically your first line
+is take an arbitrary x.
+
+00:01:29.640 --> 00:01:31.160 align:middle line:90%
+Just give it a name, x.
+
+00:01:31.160 --> 00:01:33.560 align:middle line:84%
+And then prove that P
+of x is true no matter
+
+00:01:33.560 --> 00:01:34.560 align:middle line:90%
+what x you started with.
+
+00:01:34.560 --> 00:01:37.370 align:middle line:84%
+Therefore, it's true
+for all of them.
+
+00:01:37.370 --> 00:01:38.970 align:middle line:84%
+Come back to
+induction in a second.
+
+00:01:38.970 --> 00:01:41.730 align:middle line:84%
+If the main thing you want
+to prove is an implication,
+
+00:01:41.730 --> 00:01:45.150 align:middle line:84%
+P implies Q, this
+is if P then Q.
+
+00:01:45.150 --> 00:01:48.410 align:middle line:84%
+And I want to remind
+you that P implies
+
+00:01:48.410 --> 00:01:57.140 align:middle line:84%
+Q is the same thing as not P or
+Q. We'll use this a bunch today.
+
+00:01:57.140 --> 00:01:59.700 align:middle line:84%
+Then the direct
+way to prove this,
+
+00:01:59.700 --> 00:02:02.390 align:middle line:84%
+what we call a direct
+argument, is assume P is true,
+
+00:02:02.390 --> 00:02:04.045 align:middle line:90%
+and then prove Q is true.
+
+00:02:04.045 --> 00:02:05.420 align:middle line:84%
+Because this
+implication, we only
+
+00:02:05.420 --> 00:02:07.970 align:middle line:84%
+need to prove that Q
+is true when P is true.
+
+00:02:07.970 --> 00:02:10.639 align:middle line:90%
+If P, then Q.
+
+00:02:10.639 --> 00:02:14.450 align:middle line:84%
+Or another way to prove that
+same statement, P implies Q,
+
+00:02:14.450 --> 00:02:16.290 align:middle line:84%
+is what's called
+the contrapositive.
+
+00:02:16.290 --> 00:02:18.860 align:middle line:84%
+It turns out P implies Q is
+the same statement-- it's
+
+00:02:18.860 --> 00:02:23.010 align:middle line:84%
+equivalent to not Q
+implies not P. Remember,
+
+00:02:23.010 --> 00:02:26.330 align:middle line:90%
+this symbol is a negation.
+
+00:02:26.330 --> 00:02:27.900 align:middle line:90%
+Flip true and false.
+
+00:02:27.900 --> 00:02:30.120 align:middle line:84%
+So to do that with
+a direct argument,
+
+00:02:30.120 --> 00:02:34.440 align:middle line:84%
+we would prove that if not Q
+is true, then not P is true.
+
+00:02:34.440 --> 00:02:38.300 align:middle line:84%
+In other words, assume not
+Q, and then prove not P.
+
+00:02:38.300 --> 00:02:40.230 align:middle line:90%
+This may seem magical.
+
+00:02:40.230 --> 00:02:43.980 align:middle line:84%
+Why is P implies Q the same
+as not Q implies not P?
+
+00:02:43.980 --> 00:02:47.670 align:middle line:84%
+But it actually follows
+directly from this equivalence.
+
+00:02:47.670 --> 00:02:55.770 align:middle line:84%
+If you look at not Q implies not
+P, this is the same thing as--
+
+00:02:55.770 --> 00:03:01.350 align:middle line:84%
+let me go over here-- not
+not Q or not P, all right,
+
+00:03:01.350 --> 00:03:02.570 align:middle line:90%
+because it implies--
+
+00:03:02.570 --> 00:03:05.580 align:middle line:84%
+it's the same thing as taking
+an or if you negate the first--
+
+00:03:05.580 --> 00:03:07.100 align:middle line:90%
+the part on the left.
+
+00:03:07.100 --> 00:03:11.250 align:middle line:84%
+And not not Q is
+the same as Q, OK?
+
+00:03:11.250 --> 00:03:17.030 align:middle line:84%
+So this was not Q implies not
+P. It's the same thing as.
+
+00:03:17.030 --> 00:03:18.330 align:middle line:90%
+This is the same thing as this.
+
+00:03:18.330 --> 00:03:23.250 align:middle line:84%
+And that is exactly this just by
+switching the order of the ORs.
+
+00:03:23.250 --> 00:03:28.380 align:middle line:84%
+And so P implies Q is the same
+thing as not Q implies not P.
+
+00:03:28.380 --> 00:03:29.820 align:middle line:90%
+So that was contrapositive.
+
+00:03:29.820 --> 00:03:31.790 align:middle line:84%
+There was a related
+notion of contradiction,
+
+00:03:31.790 --> 00:03:36.140 align:middle line:84%
+where if you want to
+prove any statement P,
+
+00:03:36.140 --> 00:03:40.860 align:middle line:84%
+you assume that not P is true
+and then find a contradiction.
+
+00:03:40.860 --> 00:03:42.960 align:middle line:84%
+Prove that in fact
+false is true,
+
+00:03:42.960 --> 00:03:44.880 align:middle line:84%
+or something is
+both true and false.
+
+00:03:44.880 --> 00:03:47.090 align:middle line:84%
+All these things
+are very, very bad
+
+00:03:47.090 --> 00:03:49.980 align:middle line:84%
+because we assume that
+our axioms are consistent.
+
+00:03:49.980 --> 00:03:53.290 align:middle line:84%
+And so if you can prove false,
+that means that what you assumed
+
+00:03:53.290 --> 00:03:56.080 align:middle line:90%
+must also be false.
+
+00:03:56.080 --> 00:03:58.420 align:middle line:84%
+And so if not P is false,
+that's the same thing
+
+00:03:58.420 --> 00:03:59.660 align:middle line:90%
+as saying P is true.
+
+00:03:59.660 --> 00:04:00.660 align:middle line:90%
+It feels very backwards.
+
+00:04:00.660 --> 00:04:02.077 align:middle line:84%
+Lots of double
+negatives in there.
+
+00:04:02.077 --> 00:04:03.770 align:middle line:84%
+But that's the nature
+of contradiction.
+
+00:04:03.770 --> 00:04:04.970 align:middle line:84%
+We try to avoid
+them when we can,
+
+00:04:04.970 --> 00:04:07.428 align:middle line:84%
+but sometimes it's really the
+right way to prove something.
+
+00:04:07.428 --> 00:04:10.060 align:middle line:84%
+And the last technique
+we saw was induction,
+
+00:04:10.060 --> 00:04:12.160 align:middle line:84%
+where if we have a
+universal quantifier
+
+00:04:12.160 --> 00:04:14.740 align:middle line:84%
+over the natural numbers,
+we want to prove P of n
+
+00:04:14.740 --> 00:04:18.010 align:middle line:84%
+is true for all natural
+numbers 0, 1, 2, 3, and so on,
+
+00:04:18.010 --> 00:04:21.589 align:middle line:84%
+then we only need to prove it
+for some base case, P of 0.
+
+00:04:21.589 --> 00:04:24.400 align:middle line:84%
+And then we need to prove
+that P of n implies P of n
+
+00:04:24.400 --> 00:04:26.260 align:middle line:90%
+plus 1 for all n.
+
+00:04:26.260 --> 00:04:28.965 align:middle line:84%
+So we'll talk more about
+induction in a little bit.
+
+00:04:28.965 --> 00:04:31.540 align:middle line:90%
+
+
+00:04:31.540 --> 00:04:36.290 align:middle line:84%
+Today we're going to add to this
+list two more proof techniques.
+
+00:04:36.290 --> 00:04:39.980 align:middle line:84%
+One is proof by cases, and
+the other is strong induction.
+
+00:04:39.980 --> 00:04:42.280 align:middle line:84%
+So proof by cases is just
+a nice general technique
+
+00:04:42.280 --> 00:04:43.930 align:middle line:90%
+to be aware of.
+
+00:04:43.930 --> 00:04:45.950 align:middle line:90%
+It can be very powerful.
+
+00:04:45.950 --> 00:04:48.370 align:middle line:84%
+Strong induction is going
+to be an even cooler
+
+00:04:48.370 --> 00:04:51.130 align:middle line:90%
+form of induction.
+
+00:04:51.130 --> 00:04:55.010 align:middle line:84%
+All right, but we'll start
+today with proof by cases.
+
+00:04:55.010 --> 00:04:57.693 align:middle line:84%
+And we'll start with
+proof by 2 cases.
+
+00:04:57.693 --> 00:05:05.110 align:middle line:90%
+
+
+00:05:05.110 --> 00:05:07.605 align:middle line:84%
+And then we'll generalize
+to more than two cases.
+
+00:05:07.605 --> 00:05:11.080 align:middle line:90%
+
+
+00:05:11.080 --> 00:05:20.500 align:middle line:84%
+So the idea is take
+any proposition C,
+
+00:05:20.500 --> 00:05:32.730 align:middle line:84%
+and observe that C or not C is a
+tautology, meaning always true.
+
+00:05:32.730 --> 00:05:37.330 align:middle line:90%
+
+
+00:05:37.330 --> 00:05:41.660 align:middle line:84%
+If C is true, then this whole
+thing is true because C is true.
+
+00:05:41.660 --> 00:05:44.360 align:middle line:84%
+If C is false,
+then not C is true.
+
+00:05:44.360 --> 00:05:45.980 align:middle line:90%
+And so this whole thing is true.
+
+00:05:45.980 --> 00:05:50.620 align:middle line:84%
+I'm going to remind you
+this V symbol is an "or."
+
+00:05:50.620 --> 00:05:55.390 align:middle line:84%
+Whereas, the opposite
+symbol is an "and."
+
+00:05:55.390 --> 00:05:58.930 align:middle line:84%
+I think the mnemonic here is
+this looks like a letter A. This
+
+00:05:58.930 --> 00:06:02.440 align:middle line:84%
+looks like a letter O. I've
+heard some people say this looks
+
+00:06:02.440 --> 00:06:05.020 align:middle line:90%
+like a lowercase r for "or."
+
+00:06:05.020 --> 00:06:07.190 align:middle line:84%
+Anyway, you just
+remember these things.
+
+00:06:07.190 --> 00:06:07.840 align:middle line:90%
+This is "or."
+
+00:06:07.840 --> 00:06:09.730 align:middle line:90%
+This is "and."
+
+00:06:09.730 --> 00:06:14.600 align:middle line:84%
+So C or not C is the question,
+though, is always true.
+
+00:06:14.600 --> 00:06:17.950 align:middle line:84%
+So we call it a tautology, fancy
+word for being always true.
+
+00:06:17.950 --> 00:06:23.710 align:middle line:84%
+And so what this tells us
+is that our proposition P--
+
+00:06:23.710 --> 00:06:25.750 align:middle line:90%
+let's say we want to prove P--
+
+00:06:25.750 --> 00:06:39.640 align:middle line:84%
+is equivalent to C or not C
+implies P. So this is saying
+
+00:06:39.640 --> 00:06:43.300 align:middle line:90%
+if C or not C, then P is true.
+
+00:06:43.300 --> 00:06:44.990 align:middle line:90%
+C or not C is just always true.
+
+00:06:44.990 --> 00:06:47.450 align:middle line:84%
+So this is saying if true--
+in other words always--
+
+00:06:47.450 --> 00:06:49.430 align:middle line:90%
+P better be true.
+
+00:06:49.430 --> 00:06:52.320 align:middle line:84%
+So P and this implication
+are equivalent.
+
+00:06:52.320 --> 00:06:55.310 align:middle line:84%
+Another way to see that is
+to rewrite this implication
+
+00:06:55.310 --> 00:06:59.150 align:middle line:90%
+as a negation.
+
+00:06:59.150 --> 00:07:05.930 align:middle line:84%
+So this is like
+saying not true or P.
+
+00:07:05.930 --> 00:07:13.670 align:middle line:84%
+And so that's just the same
+thing as P because this is true.
+
+00:07:13.670 --> 00:07:15.170 align:middle line:90%
+OK.
+
+00:07:15.170 --> 00:07:16.160 align:middle line:90%
+Cool.
+
+00:07:16.160 --> 00:07:18.200 align:middle line:84%
+So I want to rewrite
+this a little bit
+
+00:07:18.200 --> 00:07:24.920 align:middle line:84%
+and say this thing is equivalent
+to C implies P and not C implies
+
+00:07:24.920 --> 00:07:29.480 align:middle line:90%
+P.
+
+00:07:29.480 --> 00:07:31.610 align:middle line:90%
+Why is this true?
+
+00:07:31.610 --> 00:07:33.290 align:middle line:90%
+It's like a distributive law.
+
+00:07:33.290 --> 00:07:36.300 align:middle line:84%
+This is saying I want to
+prove that C implies P,
+
+00:07:36.300 --> 00:07:39.120 align:middle line:84%
+and I want to prove
+that not C implies P.
+
+00:07:39.120 --> 00:07:40.500 align:middle line:90%
+That's what I wrote over there.
+
+00:07:40.500 --> 00:07:43.580 align:middle line:84%
+That implies that the
+combination of C and not C
+
+00:07:43.580 --> 00:07:48.485 align:middle line:84%
+implies P. OK, so I claim
+these are equivalent.
+
+00:07:48.485 --> 00:07:50.360 align:middle line:84%
+One way to verify it is
+with the truth table,
+
+00:07:50.360 --> 00:07:53.110 align:middle line:84%
+or you can do it with
+some manipulation.
+
+00:07:53.110 --> 00:07:58.030 align:middle line:90%
+All right, so we have--
+
+00:07:58.030 --> 00:07:59.950 align:middle line:84%
+what this is saying
+is in order to prove
+
+00:07:59.950 --> 00:08:02.830 align:middle line:84%
+P we need to prove that
+P is true assuming C
+
+00:08:02.830 --> 00:08:05.540 align:middle line:84%
+and prove that P is
+true assuming not C.
+
+00:08:05.540 --> 00:08:08.960 align:middle line:84%
+And these are the two
+cases in a proof by cases.
+
+00:08:08.960 --> 00:08:11.085 align:middle line:84%
+Let me write out a
+little template for you.
+
+00:08:11.085 --> 00:08:15.520 align:middle line:90%
+
+
+00:08:15.520 --> 00:08:17.350 align:middle line:84%
+Let's suppose the
+theorem we want
+
+00:08:17.350 --> 00:08:27.280 align:middle line:84%
+to prove is P. Theorem
+means something that's true
+
+00:08:27.280 --> 00:08:30.550 align:middle line:90%
+and that we're about to prove.
+
+00:08:30.550 --> 00:08:35.763 align:middle line:84%
+And so we usually say proof
+by cases on the truth value.
+
+00:08:35.763 --> 00:08:39.580 align:middle line:90%
+
+
+00:08:39.580 --> 00:08:43.563 align:middle line:90%
+Of C. So this is for any.
+
+00:08:43.563 --> 00:08:48.010 align:middle line:90%
+
+
+00:08:48.010 --> 00:08:53.590 align:middle line:84%
+Statement C. Proposition is
+what the word I was looking for.
+
+00:08:53.590 --> 00:08:55.995 align:middle line:84%
+Any Proposition C, it's
+either true or false.
+
+00:08:55.995 --> 00:08:59.093 align:middle line:90%
+
+
+00:08:59.093 --> 00:09:01.510 align:middle line:84%
+And so we're going to do proof
+by cases on the truth value
+
+00:09:01.510 --> 00:09:08.140 align:middle line:90%
+of C. Case 1 is that C is true.
+
+00:09:08.140 --> 00:09:11.220 align:middle line:90%
+And case 2 is that C is false.
+
+00:09:11.220 --> 00:09:16.510 align:middle line:90%
+
+
+00:09:16.510 --> 00:09:18.880 align:middle line:84%
+And so what do we
+do in each case?
+
+00:09:18.880 --> 00:09:20.810 align:middle line:84%
+Well, in the case
+that C is true,
+
+00:09:20.810 --> 00:09:23.835 align:middle line:84%
+this means that we get
+to assume that C is true.
+
+00:09:23.835 --> 00:09:30.010 align:middle line:90%
+
+
+00:09:30.010 --> 00:09:32.390 align:middle line:84%
+And then use that to
+prove that P is true.
+
+00:09:32.390 --> 00:09:37.810 align:middle line:84%
+And so the missing step in this
+proof outline or this template
+
+00:09:37.810 --> 00:09:43.110 align:middle line:84%
+is we need to say P is true
+because some reasons, which
+
+00:09:43.110 --> 00:09:44.940 align:middle line:90%
+we need to fill in.
+
+00:09:44.940 --> 00:09:48.490 align:middle line:84%
+And similarly, in
+the C is false case,
+
+00:09:48.490 --> 00:09:54.990 align:middle line:84%
+we need to prove P is
+true for some reasons.
+
+00:09:54.990 --> 00:09:57.220 align:middle line:84%
+So we need twice
+as many reasons,
+
+00:09:57.220 --> 00:09:59.340 align:middle line:84%
+but the idea is that
+maybe assuming C is true
+
+00:09:59.340 --> 00:10:00.910 align:middle line:84%
+makes it easier to
+prove P is true.
+
+00:10:00.910 --> 00:10:04.620 align:middle line:84%
+Maybe also assuming C
+is false makes it easier
+
+00:10:04.620 --> 00:10:06.550 align:middle line:90%
+to prove that P is true.
+
+00:10:06.550 --> 00:10:09.850 align:middle line:84%
+So in these boxes
+here we get to use C.
+
+00:10:09.850 --> 00:10:13.200 align:middle line:84%
+And in here, we
+get to use not C.
+
+00:10:13.200 --> 00:10:15.130 align:middle line:84%
+And often, this
+makes proofs easier.
+
+00:10:15.130 --> 00:10:16.860 align:middle line:84%
+But the challenging
+part is to pick
+
+00:10:16.860 --> 00:10:22.350 align:middle line:84%
+the correct C. What's the right
+choice of C for this to be true?
+
+00:10:22.350 --> 00:10:26.250 align:middle line:84%
+And maybe one more line I want
+to add to this template, which
+
+00:10:26.250 --> 00:10:29.400 align:middle line:84%
+is pretty obvious in
+the setting but gets
+
+00:10:29.400 --> 00:10:32.490 align:middle line:84%
+much less obvious when you
+think about more than two cases.
+
+00:10:32.490 --> 00:10:35.640 align:middle line:84%
+So a final step in
+this proof would
+
+00:10:35.640 --> 00:10:41.580 align:middle line:84%
+be to say C is either true or
+false because all propositions
+
+00:10:41.580 --> 00:10:44.610 align:middle line:90%
+are either true or false.
+
+00:10:44.610 --> 00:10:50.790 align:middle line:90%
+And so the cases are exhaustive.
+
+00:10:50.790 --> 00:10:54.090 align:middle line:84%
+So this is also called
+a proof by exhaustion
+
+00:10:54.090 --> 00:10:55.480 align:middle line:90%
+because we're really tired.
+
+00:10:55.480 --> 00:10:56.710 align:middle line:90%
+Maybe we are also.
+
+00:10:56.710 --> 00:10:59.650 align:middle line:84%
+But the idea is we want to
+exhaust all possible cases.
+
+00:10:59.650 --> 00:11:03.240 align:middle line:84%
+And if we prove that we captured
+every possible situation and all
+
+00:11:03.240 --> 00:11:06.030 align:middle line:84%
+of them P is true,
+then we're done.
+
+00:11:06.030 --> 00:11:08.260 align:middle line:90%
+So that's what we'd like to do.
+
+00:11:08.260 --> 00:11:09.730 align:middle line:84%
+I'm going to give
+you two examples.
+
+00:11:09.730 --> 00:11:11.260 align:middle line:90%
+First one is very simple.
+
+00:11:11.260 --> 00:11:13.840 align:middle line:84%
+The second one is
+more interesting.
+
+00:11:13.840 --> 00:11:18.990 align:middle line:90%
+
+
+00:11:18.990 --> 00:11:19.980 align:middle line:90%
+Questions?
+
+00:11:19.980 --> 00:11:20.480 align:middle line:90%
+All right.
+
+00:11:20.480 --> 00:11:37.410 align:middle line:90%
+
+
+00:11:37.410 --> 00:11:42.450 align:middle line:84%
+So the claim is, this is a
+general fact, that A implies B
+
+00:11:42.450 --> 00:11:45.940 align:middle line:90%
+or B implies C is a tautology.
+
+00:11:45.940 --> 00:11:47.950 align:middle line:90%
+So this means it's always true.
+
+00:11:47.950 --> 00:11:51.160 align:middle line:84%
+Again, so you can rewrite
+this as for all A,
+
+00:11:51.160 --> 00:11:58.860 align:middle line:84%
+B, and C, which are
+either true or false,
+
+00:11:58.860 --> 00:12:05.780 align:middle line:84%
+we have that A implies B
+or B implies C is true.
+
+00:12:05.780 --> 00:12:08.400 align:middle line:90%
+
+
+00:12:08.400 --> 00:12:09.930 align:middle line:90%
+OK.
+
+00:12:09.930 --> 00:12:12.750 align:middle line:90%
+Fun facts.
+
+00:12:12.750 --> 00:12:14.550 align:middle line:90%
+Let's prove it.
+
+00:12:14.550 --> 00:12:16.920 align:middle line:84%
+And the proof
+technique we're going
+
+00:12:16.920 --> 00:12:23.550 align:middle line:84%
+to use by cases, by two
+cases, namely, on B. B
+
+00:12:23.550 --> 00:12:26.210 align:middle line:90%
+is either true or false.
+
+00:12:26.210 --> 00:12:30.360 align:middle line:90%
+
+
+00:12:30.360 --> 00:12:33.000 align:middle line:84%
+We could try to do a case
+analysis in terms of A
+
+00:12:33.000 --> 00:12:36.135 align:middle line:84%
+or in terms of C. It turns out
+B is the right answer here.
+
+00:12:36.135 --> 00:12:37.510 align:middle line:84%
+It will lead to
+the fewest cases.
+
+00:12:37.510 --> 00:12:40.320 align:middle line:84%
+We'll only need two,
+intuitively because B is
+
+00:12:40.320 --> 00:12:41.770 align:middle line:90%
+in both of these expressions.
+
+00:12:41.770 --> 00:12:44.370 align:middle line:84%
+So it seems good to split
+on B because it will
+
+00:12:44.370 --> 00:12:47.370 align:middle line:90%
+impact this one and this one.
+
+00:12:47.370 --> 00:12:48.666 align:middle line:90%
+OK.
+
+00:12:48.666 --> 00:12:55.100 align:middle line:90%
+So case 1 is that B is true.
+
+00:12:55.100 --> 00:13:02.942 align:middle line:90%
+
+
+00:13:02.942 --> 00:13:09.750 align:middle line:84%
+If B is true, I claim
+that A implies B is true,
+
+00:13:09.750 --> 00:13:13.110 align:middle line:90%
+which is this first half.
+
+00:13:13.110 --> 00:13:15.330 align:middle line:90%
+Why?
+
+00:13:15.330 --> 00:13:21.690 align:middle line:84%
+In other words, I claim that
+A implies true is a tautology.
+
+00:13:21.690 --> 00:13:24.150 align:middle line:84%
+I think another-- again,
+an easy way to see this
+
+00:13:24.150 --> 00:13:28.830 align:middle line:84%
+is to rewrite this implication
+as not the left-hand side
+
+00:13:28.830 --> 00:13:32.890 align:middle line:84%
+or the right-hand
+side, not A or true.
+
+00:13:32.890 --> 00:13:34.150 align:middle line:90%
+Well, that's just true.
+
+00:13:34.150 --> 00:13:36.780 align:middle line:90%
+True or anything is true.
+
+00:13:36.780 --> 00:13:40.770 align:middle line:84%
+So in particular,
+over here, not A or B
+
+00:13:40.770 --> 00:13:45.060 align:middle line:84%
+is true because we just
+assumed that B is true.
+
+00:13:45.060 --> 00:13:52.680 align:middle line:84%
+So this tells us that A implies
+B, or anything, in particular B
+
+00:13:52.680 --> 00:13:56.730 align:middle line:90%
+or C, is also true.
+
+00:13:56.730 --> 00:13:59.260 align:middle line:90%
+So kind of trivial, right?
+
+00:13:59.260 --> 00:14:01.720 align:middle line:84%
+If you assume B is true,
+then, of course, this is true.
+
+00:14:01.720 --> 00:14:04.560 align:middle line:84%
+And so, of course, the
+whole thing is true.
+
+00:14:04.560 --> 00:14:07.170 align:middle line:84%
+So easy when you have
+the correct case.
+
+00:14:07.170 --> 00:14:08.860 align:middle line:84%
+Let's think about
+the other case.
+
+00:14:08.860 --> 00:14:12.010 align:middle line:84%
+It's not enough to just
+have one half of the cases.
+
+00:14:12.010 --> 00:14:13.955 align:middle line:84%
+We also need to think
+about when B is false.
+
+00:14:13.955 --> 00:14:17.130 align:middle line:90%
+
+
+00:14:17.130 --> 00:14:20.590 align:middle line:84%
+When B is false, I claim
+that the other term is true.
+
+00:14:20.590 --> 00:14:25.307 align:middle line:84%
+I claim that B
+implies C is true.
+
+00:14:25.307 --> 00:14:26.890 align:middle line:84%
+This is maybe a
+little less intuitive.
+
+00:14:26.890 --> 00:14:29.370 align:middle line:84%
+This is saying
+that false implies
+
+00:14:29.370 --> 00:14:35.340 align:middle line:84%
+C is a tautology, like for
+any C, false implies it.
+
+00:14:35.340 --> 00:14:37.710 align:middle line:84%
+And this should eventually
+become intuitive for you
+
+00:14:37.710 --> 00:14:39.940 align:middle line:84%
+when you get used to
+implies and if then.
+
+00:14:39.940 --> 00:14:43.380 align:middle line:84%
+This is saying if false,
+which means never,
+
+00:14:43.380 --> 00:14:45.810 align:middle line:90%
+I need C to be true.
+
+00:14:45.810 --> 00:14:48.940 align:middle line:84%
+But if this condition
+is never true,
+
+00:14:48.940 --> 00:14:51.040 align:middle line:84%
+then I don't care about
+the right-hand side.
+
+00:14:51.040 --> 00:14:56.590 align:middle line:84%
+If it's if-- if pigs
+fly, then, I don't know,
+
+00:14:56.590 --> 00:14:59.580 align:middle line:90%
+apples are orange or something.
+
+00:14:59.580 --> 00:15:01.830 align:middle line:84%
+That's a true statement
+because it will never
+
+00:15:01.830 --> 00:15:04.600 align:middle line:84%
+be the case that pigs fly, or
+at least in the present time.
+
+00:15:04.600 --> 00:15:09.160 align:middle line:84%
+So another way to see that
+is to think about, again,
+
+00:15:09.160 --> 00:15:12.580 align:middle line:90%
+not B or C. B is false.
+
+00:15:12.580 --> 00:15:14.610 align:middle line:90%
+So not B is true.
+
+00:15:14.610 --> 00:15:18.570 align:middle line:84%
+And so, of course,
+true or C is also true.
+
+00:15:18.570 --> 00:15:23.220 align:middle line:84%
+And so that tells us
+that anything or B
+
+00:15:23.220 --> 00:15:27.120 align:middle line:90%
+implies C is also true.
+
+00:15:27.120 --> 00:15:30.085 align:middle line:84%
+So in other words,
+this statement,
+
+00:15:30.085 --> 00:15:40.250 align:middle line:84%
+which maybe I'll call P, I'll
+say in either case P is true.
+
+00:15:40.250 --> 00:15:42.870 align:middle line:84%
+And so I write my little
+end of proof symbol.
+
+00:15:42.870 --> 00:15:45.050 align:middle line:90%
+This is QED from last time.
+
+00:15:45.050 --> 00:15:48.010 align:middle line:84%
+This means that I have
+demonstrated the theorem.
+
+00:15:48.010 --> 00:15:50.900 align:middle line:90%
+
+
+00:15:50.900 --> 00:15:51.890 align:middle line:90%
+Cool.
+
+00:15:51.890 --> 00:15:54.057 align:middle line:84%
+So in one case, this
+part was trivial.
+
+00:15:54.057 --> 00:15:56.640 align:middle line:84%
+In the other case, this part was
+trivial because it's an "or."
+
+00:15:56.640 --> 00:15:58.460 align:middle line:84%
+We're happy in either
+case, and we've
+
+00:15:58.460 --> 00:16:01.280 align:middle line:90%
+done our first proof by cases.
+
+00:16:01.280 --> 00:16:02.900 align:middle line:90%
+Pretty straightforward.
+
+00:16:02.900 --> 00:16:07.220 align:middle line:84%
+Let's do a more
+surprising result
+
+00:16:07.220 --> 00:16:13.450 align:middle line:84%
+using proof by cases called
+mutual friends and strangers.
+
+00:16:13.450 --> 00:16:16.580 align:middle line:90%
+
+
+00:16:16.580 --> 00:16:18.860 align:middle line:84%
+This is actually a famous
+mathematical problem.
+
+00:16:18.860 --> 00:16:23.720 align:middle line:84%
+We're going to solve today a
+particular case of it, which
+
+00:16:23.720 --> 00:16:26.545 align:middle line:90%
+is suppose you have six people.
+
+00:16:26.545 --> 00:16:29.360 align:middle line:90%
+
+
+00:16:29.360 --> 00:16:33.820 align:middle line:84%
+And every two of them are
+either friends or not.
+
+00:16:33.820 --> 00:16:45.170 align:middle line:90%
+
+
+00:16:45.170 --> 00:16:48.290 align:middle line:84%
+And this is an exclusive or,
+so I'm going to write XOR.
+
+00:16:48.290 --> 00:16:52.160 align:middle line:84%
+You're allowed to be friends
+or not friends, not both,
+
+00:16:52.160 --> 00:16:53.798 align:middle line:90%
+and not neither.
+
+00:16:53.798 --> 00:16:55.340 align:middle line:84%
+And in the not
+friends case, I'm also
+
+00:16:55.340 --> 00:16:58.580 align:middle line:90%
+going to call them strangers.
+
+00:16:58.580 --> 00:17:00.630 align:middle line:84%
+So this is like
+extreme friendship.
+
+00:17:00.630 --> 00:17:02.960 align:middle line:84%
+Either you declare
+yourself as friends
+
+00:17:02.960 --> 00:17:05.338 align:middle line:84%
+or as knowing each other, or
+you don't know each other.
+
+00:17:05.338 --> 00:17:06.630 align:middle line:90%
+In that case, you're strangers.
+
+00:17:06.630 --> 00:17:09.650 align:middle line:84%
+You're just never both, and
+it's always one or the other.
+
+00:17:09.650 --> 00:17:11.480 align:middle line:84%
+So you can think
+of this as I can
+
+00:17:11.480 --> 00:17:14.569 align:middle line:84%
+draw a little picture of there
+are six people represented
+
+00:17:14.569 --> 00:17:15.240 align:middle line:90%
+by circles.
+
+00:17:15.240 --> 00:17:17.310 align:middle line:84%
+You can put smiley faces
+in them if you want.
+
+00:17:17.310 --> 00:17:20.300 align:middle line:84%
+And maybe I connect
+them via a white line
+
+00:17:20.300 --> 00:17:25.310 align:middle line:84%
+if they are friends and a dotted
+line if they're strangers.
+
+00:17:25.310 --> 00:17:29.890 align:middle line:84%
+So let's-- and every two of them
+have one of these two pictures.
+
+00:17:29.890 --> 00:17:32.990 align:middle line:90%
+
+
+00:17:32.990 --> 00:17:35.600 align:middle line:90%
+Probably missing some.
+
+00:17:35.600 --> 00:17:38.210 align:middle line:90%
+Here.
+
+00:17:38.210 --> 00:17:41.030 align:middle line:90%
+OK, that's them all.
+
+00:17:41.030 --> 00:17:51.388 align:middle line:84%
+Then I claim no matter
+what the situation is,
+
+00:17:51.388 --> 00:17:53.430 align:middle line:84%
+which ones are friends,
+which ones are strangers,
+
+00:17:53.430 --> 00:18:09.890 align:middle line:84%
+there's always either three
+mutual friends or three
+
+00:18:09.890 --> 00:18:11.136 align:middle line:90%
+mutual strangers.
+
+00:18:11.136 --> 00:18:17.200 align:middle line:90%
+
+
+00:18:17.200 --> 00:18:17.700 align:middle line:90%
+OK.
+
+00:18:17.700 --> 00:18:20.970 align:middle line:84%
+In this example--
+hopefully I drew enough.
+
+00:18:20.970 --> 00:18:23.000 align:middle line:90%
+Yeah.
+
+00:18:23.000 --> 00:18:27.360 align:middle line:84%
+These three people
+are mutual strangers.
+
+00:18:27.360 --> 00:18:32.190 align:middle line:84%
+They're connected by a
+triangle of dashed lines, OK?
+
+00:18:32.190 --> 00:18:35.540 align:middle line:84%
+If I drew some other pattern, if
+they were all solid lines, then
+
+00:18:35.540 --> 00:18:39.000 align:middle line:84%
+I might get the other situation,
+at least three mutual friends.
+
+00:18:39.000 --> 00:18:40.980 align:middle line:84%
+But it turns out, if
+you have six people,
+
+00:18:40.980 --> 00:18:43.160 align:middle line:84%
+they're always at least
+three mutual friends
+
+00:18:43.160 --> 00:18:45.000 align:middle line:90%
+or three mutual strangers.
+
+00:18:45.000 --> 00:18:47.050 align:middle line:90%
+Let's prove this by cases.
+
+00:18:47.050 --> 00:18:57.980 align:middle line:90%
+
+
+00:18:57.980 --> 00:19:00.660 align:middle line:84%
+Whenever we apply
+a proof by cases,
+
+00:19:00.660 --> 00:19:04.700 align:middle line:84%
+we need to come up with
+some proposition C that's
+
+00:19:04.700 --> 00:19:07.670 align:middle line:84%
+either true or false, well,
+for a proof by two cases, which
+
+00:19:07.670 --> 00:19:08.335 align:middle line:90%
+this will be.
+
+00:19:08.335 --> 00:19:11.630 align:middle line:90%
+
+
+00:19:11.630 --> 00:19:14.490 align:middle line:84%
+And it's a little work
+in this case to do it.
+
+00:19:14.490 --> 00:19:21.860 align:middle line:84%
+It turns out a useful first
+step is to pick any person P. So
+
+00:19:21.860 --> 00:19:24.320 align:middle line:84%
+just take the first
+person or the seventh--
+
+00:19:24.320 --> 00:19:27.020 align:middle line:90%
+or the fifth person out of six.
+
+00:19:27.020 --> 00:19:29.430 align:middle line:84%
+Doesn't matter which
+one, but label it P.
+
+00:19:29.430 --> 00:19:31.590 align:middle line:84%
+So now we have a
+person to talk about.
+
+00:19:31.590 --> 00:19:36.380 align:middle line:84%
+This is like the proof by
+example or by construction,
+
+00:19:36.380 --> 00:19:37.280 align:middle line:90%
+right?
+
+00:19:37.280 --> 00:19:39.157 align:middle line:84%
+Overall there, we want
+to prove an existence.
+
+00:19:39.157 --> 00:19:41.240 align:middle line:84%
+We want to prove existence
+of three mutual friends
+
+00:19:41.240 --> 00:19:43.350 align:middle line:84%
+or existence of three
+mutual strangers.
+
+00:19:43.350 --> 00:19:46.560 align:middle line:84%
+So that's a useful step
+to either construct one.
+
+00:19:46.560 --> 00:19:49.260 align:middle line:84%
+Or in this case, we're actually
+not doing much for construction.
+
+00:19:49.260 --> 00:19:51.060 align:middle line:84%
+We're just taking
+an arbitrary x.
+
+00:19:51.060 --> 00:19:55.190 align:middle line:84%
+But that will be enough
+for this problem.
+
+00:19:55.190 --> 00:20:00.740 align:middle line:84%
+So let me draw a
+little circle for P.
+
+00:20:00.740 --> 00:20:03.170 align:middle line:84%
+And it might have
+some friends, and it
+
+00:20:03.170 --> 00:20:05.040 align:middle line:90%
+might have some strangers.
+
+00:20:05.040 --> 00:20:05.540 align:middle line:90%
+OK.
+
+00:20:05.540 --> 00:20:08.000 align:middle line:84%
+How many of these lines
+coming out of P are there?
+
+00:20:08.000 --> 00:20:11.420 align:middle line:84%
+Five exactly because there
+are six people total.
+
+00:20:11.420 --> 00:20:12.660 align:middle line:90%
+P is one of them.
+
+00:20:12.660 --> 00:20:15.930 align:middle line:84%
+So there are five
+people over here, OK?
+
+00:20:15.930 --> 00:20:21.020 align:middle line:84%
+So turns out useful
+case strategy is
+
+00:20:21.020 --> 00:20:28.790 align:middle line:84%
+to say either P has at
+least three friends,
+
+00:20:28.790 --> 00:20:31.710 align:middle line:84%
+or it has less than
+three friends, right?
+
+00:20:31.710 --> 00:20:34.490 align:middle line:84%
+Either there are three solid
+lines, like I've drawn here,
+
+00:20:34.490 --> 00:20:36.120 align:middle line:90%
+or there are at least three--
+
+00:20:36.120 --> 00:20:39.340 align:middle line:84%
+or there are at most
+two solid lines.
+
+00:20:39.340 --> 00:20:39.840 align:middle line:90%
+OK.
+
+00:20:39.840 --> 00:20:41.257 align:middle line:84%
+Let's think about
+this first case.
+
+00:20:41.257 --> 00:20:43.320 align:middle line:90%
+P has at least three friends.
+
+00:20:43.320 --> 00:20:52.160 align:middle line:84%
+Let's give them a name,
+Q, R, and S. So that's
+
+00:20:52.160 --> 00:20:53.190 align:middle line:90%
+a general picture.
+
+00:20:53.190 --> 00:20:58.625 align:middle line:84%
+Now we're assuming P has three
+solid lines to three people
+
+00:20:58.625 --> 00:21:03.030 align:middle line:90%
+Q, R, and S. OK.
+
+00:21:03.030 --> 00:21:04.440 align:middle line:90%
+This is not yet a triangle.
+
+00:21:04.440 --> 00:21:06.650 align:middle line:84%
+We haven't solved
+the problem yet.
+
+00:21:06.650 --> 00:21:11.810 align:middle line:84%
+But if we break into more
+cases we'll be able to.
+
+00:21:11.810 --> 00:21:25.890 align:middle line:84%
+So case 1A is going to be some
+two of Q, R, and S are friends.
+
+00:21:25.890 --> 00:21:28.480 align:middle line:90%
+
+
+00:21:28.480 --> 00:21:35.050 align:middle line:84%
+Suppose, for example,
+Q and S are friends.
+
+00:21:35.050 --> 00:21:36.290 align:middle line:90%
+Have I found a triangle?
+
+00:21:36.290 --> 00:21:42.530 align:middle line:84%
+Yes, P, Q, and S are mutual
+friends if this edge is here.
+
+00:21:42.530 --> 00:21:44.950 align:middle line:84%
+Or if this edge is here,
+then these three people
+
+00:21:44.950 --> 00:21:46.460 align:middle line:90%
+are three mutual friends.
+
+00:21:46.460 --> 00:21:49.310 align:middle line:84%
+Or if this edge is here, these
+three people or mutual friends.
+
+00:21:49.310 --> 00:21:51.490 align:middle line:84%
+If there's any edge in
+here that I can draw,
+
+00:21:51.490 --> 00:21:56.500 align:middle line:84%
+any solid line between Q, R, and
+S, then those two people plus P
+
+00:21:56.500 --> 00:21:59.440 align:middle line:90%
+form three mutual friends.
+
+00:21:59.440 --> 00:22:02.170 align:middle line:90%
+So that case is actually easy.
+
+00:22:02.170 --> 00:22:03.520 align:middle line:90%
+Great.
+
+00:22:03.520 --> 00:22:17.990 align:middle line:84%
+Then P plus those two people
+are three mutual friends, OK,
+
+00:22:17.990 --> 00:22:21.120 align:middle line:90%
+which was situation one up here.
+
+00:22:21.120 --> 00:22:22.870 align:middle line:84%
+There's always either
+three mutual friends
+
+00:22:22.870 --> 00:22:26.620 align:middle line:90%
+or three mutual strangers.
+
+00:22:26.620 --> 00:22:27.820 align:middle line:90%
+OK.
+
+00:22:27.820 --> 00:22:30.640 align:middle line:84%
+So now we need to think
+about the other cases.
+
+00:22:30.640 --> 00:22:32.410 align:middle line:90%
+Let's go over here.
+
+00:22:32.410 --> 00:22:37.550 align:middle line:84%
+We found one case that was
+easy, but there's case 1B,
+
+00:22:37.550 --> 00:22:39.650 align:middle line:84%
+which is maybe there
+aren't two mutual friends.
+
+00:22:39.650 --> 00:22:41.920 align:middle line:84%
+And there's case
+two, where P does not
+
+00:22:41.920 --> 00:22:43.960 align:middle line:90%
+have at least three friends.
+
+00:22:43.960 --> 00:22:46.810 align:middle line:84%
+But it turns out all of
+these cases will be easy.
+
+00:22:46.810 --> 00:22:52.120 align:middle line:90%
+So let's do case 1B.
+
+00:22:52.120 --> 00:22:55.220 align:middle line:84%
+Now, I get to freely
+choose what case 1 was,
+
+00:22:55.220 --> 00:22:57.910 align:middle line:84%
+and I get to freely choose what
+case 1A was because whenever I
+
+00:22:57.910 --> 00:23:00.430 align:middle line:84%
+split into cases, I get to
+choose my proposition C to be
+
+00:23:00.430 --> 00:23:01.520 align:middle line:90%
+anything I want.
+
+00:23:01.520 --> 00:23:03.260 align:middle line:90%
+So this was C in the first case.
+
+00:23:03.260 --> 00:23:04.820 align:middle line:90%
+This was C in the second case.
+
+00:23:04.820 --> 00:23:07.640 align:middle line:84%
+But generally, if you're
+doing proof by two cases,
+
+00:23:07.640 --> 00:23:09.410 align:middle line:84%
+you have no choice
+at this point.
+
+00:23:09.410 --> 00:23:11.330 align:middle line:90%
+So case 1A was whatever.
+
+00:23:11.330 --> 00:23:15.430 align:middle line:84%
+Case 1B has to be
+the negation of this.
+
+00:23:15.430 --> 00:23:23.470 align:middle line:84%
+So case 1B literally is not
+some 2 of Q, R, S are friends.
+
+00:23:23.470 --> 00:23:25.390 align:middle line:84%
+But if you think about
+that for a little bit
+
+00:23:25.390 --> 00:23:33.760 align:middle line:90%
+this is saying Q, R, and S--
+
+00:23:33.760 --> 00:23:37.910 align:middle line:84%
+let me write this in
+a couple of steps.
+
+00:23:37.910 --> 00:23:43.410 align:middle line:84%
+No two of Q, R,
+and S are friends.
+
+00:23:43.410 --> 00:23:48.430 align:middle line:90%
+
+
+00:23:48.430 --> 00:23:50.470 align:middle line:84%
+But that's the same
+thing as saying Q, R,
+
+00:23:50.470 --> 00:23:52.906 align:middle line:90%
+and S are mutual strangers.
+
+00:23:52.906 --> 00:24:01.850 align:middle line:90%
+
+
+00:24:01.850 --> 00:24:02.350 align:middle line:90%
+OK.
+
+00:24:02.350 --> 00:24:05.020 align:middle line:84%
+We're using this fact,
+or this assumption,
+
+00:24:05.020 --> 00:24:10.960 align:middle line:84%
+that every two people are either
+friends or strangers, always one
+
+00:24:10.960 --> 00:24:11.660 align:middle line:90%
+or the other.
+
+00:24:11.660 --> 00:24:15.610 align:middle line:84%
+So if there's no solid line
+over here, then all of these
+
+00:24:15.610 --> 00:24:18.020 align:middle line:90%
+are dashed lines.
+
+00:24:18.020 --> 00:24:19.970 align:middle line:84%
+So all three of these
+are mutual strangers.
+
+00:24:19.970 --> 00:24:24.250 align:middle line:84%
+And there we found our
+triangle of strangers, OK?
+
+00:24:24.250 --> 00:24:27.710 align:middle line:84%
+So it turns out case 1A and case
+1B are actually just as easy
+
+00:24:27.710 --> 00:24:29.380 align:middle line:90%
+just reversed.
+
+00:24:29.380 --> 00:24:33.370 align:middle line:90%
+So this was situation two.
+
+00:24:33.370 --> 00:24:35.230 align:middle line:84%
+So either we got
+three mutual friends,
+
+00:24:35.230 --> 00:24:36.950 align:middle line:84%
+or we got three
+mutual strangers.
+
+00:24:36.950 --> 00:24:38.530 align:middle line:90%
+But we're still inside case 1.
+
+00:24:38.530 --> 00:24:40.210 align:middle line:90%
+We just finished case 1.
+
+00:24:40.210 --> 00:24:42.230 align:middle line:84%
+Now we need to
+think about case 2.
+
+00:24:42.230 --> 00:24:47.020 align:middle line:84%
+So I'm going to unindent
+here and go to case 2.
+
+00:24:47.020 --> 00:24:49.970 align:middle line:84%
+Case 2, again, has to be
+exactly the opposite of this.
+
+00:24:49.970 --> 00:24:54.610 align:middle line:84%
+So P does not have at
+least three friends.
+
+00:24:54.610 --> 00:24:58.160 align:middle line:84%
+By number of people
+being an integer,
+
+00:24:58.160 --> 00:25:04.630 align:middle line:84%
+this is saying P has
+at most two friends.
+
+00:25:04.630 --> 00:25:07.000 align:middle line:84%
+If it doesn't have at
+least three, it's at most 2
+
+00:25:07.000 --> 00:25:11.140 align:middle line:84%
+because the number of
+friends is always an integer.
+
+00:25:11.140 --> 00:25:12.050 align:middle line:90%
+OK.
+
+00:25:12.050 --> 00:25:12.560 align:middle line:90%
+Great.
+
+00:25:12.560 --> 00:25:16.570 align:middle line:84%
+So case 2 is a
+negation of case 1.
+
+00:25:16.570 --> 00:25:19.090 align:middle line:84%
+And it turns out
+that is also kind of
+
+00:25:19.090 --> 00:25:21.970 align:middle line:90%
+easy for asymmetric reason.
+
+00:25:21.970 --> 00:25:24.560 align:middle line:84%
+Remember, there are
+six people total.
+
+00:25:24.560 --> 00:25:28.540 align:middle line:90%
+So there's P and five others.
+
+00:25:28.540 --> 00:25:36.670 align:middle line:90%
+So how many strangers is P with?
+
+00:25:36.670 --> 00:25:40.870 align:middle line:84%
+How many people is
+P a stranger to?
+
+00:25:40.870 --> 00:25:46.803 align:middle line:84%
+Well, it's at least all
+the others, 5 minus 2.
+
+00:25:46.803 --> 00:25:48.470 align:middle line:84%
+Because at most two
+of them are friends.
+
+00:25:48.470 --> 00:25:50.650 align:middle line:84%
+The remainder have
+to be strangers.
+
+00:25:50.650 --> 00:25:53.828 align:middle line:90%
+And so this is 3.
+
+00:25:53.828 --> 00:25:55.870 align:middle line:84%
+So P having at most two
+friends is the same thing
+
+00:25:55.870 --> 00:25:58.130 align:middle line:84%
+as P having at least
+three strangers
+
+00:25:58.130 --> 00:26:01.510 align:middle line:84%
+because there are five
+other people total.
+
+00:26:01.510 --> 00:26:03.910 align:middle line:90%
+2 plus 3 is 5.
+
+00:26:03.910 --> 00:26:07.560 align:middle line:84%
+So case 2 is P has at
+least three strangers.
+
+00:26:07.560 --> 00:26:10.300 align:middle line:84%
+Case 1 was P has at
+least three friends.
+
+00:26:10.300 --> 00:26:11.720 align:middle line:90%
+These are almost the same.
+
+00:26:11.720 --> 00:26:15.280 align:middle line:84%
+I just have to flip
+friends versus strangers.
+
+00:26:15.280 --> 00:26:17.260 align:middle line:84%
+So the way I would
+write this in a proof
+
+00:26:17.260 --> 00:26:32.950 align:middle line:84%
+is this is symmetric
+to case 1 swapping
+
+00:26:32.950 --> 00:26:35.516 align:middle line:90%
+friends versus strangers.
+
+00:26:35.516 --> 00:26:39.880 align:middle line:90%
+
+
+00:26:39.880 --> 00:26:46.030 align:middle line:84%
+And of course, situation
+1 with situation 2.
+
+00:26:46.030 --> 00:26:49.870 align:middle line:84%
+So case 2 would be P has at
+least three strangers, Q, R,
+
+00:26:49.870 --> 00:26:54.470 align:middle line:84%
+and S. Case 1A is that some two
+of Q, R, and S are strangers.
+
+00:26:54.470 --> 00:26:56.800 align:middle line:84%
+Then we conclude
+that P plus those two
+
+00:26:56.800 --> 00:27:00.760 align:middle line:84%
+are three mutual strangers,
+which is situation 2.
+
+00:27:00.760 --> 00:27:05.920 align:middle line:84%
+Or case 2B would be no two
+of Q, R, S are strangers.
+
+00:27:05.920 --> 00:27:08.520 align:middle line:84%
+In other words., Q, R,
+S are mutual friends.
+
+00:27:08.520 --> 00:27:10.510 align:middle line:90%
+And then we're in situation 1.
+
+00:27:10.510 --> 00:27:13.493 align:middle line:84%
+So case 2 works just like case 1
+just swapping the words friends
+
+00:27:13.493 --> 00:27:15.910 align:middle line:84%
+and strangers because they
+didn't really have any meaning.
+
+00:27:15.910 --> 00:27:18.690 align:middle line:90%
+They were just words.
+
+00:27:18.690 --> 00:27:19.650 align:middle line:90%
+Cool.
+
+00:27:19.650 --> 00:27:25.360 align:middle line:84%
+So in all cases, we
+prove the desired result.
+
+00:27:25.360 --> 00:27:28.320 align:middle line:84%
+Either situation 1 or
+situation 2 happens.
+
+00:27:28.320 --> 00:27:31.565 align:middle line:84%
+This is a particular case of
+something called Ramsey Theory.
+
+00:27:31.565 --> 00:27:37.200 align:middle line:90%
+
+
+00:27:37.200 --> 00:27:41.692 align:middle line:84%
+What we've just found is
+that something called R of 3,
+
+00:27:41.692 --> 00:27:46.530 align:middle line:90%
+3 is at most 6.
+
+00:27:46.530 --> 00:27:50.850 align:middle line:84%
+In general, R of f
+comma S is the number
+
+00:27:50.850 --> 00:27:54.270 align:middle line:84%
+of people you need
+in order to guarantee
+
+00:27:54.270 --> 00:27:58.480 align:middle line:84%
+that there's at least f friends
+or at least S strangers.
+
+00:27:58.480 --> 00:28:00.133 align:middle line:84%
+So we just did at
+least three friends
+
+00:28:00.133 --> 00:28:01.300 align:middle line:90%
+or at least three strangers.
+
+00:28:01.300 --> 00:28:03.100 align:middle line:84%
+We showed that six
+people was enough.
+
+00:28:03.100 --> 00:28:06.400 align:middle line:84%
+It turns out six people is
+exactly the right number.
+
+00:28:06.400 --> 00:28:09.600 align:middle line:84%
+You need six people in order to
+guarantee at least three friends
+
+00:28:09.600 --> 00:28:11.140 align:middle line:90%
+or three strangers.
+
+00:28:11.140 --> 00:28:16.120 align:middle line:84%
+If you wanted to guarantee
+four friends or four strangers,
+
+00:28:16.120 --> 00:28:19.235 align:middle line:90%
+turns out you need 18 people.
+
+00:28:19.235 --> 00:28:21.840 align:middle line:90%
+
+
+00:28:21.840 --> 00:28:25.330 align:middle line:84%
+If you want to guarantee five
+friends or five strangers,
+
+00:28:25.330 --> 00:28:32.500 align:middle line:84%
+turns out you need somewhere
+between 43 and 48 people.
+
+00:28:32.500 --> 00:28:34.240 align:middle line:90%
+But we don't know how many.
+
+00:28:34.240 --> 00:28:36.243 align:middle line:84%
+So while this problem
+was relatively easy,
+
+00:28:36.243 --> 00:28:38.160 align:middle line:84%
+three friends or three
+strangers, five friends
+
+00:28:38.160 --> 00:28:41.980 align:middle line:84%
+and five strangers already is an
+unsolved mathematical problem.
+
+00:28:41.980 --> 00:28:44.640 align:middle line:84%
+So that's kind of cool
+and crazy how easily you
+
+00:28:44.640 --> 00:28:47.255 align:middle line:90%
+get to very difficult problems.
+
+00:28:47.255 --> 00:28:49.630 align:middle line:84%
+Of course, people will try to
+compute larger numbers too,
+
+00:28:49.630 --> 00:28:54.360 align:middle line:84%
+but we don't have tight
+bounds, generally.
+
+00:28:54.360 --> 00:28:55.090 align:middle line:90%
+OK.
+
+00:28:55.090 --> 00:28:56.820 align:middle line:84%
+I want to say one
+more thing about proof
+
+00:28:56.820 --> 00:29:00.365 align:middle line:84%
+by cases, which is what if
+we want more than two cases?
+
+00:29:00.365 --> 00:29:03.510 align:middle line:90%
+
+
+00:29:03.510 --> 00:29:09.827 align:middle line:84%
+So more generally,
+proof by k cases.
+
+00:29:09.827 --> 00:29:19.800 align:middle line:90%
+
+
+00:29:19.800 --> 00:29:22.560 align:middle line:84%
+So instead of just C
+or not C, let's suppose
+
+00:29:22.560 --> 00:29:25.470 align:middle line:84%
+we have a bunch of
+propositions, C1 through Ck.
+
+00:29:25.470 --> 00:29:30.661 align:middle line:84%
+And let's suppose that
+this is a tautology,
+
+00:29:30.661 --> 00:29:32.710 align:middle line:90%
+my favorite word for the day.
+
+00:29:32.710 --> 00:29:36.820 align:middle line:84%
+So suppose that it's always the
+case, C1 or C2 or dot, dot, dot,
+
+00:29:36.820 --> 00:29:37.570 align:middle line:90%
+or Ck.
+
+00:29:37.570 --> 00:29:40.260 align:middle line:84%
+One of these things
+is always true.
+
+00:29:40.260 --> 00:29:48.330 align:middle line:84%
+Then we can follow
+this template which
+
+00:29:48.330 --> 00:29:53.070 align:middle line:84%
+is suppose we want to prove a
+theorem that some proposition
+
+00:29:53.070 --> 00:29:57.150 align:middle line:90%
+P is true.
+
+00:29:57.150 --> 00:30:06.080 align:middle line:84%
+Then we'll say a proof by
+cases, and there's k of them.
+
+00:30:06.080 --> 00:30:07.830 align:middle line:84%
+So I'm just going to
+write it generically.
+
+00:30:07.830 --> 00:30:12.820 align:middle line:90%
+In case i, is that Ci is true.
+
+00:30:12.820 --> 00:30:17.700 align:middle line:84%
+In other words, we get
+to assume Ci is true.
+
+00:30:17.700 --> 00:30:20.430 align:middle line:84%
+And then what we need
+to do is prove that P
+
+00:30:20.430 --> 00:30:22.200 align:middle line:90%
+is true in that scenario.
+
+00:30:22.200 --> 00:30:26.623 align:middle line:90%
+And P is true because reasons.
+
+00:30:26.623 --> 00:30:29.820 align:middle line:90%
+
+
+00:30:29.820 --> 00:30:31.650 align:middle line:84%
+And then here it's
+especially important
+
+00:30:31.650 --> 00:30:45.460 align:middle line:84%
+to say that the cases are
+exhaustive because reasons.
+
+00:30:45.460 --> 00:30:51.450 align:middle line:84%
+And exhaustive here just means
+that C1 or C2 or up to Ck
+
+00:30:51.450 --> 00:30:53.056 align:middle line:90%
+is a tautology.
+
+00:30:53.056 --> 00:30:56.160 align:middle line:90%
+
+
+00:30:56.160 --> 00:30:59.860 align:middle line:84%
+So you need to
+prove that C1 or--
+
+00:30:59.860 --> 00:31:02.628 align:middle line:84%
+dot, dot, dot, or
+Ck is always true.
+
+00:31:02.628 --> 00:31:04.670 align:middle line:84%
+That's the meaning of the
+cases being exhaustive.
+
+00:31:04.670 --> 00:31:05.750 align:middle line:90%
+So there's two parts.
+
+00:31:05.750 --> 00:31:07.490 align:middle line:84%
+One is to prove that
+each case is OK.
+
+00:31:07.490 --> 00:31:11.440 align:middle line:84%
+The other is to prove that
+those cases cover everything.
+
+00:31:11.440 --> 00:31:14.870 align:middle line:84%
+So I won't show an
+example of k cases here.
+
+00:31:14.870 --> 00:31:17.210 align:middle line:84%
+We'll see them in
+recitation, and so on.
+
+00:31:17.210 --> 00:31:21.860 align:middle line:84%
+But I will tell you a story
+about one famous proof by cases,
+
+00:31:21.860 --> 00:31:25.240 align:middle line:90%
+which is the Four Color Theorem.
+
+00:31:25.240 --> 00:31:28.430 align:middle line:84%
+I'll illustrate the Four
+Color Theorem with an example.
+
+00:31:28.430 --> 00:31:32.050 align:middle line:84%
+So here's a map of
+the United States.
+
+00:31:32.050 --> 00:31:34.870 align:middle line:84%
+And I've colored all the
+states, all the regions
+
+00:31:34.870 --> 00:31:37.150 align:middle line:84%
+of this map with four
+different colors,
+
+00:31:37.150 --> 00:31:39.910 align:middle line:84%
+red, green, blue,
+yellow, in such a way
+
+00:31:39.910 --> 00:31:43.690 align:middle line:84%
+that if you have two
+regions that share
+
+00:31:43.690 --> 00:31:48.010 align:middle line:84%
+a positive length boundary,
+then this color A is
+
+00:31:48.010 --> 00:31:53.312 align:middle line:84%
+different from this color
+B. It has to be not equal.
+
+00:31:53.312 --> 00:31:55.645 align:middle line:84%
+Otherwise, if you had two red
+regions next to each other
+
+00:31:55.645 --> 00:31:57.187 align:middle line:84%
+it would be hard to
+see the boundary.
+
+00:31:57.187 --> 00:31:59.140 align:middle line:84%
+So the colors illustrate
+the boundaries
+
+00:31:59.140 --> 00:32:01.130 align:middle line:90%
+between all the regions.
+
+00:32:01.130 --> 00:32:04.630 align:middle line:84%
+Four colors seems to
+be enough for this map.
+
+00:32:04.630 --> 00:32:09.070 align:middle line:84%
+It's also enough for this
+map of all the countries.
+
+00:32:09.070 --> 00:32:11.000 align:middle line:90%
+Is it true for all the maps?
+
+00:32:11.000 --> 00:32:12.387 align:middle line:90%
+Turns out, yes, this is called--
+
+00:32:12.387 --> 00:32:14.720 align:middle line:84%
+for a long time it was called
+the Four Color Conjecture.
+
+00:32:14.720 --> 00:32:18.280 align:middle line:84%
+And then it became the Four
+Color Theorem at some date.
+
+00:32:18.280 --> 00:32:19.810 align:middle line:84%
+So Four Color
+Theorem says you can
+
+00:32:19.810 --> 00:32:22.398 align:middle line:84%
+color the regions of any
+planar map with four colors
+
+00:32:22.398 --> 00:32:24.440 align:middle line:84%
+so that neighboring regions
+get different colors.
+
+00:32:24.440 --> 00:32:30.340 align:middle line:84%
+This was first observed
+and conjectured in 1852
+
+00:32:30.340 --> 00:32:34.030 align:middle line:84%
+by a guy named Guthrie, who
+was a student of De Morgan.
+
+00:32:34.030 --> 00:32:38.240 align:middle line:84%
+De Morgan, I think, his name
+will come up in a moment,
+
+00:32:38.240 --> 00:32:39.530 align:middle line:90%
+famous logician.
+
+00:32:39.530 --> 00:32:43.750 align:middle line:84%
+He actually invented
+induction as we--
+
+00:32:43.750 --> 00:32:45.670 align:middle line:84%
+one of the first
+people to-- he invented
+
+00:32:45.670 --> 00:32:47.900 align:middle line:84%
+the term mathematical
+induction, at the very least,
+
+00:32:47.900 --> 00:32:51.670 align:middle line:90%
+and really made it more formal.
+
+00:32:51.670 --> 00:32:53.532 align:middle line:84%
+So a student of him,
+Guthrie, said, hey,
+
+00:32:53.532 --> 00:32:54.990 align:middle line:84%
+I took all the
+counties of England.
+
+00:32:54.990 --> 00:32:57.310 align:middle line:84%
+And it turned out I
+only needed four colors.
+
+00:32:57.310 --> 00:32:58.390 align:middle line:90%
+Is this a theorem?
+
+00:32:58.390 --> 00:33:00.990 align:middle line:84%
+And he asked
+indirectly De Morgan.
+
+00:33:00.990 --> 00:33:02.560 align:middle line:84%
+And De Morgan said,
+hey, seems cool.
+
+00:33:02.560 --> 00:33:03.900 align:middle line:90%
+I don't know, maybe.
+
+00:33:03.900 --> 00:33:08.490 align:middle line:84%
+Then the following year,
+1853, another mathematician
+
+00:33:08.490 --> 00:33:15.690 align:middle line:90%
+named Kempe proves the theorem.
+
+00:33:15.690 --> 00:33:20.130 align:middle line:84%
+But proved should be in
+quotes because 11 years
+
+00:33:20.130 --> 00:33:23.980 align:middle line:84%
+later, 1864, Heawood
+found a bug in that proof.
+
+00:33:23.980 --> 00:33:26.290 align:middle line:84%
+Turns out there were a lot
+of cases in this proof,
+
+00:33:26.290 --> 00:33:28.300 align:middle line:84%
+and the cases were
+not exhaustive.
+
+00:33:28.300 --> 00:33:30.360 align:middle line:90%
+So it wasn't done.
+
+00:33:30.360 --> 00:33:36.940 align:middle line:84%
+Then, 15 years later, 1880,
+Tait proved the theorem.
+
+00:33:36.940 --> 00:33:40.660 align:middle line:84%
+Then 11 years later, Petersen
+found a bug in that proof.
+
+00:33:40.660 --> 00:33:42.790 align:middle line:84%
+Again, not all the
+cases were exhaustive.
+
+00:33:42.790 --> 00:33:50.647 align:middle line:84%
+Then, 85 years later,
+1976, Appel and Haken--
+
+00:33:50.647 --> 00:33:52.105 align:middle line:84%
+or maybe it's Appel,
+I'm not sure--
+
+00:33:52.105 --> 00:33:56.930 align:middle line:90%
+
+
+00:33:56.930 --> 00:33:58.170 align:middle line:90%
+proved the theorem.
+
+00:33:58.170 --> 00:34:01.040 align:middle line:84%
+And I think most people
+consider this an actual proof.
+
+00:34:01.040 --> 00:34:02.400 align:middle line:90%
+But it's a little tricky.
+
+00:34:02.400 --> 00:34:05.220 align:middle line:84%
+Just to give you a
+sense, this is where my--
+
+00:34:05.220 --> 00:34:06.720 align:middle line:84%
+I started hearing
+about the problem.
+
+00:34:06.720 --> 00:34:10.250 align:middle line:84%
+I wasn't alive in 1976, but
+I heard about it later on.
+
+00:34:10.250 --> 00:34:14.010 align:middle line:84%
+There are 1,834
+cases in this proof.
+
+00:34:14.010 --> 00:34:17.510 align:middle line:84%
+They occupy about a 400-page
+printout from a computer
+
+00:34:17.510 --> 00:34:18.270 align:middle line:90%
+program.
+
+00:34:18.270 --> 00:34:21.409 align:middle line:84%
+And so this is one of the
+first mathematical proofs
+
+00:34:21.409 --> 00:34:24.870 align:middle line:84%
+that used a computer to assist
+in checking all the cases.
+
+00:34:24.870 --> 00:34:29.300 align:middle line:84%
+Because there's so many, 1,834,
+it's hard to do that by hand
+
+00:34:29.300 --> 00:34:31.530 align:middle line:84%
+and be sure that you
+didn't make a mistake.
+
+00:34:31.530 --> 00:34:35.929 align:middle line:84%
+So the computer proof, to me,
+is a little bit more sound.
+
+00:34:35.929 --> 00:34:40.940 align:middle line:84%
+Also apparently checked by
+hand by Haken's daughter.
+
+00:34:40.940 --> 00:34:45.199 align:middle line:84%
+Then, five years
+later, Schmidt found
+
+00:34:45.199 --> 00:34:47.670 align:middle line:84%
+what you could interpret
+as a bug in this proof,
+
+00:34:47.670 --> 00:34:49.610 align:middle line:84%
+let's say an omission
+or something,
+
+00:34:49.610 --> 00:34:51.590 align:middle line:90%
+but a missing situation.
+
+00:34:51.590 --> 00:34:53.400 align:middle line:84%
+And then over the
+next eight years,
+
+00:34:53.400 --> 00:34:56.130 align:middle line:84%
+Appel and Haken fixed all
+the bugs they could find,
+
+00:34:56.130 --> 00:34:59.190 align:middle line:84%
+that one and some other
+wording issues, and so on.
+
+00:34:59.190 --> 00:35:01.970 align:middle line:84%
+And then they
+published it in a book.
+
+00:35:01.970 --> 00:35:05.630 align:middle line:84%
+But a book isn't refereed, so I
+don't know how many people have
+
+00:35:05.630 --> 00:35:07.310 align:middle line:90%
+read that book.
+
+00:35:07.310 --> 00:35:09.450 align:middle line:84%
+It seems like this
+proof is maybe correct.
+
+00:35:09.450 --> 00:35:12.740 align:middle line:84%
+It's been many years, and
+no one has found a bug.
+
+00:35:12.740 --> 00:35:15.600 align:middle line:84%
+A little bit later,
+though, in 1996,
+
+00:35:15.600 --> 00:35:17.700 align:middle line:84%
+Robertson, Sanders,
+Seymour, and Thomas,
+
+00:35:17.700 --> 00:35:21.170 align:middle line:84%
+some of the top graph
+theorists in the world,
+
+00:35:21.170 --> 00:35:22.760 align:middle line:90%
+found a simpler proof.
+
+00:35:22.760 --> 00:35:25.800 align:middle line:90%
+That proof only has 633 cases.
+
+00:35:25.800 --> 00:35:29.130 align:middle line:84%
+So that's a lot less, maybe
+three times fewer cases.
+
+00:35:29.130 --> 00:35:30.920 align:middle line:84%
+And also, the
+length of the paper
+
+00:35:30.920 --> 00:35:33.200 align:middle line:84%
+is shorter, maybe
+10 times shorter.
+
+00:35:33.200 --> 00:35:34.710 align:middle line:90%
+So that's progress.
+
+00:35:34.710 --> 00:35:36.060 align:middle line:90%
+But is that proof true?
+
+00:35:36.060 --> 00:35:38.480 align:middle line:84%
+It also used a computer
+to check the cases.
+
+00:35:38.480 --> 00:35:44.360 align:middle line:84%
+Finally, in 2005,
+Werner and Gonthier
+
+00:35:44.360 --> 00:35:49.220 align:middle line:84%
+developed a fully
+computer-checkable proof using
+
+00:35:49.220 --> 00:35:53.600 align:middle line:84%
+a system called Coq,
+where you write down
+
+00:35:53.600 --> 00:35:54.930 align:middle line:90%
+every step in the proof.
+
+00:35:54.930 --> 00:35:57.050 align:middle line:84%
+And then the computer
+just has to check
+
+00:35:57.050 --> 00:36:01.400 align:middle line:84%
+that every mathematical
+derivation, all the derivations
+
+00:36:01.400 --> 00:36:03.830 align:middle line:84%
+we saw last class, modus
+ponens, and all those things,
+
+00:36:03.830 --> 00:36:04.920 align:middle line:90%
+are correct.
+
+00:36:04.920 --> 00:36:10.830 align:middle line:84%
+This program has withstood
+many, many years of scrutiny.
+
+00:36:10.830 --> 00:36:12.330 align:middle line:84%
+So we all believe
+that it's correct.
+
+00:36:12.330 --> 00:36:14.455 align:middle line:84%
+And so the fact that you
+can write the entire proof
+
+00:36:14.455 --> 00:36:16.730 align:middle line:84%
+in this proof language
+suggests that this really is
+
+00:36:16.730 --> 00:36:18.900 align:middle line:90%
+a true theorem now, thankfully.
+
+00:36:18.900 --> 00:36:21.680 align:middle line:84%
+There won't be
+more missing cases.
+
+00:36:21.680 --> 00:36:24.440 align:middle line:84%
+I believe that is just an
+implementation of the Robertson
+
+00:36:24.440 --> 00:36:25.050 align:middle line:90%
+proof.
+
+00:36:25.050 --> 00:36:28.707 align:middle line:90%
+So that one withstood scrutiny.
+
+00:36:28.707 --> 00:36:30.540 align:middle line:84%
+But it's very tedious
+to write these proofs.
+
+00:36:30.540 --> 00:36:34.010 align:middle line:84%
+And so for the Four Color
+Theorem, it's worth it,
+
+00:36:34.010 --> 00:36:35.510 align:middle line:90%
+I would say.
+
+00:36:35.510 --> 00:36:38.000 align:middle line:84%
+All right, so that's just
+an example of, in general,
+
+00:36:38.000 --> 00:36:40.503 align:middle line:84%
+proofs by cases can
+involve a zillion cases.
+
+00:36:40.503 --> 00:36:42.170 align:middle line:84%
+It's very annoying,
+but sometimes that's
+
+00:36:42.170 --> 00:36:43.560 align:middle line:84%
+the best thing we
+know how to do.
+
+00:36:43.560 --> 00:36:46.018 align:middle line:84%
+Maybe we'll come up with a
+simpler Four Color Theorem proof
+
+00:36:46.018 --> 00:36:51.360 align:middle line:84%
+at some point, but best we know
+so far has hundreds of cases.
+
+00:36:51.360 --> 00:36:56.550 align:middle line:84%
+All right, let's go
+back to induction.
+
+00:36:56.550 --> 00:36:59.010 align:middle line:84%
+At first I want to review
+induction a little bit,
+
+00:36:59.010 --> 00:37:03.500 align:middle line:84%
+and then we will get
+a stronger form of it.
+
+00:37:03.500 --> 00:37:09.660 align:middle line:90%
+
+
+00:37:09.660 --> 00:37:14.850 align:middle line:84%
+So I'm going to call
+this the induction axiom.
+
+00:37:14.850 --> 00:37:18.960 align:middle line:84%
+This is what we talked
+about last class.
+
+00:37:18.960 --> 00:37:20.680 align:middle line:90%
+We didn't call it an axiom.
+
+00:37:20.680 --> 00:37:22.153 align:middle line:84%
+And in some setups
+it is an axiom.
+
+00:37:22.153 --> 00:37:23.820 align:middle line:84%
+We're going to take
+it as one, something
+
+00:37:23.820 --> 00:37:26.580 align:middle line:90%
+that we just assume is true.
+
+00:37:26.580 --> 00:37:28.900 align:middle line:84%
+Although, as Zach
+mentioned, in modern times,
+
+00:37:28.900 --> 00:37:31.050 align:middle line:84%
+you usually prove
+this using other--
+
+00:37:31.050 --> 00:37:35.058 align:middle line:84%
+using the definition
+of the natural numbers.
+
+00:37:35.058 --> 00:37:36.850 align:middle line:84%
+But I'll just take it
+as something is true.
+
+00:37:36.850 --> 00:37:40.300 align:middle line:84%
+So for any predicate P of
+n over the natural numbers,
+
+00:37:40.300 --> 00:37:50.000 align:middle line:84%
+if on the one hand P of 0 is
+true and on the other hand,
+
+00:37:50.000 --> 00:37:59.120 align:middle line:84%
+P of n implies P of n plus
+1 for all natural numbers n,
+
+00:37:59.120 --> 00:38:07.820 align:middle line:84%
+then P of n is true for
+all natural numbers n.
+
+00:38:07.820 --> 00:38:10.565 align:middle line:90%
+This is the magic of induction.
+
+00:38:10.565 --> 00:38:12.440 align:middle line:84%
+You should use this
+probably in every problem
+
+00:38:12.440 --> 00:38:15.900 align:middle line:84%
+you solve, not every problem,
+but extremely powerful tool.
+
+00:38:15.900 --> 00:38:18.350 align:middle line:84%
+We're going to use it all the
+time throughout this class.
+
+00:38:18.350 --> 00:38:20.870 align:middle line:84%
+I want to give you a
+visual way of thinking
+
+00:38:20.870 --> 00:38:22.910 align:middle line:84%
+about what's going on
+with induction, which
+
+00:38:22.910 --> 00:38:24.063 align:middle line:90%
+I call block diagrams.
+
+00:38:24.063 --> 00:38:31.730 align:middle line:90%
+
+
+00:38:31.730 --> 00:38:40.940 align:middle line:84%
+So I'm going to
+think of a block,
+
+00:38:40.940 --> 00:38:44.880 align:middle line:84%
+like a little box here,
+that takes as input--
+
+00:38:44.880 --> 00:38:46.500 align:middle line:90%
+think of it as a procedure.
+
+00:38:46.500 --> 00:38:51.690 align:middle line:84%
+You give it some true
+propositions on the left,
+
+00:38:51.690 --> 00:38:55.795 align:middle line:84%
+and it produces a true
+proposition on the right.
+
+00:38:55.795 --> 00:38:58.480 align:middle line:90%
+
+
+00:38:58.480 --> 00:38:58.980 align:middle line:90%
+OK.
+
+00:38:58.980 --> 00:39:00.647 align:middle line:84%
+Or we could think of
+it as if I give you
+
+00:39:00.647 --> 00:39:02.550 align:middle line:84%
+some proofs of
+these propositions,
+
+00:39:02.550 --> 00:39:05.360 align:middle line:84%
+then this block will
+give you a proof
+
+00:39:05.360 --> 00:39:07.640 align:middle line:90%
+of a proposition on the right.
+
+00:39:07.640 --> 00:39:11.180 align:middle line:84%
+So what's going
+on with induction
+
+00:39:11.180 --> 00:39:15.380 align:middle line:84%
+is we're given two of
+these blocks, these two.
+
+00:39:15.380 --> 00:39:18.440 align:middle line:84%
+So you can think of
+part 1, P of 0 is true,
+
+00:39:18.440 --> 00:39:21.360 align:middle line:90%
+as a block that has no input.
+
+00:39:21.360 --> 00:39:24.930 align:middle line:84%
+So this is what we normally
+call the base case.
+
+00:39:24.930 --> 00:39:26.850 align:middle line:84%
+So it doesn't need
+to assume anything.
+
+00:39:26.850 --> 00:39:31.580 align:middle line:84%
+And it just produces for you
+a proof that P of 0 is true.
+
+00:39:31.580 --> 00:39:36.890 align:middle line:84%
+And the second part
+here, the induction step,
+
+00:39:36.890 --> 00:39:40.510 align:middle line:84%
+says that if you can
+prove P of n is true
+
+00:39:40.510 --> 00:39:43.870 align:middle line:84%
+and you plug it into
+the induction step,
+
+00:39:43.870 --> 00:39:48.140 align:middle line:84%
+then it will give you a proof
+that P of n plus 1 is true.
+
+00:39:48.140 --> 00:39:50.180 align:middle line:84%
+Saw a bunch of examples
+of this last time.
+
+00:39:50.180 --> 00:39:56.140 align:middle line:84%
+We assume P of n, and we use
+that to prove P of n plus 1, OK?
+
+00:39:56.140 --> 00:39:58.990 align:middle line:84%
+Now, the cool thing about
+blocks is you can just
+
+00:39:58.990 --> 00:40:00.850 align:middle line:90%
+chain them together.
+
+00:40:00.850 --> 00:40:06.070 align:middle line:84%
+So if we chain, the only
+block we can place first
+
+00:40:06.070 --> 00:40:09.100 align:middle line:84%
+is this base case because
+it doesn't need anything
+
+00:40:09.100 --> 00:40:10.130 align:middle line:90%
+to get started.
+
+00:40:10.130 --> 00:40:13.510 align:middle line:84%
+So we start with the
+base case argument.
+
+00:40:13.510 --> 00:40:15.490 align:middle line:90%
+That produces P of 0.
+
+00:40:15.490 --> 00:40:17.600 align:middle line:90%
+Now we plug this into the step.
+
+00:40:17.600 --> 00:40:21.670 align:middle line:90%
+This step has to work for all n.
+
+00:40:21.670 --> 00:40:24.350 align:middle line:84%
+So in particular, it
+works for n equals 0.
+
+00:40:24.350 --> 00:40:30.010 align:middle line:84%
+And so we plug that into the
+step, and we get a P of 1.
+
+00:40:30.010 --> 00:40:34.240 align:middle line:84%
+We plug P of 1 into the
+step, so n equals 1.
+
+00:40:34.240 --> 00:40:38.230 align:middle line:84%
+Then we get P of n
+plus 1, namely, P of 2.
+
+00:40:38.230 --> 00:40:44.560 align:middle line:84%
+And we plug that into the step,
+and we get P of 3, and so on.
+
+00:40:44.560 --> 00:40:46.120 align:middle line:84%
+So this just gives
+you some intuition
+
+00:40:46.120 --> 00:40:48.830 align:middle line:84%
+for if I can build an argument
+for why P of 0 is true
+
+00:40:48.830 --> 00:40:51.490 align:middle line:84%
+and I can build an
+argument for why if P of n
+
+00:40:51.490 --> 00:40:54.080 align:middle line:84%
+is true, then P of n
+plus 1 is also true,
+
+00:40:54.080 --> 00:40:56.320 align:middle line:84%
+then I can just repeat
+that argument over
+
+00:40:56.320 --> 00:40:59.030 align:middle line:84%
+and over with different n,
+increasing n by 1 each time.
+
+00:40:59.030 --> 00:41:02.540 align:middle line:84%
+And I can use that to prove that
+all the P of n's are true, OK?
+
+00:41:02.540 --> 00:41:06.397 align:middle line:84%
+This is visual intuition
+for why this works.
+
+00:41:06.397 --> 00:41:08.230 align:middle line:84%
+Of course, we're not
+going to actually prove
+
+00:41:08.230 --> 00:41:11.470 align:middle line:84%
+P of n is true for
+all n, but should
+
+00:41:11.470 --> 00:41:13.890 align:middle line:90%
+be pretty intuitive from that.
+
+00:41:13.890 --> 00:41:16.810 align:middle line:90%
+
+
+00:41:16.810 --> 00:41:27.370 align:middle line:84%
+Or more abstractly, you can
+actually think of induction
+
+00:41:27.370 --> 00:41:30.760 align:middle line:90%
+itself as one of these blocks.
+
+00:41:30.760 --> 00:41:32.055 align:middle line:90%
+Let me use another color.
+
+00:41:32.055 --> 00:41:36.700 align:middle line:90%
+
+
+00:41:36.700 --> 00:41:42.160 align:middle line:84%
+So we have, on the
+one hand a block base
+
+00:41:42.160 --> 00:41:43.970 align:middle line:90%
+which produces P of 0.
+
+00:41:43.970 --> 00:41:47.890 align:middle line:84%
+And we have an induction
+step, which given P of n,
+
+00:41:47.890 --> 00:41:53.500 align:middle line:90%
+produces P of n plus 1.
+
+00:41:53.500 --> 00:41:58.510 align:middle line:84%
+So I'm going to think of
+this as a thing that's true
+
+00:41:58.510 --> 00:42:00.470 align:middle line:90%
+and this as a thing that's true.
+
+00:42:00.470 --> 00:42:03.250 align:middle line:84%
+And then what
+induction gives me,
+
+00:42:03.250 --> 00:42:08.360 align:middle line:84%
+induction is a block that,
+given these two facts--
+
+00:42:08.360 --> 00:42:10.430 align:middle line:84%
+if you can prove
+each of these things,
+
+00:42:10.430 --> 00:42:17.380 align:middle line:84%
+then it gives me a new fact,
+which is for all natural numbers
+
+00:42:17.380 --> 00:42:19.785 align:middle line:90%
+n, P of n is true.
+
+00:42:19.785 --> 00:42:22.480 align:middle line:90%
+
+
+00:42:22.480 --> 00:42:24.790 align:middle line:84%
+So that's the--
+instead of having
+
+00:42:24.790 --> 00:42:27.830 align:middle line:84%
+to draw out this
+infinite length path,
+
+00:42:27.830 --> 00:42:29.630 align:middle line:84%
+induction just does
+it all at once.
+
+00:42:29.630 --> 00:42:32.540 align:middle line:84%
+It says, oh, I know I can chain
+these all together forever.
+
+00:42:32.540 --> 00:42:35.290 align:middle line:84%
+Therefore P of n is
+true for all n, OK?
+
+00:42:35.290 --> 00:42:39.610 align:middle line:84%
+I don't know if that helps,
+but it's another visual way
+
+00:42:39.610 --> 00:42:41.060 align:middle line:90%
+of thinking about induction.
+
+00:42:41.060 --> 00:42:45.230 align:middle line:90%
+
+
+00:42:45.230 --> 00:42:45.730 align:middle line:90%
+Let's--
+
+00:42:45.730 --> 00:42:54.520 align:middle line:90%
+
+
+00:42:54.520 --> 00:43:00.430 align:middle line:84%
+All right, let me tell you
+another equivalent formulation
+
+00:43:00.430 --> 00:43:01.943 align:middle line:90%
+of induction, which I prefer.
+
+00:43:01.943 --> 00:43:11.560 align:middle line:90%
+
+
+00:43:11.560 --> 00:43:12.920 align:middle line:90%
+It starts out the same.
+
+00:43:12.920 --> 00:43:14.550 align:middle line:90%
+Suppose P of 0 is true.
+
+00:43:14.550 --> 00:43:16.960 align:middle line:90%
+
+
+00:43:16.960 --> 00:43:19.460 align:middle line:84%
+The induction step I'm going
+to phrase slightly differently,
+
+00:43:19.460 --> 00:43:20.530 align:middle line:90%
+almost the same.
+
+00:43:20.530 --> 00:43:27.600 align:middle line:84%
+For all n at least one P of
+n minus 1 implies P of n.
+
+00:43:27.600 --> 00:43:30.250 align:middle line:90%
+
+
+00:43:30.250 --> 00:43:37.660 align:middle line:84%
+Then, for all natural
+numbers, P of n.
+
+00:43:37.660 --> 00:43:40.910 align:middle line:84%
+So the first and last
+lines are the same.
+
+00:43:40.910 --> 00:43:42.455 align:middle line:90%
+We assume P of 0 is true.
+
+00:43:42.455 --> 00:43:45.080 align:middle line:84%
+We're going to conclude P of n
+is true for all natural numbers.
+
+00:43:45.080 --> 00:43:49.150 align:middle line:84%
+Here we started at 0, and we
+wanted to show that P of n
+
+00:43:49.150 --> 00:43:50.710 align:middle line:90%
+implies P of n plus 1.
+
+00:43:50.710 --> 00:43:53.530 align:middle line:84%
+Over here, we're
+starting at 1 and we're
+
+00:43:53.530 --> 00:43:55.813 align:middle line:84%
+proving that P of n
+minus 1 implies P of n.
+
+00:43:55.813 --> 00:43:57.230 align:middle line:84%
+These are exactly
+the same things.
+
+00:43:57.230 --> 00:43:59.210 align:middle line:84%
+I've just shifted
+the indices by one.
+
+00:43:59.210 --> 00:44:02.230 align:middle line:84%
+So these are
+identical statements,
+
+00:44:02.230 --> 00:44:04.390 align:middle line:90%
+or equivalent statements.
+
+00:44:04.390 --> 00:44:05.950 align:middle line:90%
+I like this version.
+
+00:44:05.950 --> 00:44:08.672 align:middle line:84%
+In particular, it will
+lead into strong induction.
+
+00:44:08.672 --> 00:44:10.630 align:middle line:84%
+But I like this version
+as a computer scientist
+
+00:44:10.630 --> 00:44:13.090 align:middle line:84%
+because I always want to think
+about-- what I want to prove
+
+00:44:13.090 --> 00:44:16.100 align:middle line:90%
+P of n, not P of n plus 1.
+
+00:44:16.100 --> 00:44:18.380 align:middle line:84%
+It's confusing to think
+about proving P of n plus 1.
+
+00:44:18.380 --> 00:44:19.870 align:middle line:90%
+I always want to prove P of n.
+
+00:44:19.870 --> 00:44:22.340 align:middle line:84%
+When n equals 0, OK,
+that's my base case.
+
+00:44:22.340 --> 00:44:23.530 align:middle line:90%
+I proved that specially.
+
+00:44:23.530 --> 00:44:26.540 align:middle line:84%
+When n is at least 1,
+I'm not in the base case,
+
+00:44:26.540 --> 00:44:30.190 align:middle line:84%
+and I get to assume that
+P of n minus 1 is true.
+
+00:44:30.190 --> 00:44:32.150 align:middle line:84%
+You can think of this
+like a computer program.
+
+00:44:32.150 --> 00:44:36.040 align:middle line:84%
+Think of a-- proving P of n
+is like running a computation
+
+00:44:36.040 --> 00:44:37.840 align:middle line:90%
+f of n, or P of n.
+
+00:44:37.840 --> 00:44:41.350 align:middle line:84%
+And I get to recursively
+call P of n minus 1
+
+00:44:41.350 --> 00:44:43.417 align:middle line:84%
+in order to compute P
+of n. n is given to me.
+
+00:44:43.417 --> 00:44:44.750 align:middle line:90%
+This is the one I want to solve.
+
+00:44:44.750 --> 00:44:47.180 align:middle line:84%
+If n is 0, then I
+solve it one way.
+
+00:44:47.180 --> 00:44:49.700 align:middle line:84%
+If n is bigger than
+0 or at least 1,
+
+00:44:49.700 --> 00:44:53.440 align:middle line:84%
+then I recursively call P of n
+minus 1 or depend on that proof
+
+00:44:53.440 --> 00:44:55.540 align:middle line:90%
+and use it to prove P of n.
+
+00:44:55.540 --> 00:44:57.400 align:middle line:84%
+But you can use
+either one, whichever
+
+00:44:57.400 --> 00:44:58.995 align:middle line:90%
+is more comfortable to you.
+
+00:44:58.995 --> 00:45:02.200 align:middle line:90%
+
+
+00:45:02.200 --> 00:45:03.830 align:middle line:84%
+But really, you
+should use neither,
+
+00:45:03.830 --> 00:45:07.250 align:middle line:84%
+and you should use this stronger
+form called strong induction.
+
+00:45:07.250 --> 00:45:09.090 align:middle line:90%
+So let's do that.
+
+00:45:09.090 --> 00:45:18.820 align:middle line:90%
+
+
+00:45:18.820 --> 00:45:21.330 align:middle line:84%
+Strong induction just gives
+you more to work with.
+
+00:45:21.330 --> 00:45:36.180 align:middle line:90%
+
+
+00:45:36.180 --> 00:45:38.430 align:middle line:84%
+So it's in some
+sense more powerful.
+
+00:45:38.430 --> 00:45:40.270 align:middle line:84%
+Logically, it's
+identical to induction.
+
+00:45:40.270 --> 00:45:43.890 align:middle line:84%
+You can actually prove it using
+induction, and we'll do that.
+
+00:45:43.890 --> 00:45:45.460 align:middle line:90%
+Let me first state the theorem.
+
+00:45:45.460 --> 00:46:01.660 align:middle line:84%
+So if for any natural
+number this is true,
+
+00:46:01.660 --> 00:46:11.370 align:middle line:84%
+then for any natural
+number P of n is true, OK?
+
+00:46:11.370 --> 00:46:13.700 align:middle line:84%
+Let me bring this
+one down to compare.
+
+00:46:13.700 --> 00:46:18.270 align:middle line:90%
+
+
+00:46:18.270 --> 00:46:20.347 align:middle line:84%
+So first thing
+maybe to notice is
+
+00:46:20.347 --> 00:46:21.930 align:middle line:84%
+that it doesn't seem
+to be a base case
+
+00:46:21.930 --> 00:46:23.860 align:middle line:90%
+here, which is a little weird.
+
+00:46:23.860 --> 00:46:25.870 align:middle line:84%
+It's just one
+condition then this.
+
+00:46:25.870 --> 00:46:29.430 align:middle line:84%
+Let's compare the
+steps, first of all.
+
+00:46:29.430 --> 00:46:33.070 align:middle line:84%
+Or I guess let's
+think about the case--
+
+00:46:33.070 --> 00:46:34.540 align:middle line:90%
+this has to be true for all n.
+
+00:46:34.540 --> 00:46:37.560 align:middle line:84%
+If we think about when n equals
+0, that's the missing base
+
+00:46:37.560 --> 00:46:44.100 align:middle line:84%
+case, what this is actually
+saying is P0 up to P minus 1
+
+00:46:44.100 --> 00:46:46.800 align:middle line:90%
+implies P of 0.
+
+00:46:46.800 --> 00:46:48.700 align:middle line:84%
+So this is kind
+of weird notation.
+
+00:46:48.700 --> 00:46:51.160 align:middle line:84%
+I'm abusing the dot, dot,
+dot a little bit here.
+
+00:46:51.160 --> 00:46:54.940 align:middle line:84%
+And for when n equals
+1, this is P of 0.
+
+00:46:54.940 --> 00:46:57.580 align:middle line:84%
+When n equals 2, this
+is P of 0 and P of 1.
+
+00:46:57.580 --> 00:47:00.615 align:middle line:84%
+When n equals 3, for larger n
+it's very clear what this dot,
+
+00:47:00.615 --> 00:47:01.240 align:middle line:90%
+dot, dot means.
+
+00:47:01.240 --> 00:47:03.310 align:middle line:84%
+But when n equals
+0 it's confusing.
+
+00:47:03.310 --> 00:47:05.310 align:middle line:90%
+So I need to specify.
+
+00:47:05.310 --> 00:47:12.078 align:middle line:84%
+This is defined to be
+true for n equals 0, OK?
+
+00:47:12.078 --> 00:47:13.620 align:middle line:84%
+So for n equals 0
+what you have to do
+
+00:47:13.620 --> 00:47:17.730 align:middle line:84%
+is prove that true
+implies P of 0.
+
+00:47:17.730 --> 00:47:21.370 align:middle line:84%
+In other words, P of 0 must
+be true in all cases, OK?
+
+00:47:21.370 --> 00:47:25.060 align:middle line:84%
+So there's-- but
+then for larger n,
+
+00:47:25.060 --> 00:47:28.170 align:middle line:84%
+what this is saying is not only
+do I get to assume P of n minus
+
+00:47:28.170 --> 00:47:33.870 align:middle line:84%
+1, but I get to assume all
+the P of i's before P of n.
+
+00:47:33.870 --> 00:47:39.490 align:middle line:84%
+So I would normally say P of i
+is true for all i less than n.
+
+00:47:39.490 --> 00:47:42.330 align:middle line:90%
+This is what I get to assume.
+
+00:47:42.330 --> 00:47:48.150 align:middle line:84%
+That's probably actually a
+better way to state this thing.
+
+00:47:48.150 --> 00:47:50.370 align:middle line:84%
+So with regular
+induction here, I
+
+00:47:50.370 --> 00:47:53.110 align:middle line:84%
+got to assume that the previous
+P of n minus 1 was true,
+
+00:47:53.110 --> 00:47:55.900 align:middle line:84%
+and I needed to use that to
+prove that P of n is true.
+
+00:47:55.900 --> 00:47:58.320 align:middle line:84%
+But actually, if you
+look at this chain,
+
+00:47:58.320 --> 00:48:01.020 align:middle line:84%
+by the time I'm proving P of
+3, I've already proved all
+
+00:48:01.020 --> 00:48:03.120 align:middle line:90%
+the smaller Pi's.
+
+00:48:03.120 --> 00:48:04.440 align:middle line:90%
+So why not assume that.
+
+00:48:04.440 --> 00:48:06.273 align:middle line:84%
+With strong induction,
+I get to assume that.
+
+00:48:06.273 --> 00:48:08.220 align:middle line:84%
+In order to prove P
+of n, I get to assume
+
+00:48:08.220 --> 00:48:12.150 align:middle line:84%
+all the Pi's where
+i is less than n.
+
+00:48:12.150 --> 00:48:14.430 align:middle line:84%
+Now, when n equals 0, I
+don't get to assume anything
+
+00:48:14.430 --> 00:48:17.190 align:middle line:84%
+because there are
+no smaller i's.
+
+00:48:17.190 --> 00:48:23.610 align:middle line:84%
+But when I get to P of 5, I get
+to assume P0, P1, P2, P3, P4.
+
+00:48:23.610 --> 00:48:26.450 align:middle line:84%
+So I get to assume more, so
+this only makes my proof easier.
+
+00:48:26.450 --> 00:48:29.490 align:middle line:90%
+
+
+00:48:29.490 --> 00:48:31.800 align:middle line:90%
+OK.
+
+00:48:31.800 --> 00:48:35.830 align:middle line:84%
+To be clear, this is
+usually proved in cases.
+
+00:48:35.830 --> 00:48:39.847 align:middle line:84%
+Normally, you need
+to check 0 specially.
+
+00:48:39.847 --> 00:48:40.930 align:middle line:90%
+That might be a base case.
+
+00:48:40.930 --> 00:48:42.520 align:middle line:84%
+Maybe you have to
+check 1 specially.
+
+00:48:42.520 --> 00:48:46.470 align:middle line:84%
+It depends on your
+implication argument.
+
+00:48:46.470 --> 00:48:49.940 align:middle line:84%
+Often, this implication assumes
+that n is at least something,
+
+00:48:49.940 --> 00:48:51.690 align:middle line:84%
+and then you have to
+prove all the smaller
+
+00:48:51.690 --> 00:48:53.530 align:middle line:90%
+n's to be true specially.
+
+00:48:53.530 --> 00:48:55.690 align:middle line:84%
+But we'll get to
+examples in a moment.
+
+00:48:55.690 --> 00:48:57.870 align:middle line:84%
+What I'd like to do
+first is actually
+
+00:48:57.870 --> 00:48:59.945 align:middle line:84%
+prove that strong
+induction is true.
+
+00:48:59.945 --> 00:49:02.507 align:middle line:90%
+
+
+00:49:02.507 --> 00:49:04.840 align:middle line:84%
+This is not something you
+would repeat in your homework.
+
+00:49:04.840 --> 00:49:06.840 align:middle line:84%
+You should just assume
+strong induction is true.
+
+00:49:06.840 --> 00:49:09.510 align:middle line:84%
+But I think it's
+instructive to see
+
+00:49:09.510 --> 00:49:15.420 align:middle line:84%
+why it's true as yet another
+example of induction.
+
+00:49:15.420 --> 00:49:18.630 align:middle line:84%
+So we're going to use regular
+induction, this version,
+
+00:49:18.630 --> 00:49:21.900 align:middle line:84%
+or actually, I think this
+version, the induction axiom,
+
+00:49:21.900 --> 00:49:25.870 align:middle line:90%
+to prove strong induction, OK?
+
+00:49:25.870 --> 00:49:27.600 align:middle line:84%
+Now, this is a
+situation where we
+
+00:49:27.600 --> 00:49:31.530 align:middle line:84%
+need to define a particular
+induction hypothesis that's
+
+00:49:31.530 --> 00:49:35.100 align:middle line:90%
+not the obvious one.
+
+00:49:35.100 --> 00:49:36.910 align:middle line:90%
+And this is not at all obvious.
+
+00:49:36.910 --> 00:49:44.760 align:middle line:84%
+But I'm going to define
+ih of n to be this P of 0
+
+00:49:44.760 --> 00:49:49.170 align:middle line:90%
+and P of n minus 1.
+
+00:49:49.170 --> 00:49:53.910 align:middle line:84%
+In other words, for all
+i less than n, P of i.
+
+00:49:53.910 --> 00:49:56.220 align:middle line:84%
+I like that better
+because it works even when
+
+00:49:56.220 --> 00:49:59.140 align:middle line:84%
+n is 0 because there
+are no i's less than 0.
+
+00:49:59.140 --> 00:50:02.460 align:middle line:90%
+So that's just true when n is 0.
+
+00:50:02.460 --> 00:50:06.180 align:middle line:84%
+So this is the thing I
+want to prove for all n.
+
+00:50:06.180 --> 00:50:07.270 align:middle line:90%
+And how do we do it?
+
+00:50:07.270 --> 00:50:13.230 align:middle line:84%
+Well, as usual, with an
+induction, we have a base case.
+
+00:50:13.230 --> 00:50:17.490 align:middle line:90%
+Base case is ih of 0.
+
+00:50:17.490 --> 00:50:23.520 align:middle line:84%
+So ih of 0 is actually
+literally just true
+
+00:50:23.520 --> 00:50:25.090 align:middle line:84%
+because we defined
+it to be that way.
+
+00:50:25.090 --> 00:50:28.600 align:middle line:84%
+We say when n equals 0,
+this dot, dot, dot is true.
+
+00:50:28.600 --> 00:50:29.580 align:middle line:90%
+Or you could say--
+
+00:50:29.580 --> 00:50:32.010 align:middle line:84%
+this is saying for
+all i less than 0,
+
+00:50:32.010 --> 00:50:34.380 align:middle line:90%
+where i is a natural number.
+
+00:50:34.380 --> 00:50:37.120 align:middle line:84%
+But there are no natural
+numbers less than 0,
+
+00:50:37.120 --> 00:50:39.190 align:middle line:84%
+so this is like saying
+if false, then something.
+
+00:50:39.190 --> 00:50:40.650 align:middle line:90%
+And that's just always true.
+
+00:50:40.650 --> 00:50:46.930 align:middle line:84%
+So this is, by definition,
+ih of 0 is true.
+
+00:50:46.930 --> 00:50:48.150 align:middle line:90%
+Great?
+
+00:50:48.150 --> 00:50:51.960 align:middle line:90%
+Easy base case as usual.
+
+00:50:51.960 --> 00:50:54.310 align:middle line:84%
+What's the induction
+step look like?
+
+00:50:54.310 --> 00:50:56.040 align:middle line:90%
+I'm going to--
+
+00:50:56.040 --> 00:50:57.070 align:middle line:90%
+I get to choose.
+
+00:50:57.070 --> 00:51:01.300 align:middle line:84%
+I could either assume ih of n
+minus 1 and prove of ih of n.
+
+00:51:01.300 --> 00:51:09.820 align:middle line:84%
+Or I'm going to assume if of
+n and prove ih of n plus 1.
+
+00:51:09.820 --> 00:51:12.905 align:middle line:84%
+So we want to show ih of n
+plus 1, assuming ih of n.
+
+00:51:12.905 --> 00:51:15.560 align:middle line:90%
+
+
+00:51:15.560 --> 00:51:16.910 align:middle line:90%
+Cool.
+
+00:51:16.910 --> 00:51:19.980 align:middle line:84%
+So the key thing is we get
+to assume this is true.
+
+00:51:19.980 --> 00:51:22.200 align:middle line:84%
+The strong induction
+says if this, then this.
+
+00:51:22.200 --> 00:51:23.640 align:middle line:90%
+So we're assuming the if part.
+
+00:51:23.640 --> 00:51:28.140 align:middle line:84%
+We're assuming that
+if this implication.
+
+00:51:28.140 --> 00:51:34.130 align:middle line:84%
+And this thing here
+is exactly ih of n.
+
+00:51:34.130 --> 00:51:37.760 align:middle line:84%
+So this says ih of
+n implies P of n.
+
+00:51:37.760 --> 00:51:44.270 align:middle line:84%
+So we know ih of
+n implies P of n.
+
+00:51:44.270 --> 00:51:48.830 align:middle line:84%
+That's what we get to assume
+in our theorem statement here.
+
+00:51:48.830 --> 00:51:51.530 align:middle line:84%
+And we just assumed
+that ih of n is true.
+
+00:51:51.530 --> 00:51:55.670 align:middle line:90%
+Therefore, P of n is true.
+
+00:51:55.670 --> 00:51:57.900 align:middle line:84%
+But P of n was not what
+we wanted to prove.
+
+00:51:57.900 --> 00:51:59.880 align:middle line:84%
+We wanted to prove
+ih of n plus 1.
+
+00:51:59.880 --> 00:52:01.705 align:middle line:90%
+So what is ih of n plus 1?
+
+00:52:01.705 --> 00:52:05.000 align:middle line:90%
+
+
+00:52:05.000 --> 00:52:07.490 align:middle line:84%
+Let's just expand out
+this definition here.
+
+00:52:07.490 --> 00:52:14.630 align:middle line:84%
+It is P of 0 or dot, dot,
+dot, or P of n minus 1
+
+00:52:14.630 --> 00:52:18.600 align:middle line:84%
+or P of n because of
+incremented n by 1.
+
+00:52:18.600 --> 00:52:20.280 align:middle line:84%
+This no longer ends
+at P of n minus 1.
+
+00:52:20.280 --> 00:52:22.490 align:middle line:90%
+It now ends at P of n.
+
+00:52:22.490 --> 00:52:24.090 align:middle line:84%
+But this is almost
+what we had before.
+
+00:52:24.090 --> 00:52:26.850 align:middle line:84%
+This is the induction
+hypothesis of n.
+
+00:52:26.850 --> 00:52:33.560 align:middle line:90%
+That's this part, or P of n.
+
+00:52:33.560 --> 00:52:36.800 align:middle line:84%
+That's just a
+formula manipulation.
+
+00:52:36.800 --> 00:52:40.460 align:middle line:84%
+And this we assumed is
+true, ih of n is true.
+
+00:52:40.460 --> 00:52:43.490 align:middle line:84%
+And P of n we just
+proved is true.
+
+00:52:43.490 --> 00:52:44.210 align:middle line:90%
+Sorry.
+
+00:52:44.210 --> 00:52:47.570 align:middle line:84%
+I wrote over here, but
+I meant and everywhere.
+
+00:52:47.570 --> 00:52:50.990 align:middle line:90%
+This is and, and.
+
+00:52:50.990 --> 00:52:51.660 align:middle line:90%
+See?
+
+00:52:51.660 --> 00:52:55.710 align:middle line:84%
+Even professors get the
+V's and wedges upside down.
+
+00:52:55.710 --> 00:52:57.330 align:middle line:90%
+So I wrote it correctly here.
+
+00:52:57.330 --> 00:52:59.400 align:middle line:84%
+It's the and of P0
+up to Pn minus 1.
+
+00:52:59.400 --> 00:53:02.510 align:middle line:84%
+Here we have the
+and of P0 up to Pn.
+
+00:53:02.510 --> 00:53:06.020 align:middle line:84%
+And so this is ih of n, which we
+assumed was true by induction,
+
+00:53:06.020 --> 00:53:10.920 align:middle line:84%
+and P of n, which we just
+proved using one induction step.
+
+00:53:10.920 --> 00:53:13.225 align:middle line:90%
+Therefore, the and is also true.
+
+00:53:13.225 --> 00:53:17.210 align:middle line:90%
+
+
+00:53:17.210 --> 00:53:20.490 align:middle line:84%
+And I believe that's the
+end of the proof, all right?
+
+00:53:20.490 --> 00:53:21.300 align:middle line:90%
+I did a base case.
+
+00:53:21.300 --> 00:53:22.050 align:middle line:90%
+I did a step.
+
+00:53:22.050 --> 00:53:23.460 align:middle line:90%
+Oh, no, not quite the answer.
+
+00:53:23.460 --> 00:53:24.080 align:middle line:90%
+Sorry.
+
+00:53:24.080 --> 00:53:29.770 align:middle line:84%
+There's one more step here,
+which I will put over here.
+
+00:53:29.770 --> 00:53:34.340 align:middle line:90%
+
+
+00:53:34.340 --> 00:53:37.880 align:middle line:84%
+This is a good illustration
+in not skipping steps.
+
+00:53:37.880 --> 00:53:39.650 align:middle line:90%
+What did we actually prove?
+
+00:53:39.650 --> 00:53:42.860 align:middle line:84%
+By induction, we proved
+induction hypothesis of n
+
+00:53:42.860 --> 00:53:45.440 align:middle line:90%
+is true for all n.
+
+00:53:45.440 --> 00:53:56.150 align:middle line:84%
+So by induction, the
+regular old induction axiom,
+
+00:53:56.150 --> 00:54:02.060 align:middle line:84%
+for all natural numbers n,
+induction hypothesis of n
+
+00:54:02.060 --> 00:54:04.573 align:middle line:90%
+is true.
+
+00:54:04.573 --> 00:54:06.240 align:middle line:84%
+Induction hypothesis
+of n is this thing.
+
+00:54:06.240 --> 00:54:07.865 align:middle line:84%
+But that's not what
+we wanted to prove.
+
+00:54:07.865 --> 00:54:12.380 align:middle line:84%
+We wanted to prove P of
+n is true for all of n.
+
+00:54:12.380 --> 00:54:15.930 align:middle line:84%
+But I can do some manipulation
+to make that what I want.
+
+00:54:15.930 --> 00:54:23.340 align:middle line:84%
+So this is like saying
+for all n, let's see.
+
+00:54:23.340 --> 00:54:24.950 align:middle line:84%
+Actually, probably
+this is nicer.
+
+00:54:24.950 --> 00:54:32.030 align:middle line:84%
+For all natural numbers,
+ih of n plus 1 is true, OK?
+
+00:54:32.030 --> 00:54:33.060 align:middle line:90%
+This is a shift.
+
+00:54:33.060 --> 00:54:34.320 align:middle line:90%
+It's actually a weaker shift.
+
+00:54:34.320 --> 00:54:36.180 align:middle line:90%
+This includes ih of 0.
+
+00:54:36.180 --> 00:54:39.030 align:middle line:84%
+This should not be
+greater than or equal to.
+
+00:54:39.030 --> 00:54:40.970 align:middle line:90%
+This should be an element of.
+
+00:54:40.970 --> 00:54:42.240 align:middle line:90%
+This includes 0.
+
+00:54:42.240 --> 00:54:42.890 align:middle line:90%
+This doesn't.
+
+00:54:42.890 --> 00:54:45.240 align:middle line:84%
+This starts at 1,
+and it goes upwards.
+
+00:54:45.240 --> 00:54:46.970 align:middle line:90%
+But this is nice.
+
+00:54:46.970 --> 00:54:50.300 align:middle line:90%
+So this implies this, right?
+
+00:54:50.300 --> 00:54:51.382 align:middle line:90%
+This is what we've shown.
+
+00:54:51.382 --> 00:54:53.090 align:middle line:84%
+This is a weaker
+statement because I just
+
+00:54:53.090 --> 00:54:56.615 align:middle line:84%
+threw away ih of 0. ih of 0
+wasn't interesting anyway.
+
+00:54:56.615 --> 00:55:01.970 align:middle line:84%
+ih of 1 includes
+inside of it-- so it's
+
+00:55:01.970 --> 00:55:04.350 align:middle line:90%
+an and of a bunch of things.
+
+00:55:04.350 --> 00:55:06.545 align:middle line:84%
+But then the last
+term is P of n.
+
+00:55:06.545 --> 00:55:09.050 align:middle line:90%
+
+
+00:55:09.050 --> 00:55:13.670 align:middle line:84%
+If I take ih of n plus 1, the
+last term in it is P of n.
+
+00:55:13.670 --> 00:55:18.750 align:middle line:84%
+So it's also anded,
+but if the and is true,
+
+00:55:18.750 --> 00:55:20.370 align:middle line:90%
+then every term is true.
+
+00:55:20.370 --> 00:55:24.740 align:middle line:84%
+And so, therefore, P
+of n is true for all n.
+
+00:55:24.740 --> 00:55:26.160 align:middle line:90%
+So this is a final cleanup.
+
+00:55:26.160 --> 00:55:27.927 align:middle line:84%
+After we did induction,
+we didn't quite
+
+00:55:27.927 --> 00:55:29.510 align:middle line:84%
+get the statement
+we wanted because we
+
+00:55:29.510 --> 00:55:33.110 align:middle line:84%
+used a different induction
+hypothesis than just P.
+
+00:55:33.110 --> 00:55:37.520 align:middle line:84%
+And then we needed to show
+that implied P of n for all n.
+
+00:55:37.520 --> 00:55:40.380 align:middle line:90%
+But it works.
+
+00:55:40.380 --> 00:55:40.880 align:middle line:90%
+Cool.
+
+00:55:40.880 --> 00:55:43.160 align:middle line:84%
+So now there should
+be no question
+
+00:55:43.160 --> 00:55:45.960 align:middle line:84%
+about why strong
+induction is true,
+
+00:55:45.960 --> 00:55:48.530 align:middle line:90%
+assuming you believe this proof.
+
+00:55:48.530 --> 00:55:51.440 align:middle line:90%
+You can draw a diagram.
+
+00:55:51.440 --> 00:55:54.300 align:middle line:90%
+It's a little trickier to do.
+
+00:55:54.300 --> 00:55:59.463 align:middle line:84%
+Maybe I will show you in
+my handwritten notes here.
+
+00:55:59.463 --> 00:56:03.260 align:middle line:90%
+
+
+00:56:03.260 --> 00:56:08.930 align:middle line:84%
+Here is a block diagram
+for strong induction.
+
+00:56:08.930 --> 00:56:12.210 align:middle line:84%
+It's harder to draw because
+you depend on so many things.
+
+00:56:12.210 --> 00:56:14.850 align:middle line:84%
+When I apply the
+fourth step here,
+
+00:56:14.850 --> 00:56:19.680 align:middle line:84%
+when I want to conclude P of 4,
+I assume all the previous P's.
+
+00:56:19.680 --> 00:56:23.870 align:middle line:84%
+So P0, P1, P2, P3, they
+all feed into this box.
+
+00:56:23.870 --> 00:56:25.470 align:middle line:84%
+In the beginning,
+it's very similar.
+
+00:56:25.470 --> 00:56:27.720 align:middle line:90%
+I apply a step, I get P of 0.
+
+00:56:27.720 --> 00:56:29.700 align:middle line:84%
+Then I apply that
+P of 0 to a step.
+
+00:56:29.700 --> 00:56:31.460 align:middle line:90%
+I get P of 1.
+
+00:56:31.460 --> 00:56:35.660 align:middle line:84%
+But then, as I proceed,
+I'm feeding more and more
+
+00:56:35.660 --> 00:56:39.345 align:middle line:84%
+Pi's into the step, and it
+gives me one more Pi, OK?
+
+00:56:39.345 --> 00:56:40.970 align:middle line:84%
+So it's a much more
+complicated diagram
+
+00:56:40.970 --> 00:56:43.230 align:middle line:84%
+of what's going
+on under the hood,
+
+00:56:43.230 --> 00:56:47.060 align:middle line:84%
+but from a usage standpoint,
+it only helps you.
+
+00:56:47.060 --> 00:56:48.780 align:middle line:84%
+When you're trying
+to prove P of n,
+
+00:56:48.780 --> 00:56:51.090 align:middle line:84%
+you don't just get to
+assume P of n minus 1.
+
+00:56:51.090 --> 00:56:57.110 align:middle line:84%
+You get to assume all the
+Pi's where i is less than n.
+
+00:56:57.110 --> 00:57:00.440 align:middle line:84%
+I forgot one part of the Four
+Color Theorem story, which
+
+00:57:00.440 --> 00:57:04.610 align:middle line:84%
+was when I was growing up, I
+read a reprint of this article
+
+00:57:04.610 --> 00:57:06.080 align:middle line:84%
+by Martin Gardner,
+which turned out
+
+00:57:06.080 --> 00:57:07.700 align:middle line:84%
+to be published on
+April Fools, but I
+
+00:57:07.700 --> 00:57:09.440 align:middle line:90%
+didn't know it at the time.
+
+00:57:09.440 --> 00:57:15.710 align:middle line:84%
+And in 1975, there was no proof
+of the Four Color Theorem.
+
+00:57:15.710 --> 00:57:18.290 align:middle line:84%
+Appel and Haken
+was one year later.
+
+00:57:18.290 --> 00:57:22.020 align:middle line:84%
+So at this point he published
+a joke saying, in fact,
+
+00:57:22.020 --> 00:57:24.840 align:middle line:84%
+McGregor found this map,
+which requires five colors.
+
+00:57:24.840 --> 00:57:28.580 align:middle line:84%
+I remember sitting there trying
+to color it with four colors
+
+00:57:28.580 --> 00:57:29.520 align:middle line:90%
+and always failing.
+
+00:57:29.520 --> 00:57:30.690 align:middle line:90%
+I was like, oh, my gosh.
+
+00:57:30.690 --> 00:57:32.090 align:middle line:90%
+Four Color Theorem isn't true.
+
+00:57:32.090 --> 00:57:34.860 align:middle line:84%
+Or Four Color Conjecture, as
+it was called then, isn't true.
+
+00:57:34.860 --> 00:57:35.970 align:middle line:90%
+Isn't that amazing?
+
+00:57:35.970 --> 00:57:37.080 align:middle line:90%
+But it was all a lie.
+
+00:57:37.080 --> 00:57:39.260 align:middle line:84%
+In fact, you can
+four-color that map.
+
+00:57:39.260 --> 00:57:41.670 align:middle line:84%
+But it's a very funny article
+if you want to read it.
+
+00:57:41.670 --> 00:57:44.750 align:middle line:84%
+It's in the lecture notes,
+or part of it is there.
+
+00:57:44.750 --> 00:57:49.490 align:middle line:84%
+All sorts of crazy things like,
+oh, it turns out, if you take e
+
+00:57:49.490 --> 00:57:52.680 align:middle line:84%
+and you raise it to pi
+times square root of 163,
+
+00:57:52.680 --> 00:57:54.420 align:middle line:90%
+the result is an integer.
+
+00:57:54.420 --> 00:57:55.850 align:middle line:90%
+[LAUGHTER]
+
+00:57:55.850 --> 00:57:58.190 align:middle line:84%
+It's not true, but all
+sorts of crazy things.
+
+00:57:58.190 --> 00:58:01.320 align:middle line:84%
+Also, chess has a
+crazy winning move.
+
+00:58:01.320 --> 00:58:06.650 align:middle line:84%
+And-- anyway, let's
+relive the youth.
+
+00:58:06.650 --> 00:58:14.050 align:middle line:84%
+All right, I think
+I'd like to, yeah,
+
+00:58:14.050 --> 00:58:16.760 align:middle line:84%
+show you some examples
+of strong induction.
+
+00:58:16.760 --> 00:58:19.720 align:middle line:84%
+But maybe first I should
+show you a template
+
+00:58:19.720 --> 00:58:22.850 align:middle line:84%
+for applying induction,
+strong induction.
+
+00:58:22.850 --> 00:58:26.892 align:middle line:90%
+
+
+00:58:26.892 --> 00:58:28.850 align:middle line:84%
+We'll repeat some of the
+things that I've said,
+
+00:58:28.850 --> 00:58:33.040 align:middle line:84%
+but I think it's good
+to have it concrete.
+
+00:58:33.040 --> 00:58:34.903 align:middle line:90%
+So here is a template.
+
+00:58:34.903 --> 00:58:37.810 align:middle line:90%
+
+
+00:58:37.810 --> 00:58:41.350 align:middle line:84%
+Suppose you want
+to prove something
+
+00:58:41.350 --> 00:58:43.310 align:middle line:90%
+is true for all natural numbers.
+
+00:58:43.310 --> 00:58:48.790 align:middle line:84%
+So for all natural
+numbers n, P of n is true.
+
+00:58:48.790 --> 00:58:54.320 align:middle line:84%
+Then here's what the proof
+will look like by proof
+
+00:58:54.320 --> 00:58:55.326 align:middle line:90%
+by strong induction.
+
+00:58:55.326 --> 00:59:05.320 align:middle line:90%
+
+
+00:59:05.320 --> 00:59:11.920 align:middle line:84%
+So generally, we're assuming
+P of k for all k less than n.
+
+00:59:11.920 --> 00:59:17.307 align:middle line:90%
+And then we want to show P of n.
+
+00:59:17.307 --> 00:59:18.890 align:middle line:84%
+Or you could shift
+the numbers by one,
+
+00:59:18.890 --> 00:59:22.060 align:middle line:84%
+but this is my preferred
+way of thinking about it.
+
+00:59:22.060 --> 00:59:28.160 align:middle line:84%
+Usually, we prove this by cases,
+which is the method we just saw.
+
+00:59:28.160 --> 00:59:31.280 align:middle line:84%
+This is why we're pairing proof
+by cases with strong induction.
+
+00:59:31.280 --> 00:59:32.900 align:middle line:90%
+How do we prove P of n?
+
+00:59:32.900 --> 00:59:34.580 align:middle line:90%
+Well, it might depend.
+
+00:59:34.580 --> 00:59:41.080 align:middle line:84%
+Often, we have some base
+cases where n is small.
+
+00:59:41.080 --> 00:59:43.880 align:middle line:84%
+So maybe we have
+to prove P of 0.
+
+00:59:43.880 --> 00:59:46.480 align:middle line:90%
+Maybe we have to prove P of 1.
+
+00:59:46.480 --> 00:59:47.770 align:middle line:90%
+Who knows?
+
+00:59:47.770 --> 00:59:52.070 align:middle line:84%
+Let's say up to P of little
+b are the base cases.
+
+00:59:52.070 --> 00:59:55.900 align:middle line:84%
+Maybe you have to prove those
+specially for some reason.
+
+00:59:55.900 --> 01:00:01.120 align:middle line:90%
+Then we do an induction step.
+
+01:00:01.120 --> 01:00:03.115 align:middle line:90%
+So I'll say by cases here.
+
+01:00:03.115 --> 01:00:06.250 align:middle line:90%
+
+
+01:00:06.250 --> 01:00:10.810 align:middle line:84%
+Induction step we
+get to assume n
+
+01:00:10.810 --> 01:00:15.520 align:middle line:84%
+is bigger than b because we
+just proved 0 up to b manually.
+
+01:00:15.520 --> 01:00:19.090 align:middle line:84%
+And then we need to prove,
+in those scenarios, P of n
+
+01:00:19.090 --> 01:00:22.590 align:middle line:90%
+is true because reasons.
+
+01:00:22.590 --> 01:00:25.870 align:middle line:90%
+
+
+01:00:25.870 --> 01:00:28.930 align:middle line:84%
+But the big thing here
+is we get to assume,
+
+01:00:28.930 --> 01:00:41.280 align:middle line:84%
+in these reasons we get to
+use P0, P1, up to P n minus 1.
+
+01:00:41.280 --> 01:00:46.450 align:middle line:90%
+
+
+01:00:46.450 --> 01:00:48.860 align:middle line:90%
+So that's the big win.
+
+01:00:48.860 --> 01:00:52.890 align:middle line:84%
+And in the base cases, you
+also get to assume this.
+
+01:00:52.890 --> 01:00:55.390 align:middle line:84%
+But for example, when you're
+proving P0 you don't really get
+
+01:00:55.390 --> 01:00:58.670 align:middle line:84%
+to assume anything because
+there are no smaller Pi's.
+
+01:00:58.670 --> 01:01:00.560 align:middle line:84%
+So often, you have
+to do these specially
+
+01:01:00.560 --> 01:01:03.920 align:middle line:84%
+because the induction
+step assumes somehow
+
+01:01:03.920 --> 01:01:06.493 align:middle line:90%
+that n is bigger than 0.
+
+01:01:06.493 --> 01:01:08.910 align:middle line:84%
+Sometimes you get lucky, you
+just need the induction step.
+
+01:01:08.910 --> 01:01:10.530 align:middle line:90%
+But usually you need base cases.
+
+01:01:10.530 --> 01:01:11.940 align:middle line:90%
+Let's see some examples.
+
+01:01:11.940 --> 01:01:14.900 align:middle line:84%
+And this will
+become much clearer.
+
+01:01:14.900 --> 01:01:21.460 align:middle line:84%
+So let's play a game
+called item stacking.
+
+01:01:21.460 --> 01:01:24.470 align:middle line:90%
+
+
+01:01:24.470 --> 01:01:25.716 align:middle line:90%
+Or it's really unstacking.
+
+01:01:25.716 --> 01:01:32.570 align:middle line:90%
+
+
+01:01:32.570 --> 01:01:41.680 align:middle line:90%
+So this is unstacking game.
+
+01:01:41.680 --> 01:01:51.620 align:middle line:90%
+
+
+01:01:51.620 --> 01:02:00.070 align:middle line:84%
+So we're going to start
+with one stack of n,
+
+01:02:00.070 --> 01:02:11.830 align:middle line:84%
+and then a move
+splits a stack of S
+
+01:02:11.830 --> 01:02:24.550 align:middle line:84%
+bigger than 1 items into two
+stacks with a items in one
+
+01:02:24.550 --> 01:02:25.830 align:middle line:90%
+and b items in the other.
+
+01:02:25.830 --> 01:02:29.950 align:middle line:90%
+
+
+01:02:29.950 --> 01:02:33.730 align:middle line:84%
+And you get to choose
+these numbers a and b,
+
+01:02:33.730 --> 01:02:35.420 align:middle line:90%
+but you need conservation.
+
+01:02:35.420 --> 01:02:40.660 align:middle line:84%
+So a plus b has to
+equal S. And we also
+
+01:02:40.660 --> 01:02:43.010 align:middle line:90%
+don't want 0 height stacks.
+
+01:02:43.010 --> 01:02:46.330 align:middle line:84%
+So we need a at least
+one and b at least one.
+
+01:02:46.330 --> 01:02:48.040 align:middle line:84%
+And so you get to
+choose a and b however
+
+01:02:48.040 --> 01:02:51.260 align:middle line:84%
+you want so long as there's at
+least one item in each stack.
+
+01:02:51.260 --> 01:02:53.823 align:middle line:84%
+So let's take a
+physical example.
+
+01:02:53.823 --> 01:02:57.310 align:middle line:90%
+
+
+01:02:57.310 --> 01:03:00.590 align:middle line:84%
+I've got lots of blocks
+here, but I have no audience.
+
+01:03:00.590 --> 01:03:03.730 align:middle line:84%
+So we're just going
+to demo this myself.
+
+01:03:03.730 --> 01:03:08.660 align:middle line:84%
+In real life, this is actually--
+this was a snow day at MIT,
+
+01:03:08.660 --> 01:03:10.430 align:middle line:84%
+and so we're recording
+after the fact.
+
+01:03:10.430 --> 01:03:11.540 align:middle line:90%
+So all the students--
+
+01:03:11.540 --> 01:03:12.830 align:middle line:90%
+MIT students have seen it.
+
+01:03:12.830 --> 01:03:16.240 align:middle line:84%
+This is specially
+for you at OCW.
+
+01:03:16.240 --> 01:03:19.600 align:middle line:90%
+So when we do a move from S--
+
+01:03:19.600 --> 01:03:21.790 align:middle line:84%
+so this is-- we have
+a stack of size S,
+
+01:03:21.790 --> 01:03:24.760 align:middle line:84%
+and we convert it into a stack
+of size a and a stack of size b.
+
+01:03:24.760 --> 01:03:27.913 align:middle line:90%
+We get a times b points.
+
+01:03:27.913 --> 01:03:31.390 align:middle line:90%
+
+
+01:03:31.390 --> 01:03:33.368 align:middle line:84%
+That's just the definition
+of the game, a times
+
+01:03:33.368 --> 01:03:35.410 align:middle line:84%
+b points when you split
+it into a stack of size a
+
+01:03:35.410 --> 01:03:38.140 align:middle line:90%
+and a stack of size b.
+
+01:03:38.140 --> 01:03:42.620 align:middle line:84%
+So how should I maximize
+my score in this game?
+
+01:03:42.620 --> 01:03:44.260 align:middle line:90%
+What's the best strategy?
+
+01:03:44.260 --> 01:03:46.150 align:middle line:84%
+The game ends when
+all your stacks
+
+01:03:46.150 --> 01:03:48.490 align:middle line:84%
+have size 1 because
+you can't make
+
+01:03:48.490 --> 01:03:50.320 align:middle line:90%
+a move on a stack of one item.
+
+01:03:50.320 --> 01:03:52.380 align:middle line:84%
+It has to be greater
+than 1 items.
+
+01:03:52.380 --> 01:03:53.380 align:middle line:90%
+So let's try.
+
+01:03:53.380 --> 01:03:57.000 align:middle line:84%
+Here I have a stack
+of five blocks.
+
+01:03:57.000 --> 01:04:00.660 align:middle line:84%
+And one thing-- maybe I'll
+try to split it roughly
+
+01:04:00.660 --> 01:04:01.600 align:middle line:90%
+in the middle.
+
+01:04:01.600 --> 01:04:03.780 align:middle line:84%
+So now-- here, I'll
+rotate this so you can see
+
+01:04:03.780 --> 01:04:05.130 align:middle line:90%
+how it blocks a little bigger.
+
+01:04:05.130 --> 01:04:06.750 align:middle line:90%
+These are five blocks.
+
+01:04:06.750 --> 01:04:08.590 align:middle line:90%
+I split like this.
+
+01:04:08.590 --> 01:04:10.950 align:middle line:84%
+So that's a group of
+2 and a group of 3.
+
+01:04:10.950 --> 01:04:12.720 align:middle line:90%
+Product of 2 times 3 is 6.
+
+01:04:12.720 --> 01:04:14.470 align:middle line:84%
+I can do this level
+of arithmetic.
+
+01:04:14.470 --> 01:04:16.630 align:middle line:90%
+So 6 is our total so far.
+
+01:04:16.630 --> 01:04:20.020 align:middle line:84%
+When I split this one,
+I get one more point.
+
+01:04:20.020 --> 01:04:20.880 align:middle line:90%
+That's 7.
+
+01:04:20.880 --> 01:04:24.070 align:middle line:84%
+When I split this one,
+doesn't matter how I do it,
+
+01:04:24.070 --> 01:04:26.800 align:middle line:90%
+I get 2 times 1.
+
+01:04:26.800 --> 01:04:28.240 align:middle line:90%
+So that's two more points.
+
+01:04:28.240 --> 01:04:30.040 align:middle line:90%
+That's 9.
+
+01:04:30.040 --> 01:04:34.000 align:middle line:84%
+And when I split this
+group, I get one more point.
+
+01:04:34.000 --> 01:04:35.510 align:middle line:90%
+That's 10.
+
+01:04:35.510 --> 01:04:36.010 align:middle line:90%
+OK.
+
+01:04:36.010 --> 01:04:38.680 align:middle line:84%
+So one approach
+gives me 10 points.
+
+01:04:38.680 --> 01:04:40.847 align:middle line:84%
+What if-- another
+natural strategy.
+
+01:04:40.847 --> 01:04:42.430 align:middle line:84%
+That was like splitting
+in the middle.
+
+01:04:42.430 --> 01:04:45.540 align:middle line:84%
+Another natural strategy is I
+just take one off each time.
+
+01:04:45.540 --> 01:04:49.650 align:middle line:84%
+So if I take one off
+here, I get 4 points.
+
+01:04:49.650 --> 01:04:52.360 align:middle line:84%
+If I take one more off,
+I get 3 more points.
+
+01:04:52.360 --> 01:04:54.030 align:middle line:90%
+That's 7.
+
+01:04:54.030 --> 01:04:55.422 align:middle line:90%
+4 plus 3 is 7.
+
+01:04:55.422 --> 01:04:57.550 align:middle line:84%
+I take one more
+off, I get 2 points.
+
+01:04:57.550 --> 01:04:58.920 align:middle line:90%
+That's 9.
+
+01:04:58.920 --> 01:05:00.570 align:middle line:90%
+I take one more off.
+
+01:05:00.570 --> 01:05:01.525 align:middle line:90%
+That's one point.
+
+01:05:01.525 --> 01:05:02.025 align:middle line:90%
+That's 10.
+
+01:05:02.025 --> 01:05:03.140 align:middle line:90%
+Huh.
+
+01:05:03.140 --> 01:05:05.950 align:middle line:84%
+10 points that way, 10
+points the other way as well?
+
+01:05:05.950 --> 01:05:07.210 align:middle line:90%
+Maybe there's a theorem here.
+
+01:05:07.210 --> 01:05:09.310 align:middle line:84%
+Maybe no matter what
+I do, I get 10 points.
+
+01:05:09.310 --> 01:05:10.690 align:middle line:90%
+Well, that won't be true.
+
+01:05:10.690 --> 01:05:13.630 align:middle line:84%
+But for five blocks I
+will always get 10 points.
+
+01:05:13.630 --> 01:05:15.700 align:middle line:90%
+For 6 blocks I will always get--
+
+01:05:15.700 --> 01:05:16.530 align:middle line:90%
+I don't know--
+
+01:05:16.530 --> 01:05:17.430 align:middle line:90%
+15.
+
+01:05:17.430 --> 01:05:18.857 align:middle line:90%
+Some more points.
+
+01:05:18.857 --> 01:05:21.190 align:middle line:84%
+It turns out it doesn't matter
+what strategy you follow,
+
+01:05:21.190 --> 01:05:23.490 align:middle line:84%
+you always get the same
+number of points for a given
+
+01:05:23.490 --> 01:05:27.120 align:middle line:90%
+initial stack of size n.
+
+01:05:27.120 --> 01:05:30.250 align:middle line:84%
+Let's prove that with
+strong induction.
+
+01:05:30.250 --> 01:05:33.830 align:middle line:90%
+
+
+01:05:33.830 --> 01:05:34.330 align:middle line:90%
+OK.
+
+01:05:34.330 --> 01:05:50.610 align:middle line:84%
+So theorem is for all natural
+numbers, every strategy
+
+01:05:50.610 --> 01:06:10.290 align:middle line:84%
+for this game starting with
+the stack, one stack of n items
+
+01:06:10.290 --> 01:06:13.230 align:middle line:90%
+scores--
+
+01:06:13.230 --> 01:06:16.715 align:middle line:84%
+magic formula is n
+times n minus 1 over 2.
+
+01:06:16.715 --> 01:06:19.590 align:middle line:90%
+
+
+01:06:19.590 --> 01:06:21.510 align:middle line:90%
+So that's the theorem.
+
+01:06:21.510 --> 01:06:30.240 align:middle line:84%
+And we're going to prove
+it by strong induction
+
+01:06:30.240 --> 01:06:31.960 align:middle line:90%
+in the straightforward way.
+
+01:06:31.960 --> 01:06:34.830 align:middle line:84%
+So our induction hypothesis is
+going to be exactly the theorem
+
+01:06:34.830 --> 01:06:37.000 align:middle line:90%
+statement for a particular n.
+
+01:06:37.000 --> 01:06:42.180 align:middle line:84%
+So I'm going to highlight
+this statement, everything
+
+01:06:42.180 --> 01:06:43.630 align:middle line:90%
+except the quantifier.
+
+01:06:43.630 --> 01:06:45.330 align:middle line:90%
+And I'll call that P of n.
+
+01:06:45.330 --> 01:06:48.900 align:middle line:84%
+So what I wanted to prove is
+for all natural numbers n P of n
+
+01:06:48.900 --> 01:06:49.890 align:middle line:90%
+is true.
+
+01:06:49.890 --> 01:06:52.480 align:middle line:84%
+And so that's just going to
+be our induction hypothesis.
+
+01:06:52.480 --> 01:06:54.700 align:middle line:84%
+We're going to plug that
+into this template here.
+
+01:06:54.700 --> 01:06:57.930 align:middle line:84%
+Assume that P of k is true
+for all k less than n,
+
+01:06:57.930 --> 01:07:00.070 align:middle line:90%
+and then prove P of n is true.
+
+01:07:00.070 --> 01:07:03.690 align:middle line:90%
+So let's just try to do that.
+
+01:07:03.690 --> 01:07:08.830 align:middle line:84%
+So what I would normally
+write here is assume true--
+
+01:07:08.830 --> 01:07:10.240 align:middle line:90%
+assume that my theorem is true.
+
+01:07:10.240 --> 01:07:12.480 align:middle line:90%
+Assume P of n is true.
+
+01:07:12.480 --> 01:07:14.070 align:middle line:90%
+Sorry.
+
+01:07:14.070 --> 01:07:18.270 align:middle line:84%
+P of k is true for
+all k less than n.
+
+01:07:18.270 --> 01:07:20.720 align:middle line:84%
+I would say assume
+true for all smaller n.
+
+01:07:20.720 --> 01:07:30.003 align:middle line:90%
+
+
+01:07:30.003 --> 01:07:30.503 align:middle line:90%
+OK.
+
+01:07:30.503 --> 01:07:33.210 align:middle line:90%
+
+
+01:07:33.210 --> 01:07:35.650 align:middle line:84%
+We need to do something
+with the game.
+
+01:07:35.650 --> 01:07:37.420 align:middle line:90%
+We start with a pile of size n.
+
+01:07:37.420 --> 01:07:40.410 align:middle line:84%
+Let's just think
+about the first move.
+
+01:07:40.410 --> 01:07:41.940 align:middle line:90%
+First move is something.
+
+01:07:41.940 --> 01:07:44.370 align:middle line:84%
+It takes our pile of
+size n, and it splits it
+
+01:07:44.370 --> 01:07:46.950 align:middle line:90%
+into some piles a and b.
+
+01:07:46.950 --> 01:07:49.990 align:middle line:90%
+So we don't know what it is.
+
+01:07:49.990 --> 01:07:53.700 align:middle line:84%
+We don't know what a and b are,
+but we can give them a name.
+
+01:07:53.700 --> 01:07:55.980 align:middle line:84%
+This has to work no
+matter what a and b are.
+
+01:07:55.980 --> 01:07:59.530 align:middle line:84%
+But let's say consider
+first move, which we know
+
+01:07:59.530 --> 01:08:01.110 align:middle line:90%
+we start with a pile of size n.
+
+01:08:01.110 --> 01:08:04.470 align:middle line:84%
+And we produce piles
+of size a and b.
+
+01:08:04.470 --> 01:08:10.823 align:middle line:84%
+And again, a plus b equals n,
+and a and b are at least 1.
+
+01:08:10.823 --> 01:08:12.740 align:middle line:84%
+But otherwise, we don't
+know what a and b are.
+
+01:08:12.740 --> 01:08:35.729 align:middle line:90%
+
+
+01:08:35.729 --> 01:08:37.673 align:middle line:90%
+OK.
+
+01:08:37.673 --> 01:08:39.214 align:middle line:90%
+So we go down here.
+
+01:08:39.214 --> 01:08:41.850 align:middle line:90%
+
+
+01:08:41.850 --> 01:08:46.847 align:middle line:84%
+So we now have a pile of size
+a, and we have a pile of size b.
+
+01:08:46.847 --> 01:08:48.430 align:middle line:84%
+Again, we don't know
+how big they are,
+
+01:08:48.430 --> 01:08:50.350 align:middle line:90%
+but they are smaller than b.
+
+01:08:50.350 --> 01:08:56.710 align:middle line:84%
+So I want to claim we
+are left with two piles.
+
+01:08:56.710 --> 01:08:59.460 align:middle line:84%
+Or we can really think of those
+as two completely separate
+
+01:08:59.460 --> 01:09:02.978 align:middle line:90%
+games, a and b.
+
+01:09:02.978 --> 01:09:05.020 align:middle line:84%
+We're going to get some
+points from splitting up.
+
+01:09:05.020 --> 01:09:07.145 align:middle line:84%
+We're going to get some
+points from splitting up b.
+
+01:09:07.145 --> 01:09:08.290 align:middle line:90%
+They sum together.
+
+01:09:08.290 --> 01:09:11.170 align:middle line:84%
+But these piles don't really
+interact from here on.
+
+01:09:11.170 --> 01:09:17.308 align:middle line:84%
+We got a times b points
+from this first step.
+
+01:09:17.308 --> 01:09:19.600 align:middle line:84%
+We're going to get some points
+from the pile of size a.
+
+01:09:19.600 --> 01:09:21.808 align:middle line:84%
+We're going to get some
+points to the pile of size b.
+
+01:09:21.808 --> 01:09:23.819 align:middle line:90%
+How many points do we get?
+
+01:09:23.819 --> 01:09:25.529 align:middle line:84%
+Well, in fact, our
+induction hypothesis
+
+01:09:25.529 --> 01:09:32.010 align:middle line:84%
+will tell us because a and
+b are strictly less than n.
+
+01:09:32.010 --> 01:09:33.149 align:middle line:90%
+Why?
+
+01:09:33.149 --> 01:09:41.409 align:middle line:84%
+Because a plus b equals n,
+and a and b are at least 1.
+
+01:09:41.409 --> 01:09:44.060 align:middle line:90%
+
+
+01:09:44.060 --> 01:09:46.460 align:middle line:84%
+So there's at least
+1 in each of a and b.
+
+01:09:46.460 --> 01:09:49.880 align:middle line:84%
+And so the remainder must
+be strictly less than n.
+
+01:09:49.880 --> 01:09:52.580 align:middle line:84%
+If there's one in a, then
+there'll be n minus 1 in b.
+
+01:09:52.580 --> 01:09:55.610 align:middle line:84%
+If there's two in a, there'll
+be n minus 2 in b, in all cases
+
+01:09:55.610 --> 01:09:57.470 align:middle line:90%
+less than n.
+
+01:09:57.470 --> 01:09:59.870 align:middle line:84%
+Because a and b are
+less than n, they're
+
+01:09:59.870 --> 01:10:01.230 align:middle line:90%
+not necessarily n minus 1.
+
+01:10:01.230 --> 01:10:03.080 align:middle line:84%
+So we couldn't just
+use regular induction.
+
+01:10:03.080 --> 01:10:05.280 align:middle line:90%
+But they're less than n.
+
+01:10:05.280 --> 01:10:12.080 align:middle line:84%
+And so by strong induction,
+by strong induction,
+
+01:10:12.080 --> 01:10:16.930 align:middle line:84%
+we know that P of a is
+true, and P of b is true.
+
+01:10:16.930 --> 01:10:20.030 align:middle line:90%
+
+
+01:10:20.030 --> 01:10:24.080 align:middle line:84%
+We wrote that up here, some
+P of k for all k less than n.
+
+01:10:24.080 --> 01:10:27.500 align:middle line:84%
+So a and b are less than n,
+so P of a is true, and P of b
+
+01:10:27.500 --> 01:10:28.410 align:middle line:90%
+is true.
+
+01:10:28.410 --> 01:10:37.040 align:middle line:84%
+So that means, from the pile of
+size a we get a times a minus 1
+
+01:10:37.040 --> 01:10:38.253 align:middle line:90%
+over 2 points.
+
+01:10:38.253 --> 01:10:43.340 align:middle line:90%
+
+
+01:10:43.340 --> 01:10:49.460 align:middle line:84%
+From the a pile we get b
+times b minus 1 over 2 points
+
+01:10:49.460 --> 01:10:53.150 align:middle line:90%
+from the b pile.
+
+01:10:53.150 --> 01:10:57.650 align:middle line:84%
+And then, of course,
+we got a times b points
+
+01:10:57.650 --> 01:10:58.900 align:middle line:90%
+from the first move.
+
+01:10:58.900 --> 01:11:06.020 align:middle line:90%
+
+
+01:11:06.020 --> 01:11:08.300 align:middle line:84%
+And so now we just
+need to do some algebra
+
+01:11:08.300 --> 01:11:10.520 align:middle line:90%
+and add up all these points.
+
+01:11:10.520 --> 01:11:14.420 align:middle line:84%
+So the total number
+of points that we get
+
+01:11:14.420 --> 01:11:19.370 align:middle line:84%
+is a times b plus a
+times a minus 1 over 2
+
+01:11:19.370 --> 01:11:23.270 align:middle line:90%
+plus b times b minus 1 over 2.
+
+01:11:23.270 --> 01:11:24.510 align:middle line:90%
+These two were by induction.
+
+01:11:24.510 --> 01:11:26.180 align:middle line:90%
+This was the first move.
+
+01:11:26.180 --> 01:11:28.230 align:middle line:84%
+And now let's just
+put everything over 2.
+
+01:11:28.230 --> 01:11:33.290 align:middle line:84%
+So this is 2 times a times b
+plus a squared minus a plus
+
+01:11:33.290 --> 01:11:38.120 align:middle line:90%
+b squared minus b all over 2.
+
+01:11:38.120 --> 01:11:41.100 align:middle line:84%
+And now, what do
+I want to get to?
+
+01:11:41.100 --> 01:11:45.230 align:middle line:84%
+This is supposed to equal
+n times n minus 1 over 2.
+
+01:11:45.230 --> 01:11:46.580 align:middle line:90%
+And what was n?
+
+01:11:46.580 --> 01:11:50.360 align:middle line:90%
+n was a plus b.
+
+01:11:50.360 --> 01:11:52.310 align:middle line:84%
+So what I'd really
+like to show here
+
+01:11:52.310 --> 01:12:00.240 align:middle line:84%
+is a plus b times a
+plus b minus 1 over 2.
+
+01:12:00.240 --> 01:12:01.620 align:middle line:90%
+That's my goal.
+
+01:12:01.620 --> 01:12:03.846 align:middle line:84%
+And what I need to do is
+fill in the in-between.
+
+01:12:03.846 --> 01:12:06.740 align:middle line:90%
+
+
+01:12:06.740 --> 01:12:11.810 align:middle line:84%
+But this is not too hard
+because, let's see, I
+
+01:12:11.810 --> 01:12:16.980 align:middle line:84%
+see a times b here
+and a times b here.
+
+01:12:16.980 --> 01:12:18.860 align:middle line:84%
+In fact, you can
+just expand this out,
+
+01:12:18.860 --> 01:12:21.320 align:middle line:84%
+and you'll get exactly
+the same thing here.
+
+01:12:21.320 --> 01:12:23.280 align:middle line:84%
+I think slightly more
+intuitive is to see,
+
+01:12:23.280 --> 01:12:26.960 align:middle line:84%
+oh, look at this term,
+this term, and this term.
+
+01:12:26.960 --> 01:12:33.680 align:middle line:84%
+That is a squared plus
+2ab plus b squared.
+
+01:12:33.680 --> 01:12:36.090 align:middle line:90%
+That is a plus b squared.
+
+01:12:36.090 --> 01:12:39.920 align:middle line:84%
+And then we have a
+minus a, minus b over 2.
+
+01:12:39.920 --> 01:12:42.470 align:middle line:90%
+But interject a rule in between.
+
+01:12:42.470 --> 01:12:49.640 align:middle line:84%
+We have a plus b squared
+minus a plus b over 2.
+
+01:12:49.640 --> 01:12:51.830 align:middle line:84%
+And then these two
+are the same thing.
+
+01:12:51.830 --> 01:12:53.780 align:middle line:90%
+I think that's pretty clear.
+
+01:12:53.780 --> 01:12:54.660 align:middle line:90%
+So cool.
+
+01:12:54.660 --> 01:12:57.470 align:middle line:84%
+We did some algebra,
+and we just computed
+
+01:12:57.470 --> 01:12:59.040 align:middle line:90%
+what we get out of induction.
+
+01:12:59.040 --> 01:12:59.930 align:middle line:90%
+And then boom!
+
+01:12:59.930 --> 01:13:02.190 align:middle line:84%
+We get the answer n
+times n minus 1 over 2.
+
+01:13:02.190 --> 01:13:02.970 align:middle line:90%
+And it works.
+
+01:13:02.970 --> 01:13:04.790 align:middle line:84%
+How did we know this
+is the right answer?
+
+01:13:04.790 --> 01:13:07.670 align:middle line:84%
+We were just told
+that by the theorem.
+
+01:13:07.670 --> 01:13:09.920 align:middle line:84%
+Probably, you would try
+this for very small n
+
+01:13:09.920 --> 01:13:11.040 align:middle line:90%
+and make a conjecture.
+
+01:13:11.040 --> 01:13:13.350 align:middle line:84%
+Oh, it seems like it's n
+times n minus 1 over 2.
+
+01:13:13.350 --> 01:13:14.700 align:middle line:90%
+Let's try to prove it.
+
+01:13:14.700 --> 01:13:17.810 align:middle line:84%
+And when you assume the right
+thing, the proof just works.
+
+01:13:17.810 --> 01:13:19.050 align:middle line:90%
+And it's kind of magical.
+
+01:13:19.050 --> 01:13:20.907 align:middle line:90%
+And that's strong induction.
+
+01:13:20.907 --> 01:13:22.490 align:middle line:84%
+Again, we need a
+strong induction here
+
+01:13:22.490 --> 01:13:26.960 align:middle line:84%
+because we need to assume what
+we wanted for all smaller n
+
+01:13:26.960 --> 01:13:29.130 align:middle line:84%
+because we don't know
+what a and b are.
+
+01:13:29.130 --> 01:13:35.030 align:middle line:84%
+This has to work for
+all a and b less than n.
+
+01:13:35.030 --> 01:13:40.370 align:middle line:84%
+So luckily, strong
+induction gives us that.
+
+01:13:40.370 --> 01:13:43.280 align:middle line:84%
+All right, I have
+one more example
+
+01:13:43.280 --> 01:13:50.060 align:middle line:84%
+to tell you about, a slightly
+more complicated version
+
+01:13:50.060 --> 01:13:51.330 align:middle line:90%
+of the same thing.
+
+01:13:51.330 --> 01:13:53.940 align:middle line:84%
+We're going to use
+strong induction.
+
+01:13:53.940 --> 01:13:54.940 align:middle line:90%
+Don't need any of these.
+
+01:13:54.940 --> 01:13:57.710 align:middle line:90%
+
+
+01:13:57.710 --> 01:14:00.130 align:middle line:90%
+So let's go.
+
+01:14:00.130 --> 01:14:03.830 align:middle line:90%
+
+
+01:14:03.830 --> 01:14:06.850 align:middle line:84%
+This is the problem
+called Beat Ordering.
+
+01:14:06.850 --> 01:14:09.710 align:middle line:90%
+
+
+01:14:09.710 --> 01:14:14.130 align:middle line:84%
+I guess somewhat relevant today
+because it was the Super Bowl.
+
+01:14:14.130 --> 01:14:18.750 align:middle line:84%
+But this is just about
+any teams of games.
+
+01:14:18.750 --> 01:14:19.340 align:middle line:90%
+Sorry.
+
+01:14:19.340 --> 01:14:21.080 align:middle line:90%
+n teams in some game.
+
+01:14:21.080 --> 01:14:27.170 align:middle line:84%
+And setup is that every
+two teams play a game,
+
+01:14:27.170 --> 01:14:28.930 align:middle line:90%
+and there are no ties.
+
+01:14:28.930 --> 01:14:33.320 align:middle line:90%
+
+
+01:14:33.320 --> 01:14:39.970 align:middle line:84%
+One team wins, and
+the other loses.
+
+01:14:39.970 --> 01:14:40.470 align:middle line:90%
+OK.
+
+01:14:40.470 --> 01:14:43.962 align:middle line:84%
+This is like friends
+and strangers,
+
+01:14:43.962 --> 01:14:45.420 align:middle line:84%
+where it's either
+one or the other.
+
+01:14:45.420 --> 01:14:47.550 align:middle line:84%
+But in this case,
+it's asymmetric.
+
+01:14:47.550 --> 01:14:49.410 align:middle line:84%
+They're not both
+happy or both sad.
+
+01:14:49.410 --> 01:14:52.000 align:middle line:90%
+One is happy, and one is sad.
+
+01:14:52.000 --> 01:14:52.500 align:middle line:90%
+OK.
+
+01:14:52.500 --> 01:14:54.512 align:middle line:84%
+This is what's called a
+Round Robin tournament.
+
+01:14:54.512 --> 01:14:55.970 align:middle line:84%
+Most sports are
+not played this way
+
+01:14:55.970 --> 01:14:58.028 align:middle line:84%
+unless a small number
+of teams because it's
+
+01:14:58.028 --> 01:14:59.070 align:middle line:90%
+a lot of different teams.
+
+01:14:59.070 --> 01:15:02.510 align:middle line:84%
+It's actually n times
+n plus 1 over 2 teams
+
+01:15:02.510 --> 01:15:04.670 align:middle line:90%
+games, which is a lot.
+
+01:15:04.670 --> 01:15:08.343 align:middle line:84%
+All right, so what
+we would like is
+
+01:15:08.343 --> 01:15:09.593 align:middle line:90%
+what's called a beat ordering.
+
+01:15:09.593 --> 01:15:12.590 align:middle line:90%
+
+
+01:15:12.590 --> 01:15:24.830 align:middle line:84%
+This is an ordering of the
+teams T1, T2, up to Tn,
+
+01:15:24.830 --> 01:15:32.260 align:middle line:90%
+such that B1 beat--
+
+01:15:32.260 --> 01:15:34.220 align:middle line:90%
+sorry, T1, T for teams.
+
+01:15:34.220 --> 01:15:36.410 align:middle line:90%
+T1 beats T2.
+
+01:15:36.410 --> 01:15:40.720 align:middle line:90%
+T2 beat T3, and so on.
+
+01:15:40.720 --> 01:15:45.600 align:middle line:90%
+And Tn minus 1 beats Tn.
+
+01:15:45.600 --> 01:15:46.100 align:middle line:90%
+OK.
+
+01:15:46.100 --> 01:15:48.730 align:middle line:90%
+Let's draw a little example.
+
+01:15:48.730 --> 01:15:56.230 align:middle line:84%
+There's team rock, team
+scissors, and team paper.
+
+01:15:56.230 --> 01:15:56.750 align:middle line:90%
+OK.
+
+01:15:56.750 --> 01:15:58.310 align:middle line:90%
+Paper beats rock.
+
+01:15:58.310 --> 01:15:59.660 align:middle line:90%
+Rock beats scissors.
+
+01:15:59.660 --> 01:16:01.160 align:middle line:90%
+Scissors beats paper.
+
+01:16:01.160 --> 01:16:01.660 align:middle line:90%
+OK.
+
+01:16:01.660 --> 01:16:05.420 align:middle line:84%
+This is a possible outcome
+in a three-team tournament.
+
+01:16:05.420 --> 01:16:08.270 align:middle line:84%
+There's not necessarily
+one best team here.
+
+01:16:08.270 --> 01:16:09.560 align:middle line:90%
+There is no best team.
+
+01:16:09.560 --> 01:16:11.560 align:middle line:84%
+But maybe paper and
+rock play a game, And.
+
+01:16:11.560 --> 01:16:12.950 align:middle line:90%
+It happens that paper won.
+
+01:16:12.950 --> 01:16:15.430 align:middle line:84%
+Maybe rock plays
+against scissors,
+
+01:16:15.430 --> 01:16:16.473 align:middle line:90%
+and it happens rock won.
+
+01:16:16.473 --> 01:16:17.890 align:middle line:84%
+And scissors played
+against paper,
+
+01:16:17.890 --> 01:16:19.640 align:middle line:90%
+and it happens scissors won.
+
+01:16:19.640 --> 01:16:20.180 align:middle line:90%
+OK.
+
+01:16:20.180 --> 01:16:23.470 align:middle line:84%
+You can tell why I named
+the teams this way.
+
+01:16:23.470 --> 01:16:25.630 align:middle line:84%
+Then one way I could
+order these teams
+
+01:16:25.630 --> 01:16:33.770 align:middle line:84%
+is paper, rock, scissors
+because paper beats rock.
+
+01:16:33.770 --> 01:16:35.370 align:middle line:90%
+Rock beats scissors.
+
+01:16:35.370 --> 01:16:35.870 align:middle line:90%
+OK.
+
+01:16:35.870 --> 01:16:37.960 align:middle line:90%
+So this is the input.
+
+01:16:37.960 --> 01:16:42.650 align:middle line:84%
+And this is my goal is to
+produce an ordering like this.
+
+01:16:42.650 --> 01:16:46.630 align:middle line:84%
+But I need to do it for n
+teams, not just for three.
+
+01:16:46.630 --> 01:16:58.030 align:middle line:84%
+So let's do strong induction
+to prove that the theorem is
+
+01:16:58.030 --> 01:16:59.865 align:middle line:90%
+a beat ordering always exists.
+
+01:16:59.865 --> 01:17:06.770 align:middle line:90%
+
+
+01:17:06.770 --> 01:17:07.270 align:middle line:90%
+OK.
+
+01:17:07.270 --> 01:17:10.930 align:middle line:90%
+
+
+01:17:10.930 --> 01:17:11.430 align:middle line:90%
+Theorem.
+
+01:17:11.430 --> 01:17:20.860 align:middle line:90%
+
+
+01:17:20.860 --> 01:17:23.590 align:middle line:84%
+And when I say this always
+exists, what I really mean
+
+01:17:23.590 --> 01:17:32.380 align:middle line:84%
+is for all n and then for
+all tournaments of size
+
+01:17:32.380 --> 01:17:42.740 align:middle line:90%
+n there exists a beat order.
+
+01:17:42.740 --> 01:17:43.240 align:middle line:90%
+OK.
+
+01:17:43.240 --> 01:17:44.860 align:middle line:84%
+There exists an
+ordering of the n teams
+
+01:17:44.860 --> 01:17:46.370 align:middle line:84%
+such that the first one
+beat the second one,
+
+01:17:46.370 --> 01:17:48.260 align:middle line:84%
+the second one beat the
+third one, and so on.
+
+01:17:48.260 --> 01:17:56.910 align:middle line:84%
+I should say, for all
+i Ti beat Ti plus 1.
+
+01:17:56.910 --> 01:17:59.440 align:middle line:90%
+
+
+01:17:59.440 --> 01:18:02.710 align:middle line:90%
+So we claim this is true.
+
+01:18:02.710 --> 01:18:05.720 align:middle line:90%
+Proof by strong induction.
+
+01:18:05.720 --> 01:18:09.610 align:middle line:90%
+
+
+01:18:09.610 --> 01:18:13.610 align:middle line:84%
+So we're going to assume
+that this statement is true.
+
+01:18:13.610 --> 01:18:20.770 align:middle line:84%
+Namely, this statement
+is true for smaller n.
+
+01:18:20.770 --> 01:18:22.440 align:middle line:84%
+And then we're going
+to prove it for n.
+
+01:18:22.440 --> 01:18:26.050 align:middle line:90%
+
+
+01:18:26.050 --> 01:18:27.670 align:middle line:90%
+OK.
+
+01:18:27.670 --> 01:18:34.510 align:middle line:90%
+Let's pick a team, any team.
+
+01:18:34.510 --> 01:18:38.980 align:middle line:84%
+Call it T. Then I'm
+going to split everything
+
+01:18:38.980 --> 01:18:40.070 align:middle line:90%
+with respect to t.
+
+01:18:40.070 --> 01:18:45.250 align:middle line:84%
+So I'm going to define W
+to be the set of teams that
+
+01:18:45.250 --> 01:18:50.090 align:middle line:84%
+win against T. So this is going
+to be a set of all teams S
+
+01:18:50.090 --> 01:18:59.890 align:middle line:84%
+where S beat T. So this is
+1 versus T. These teams win
+
+01:18:59.890 --> 01:19:04.090 align:middle line:84%
+versus T or 1 versus T. And L
+is going to be the set of teams
+
+01:19:04.090 --> 01:19:08.723 align:middle line:84%
+that lose against T. So this is
+the set of teams S where TBS.
+
+01:19:08.723 --> 01:19:11.560 align:middle line:90%
+
+
+01:19:11.560 --> 01:19:16.210 align:middle line:90%
+So this is a loss versus T.
+
+01:19:16.210 --> 01:19:17.710 align:middle line:84%
+Then, intuitively,
+what we'd like
+
+01:19:17.710 --> 01:19:23.690 align:middle line:84%
+to do is put the winners first,
+then put T, then put the losers.
+
+01:19:23.690 --> 01:19:26.160 align:middle line:90%
+I claim that works, OK?
+
+01:19:26.160 --> 01:19:28.110 align:middle line:90%
+But how do I order the winners?
+
+01:19:28.110 --> 01:19:30.080 align:middle line:90%
+How do I order the losers?
+
+01:19:30.080 --> 01:19:32.600 align:middle line:90%
+Well, by induction.
+
+01:19:32.600 --> 01:19:35.670 align:middle line:90%
+I claim the size of W--
+
+01:19:35.670 --> 01:19:38.060 align:middle line:84%
+this vertical bar means
+the size of the set--
+
+01:19:38.060 --> 01:19:40.700 align:middle line:90%
+is less than n.
+
+01:19:40.700 --> 01:19:49.010 align:middle line:84%
+And the size of L is less
+than n because the size
+
+01:19:49.010 --> 01:19:55.220 align:middle line:84%
+of the winners plus the size
+of the losers plus 1 equals n.
+
+01:19:55.220 --> 01:19:56.690 align:middle line:90%
+This is a 1.
+
+01:19:56.690 --> 01:19:57.380 align:middle line:90%
+Why?
+
+01:19:57.380 --> 01:20:01.070 align:middle line:84%
+Because every team is either
+T, or they won against T,
+
+01:20:01.070 --> 01:20:04.740 align:middle line:84%
+or they lost against T. So this
+is counting all of the teams.
+
+01:20:04.740 --> 01:20:06.930 align:middle line:84%
+There's T itself, the
+ones that win against T,
+
+01:20:06.930 --> 01:20:10.850 align:middle line:84%
+the ones that lose against T.
+Together, that is exactly n.
+
+01:20:10.850 --> 01:20:14.330 align:middle line:84%
+Every team is exactly
+one of these categories.
+
+01:20:14.330 --> 01:20:16.990 align:middle line:90%
+And there's a plus 1 here.
+
+01:20:16.990 --> 01:20:19.660 align:middle line:84%
+And all of these
+are non-negative.
+
+01:20:19.660 --> 01:20:22.510 align:middle line:84%
+Here, W and L might be 0,
+but there's this plus 1.
+
+01:20:22.510 --> 01:20:25.780 align:middle line:84%
+That means both W and L
+are strictly less than n.
+
+01:20:25.780 --> 01:20:30.910 align:middle line:84%
+So the induction
+applies to them.
+
+01:20:30.910 --> 01:20:34.630 align:middle line:90%
+So by induction.
+
+01:20:34.630 --> 01:20:38.110 align:middle line:84%
+This thing is true for
+any tournament of size W
+
+01:20:38.110 --> 01:20:41.590 align:middle line:84%
+there exists a bit ordering of
+W. For every tournament of size
+
+01:20:41.590 --> 01:20:50.950 align:middle line:84%
+L there exists a beat ordering
+of L. So we get a beat ordering.
+
+01:20:50.950 --> 01:20:53.470 align:middle line:90%
+We get two of them, really.
+
+01:20:53.470 --> 01:21:03.860 align:middle line:84%
+Let's call it W1, W2, dot, dot,
+dot W size of W. This is for--
+
+01:21:03.860 --> 01:21:09.800 align:middle line:84%
+this is an ordering of capital
+W. And we get L1, L2, dot,
+
+01:21:09.800 --> 01:21:16.380 align:middle line:84%
+dot, dot, L size of L as a
+beat ordering of capital L.
+
+01:21:16.380 --> 01:21:20.910 align:middle line:90%
+And then, we concatenate.
+
+01:21:20.910 --> 01:21:33.090 align:middle line:84%
+So we claim W1, dot,
+dot, dot W size of w,
+
+01:21:33.090 --> 01:21:42.270 align:middle line:84%
+then T, then L1, dot,
+dot, dot L size of L
+
+01:21:42.270 --> 01:21:49.110 align:middle line:84%
+is a beat ordering
+of all n teams.
+
+01:21:49.110 --> 01:21:50.470 align:middle line:90%
+Again, this is all the teams.
+
+01:21:50.470 --> 01:21:53.370 align:middle line:84%
+All the teams either won
+against T, or they are T,
+
+01:21:53.370 --> 01:21:55.210 align:middle line:90%
+or they lost against t.
+
+01:21:55.210 --> 01:21:57.480 align:middle line:84%
+And the idea is
+this part is beat.
+
+01:21:57.480 --> 01:22:00.700 align:middle line:84%
+W1 beats W2, W2
+beats W3, and so on,
+
+01:22:00.700 --> 01:22:03.930 align:middle line:84%
+by induction because
+this is a beat ordering
+
+01:22:03.930 --> 01:22:09.640 align:middle line:84%
+of capital W. Over here, this
+is a beat ordering of capital L.
+
+01:22:09.640 --> 01:22:13.780 align:middle line:84%
+And so by induction
+all these are OK.
+
+01:22:13.780 --> 01:22:14.730 align:middle line:90%
+L1 beat L2.
+
+01:22:14.730 --> 01:22:18.610 align:middle line:84%
+L2 beat so on, dot, dot,
+dot beat L size of L.
+
+01:22:18.610 --> 01:22:21.340 align:middle line:84%
+The only things we need to
+check are these two commas.
+
+01:22:21.340 --> 01:22:24.510 align:middle line:84%
+We need to check
+that W sub big W--
+
+01:22:24.510 --> 01:22:29.470 align:middle line:84%
+W sub size of W beats
+T, and T beat L1.
+
+01:22:29.470 --> 01:22:31.320 align:middle line:90%
+Why are those true?
+
+01:22:31.320 --> 01:22:35.340 align:middle line:84%
+By our definition of W
+and L. Everything in W
+
+01:22:35.340 --> 01:22:41.730 align:middle line:84%
+beat T. So this is by
+the definition of W. We
+
+01:22:41.730 --> 01:22:44.490 align:middle line:90%
+know that all of these beat T.
+
+01:22:44.490 --> 01:22:46.620 align:middle line:84%
+So in particular,
+this one beat T.
+
+01:22:46.620 --> 01:22:52.380 align:middle line:84%
+And we know by the
+definition of L
+
+01:22:52.380 --> 01:22:55.020 align:middle line:84%
+all of these teams lost
+against T. In other words,
+
+01:22:55.020 --> 01:22:57.660 align:middle line:90%
+T beats all of these teams.
+
+01:22:57.660 --> 01:23:00.300 align:middle line:90%
+And in particular, T beat L1.
+
+01:23:00.300 --> 01:23:03.040 align:middle line:84%
+And so by combining all these
+beat statements together,
+
+01:23:03.040 --> 01:23:06.160 align:middle line:84%
+we know that this entire
+thing is a beat ordering.
+
+01:23:06.160 --> 01:23:08.740 align:middle line:84%
+Each item beats the
+one right after it.
+
+01:23:08.740 --> 01:23:10.570 align:middle line:84%
+So it's a little
+more complicated.
+
+01:23:10.570 --> 01:23:15.850 align:middle line:84%
+But again, we're d quite often
+with strong induction proofs,
+
+01:23:15.850 --> 01:23:17.530 align:middle line:90%
+you apply induction twice.
+
+01:23:17.530 --> 01:23:19.060 align:middle line:84%
+You have some
+problem with size n.
+
+01:23:19.060 --> 01:23:20.252 align:middle line:90%
+You split it into two parts.
+
+01:23:20.252 --> 01:23:22.210 align:middle line:84%
+In general, you might
+split it into many parts.
+
+01:23:22.210 --> 01:23:25.870 align:middle line:84%
+Then you recursively solve the
+two parts or the many parts,
+
+01:23:25.870 --> 01:23:28.110 align:middle line:84%
+as long as they're
+strictly smaller than n.
+
+01:23:28.110 --> 01:23:31.020 align:middle line:84%
+By induction, we
+know they work out.
+
+01:23:31.020 --> 01:23:32.950 align:middle line:84%
+By strong induction,
+we know they work out.
+
+01:23:32.950 --> 01:23:35.470 align:middle line:84%
+You take those solutions and
+you combine them in some way.
+
+01:23:35.470 --> 01:23:38.940 align:middle line:84%
+Here, we concatenated
+with T in the middle.
+
+01:23:38.940 --> 01:23:42.215 align:middle line:90%
+Over here, we summed them up.
+
+01:23:42.215 --> 01:23:43.590 align:middle line:84%
+We summed up the
+number of points
+
+01:23:43.590 --> 01:23:45.540 align:middle line:84%
+we got in each one plus
+the number of points
+
+01:23:45.540 --> 01:23:48.345 align:middle line:90%
+we got in the first step.
+
+01:23:48.345 --> 01:23:50.220 align:middle line:84%
+And in general, you
+combine them in some way,
+
+01:23:50.220 --> 01:23:54.840 align:middle line:84%
+and you prove that the thing you
+want to prove holds for size n.
+
+01:23:54.840 --> 01:23:56.290 align:middle line:90%
+And then you get your theorem.
+
+01:23:56.290 --> 01:24:00.390 align:middle line:84%
+So that is the power
+of strong induction.
+
+01:24:00.390 --> 01:24:01.970 align:middle line:90%
+Thanks.
+
+01:24:01.970 --> 01:24:10.000 align:middle line:90%

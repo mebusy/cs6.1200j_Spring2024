@@ -1,0 +1,4362 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:00.988 align:middle line:90%
+[SQUEAKING]
+
+00:00:00.988 --> 00:00:02.470 align:middle line:90%
+[RUSTLING]
+
+00:00:02.470 --> 00:00:04.940 align:middle line:90%
+[CLICKING]
+
+00:00:04.940 --> 00:00:14.870 align:middle line:90%
+
+
+00:00:14.870 --> 00:00:17.090 align:middle line:84%
+BRYNMOR CHAPMAN: Can
+people hear me in the back?
+
+00:00:17.090 --> 00:00:17.820 align:middle line:90%
+We good?
+
+00:00:17.820 --> 00:00:18.440 align:middle line:90%
+OK.
+
+00:00:18.440 --> 00:00:19.020 align:middle line:90%
+Nice.
+
+00:00:19.020 --> 00:00:20.720 align:middle line:90%
+Let's get started.
+
+00:00:20.720 --> 00:00:24.060 align:middle line:90%
+So last week, last week?
+
+00:00:24.060 --> 00:00:28.880 align:middle line:84%
+Yes, last week, we started
+talking about our number theory
+
+00:00:28.880 --> 00:00:31.460 align:middle line:84%
+unit and in particular,
+divisibility.
+
+00:00:31.460 --> 00:00:34.970 align:middle line:84%
+And we saw a very exciting
+application of divisibility,
+
+00:00:34.970 --> 00:00:36.560 align:middle line:90%
+saving New York City.
+
+00:00:36.560 --> 00:00:39.230 align:middle line:84%
+Today we're going to look at
+an even more exciting example,
+
+00:00:39.230 --> 00:00:41.540 align:middle line:90%
+modular arithmetic.
+
+00:00:41.540 --> 00:00:50.730 align:middle line:84%
+So recall, so we saw Bézout's
+identity and the pulverizer.
+
+00:00:50.730 --> 00:00:53.460 align:middle line:90%
+So I'll just write that up here.
+
+00:00:53.460 --> 00:01:10.890 align:middle line:84%
+So for all integers a and b,
+there exists s and t such that--
+
+00:01:10.890 --> 00:01:13.680 align:middle line:84%
+that's a little bit
+confusing, sorry--
+
+00:01:13.680 --> 00:01:22.200 align:middle line:84%
+gcd of a, comma b
+equals as plus bt.
+
+00:01:22.200 --> 00:01:26.400 align:middle line:84%
+And moreover, we can
+compute these efficiently,
+
+00:01:26.400 --> 00:01:31.608 align:middle line:84%
+using the pulverizer, the
+extended Euclidean algorithm.
+
+00:01:31.608 --> 00:01:33.150 align:middle line:84%
+Then the other useful
+fact that we're
+
+00:01:33.150 --> 00:01:39.870 align:middle line:84%
+going to make use of
+today, every number
+
+00:01:39.870 --> 00:01:55.380 align:middle line:84%
+can be written as an ILC
+of a and b if and only
+
+00:01:55.380 --> 00:01:58.905 align:middle line:90%
+if it is divisible by their gcd.
+
+00:01:58.905 --> 00:02:11.860 align:middle line:90%
+
+
+00:02:11.860 --> 00:02:17.360 align:middle line:84%
+So we are going to make
+use of these two facts.
+
+00:02:17.360 --> 00:02:18.210 align:middle line:90%
+So do not forget.
+
+00:02:18.210 --> 00:02:21.010 align:middle line:90%
+
+
+00:02:21.010 --> 00:02:23.470 align:middle line:90%
+Let's see.
+
+00:02:23.470 --> 00:02:28.840 align:middle line:90%
+Oh, sorry about that.
+
+00:02:28.840 --> 00:02:33.504 align:middle line:90%
+
+
+00:02:33.504 --> 00:02:37.150 align:middle line:84%
+So let's start talking about
+modular arithmetic then.
+
+00:02:37.150 --> 00:02:39.920 align:middle line:84%
+I expect that at
+least in some form,
+
+00:02:39.920 --> 00:02:43.780 align:middle line:84%
+it is something that's fairly
+familiar to all of you.
+
+00:02:43.780 --> 00:02:46.130 align:middle line:84%
+So presumably you learned
+back in grade school,
+
+00:02:46.130 --> 00:02:49.750 align:middle line:84%
+what is the sum of an even
+integer and an odd integer?
+
+00:02:49.750 --> 00:02:50.865 align:middle line:90%
+What do you know about it?
+
+00:02:50.865 --> 00:02:54.550 align:middle line:90%
+
+
+00:02:54.550 --> 00:02:56.150 align:middle line:90%
+Did people not learn this?
+
+00:02:56.150 --> 00:02:57.020 align:middle line:90%
+Yeah?
+
+00:02:57.020 --> 00:02:57.812 align:middle line:90%
+AUDIENCE: It's odd.
+
+00:02:57.812 --> 00:02:59.152 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah, it's odd.
+
+00:02:59.152 --> 00:03:01.675 align:middle line:84%
+So, first example,
+even plus odd is odd.
+
+00:03:01.675 --> 00:03:04.730 align:middle line:90%
+
+
+00:03:04.730 --> 00:03:08.380 align:middle line:90%
+Even plus odd is odd.
+
+00:03:08.380 --> 00:03:12.080 align:middle line:90%
+
+
+00:03:12.080 --> 00:03:19.413 align:middle line:84%
+What is the last digit
+of, say, 357 by 994?
+
+00:03:19.413 --> 00:03:22.880 align:middle line:90%
+
+
+00:03:22.880 --> 00:03:23.510 align:middle line:90%
+Yeah?
+
+00:03:23.510 --> 00:03:24.410 align:middle line:90%
+AUDIENCE: 8.
+
+00:03:24.410 --> 00:03:27.685 align:middle line:84%
+BRYNMOR CHAPMAN: 8,
+yeah, so ends in 8.
+
+00:03:27.685 --> 00:03:31.200 align:middle line:90%
+
+
+00:03:31.200 --> 00:03:32.000 align:middle line:90%
+Why is that?
+
+00:03:32.000 --> 00:03:34.593 align:middle line:90%
+AUDIENCE: [INAUDIBLE].
+
+00:03:34.593 --> 00:03:37.010 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah, you can
+basically ignore everything
+
+00:03:37.010 --> 00:03:39.410 align:middle line:90%
+except the last two digits.
+
+00:03:39.410 --> 00:03:40.620 align:middle line:90%
+You multiply those together.
+
+00:03:40.620 --> 00:03:41.280 align:middle line:90%
+You get 28.
+
+00:03:41.280 --> 00:03:42.210 align:middle line:90%
+That ends in an 8.
+
+00:03:42.210 --> 00:03:45.386 align:middle line:84%
+So this is also
+going to end in an 8.
+
+00:03:45.386 --> 00:03:47.940 align:middle line:90%
+It's currently 2:39 PM.
+
+00:03:47.940 --> 00:03:49.710 align:middle line:84%
+What time will it
+be in 49 hours?
+
+00:03:49.710 --> 00:03:52.806 align:middle line:90%
+
+
+00:03:52.806 --> 00:03:54.180 align:middle line:90%
+AUDIENCE: 3:30.
+
+00:03:54.180 --> 00:04:03.060 align:middle line:84%
+BRYNMOR CHAPMAN: 3:30 yeah,
+about, 3:39 and 49 hours.
+
+00:04:03.060 --> 00:04:03.890 align:middle line:90%
+And why is that?
+
+00:04:03.890 --> 00:04:07.140 align:middle line:90%
+
+
+00:04:07.140 --> 00:04:10.260 align:middle line:90%
+Yeah, someone else say?
+
+00:04:10.260 --> 00:04:11.530 align:middle line:90%
+How are we getting to that?
+
+00:04:11.530 --> 00:04:12.804 align:middle line:90%
+Yeah?
+
+00:04:12.804 --> 00:04:13.793 align:middle line:90%
+AUDIENCE: [INAUDIBLE].
+
+00:04:13.793 --> 00:04:14.710 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:04:14.710 --> 00:04:17.920 align:middle line:84%
+So 49 hours is one hour
+more than two full days.
+
+00:04:17.920 --> 00:04:19.560 align:middle line:84%
+We can forget about
+those two days
+
+00:04:19.560 --> 00:04:23.100 align:middle line:84%
+and just add an hour
+onto the current time.
+
+00:04:23.100 --> 00:04:25.565 align:middle line:84%
+What day of the week will
+it be 100 days from now?
+
+00:04:25.565 --> 00:04:28.702 align:middle line:90%
+
+
+00:04:28.702 --> 00:04:29.640 align:middle line:90%
+AUDIENCE: Thursday.
+
+00:04:29.640 --> 00:04:31.030 align:middle line:90%
+BRYNMOR CHAPMAN: Thursday, yeah.
+
+00:04:31.030 --> 00:04:35.950 align:middle line:84%
+100 days is two days
+more than 14 weeks.
+
+00:04:35.950 --> 00:04:38.290 align:middle line:84%
+So we can forget
+about those 14 weeks.
+
+00:04:38.290 --> 00:04:41.080 align:middle line:84%
+Add those two days,
+and we get Thursday.
+
+00:04:41.080 --> 00:04:45.090 align:middle line:84%
+So these are all fairly familiar
+examples to most of you,
+
+00:04:45.090 --> 00:04:48.520 align:middle line:84%
+hopefully, of
+modular arithmetic.
+
+00:04:48.520 --> 00:04:53.420 align:middle line:84%
+And the theme is that when
+you're working modulo n,
+
+00:04:53.420 --> 00:04:56.090 align:middle line:84%
+you're just ignoring
+all multiples of n
+
+00:04:56.090 --> 00:04:59.460 align:middle line:90%
+and only focusing on remainders.
+
+00:04:59.460 --> 00:05:03.350 align:middle line:84%
+So even and odd, this is the
+remainder when dividing by 2.
+
+00:05:03.350 --> 00:05:05.340 align:middle line:84%
+Days of the week,
+we divide by 7.
+
+00:05:05.340 --> 00:05:07.950 align:middle line:84%
+Look at the
+remainder, last digit.
+
+00:05:07.950 --> 00:05:11.420 align:middle line:84%
+This is remainder
+when we divide by 10;
+
+00:05:11.420 --> 00:05:14.150 align:middle line:84%
+hour remainder when
+we divide by 12 or 24,
+
+00:05:14.150 --> 00:05:17.180 align:middle line:84%
+depending on whether
+you care about AM or PM.
+
+00:05:17.180 --> 00:05:20.420 align:middle line:84%
+And so we often call modular
+arithmetic clock arithmetic
+
+00:05:20.420 --> 00:05:21.673 align:middle line:90%
+for this reason.
+
+00:05:21.673 --> 00:05:23.090 align:middle line:84%
+Because it's
+something that people
+
+00:05:23.090 --> 00:05:25.230 align:middle line:84%
+are familiar with
+in that context.
+
+00:05:25.230 --> 00:05:29.180 align:middle line:90%
+So let's define what we mean.
+
+00:05:29.180 --> 00:05:31.180 align:middle line:84%
+Actually, why don't we
+use a new board for this.
+
+00:05:31.180 --> 00:05:36.440 align:middle line:90%
+
+
+00:05:36.440 --> 00:05:40.510 align:middle line:84%
+So we're going to say
+that a is congruent.
+
+00:05:40.510 --> 00:05:42.740 align:middle line:90%
+We want n to b.
+
+00:05:42.740 --> 00:05:46.760 align:middle line:84%
+So this will usually
+be pronounced
+
+00:05:46.760 --> 00:05:56.695 align:middle line:84%
+a is congruent to b modulo n if
+and only if n divides a minus b.
+
+00:05:56.695 --> 00:06:02.642 align:middle line:90%
+
+
+00:06:02.642 --> 00:06:08.060 align:middle line:84%
+So you might also see this
+written as a congruent
+
+00:06:08.060 --> 00:06:11.690 align:middle line:90%
+to b mod n.
+
+00:06:11.690 --> 00:06:14.670 align:middle line:84%
+Who has seen this
+notation before?
+
+00:06:14.670 --> 00:06:15.170 align:middle line:90%
+Many.
+
+00:06:15.170 --> 00:06:18.290 align:middle line:90%
+Who has seen this notation?
+
+00:06:18.290 --> 00:06:20.812 align:middle line:90%
+A couple, not quite as many.
+
+00:06:20.812 --> 00:06:23.490 align:middle line:84%
+So for the purposes
+of this class,
+
+00:06:23.490 --> 00:06:26.130 align:middle line:84%
+we're going to generally
+be using this notation.
+
+00:06:26.130 --> 00:06:30.186 align:middle line:84%
+We're going to try not
+to use the right one.
+
+00:06:30.186 --> 00:06:32.705 align:middle line:90%
+Yes, right.
+
+00:06:32.705 --> 00:06:36.440 align:middle line:84%
+And I will explain
+why in a few minutes.
+
+00:06:36.440 --> 00:06:38.330 align:middle line:90%
+The right one, Even.
+
+00:06:38.330 --> 00:06:40.220 align:middle line:84%
+For people who think
+they're familiar,
+
+00:06:40.220 --> 00:06:44.932 align:middle line:84%
+it often leads to
+some confusion.
+
+00:06:44.932 --> 00:06:46.730 align:middle line:84%
+So let's try and
+stick with this one
+
+00:06:46.730 --> 00:06:49.074 align:middle line:84%
+until you really know
+what you're doing.
+
+00:06:49.074 --> 00:06:52.130 align:middle line:84%
+But for future reference,
+if you see the right one,
+
+00:06:52.130 --> 00:06:53.130 align:middle line:90%
+it means the same thing.
+
+00:06:53.130 --> 00:06:56.284 align:middle line:90%
+
+
+00:06:56.284 --> 00:07:01.870 align:middle line:84%
+So basically, we would like to
+consider a and b to be the same.
+
+00:07:01.870 --> 00:07:03.910 align:middle line:84%
+You can think of this,
+roughly speaking,
+
+00:07:03.910 --> 00:07:09.580 align:middle line:84%
+as equals if n divides
+their difference.
+
+00:07:09.580 --> 00:07:13.300 align:middle line:84%
+So for example, if
+we're working modulo 5,
+
+00:07:13.300 --> 00:07:18.860 align:middle line:84%
+there are only five
+different distinct values.
+
+00:07:18.860 --> 00:07:25.420 align:middle line:84%
+So we're going to
+notate them like this.
+
+00:07:25.420 --> 00:07:32.260 align:middle line:84%
+So this is the congruence class
+of 0 modulo 5, so everything
+
+00:07:32.260 --> 00:07:34.160 align:middle line:90%
+that's congruent to 0.
+
+00:07:34.160 --> 00:07:39.790 align:middle line:84%
+So this is going to be 0
+plus or minus 5 plus or minus
+
+00:07:39.790 --> 00:07:42.760 align:middle line:90%
+10, et cetera.
+
+00:07:42.760 --> 00:07:47.160 align:middle line:84%
+So that's one set of
+values that are the same.
+
+00:07:47.160 --> 00:07:49.700 align:middle line:90%
+
+
+00:07:49.700 --> 00:07:51.860 align:middle line:84%
+Got a second one,
+represented by 1.
+
+00:07:51.860 --> 00:07:58.550 align:middle line:84%
+And this is going to
+be 1, 6, 11, minus 4,
+
+00:07:58.550 --> 00:08:08.720 align:middle line:84%
+minus 9, so everything that's
+equivalent to 1 modulo 5.
+
+00:08:08.720 --> 00:08:17.720 align:middle line:84%
+And then we've got three
+more defined analogously.
+
+00:08:17.720 --> 00:08:21.800 align:middle line:84%
+And so for a general k,
+which of these five groups
+
+00:08:21.800 --> 00:08:23.870 align:middle line:90%
+is it going to belong to?
+
+00:08:23.870 --> 00:08:25.060 align:middle line:90%
+How would we figure it out?
+
+00:08:25.060 --> 00:08:27.680 align:middle line:90%
+
+
+00:08:27.680 --> 00:08:29.090 align:middle line:90%
+Yeah?
+
+00:08:29.090 --> 00:08:31.790 align:middle line:84%
+AUDIENCE: Divided
+by [INAUDIBLE].
+
+00:08:31.790 --> 00:08:34.100 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah,
+so the answer was we're
+
+00:08:34.100 --> 00:08:36.200 align:middle line:84%
+going to divide it
+by the modulus 5
+
+00:08:36.200 --> 00:08:39.059 align:middle line:90%
+and look at the remainder.
+
+00:08:39.059 --> 00:08:48.820 align:middle line:84%
+So a general k is going to be
+an element of the remainder
+
+00:08:48.820 --> 00:08:50.415 align:middle line:90%
+when we divide k by 5.
+
+00:08:50.415 --> 00:08:53.635 align:middle line:90%
+
+
+00:08:53.635 --> 00:08:57.810 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:08:57.810 --> 00:09:05.620 align:middle line:84%
+So in particular, if we
+write k equals 5q plus r,
+
+00:09:05.620 --> 00:09:13.300 align:middle line:84%
+where r is between 0 and 5,
+then k is going to be an element
+
+00:09:13.300 --> 00:09:18.376 align:middle line:90%
+of this set.
+
+00:09:18.376 --> 00:09:21.640 align:middle line:84%
+Does that makes
+sense to everybody?
+
+00:09:21.640 --> 00:09:24.280 align:middle line:90%
+Reasonably happy with this?
+
+00:09:24.280 --> 00:09:24.780 align:middle line:90%
+OK.
+
+00:09:24.780 --> 00:09:31.932 align:middle line:90%
+
+
+00:09:31.932 --> 00:09:34.275 align:middle line:84%
+So more generally, recall
+the division theorem.
+
+00:09:34.275 --> 00:09:42.700 align:middle line:90%
+
+
+00:09:42.700 --> 00:09:48.400 align:middle line:84%
+So the division theorem
+says, for all pairs n,
+
+00:09:48.400 --> 00:09:57.490 align:middle line:84%
+d with d greater
+than 0, there exists
+
+00:09:57.490 --> 00:10:04.720 align:middle line:84%
+a unique pair of integers
+q and r with 0 less than
+
+00:10:04.720 --> 00:10:18.717 align:middle line:84%
+or equal to r less than d
+such that n equals qd plus r.
+
+00:10:18.717 --> 00:10:21.250 align:middle line:90%
+
+
+00:10:21.250 --> 00:10:23.973 align:middle line:84%
+And we say that q
+here is the quotient.
+
+00:10:23.973 --> 00:10:30.310 align:middle line:90%
+
+
+00:10:30.310 --> 00:10:36.730 align:middle line:84%
+And we sometimes denote
+this as div n, d.
+
+00:10:36.730 --> 00:10:44.090 align:middle line:84%
+Or sometimes, we might write
+this in infix notation, n div d.
+
+00:10:44.090 --> 00:10:46.670 align:middle line:90%
+And r is the remainder.
+
+00:10:46.670 --> 00:10:52.730 align:middle line:90%
+So this is going to be rem n, d.
+
+00:10:52.730 --> 00:10:59.460 align:middle line:84%
+Or sometimes, we also
+write this as n rem d.
+
+00:10:59.460 --> 00:11:00.368 align:middle line:90%
+Yeah?
+
+00:11:00.368 --> 00:11:01.527 align:middle line:90%
+AUDIENCE: [INAUDIBLE]?
+
+00:11:01.527 --> 00:11:02.485 align:middle line:90%
+BRYNMOR CHAPMAN: Sorry?
+
+00:11:02.485 --> 00:11:04.318 align:middle line:84%
+AUDIENCE: The exclamation
+after [INAUDIBLE].
+
+00:11:04.318 --> 00:11:06.930 align:middle line:84%
+BRYNMOR CHAPMAN: Oh, the
+exclamation after the exists.
+
+00:11:06.930 --> 00:11:10.280 align:middle line:84%
+This means there
+exists a unique pair.
+
+00:11:10.280 --> 00:11:14.120 align:middle line:84%
+So not only does there exists
+some pair, but there's only one
+
+00:11:14.120 --> 00:11:14.620 align:middle line:90%
+of them.
+
+00:11:14.620 --> 00:11:20.800 align:middle line:90%
+
+
+00:11:20.800 --> 00:11:23.900 align:middle line:84%
+So when working
+modulo n, a number
+
+00:11:23.900 --> 00:11:26.520 align:middle line:84%
+is always going to be
+equivalent to its remainder.
+
+00:11:26.520 --> 00:11:30.560 align:middle line:84%
+Sometimes we'll also
+call this its residue.
+
+00:11:30.560 --> 00:11:37.940 align:middle line:84%
+And just as we saw up
+here, these residue classes
+
+00:11:37.940 --> 00:11:43.060 align:middle line:84%
+form a partition of
+all of the integers.
+
+00:11:43.060 --> 00:11:44.640 align:middle line:90%
+Oh, sorry.
+
+00:11:44.640 --> 00:11:49.140 align:middle line:84%
+So the number is 0
+up through n minus 1.
+
+00:11:49.140 --> 00:11:54.255 align:middle line:84%
+These represent all of the
+possible groupings modulo n.
+
+00:11:54.255 --> 00:12:00.270 align:middle line:90%
+
+
+00:12:00.270 --> 00:12:01.960 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:12:01.960 --> 00:12:19.530 align:middle line:90%
+
+
+00:12:19.530 --> 00:12:23.610 align:middle line:84%
+So the following
+theorem is quite useful.
+
+00:12:23.610 --> 00:12:30.240 align:middle line:84%
+So a and b are
+congruent modulo n
+
+00:12:30.240 --> 00:12:41.290 align:middle line:84%
+if and only if the remainder of
+a, n is equal to the remainder
+
+00:12:41.290 --> 00:12:42.975 align:middle line:90%
+when you divide b by n.
+
+00:12:42.975 --> 00:12:48.930 align:middle line:90%
+
+
+00:12:48.930 --> 00:12:51.470 align:middle line:84%
+So how might we prove
+this rigorously?
+
+00:12:51.470 --> 00:12:52.050 align:middle line:90%
+Any ideas?
+
+00:12:52.050 --> 00:13:05.830 align:middle line:90%
+
+
+00:13:05.830 --> 00:13:06.670 align:middle line:90%
+Somebody?
+
+00:13:06.670 --> 00:13:07.340 align:middle line:90%
+Volunteers?
+
+00:13:07.340 --> 00:13:09.910 align:middle line:90%
+Yeah?
+
+00:13:09.910 --> 00:13:12.940 align:middle line:84%
+AUDIENCE: [INAUDIBLE]
+a is q bar.
+
+00:13:12.940 --> 00:13:15.520 align:middle line:90%
+
+
+00:13:15.520 --> 00:13:18.190 align:middle line:90%
+And do the same for each.
+
+00:13:18.190 --> 00:13:20.130 align:middle line:90%
+You can have q [INAUDIBLE].
+
+00:13:20.130 --> 00:13:24.003 align:middle line:90%
+
+
+00:13:24.003 --> 00:13:24.920 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:13:24.920 --> 00:13:27.442 align:middle line:84%
+So we're going to use
+the division theorem.
+
+00:13:27.442 --> 00:13:30.740 align:middle line:84%
+If we apply the division
+theorem to both a and b,
+
+00:13:30.740 --> 00:13:32.860 align:middle line:90%
+we're going to get the same r.
+
+00:13:32.860 --> 00:13:36.310 align:middle line:84%
+I'm going to back
+up a step first.
+
+00:13:36.310 --> 00:13:38.150 align:middle line:84%
+At a very high level,
+what do we need
+
+00:13:38.150 --> 00:13:41.433 align:middle line:84%
+to do in order to prove
+a statement like this?
+
+00:13:41.433 --> 00:13:43.100 align:middle line:84%
+We're trying to prove
+an if and only if.
+
+00:13:43.100 --> 00:13:46.352 align:middle line:84%
+We have to prove implications
+in both directions.
+
+00:13:46.352 --> 00:13:57.920 align:middle line:84%
+So first direction, if
+rem a, n equals rem b, n,
+
+00:13:57.920 --> 00:14:03.514 align:middle line:90%
+then a is congruent mod n to b.
+
+00:14:03.514 --> 00:14:06.260 align:middle line:90%
+
+
+00:14:06.260 --> 00:14:11.250 align:middle line:84%
+So we're going to assume
+that these are equal.
+
+00:14:11.250 --> 00:14:13.670 align:middle line:84%
+So then the r that we get
+from the division theorem
+
+00:14:13.670 --> 00:14:15.380 align:middle line:90%
+is the same in both cases.
+
+00:14:15.380 --> 00:14:20.510 align:middle line:90%
+So a equals qn plus r.
+
+00:14:20.510 --> 00:14:23.741 align:middle line:90%
+b equals q prime n plus r.
+
+00:14:23.741 --> 00:14:27.920 align:middle line:90%
+
+
+00:14:27.920 --> 00:14:30.860 align:middle line:84%
+Now what happens when
+we subtract them?
+
+00:14:30.860 --> 00:14:37.380 align:middle line:84%
+Well, then we get a
+minus b equals n times q
+
+00:14:37.380 --> 00:14:41.800 align:middle line:90%
+minus q prime plus r minus r.
+
+00:14:41.800 --> 00:14:42.645 align:middle line:90%
+And this is 0.
+
+00:14:42.645 --> 00:14:45.150 align:middle line:90%
+
+
+00:14:45.150 --> 00:14:49.630 align:middle line:84%
+So now the difference
+is a multiple of n.
+
+00:14:49.630 --> 00:14:55.450 align:middle line:84%
+So by our definition,
+a and b are congruent.
+
+00:14:55.450 --> 00:14:59.340 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:14:59.340 --> 00:15:00.060 align:middle line:90%
+Yeah?
+
+00:15:00.060 --> 00:15:01.860 align:middle line:84%
+AUDIENCE: Can
+[INAUDIBLE] examples
+
+00:15:01.860 --> 00:15:05.910 align:middle line:84%
+of a, and b in certain
+regular numbers?
+
+00:15:05.910 --> 00:15:08.285 align:middle line:84%
+BRYNMOR CHAPMAN: Oh, so
+some examples of a, n and b?
+
+00:15:08.285 --> 00:15:08.910 align:middle line:90%
+AUDIENCE: Yeah.
+
+00:15:08.910 --> 00:15:10.410 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+00:15:10.410 --> 00:15:19.290 align:middle line:84%
+So, for example, 17 is
+congruent mod 5 to 12.
+
+00:15:19.290 --> 00:15:21.730 align:middle line:84%
+Because 5 divides
+the difference.
+
+00:15:21.730 --> 00:15:23.730 align:middle line:90%
+If you subtract them, you get 5.
+
+00:15:23.730 --> 00:15:25.720 align:middle line:90%
+5 is a multiple of 5.
+
+00:15:25.720 --> 00:15:26.860 align:middle line:90%
+So they're congruent.
+
+00:15:26.860 --> 00:15:30.000 align:middle line:90%
+
+
+00:15:30.000 --> 00:15:35.950 align:middle line:84%
+17 is also congruent
+to, say, 32.
+
+00:15:35.950 --> 00:15:39.040 align:middle line:84%
+If you subtract these, you
+get negative 15-- same deal.
+
+00:15:39.040 --> 00:15:44.040 align:middle line:90%
+It's not congruent to 33.
+
+00:15:44.040 --> 00:15:47.360 align:middle line:90%
+
+
+00:15:47.360 --> 00:15:49.420 align:middle line:84%
+If you subtract those,
+you get negative 16,
+
+00:15:49.420 --> 00:15:51.405 align:middle line:90%
+which is not a multiple of 5.
+
+00:15:51.405 --> 00:15:54.920 align:middle line:90%
+
+
+00:15:54.920 --> 00:15:56.066 align:middle line:90%
+Any other questions?
+
+00:15:56.066 --> 00:15:59.260 align:middle line:90%
+
+
+00:15:59.260 --> 00:15:59.980 align:middle line:90%
+Yeah?
+
+00:15:59.980 --> 00:16:01.339 align:middle line:90%
+AUDIENCE: [INAUDIBLE]?
+
+00:16:01.339 --> 00:16:04.160 align:middle line:90%
+
+
+00:16:04.160 --> 00:16:06.410 align:middle line:84%
+BRYNMOR CHAPMAN: So this
+is only half the proof.
+
+00:16:06.410 --> 00:16:08.090 align:middle line:90%
+We're proving one direction.
+
+00:16:08.090 --> 00:16:12.430 align:middle line:84%
+So we are assuming that the
+two remainders are the same.
+
+00:16:12.430 --> 00:16:16.570 align:middle line:90%
+And we're trying to prove this.
+
+00:16:16.570 --> 00:16:18.830 align:middle line:84%
+So if the two
+remainders are the same,
+
+00:16:18.830 --> 00:16:20.780 align:middle line:84%
+that's from the
+division theorem.
+
+00:16:20.780 --> 00:16:23.380 align:middle line:84%
+We've got the same
+r in both cases.
+
+00:16:23.380 --> 00:16:27.590 align:middle line:84%
+So we're going to write
+both numbers in that form.
+
+00:16:27.590 --> 00:16:30.706 align:middle line:90%
+So a is qn plus r.
+
+00:16:30.706 --> 00:16:33.060 align:middle line:90%
+b Is q prime n plus r prime.
+
+00:16:33.060 --> 00:16:35.850 align:middle line:84%
+But we established that
+r is equal to r prime.
+
+00:16:35.850 --> 00:16:40.280 align:middle line:84%
+So we're just writing
+that as q prime n plus r.
+
+00:16:40.280 --> 00:16:44.040 align:middle line:84%
+And now in order to show
+that a and b are equivalent,
+
+00:16:44.040 --> 00:16:47.180 align:middle line:84%
+we have to subtract and see
+whether the difference is
+
+00:16:47.180 --> 00:16:49.160 align:middle line:90%
+a multiple of n.
+
+00:16:49.160 --> 00:16:54.860 align:middle line:84%
+So in this case, when we
+subtract them, the r's cancel.
+
+00:16:54.860 --> 00:17:00.590 align:middle line:84%
+The n factors out, and we
+get n times q minus q prime.
+
+00:17:00.590 --> 00:17:03.060 align:middle line:84%
+So that is indeed
+a multiple of n.
+
+00:17:03.060 --> 00:17:05.910 align:middle line:90%
+And so n divides the difference.
+
+00:17:05.910 --> 00:17:12.329 align:middle line:84%
+So they're
+equivalent, congruent.
+
+00:17:12.329 --> 00:17:13.190 align:middle line:90%
+Yeah?
+
+00:17:13.190 --> 00:17:15.315 align:middle line:84%
+AUDIENCE: Can you just
+please repeat how you worked
+
+00:17:15.315 --> 00:17:18.920 align:middle line:84%
+[INAUDIBLE] that notation
+with congruencies?
+
+00:17:18.920 --> 00:17:20.375 align:middle line:84%
+BRYNMOR CHAPMAN:
+How we say this?
+
+00:17:20.375 --> 00:17:21.020 align:middle line:90%
+AUDIENCE: Yeah.
+
+00:17:21.020 --> 00:17:23.000 align:middle line:84%
+BRYNMOR CHAPMAN: a is
+congruent to b mod n.
+
+00:17:23.000 --> 00:17:25.430 align:middle line:90%
+Or a is congruent mod n to b.
+
+00:17:25.430 --> 00:17:28.525 align:middle line:84%
+There are several different
+ways of saying it.
+
+00:17:28.525 --> 00:17:41.260 align:middle line:90%
+
+
+00:17:41.260 --> 00:17:42.940 align:middle line:84%
+What about going in
+the other direction?
+
+00:17:42.940 --> 00:17:45.690 align:middle line:90%
+
+
+00:17:45.690 --> 00:17:56.760 align:middle line:84%
+Suppose a is congruent
+mod n to the b.
+
+00:17:56.760 --> 00:17:58.980 align:middle line:84%
+Now we want to prove
+that the remainders, when
+
+00:17:58.980 --> 00:18:00.460 align:middle line:90%
+you divide by n, are the same.
+
+00:18:00.460 --> 00:18:01.355 align:middle line:90%
+How do we do that?
+
+00:18:01.355 --> 00:18:07.800 align:middle line:90%
+
+
+00:18:07.800 --> 00:18:08.700 align:middle line:90%
+Yeah?
+
+00:18:08.700 --> 00:18:13.950 align:middle line:84%
+AUDIENCE: We know that we might
+say for [INAUDIBLE], some k
+
+00:18:13.950 --> 00:18:16.011 align:middle line:90%
+times n.
+
+00:18:16.011 --> 00:18:19.290 align:middle line:84%
+Could we add that
+difference to one of them?
+
+00:18:19.290 --> 00:18:29.336 align:middle line:84%
+Could we take b minus n
+[INAUDIBLE] and add that to b.
+
+00:18:29.336 --> 00:18:32.480 align:middle line:84%
+Then we should get
+a, then n, I think--
+
+00:18:32.480 --> 00:18:35.110 align:middle line:90%
+
+
+00:18:35.110 --> 00:18:37.903 align:middle line:84%
+and then we'll have
+a equals [INAUDIBLE].
+
+00:18:37.903 --> 00:18:46.293 align:middle line:90%
+
+
+00:18:46.293 --> 00:18:47.210 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:18:47.210 --> 00:18:51.632 align:middle line:84%
+So the last step here is now to
+use the division theorem again.
+
+00:18:51.632 --> 00:18:53.440 align:middle line:84%
+So if we apply the
+division theorem,
+
+00:18:53.440 --> 00:18:56.150 align:middle line:84%
+I guess, to b is probably
+going to be the most useful.
+
+00:18:56.150 --> 00:18:59.030 align:middle line:90%
+We can write b equals--
+
+00:18:59.030 --> 00:19:03.324 align:middle line:84%
+let's do the same form that we
+had there, q prime n plus r.
+
+00:19:03.324 --> 00:19:06.610 align:middle line:90%
+
+
+00:19:06.610 --> 00:19:10.810 align:middle line:90%
+Now, a is b plus kn.
+
+00:19:10.810 --> 00:19:17.530 align:middle line:84%
+So that's going to be q
+prime plus k times n plus r.
+
+00:19:17.530 --> 00:19:20.560 align:middle line:90%
+
+
+00:19:20.560 --> 00:19:24.160 align:middle line:84%
+And now the division theorem
+says that this q prime plus
+
+00:19:24.160 --> 00:19:26.630 align:middle line:90%
+k and r, those are unique.
+
+00:19:26.630 --> 00:19:30.150 align:middle line:84%
+So that q prime plus k
+is the q that we need.
+
+00:19:30.150 --> 00:19:34.712 align:middle line:90%
+And the r is the same.
+
+00:19:34.712 --> 00:19:38.220 align:middle line:84%
+So both of them have
+the same remainder.
+
+00:19:38.220 --> 00:19:41.420 align:middle line:90%
+
+
+00:19:41.420 --> 00:19:43.620 align:middle line:84%
+Does this make
+sense to everybody?
+
+00:19:43.620 --> 00:19:44.708 align:middle line:90%
+Yeah?
+
+00:19:44.708 --> 00:19:49.310 align:middle line:84%
+AUDIENCE: I'm just wondering
+how you want to show that a is--
+
+00:19:49.310 --> 00:19:54.133 align:middle line:84%
+a is congruent to n,
+the n mod [INAUDIBLE].
+
+00:19:54.133 --> 00:19:55.800 align:middle line:84%
+BRYNMOR CHAPMAN: a
+congruent to b mod n?
+
+00:19:55.800 --> 00:19:57.020 align:middle line:90%
+AUDIENCE: Yes.
+
+00:19:57.020 --> 00:19:59.562 align:middle line:84%
+BRYNMOR CHAPMAN: So what we're
+trying to prove in if and only
+
+00:19:59.562 --> 00:20:04.130 align:middle line:84%
+if here, so for one direction,
+we're assuming one side
+
+00:20:04.130 --> 00:20:05.490 align:middle line:90%
+and trying to prove the other.
+
+00:20:05.490 --> 00:20:09.180 align:middle line:84%
+And for the other direction,
+we do the opposite.
+
+00:20:09.180 --> 00:20:11.150 align:middle line:90%
+So this is one direction.
+
+00:20:11.150 --> 00:20:14.870 align:middle line:84%
+We're assuming that the
+remainders are the same.
+
+00:20:14.870 --> 00:20:17.280 align:middle line:84%
+And we want to prove
+that they're equivalent,
+
+00:20:17.280 --> 00:20:18.650 align:middle line:90%
+they're congruent.
+
+00:20:18.650 --> 00:20:21.180 align:middle line:84%
+For the other direction, we
+assume that they're congruent.
+
+00:20:21.180 --> 00:20:25.462 align:middle line:84%
+And then we want to prove that
+the remainders are the same, so
+
+00:20:25.462 --> 00:20:26.295 align:middle line:90%
+two separate proofs.
+
+00:20:26.295 --> 00:20:32.050 align:middle line:90%
+
+
+00:20:32.050 --> 00:20:33.530 align:middle line:90%
+Any other questions?
+
+00:20:33.530 --> 00:20:39.770 align:middle line:90%
+
+
+00:20:39.770 --> 00:20:43.720 align:middle line:84%
+In some sense, we can consider
+the n different numbers, like 0
+
+00:20:43.720 --> 00:20:47.080 align:middle line:84%
+through n minus 1, to
+be the only numbers we
+
+00:20:47.080 --> 00:20:49.053 align:middle line:90%
+care about when working mod n.
+
+00:20:49.053 --> 00:20:51.470 align:middle line:84%
+Everything else is going to
+be equivalent to one of those.
+
+00:20:51.470 --> 00:20:53.345 align:middle line:84%
+It's going to be equivalent
+to its remainder.
+
+00:20:53.345 --> 00:20:56.530 align:middle line:90%
+
+
+00:20:56.530 --> 00:20:59.413 align:middle line:84%
+So I'm going to take a moment
+here to talk about notation.
+
+00:20:59.413 --> 00:21:13.960 align:middle line:90%
+
+
+00:21:13.960 --> 00:21:19.380 align:middle line:84%
+So the remainder, which
+we've called rem a, comma n--
+
+00:21:19.380 --> 00:21:27.320 align:middle line:90%
+
+
+00:21:27.320 --> 00:21:31.350 align:middle line:90%
+so our convention.
+
+00:21:31.350 --> 00:21:36.560 align:middle line:84%
+Is that even if n is negative,
+this remainder should always
+
+00:21:36.560 --> 00:21:38.540 align:middle line:90%
+be positive.
+
+00:21:38.540 --> 00:21:41.300 align:middle line:84%
+Not everybody uses
+this convention.
+
+00:21:41.300 --> 00:21:43.610 align:middle line:84%
+So in particular,
+when you're dealing
+
+00:21:43.610 --> 00:21:49.130 align:middle line:84%
+with programming languages,
+most have some operation
+
+00:21:49.130 --> 00:21:52.580 align:middle line:90%
+that looks like this.
+
+00:21:52.580 --> 00:21:56.840 align:middle line:84%
+It may be denoted differently
+in different languages.
+
+00:21:56.840 --> 00:21:58.470 align:middle line:90%
+Sometimes, it's a percent sign.
+
+00:21:58.470 --> 00:22:01.700 align:middle line:84%
+Sometimes, it's actually rem
+or mod, or something like that.
+
+00:22:01.700 --> 00:22:07.380 align:middle line:84%
+And sometimes, it'll behave
+the same as how we defined it.
+
+00:22:07.380 --> 00:22:10.560 align:middle line:84%
+Sometimes, it'll be
+allowed to be negative.
+
+00:22:10.560 --> 00:22:12.380 align:middle line:84%
+So if n is negative,
+the remainder
+
+00:22:12.380 --> 00:22:15.200 align:middle line:84%
+might be negative or
+something like that.
+
+00:22:15.200 --> 00:22:21.290 align:middle line:84%
+And some languages have both,
+usually with different names,
+
+00:22:21.290 --> 00:22:25.470 align:middle line:90%
+like mod versus double mod.
+
+00:22:25.470 --> 00:22:29.800 align:middle line:84%
+In this class, whenever
+we write rem a, comma n,
+
+00:22:29.800 --> 00:22:34.300 align:middle line:84%
+we always mean the positive
+or the non-negative remainder.
+
+00:22:34.300 --> 00:22:41.295 align:middle line:84%
+So this is always going
+to be between 0 and n.
+
+00:22:41.295 --> 00:22:45.870 align:middle line:90%
+
+
+00:22:45.870 --> 00:22:50.970 align:middle line:84%
+And perhaps even more
+confusing, sometimes this
+
+00:22:50.970 --> 00:22:57.940 align:middle line:84%
+would be written as mod of
+a, comma n; or even worse,
+
+00:22:57.940 --> 00:23:04.060 align:middle line:90%
+an infix notation, a mod n.
+
+00:23:04.060 --> 00:23:08.040 align:middle line:84%
+So this is why we don't
+like to use the word "mod"
+
+00:23:08.040 --> 00:23:14.610 align:middle line:84%
+when talking about modular
+congruences because if you see
+
+00:23:14.610 --> 00:23:22.215 align:middle line:84%
+something like, say, a equals
+b mod n, what does that mean?
+
+00:23:22.215 --> 00:23:29.927 align:middle line:90%
+
+
+00:23:29.927 --> 00:23:31.260 align:middle line:90%
+Who can tell me what that means?
+
+00:23:31.260 --> 00:23:36.910 align:middle line:90%
+
+
+00:23:36.910 --> 00:23:37.750 align:middle line:90%
+Yeah?
+
+00:23:37.750 --> 00:23:39.315 align:middle line:90%
+Do you have a guess?
+
+00:23:39.315 --> 00:23:42.310 align:middle line:90%
+
+
+00:23:42.310 --> 00:23:47.855 align:middle line:84%
+AUDIENCE: Oh, but I was
+thinking it was a [INAUDIBLE].
+
+00:23:47.855 --> 00:23:49.230 align:middle line:84%
+BRYNMOR CHAPMAN:
+And why is that?
+
+00:23:49.230 --> 00:23:51.567 align:middle line:90%
+
+
+00:23:51.567 --> 00:23:52.150 align:middle line:90%
+AUDIENCE: Why?
+
+00:23:52.150 --> 00:23:56.810 align:middle line:90%
+
+
+00:23:56.810 --> 00:23:59.650 align:middle line:90%
+So that's just the definition.
+
+00:23:59.650 --> 00:24:01.030 align:middle line:84%
+BRYNMOR CHAPMAN:
+Yeah, the answer
+
+00:24:01.030 --> 00:24:03.850 align:middle line:90%
+was that's just the definition.
+
+00:24:03.850 --> 00:24:05.680 align:middle line:84%
+So the important
+distinction here
+
+00:24:05.680 --> 00:24:07.813 align:middle line:90%
+is between these two things.
+
+00:24:07.813 --> 00:24:12.160 align:middle line:90%
+
+
+00:24:12.160 --> 00:24:14.000 align:middle line:84%
+These are very
+different statements.
+
+00:24:14.000 --> 00:24:20.910 align:middle line:84%
+The mod here is attached
+to this equivalence sign.
+
+00:24:20.910 --> 00:24:28.230 align:middle line:84%
+And so this is talking about
+a relation between a and b.
+
+00:24:28.230 --> 00:24:32.890 align:middle line:84%
+This is a function
+written in infix notation.
+
+00:24:32.890 --> 00:24:38.400 align:middle line:84%
+So this is saying that a is
+actually equal to the one value
+
+00:24:38.400 --> 00:24:42.090 align:middle line:84%
+that you get when you divide
+b by n and take the remainder.
+
+00:24:42.090 --> 00:24:44.620 align:middle line:90%
+So these mean different things.
+
+00:24:44.620 --> 00:24:47.760 align:middle line:84%
+It is going to be much
+less confusing if you
+
+00:24:47.760 --> 00:24:56.820 align:middle line:84%
+use a equals b rem n, or
+in prefix notation rem b,
+
+00:24:56.820 --> 00:25:03.180 align:middle line:84%
+comma n for the left
+one, and a congruent mod
+
+00:25:03.180 --> 00:25:06.681 align:middle line:90%
+n to be for the right one.
+
+00:25:06.681 --> 00:25:08.970 align:middle line:84%
+So it's hopefully,
+much more obvious
+
+00:25:08.970 --> 00:25:11.400 align:middle line:84%
+what the distinction is
+between these two things
+
+00:25:11.400 --> 00:25:13.000 align:middle line:90%
+than between these two things.
+
+00:25:13.000 --> 00:25:15.150 align:middle line:84%
+So please use the
+ones on the bottom
+
+00:25:15.150 --> 00:25:18.970 align:middle line:84%
+until you are very comfortable
+with modular arithmetic.
+
+00:25:18.970 --> 00:25:23.590 align:middle line:90%
+
+
+00:25:23.590 --> 00:25:28.460 align:middle line:84%
+So let's go back to
+the actual content now.
+
+00:25:28.460 --> 00:25:36.840 align:middle line:90%
+
+
+00:25:36.840 --> 00:25:40.020 align:middle line:84%
+So as I promised
+before, we're actually
+
+00:25:40.020 --> 00:25:41.800 align:middle line:84%
+going to be talking
+about arithmetic.
+
+00:25:41.800 --> 00:25:45.441 align:middle line:90%
+So let's start on that.
+
+00:25:45.441 --> 00:25:48.000 align:middle line:84%
+So the simple statement
+that we wrote up there
+
+00:25:48.000 --> 00:25:53.040 align:middle line:84%
+on the left, even
+plus odd equals odd,
+
+00:25:53.040 --> 00:25:57.270 align:middle line:84%
+in some sense, that's
+saying something profound.
+
+00:25:57.270 --> 00:26:00.960 align:middle line:84%
+No matter which even
+number and which odd number
+
+00:26:00.960 --> 00:26:03.070 align:middle line:84%
+you pick, if you
+add them together,
+
+00:26:03.070 --> 00:26:05.100 align:middle line:84%
+you're always going
+to get an odd number.
+
+00:26:05.100 --> 00:26:13.770 align:middle line:84%
+And, more generally, if we
+take any a congruent to,
+
+00:26:13.770 --> 00:26:23.230 align:middle line:84%
+let's say, 3 mod 5 and any b
+congruent mod 5 to, say, 4,
+
+00:26:23.230 --> 00:26:28.610 align:middle line:84%
+if you add them, what
+do you know about it?
+
+00:26:28.610 --> 00:26:29.985 align:middle line:84%
+What do you know
+about their sum?
+
+00:26:29.985 --> 00:26:39.280 align:middle line:90%
+
+
+00:26:39.280 --> 00:26:39.850 align:middle line:90%
+Yeah?
+
+00:26:39.850 --> 00:26:40.702 align:middle line:90%
+AUDIENCE: 2 mod 5.
+
+00:26:40.702 --> 00:26:41.702 align:middle line:90%
+BRYNMOR CHAPMAN: Mm-hmm.
+
+00:26:41.702 --> 00:26:44.950 align:middle line:90%
+
+
+00:26:44.950 --> 00:26:49.670 align:middle line:84%
+So their sum is always going
+to be congruent to 2 modulo 5.
+
+00:26:49.670 --> 00:26:56.783 align:middle line:84%
+Or perhaps an
+easier thing to see
+
+00:26:56.783 --> 00:26:58.575 align:middle line:84%
+is it's always going
+to be equivalent to 7.
+
+00:26:58.575 --> 00:27:01.630 align:middle line:90%
+
+
+00:27:01.630 --> 00:27:03.855 align:middle line:84%
+Which is, in turn,
+congruent to 2.
+
+00:27:03.855 --> 00:27:06.640 align:middle line:90%
+
+
+00:27:06.640 --> 00:27:12.460 align:middle line:84%
+So adding a and b modulo
+5, you get the same result
+
+00:27:12.460 --> 00:27:16.216 align:middle line:84%
+as if you add these two
+equivalent remainders.
+
+00:27:16.216 --> 00:27:23.256 align:middle line:90%
+
+
+00:27:23.256 --> 00:27:24.640 align:middle line:90%
+So we have a theorem.
+
+00:27:24.640 --> 00:27:27.320 align:middle line:90%
+
+
+00:27:27.320 --> 00:27:37.040 align:middle line:84%
+Suppose that a and b
+are equivalent mod n.
+
+00:27:37.040 --> 00:27:40.680 align:middle line:84%
+Then for all c, we
+have the following.
+
+00:27:40.680 --> 00:27:43.640 align:middle line:90%
+
+
+00:27:43.640 --> 00:27:44.880 align:middle line:90%
+I have space here.
+
+00:27:44.880 --> 00:27:53.000 align:middle line:84%
+So a plus c is
+congruent to b plus c.
+
+00:27:53.000 --> 00:28:00.110 align:middle line:84%
+a minus c is congruent
+to b minus c.
+
+00:28:00.110 --> 00:28:05.840 align:middle line:84%
+c minus a is congruent
+to c minus b.
+
+00:28:05.840 --> 00:28:12.055 align:middle line:84%
+And a times c is
+congruent to b times c.
+
+00:28:12.055 --> 00:28:17.976 align:middle line:90%
+
+
+00:28:17.976 --> 00:28:18.660 align:middle line:90%
+So As.
+
+00:28:18.660 --> 00:28:24.240 align:middle line:84%
+You might expect, if you want
+to add, subtract, or multiply
+
+00:28:24.240 --> 00:28:28.980 align:middle line:84%
+modulo n, you're allowed
+to replace things
+
+00:28:28.980 --> 00:28:32.615 align:middle line:84%
+wherever you want with
+something it's equivalent to.
+
+00:28:32.615 --> 00:28:35.388 align:middle line:90%
+
+
+00:28:35.388 --> 00:28:40.350 align:middle line:84%
+So at any point during this
+computation, you can replace--
+
+00:28:40.350 --> 00:28:45.120 align:middle line:90%
+oh, sorry, different a and b.
+
+00:28:45.120 --> 00:28:47.080 align:middle line:84%
+This is not relevant for
+the theorem statement.
+
+00:28:47.080 --> 00:28:49.080 align:middle line:84%
+But if a and b are
+equivalent, then
+
+00:28:49.080 --> 00:28:52.170 align:middle line:84%
+you can replace a's with
+b's wherever you want,
+
+00:28:52.170 --> 00:28:57.125 align:middle line:84%
+and you'll get the same
+result. Does that make sense?
+
+00:28:57.125 --> 00:29:08.550 align:middle line:90%
+
+
+00:29:08.550 --> 00:29:19.185 align:middle line:84%
+So, question, what about
+a to the c and b to the c?
+
+00:29:19.185 --> 00:29:31.900 align:middle line:90%
+
+
+00:29:31.900 --> 00:29:34.680 align:middle line:84%
+So let's assume that
+c is positive for now.
+
+00:29:34.680 --> 00:29:43.000 align:middle line:90%
+
+
+00:29:43.000 --> 00:29:47.650 align:middle line:84%
+Can I say anything about
+exponentiation modulo n?
+
+00:29:47.650 --> 00:29:51.910 align:middle line:84%
+If we assume that a and
+b are congruent modulo n,
+
+00:29:51.910 --> 00:29:56.170 align:middle line:84%
+can we say anything about a
+to the c versus b to the c?
+
+00:29:56.170 --> 00:29:58.000 align:middle line:90%
+Yeah?
+
+00:29:58.000 --> 00:30:00.760 align:middle line:84%
+AUDIENCE: Would they be the
+same because the maximal value
+
+00:30:00.760 --> 00:30:05.530 align:middle line:84%
+of a [INAUDIBLE] possible
+part from the [INAUDIBLE]
+
+00:30:05.530 --> 00:30:07.973 align:middle line:90%
+part of that is the same?
+
+00:30:07.973 --> 00:30:08.890 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:30:08.890 --> 00:30:12.800 align:middle line:84%
+So let me rephrase
+that slightly.
+
+00:30:12.800 --> 00:30:17.520 align:middle line:84%
+You can prove it more
+formally by induction.
+
+00:30:17.520 --> 00:30:20.340 align:middle line:90%
+So you can repeatedly multiply.
+
+00:30:20.340 --> 00:30:24.440 align:middle line:84%
+Every multiplication is going
+to give you congruent values.
+
+00:30:24.440 --> 00:30:27.260 align:middle line:84%
+So by the time you
+get to the power of c,
+
+00:30:27.260 --> 00:30:30.740 align:middle line:84%
+they're still going
+to be congruent.
+
+00:30:30.740 --> 00:30:43.190 align:middle line:84%
+So, yes, this is true and
+the proof, by induction on c.
+
+00:30:43.190 --> 00:30:49.580 align:middle line:84%
+So our base case is going
+to be when c equals 1.
+
+00:30:49.580 --> 00:30:56.155 align:middle line:84%
+In this case, our assumption
+is that a is congruent to b.
+
+00:30:56.155 --> 00:30:58.410 align:middle line:90%
+So a to the 1 is congruent to a.
+
+00:30:58.410 --> 00:31:00.840 align:middle line:84%
+Well, it's equal to a. b
+to the 1 is equal to b.
+
+00:31:00.840 --> 00:31:03.980 align:middle line:90%
+So this is fine.
+
+00:31:03.980 --> 00:31:11.100 align:middle line:84%
+Our inductive step, so assume
+that a to the c minus 1
+
+00:31:11.100 --> 00:31:15.000 align:middle line:84%
+is congruent mod n to
+b to the c minus 1.
+
+00:31:15.000 --> 00:31:19.715 align:middle line:84%
+Now, what happens when we
+increment our exponent?
+
+00:31:19.715 --> 00:31:32.820 align:middle line:90%
+
+
+00:31:32.820 --> 00:31:34.220 align:middle line:90%
+Well, what is a to the c?
+
+00:31:34.220 --> 00:31:37.980 align:middle line:90%
+
+
+00:31:37.980 --> 00:31:39.270 align:middle line:90%
+Yeah?
+
+00:31:39.270 --> 00:31:40.450 align:middle line:90%
+AUDIENCE: a is [INAUDIBLE].
+
+00:31:40.450 --> 00:31:48.570 align:middle line:90%
+
+
+00:31:48.570 --> 00:31:52.835 align:middle line:84%
+BRYNMOR CHAPMAN: So we can
+strip off a factor of a.
+
+00:31:52.835 --> 00:31:57.450 align:middle line:90%
+
+
+00:31:57.450 --> 00:32:01.196 align:middle line:84%
+Now we can replace each of
+these factors individually.
+
+00:32:01.196 --> 00:32:04.242 align:middle line:90%
+
+
+00:32:04.242 --> 00:32:07.480 align:middle line:84%
+So by our theorem
+up there, this is
+
+00:32:07.480 --> 00:32:11.110 align:middle line:84%
+congruent to b to the
+c minus 1 times a.
+
+00:32:11.110 --> 00:32:12.900 align:middle line:90%
+We can replace this factor.
+
+00:32:12.900 --> 00:32:17.680 align:middle line:90%
+
+
+00:32:17.680 --> 00:32:21.537 align:middle line:84%
+And now by our
+theorem assumption,
+
+00:32:21.537 --> 00:32:22.995 align:middle line:84%
+we can replace this
+factor as well.
+
+00:32:22.995 --> 00:32:31.660 align:middle line:90%
+
+
+00:32:31.660 --> 00:32:34.400 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:32:34.400 --> 00:32:42.760 align:middle line:90%
+
+
+00:32:42.760 --> 00:32:50.280 align:middle line:84%
+What about c to the
+a and c to the b?
+
+00:32:50.280 --> 00:32:59.770 align:middle line:90%
+
+
+00:32:59.770 --> 00:33:02.080 align:middle line:84%
+So we just saw that when
+we're working modulo n,
+
+00:33:02.080 --> 00:33:06.000 align:middle line:84%
+we're allowed to replace the
+base of exponents as we like.
+
+00:33:06.000 --> 00:33:09.120 align:middle line:84%
+Can we do the same thing with
+the exponents themselves?
+
+00:33:09.120 --> 00:33:15.710 align:middle line:90%
+
+
+00:33:15.710 --> 00:33:16.825 align:middle line:90%
+Show of hands for yes?
+
+00:33:16.825 --> 00:33:20.090 align:middle line:90%
+
+
+00:33:20.090 --> 00:33:22.882 align:middle line:90%
+Show of hands for no?
+
+00:33:22.882 --> 00:33:24.840 align:middle line:84%
+No seems like it's winning
+out by popular vote,
+
+00:33:24.840 --> 00:33:25.740 align:middle line:90%
+but not by much.
+
+00:33:25.740 --> 00:33:28.310 align:middle line:90%
+There are a lot of abstentions.
+
+00:33:28.310 --> 00:33:30.145 align:middle line:84%
+Can anybody give me a
+reason why or why not?
+
+00:33:30.145 --> 00:33:34.470 align:middle line:90%
+
+
+00:33:34.470 --> 00:33:34.970 align:middle line:90%
+Yeah?
+
+00:33:34.970 --> 00:33:37.678 align:middle line:90%
+
+
+00:33:37.678 --> 00:33:39.470 align:middle line:84%
+AUDIENCE: My reason is
+just because there's
+
+00:33:39.470 --> 00:33:46.700 align:middle line:84%
+one example of 2 squared is not
+congruent mod 5 [INAUDIBLE].
+
+00:33:46.700 --> 00:33:50.840 align:middle line:84%
+BRYNMOR CHAPMAN: 2 squared is
+not congruent mod 5 to what?
+
+00:33:50.840 --> 00:33:51.590 align:middle line:90%
+AUDIENCE: 2 cubed.
+
+00:33:51.590 --> 00:33:52.632 align:middle line:90%
+BRYNMOR CHAPMAN: 2 cubed.
+
+00:33:52.632 --> 00:33:56.146 align:middle line:90%
+
+
+00:33:56.146 --> 00:33:58.700 align:middle line:90%
+OK, that is a true statement.
+
+00:33:58.700 --> 00:33:59.315 align:middle line:90%
+Does that--
+
+00:33:59.315 --> 00:34:02.020 align:middle line:90%
+
+
+00:34:02.020 --> 00:34:03.520 align:middle line:84%
+AUDIENCE: In this
+case, it would be,
+
+00:34:03.520 --> 00:34:05.118 align:middle line:84%
+if you want to prove
+[INAUDIBLE] it'd
+
+00:34:05.118 --> 00:34:07.290 align:middle line:90%
+have to be proof by induction.
+
+00:34:07.290 --> 00:34:08.540 align:middle line:90%
+That's the thing that's false.
+
+00:34:08.540 --> 00:34:09.923 align:middle line:84%
+You just need one
+counterexample.
+
+00:34:09.923 --> 00:34:10.840 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:34:10.840 --> 00:34:14.199 align:middle line:84%
+So you are correct that we
+only need one counterexample.
+
+00:34:14.199 --> 00:34:15.949 align:middle line:90%
+Is this a counterexample?
+
+00:34:15.949 --> 00:34:24.520 align:middle line:90%
+
+
+00:34:24.520 --> 00:34:26.570 align:middle line:90%
+So let's see.
+
+00:34:26.570 --> 00:34:32.920 align:middle line:84%
+So the claim is that if a is
+congruent to b mod n, then c
+
+00:34:32.920 --> 00:34:35.659 align:middle line:84%
+to the a is congruent
+to c to the b.
+
+00:34:35.659 --> 00:34:37.630 align:middle line:84%
+We haven't satisfied
+our precondition here.
+
+00:34:37.630 --> 00:34:41.389 align:middle line:90%
+2 is not congruent to 3 mod 5.
+
+00:34:41.389 --> 00:34:44.870 align:middle line:90%
+So you have the right idea.
+
+00:34:44.870 --> 00:34:47.020 align:middle line:84%
+We do want to find a
+single counterexample that
+
+00:34:47.020 --> 00:34:49.093 align:middle line:90%
+will suffice to disprove this.
+
+00:34:49.093 --> 00:34:51.010 align:middle line:84%
+We're going to need a
+different counterexample
+
+00:34:51.010 --> 00:34:53.253 align:middle line:90%
+if we want this to work.
+
+00:34:53.253 --> 00:34:55.420 align:middle line:84%
+Does anybody else have an
+idea for a counterexample?
+
+00:34:55.420 --> 00:34:58.815 align:middle line:84%
+Or failing that, does
+anybody have a proof?
+
+00:34:58.815 --> 00:35:05.870 align:middle line:90%
+
+
+00:35:05.870 --> 00:35:08.630 align:middle line:90%
+Yeah?
+
+00:35:08.630 --> 00:35:13.400 align:middle line:84%
+AUDIENCE: I could
+if it's a's, but you
+
+00:35:13.400 --> 00:35:17.630 align:middle line:84%
+could split up c to the
+b's in smaller components
+
+00:35:17.630 --> 00:35:20.990 align:middle line:84%
+and then show that
+it's [INAUDIBLE].
+
+00:35:20.990 --> 00:35:22.160 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+00:35:22.160 --> 00:35:25.470 align:middle line:84%
+What are the smaller
+components, factors of c?
+
+00:35:25.470 --> 00:35:26.930 align:middle line:90%
+AUDIENCE: Yeah, basically.
+
+00:35:26.930 --> 00:35:29.120 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+00:35:29.120 --> 00:35:34.310 align:middle line:84%
+So what do you want to do
+with those factors of c?
+
+00:35:34.310 --> 00:35:39.180 align:middle line:84%
+I suppose we could strip off,
+say, a is smaller than b.
+
+00:35:39.180 --> 00:35:41.330 align:middle line:90%
+We could strip off a of them.
+
+00:35:41.330 --> 00:35:43.310 align:middle line:84%
+AUDIENCE: And then
+whatever's left over,
+
+00:35:43.310 --> 00:35:48.020 align:middle line:90%
+if that's mod whatever that is.
+
+00:35:48.020 --> 00:35:49.205 align:middle line:90%
+That's true.
+
+00:35:49.205 --> 00:35:52.490 align:middle line:84%
+And then we know [INAUDIBLE]
+the whole truth is true.
+
+00:35:52.490 --> 00:35:53.795 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+00:35:53.795 --> 00:35:57.620 align:middle line:84%
+So you want to divide out
+a bunch of factors of c
+
+00:35:57.620 --> 00:36:00.036 align:middle line:84%
+until we get
+something like this?
+
+00:36:00.036 --> 00:36:02.790 align:middle line:90%
+
+
+00:36:02.790 --> 00:36:03.382 align:middle line:90%
+AUDIENCE: Yes.
+
+00:36:03.382 --> 00:36:04.215 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+00:36:04.215 --> 00:36:10.230 align:middle line:90%
+
+
+00:36:10.230 --> 00:36:11.690 align:middle line:90%
+How do you divide mod n?
+
+00:36:11.690 --> 00:36:29.950 align:middle line:90%
+
+
+00:36:29.950 --> 00:36:34.020 align:middle line:84%
+Let's look at a
+concrete example.
+
+00:36:34.020 --> 00:36:38.280 align:middle line:84%
+So let's keep
+trying to look at 5.
+
+00:36:38.280 --> 00:36:39.905 align:middle line:90%
+Let's say b minus a is also 5.
+
+00:36:39.905 --> 00:36:43.950 align:middle line:90%
+
+
+00:36:43.950 --> 00:36:45.430 align:middle line:90%
+Is this a true statement?
+
+00:36:45.430 --> 00:37:00.820 align:middle line:90%
+
+
+00:37:00.820 --> 00:37:07.540 align:middle line:84%
+Sorry, did somebody--
+is this true for all c?
+
+00:37:07.540 --> 00:37:15.160 align:middle line:90%
+
+
+00:37:15.160 --> 00:37:17.590 align:middle line:90%
+AUDIENCE: [INAUDIBLE].
+
+00:37:17.590 --> 00:37:19.617 align:middle line:84%
+BRYNMOR CHAPMAN: So
+I claim that minus 1
+
+00:37:19.617 --> 00:37:20.700 align:middle line:90%
+is not going to work here.
+
+00:37:20.700 --> 00:37:26.384 align:middle line:90%
+
+
+00:37:26.384 --> 00:37:28.270 align:middle line:90%
+Yeah?
+
+00:37:28.270 --> 00:37:30.803 align:middle line:84%
+AUDIENCE: Anything to
+the 0 power is 1 is true.
+
+00:37:30.803 --> 00:37:31.720 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:37:31.720 --> 00:37:34.220 align:middle line:84%
+So anything to the
+0-th power is 1.
+
+00:37:34.220 --> 00:37:36.280 align:middle line:90%
+That's fine.
+
+00:37:36.280 --> 00:37:44.085 align:middle line:84%
+The problem is we're subtracting
+a from both of these exponents.
+
+00:37:44.085 --> 00:37:47.740 align:middle line:84%
+So if, say, you have
+b equals 5 plus a,
+
+00:37:47.740 --> 00:37:50.655 align:middle line:84%
+you're going to end up with
+5 on the right-hand side.
+
+00:37:50.655 --> 00:37:56.944 align:middle line:90%
+
+
+00:37:56.944 --> 00:37:59.390 align:middle line:84%
+So our counterexample
+is going to be--
+
+00:37:59.390 --> 00:38:08.190 align:middle line:84%
+maybe we could have something
+like c to the 1 and c to the 6.
+
+00:38:08.190 --> 00:38:11.380 align:middle line:84%
+And in particular, we're
+going to want c to be minus 1.
+
+00:38:11.380 --> 00:38:27.425 align:middle line:90%
+
+
+00:38:27.425 --> 00:38:29.138 align:middle line:90%
+Ah, n was five--
+
+00:38:29.138 --> 00:38:29.680 align:middle line:90%
+that's right.
+
+00:38:29.680 --> 00:38:37.552 align:middle line:90%
+
+
+00:38:37.552 --> 00:38:39.450 align:middle line:90%
+So this is our counterexample.
+
+00:38:39.450 --> 00:38:43.410 align:middle line:84%
+We've exhibited a
+specific a, b, and n,
+
+00:38:43.410 --> 00:38:48.860 align:middle line:84%
+where our purported
+theorem statement fails.
+
+00:38:48.860 --> 00:38:52.340 align:middle line:84%
+It is not the case
+that minus 1 to the 1
+
+00:38:52.340 --> 00:38:56.110 align:middle line:84%
+is congruent mod 5
+to minus 1 to the 6.
+
+00:38:56.110 --> 00:38:57.400 align:middle line:90%
+The left-hand side is minus 1.
+
+00:38:57.400 --> 00:38:58.817 align:middle line:84%
+The right-hand
+side is positive 1.
+
+00:38:58.817 --> 00:39:04.020 align:middle line:90%
+
+
+00:39:04.020 --> 00:39:07.440 align:middle line:84%
+So when exponentiating,
+we have to be careful.
+
+00:39:07.440 --> 00:39:10.900 align:middle line:84%
+We are allowed to replace
+the bases of exponents.
+
+00:39:10.900 --> 00:39:13.196 align:middle line:84%
+We're not allowed to replace
+the exponents themselves.
+
+00:39:13.196 --> 00:39:20.120 align:middle line:90%
+
+
+00:39:20.120 --> 00:39:24.990 align:middle line:84%
+So we will see in a little
+while how we can get around
+
+00:39:24.990 --> 00:39:26.200 align:middle line:90%
+this to some degree.
+
+00:39:26.200 --> 00:39:28.060 align:middle line:84%
+We can do something
+with the exponents.
+
+00:39:28.060 --> 00:39:29.405 align:middle line:90%
+It's just not this.
+
+00:39:29.405 --> 00:39:37.530 align:middle line:90%
+
+
+00:39:37.530 --> 00:39:40.140 align:middle line:84%
+Well, why don't we take a
+look at an example first.
+
+00:39:40.140 --> 00:39:56.230 align:middle line:84%
+So suppose x is 11335 to the
+11111 multiplied by 6 plus 7799
+
+00:39:56.230 --> 00:40:03.760 align:middle line:90%
+to the 5,000.
+
+00:40:03.760 --> 00:40:07.270 align:middle line:84%
+How might we compute
+the remainder
+
+00:40:07.270 --> 00:40:09.810 align:middle line:90%
+of x after we divide by 100?
+
+00:40:09.810 --> 00:40:14.530 align:middle line:90%
+
+
+00:40:14.530 --> 00:40:18.130 align:middle line:84%
+How can we use the two
+terms that we did prove
+
+00:40:18.130 --> 00:40:20.360 align:middle line:90%
+to compute that efficiently?
+
+00:40:20.360 --> 00:40:27.850 align:middle line:90%
+
+
+00:40:27.850 --> 00:40:29.250 align:middle line:90%
+What might our first step be?
+
+00:40:29.250 --> 00:40:36.014 align:middle line:90%
+
+
+00:40:36.014 --> 00:40:37.010 align:middle line:90%
+Mm-hmm?
+
+00:40:37.010 --> 00:40:44.050 align:middle line:84%
+AUDIENCE: We try to distribute,
+separate out the 1,000 times 6
+
+00:40:44.050 --> 00:40:48.545 align:middle line:90%
+plus 11,000 times the 7,000?
+
+00:40:48.545 --> 00:40:50.420 align:middle line:84%
+BRYNMOR CHAPMAN: So the
+answer was distribute
+
+00:40:50.420 --> 00:40:53.378 align:middle line:90%
+this across this addition.
+
+00:40:53.378 --> 00:40:55.670 align:middle line:84%
+I claim that that's going to
+make our lives harder, not
+
+00:40:55.670 --> 00:40:56.170 align:middle line:90%
+easier.
+
+00:40:56.170 --> 00:41:03.560 align:middle line:90%
+
+
+00:41:03.560 --> 00:41:08.360 align:middle line:84%
+So what was the theme of the two
+theorems that we just proved?
+
+00:41:08.360 --> 00:41:11.570 align:middle line:84%
+If we want to do
+computations modulo n,
+
+00:41:11.570 --> 00:41:15.950 align:middle line:84%
+we can replace things
+by other numbers
+
+00:41:15.950 --> 00:41:20.400 align:middle line:84%
+that are easier to work with
+and which are congruent.
+
+00:41:20.400 --> 00:41:22.975 align:middle line:90%
+
+
+00:41:22.975 --> 00:41:28.100 align:middle line:84%
+So computing the remainder
+when we divide by 100,
+
+00:41:28.100 --> 00:41:31.280 align:middle line:84%
+that's looking for a
+computation modulo 100.
+
+00:41:31.280 --> 00:41:35.900 align:middle line:84%
+So we can replace these
+values, modulo 100,
+
+00:41:35.900 --> 00:41:37.450 align:middle line:84%
+and make them
+easier to work with.
+
+00:41:37.450 --> 00:41:40.040 align:middle line:90%
+
+
+00:41:40.040 --> 00:41:43.790 align:middle line:84%
+Are any of these values that
+I've written down congruent
+
+00:41:43.790 --> 00:41:45.250 align:middle line:90%
+to anything nice modulo 100?
+
+00:41:45.250 --> 00:42:00.840 align:middle line:90%
+
+
+00:42:00.840 --> 00:42:02.790 align:middle line:90%
+Anyone?
+
+00:42:02.790 --> 00:42:03.900 align:middle line:90%
+Yeah?
+
+00:42:03.900 --> 00:42:07.770 align:middle line:84%
+AUDIENCE: Is the first term that
+you're multiplying the 11,000--
+
+00:42:07.770 --> 00:42:12.690 align:middle line:90%
+11,335 to the 11,000 whatever?
+
+00:42:12.690 --> 00:42:16.033 align:middle line:84%
+Can you write that is
+congruent to 35 to the--
+
+00:42:16.033 --> 00:42:16.950 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:42:16.950 --> 00:42:18.210 align:middle line:90%
+AUDIENCE: 11,000 whatever.
+
+00:42:18.210 --> 00:42:21.012 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah, so we
+can just get rid of these.
+
+00:42:21.012 --> 00:42:23.880 align:middle line:90%
+That's congruent to 35.
+
+00:42:23.880 --> 00:42:25.980 align:middle line:90%
+What else can we do?
+
+00:42:25.980 --> 00:42:26.480 align:middle line:90%
+Yeah?
+
+00:42:26.480 --> 00:42:27.938 align:middle line:84%
+AUDIENCE: Can you
+explain again why
+
+00:42:27.938 --> 00:42:29.610 align:middle line:90%
+that-- we just get rid of that?
+
+00:42:29.610 --> 00:42:32.290 align:middle line:84%
+BRYNMOR CHAPMAN: So we're
+computing modulo 100.
+
+00:42:32.290 --> 00:42:36.120 align:middle line:84%
+We're looking for the remainder
+when we divide by 100.
+
+00:42:36.120 --> 00:42:40.490 align:middle line:90%
+So we know that 1--
+
+00:42:40.490 --> 00:42:48.912 align:middle line:84%
+whoops, 11335 is congruent
+to 35 modulo 100.
+
+00:42:48.912 --> 00:42:50.870 align:middle line:84%
+AUDIENCE: [INAUDIBLE]
+over the last two digits?
+
+00:42:50.870 --> 00:42:51.787 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:42:51.787 --> 00:42:54.975 align:middle line:84%
+So we're getting rid of
+the first three digits
+
+00:42:54.975 --> 00:42:56.350 align:middle line:84%
+and only looking
+at the remainder
+
+00:42:56.350 --> 00:42:57.880 align:middle line:90%
+after we divide by 100.
+
+00:42:57.880 --> 00:43:02.740 align:middle line:84%
+So basically, the idea is
+that we can do this division
+
+00:43:02.740 --> 00:43:05.050 align:middle line:90%
+at intermediate steps.
+
+00:43:05.050 --> 00:43:09.110 align:middle line:84%
+We can take remainders in the
+middle of our computation.
+
+00:43:09.110 --> 00:43:11.595 align:middle line:84%
+That's what these two
+theorems are telling us.
+
+00:43:11.595 --> 00:43:14.092 align:middle line:90%
+
+
+00:43:14.092 --> 00:43:15.550 align:middle line:84%
+Anything else that
+we can simplify?
+
+00:43:15.550 --> 00:43:21.830 align:middle line:90%
+
+
+00:43:21.830 --> 00:43:22.330 align:middle line:90%
+No?
+
+00:43:22.330 --> 00:43:25.930 align:middle line:84%
+Does somebody want to do
+that computation by hand?
+
+00:43:25.930 --> 00:43:26.480 align:middle line:90%
+No, nobody?
+
+00:43:26.480 --> 00:43:26.980 align:middle line:90%
+Yeah.
+
+00:43:26.980 --> 00:43:27.932 align:middle line:90%
+OK.
+
+00:43:27.932 --> 00:43:29.932 align:middle line:84%
+AUDIENCE: So we do the
+same thing with the 7,000
+
+00:43:29.932 --> 00:43:31.067 align:middle line:90%
+[INAUDIBLE].
+
+00:43:31.067 --> 00:43:31.900 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+00:43:31.900 --> 00:43:32.620 align:middle line:90%
+AUDIENCE: It'd be 99.
+
+00:43:32.620 --> 00:43:34.580 align:middle line:84%
+BRYNMOR CHAPMAN: OK, yeah, we
+can do the same thing here,
+
+00:43:34.580 --> 00:43:35.745 align:middle line:90%
+turn that into just 99.
+
+00:43:35.745 --> 00:43:39.280 align:middle line:90%
+
+
+00:43:39.280 --> 00:43:41.175 align:middle line:84%
+I claim that we can take
+that a step further.
+
+00:43:41.175 --> 00:43:45.130 align:middle line:90%
+
+
+00:43:45.130 --> 00:43:47.980 align:middle line:84%
+99 is not particularly
+easy to work with.
+
+00:43:47.980 --> 00:43:49.730 align:middle line:84%
+I claim that there's
+something else that's
+
+00:43:49.730 --> 00:43:51.950 align:middle line:90%
+equivalent to that that is.
+
+00:43:51.950 --> 00:43:52.940 align:middle line:90%
+Yeah?
+
+00:43:52.940 --> 00:43:54.230 align:middle line:90%
+AUDIENCE: 0?
+
+00:43:54.230 --> 00:43:55.250 align:middle line:90%
+BRYNMOR CHAPMAN: Not 0.
+
+00:43:55.250 --> 00:43:56.083 align:middle line:90%
+AUDIENCE: Negative 1
+
+00:43:56.083 --> 00:43:57.950 align:middle line:84%
+BRYNMOR CHAPMAN:
+Negative 1, yeah.
+
+00:43:57.950 --> 00:44:08.120 align:middle line:84%
+So we can replace this
+7799 with negative 1.
+
+00:44:08.120 --> 00:44:09.490 align:middle line:90%
+Negative 1 is easy to work with.
+
+00:44:09.490 --> 00:44:12.374 align:middle line:90%
+
+
+00:44:12.374 --> 00:44:13.525 align:middle line:90%
+So now what happens?
+
+00:44:13.525 --> 00:44:23.330 align:middle line:90%
+
+
+00:44:23.330 --> 00:44:24.470 align:middle line:90%
+Yeah?
+
+00:44:24.470 --> 00:44:27.313 align:middle line:90%
+AUDIENCE: [INAUDIBLE].
+
+00:44:27.313 --> 00:44:28.230 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:44:28.230 --> 00:44:31.730 align:middle line:84%
+So let's exponentiate
+this negative 1.
+
+00:44:31.730 --> 00:44:34.675 align:middle line:84%
+So we end up with 6
+plus 1, which is 7.
+
+00:44:34.675 --> 00:44:40.580 align:middle line:90%
+
+
+00:44:40.580 --> 00:44:49.090 align:middle line:84%
+Now what do we do
+about 35 to the 11,111?
+
+00:44:49.090 --> 00:44:51.490 align:middle line:84%
+Well, we don't really
+know how to do anything
+
+00:44:51.490 --> 00:44:54.730 align:middle line:90%
+with exponents, right?
+
+00:44:54.730 --> 00:44:59.590 align:middle line:84%
+So let's just try to
+start exponentiating it
+
+00:44:59.590 --> 00:45:00.615 align:middle line:90%
+and see what happens.
+
+00:45:00.615 --> 00:45:03.538 align:middle line:90%
+
+
+00:45:03.538 --> 00:45:10.050 align:middle line:90%
+So what's 35 squared?
+
+00:45:10.050 --> 00:45:16.690 align:middle line:90%
+
+
+00:45:16.690 --> 00:45:18.160 align:middle line:90%
+Well, that's going to be--
+
+00:45:18.160 --> 00:45:23.260 align:middle line:84%
+well, if we actually compute
+it, it'll be 1,225, I think.
+
+00:45:23.260 --> 00:45:25.030 align:middle line:90%
+Is that right?
+
+00:45:25.030 --> 00:45:29.560 align:middle line:90%
+1,175?
+
+00:45:29.560 --> 00:45:31.412 align:middle line:90%
+1,225.
+
+00:45:31.412 --> 00:45:33.663 align:middle line:84%
+So that's going to
+be congruent to 25.
+
+00:45:33.663 --> 00:45:40.300 align:middle line:90%
+
+
+00:45:40.300 --> 00:45:41.400 align:middle line:90%
+35 cubed?
+
+00:45:41.400 --> 00:45:47.350 align:middle line:90%
+
+
+00:45:47.350 --> 00:45:51.745 align:middle line:84%
+Well, it's going
+to be 25 times 35.
+
+00:45:51.745 --> 00:45:53.870 align:middle line:90%
+So that's 875.
+
+00:45:53.870 --> 00:45:55.800 align:middle line:84%
+So that's going to
+be congruent to 75.
+
+00:45:55.800 --> 00:46:01.000 align:middle line:90%
+
+
+00:46:01.000 --> 00:46:02.145 align:middle line:90%
+35 to the fourth?
+
+00:46:02.145 --> 00:46:09.730 align:middle line:90%
+
+
+00:46:09.730 --> 00:46:13.520 align:middle line:84%
+Well, 35 to the fourth is going
+to be 35 squared, squared again,
+
+00:46:13.520 --> 00:46:16.810 align:middle line:90%
+so 25 squared.
+
+00:46:16.810 --> 00:46:18.495 align:middle line:90%
+25 squared is 625.
+
+00:46:18.495 --> 00:46:20.175 align:middle line:84%
+So that also has
+a remainder of 25.
+
+00:46:20.175 --> 00:46:25.090 align:middle line:90%
+
+
+00:46:25.090 --> 00:46:28.150 align:middle line:84%
+So what's going to
+happen after this point?
+
+00:46:28.150 --> 00:46:30.585 align:middle line:84%
+What happens is we
+continue multiplying by 35?
+
+00:46:30.585 --> 00:46:36.474 align:middle line:90%
+
+
+00:46:36.474 --> 00:46:37.462 align:middle line:90%
+Mm-hmm?
+
+00:46:37.462 --> 00:46:39.940 align:middle line:90%
+AUDIENCE: [INAUDIBLE].
+
+00:46:39.940 --> 00:46:40.980 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:46:40.980 --> 00:46:45.120 align:middle line:84%
+The answer was it'll
+alternate between 75 and 25.
+
+00:46:45.120 --> 00:46:50.138 align:middle line:84%
+Whenever we have an odd power,
+as long as it's greater than 1,
+
+00:46:50.138 --> 00:46:53.590 align:middle line:84%
+when we exponentiate
+35, it's going to be 75.
+
+00:46:53.590 --> 00:46:56.640 align:middle line:84%
+Whenever we have an even
+power, it's going to be 25.
+
+00:46:56.640 --> 00:47:00.840 align:middle line:84%
+We can prove that
+formally by induction.
+
+00:47:00.840 --> 00:47:02.820 align:middle line:90%
+I'm not going to do that here.
+
+00:47:02.820 --> 00:47:06.610 align:middle line:84%
+But the point is 35, we've
+got an odd exponent here.
+
+00:47:06.610 --> 00:47:12.335 align:middle line:90%
+So we can replace this with 75.
+
+00:47:12.335 --> 00:47:18.488 align:middle line:90%
+
+
+00:47:18.488 --> 00:47:23.195 align:middle line:84%
+And now 75 times 7 is going
+to have a remainder of 25.
+
+00:47:23.195 --> 00:47:32.065 align:middle line:90%
+
+
+00:47:32.065 --> 00:47:34.380 align:middle line:84%
+So does that make
+sense to everybody?
+
+00:47:34.380 --> 00:47:38.040 align:middle line:84%
+We perform the computation,
+but instead of just doing it
+
+00:47:38.040 --> 00:47:41.000 align:middle line:84%
+over the integers and
+then reducing mod 100,
+
+00:47:41.000 --> 00:47:44.870 align:middle line:84%
+we're reducing mod
+100 whenever we can.
+
+00:47:44.870 --> 00:47:48.520 align:middle line:84%
+We're always trying to replace
+intermediate values with things
+
+00:47:48.520 --> 00:47:51.500 align:middle line:90%
+that are easier to work with.
+
+00:47:51.500 --> 00:47:53.900 align:middle line:84%
+And that simplifies our
+computation considerably.
+
+00:47:53.900 --> 00:47:54.490 align:middle line:90%
+Yeah?
+
+00:47:54.490 --> 00:48:00.250 align:middle line:84%
+AUDIENCE: How did you
+know 75 is [INAUDIBLE] 25?
+
+00:48:00.250 --> 00:48:02.320 align:middle line:84%
+BRYNMOR CHAPMAN: You can
+perform the computation.
+
+00:48:02.320 --> 00:48:04.890 align:middle line:84%
+25 by 21 is possibly
+an easier one to do.
+
+00:48:04.890 --> 00:48:17.770 align:middle line:90%
+
+
+00:48:17.770 --> 00:48:20.500 align:middle line:90%
+Any other questions?
+
+00:48:20.500 --> 00:48:21.640 align:middle line:90%
+Yeah?
+
+00:48:21.640 --> 00:48:25.600 align:middle line:84%
+AUDIENCE: I think there was a
+step where we went from 6 plus
+
+00:48:25.600 --> 00:48:27.905 align:middle line:90%
+negative 1 to the 5k to 7.
+
+00:48:27.905 --> 00:48:28.780 align:middle line:90%
+BRYNMOR CHAPMAN: Yes.
+
+00:48:28.780 --> 00:48:31.180 align:middle line:84%
+AUDIENCE: I was just
+wondering what happened there.
+
+00:48:31.180 --> 00:48:38.831 align:middle line:84%
+BRYNMOR CHAPMAN: So we had
+6 plus negative 1 to the 5k.
+
+00:48:38.831 --> 00:48:42.660 align:middle line:84%
+So we are exponentiating this
+negative 1 over the integers.
+
+00:48:42.660 --> 00:48:46.315 align:middle line:84%
+Negative 1 to any even
+power is going to be 1.
+
+00:48:46.315 --> 00:48:50.250 align:middle line:90%
+
+
+00:48:50.250 --> 00:48:51.292 align:middle line:90%
+AUDIENCE: k is even?
+
+00:48:51.292 --> 00:48:52.250 align:middle line:90%
+BRYNMOR CHAPMAN: Sorry?
+
+00:48:52.250 --> 00:48:53.540 align:middle line:90%
+AUDIENCE: Do we know k's even?
+
+00:48:53.540 --> 00:48:57.920 align:middle line:84%
+BRYNMOR CHAPMAN: Oh,
+sorry, 5k, 5,000.
+
+00:48:57.920 --> 00:49:01.040 align:middle line:90%
+Sorry, it's not actually--
+
+00:49:01.040 --> 00:49:05.830 align:middle line:90%
+yeah, my bad, this kind of k.
+
+00:49:05.830 --> 00:49:13.580 align:middle line:90%
+
+
+00:49:13.580 --> 00:49:14.280 align:middle line:90%
+Sorry.
+
+00:49:14.280 --> 00:49:15.450 align:middle line:90%
+That's my bad.
+
+00:49:15.450 --> 00:49:16.650 align:middle line:90%
+Any other questions?
+
+00:49:16.650 --> 00:49:20.240 align:middle line:90%
+
+
+00:49:20.240 --> 00:49:21.200 align:middle line:90%
+Yeah?
+
+00:49:21.200 --> 00:49:22.354 align:middle line:90%
+AUDIENCE: So [INAUDIBLE].
+
+00:49:22.354 --> 00:49:26.200 align:middle line:90%
+
+
+00:49:26.200 --> 00:49:27.200 align:middle line:90%
+BRYNMOR CHAPMAN: Pardon?
+
+00:49:27.200 --> 00:49:29.900 align:middle line:84%
+AUDIENCE: Will all
+phases exhibit a pattern?
+
+00:49:29.900 --> 00:49:30.960 align:middle line:90%
+BRYNMOR CHAPMAN: Oh.
+
+00:49:30.960 --> 00:49:32.960 align:middle line:84%
+So the question
+was, is there always
+
+00:49:32.960 --> 00:49:34.345 align:middle line:90%
+going to be a pattern like this?
+
+00:49:34.345 --> 00:49:37.200 align:middle line:90%
+
+
+00:49:37.200 --> 00:49:40.690 align:middle line:84%
+So this is kind of touching on
+stuff that we will see later.
+
+00:49:40.690 --> 00:49:42.760 align:middle line:84%
+But yes, there will
+always be some pattern.
+
+00:49:42.760 --> 00:49:46.000 align:middle line:90%
+It may not be this easy to find.
+
+00:49:46.000 --> 00:49:49.830 align:middle line:84%
+But the basic idea is that there
+are only 100 different values
+
+00:49:49.830 --> 00:49:53.400 align:middle line:90%
+that it could take, modulo 100.
+
+00:49:53.400 --> 00:49:59.170 align:middle line:84%
+So if you have more
+than 100 powers,
+
+00:49:59.170 --> 00:50:02.430 align:middle line:84%
+something's going
+to have to collide.
+
+00:50:02.430 --> 00:50:06.420 align:middle line:84%
+And At that point,
+it'll start repeating.
+
+00:50:06.420 --> 00:50:09.490 align:middle line:84%
+Here, it happened
+to be quite nice.
+
+00:50:09.490 --> 00:50:12.130 align:middle line:84%
+It started repeating
+very quickly.
+
+00:50:12.130 --> 00:50:14.340 align:middle line:90%
+And the period is only two.
+
+00:50:14.340 --> 00:50:17.760 align:middle line:84%
+That may not always
+be the case, though.
+
+00:50:17.760 --> 00:50:23.880 align:middle line:84%
+but we will see, in a
+moment, something more
+
+00:50:23.880 --> 00:50:26.200 align:middle line:84%
+about what we can
+say about that.
+
+00:50:26.200 --> 00:50:35.200 align:middle line:90%
+
+
+00:50:35.200 --> 00:50:38.590 align:middle line:84%
+So we've seen how to
+add, subtract, multiply,
+
+00:50:38.590 --> 00:50:40.190 align:middle line:84%
+how to change the
+bases of exponents.
+
+00:50:40.190 --> 00:50:43.150 align:middle line:90%
+What about division?
+
+00:50:43.150 --> 00:50:45.860 align:middle line:84%
+Are we allowed to
+divide modulo n?
+
+00:50:45.860 --> 00:50:54.955 align:middle line:84%
+So suppose we have 3x is
+congruent to 3 modulo 6.
+
+00:50:54.955 --> 00:50:58.540 align:middle line:90%
+
+
+00:50:58.540 --> 00:51:00.790 align:middle line:84%
+So if we had this
+over the integers,
+
+00:51:00.790 --> 00:51:03.400 align:middle line:90%
+say, or over the reals--
+
+00:51:03.400 --> 00:51:05.570 align:middle line:84%
+I guess reals are
+a better example--
+
+00:51:05.570 --> 00:51:11.580 align:middle line:84%
+if we just had 3x equals 3,
+how would we solve this for x?
+
+00:51:11.580 --> 00:51:15.760 align:middle line:90%
+
+
+00:51:15.760 --> 00:51:17.670 align:middle line:84%
+It's not a trick
+question, I promise.
+
+00:51:17.670 --> 00:51:20.560 align:middle line:90%
+
+
+00:51:20.560 --> 00:51:21.169 align:middle line:90%
+Yeah?
+
+00:51:21.169 --> 00:51:22.086 align:middle line:90%
+AUDIENCE: Divide by 3.
+
+00:51:22.086 --> 00:51:24.380 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah, you
+just divide both sides by 3.
+
+00:51:24.380 --> 00:51:29.650 align:middle line:84%
+You can cancel off this 3,
+and you just get x equals 1.
+
+00:51:29.650 --> 00:51:33.360 align:middle line:84%
+So now the actual question
+is, can we do that modulo n?
+
+00:51:33.360 --> 00:51:34.960 align:middle line:90%
+Can we do that modulo 6?
+
+00:51:34.960 --> 00:51:41.370 align:middle line:84%
+Are we allowed to just cancel
+these 3's and conclude that--
+
+00:51:41.370 --> 00:51:46.410 align:middle line:84%
+oops-- x is congruent
+to 1 modulo 6?
+
+00:51:46.410 --> 00:51:46.995 align:middle line:90%
+Yeah?
+
+00:51:46.995 --> 00:51:49.620 align:middle line:84%
+AUDIENCE: I think so because the
+[INAUDIBLE] multiplying by 1/3
+
+00:51:49.620 --> 00:51:50.367 align:middle line:90%
+[INAUDIBLE].
+
+00:51:50.367 --> 00:51:51.200 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+00:51:51.200 --> 00:51:53.658 align:middle line:84%
+So the answer was yes, because
+it's the same as multiplying
+
+00:51:53.658 --> 00:51:54.960 align:middle line:90%
+by 1/3.
+
+00:51:54.960 --> 00:52:01.500 align:middle line:84%
+So remember that 1/3 is not
+really something that we can--
+
+00:52:01.500 --> 00:52:06.780 align:middle line:84%
+it doesn't really make sense
+modulo, modulo n, or at least,
+
+00:52:06.780 --> 00:52:08.140 align:middle line:90%
+not modulo 6.
+
+00:52:08.140 --> 00:52:10.062 align:middle line:90%
+Sometimes it might make sense.
+
+00:52:10.062 --> 00:52:11.020 align:middle line:90%
+Sometimes it might not.
+
+00:52:11.020 --> 00:52:14.340 align:middle line:84%
+We'll see more about
+that in a moment.
+
+00:52:14.340 --> 00:52:16.075 align:middle line:90%
+But what is a third?
+
+00:52:16.075 --> 00:52:17.283 align:middle line:90%
+We're talking about integers.
+
+00:52:17.283 --> 00:52:23.640 align:middle line:90%
+
+
+00:52:23.640 --> 00:52:26.250 align:middle line:90%
+Yeah?
+
+00:52:26.250 --> 00:52:28.663 align:middle line:90%
+Sorry?
+
+00:52:28.663 --> 00:52:30.106 align:middle line:90%
+AUDIENCE: [INAUDIBLE].
+
+00:52:30.106 --> 00:52:37.023 align:middle line:90%
+
+
+00:52:37.023 --> 00:52:38.940 align:middle line:84%
+BRYNMOR CHAPMAN: So other
+way around, multiply
+
+00:52:38.940 --> 00:52:40.120 align:middle line:90%
+instead of dividing?
+
+00:52:40.120 --> 00:52:41.790 align:middle line:90%
+AUDIENCE: [INAUDIBLE].
+
+00:52:41.790 --> 00:52:43.650 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+00:52:43.650 --> 00:52:48.460 align:middle line:84%
+So the suggestion was
+instead of dividing by 3,
+
+00:52:48.460 --> 00:52:50.760 align:middle line:84%
+let's try multiplying
+by something,
+
+00:52:50.760 --> 00:52:54.060 align:middle line:90%
+so that we get 1 here.
+
+00:52:54.060 --> 00:53:01.860 align:middle line:84%
+So let's try to multiply this,
+multiply both sides by some a.
+
+00:53:01.860 --> 00:53:05.070 align:middle line:84%
+And this should end up
+being 1, if we choose our
+
+00:53:05.070 --> 00:53:08.700 align:middle line:90%
+a appropriately.
+
+00:53:08.700 --> 00:53:10.040 align:middle line:90%
+What a do we choose?
+
+00:53:10.040 --> 00:53:14.040 align:middle line:90%
+
+
+00:53:14.040 --> 00:53:15.815 align:middle line:90%
+Does there exist such an a?
+
+00:53:15.815 --> 00:53:20.130 align:middle line:90%
+
+
+00:53:20.130 --> 00:53:21.150 align:middle line:90%
+Yeah?
+
+00:53:21.150 --> 00:53:25.650 align:middle line:84%
+AUDIENCE: The original claim is
+false because if we set x equal
+
+00:53:25.650 --> 00:53:29.620 align:middle line:90%
+to 3, 3x is [INAUDIBLE].
+
+00:53:29.620 --> 00:53:31.310 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:53:31.310 --> 00:53:33.790 align:middle line:90%
+So the original claim is false.
+
+00:53:33.790 --> 00:53:38.310 align:middle line:84%
+The counterexample is that
+we could take x's 3 here.
+
+00:53:38.310 --> 00:53:40.670 align:middle line:90%
+3 times 3 is 9.
+
+00:53:40.670 --> 00:53:44.320 align:middle line:90%
+That is congruent to 3.
+
+00:53:44.320 --> 00:53:45.970 align:middle line:90%
+But x is not congruent to 1.
+
+00:53:45.970 --> 00:53:48.940 align:middle line:90%
+
+
+00:53:48.940 --> 00:53:54.520 align:middle line:84%
+So the answer, I guess,
+to the followup question
+
+00:53:54.520 --> 00:53:58.310 align:middle line:90%
+is that no, there is no such a.
+
+00:53:58.310 --> 00:54:03.865 align:middle line:84%
+We cannot divide by 3 or
+multiply by something to get 1.
+
+00:54:03.865 --> 00:54:06.520 align:middle line:90%
+
+
+00:54:06.520 --> 00:54:09.040 align:middle line:84%
+And this is basically
+the same thing
+
+00:54:09.040 --> 00:54:10.340 align:middle line:90%
+that we were doing last week.
+
+00:54:10.340 --> 00:54:20.150 align:middle line:84%
+We're looking for a solution to
+3a is congruent to 1 modulo 6.
+
+00:54:20.150 --> 00:54:27.520 align:middle line:84%
+If we unpack what this actually
+means, 6 divides 3a minus 1.
+
+00:54:27.520 --> 00:54:32.300 align:middle line:90%
+
+
+00:54:32.300 --> 00:54:33.670 align:middle line:90%
+Is there a solution to this?
+
+00:54:33.670 --> 00:54:37.005 align:middle line:90%
+
+
+00:54:37.005 --> 00:54:37.505 align:middle line:90%
+No.
+
+00:54:37.505 --> 00:54:47.750 align:middle line:90%
+
+
+00:54:47.750 --> 00:54:49.430 align:middle line:84%
+So basically,
+that's asking if we
+
+00:54:49.430 --> 00:54:54.700 align:middle line:84%
+can write 1 as a linear
+combination of 6 and 3.
+
+00:54:54.700 --> 00:54:57.368 align:middle line:90%
+
+
+00:54:57.368 --> 00:55:00.025 align:middle line:84%
+But 1 is not a multiple of
+their gcd, so we cannot.
+
+00:55:00.025 --> 00:55:06.590 align:middle line:90%
+
+
+00:55:06.590 --> 00:55:10.280 align:middle line:84%
+So does that make
+sense to everybody?
+
+00:55:10.280 --> 00:55:14.540 align:middle line:90%
+So we cannot always divide.
+
+00:55:14.540 --> 00:55:17.005 align:middle line:84%
+Are there circumstances
+under which we can divide?
+
+00:55:17.005 --> 00:55:28.705 align:middle line:90%
+
+
+00:55:28.705 --> 00:55:29.205 align:middle line:90%
+Yeah?
+
+00:55:29.205 --> 00:55:33.510 align:middle line:90%
+
+
+00:55:33.510 --> 00:55:38.820 align:middle line:84%
+AUDIENCE: Oh, I was thinking
+you divide the 6, as well?
+
+00:55:38.820 --> 00:55:40.320 align:middle line:84%
+BRYNMOR CHAPMAN:
+Oh, OK, so the idea
+
+00:55:40.320 --> 00:55:44.350 align:middle line:90%
+was to divide the 6 as well.
+
+00:55:44.350 --> 00:55:46.170 align:middle line:84%
+Yeah, I suppose
+you could do that.
+
+00:55:46.170 --> 00:55:51.250 align:middle line:84%
+But we're specifically trying
+to do arithmetic modulo 6.
+
+00:55:51.250 --> 00:55:53.660 align:middle line:84%
+So that may or may
+not make sense.
+
+00:55:53.660 --> 00:55:59.445 align:middle line:90%
+
+
+00:55:59.445 --> 00:56:07.300 align:middle line:84%
+But I mean, yeah, I suppose you
+could say 6 divides 3x minus 3a.
+
+00:56:07.300 --> 00:56:13.830 align:middle line:84%
+And so you could factor out a 3
+and say that x is at least odd.
+
+00:56:13.830 --> 00:56:16.920 align:middle line:84%
+And in fact, that does
+characterize the solutions
+
+00:56:16.920 --> 00:56:19.030 align:middle line:90%
+to the original problem.
+
+00:56:19.030 --> 00:56:22.268 align:middle line:84%
+It's just that may
+or may not be what
+
+00:56:22.268 --> 00:56:23.435 align:middle line:90%
+you're actually looking for.
+
+00:56:23.435 --> 00:56:31.460 align:middle line:90%
+
+
+00:56:31.460 --> 00:56:34.275 align:middle line:84%
+So under what circumstances
+are we allowed to divide?
+
+00:56:34.275 --> 00:56:41.860 align:middle line:90%
+
+
+00:56:41.860 --> 00:56:45.430 align:middle line:84%
+So we just saw that we can't
+divide here, because there's
+
+00:56:45.430 --> 00:56:54.640 align:middle line:90%
+no solution to this equation.
+
+00:56:54.640 --> 00:56:56.770 align:middle line:90%
+What if there is a solution?
+
+00:56:56.770 --> 00:57:02.983 align:middle line:84%
+What if instead of modulo
+6, we had modulo 5?
+
+00:57:02.983 --> 00:57:13.330 align:middle line:90%
+
+
+00:57:13.330 --> 00:57:14.850 align:middle line:84%
+Would we be allowed
+to divide here?
+
+00:57:14.850 --> 00:57:23.420 align:middle line:90%
+
+
+00:57:23.420 --> 00:57:25.830 align:middle line:84%
+If we have 3x is
+congruent to 3 modulo 5,
+
+00:57:25.830 --> 00:57:30.640 align:middle line:84%
+can we then conclude x is
+congruent to 1 modulo 5?
+
+00:57:30.640 --> 00:57:33.260 align:middle line:90%
+
+
+00:57:33.260 --> 00:57:34.425 align:middle line:90%
+Seeing some nods.
+
+00:57:34.425 --> 00:57:34.925 align:middle line:90%
+Why?
+
+00:57:34.925 --> 00:57:41.810 align:middle line:90%
+
+
+00:57:41.810 --> 00:57:43.770 align:middle line:84%
+Well, basically,
+exactly the same reason,
+
+00:57:43.770 --> 00:57:50.580 align:middle line:84%
+this exactly characterizes when
+what we described will work.
+
+00:57:50.580 --> 00:57:56.570 align:middle line:84%
+If the modulus and
+the coefficient
+
+00:57:56.570 --> 00:58:02.750 align:middle line:84%
+we're trying to divide by are
+co-prime, if their gcd is 1,
+
+00:58:02.750 --> 00:58:04.030 align:middle line:90%
+then we'll be able to divide.
+
+00:58:04.030 --> 00:58:09.480 align:middle line:90%
+
+
+00:58:09.480 --> 00:58:13.460 align:middle line:84%
+So more formally, let's
+write out what we mean.
+
+00:58:13.460 --> 00:58:16.700 align:middle line:84%
+So let's start with
+the definition.
+
+00:58:16.700 --> 00:58:32.700 align:middle line:84%
+So we'll say that a
+multiplicative inverse of--
+
+00:58:32.700 --> 00:58:35.100 align:middle line:90%
+let's call it x--
+
+00:58:35.100 --> 00:58:50.880 align:middle line:84%
+modulo n, which we will
+denote x to the negative 1
+
+00:58:50.880 --> 00:58:57.460 align:middle line:84%
+is a number which,
+as you might expect,
+
+00:58:57.460 --> 00:58:59.636 align:middle line:84%
+satisfies the
+following congruence.
+
+00:58:59.636 --> 00:59:08.760 align:middle line:90%
+
+
+00:59:08.760 --> 00:59:11.670 align:middle line:84%
+So just as we have
+multiplicative inverses
+
+00:59:11.670 --> 00:59:12.940 align:middle line:90%
+over the reals--
+
+00:59:12.940 --> 00:59:17.110 align:middle line:84%
+so x times x inverse should
+be equal to 1, in that case--
+
+00:59:17.110 --> 00:59:19.850 align:middle line:84%
+we are defining
+something analogous
+
+00:59:19.850 --> 00:59:21.145 align:middle line:90%
+when we're working mod n.
+
+00:59:21.145 --> 00:59:24.275 align:middle line:90%
+
+
+00:59:24.275 --> 00:59:26.245 align:middle line:84%
+So does that definition
+make sense to people?
+
+00:59:26.245 --> 00:59:31.010 align:middle line:90%
+
+
+00:59:31.010 --> 00:59:40.880 align:middle line:84%
+So as an example,
+1 inverse, so 1
+
+00:59:40.880 --> 00:59:43.220 align:middle line:84%
+is a multiplicative
+inverse of 1.
+
+00:59:43.220 --> 00:59:57.213 align:middle line:84%
+Maybe I should write it
+like that, mod anything.
+
+00:59:57.213 --> 01:00:01.100 align:middle line:90%
+
+
+01:00:01.100 --> 01:00:15.050 align:middle line:84%
+2 is a multiplicative inverse of
+3 mod 5 because 2 times 3 is 6.
+
+01:00:15.050 --> 01:00:18.280 align:middle line:90%
+6 is congruent to 1 modulo 5.
+
+01:00:18.280 --> 01:00:21.600 align:middle line:84%
+So 2 and 3 are modulo inverse,
+modulo inverses of each other,
+
+01:00:21.600 --> 01:00:22.310 align:middle line:90%
+modulo 5.
+
+01:00:22.310 --> 01:00:26.139 align:middle line:90%
+
+
+01:00:26.139 --> 01:00:29.070 align:middle line:84%
+AUDIENCE: Can you explain that
+again, the last part of it?
+
+01:00:29.070 --> 01:00:30.600 align:middle line:90%
+BRYNMOR CHAPMAN: The last part?
+
+01:00:30.600 --> 01:00:31.380 align:middle line:90%
+Yeah.
+
+01:00:31.380 --> 01:00:40.500 align:middle line:84%
+So what this is saying
+is that 2 times 3
+
+01:00:40.500 --> 01:00:43.050 align:middle line:90%
+is congruent to 1 modulo--
+
+01:00:43.050 --> 01:00:44.555 align:middle line:84%
+oops, I should
+write it like this.
+
+01:00:44.555 --> 01:00:49.255 align:middle line:90%
+
+
+01:00:49.255 --> 01:00:52.740 align:middle line:90%
+So 2 times 3 is 6.
+
+01:00:52.740 --> 01:00:56.410 align:middle line:90%
+6 is congruent to 1 modulo 5.
+
+01:00:56.410 --> 01:01:00.000 align:middle line:84%
+So that means that 2 and 3
+are multiplicative inverses
+
+01:01:00.000 --> 01:01:03.735 align:middle line:84%
+of each other modulo 5 because
+when you multiply them,
+
+01:01:03.735 --> 01:01:04.235 align:middle line:90%
+you get 1.
+
+01:01:04.235 --> 01:01:07.470 align:middle line:90%
+
+
+01:01:07.470 --> 01:01:08.750 align:middle line:90%
+Does that make sense?
+
+01:01:08.750 --> 01:01:21.880 align:middle line:90%
+
+
+01:01:21.880 --> 01:01:24.780 align:middle line:84%
+So when do multiplicative
+inverses exist?
+
+01:01:24.780 --> 01:01:45.130 align:middle line:90%
+
+
+01:01:45.130 --> 01:01:46.975 align:middle line:84%
+Can anybody finish
+this theorem statement?
+
+01:01:46.975 --> 01:01:48.225 align:middle line:90%
+Can anybody characterize this?
+
+01:01:48.225 --> 01:01:53.710 align:middle line:90%
+
+
+01:01:53.710 --> 01:01:55.930 align:middle line:90%
+When is a invertible modulo n?
+
+01:01:55.930 --> 01:01:57.090 align:middle line:90%
+Yeah?
+
+01:01:57.090 --> 01:01:59.290 align:middle line:90%
+AUDIENCE: Then you [INAUDIBLE].
+
+01:01:59.290 --> 01:02:06.180 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah, when
+the gcd of a and n is 1.
+
+01:02:06.180 --> 01:02:12.856 align:middle line:90%
+
+
+01:02:12.856 --> 01:02:13.990 align:middle line:90%
+And why is that?
+
+01:02:13.990 --> 01:02:19.460 align:middle line:90%
+
+
+01:02:19.460 --> 01:02:23.720 align:middle line:84%
+AUDIENCE: It wasn't
+1 [INAUDIBLE]
+
+01:02:23.720 --> 01:02:28.790 align:middle line:84%
+multiply a by the numbers
+you could [INAUDIBLE].
+
+01:02:28.790 --> 01:02:37.220 align:middle line:90%
+
+
+01:02:37.220 --> 01:02:40.980 align:middle line:84%
+BRYNMOR CHAPMAN: OK, yeah,
+so that's good intuition.
+
+01:02:40.980 --> 01:02:44.000 align:middle line:84%
+If their gcd were
+not 1, like, say,
+
+01:02:44.000 --> 01:02:49.423 align:middle line:84%
+the gcd is 2, so both
+a and n are even--
+
+01:02:49.423 --> 01:02:50.840 align:middle line:84%
+multiplying a by
+anything is going
+
+01:02:50.840 --> 01:02:52.005 align:middle line:90%
+to give you an even number.
+
+01:02:52.005 --> 01:02:53.630 align:middle line:84%
+That's never going
+to be congruent to 1
+
+01:02:53.630 --> 01:02:55.075 align:middle line:90%
+modulo another even number.
+
+01:02:55.075 --> 01:02:58.765 align:middle line:90%
+
+
+01:02:58.765 --> 01:03:18.630 align:middle line:84%
+So more formally, so a has
+an inverse mod n if and only
+
+01:03:18.630 --> 01:03:26.460 align:middle line:84%
+if there exists a b-- so
+this is just the definition--
+
+01:03:26.460 --> 01:03:31.040 align:middle line:84%
+such that ab is
+congruent mod n to 1.
+
+01:03:31.040 --> 01:03:34.890 align:middle line:90%
+
+
+01:03:34.890 --> 01:03:36.890 align:middle line:84%
+Now, how do we characterize
+when this is true?
+
+01:03:36.890 --> 01:03:39.690 align:middle line:90%
+
+
+01:03:39.690 --> 01:03:42.270 align:middle line:84%
+Well, let's unpack
+this definition here.
+
+01:03:42.270 --> 01:03:45.106 align:middle line:84%
+So this means that n
+divides their difference.
+
+01:03:45.106 --> 01:03:54.810 align:middle line:90%
+
+
+01:03:54.810 --> 01:04:01.160 align:middle line:84%
+So-- oops-- why don't I
+write this as ab minus 1.
+
+01:04:01.160 --> 01:04:11.060 align:middle line:90%
+
+
+01:04:11.060 --> 01:04:14.530 align:middle line:84%
+So we're saying that
+n divides ab minus 1.
+
+01:04:14.530 --> 01:04:17.290 align:middle line:84%
+We're looking at what that
+division actually looks like,
+
+01:04:17.290 --> 01:04:20.720 align:middle line:90%
+what the factor of n is.
+
+01:04:20.720 --> 01:04:23.935 align:middle line:84%
+So there's some q such
+that qn is ab minus 1.
+
+01:04:23.935 --> 01:04:28.150 align:middle line:90%
+
+
+01:04:28.150 --> 01:04:31.750 align:middle line:90%
+Now we can rewrite this.
+
+01:04:31.750 --> 01:04:35.620 align:middle line:90%
+So 1 equals ab minus qn.
+
+01:04:35.620 --> 01:04:39.510 align:middle line:90%
+
+
+01:04:39.510 --> 01:04:42.730 align:middle line:84%
+So we're saying there
+exists b and q such that 1
+
+01:04:42.730 --> 01:04:48.820 align:middle line:90%
+equals ab plus minus q times n.
+
+01:04:48.820 --> 01:04:52.540 align:middle line:84%
+So this is just saying
+that 1 is an ILC of an.
+
+01:04:52.540 --> 01:05:09.958 align:middle line:90%
+
+
+01:05:09.958 --> 01:05:13.400 align:middle line:84%
+And as we saw before,
+this happens if and only
+
+01:05:13.400 --> 01:05:14.455 align:middle line:90%
+if their gcd is 1.
+
+01:05:14.455 --> 01:05:26.810 align:middle line:90%
+
+
+01:05:26.810 --> 01:05:28.410 align:middle line:84%
+So does that make
+sense to everybody?
+
+01:05:28.410 --> 01:05:39.560 align:middle line:90%
+
+
+01:05:39.560 --> 01:05:43.370 align:middle line:84%
+So if two numbers
+have a gcd of 1,
+
+01:05:43.370 --> 01:05:47.305 align:middle line:84%
+then we can divide by 1 when
+working modulo the other.
+
+01:05:47.305 --> 01:05:55.662 align:middle line:90%
+
+
+01:05:55.662 --> 01:06:06.560 align:middle line:84%
+So if we have, say, 7x is
+congruent mod 30 to 14,
+
+01:06:06.560 --> 01:06:10.530 align:middle line:84%
+then we are allowed to divide by
+both sides because the gcd of 7
+
+01:06:10.530 --> 01:06:12.220 align:middle line:90%
+and 30 is 1.
+
+01:06:12.220 --> 01:06:15.000 align:middle line:84%
+So we're allowed to
+divide both sides by 7.
+
+01:06:15.000 --> 01:06:20.015 align:middle line:84%
+So we are allowed to conclude
+that x is congruent mod 30 to 2.
+
+01:06:20.015 --> 01:06:22.620 align:middle line:90%
+
+
+01:06:22.620 --> 01:06:24.900 align:middle line:84%
+I suppose more formally,
+we want to find
+
+01:06:24.900 --> 01:06:26.660 align:middle line:90%
+a multiplicative inverse of 7.
+
+01:06:26.660 --> 01:06:29.778 align:middle line:90%
+
+
+01:06:29.778 --> 01:06:35.350 align:middle line:84%
+And I think 13 is such
+an inverse, 7 by 1391.
+
+01:06:35.350 --> 01:06:36.150 align:middle line:90%
+Yeah.
+
+01:06:36.150 --> 01:06:40.540 align:middle line:84%
+So if we multiply both
+sides by negative 13,
+
+01:06:40.540 --> 01:06:43.200 align:middle line:84%
+we'll get a coefficient
+of 1 over here,
+
+01:06:43.200 --> 01:06:46.025 align:middle line:84%
+and we'll get 2 on
+the right-hand side.
+
+01:06:46.025 --> 01:06:51.330 align:middle line:90%
+
+
+01:06:51.330 --> 01:06:53.570 align:middle line:84%
+So sometimes, you can
+divide, but not always.
+
+01:06:53.570 --> 01:07:20.660 align:middle line:90%
+
+
+01:07:20.660 --> 01:07:26.440 align:middle line:84%
+So let's use that now to
+figure out what more we
+
+01:07:26.440 --> 01:07:29.640 align:middle line:90%
+can say about exponentiation.
+
+01:07:29.640 --> 01:07:33.820 align:middle line:84%
+so the following is a
+theorem, which is attributed
+
+01:07:33.820 --> 01:07:35.510 align:middle line:90%
+to Fermat, as many things are.
+
+01:07:35.510 --> 01:07:37.970 align:middle line:84%
+It's often known as
+Fermat's Little theorem,
+
+01:07:37.970 --> 01:07:42.520 align:middle line:84%
+not to be confused with Fermat's
+Last theorem, which Fermat--
+
+01:07:42.520 --> 01:07:45.110 align:middle line:84%
+I feel like that one should not
+be attributed to him at all,
+
+01:07:45.110 --> 01:07:46.670 align:middle line:90%
+because he didn't prove it.
+
+01:07:46.670 --> 01:07:49.570 align:middle line:84%
+Or I think he thought
+he knew a proof
+
+01:07:49.570 --> 01:07:52.002 align:middle line:84%
+and was like a complete
+fuck up, but whatever.
+
+01:07:52.002 --> 01:07:55.025 align:middle line:90%
+
+
+01:07:55.025 --> 01:07:56.900 align:middle line:84%
+Fermat's Little theorem
+is a different story.
+
+01:07:56.900 --> 01:07:58.610 align:middle line:90%
+It is much more elementary.
+
+01:07:58.610 --> 01:08:01.000 align:middle line:90%
+He did actually prove it.
+
+01:08:01.000 --> 01:08:04.310 align:middle line:90%
+It states the following.
+
+01:08:04.310 --> 01:08:14.490 align:middle line:84%
+So if p is prime, and a
+is not a multiple of p,
+
+01:08:14.490 --> 01:08:24.170 align:middle line:84%
+so a not congruent mod p to
+0, then a to the p minus 1
+
+01:08:24.170 --> 01:08:27.535 align:middle line:90%
+is congruent mod p to 1.
+
+01:08:27.535 --> 01:08:31.910 align:middle line:90%
+
+
+01:08:31.910 --> 01:08:39.529 align:middle line:84%
+So if you think about what
+this is saying a little bit,
+
+01:08:39.529 --> 01:08:41.029 align:middle line:84%
+it's similar to
+what we were trying
+
+01:08:41.029 --> 01:08:43.550 align:middle line:90%
+to do with exponents earlier.
+
+01:08:43.550 --> 01:08:48.800 align:middle line:84%
+But instead of getting rid of
+multiples of p in an exponent
+
+01:08:48.800 --> 01:08:51.229 align:middle line:84%
+when we're working
+mod p, we're instead
+
+01:08:51.229 --> 01:08:55.040 align:middle line:84%
+going to get rid of
+multiples of p minus 1.
+
+01:08:55.040 --> 01:08:59.930 align:middle line:84%
+So basically, we can always
+factor out an a to the p minus 1
+
+01:08:59.930 --> 01:09:05.406 align:middle line:84%
+without changing the
+end result. Yeah?
+
+01:09:05.406 --> 01:09:06.735 align:middle line:90%
+AUDIENCE: [INAUDIBLE]?
+
+01:09:06.735 --> 01:09:07.693 align:middle line:90%
+BRYNMOR CHAPMAN: Sorry.
+
+01:09:07.693 --> 01:09:11.130 align:middle line:90%
+
+
+01:09:11.130 --> 01:09:12.689 align:middle line:90%
+Thank you, Zach.
+
+01:09:12.689 --> 01:09:15.000 align:middle line:90%
+I promise I'm awake.
+
+01:09:15.000 --> 01:09:19.319 align:middle line:84%
+Yeah, if a is congruent to
+0, then clearly, this theorem
+
+01:09:19.319 --> 01:09:21.569 align:middle line:90%
+is false.
+
+01:09:21.569 --> 01:09:23.410 align:middle line:90%
+a should not be congruent to 0.
+
+01:09:23.410 --> 01:09:26.554 align:middle line:84%
+If a is congruent to 0, then
+a to the p minus 1 is also 0.
+
+01:09:26.554 --> 01:09:30.916 align:middle line:90%
+
+
+01:09:30.916 --> 01:09:32.500 align:middle line:90%
+So how could we prove this?
+
+01:09:32.500 --> 01:09:33.080 align:middle line:90%
+Any ideas?
+
+01:09:33.080 --> 01:09:43.740 align:middle line:90%
+
+
+01:09:43.740 --> 01:09:46.180 align:middle line:84%
+It's a bit of a
+weird proof idea.
+
+01:09:46.180 --> 01:09:50.310 align:middle line:84%
+Let's consider
+the following set.
+
+01:09:50.310 --> 01:10:11.860 align:middle line:84%
+So a, 2a, 3a, all the way up to
+p minus 1 times a, now what can
+
+01:10:11.860 --> 01:10:14.365 align:middle line:84%
+we say about this set if we
+reduce everything in it modulo
+
+01:10:14.365 --> 01:10:14.865 align:middle line:90%
+p?
+
+01:10:14.865 --> 01:10:27.395 align:middle line:90%
+
+
+01:10:27.395 --> 01:10:28.619 align:middle line:90%
+AUDIENCE: [INAUDIBLE].
+
+01:10:28.619 --> 01:10:29.536 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+01:10:29.536 --> 01:10:32.050 align:middle line:90%
+
+
+01:10:32.050 --> 01:10:35.920 align:middle line:84%
+So the answer was that this is
+basically equivalent to-- this
+
+01:10:35.920 --> 01:10:37.350 align:middle line:90%
+is abusing notation a bit.
+
+01:10:37.350 --> 01:10:46.675 align:middle line:90%
+
+
+01:10:46.675 --> 01:10:50.372 align:middle line:84%
+The claim is that all of
+these are distinct modulo p,
+
+01:10:50.372 --> 01:10:51.330 align:middle line:90%
+and none of them are 0.
+
+01:10:51.330 --> 01:10:54.290 align:middle line:90%
+
+
+01:10:54.290 --> 01:10:56.890 align:middle line:90%
+Why is that?
+
+01:10:56.890 --> 01:11:00.408 align:middle line:84%
+Well, first, probably the easier
+part, why is none of these 0?
+
+01:11:00.408 --> 01:11:02.950 align:middle line:84%
+That's basically saying, why is
+none of them a multiple of p?
+
+01:11:02.950 --> 01:11:07.160 align:middle line:90%
+
+
+01:11:07.160 --> 01:11:09.620 align:middle line:84%
+Well, all of the coefficients
+on a are less than p.
+
+01:11:09.620 --> 01:11:13.670 align:middle line:84%
+So p doesn't divide
+any of those.
+
+01:11:13.670 --> 01:11:16.520 align:middle line:84%
+p also doesn't divide
+a, by assumption.
+
+01:11:16.520 --> 01:11:21.065 align:middle line:84%
+and p is prime, so it doesn't
+divide any of these products.
+
+01:11:21.065 --> 01:11:24.260 align:middle line:90%
+So none of these is 0.
+
+01:11:24.260 --> 01:11:26.380 align:middle line:84%
+Why are they all
+distinct modulo p?
+
+01:11:26.380 --> 01:11:38.060 align:middle line:90%
+
+
+01:11:38.060 --> 01:11:39.440 align:middle line:90%
+Yeah?
+
+01:11:39.440 --> 01:11:44.340 align:middle line:84%
+AUDIENCE: If we think of a being
+a different system and modulo p,
+
+01:11:44.340 --> 01:11:50.990 align:middle line:84%
+then they're all some constant
+from 1 to minus 1 times that n.
+
+01:11:50.990 --> 01:11:56.150 align:middle line:84%
+And none of those will be
+the same or [INAUDIBLE].
+
+01:11:56.150 --> 01:11:57.140 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+01:11:57.140 --> 01:11:58.490 align:middle line:90%
+Let me try and rephrase that.
+
+01:11:58.490 --> 01:12:01.170 align:middle line:90%
+
+
+01:12:01.170 --> 01:12:06.090 align:middle line:84%
+So if you look at
+two different values,
+
+01:12:06.090 --> 01:12:11.490 align:middle line:84%
+like two different
+coefficients, you said, so
+
+01:12:11.490 --> 01:12:17.800 align:middle line:84%
+suppose for contradiction,
+a times i equals a times j.
+
+01:12:17.800 --> 01:12:20.685 align:middle line:84%
+So we're actually going
+to use a instead of n.
+
+01:12:20.685 --> 01:12:23.770 align:middle line:90%
+
+
+01:12:23.770 --> 01:12:27.570 align:middle line:84%
+Or sorry, this
+should be small p.
+
+01:12:27.570 --> 01:12:30.420 align:middle line:90%
+
+
+01:12:30.420 --> 01:12:31.640 align:middle line:90%
+What is this telling us?
+
+01:12:31.640 --> 01:12:43.530 align:middle line:90%
+
+
+01:12:43.530 --> 01:12:45.270 align:middle line:90%
+Yeah?
+
+01:12:45.270 --> 01:12:48.300 align:middle line:84%
+AUDIENCE: So p prime and
+a and b are co-prime.
+
+01:12:48.300 --> 01:12:49.550 align:middle line:90%
+BRYNMOR CHAPMAN: That's right.
+
+01:12:49.550 --> 01:12:49.860 align:middle line:90%
+AUDIENCE: [INAUDIBLE].
+
+01:12:49.860 --> 01:12:50.355 align:middle line:90%
+BRYNMOR CHAPMAN: Yes.
+
+01:12:50.355 --> 01:12:51.600 align:middle line:90%
+AUDIENCE: So i equals j.
+
+01:12:51.600 --> 01:12:52.780 align:middle line:90%
+BRYNMOR CHAPMAN: Yes.
+
+01:12:52.780 --> 01:12:56.240 align:middle line:90%
+So the answer was p is prime.
+
+01:12:56.240 --> 01:12:59.050 align:middle line:90%
+So a and p are co-prime, right?
+
+01:12:59.050 --> 01:13:00.950 align:middle line:90%
+So a has an inverse.
+
+01:13:00.950 --> 01:13:03.250 align:middle line:90%
+We can cancel it.
+
+01:13:03.250 --> 01:13:09.020 align:middle line:84%
+So this tells us that i
+is equivalent mod p to j.
+
+01:13:09.020 --> 01:13:12.730 align:middle line:84%
+The two coefficients
+are equivalent.
+
+01:13:12.730 --> 01:13:16.690 align:middle line:84%
+The two coefficients are coming
+from the set 1 to p minus 1.
+
+01:13:16.690 --> 01:13:19.855 align:middle line:84%
+So if they're congruent mod
+p, they're actually equal.
+
+01:13:19.855 --> 01:13:20.355 align:middle line:90%
+OK?
+
+01:13:20.355 --> 01:13:26.290 align:middle line:90%
+
+
+01:13:26.290 --> 01:13:29.170 align:middle line:84%
+So that means that
+all of these values
+
+01:13:29.170 --> 01:13:32.320 align:middle line:84%
+are going to be
+distinct modulo p.
+
+01:13:32.320 --> 01:13:33.290 align:middle line:90%
+None of them are 0.
+
+01:13:33.290 --> 01:13:36.330 align:middle line:84%
+So they're these
+particular values.
+
+01:13:36.330 --> 01:13:40.480 align:middle line:90%
+
+
+01:13:40.480 --> 01:13:43.275 align:middle line:84%
+What happens when we multiply
+everything in S together?
+
+01:13:43.275 --> 01:13:55.020 align:middle line:90%
+
+
+01:13:55.020 --> 01:13:58.355 align:middle line:84%
+Well, if we multiply everything
+in this set, what do we get?
+
+01:13:58.355 --> 01:14:08.490 align:middle line:90%
+
+
+01:14:08.490 --> 01:14:09.480 align:middle line:90%
+Yeah?
+
+01:14:09.480 --> 01:14:13.470 align:middle line:84%
+AUDIENCE: So is it p minus
+1 and then the [INAUDIBLE]?
+
+01:14:13.470 --> 01:14:15.790 align:middle line:84%
+BRYNMOR CHAPMAN: Yes,
+p minus 1 factorial,
+
+01:14:15.790 --> 01:14:17.220 align:middle line:90%
+that's what it's called.
+
+01:14:17.220 --> 01:14:21.370 align:middle line:84%
+So we take the
+product of both sides.
+
+01:14:21.370 --> 01:14:23.550 align:middle line:90%
+We have the product of this--
+
+01:14:23.550 --> 01:14:29.610 align:middle line:84%
+or sorry, the
+product of this one
+
+01:14:29.610 --> 01:14:32.976 align:middle line:84%
+is going to be equal
+to p minus 1 factorial.
+
+01:14:32.976 --> 01:14:36.690 align:middle line:90%
+
+
+01:14:36.690 --> 01:14:37.865 align:middle line:90%
+What about the other one?
+
+01:14:37.865 --> 01:14:46.207 align:middle line:90%
+
+
+01:14:46.207 --> 01:14:48.540 align:middle line:84%
+Well the other one is going
+to be the same, except we've
+
+01:14:48.540 --> 01:14:50.740 align:middle line:90%
+got a bunch of factors of a.
+
+01:14:50.740 --> 01:14:51.830 align:middle line:90%
+How many factors of a?
+
+01:14:51.830 --> 01:14:54.820 align:middle line:90%
+
+
+01:14:54.820 --> 01:14:55.712 align:middle line:90%
+Yeah?
+
+01:14:55.712 --> 01:14:57.040 align:middle line:90%
+AUDIENCE: [INAUDIBLE].
+
+01:14:57.040 --> 01:14:57.957 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+01:14:57.957 --> 01:15:12.010 align:middle line:90%
+
+
+01:15:12.010 --> 01:15:17.706 align:middle line:84%
+So this will be a to the p minus
+1 times p minus 1 factorial.
+
+01:15:17.706 --> 01:15:22.290 align:middle line:90%
+
+
+01:15:22.290 --> 01:15:26.110 align:middle line:84%
+So p minus 1 factorial
+is equivalent to p
+
+01:15:26.110 --> 01:15:29.500 align:middle line:84%
+minus 1 factorial times
+a to the p minus 1.
+
+01:15:29.500 --> 01:15:30.540 align:middle line:90%
+What does that tell us?
+
+01:15:30.540 --> 01:15:41.320 align:middle line:90%
+
+
+01:15:41.320 --> 01:15:43.360 align:middle line:90%
+Yeah?
+
+01:15:43.360 --> 01:15:47.120 align:middle line:84%
+AUDIENCE: Again, because p is
+prime, none of numbers from 1
+
+01:15:47.120 --> 01:15:48.610 align:middle line:90%
+p minus 1 [INAUDIBLE] p.
+
+01:15:48.610 --> 01:15:52.147 align:middle line:84%
+So p minus 1 factorial
+is [INAUDIBLE].
+
+01:15:52.147 --> 01:15:52.980 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+01:15:52.980 --> 01:15:58.550 align:middle line:84%
+So the answer was that because p
+is prime, none of these numbers
+
+01:15:58.550 --> 01:15:59.880 align:middle line:90%
+are a multiple of p.
+
+01:15:59.880 --> 01:16:02.150 align:middle line:84%
+So their product is
+not a multiple of p.
+
+01:16:02.150 --> 01:16:05.220 align:middle line:84%
+So p minus 1 factorial
+is not a multiple of p.
+
+01:16:05.220 --> 01:16:07.910 align:middle line:90%
+So it has an inverse.
+
+01:16:07.910 --> 01:16:11.570 align:middle line:84%
+So that means that we can
+cancel it from both sides.
+
+01:16:11.570 --> 01:16:14.905 align:middle line:84%
+And we end up with 1 is
+congruent to a to the p minus 1.
+
+01:16:14.905 --> 01:16:21.191 align:middle line:90%
+
+
+01:16:21.191 --> 01:16:27.740 align:middle line:84%
+So we have p minus 1
+factorial is congruent mod p
+
+01:16:27.740 --> 01:16:33.320 align:middle line:84%
+to p minus 1 factorial
+times a to the p minus 1.
+
+01:16:33.320 --> 01:16:34.075 align:middle line:90%
+These cancel.
+
+01:16:34.075 --> 01:16:38.450 align:middle line:90%
+
+
+01:16:38.450 --> 01:16:41.240 align:middle line:84%
+And we have 1 is congruent
+to the p minus 1.
+
+01:16:41.240 --> 01:16:45.050 align:middle line:90%
+
+
+01:16:45.050 --> 01:16:49.660 align:middle line:84%
+And that's the result
+that we were looking for.
+
+01:16:49.660 --> 01:16:54.300 align:middle line:84%
+So if we're working mod n,
+we cannot generally reduce
+
+01:16:54.300 --> 01:16:56.220 align:middle line:90%
+exponents mod n.
+
+01:16:56.220 --> 01:17:00.545 align:middle line:84%
+But if n is prime, we can
+instead reduce mod n minus 1.
+
+01:17:00.545 --> 01:17:05.010 align:middle line:90%
+
+
+01:17:05.010 --> 01:17:06.670 align:middle line:84%
+Does that make
+sense to everybody?
+
+01:17:06.670 --> 01:17:20.730 align:middle line:90%
+
+
+01:17:20.730 --> 01:17:27.570 align:middle line:84%
+So as an example,
+so if we wanted
+
+01:17:27.570 --> 01:17:36.210 align:middle line:84%
+to, say, find the
+remainder of 7 to the,
+
+01:17:36.210 --> 01:17:50.205 align:middle line:84%
+say, 95 modulo, let's say,
+13, how might we do that?
+
+01:17:50.205 --> 01:17:59.680 align:middle line:90%
+
+
+01:17:59.680 --> 01:18:02.920 align:middle line:90%
+Well, 13 is prime.
+
+01:18:02.920 --> 01:18:05.920 align:middle line:84%
+So instead of
+computing 7 to the 95,
+
+01:18:05.920 --> 01:18:11.830 align:middle line:84%
+let's reduce that mod 13
+minus 1, so modulo 12.
+
+01:18:11.830 --> 01:18:17.115 align:middle line:84%
+So this is going to be the same
+as 7 to the, what is it, 11?
+
+01:18:17.115 --> 01:18:20.252 align:middle line:90%
+
+
+01:18:20.252 --> 01:18:21.070 align:middle line:90%
+mod 13?
+
+01:18:21.070 --> 01:18:28.353 align:middle line:90%
+
+
+01:18:28.353 --> 01:18:29.145 align:middle line:90%
+Now what can we do?
+
+01:18:29.145 --> 01:18:44.320 align:middle line:90%
+
+
+01:18:44.320 --> 01:18:45.605 align:middle line:90%
+What is 7 to the 12?
+
+01:18:45.605 --> 01:18:51.900 align:middle line:90%
+
+
+01:18:51.900 --> 01:18:54.690 align:middle line:90%
+Sorry?
+
+01:18:54.690 --> 01:18:58.140 align:middle line:90%
+Did somebody give an answer?
+
+01:18:58.140 --> 01:18:59.272 align:middle line:90%
+No?
+
+01:18:59.272 --> 01:19:00.690 align:middle line:90%
+AUDIENCE: It's 1.
+
+01:19:00.690 --> 01:19:03.660 align:middle line:90%
+BRYNMOR CHAPMAN: 1, yes.
+
+01:19:03.660 --> 01:19:08.370 align:middle line:90%
+So 7 to the 12 is 1.
+
+01:19:08.370 --> 01:19:12.000 align:middle line:84%
+7 to the 11 times
+7 is 7 to the 12.
+
+01:19:12.000 --> 01:19:16.685 align:middle line:84%
+So this is the modular
+inverse of 7 modulo 13.
+
+01:19:16.685 --> 01:19:19.200 align:middle line:90%
+
+
+01:19:19.200 --> 01:19:22.660 align:middle line:84%
+What can you multiply
+7 by to get 1 mod 13?
+
+01:19:22.660 --> 01:19:23.190 align:middle line:90%
+Yeah?
+
+01:19:23.190 --> 01:19:23.820 align:middle line:90%
+AUDIENCE: 2.
+
+01:19:23.820 --> 01:19:24.612 align:middle line:90%
+BRYNMOR CHAPMAN: 2.
+
+01:19:24.612 --> 01:19:33.010 align:middle line:90%
+
+
+01:19:33.010 --> 01:19:36.240 align:middle line:84%
+So that's all we
+have time for today.
+
+01:19:36.240 --> 01:19:38.230 align:middle line:90%
+I will see you on Thursday.
+
+01:19:38.230 --> 01:19:41.750 align:middle line:84%
+And if you have any questions,
+feel free to come up and ask.
+
+01:19:41.750 --> 01:19:45.000 align:middle line:90%

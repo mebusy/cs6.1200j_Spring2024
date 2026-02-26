@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lecture Videos on MIT OpenCourseWare</title>
+    <link>/resources/lecture-videos/</link>
+    <description>Recent content in Lecture Videos on MIT OpenCourseWare</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/resources/lecture-videos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lecture 1: Predicates, Sets, and Proofs</title>
+      <link>/resources/61200-sp24-lecture01-2024feb06_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture01-2024feb06_mp4/data.json</guid>
+      <description>&lt;p&gt;This lecture explores what a proof is. It defines proofs, propositions, logical deductions, and axioms and delves into predicate logic. It explores how to use and combine prepositions and how to use implications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 10: Cryptography</title>
+      <link>/resources/61200-sp24-lecture10-2024mar14_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture10-2024mar14_mp4/data.json</guid>
+      <description>&lt;p&gt;You’ve seen a couple of lectures on basic number theory now. Why was it in 6.1200? Today we will see how GCDs and modular arithmetic are extremely important for computer security!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 11: Graphs and Coloring</title>
+      <link>/resources/61200-sp24-lecture11-2024mar19_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture11-2024mar19_mp4/data.json</guid>
+      <description>&lt;p&gt;Graphs are incredibly useful structures in computer science. Their applications range from scheduling to communications to search engines. In this lecture, we look at several types of graphs and coloring.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 12: Matching</title>
+      <link>/resources/61200-sp24-lecture12-2024mar21_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture12-2024mar21_mp4/data.json</guid>
+      <description>&lt;p&gt;A matching in a graph G is a subgraph M of G in which every vertex has degree 1. In this lecture, we examine types of matching problems, such as maximum weight matching, stable matching, and matching in bipartite and non-bipartite graphs.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 13: Connectivity and Trees</title>
+      <link>/resources/61200-sp24-lecture13-2024apr02_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture13-2024apr02_mp4/data.json</guid>
+      <description>&lt;p&gt;Motivation: getting around! In this lecture, we look at optimization problems such as &amp;ldquo;What about efficiency?&amp;rdquo; and &amp;ldquo;Shortest route or fastest route? (Might not be the same!)&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 14: Digraphs and DAGs</title>
+      <link>/resources/61200-sp24-lecture14-2024apr04_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture14-2024apr04_mp4/data.json</guid>
+      <description>&lt;p&gt;This lecture examines directed graphs, or digraphs, and their walks, cycles, and connectivity. Next, we look at directed acyclic graphs (DAGs), digraphs with no cycles.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 15: Relations and Counting</title>
+      <link>/resources/61200-sp24-lecture15-2024apr09_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture15-2024apr09_mp4/data.json</guid>
+      <description>&lt;p&gt;A relation consists of a domain, a codomain, and a subset of ordered pairs. This lecture examines relations on a single set, equivalence relations, and partial orders. Then, we introduce counting.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 16: Counting Techniques</title>
+      <link>/resources/61200-sp24-lecture16-2024apr11_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture16-2024apr11_mp4/data.json</guid>
+      <description>&lt;p&gt;This lecture continues the topic of counting and looks at how product rules can be used with cards as an example.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 17: More Counting Techniques</title>
+      <link>/resources/61200-sp24-lecture17-2024apr16_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture17-2024apr16_mp4/data.json</guid>
+      <description>&lt;p&gt;We continue the counting techniques by looking at the pigeonhole principle to solve counting problems.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 18: Probability</title>
+      <link>/resources/61200-sp24-lecture18-2024apr23_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture18-2024apr23_mp4/data.json</guid>
+      <description>&lt;p&gt;Probability is one of the most important disciplines in all of the sciences and also one of the least understood. Solution? Throw away intuition, and simply fall back to rigorous, step-by-step analysis.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 19: Conditional Probability</title>
+      <link>/resources/61200-sp24-lecture19-2024apr25_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture19-2024apr25_mp4/data.json</guid>
+      <description>&lt;p&gt;In the last lecture, we learned how to compute probabilities using the tree method. In this lecture, we will see how some of our tools for reasoning about sizes of sets carry over naturally to the world of probability.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 2: Contradiction and Induction</title>
+      <link>/resources/61200-sp24-lecture02-2024feb09_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture02-2024feb09_mp4/data.json</guid>
+      <description>&lt;p&gt;Today we will explore some basic (but crucial!) proof techniques, and then two powerful techniques: proof by contradiction and proof by induction.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 20: Independence</title>
+      <link>/resources/61200-sp24-lecture20-2024apr30_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture20-2024apr30_mp4/data.json</guid>
+      <description>&lt;p&gt;This lecture examines three of the most common types of independence: mutual independence, pairwise independence, and conditional independence.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 21: Random Variables</title>
+      <link>/resources/61200-sp24-lecture21-2024may02_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture21-2024may02_mp4/data.json</guid>
+      <description>&lt;p&gt;The probability mass function and the cumulative distribution function are two different (equivalent!) ways to express the probability distribution of an RV. It’s often used to describe random variables by their distributions.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 22: Expectation</title>
+      <link>/resources/61200-sp24-lecture22-2024may07_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture22-2024may07_mp4/data.json</guid>
+      <description>&lt;p&gt;This lecture is about the notion of expectation of a random variable, and a really cool property called linearity of expectation which makes computing expected values so much easier.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 23: Expectation and Variance</title>
+      <link>/resources/61200-sp24-lecture23-2024may09_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture23-2024may09_mp4/data.json</guid>
+      <description>&lt;p&gt;We continue probability with expectation and the second level of random variables, which is variance.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 24: Large Deviations: Chebyshev and Chernov Bound, Wrap Up</title>
+      <link>/resources/61200-sp24-lecture24-2024may14_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture24-2024may14_mp4/data.json</guid>
+      <description>&lt;p&gt;This lecture wraps up the semester by looking at large deviation, Chebyshev, and Chernoff bounds.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 3: Casework and Strong Induction</title>
+      <link>/resources/61200-sp24-lecture03-2024feb20_v4_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture03-2024feb20_v4_mp4/data.json</guid>
+      <description>&lt;p&gt;This lecture builds upon proof techniques of construction, instantiation, direct argument, contradiction, and induction. We then go over more proof by cases and strong induction.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 4: State Machines</title>
+      <link>/resources/61200-sp24-lecture04-2024feb15_v4_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture04-2024feb15_v4_mp4/data.json</guid>
+      <description>&lt;p&gt;Today we’re going to introduce a new abstraction called a state machine that lets us model how algorithms work. We’ll show how to use induction to prove properties of state machines.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 5: Sums</title>
+      <link>/resources/61200-sp24-lecture05-2024feb22_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture05-2024feb22_mp4/data.json</guid>
+      <description>&lt;p&gt;Sums are useful for recurrences, counting, probability, runtimes of algorithms, performances of large systems, machine learning, and much more! This lecture looks at ways to approximate sums through perturbation, ansatz method, and the integral method.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 6: Asymptotics</title>
+      <link>/resources/61200-sp24-lecture06-2024feb27_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture06-2024feb27_mp4/data.json</guid>
+      <description>&lt;p&gt;Last week we saw some techniques for evaluating and approximating sums. Today we will use those techniques to solve a well-known physics problem. We then explore asymptotic notation, including Big-O, Little-o, Big-Ω, and Little-ω.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 7: Recurrences</title>
+      <link>/resources/61200-sp24-lecture07-2024feb29_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture07-2024feb29_mp4/data.json</guid>
+      <description>&lt;p&gt;Today we will see how to model computational problems, such as computing running time, by using recurrences, and we will see how to find closed-form solutions for many recurrences.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 8: Divisibility</title>
+      <link>/resources/61200-sp24-lecture08-2024mar05_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture08-2024mar05_mp4/data.json</guid>
+      <description>&lt;p&gt;This lecture we look at number theory and its applications through the lenses of divisibility, greatest common divisor (GCD), and the Extended Euclidian Algorithm.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Lecture 9: Modular Arithmetic</title>
+      <link>/resources/61200-sp24-lecture09-2024mar12_mp4/data.json</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/resources/61200-sp24-lecture09-2024mar12_mp4/data.json</guid>
+      <description>&lt;p&gt;Modular arithmetic helps answer questions like &amp;ldquo;What is even + odd?&amp;rdquo; &amp;ldquo;What day of the week will it be 100 days from now?&amp;rdquo; and &amp;ldquo;What computation do you need to do? (rem(100, 2) = 2, so Tues + 2 = Thurs)?&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

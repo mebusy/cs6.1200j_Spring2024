@@ -1,0 +1,5091 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:00.994 align:middle line:90%
+[SQUEAKING]
+
+00:00:00.994 --> 00:00:01.988 align:middle line:90%
+[RUSTLING]
+
+00:00:01.988 --> 00:00:03.976 align:middle line:90%
+
+
+00:00:03.976 --> 00:00:05.467 align:middle line:90%
+[CLICKING]
+
+00:00:05.467 --> 00:00:11.180 align:middle line:90%
+
+
+00:00:11.180 --> 00:00:12.180 align:middle line:90%
+ERIK DEMAINE: All right.
+
+00:00:12.180 --> 00:00:14.130 align:middle line:90%
+Welcome back to graphs.
+
+00:00:14.130 --> 00:00:17.960 align:middle line:84%
+This will be our last lecture
+that's fully about graphs.
+
+00:00:17.960 --> 00:00:21.728 align:middle line:84%
+And we're going to move
+away from what we've
+
+00:00:21.728 --> 00:00:23.270 align:middle line:84%
+been talking about
+for the last three
+
+00:00:23.270 --> 00:00:25.050 align:middle line:84%
+lectures, simple
+undirected graphs,
+
+00:00:25.050 --> 00:00:27.410 align:middle line:84%
+and move to the
+other kind of graph
+
+00:00:27.410 --> 00:00:30.013 align:middle line:84%
+we talk about in this class,
+which is directed graphs.
+
+00:00:30.013 --> 00:00:35.450 align:middle line:90%
+
+
+00:00:35.450 --> 00:00:38.385 align:middle line:84%
+Which we sometimes
+shorten to digraph.
+
+00:00:38.385 --> 00:00:42.140 align:middle line:90%
+
+
+00:00:42.140 --> 00:00:44.545 align:middle line:84%
+So from now on, we're going
+to have to be explicit.
+
+00:00:44.545 --> 00:00:45.920 align:middle line:84%
+Every time we talk
+about a graph,
+
+00:00:45.920 --> 00:00:47.930 align:middle line:84%
+we should say directed
+or undirected.
+
+00:00:47.930 --> 00:00:51.080 align:middle line:84%
+Simple is implicit
+when we say undirected.
+
+00:00:51.080 --> 00:00:54.080 align:middle line:90%
+But we should distinguish.
+
+00:00:54.080 --> 00:00:57.800 align:middle line:84%
+So the motivation is what
+if your connections only
+
+00:00:57.800 --> 00:00:59.130 align:middle line:90%
+go in one direction?
+
+00:00:59.130 --> 00:01:03.310 align:middle line:84%
+Maybe you have one way
+roads, like all of Boston,
+
+00:01:03.310 --> 00:01:06.810 align:middle line:84%
+or you have one way follow
+relationships instead
+
+00:01:06.810 --> 00:01:10.830 align:middle line:84%
+of friendships, or you have
+network connections you can only
+
+00:01:10.830 --> 00:01:12.040 align:middle line:90%
+send in one direction.
+
+00:01:12.040 --> 00:01:14.860 align:middle line:84%
+Those do exist, though
+they're less common.
+
+00:01:14.860 --> 00:01:19.020 align:middle line:84%
+And so directed graphs are
+going to model that for us.
+
+00:01:19.020 --> 00:01:29.820 align:middle line:84%
+So things are going to look very
+similar to the old definition.
+
+00:01:29.820 --> 00:01:31.316 align:middle line:90%
+Just the edges are different.
+
+00:01:31.316 --> 00:01:34.380 align:middle line:90%
+
+
+00:01:34.380 --> 00:01:37.380 align:middle line:84%
+So you may recall we had
+this cross product notation.
+
+00:01:37.380 --> 00:01:40.440 align:middle line:84%
+I'm going to remind
+you so we can compare.
+
+00:01:40.440 --> 00:01:46.950 align:middle line:84%
+This is a set of ordered pairs
+of vertices, in this case.
+
+00:01:46.950 --> 00:01:50.500 align:middle line:90%
+So a very similar property here.
+
+00:01:50.500 --> 00:01:54.370 align:middle line:84%
+Edges were unordered
+sets of two vertices.
+
+00:01:54.370 --> 00:01:58.270 align:middle line:84%
+Here they are ordered
+pairs of two vertices.
+
+00:01:58.270 --> 00:02:02.145 align:middle line:84%
+The other difference is here,
+we forbade having a loop.
+
+00:02:02.145 --> 00:02:05.170 align:middle line:90%
+
+
+00:02:05.170 --> 00:02:06.375 align:middle line:90%
+Here we allow it.
+
+00:02:06.375 --> 00:02:08.949 align:middle line:90%
+
+
+00:02:08.949 --> 00:02:17.470 align:middle line:84%
+So this was not allowed over
+here, but allowed over here.
+
+00:02:17.470 --> 00:02:24.610 align:middle line:84%
+Still over here we forbade two
+edges connecting the same two
+
+00:02:24.610 --> 00:02:26.350 align:middle line:90%
+vertices.
+
+00:02:26.350 --> 00:02:32.560 align:middle line:84%
+Here we allow two edges
+going in opposite directions.
+
+00:02:32.560 --> 00:02:35.800 align:middle line:90%
+So this was a no.
+
+00:02:35.800 --> 00:02:39.460 align:middle line:84%
+We still forbid in this
+picture having two edges
+
+00:02:39.460 --> 00:02:44.320 align:middle line:84%
+going in the same direction
+between the same two vertices.
+
+00:02:44.320 --> 00:02:47.770 align:middle line:84%
+That's a consequence
+because e is a set.
+
+00:02:47.770 --> 00:02:50.590 align:middle line:84%
+You're only allowed
+to have one of each.
+
+00:02:50.590 --> 00:02:52.220 align:middle line:90%
+So that's the definition.
+
+00:02:52.220 --> 00:02:53.240 align:middle line:90%
+Very simple.
+
+00:02:53.240 --> 00:03:00.530 align:middle line:84%
+Here's a little example
+of on six vertices.
+
+00:03:00.530 --> 00:03:04.280 align:middle line:84%
+There's a floating
+vertex out here f.
+
+00:03:04.280 --> 00:03:08.150 align:middle line:84%
+So you see sometimes you
+can have an edge that
+
+00:03:08.150 --> 00:03:09.630 align:middle line:90%
+goes in both directions.
+
+00:03:09.630 --> 00:03:12.320 align:middle line:84%
+Sometimes you have an edge that
+only goes in one direction.
+
+00:03:12.320 --> 00:03:14.520 align:middle line:90%
+Maybe sometimes you add a loop.
+
+00:03:14.520 --> 00:03:17.300 align:middle line:90%
+I think I wanted one here.
+
+00:03:17.300 --> 00:03:20.270 align:middle line:84%
+And I should have
+written it over here.
+
+00:03:20.270 --> 00:03:21.870 align:middle line:90%
+That just looks like d comma d.
+
+00:03:21.870 --> 00:03:25.040 align:middle line:90%
+
+
+00:03:25.040 --> 00:03:28.040 align:middle line:90%
+And there you go.
+
+00:03:28.040 --> 00:03:29.600 align:middle line:84%
+Now, the first part
+of today is just
+
+00:03:29.600 --> 00:03:32.810 align:middle line:84%
+going to be porting over all
+the definitions from last class
+
+00:03:32.810 --> 00:03:34.080 align:middle line:90%
+into this model.
+
+00:03:34.080 --> 00:03:37.170 align:middle line:84%
+Most of the things we talked
+about behave similarly.
+
+00:03:37.170 --> 00:03:39.810 align:middle line:84%
+Some of them behave different
+in interesting ways.
+
+00:03:39.810 --> 00:03:43.430 align:middle line:84%
+So bear with me while
+we define a few things.
+
+00:03:43.430 --> 00:03:50.480 align:middle line:84%
+The very first thing
+is what about degrees?
+
+00:03:50.480 --> 00:03:52.737 align:middle line:84%
+So that's way back in
+the beginning of graphs.
+
+00:03:52.737 --> 00:03:54.320 align:middle line:84%
+We talked about the
+degree of a vertex
+
+00:03:54.320 --> 00:03:56.710 align:middle line:84%
+was the number of
+incident edges.
+
+00:03:56.710 --> 00:04:00.130 align:middle line:84%
+But now a vertex can have
+two types of incident edges.
+
+00:04:00.130 --> 00:04:02.190 align:middle line:84%
+It can have some
+incoming edges and it
+
+00:04:02.190 --> 00:04:03.970 align:middle line:90%
+can have some outgoing edges.
+
+00:04:03.970 --> 00:04:06.840 align:middle line:84%
+So in general, if
+a vertex v is going
+
+00:04:06.840 --> 00:04:09.970 align:middle line:84%
+to have some incoming
+guys and some outgoing,
+
+00:04:09.970 --> 00:04:18.120 align:middle line:84%
+we call this the in degree and
+we call this the out degree.
+
+00:04:18.120 --> 00:04:23.020 align:middle line:84%
+We don't define degree, because
+it's confusing and ambiguous.
+
+00:04:23.020 --> 00:04:31.650 align:middle line:84%
+So in degree, for example,
+of a vertex is the--
+
+00:04:31.650 --> 00:04:34.110 align:middle line:90%
+sorry, not the sum.
+
+00:04:34.110 --> 00:04:39.270 align:middle line:84%
+The cardinality of
+the set of edges
+
+00:04:39.270 --> 00:04:47.340 align:middle line:84%
+UV that are in e,
+where u is a vertex.
+
+00:04:47.340 --> 00:04:50.880 align:middle line:84%
+So this is just counting the
+number of edges going into v
+
+00:04:50.880 --> 00:04:53.992 align:middle line:90%
+and the out degree is symmetric.
+
+00:04:53.992 --> 00:04:58.540 align:middle line:90%
+
+
+00:04:58.540 --> 00:05:00.825 align:middle line:90%
+This would be like v comma u.
+
+00:05:00.825 --> 00:05:12.160 align:middle line:90%
+
+
+00:05:12.160 --> 00:05:13.940 align:middle line:84%
+Before we only had
+one type of edge,
+
+00:05:13.940 --> 00:05:15.740 align:middle line:90%
+so there was only one notion.
+
+00:05:15.740 --> 00:05:18.190 align:middle line:84%
+Sometimes these are called
+degree plus and degree minus
+
+00:05:18.190 --> 00:05:19.610 align:middle line:90%
+or degree sub in, sub out.
+
+00:05:19.610 --> 00:05:21.860 align:middle line:84%
+I can never remember which
+is plus and which is minus.
+
+00:05:21.860 --> 00:05:24.580 align:middle line:84%
+So I always write in
+degree and out degree.
+
+00:05:24.580 --> 00:05:26.950 align:middle line:84%
+You can choose
+your own adventure.
+
+00:05:26.950 --> 00:05:31.125 align:middle line:84%
+A related thing to degree
+is the handshaking lemma.
+
+00:05:31.125 --> 00:05:39.713 align:middle line:90%
+
+
+00:05:39.713 --> 00:05:41.380 align:middle line:84%
+Who remembers what
+the handshaking lemma
+
+00:05:41.380 --> 00:05:43.005 align:middle line:90%
+was for undirected graphs?
+
+00:05:43.005 --> 00:05:46.420 align:middle line:90%
+
+
+00:05:46.420 --> 00:05:49.200 align:middle line:84%
+I know it was ages ago,
+before spring break.
+
+00:05:49.200 --> 00:05:55.670 align:middle line:90%
+
+
+00:05:55.670 --> 00:05:57.230 align:middle line:90%
+No one?
+
+00:05:57.230 --> 00:05:58.182 align:middle line:90%
+Yeah.
+
+00:05:58.182 --> 00:06:00.140 align:middle line:84%
+STUDENT: The sum of the
+degrees of the vertices
+
+00:06:00.140 --> 00:06:02.197 align:middle line:90%
+is the number [INAUDIBLE].
+
+00:06:02.197 --> 00:06:03.030 align:middle line:90%
+ERIK DEMAINE: Right.
+
+00:06:03.030 --> 00:06:08.600 align:middle line:84%
+The sum of the degrees
+of the vertices
+
+00:06:08.600 --> 00:06:11.130 align:middle line:90%
+is twice the number of edges.
+
+00:06:11.130 --> 00:06:12.895 align:middle line:84%
+I think you said
+over two, but close.
+
+00:06:12.895 --> 00:06:15.770 align:middle line:90%
+
+
+00:06:15.770 --> 00:06:18.800 align:middle line:84%
+So in this world, this
+was, in some sense,
+
+00:06:18.800 --> 00:06:23.420 align:middle line:84%
+because every edge was
+getting counted twice.
+
+00:06:23.420 --> 00:06:27.030 align:middle line:84%
+If you sum the degrees of this
+vertex and of this vertex,
+
+00:06:27.030 --> 00:06:29.460 align:middle line:84%
+you count this edge
+once from this side
+
+00:06:29.460 --> 00:06:31.730 align:middle line:90%
+and once from this side.
+
+00:06:31.730 --> 00:06:34.700 align:middle line:84%
+Now we have distinguished
+in some sense
+
+00:06:34.700 --> 00:06:36.270 align:middle line:90%
+each end of each edge.
+
+00:06:36.270 --> 00:06:38.100 align:middle line:84%
+There's the in edge
+and the out edge.
+
+00:06:38.100 --> 00:06:40.640 align:middle line:84%
+Or I guess you call this in
+edge and this is the-- it
+
+00:06:40.640 --> 00:06:43.370 align:middle line:90%
+comes out of b and goes into d.
+
+00:06:43.370 --> 00:06:52.050 align:middle line:84%
+So if we write the sum of, say,
+in degrees, so this was just
+
+00:06:52.050 --> 00:06:56.730 align:middle line:90%
+remembering undirected.
+
+00:06:56.730 --> 00:06:59.370 align:middle line:84%
+In the directed
+case, we have a sum
+
+00:06:59.370 --> 00:07:02.130 align:middle line:84%
+over all vertices
+of in degree equals
+
+00:07:02.130 --> 00:07:05.550 align:middle line:84%
+exactly the number of
+edges, and also equals
+
+00:07:05.550 --> 00:07:07.706 align:middle line:90%
+the sum of the out degrees.
+
+00:07:07.706 --> 00:07:14.970 align:middle line:90%
+
+
+00:07:14.970 --> 00:07:20.160 align:middle line:84%
+Because now our
+edges are directed.
+
+00:07:20.160 --> 00:07:21.340 align:middle line:90%
+I have an arrow.
+
+00:07:21.340 --> 00:07:23.670 align:middle line:84%
+And so if we sum in
+degrees, we will only
+
+00:07:23.670 --> 00:07:25.830 align:middle line:84%
+count this edge
+from this side when
+
+00:07:25.830 --> 00:07:27.130 align:middle line:90%
+we're looking at this vertex.
+
+00:07:27.130 --> 00:07:30.180 align:middle line:84%
+If we sum the out degrees,
+we'll only count this edge once
+
+00:07:30.180 --> 00:07:31.600 align:middle line:90%
+from this vertex.
+
+00:07:31.600 --> 00:07:33.660 align:middle line:84%
+So these two sums are
+the same and they both
+
+00:07:33.660 --> 00:07:35.380 align:middle line:90%
+give you the number of edges.
+
+00:07:35.380 --> 00:07:36.853 align:middle line:84%
+So in some sense,
+a little cleaner
+
+00:07:36.853 --> 00:07:38.520 align:middle line:84%
+than what we had from
+undirected graphs,
+
+00:07:38.520 --> 00:07:44.040 align:middle line:84%
+because we split each edge or
+we distinguished the two sides
+
+00:07:44.040 --> 00:07:46.500 align:middle line:90%
+of the edge, I should say.
+
+00:07:46.500 --> 00:07:47.320 align:middle line:90%
+All right.
+
+00:07:47.320 --> 00:07:53.753 align:middle line:84%
+Let's catch up to last lecture,
+which is all about walks.
+
+00:07:53.753 --> 00:07:56.500 align:middle line:90%
+
+
+00:07:56.500 --> 00:07:59.740 align:middle line:84%
+So this definition
+is actually it's
+
+00:07:59.740 --> 00:08:01.720 align:middle line:90%
+pretty much exactly the same.
+
+00:08:01.720 --> 00:08:04.930 align:middle line:84%
+I'll just repeat
+it so we remember.
+
+00:08:04.930 --> 00:08:16.720 align:middle line:84%
+We had a sequence of vertices
+where each vi to vi plus 1
+
+00:08:16.720 --> 00:08:18.310 align:middle line:90%
+is an edge.
+
+00:08:18.310 --> 00:08:20.920 align:middle line:84%
+But before we had curly
+braces here saying the order
+
+00:08:20.920 --> 00:08:23.330 align:middle line:84%
+didn't matter because
+edges were undirected.
+
+00:08:23.330 --> 00:08:26.180 align:middle line:84%
+Now we have parentheses saying
+this is an ordered pair.
+
+00:08:26.180 --> 00:08:28.850 align:middle line:84%
+You have to go forward
+along each edge.
+
+00:08:28.850 --> 00:08:30.970 align:middle line:90%
+So that's a crucial distinction.
+
+00:08:30.970 --> 00:08:35.270 align:middle line:90%
+Must go forward along the edge.
+
+00:08:35.270 --> 00:08:37.485 align:middle line:84%
+In other words, you have
+to respect the arrows.
+
+00:08:37.485 --> 00:08:42.730 align:middle line:90%
+
+
+00:08:42.730 --> 00:08:54.290 align:middle line:84%
+So for example, in this graph,
+we could start at a and go to c
+
+00:08:54.290 --> 00:08:56.090 align:middle line:90%
+and then go to e.
+
+00:08:56.090 --> 00:08:58.500 align:middle line:84%
+That would be an example
+of not just a walk,
+
+00:08:58.500 --> 00:09:01.783 align:middle line:84%
+but a path which has no
+repeated vertices or edges.
+
+00:09:01.783 --> 00:09:19.400 align:middle line:90%
+
+
+00:09:19.400 --> 00:09:27.980 align:middle line:84%
+Or we could go from a
+to b to a to b to a to b
+
+00:09:27.980 --> 00:09:31.850 align:middle line:90%
+to d to d to d to d to d to e.
+
+00:09:31.850 --> 00:09:35.810 align:middle line:84%
+That would be an
+example of a walk.
+
+00:09:35.810 --> 00:09:38.300 align:middle line:90%
+A little more exciting.
+
+00:09:38.300 --> 00:09:41.940 align:middle line:84%
+I should say these structures
+should look familiar.
+
+00:09:41.940 --> 00:09:43.610 align:middle line:84%
+If you can remember
+even farther back
+
+00:09:43.610 --> 00:09:47.950 align:middle line:84%
+to lecture four, which
+was about state machines,
+
+00:09:47.950 --> 00:09:50.427 align:middle line:84%
+these are exactly
+state machines.
+
+00:09:50.427 --> 00:09:52.510 align:middle line:84%
+I think the only difference
+is in directed graphs,
+
+00:09:52.510 --> 00:09:54.480 align:middle line:84%
+we usually think
+about finite graphs.
+
+00:09:54.480 --> 00:09:55.980 align:middle line:84%
+And with state
+machines, we're often
+
+00:09:55.980 --> 00:09:57.850 align:middle line:84%
+thinking about
+infinite machines.
+
+00:09:57.850 --> 00:10:00.070 align:middle line:90%
+But this is the same setup.
+
+00:10:00.070 --> 00:10:06.505 align:middle line:84%
+This definition mirrors exactly
+state machines and walks.
+
+00:10:06.505 --> 00:10:08.130 align:middle line:84%
+The only difference,
+another difference
+
+00:10:08.130 --> 00:10:10.870 align:middle line:84%
+is state machine had
+an initial state.
+
+00:10:10.870 --> 00:10:12.910 align:middle line:84%
+There's no notion of
+initial state here.
+
+00:10:12.910 --> 00:10:16.180 align:middle line:84%
+But a walk is just like an
+execution in a state machine.
+
+00:10:16.180 --> 00:10:18.430 align:middle line:84%
+So unifying all
+that terminology.
+
+00:10:18.430 --> 00:10:20.530 align:middle line:84%
+We didn't have a notion
+of path or anything.
+
+00:10:20.530 --> 00:10:23.490 align:middle line:90%
+We just had walks.
+
+00:10:23.490 --> 00:10:30.600 align:middle line:84%
+As before, a walk like
+this is from v0 to vk.
+
+00:10:30.600 --> 00:10:33.960 align:middle line:90%
+And k is the length.
+
+00:10:33.960 --> 00:10:38.490 align:middle line:84%
+Length always counts the
+number of edges, not vertices.
+
+00:10:38.490 --> 00:10:40.080 align:middle line:84%
+And then we had
+the closed notion.
+
+00:10:40.080 --> 00:10:42.630 align:middle line:90%
+There was a closed walk.
+
+00:10:42.630 --> 00:10:44.860 align:middle line:90%
+And in particular, a cycle.
+
+00:10:44.860 --> 00:10:47.830 align:middle line:90%
+Closed meant the v0 equals vk.
+
+00:10:47.830 --> 00:10:51.200 align:middle line:84%
+And cycle was essentially
+the closed version of a path.
+
+00:10:51.200 --> 00:11:01.270 align:middle line:84%
+So this was closed walk
+of length greater than 0
+
+00:11:01.270 --> 00:11:11.230 align:middle line:84%
+with no other repeated
+vertices or edges
+
+00:11:11.230 --> 00:11:16.150 align:middle line:84%
+other than the first
+equaling the last.
+
+00:11:16.150 --> 00:11:19.940 align:middle line:84%
+The difference is in
+an undirected graph,
+
+00:11:19.940 --> 00:11:24.640 align:middle line:90%
+the shortest cycle had length 3.
+
+00:11:24.640 --> 00:11:29.620 align:middle line:84%
+We could make a cycle
+like this, a triangle.
+
+00:11:29.620 --> 00:11:32.540 align:middle line:84%
+We weren't allowed to make
+a cycle with a single edge,
+
+00:11:32.540 --> 00:11:36.160 align:middle line:84%
+because then you'd
+necessarily repeat that edge.
+
+00:11:36.160 --> 00:11:37.570 align:middle line:90%
+Where's my red?
+
+00:11:37.570 --> 00:11:45.890 align:middle line:84%
+In an undirected graph,
+this was forbidden.
+
+00:11:45.890 --> 00:11:48.710 align:middle line:84%
+But in a directed
+graph, it's possible.
+
+00:11:48.710 --> 00:11:54.080 align:middle line:84%
+If we have the edge uv
+and we have the edge vu,
+
+00:11:54.080 --> 00:11:59.180 align:middle line:84%
+then there is a two
+cycle like that.
+
+00:11:59.180 --> 00:11:59.750 align:middle line:90%
+It goes uvu.
+
+00:11:59.750 --> 00:12:03.620 align:middle line:90%
+
+
+00:12:03.620 --> 00:12:06.600 align:middle line:84%
+There's even a one cycle,
+because we can have loops.
+
+00:12:06.600 --> 00:12:08.720 align:middle line:90%
+So here, for example.
+
+00:12:08.720 --> 00:12:16.620 align:middle line:84%
+d to d is a length one
+cycle in this notation.
+
+00:12:16.620 --> 00:12:18.540 align:middle line:84%
+So a little different
+than what we had before.
+
+00:12:18.540 --> 00:12:19.808 align:middle line:90%
+A little more general.
+
+00:12:19.808 --> 00:12:21.350 align:middle line:84%
+But it turns out
+this notion of cycle
+
+00:12:21.350 --> 00:12:24.020 align:middle line:84%
+is still interesting
+for directed graphs.
+
+00:12:24.020 --> 00:12:26.886 align:middle line:84%
+All right, let's move
+on to connectivity.
+
+00:12:26.886 --> 00:12:33.920 align:middle line:90%
+
+
+00:12:33.920 --> 00:12:36.398 align:middle line:84%
+Before we had a nice
+notion of u and v
+
+00:12:36.398 --> 00:12:37.940 align:middle line:84%
+being connected to
+each other, and it
+
+00:12:37.940 --> 00:12:40.070 align:middle line:84%
+was symmetric. u is
+connected to v if
+
+00:12:40.070 --> 00:12:41.870 align:middle line:90%
+and only if v is connected to u.
+
+00:12:41.870 --> 00:12:44.770 align:middle line:84%
+Now it's no longer
+symmetric and we're
+
+00:12:44.770 --> 00:12:48.530 align:middle line:84%
+going to use a different term
+for it to make that clear.
+
+00:12:48.530 --> 00:13:02.200 align:middle line:84%
+So we'll say v is reachable
+from u or u can reach v if there
+
+00:13:02.200 --> 00:13:09.850 align:middle line:90%
+exists a walk from u to v.
+
+00:13:09.850 --> 00:13:13.780 align:middle line:84%
+So this looks like the same
+definition of uv connected
+
+00:13:13.780 --> 00:13:15.350 align:middle line:90%
+in the undirected case.
+
+00:13:15.350 --> 00:13:20.230 align:middle line:84%
+But now because walks can't be
+reversed, because if you reverse
+
+00:13:20.230 --> 00:13:24.470 align:middle line:84%
+a walk, if I go
+from vk back to v0,
+
+00:13:24.470 --> 00:13:26.840 align:middle line:84%
+then I'm using all the edges
+in the opposite direction.
+
+00:13:26.840 --> 00:13:28.355 align:middle line:84%
+And that's not in
+general allowed.
+
+00:13:28.355 --> 00:13:29.980 align:middle line:84%
+Unless you happen to
+have a graph where
+
+00:13:29.980 --> 00:13:36.715 align:middle line:84%
+every edge is doubled, you won't
+be able to reverse your walk.
+
+00:13:36.715 --> 00:13:39.340 align:middle line:84%
+So this is no longer equivalent
+to their existing a walk from v
+
+00:13:39.340 --> 00:13:43.000 align:middle line:84%
+to u, but it is still equivalent
+to the existing path from v
+
+00:13:43.000 --> 00:13:44.230 align:middle line:90%
+to u.
+
+00:13:44.230 --> 00:13:47.080 align:middle line:90%
+From u to v, sorry.
+
+00:13:47.080 --> 00:13:49.220 align:middle line:90%
+That part is still true.
+
+00:13:49.220 --> 00:13:51.110 align:middle line:84%
+The proof is actually
+exactly the same.
+
+00:13:51.110 --> 00:13:56.350 align:middle line:84%
+You take a shortest walk from
+u to v. And if it's not a path,
+
+00:13:56.350 --> 00:14:00.860 align:middle line:84%
+then it has some loop in
+it, some cycle essentially.
+
+00:14:00.860 --> 00:14:03.460 align:middle line:84%
+And then you emit that cycle
+and you get a shorter walk
+
+00:14:03.460 --> 00:14:05.320 align:middle line:90%
+contradiction.
+
+00:14:05.320 --> 00:14:08.360 align:middle line:84%
+So exactly the same
+proof as before.
+
+00:14:08.360 --> 00:14:11.270 align:middle line:84%
+Still respects the edge
+directions, which is nice.
+
+00:14:11.270 --> 00:14:15.130 align:middle line:84%
+So for the purpose
+of reachability now,
+
+00:14:15.130 --> 00:14:16.940 align:middle line:90%
+walks and paths are the same.
+
+00:14:16.940 --> 00:14:19.750 align:middle line:84%
+So we can assume whichever
+one is more convenient.
+
+00:14:19.750 --> 00:14:26.980 align:middle line:84%
+This relation is still
+this reachability property
+
+00:14:26.980 --> 00:14:30.550 align:middle line:84%
+is still reflexive
+and transitive.
+
+00:14:30.550 --> 00:14:32.500 align:middle line:90%
+Remind you what those mean.
+
+00:14:32.500 --> 00:14:36.785 align:middle line:84%
+Reflexive means v can reach
+v for any vertex v. You
+
+00:14:36.785 --> 00:14:37.910 align:middle line:90%
+can always get to yourself.
+
+00:14:37.910 --> 00:14:39.710 align:middle line:90%
+You just don't do anything.
+
+00:14:39.710 --> 00:14:41.970 align:middle line:90%
+And it's still transitive.
+
+00:14:41.970 --> 00:14:46.260 align:middle line:84%
+Meaning if you can get from
+a to b and b can reach--
+
+00:14:46.260 --> 00:14:49.770 align:middle line:84%
+if a can reach b and b can
+reach c, then a can reach c.
+
+00:14:49.770 --> 00:14:53.580 align:middle line:84%
+You can still concatenate
+paths together and that's fine.
+
+00:14:53.580 --> 00:14:59.210 align:middle line:90%
+But no longer symmetric.
+
+00:14:59.210 --> 00:15:03.590 align:middle line:84%
+I've already said this a couple
+times, but if a can reach b,
+
+00:15:03.590 --> 00:15:06.050 align:middle line:84%
+we don't necessarily
+have b can reach a.
+
+00:15:06.050 --> 00:15:07.970 align:middle line:84%
+So that makes things
+more interesting.
+
+00:15:07.970 --> 00:15:10.310 align:middle line:84%
+In particular, what does
+it mean for the whole graph
+
+00:15:10.310 --> 00:15:12.080 align:middle line:90%
+to be connected?
+
+00:15:12.080 --> 00:15:14.113 align:middle line:84%
+For that, it's
+useful to tal about.
+
+00:15:14.113 --> 00:15:18.050 align:middle line:90%
+
+
+00:15:18.050 --> 00:15:21.560 align:middle line:84%
+There's a very strong
+notion of connectivity.
+
+00:15:21.560 --> 00:15:26.990 align:middle line:84%
+First let's say two vertices
+u and v are strongly
+
+00:15:26.990 --> 00:15:33.156 align:middle line:84%
+connected in a directed graph
+if they're mutually reachable.
+
+00:15:33.156 --> 00:15:37.230 align:middle line:90%
+
+
+00:15:37.230 --> 00:15:42.660 align:middle line:84%
+In other words, u can
+reach v and v can reach u.
+
+00:15:42.660 --> 00:15:44.500 align:middle line:90%
+This behaves symmetrically.
+
+00:15:44.500 --> 00:15:46.090 align:middle line:84%
+If u and v are
+strongly connected,
+
+00:15:46.090 --> 00:15:50.250 align:middle line:84%
+then v and u are also strongly
+connected by definition.
+
+00:15:50.250 --> 00:15:54.080 align:middle line:90%
+u can reach v and v can reach u.
+
+00:15:54.080 --> 00:15:57.630 align:middle line:90%
+
+
+00:15:57.630 --> 00:16:06.600 align:middle line:84%
+And in particular, we call the
+entire graph strongly connected
+
+00:16:06.600 --> 00:16:11.460 align:middle line:84%
+if everything can
+reach everything.
+
+00:16:11.460 --> 00:16:18.840 align:middle line:84%
+If for all vertices
+u and v, u can
+
+00:16:18.840 --> 00:16:27.660 align:middle line:84%
+reach v. Or in other
+words, for all u and v,
+
+00:16:27.660 --> 00:16:30.490 align:middle line:90%
+u and v are strongly connected.
+
+00:16:30.490 --> 00:16:33.283 align:middle line:90%
+So again, the pairwise relation.
+
+00:16:33.283 --> 00:16:36.470 align:middle line:90%
+
+
+00:16:36.470 --> 00:16:39.310 align:middle line:84%
+These graphs are nice, because
+you can start anywhere and get
+
+00:16:39.310 --> 00:16:40.160 align:middle line:90%
+anywhere else.
+
+00:16:40.160 --> 00:16:41.540 align:middle line:90%
+You never get stuck.
+
+00:16:41.540 --> 00:16:43.090 align:middle line:84%
+But in general, in
+a directed graph,
+
+00:16:43.090 --> 00:16:46.090 align:middle line:84%
+you could walk and
+not be able to return.
+
+00:16:46.090 --> 00:16:51.100 align:middle line:84%
+So for example, in this
+graph, maybe you walk around.
+
+00:16:51.100 --> 00:16:54.520 align:middle line:84%
+You take one of the walks that I
+drew, but once you end up in e,
+
+00:16:54.520 --> 00:16:55.550 align:middle line:90%
+you're stuck.
+
+00:16:55.550 --> 00:16:59.600 align:middle line:84%
+Or if you start in e, you can't
+get anywhere except e itself.
+
+00:16:59.600 --> 00:17:03.340 align:middle line:84%
+Start in f, you also
+can't go anywhere,
+
+00:17:03.340 --> 00:17:05.089 align:middle line:84%
+but that's a little
+less exciting.
+
+00:17:05.089 --> 00:17:09.550 align:middle line:84%
+So that graph obviously
+is not strongly connected.
+
+00:17:09.550 --> 00:17:12.663 align:middle line:84%
+Maybe I'll draw an
+example of one that is.
+
+00:17:12.663 --> 00:17:38.480 align:middle line:90%
+
+
+00:17:38.480 --> 00:17:40.896 align:middle line:84%
+OK, this graph is
+strongly connected.
+
+00:17:40.896 --> 00:17:45.320 align:middle line:90%
+
+
+00:17:45.320 --> 00:17:47.390 align:middle line:90%
+It's also Eulerian.
+
+00:17:47.390 --> 00:17:58.550 align:middle line:84%
+So remember an Euler
+tour was a closed walk.
+
+00:17:58.550 --> 00:18:00.253 align:middle line:84%
+It visits every
+edge exactly once.
+
+00:18:00.253 --> 00:18:16.400 align:middle line:90%
+
+
+00:18:16.400 --> 00:18:24.050 align:middle line:84%
+And visits every
+vertex at least once.
+
+00:18:24.050 --> 00:18:26.600 align:middle line:90%
+So this graph is Eulerian.
+
+00:18:26.600 --> 00:18:29.480 align:middle line:84%
+I drew it in an Eulerian
+way, but I will also
+
+00:18:29.480 --> 00:18:31.310 align:middle line:90%
+redraw a path here.
+
+00:18:31.310 --> 00:18:33.400 align:middle line:90%
+You can go around the outside.
+
+00:18:33.400 --> 00:18:35.650 align:middle line:84%
+Notice now I'm respecting
+the edge directions.
+
+00:18:35.650 --> 00:18:38.465 align:middle line:84%
+That's a little different from
+the example we saw last class.
+
+00:18:38.465 --> 00:18:43.870 align:middle line:90%
+
+
+00:18:43.870 --> 00:18:47.790 align:middle line:84%
+I think I got all the
+edges exactly once.
+
+00:18:47.790 --> 00:18:51.340 align:middle line:84%
+So again, you might ask
+which graphs are Eulerian.
+
+00:18:51.340 --> 00:18:53.830 align:middle line:84%
+We did the really
+long proof last class.
+
+00:18:53.830 --> 00:19:00.030 align:middle line:84%
+And it turns out there's a
+very similar characterization.
+
+00:19:00.030 --> 00:19:04.830 align:middle line:84%
+So Euler tour exists if
+and only if your graph
+
+00:19:04.830 --> 00:19:06.206 align:middle line:90%
+is strongly connected.
+
+00:19:06.206 --> 00:19:12.540 align:middle line:90%
+
+
+00:19:12.540 --> 00:19:20.896 align:middle line:84%
+And for every vertex, the in
+degree equals the out degree.
+
+00:19:20.896 --> 00:19:27.840 align:middle line:90%
+
+
+00:19:27.840 --> 00:19:30.060 align:middle line:84%
+And there's a similar
+characterization
+
+00:19:30.060 --> 00:19:31.990 align:middle line:84%
+for Euler walks
+instead of Euler tours.
+
+00:19:31.990 --> 00:19:36.862 align:middle line:84%
+It's just a little uglier,
+so I won't go into it.
+
+00:19:36.862 --> 00:19:38.320 align:middle line:84%
+It's just you allow
+these to differ
+
+00:19:38.320 --> 00:19:42.880 align:middle line:84%
+by 1 for a couple of
+vertices in a particular way.
+
+00:19:42.880 --> 00:19:44.900 align:middle line:84%
+So in particular, if you
+look at this example,
+
+00:19:44.900 --> 00:19:49.280 align:middle line:84%
+it should be every vertex
+either has two in, two out.
+
+00:19:49.280 --> 00:19:53.900 align:middle line:84%
+This one has two coming in, two
+going out, or one in, one out.
+
+00:19:53.900 --> 00:19:56.150 align:middle line:84%
+And in general, if you
+have k incoming edges,
+
+00:19:56.150 --> 00:19:58.300 align:middle line:84%
+you should have also
+k outgoing edges
+
+00:19:58.300 --> 00:20:00.710 align:middle line:90%
+in order to have an Euler tour.
+
+00:20:00.710 --> 00:20:02.740 align:middle line:90%
+Why?
+
+00:20:02.740 --> 00:20:06.245 align:middle line:84%
+Because what goes
+in must come out.
+
+00:20:06.245 --> 00:20:07.870 align:middle line:84%
+All the proofs here
+are similar to what
+
+00:20:07.870 --> 00:20:10.030 align:middle line:90%
+we did for undirected graphs.
+
+00:20:10.030 --> 00:20:13.120 align:middle line:84%
+Before we were saying the
+number of edges at each vertex
+
+00:20:13.120 --> 00:20:15.820 align:middle line:84%
+had to be even, because every
+time we enter the vertex we also
+
+00:20:15.820 --> 00:20:16.940 align:middle line:90%
+had to leave.
+
+00:20:16.940 --> 00:20:20.050 align:middle line:84%
+But this is the directed version
+of that where every time you
+
+00:20:20.050 --> 00:20:23.930 align:middle line:84%
+come in, you must also exit
+if you have a closed loop.
+
+00:20:23.930 --> 00:20:28.240 align:middle line:84%
+If you have a closed walk
+that visits all these edges.
+
+00:20:28.240 --> 00:20:30.010 align:middle line:90%
+So certainly this is necessary.
+
+00:20:30.010 --> 00:20:31.830 align:middle line:84%
+Strong connectivity
+is also necessary
+
+00:20:31.830 --> 00:20:33.750 align:middle line:84%
+because the Euler
+tour gives you a way
+
+00:20:33.750 --> 00:20:35.410 align:middle line:84%
+to get from anywhere
+to anywhere.
+
+00:20:35.410 --> 00:20:37.410 align:middle line:90%
+It's like a giant subway line.
+
+00:20:37.410 --> 00:20:39.130 align:middle line:84%
+You can get on
+whenever you want,
+
+00:20:39.130 --> 00:20:42.300 align:middle line:84%
+and follow it until you get
+to whatever vertex you want.
+
+00:20:42.300 --> 00:20:45.700 align:middle line:84%
+Because we said the Euler
+tour visits every vertex,
+
+00:20:45.700 --> 00:20:48.840 align:middle line:84%
+that's a way to get from
+anywhere to anywhere.
+
+00:20:48.840 --> 00:20:52.170 align:middle line:84%
+It might take a while,
+but you'll get there.
+
+00:20:52.170 --> 00:20:54.040 align:middle line:90%
+And what else?
+
+00:20:54.040 --> 00:20:55.535 align:middle line:84%
+Yeah, the proof
+again is similar.
+
+00:20:55.535 --> 00:20:57.910 align:middle line:84%
+If you want to show that these
+properties are sufficient,
+
+00:20:57.910 --> 00:21:00.060 align:middle line:84%
+you take the longest
+possible trail
+
+00:21:00.060 --> 00:21:02.820 align:middle line:84%
+that visits every edge
+at most once and argue
+
+00:21:02.820 --> 00:21:05.740 align:middle line:84%
+that it's closed for the
+same reasons as before,
+
+00:21:05.740 --> 00:21:08.340 align:middle line:84%
+and that it actually
+has to visit every edge,
+
+00:21:08.340 --> 00:21:10.205 align:middle line:84%
+because otherwise you
+could make it longer.
+
+00:21:10.205 --> 00:21:13.440 align:middle line:90%
+
+
+00:21:13.440 --> 00:21:17.190 align:middle line:84%
+I think we're pretty much
+through the main repetition
+
+00:21:17.190 --> 00:21:19.410 align:middle line:90%
+from before.
+
+00:21:19.410 --> 00:21:23.820 align:middle line:84%
+There's one more related
+notion to connectivity,
+
+00:21:23.820 --> 00:21:25.990 align:middle line:90%
+which is connected components.
+
+00:21:25.990 --> 00:21:28.160 align:middle line:84%
+We talked about connected
+components a little bit
+
+00:21:28.160 --> 00:21:30.090 align:middle line:90%
+for undirected graphs.
+
+00:21:30.090 --> 00:21:32.350 align:middle line:84%
+They're a little more
+interesting for directed graphs.
+
+00:21:32.350 --> 00:21:37.580 align:middle line:90%
+
+
+00:21:37.580 --> 00:21:41.070 align:middle line:84%
+In particular, they mainly make
+sense for strong connectivity.
+
+00:21:41.070 --> 00:21:44.150 align:middle line:90%
+We don't define any other types.
+
+00:21:44.150 --> 00:21:45.750 align:middle line:90%
+So it's not surprising.
+
+00:21:45.750 --> 00:21:48.470 align:middle line:90%
+
+
+00:21:48.470 --> 00:21:55.910 align:middle line:84%
+So strong connected component
+or SCC of a vertex v
+
+00:21:55.910 --> 00:22:01.070 align:middle line:90%
+is the graph induced.
+
+00:22:01.070 --> 00:22:05.000 align:middle line:84%
+This is similar to how
+we set it up before.
+
+00:22:05.000 --> 00:22:26.340 align:middle line:84%
+By all the vertices that
+are strongly connected to v.
+
+00:22:26.340 --> 00:22:27.553 align:middle line:90%
+Let's look at an example.
+
+00:22:27.553 --> 00:22:32.780 align:middle line:90%
+
+
+00:22:32.780 --> 00:22:35.460 align:middle line:84%
+This example is a
+little bit interesting.
+
+00:22:35.460 --> 00:22:38.390 align:middle line:84%
+So for example, what is the
+strongly connected component
+
+00:22:38.390 --> 00:22:40.160 align:middle line:90%
+of a?
+
+00:22:40.160 --> 00:22:43.850 align:middle line:90%
+I haven't made this too ugly.
+
+00:22:43.850 --> 00:22:45.130 align:middle line:90%
+Redraw this a little bit.
+
+00:22:45.130 --> 00:22:48.110 align:middle line:90%
+
+
+00:22:48.110 --> 00:22:50.140 align:middle line:84%
+What vertices are
+strongly connected to a?
+
+00:22:50.140 --> 00:22:53.870 align:middle line:90%
+
+
+00:22:53.870 --> 00:22:54.670 align:middle line:90%
+Shout them out.
+
+00:22:54.670 --> 00:22:59.930 align:middle line:90%
+
+
+00:22:59.930 --> 00:23:01.370 align:middle line:90%
+b?
+
+00:23:01.370 --> 00:23:04.195 align:middle line:84%
+I can definitely get to b
+and b can get back to a.
+
+00:23:04.195 --> 00:23:07.790 align:middle line:90%
+
+
+00:23:07.790 --> 00:23:09.720 align:middle line:90%
+c.
+
+00:23:09.720 --> 00:23:11.370 align:middle line:90%
+I can get from a--
+
+00:23:11.370 --> 00:23:13.220 align:middle line:84%
+oh no, I can get
+from a to c this way
+
+00:23:13.220 --> 00:23:17.660 align:middle line:90%
+and c can get to a via b.
+
+00:23:17.660 --> 00:23:18.385 align:middle line:90%
+Anything else?
+
+00:23:18.385 --> 00:23:21.530 align:middle line:90%
+
+
+00:23:21.530 --> 00:23:23.630 align:middle line:90%
+No.
+
+00:23:23.630 --> 00:23:26.760 align:middle line:84%
+Turns out, if you follow any of
+these edges, any of these two
+
+00:23:26.760 --> 00:23:28.510 align:middle line:84%
+edges, you're
+never getting back.
+
+00:23:28.510 --> 00:23:31.560 align:middle line:84%
+And also f is neither
+reachable, is not
+
+00:23:31.560 --> 00:23:33.340 align:middle line:84%
+reachable from a in
+either direction.
+
+00:23:33.340 --> 00:23:42.160 align:middle line:84%
+So this chunk here is a
+strongly connected component.
+
+00:23:42.160 --> 00:23:45.670 align:middle line:84%
+And again, when I say the graph
+induced by these three vertices,
+
+00:23:45.670 --> 00:23:50.010 align:middle line:84%
+so this is the graph
+induced by ABC, I mean,
+
+00:23:50.010 --> 00:23:51.240 align:middle line:90%
+that's my vertex set.
+
+00:23:51.240 --> 00:23:53.740 align:middle line:84%
+I take those three vertices,
+none of the others.
+
+00:23:53.740 --> 00:23:55.290 align:middle line:84%
+And I take all the
+edges that were
+
+00:23:55.290 --> 00:23:57.730 align:middle line:84%
+in my original graph among
+those three vertices,
+
+00:23:57.730 --> 00:24:00.220 align:middle line:84%
+and throw away
+everything outside.
+
+00:24:00.220 --> 00:24:03.900 align:middle line:84%
+So that boxed region is the
+strongly connected component
+
+00:24:03.900 --> 00:24:04.540 align:middle line:90%
+of a.
+
+00:24:04.540 --> 00:24:06.290 align:middle line:84%
+It's also the strongly
+connected component
+
+00:24:06.290 --> 00:24:09.780 align:middle line:84%
+of b and the strongly
+connected component of c.
+
+00:24:09.780 --> 00:24:14.220 align:middle line:84%
+What's the strongly
+connected component of d?
+
+00:24:14.220 --> 00:24:15.900 align:middle line:90%
+Just d.
+
+00:24:15.900 --> 00:24:20.550 align:middle line:84%
+So this is in a strongly
+connected component by itself.
+
+00:24:20.550 --> 00:24:24.456 align:middle line:90%
+And e similarly and f similarly.
+
+00:24:24.456 --> 00:24:33.260 align:middle line:90%
+
+
+00:24:33.260 --> 00:24:37.400 align:middle line:84%
+In general, we get a bunch of
+strongly connected components.
+
+00:24:37.400 --> 00:24:40.840 align:middle line:90%
+And before it was very clean.
+
+00:24:40.840 --> 00:24:42.430 align:middle line:84%
+Anything you could
+possibly touch
+
+00:24:42.430 --> 00:24:45.550 align:middle line:84%
+was in one strongly connected--
+was in one connected component.
+
+00:24:45.550 --> 00:24:48.850 align:middle line:84%
+And every vertex
+and every edge fell
+
+00:24:48.850 --> 00:24:50.480 align:middle line:90%
+into one connected component.
+
+00:24:50.480 --> 00:24:53.265 align:middle line:84%
+That was the situation
+for undirected graphs.
+
+00:24:53.265 --> 00:24:54.640 align:middle line:84%
+We said that
+connected components
+
+00:24:54.640 --> 00:24:56.230 align:middle line:90%
+partitioned the graph.
+
+00:24:56.230 --> 00:24:58.940 align:middle line:84%
+Everything appeared exactly
+once in one of the pieces.
+
+00:24:58.940 --> 00:25:00.140 align:middle line:90%
+Now it's not so clean.
+
+00:25:00.140 --> 00:25:01.970 align:middle line:90%
+The vertices get partitioned.
+
+00:25:01.970 --> 00:25:04.250 align:middle line:84%
+There's some vertices in
+this component, some in this,
+
+00:25:04.250 --> 00:25:05.420 align:middle line:90%
+some in this, some in this.
+
+00:25:05.420 --> 00:25:08.975 align:middle line:84%
+Every vertex is in exactly one
+strongly connected component.
+
+00:25:08.975 --> 00:25:10.600 align:middle line:84%
+But for directed
+graphs, there are also
+
+00:25:10.600 --> 00:25:13.731 align:middle line:90%
+some edges between components.
+
+00:25:13.731 --> 00:25:15.106 align:middle line:84%
+That's a little
+more interesting.
+
+00:25:15.106 --> 00:25:18.040 align:middle line:90%
+
+
+00:25:18.040 --> 00:25:31.200 align:middle line:84%
+So let's say every vertex is in
+exactly one strongly connected
+
+00:25:31.200 --> 00:25:32.310 align:middle line:90%
+component.
+
+00:25:32.310 --> 00:25:38.513 align:middle line:90%
+But we have some edges between.
+
+00:25:38.513 --> 00:25:43.530 align:middle line:90%
+
+
+00:25:43.530 --> 00:25:46.860 align:middle line:84%
+And there's a nice way
+to organize this, which
+
+00:25:46.860 --> 00:25:49.603 align:middle line:90%
+we call a condensation graph.
+
+00:25:49.603 --> 00:26:06.540 align:middle line:90%
+
+
+00:26:06.540 --> 00:26:13.020 align:middle line:84%
+A condensation
+graph of a graph g
+
+00:26:13.020 --> 00:26:18.550 align:middle line:84%
+is another graph h, vertex
+set c, and edge set f.
+
+00:26:18.550 --> 00:26:27.180 align:middle line:84%
+These are just some made
+up letters where c is--
+
+00:26:27.180 --> 00:26:30.570 align:middle line:90%
+I forgot some notation.
+
+00:26:30.570 --> 00:26:33.510 align:middle line:84%
+So the strongly connected
+component of vertex
+
+00:26:33.510 --> 00:26:38.040 align:middle line:84%
+v I'm going to call square
+bracket v probably just
+
+00:26:38.040 --> 00:26:38.890 align:middle line:90%
+for this lecture.
+
+00:26:38.890 --> 00:26:41.850 align:middle line:84%
+But it's convenient to have some
+name for the strongly connected
+
+00:26:41.850 --> 00:26:45.360 align:middle line:84%
+component that
+contains v. And c is
+
+00:26:45.360 --> 00:26:47.740 align:middle line:84%
+going to be the set of all
+strongly connected components.
+
+00:26:47.740 --> 00:26:49.365 align:middle line:84%
+So now I can write
+it as square bracket
+
+00:26:49.365 --> 00:26:53.040 align:middle line:90%
+v for all vertices v and v.
+
+00:26:53.040 --> 00:27:01.910 align:middle line:84%
+So in this example, I
+draw the graph over here.
+
+00:27:01.910 --> 00:27:11.790 align:middle line:90%
+
+
+00:27:11.790 --> 00:27:13.620 align:middle line:90%
+So this was g.
+
+00:27:13.620 --> 00:27:19.330 align:middle line:84%
+h is going to have one vertex
+for this strongly connected
+
+00:27:19.330 --> 00:27:22.460 align:middle line:84%
+component, one for this one, one
+for this one, one for this one.
+
+00:27:22.460 --> 00:27:23.680 align:middle line:90%
+So four vertices.
+
+00:27:23.680 --> 00:27:27.400 align:middle line:84%
+I'm going to label them with the
+vertices in the original graph
+
+00:27:27.400 --> 00:27:28.930 align:middle line:90%
+that they came from.
+
+00:27:28.930 --> 00:27:35.570 align:middle line:84%
+Got d up here, e roughly
+over here, and f over here.
+
+00:27:35.570 --> 00:27:37.780 align:middle line:90%
+Now, what are the edges?
+
+00:27:37.780 --> 00:27:42.790 align:middle line:84%
+Well, the edges are just going
+to correspond to whenever--
+
+00:27:42.790 --> 00:27:44.810 align:middle line:84%
+I want to read this
+from right to left.
+
+00:27:44.810 --> 00:27:46.650 align:middle line:90%
+So let me write it first.
+
+00:27:46.650 --> 00:27:57.100 align:middle line:90%
+
+
+00:27:57.100 --> 00:28:01.250 align:middle line:84%
+So whenever I have an edge
+uv in the original graph,
+
+00:28:01.250 --> 00:28:05.440 align:middle line:84%
+I want to draw an edge between
+the corresponding strongly
+
+00:28:05.440 --> 00:28:07.810 align:middle line:84%
+connected components, the
+strongly connected component
+
+00:28:07.810 --> 00:28:11.260 align:middle line:84%
+containing u to the strongly
+connected component containing
+
+00:28:11.260 --> 00:28:15.460 align:middle line:84%
+v, except I don't want
+edges from a strongly
+
+00:28:15.460 --> 00:28:19.610 align:middle line:84%
+connected component to
+itself, just because it's
+
+00:28:19.610 --> 00:28:21.710 align:middle line:90%
+cleaner that way.
+
+00:28:21.710 --> 00:28:26.457 align:middle line:84%
+So this will represent exactly
+the edges between components.
+
+00:28:26.457 --> 00:28:28.040 align:middle line:84%
+There are some edges
+within components
+
+00:28:28.040 --> 00:28:32.480 align:middle line:84%
+which I kind of want to ignore,
+because I can get anywhere
+
+00:28:32.480 --> 00:28:33.420 align:middle line:90%
+within this component.
+
+00:28:33.420 --> 00:28:35.325 align:middle line:84%
+So from a connectivity
+standpoint,
+
+00:28:35.325 --> 00:28:36.700 align:middle line:84%
+from a reachability
+standpoint, I
+
+00:28:36.700 --> 00:28:39.425 align:middle line:84%
+don't really care about the
+distinction between a, b, and c.
+
+00:28:39.425 --> 00:28:40.800 align:middle line:84%
+They're all
+essentially the same.
+
+00:28:40.800 --> 00:28:43.110 align:middle line:84%
+If I'm at any of them,
+I can go to any other.
+
+00:28:43.110 --> 00:28:46.100 align:middle line:84%
+But then there's these
+edges between components
+
+00:28:46.100 --> 00:28:47.610 align:middle line:90%
+that are interesting.
+
+00:28:47.610 --> 00:28:49.460 align:middle line:90%
+Highlight them here in bold.
+
+00:28:49.460 --> 00:28:52.910 align:middle line:90%
+So we've got a, b c, to d.
+
+00:28:52.910 --> 00:28:55.820 align:middle line:90%
+We've got a, b, c, to e.
+
+00:28:55.820 --> 00:29:00.500 align:middle line:90%
+We've got d to e and that's it.
+
+00:29:00.500 --> 00:29:03.210 align:middle line:84%
+So this is the
+condensation graph.
+
+00:29:03.210 --> 00:29:06.080 align:middle line:84%
+And so if you want
+to know reachability
+
+00:29:06.080 --> 00:29:08.810 align:middle line:84%
+between two vertices
+in the original graph,
+
+00:29:08.810 --> 00:29:12.117 align:middle line:84%
+you can figure it out by looking
+at reachability within h.
+
+00:29:12.117 --> 00:29:13.700 align:middle line:84%
+So if everything's
+strongly connected,
+
+00:29:13.700 --> 00:29:15.650 align:middle line:84%
+you're in one big
+component, that's easy.
+
+00:29:15.650 --> 00:29:16.810 align:middle line:90%
+The answer is always yes.
+
+00:29:16.810 --> 00:29:21.050 align:middle line:84%
+Otherwise you have to look at
+walks in the condensation graph.
+
+00:29:21.050 --> 00:29:27.570 align:middle line:90%
+
+
+00:29:27.570 --> 00:29:28.463 align:middle line:90%
+Next topic.
+
+00:29:28.463 --> 00:29:29.880 align:middle line:84%
+And actually the
+last topic, which
+
+00:29:29.880 --> 00:29:31.380 align:middle line:84%
+we'll spend a bunch
+of time on, it's
+
+00:29:31.380 --> 00:29:37.230 align:middle line:84%
+much more interesting than
+last time, is acyclic graphs.
+
+00:29:37.230 --> 00:29:44.255 align:middle line:84%
+So what would you call an
+undirected acyclic graph?
+
+00:29:44.255 --> 00:29:49.500 align:middle line:90%
+
+
+00:29:49.500 --> 00:29:51.240 align:middle line:90%
+Anyone remember?
+
+00:29:51.240 --> 00:29:54.180 align:middle line:90%
+I forget if we mentioned it.
+
+00:29:54.180 --> 00:29:57.660 align:middle line:84%
+Tree is what you
+were going to say.
+
+00:29:57.660 --> 00:30:01.300 align:middle line:84%
+Actually, trees are connected
+undirected acyclic graphs.
+
+00:30:01.300 --> 00:30:02.250 align:middle line:90%
+So almost.
+
+00:30:02.250 --> 00:30:04.000 align:middle line:84%
+So we may not have
+even mentioned it here,
+
+00:30:04.000 --> 00:30:07.200 align:middle line:84%
+but we use the word forest
+for the general case
+
+00:30:07.200 --> 00:30:09.190 align:middle line:84%
+when you're not
+necessarily connected.
+
+00:30:09.190 --> 00:30:10.950 align:middle line:84%
+So in the undirected
+case, a forest
+
+00:30:10.950 --> 00:30:12.490 align:middle line:90%
+is just any acyclic graph.
+
+00:30:12.490 --> 00:30:14.380 align:middle line:84%
+Each of its connected
+components is a tree,
+
+00:30:14.380 --> 00:30:17.920 align:middle line:90%
+but it might have more than one.
+
+00:30:17.920 --> 00:30:21.293 align:middle line:84%
+Today we're going to talk
+about directed acyclic graphs.
+
+00:30:21.293 --> 00:30:26.410 align:middle line:90%
+
+
+00:30:26.410 --> 00:30:31.450 align:middle line:84%
+I feel like there should
+be some nature based
+
+00:30:31.450 --> 00:30:34.000 align:middle line:84%
+pun for directed acyclic
+graphs, but instead they're
+
+00:30:34.000 --> 00:30:39.230 align:middle line:84%
+just commonly called DAGs
+for Directed Acyclic Graph.
+
+00:30:39.230 --> 00:30:40.510 align:middle line:90%
+So it's kind of boring.
+
+00:30:40.510 --> 00:30:43.700 align:middle line:84%
+Sometimes I've seen
+DAWG, like D-A-W-G.
+
+00:30:43.700 --> 00:30:46.210 align:middle line:84%
+That's another type of graph,
+which we won't get into.
+
+00:30:46.210 --> 00:30:49.600 align:middle line:90%
+So that's nature based, I guess.
+
+00:30:49.600 --> 00:30:50.180 align:middle line:90%
+All right.
+
+00:30:50.180 --> 00:30:53.830 align:middle line:84%
+So what's an example of
+a directed acyclic graph?
+
+00:30:53.830 --> 00:30:55.545 align:middle line:90%
+Have we seen any in this class?
+
+00:30:55.545 --> 00:31:08.830 align:middle line:90%
+
+
+00:31:08.830 --> 00:31:10.320 align:middle line:90%
+Yeah.
+
+00:31:10.320 --> 00:31:11.900 align:middle line:90%
+STUDENT: [INAUDIBLE]
+
+00:31:11.900 --> 00:31:13.650 align:middle line:84%
+ERIK DEMAINE: A
+terminating state machine.
+
+00:31:13.650 --> 00:31:14.300 align:middle line:90%
+Yeah.
+
+00:31:14.300 --> 00:31:17.370 align:middle line:84%
+Maybe not all terminating state
+machines, but the ones that we--
+
+00:31:17.370 --> 00:31:19.320 align:middle line:90%
+the method we use to prove them.
+
+00:31:19.320 --> 00:31:20.373 align:middle line:90%
+So a state machine.
+
+00:31:20.373 --> 00:31:25.770 align:middle line:90%
+
+
+00:31:25.770 --> 00:31:28.230 align:middle line:84%
+Yeah, maybe all terminating
+state machines, actually.
+
+00:31:28.230 --> 00:31:33.140 align:middle line:84%
+But in particular, those
+with strictly decreasing
+
+00:31:33.140 --> 00:31:33.973 align:middle line:90%
+derived variable.
+
+00:31:33.973 --> 00:31:42.380 align:middle line:90%
+
+
+00:31:42.380 --> 00:31:45.500 align:middle line:84%
+If it's strictly decreasing,
+then you can't make any cycles.
+
+00:31:45.500 --> 00:31:47.000 align:middle line:84%
+I think even
+conversely, if you made
+
+00:31:47.000 --> 00:31:48.560 align:middle line:90%
+a cycle, then that would be--
+
+00:31:48.560 --> 00:31:50.300 align:middle line:84%
+repeating that
+cycle over and over
+
+00:31:50.300 --> 00:31:52.590 align:middle line:84%
+would be a
+non-terminating execution.
+
+00:31:52.590 --> 00:31:53.960 align:middle line:90%
+So indeed.
+
+00:31:53.960 --> 00:31:55.360 align:middle line:90%
+Or terminating state machines.
+
+00:31:55.360 --> 00:31:59.900 align:middle line:90%
+
+
+00:31:59.900 --> 00:32:01.610 align:middle line:90%
+Good.
+
+00:32:01.610 --> 00:32:06.590 align:middle line:84%
+Another one is this graph,
+the condensation graph
+
+00:32:06.590 --> 00:32:07.440 align:middle line:90%
+we just defined.
+
+00:32:07.440 --> 00:32:08.263 align:middle line:90%
+Maybe not obvious.
+
+00:32:08.263 --> 00:32:12.900 align:middle line:90%
+
+
+00:32:12.900 --> 00:32:14.940 align:middle line:90%
+These are just examples.
+
+00:32:14.940 --> 00:32:17.110 align:middle line:84%
+Of course, there are many
+directed acyclic graphs,
+
+00:32:17.110 --> 00:32:18.402 align:middle line:90%
+but there's no definition here.
+
+00:32:18.402 --> 00:32:21.630 align:middle line:84%
+I mean, the definition is
+directed acyclic graph.
+
+00:32:21.630 --> 00:32:24.930 align:middle line:84%
+Or I guess you might
+say acyclic digraph,
+
+00:32:24.930 --> 00:32:26.290 align:middle line:90%
+given the terms we've used.
+
+00:32:26.290 --> 00:32:27.790 align:middle line:90%
+But it's always written DAG.
+
+00:32:27.790 --> 00:32:29.790 align:middle line:90%
+So there you go.
+
+00:32:29.790 --> 00:32:33.130 align:middle line:84%
+Condensation graph is
+also always acyclic.
+
+00:32:33.130 --> 00:32:36.920 align:middle line:84%
+Because if there was a cycle
+like if I could get from a, b,
+
+00:32:36.920 --> 00:32:40.230 align:middle line:84%
+c to d to e back to a, b,
+c, well then these three
+
+00:32:40.230 --> 00:32:45.660 align:middle line:84%
+should actually all be in one
+strongly connected component.
+
+00:32:45.660 --> 00:32:47.470 align:middle line:84%
+So there can't be any
+cycles in this graph.
+
+00:32:47.470 --> 00:32:51.150 align:middle line:84%
+Otherwise I would have
+collapsed further.
+
+00:32:51.150 --> 00:32:53.250 align:middle line:90%
+So there we go.
+
+00:32:53.250 --> 00:32:55.770 align:middle line:84%
+What makes the condensation
+graph interesting in some sense
+
+00:32:55.770 --> 00:32:58.210 align:middle line:90%
+is it becomes acyclic.
+
+00:32:58.210 --> 00:33:02.100 align:middle line:84%
+You contract all the cycles
+into one vertex or each cycle
+
+00:33:02.100 --> 00:33:02.825 align:middle line:90%
+into one vertex.
+
+00:33:02.825 --> 00:33:06.090 align:middle line:90%
+
+
+00:33:06.090 --> 00:33:12.693 align:middle line:84%
+I have a, quote,
+"practical" example here.
+
+00:33:12.693 --> 00:33:14.235 align:middle line:84%
+You see why I'm
+laughing in a second.
+
+00:33:14.235 --> 00:33:17.620 align:middle line:90%
+
+
+00:33:17.620 --> 00:33:21.140 align:middle line:84%
+So directed acyclic graphs
+come up naturally a lot.
+
+00:33:21.140 --> 00:33:23.200 align:middle line:84%
+I mean, you can make
+any graph acyclic
+
+00:33:23.200 --> 00:33:25.190 align:middle line:84%
+by constructing the
+condensation graph,
+
+00:33:25.190 --> 00:33:29.390 align:middle line:84%
+but where they're quite common
+is in a set of constraints.
+
+00:33:29.390 --> 00:33:31.670 align:middle line:84%
+Suppose you have a bunch
+of tasks you need to do,
+
+00:33:31.670 --> 00:33:33.800 align:middle line:84%
+and there's some
+precedence constraints.
+
+00:33:33.800 --> 00:33:35.328 align:middle line:90%
+This has to happen before that.
+
+00:33:35.328 --> 00:33:36.620 align:middle line:90%
+This has to happen before that.
+
+00:33:36.620 --> 00:33:38.900 align:middle line:84%
+You could imagine project
+management or whatever.
+
+00:33:38.900 --> 00:33:41.300 align:middle line:84%
+I'm going to give a
+very real world example
+
+00:33:41.300 --> 00:33:46.240 align:middle line:84%
+you do every single day, I
+hope, which is getting dressed.
+
+00:33:46.240 --> 00:33:52.270 align:middle line:84%
+So suppose you have some
+socks you want to put on,
+
+00:33:52.270 --> 00:33:55.463 align:middle line:84%
+and you may know that
+socks come before shoes.
+
+00:33:55.463 --> 00:33:56.630 align:middle line:90%
+I've tried it the other way.
+
+00:33:56.630 --> 00:33:58.670 align:middle line:90%
+It doesn't work so well.
+
+00:33:58.670 --> 00:34:03.140 align:middle line:84%
+And usually I put one
+sock on at a time.
+
+00:34:03.140 --> 00:34:06.160 align:middle line:84%
+So there's your left
+sock and your right sock.
+
+00:34:06.160 --> 00:34:11.360 align:middle line:84%
+Apologies for people who have
+a different number of feet,
+
+00:34:11.360 --> 00:34:12.150 align:middle line:90%
+like dogs.
+
+00:34:12.150 --> 00:34:14.420 align:middle line:90%
+It's even more annoying.
+
+00:34:14.420 --> 00:34:17.008 align:middle line:84%
+But these are examples
+of precedence relations.
+
+00:34:17.008 --> 00:34:18.800 align:middle line:84%
+You want to put the
+left sock on before you
+
+00:34:18.800 --> 00:34:19.679 align:middle line:90%
+put your left shoe on.
+
+00:34:19.679 --> 00:34:21.050 align:middle line:84%
+You want to put your
+right sock on before you
+
+00:34:21.050 --> 00:34:22.096 align:middle line:90%
+put your right shoe on.
+
+00:34:22.096 --> 00:34:24.679 align:middle line:84%
+But you don't really care about
+the ordering between these two
+
+00:34:24.679 --> 00:34:25.170 align:middle line:90%
+sides.
+
+00:34:25.170 --> 00:34:27.090 align:middle line:84%
+I could do both of these
+and then do both of these.
+
+00:34:27.090 --> 00:34:29.070 align:middle line:84%
+Or I could do both socks
+and then both shoes.
+
+00:34:29.070 --> 00:34:31.260 align:middle line:84%
+I could do left,
+right, right, left.
+
+00:34:31.260 --> 00:34:33.810 align:middle line:84%
+There are lots of possible
+orderings that are valid here.
+
+00:34:33.810 --> 00:34:39.590 align:middle line:84%
+You can add more fun
+things like pants.
+
+00:34:39.590 --> 00:34:44.120 align:middle line:84%
+Those have to happen
+before your shoes.
+
+00:34:44.120 --> 00:34:48.050 align:middle line:84%
+And I don't know, you probably
+want to put a shirt on.
+
+00:34:48.050 --> 00:34:53.070 align:middle line:84%
+And maybe you have a
+jacket on top of that,
+
+00:34:53.070 --> 00:34:59.190 align:middle line:84%
+and you have a belt, which you
+should put on after your pants,
+
+00:34:59.190 --> 00:34:59.940 align:middle line:90%
+let's say.
+
+00:34:59.940 --> 00:35:03.962 align:middle line:90%
+And maybe a winter coat.
+
+00:35:03.962 --> 00:35:06.330 align:middle line:90%
+It's still kind of winter maybe.
+
+00:35:06.330 --> 00:35:07.920 align:middle line:90%
+We'll see.
+
+00:35:07.920 --> 00:35:11.110 align:middle line:84%
+And if you're really cold,
+maybe you want a scarf.
+
+00:35:11.110 --> 00:35:13.570 align:middle line:84%
+And I've heard debates about
+which of these goes first,
+
+00:35:13.570 --> 00:35:16.080 align:middle line:90%
+but let's say scarf before coat.
+
+00:35:16.080 --> 00:35:18.220 align:middle line:90%
+Certainly after your jacket.
+
+00:35:18.220 --> 00:35:21.150 align:middle line:84%
+And maybe you want a hat on, but
+that could happen pretty much
+
+00:35:21.150 --> 00:35:23.020 align:middle line:90%
+any time after your jacket.
+
+00:35:23.020 --> 00:35:24.720 align:middle line:90%
+So something like this.
+
+00:35:24.720 --> 00:35:29.520 align:middle line:84%
+I think those are all the
+annotations I had here.
+
+00:35:29.520 --> 00:35:32.308 align:middle line:84%
+And now you'd like to
+find a valid ordering.
+
+00:35:32.308 --> 00:35:33.850 align:middle line:84%
+If you want to find
+a valid ordering,
+
+00:35:33.850 --> 00:35:36.240 align:middle line:84%
+there better not be any
+cycles here, because then you
+
+00:35:36.240 --> 00:35:37.965 align:middle line:90%
+could never resolve that cycle.
+
+00:35:37.965 --> 00:35:39.840 align:middle line:84%
+If you have a cycle of
+precedence constraints
+
+00:35:39.840 --> 00:35:42.600 align:middle line:84%
+and a has to happen before
+b, b has to happen before c,
+
+00:35:42.600 --> 00:35:45.460 align:middle line:84%
+and c has to happen before
+a, then none of a, b,
+
+00:35:45.460 --> 00:35:46.570 align:middle line:90%
+and c could happen first.
+
+00:35:46.570 --> 00:35:47.710 align:middle line:90%
+So that would be bad.
+
+00:35:47.710 --> 00:35:52.720 align:middle line:84%
+So in any kind of precedence
+constraint graph like this,
+
+00:35:52.720 --> 00:35:53.950 align:middle line:90%
+you want to have no cycles.
+
+00:35:53.950 --> 00:35:57.390 align:middle line:84%
+So this is practical motivation
+for directed acyclic graphs.
+
+00:35:57.390 --> 00:36:00.480 align:middle line:90%
+And now we'd like to--
+
+00:36:00.480 --> 00:36:05.645 align:middle line:84%
+let's define a notion
+of topological ordering.
+
+00:36:05.645 --> 00:36:16.400 align:middle line:90%
+
+
+00:36:16.400 --> 00:36:30.776 align:middle line:84%
+The DAG is an ordering
+of all the vertices
+
+00:36:30.776 --> 00:36:42.770 align:middle line:84%
+such that each vertex
+appears before all
+
+00:36:42.770 --> 00:36:43.945 align:middle line:90%
+vertices it can reach.
+
+00:36:43.945 --> 00:36:53.240 align:middle line:90%
+
+
+00:36:53.240 --> 00:36:57.710 align:middle line:84%
+I guess I gave it a name,
+so I'll call it v here.
+
+00:36:57.710 --> 00:37:02.700 align:middle line:84%
+So for example, pants has
+to happen before belt,
+
+00:37:02.700 --> 00:37:06.650 align:middle line:84%
+but also pants has to happen
+before your winter coat because
+
+00:37:06.650 --> 00:37:08.840 align:middle line:90%
+of these two connections.
+
+00:37:08.840 --> 00:37:10.830 align:middle line:84%
+And pants has to
+happen before shoes.
+
+00:37:10.830 --> 00:37:13.860 align:middle line:84%
+So pants should be listed
+earlier in your sequence
+
+00:37:13.860 --> 00:37:16.530 align:middle line:84%
+before your right shoe,
+before your left shoe,
+
+00:37:16.530 --> 00:37:19.730 align:middle line:84%
+before your winter coat,
+before your belt, before--
+
+00:37:19.730 --> 00:37:21.920 align:middle line:90%
+that's it for pants.
+
+00:37:21.920 --> 00:37:25.982 align:middle line:84%
+And if we can find an ordering
+that satisfies that property,
+
+00:37:25.982 --> 00:37:27.440 align:middle line:84%
+then that would be
+a legitimate way
+
+00:37:27.440 --> 00:37:31.640 align:middle line:90%
+to execute these set of tasks.
+
+00:37:31.640 --> 00:37:33.140 align:middle line:84%
+And the next thing
+I'd like to do
+
+00:37:33.140 --> 00:37:37.850 align:middle line:84%
+is prove that topological
+orderings always exist.
+
+00:37:37.850 --> 00:37:40.885 align:middle line:90%
+It seems reasonable in a DAG.
+
+00:37:40.885 --> 00:37:43.950 align:middle line:90%
+
+
+00:37:43.950 --> 00:37:47.810 align:middle line:84%
+As I said before, if you have a
+cyclic graph, these don't exist.
+
+00:37:47.810 --> 00:37:50.060 align:middle line:90%
+That's a little less exciting.
+
+00:37:50.060 --> 00:37:52.020 align:middle line:84%
+But as long as your
+graph is acyclic,
+
+00:37:52.020 --> 00:37:53.730 align:middle line:84%
+you can always find
+a topological order,
+
+00:37:53.730 --> 00:37:55.460 align:middle line:90%
+and there's a nice way to do it.
+
+00:37:55.460 --> 00:37:58.700 align:middle line:84%
+Let me first define a
+couple of useful terms.
+
+00:37:58.700 --> 00:38:01.740 align:middle line:90%
+One is source.
+
+00:38:01.740 --> 00:38:05.190 align:middle line:90%
+This is for any directed graph.
+
+00:38:05.190 --> 00:38:11.180 align:middle line:84%
+A source is a vertex
+of in degree 0.
+
+00:38:11.180 --> 00:38:15.840 align:middle line:90%
+
+
+00:38:15.840 --> 00:38:20.640 align:middle line:84%
+This is going to act kind
+of like a leaf for us
+
+00:38:20.640 --> 00:38:21.760 align:middle line:90%
+that we had for trees.
+
+00:38:21.760 --> 00:38:24.270 align:middle line:84%
+Remember, directed
+acyclic graph here
+
+00:38:24.270 --> 00:38:30.210 align:middle line:84%
+are our analogy of trees
+or forests more generally.
+
+00:38:30.210 --> 00:38:33.392 align:middle line:90%
+And degree 1 vertices.
+
+00:38:33.392 --> 00:38:35.350 align:middle line:84%
+Well, there's no notion
+of degree here anymore.
+
+00:38:35.350 --> 00:38:36.933 align:middle line:84%
+We just have in
+degree and out degree.
+
+00:38:36.933 --> 00:38:39.810 align:middle line:84%
+So instead of degree
+1 vertices, we're
+
+00:38:39.810 --> 00:38:41.200 align:middle line:90%
+going to look at in degree 0.
+
+00:38:41.200 --> 00:38:45.160 align:middle line:84%
+So for example, left sock is a
+source, right sock is a source,
+
+00:38:45.160 --> 00:38:52.610 align:middle line:84%
+pants is a source, and shirt
+is a source in this graph.
+
+00:38:52.610 --> 00:38:56.550 align:middle line:90%
+
+
+00:38:56.550 --> 00:39:00.110 align:middle line:84%
+And the complementary
+notion now is sink.
+
+00:39:00.110 --> 00:39:06.370 align:middle line:90%
+
+
+00:39:06.370 --> 00:39:10.275 align:middle line:84%
+And this is a vertex
+of out degree 0.
+
+00:39:10.275 --> 00:39:14.530 align:middle line:90%
+
+
+00:39:14.530 --> 00:39:21.050 align:middle line:84%
+So in this graph, we
+have a few of them also.
+
+00:39:21.050 --> 00:39:23.685 align:middle line:90%
+Left shoe is a sink.
+
+00:39:23.685 --> 00:39:25.010 align:middle line:90%
+Right shoe is a sink.
+
+00:39:25.010 --> 00:39:26.480 align:middle line:90%
+I have no outgoing edges.
+
+00:39:26.480 --> 00:39:31.840 align:middle line:84%
+Winter coat is a sink
+and hat is a sink.
+
+00:39:31.840 --> 00:39:32.850 align:middle line:90%
+So these are sinks.
+
+00:39:32.850 --> 00:39:38.800 align:middle line:90%
+
+
+00:39:38.800 --> 00:39:41.680 align:middle line:84%
+And then there's some
+vertices that are neither.
+
+00:39:41.680 --> 00:39:43.730 align:middle line:84%
+Probably in general,
+most of them are neither.
+
+00:39:43.730 --> 00:39:47.080 align:middle line:84%
+But what we do
+know, like the fact
+
+00:39:47.080 --> 00:39:49.990 align:middle line:84%
+that every tree with
+at least two vertices
+
+00:39:49.990 --> 00:39:55.180 align:middle line:84%
+has at least two leaves,
+we know that every DAG
+
+00:39:55.180 --> 00:39:59.410 align:middle line:84%
+has at least one source
+and at least one sink.
+
+00:39:59.410 --> 00:40:02.130 align:middle line:84%
+So if you're wondering
+why two leaves for a tree,
+
+00:40:02.130 --> 00:40:03.420 align:middle line:90%
+this is kind of why.
+
+00:40:03.420 --> 00:40:06.680 align:middle line:84%
+Maybe this is
+distinguishing the two ends.
+
+00:40:06.680 --> 00:40:08.640 align:middle line:84%
+And the proof is
+actually very similar.
+
+00:40:08.640 --> 00:40:10.315 align:middle line:90%
+So let's do lemma.
+
+00:40:10.315 --> 00:40:15.590 align:middle line:90%
+
+
+00:40:15.590 --> 00:40:23.680 align:middle line:84%
+Every DAG has a
+source and a sink.
+
+00:40:23.680 --> 00:40:27.220 align:middle line:90%
+
+
+00:40:27.220 --> 00:40:27.720 align:middle line:90%
+Proof.
+
+00:40:27.720 --> 00:40:30.183 align:middle line:90%
+
+
+00:40:30.183 --> 00:40:32.600 align:middle line:84%
+I don't know if you remember
+the proof that every tree has
+
+00:40:32.600 --> 00:40:33.890 align:middle line:90%
+at least two leaves.
+
+00:40:33.890 --> 00:40:43.430 align:middle line:84%
+It was take a
+longest path or walk.
+
+00:40:43.430 --> 00:40:46.490 align:middle line:84%
+Maybe it's worth mentioning
+for DAGs, walks and paths are
+
+00:40:46.490 --> 00:40:48.037 align:middle line:90%
+the same thing.
+
+00:40:48.037 --> 00:40:50.120 align:middle line:84%
+Because the thing we were
+worried about with paths
+
+00:40:50.120 --> 00:40:51.480 align:middle line:90%
+is do you ever cycle?
+
+00:40:51.480 --> 00:40:53.010 align:middle line:90%
+Do you ever repeat a vertex?
+
+00:40:53.010 --> 00:40:55.760 align:middle line:84%
+But if there's no
+cycles, you can't.
+
+00:40:55.760 --> 00:41:05.530 align:middle line:84%
+So for DAGs, walks equal
+paths, which is nice.
+
+00:41:05.530 --> 00:41:08.430 align:middle line:84%
+So for the rest
+of today, I don't
+
+00:41:08.430 --> 00:41:10.620 align:middle line:84%
+have to remember which
+is which, but I'll
+
+00:41:10.620 --> 00:41:14.520 align:middle line:84%
+try to be a little bit
+careful if I need something.
+
+00:41:14.520 --> 00:41:19.750 align:middle line:84%
+So let's just take the longest
+or a longest path in the DAG.
+
+00:41:19.750 --> 00:41:30.730 align:middle line:84%
+So let's say it starts at v0,
+v1, and goes up to vk, as usual.
+
+00:41:30.730 --> 00:41:37.970 align:middle line:90%
+Then the claim is v0 is a sink.
+
+00:41:37.970 --> 00:41:40.620 align:middle line:90%
+
+
+00:41:40.620 --> 00:41:44.910 align:middle line:90%
+And vk-- sorry.
+
+00:41:44.910 --> 00:41:52.680 align:middle line:84%
+Backwards v0 is a
+source and vk is a sink.
+
+00:41:52.680 --> 00:41:56.470 align:middle line:90%
+And so then we found it.
+
+00:41:56.470 --> 00:41:58.240 align:middle line:90%
+OK, why?
+
+00:41:58.240 --> 00:41:59.805 align:middle line:90%
+Let me do a proof by picture.
+
+00:41:59.805 --> 00:42:03.220 align:middle line:90%
+
+
+00:42:03.220 --> 00:42:08.870 align:middle line:84%
+So here is our
+hypothetical longest path.
+
+00:42:08.870 --> 00:42:10.400 align:middle line:84%
+And I want to
+claim, for example,
+
+00:42:10.400 --> 00:42:12.610 align:middle line:84%
+that v0 is a source,
+meaning there
+
+00:42:12.610 --> 00:42:16.390 align:middle line:90%
+is no incoming edge into v0.
+
+00:42:16.390 --> 00:42:18.610 align:middle line:90%
+Its in degree is 0.
+
+00:42:18.610 --> 00:42:20.270 align:middle line:84%
+Well, let's prove
+it by contradiction.
+
+00:42:20.270 --> 00:42:22.690 align:middle line:84%
+Suppose there was
+some vertex here u
+
+00:42:22.690 --> 00:42:26.050 align:middle line:84%
+and there was an
+edge from u to v0.
+
+00:42:26.050 --> 00:42:28.810 align:middle line:90%
+This is for contradiction.
+
+00:42:28.810 --> 00:42:30.530 align:middle line:90%
+Imagine that this happens.
+
+00:42:30.530 --> 00:42:34.750 align:middle line:84%
+Well, then that looks like
+a longer path in the graph.
+
+00:42:34.750 --> 00:42:36.500 align:middle line:84%
+How could it not
+be a longer path?
+
+00:42:36.500 --> 00:42:38.270 align:middle line:90%
+Well, maybe it's cycles.
+
+00:42:38.270 --> 00:42:43.750 align:middle line:84%
+Maybe this vertex u was actually
+one of these other vi's.
+
+00:42:43.750 --> 00:42:46.960 align:middle line:84%
+But it can't be, because
+our graph is acyclic.
+
+00:42:46.960 --> 00:42:54.060 align:middle line:84%
+So either we get a cycle, which
+contradicts that we're a DAG.
+
+00:42:54.060 --> 00:42:58.340 align:middle line:90%
+
+
+00:42:58.340 --> 00:43:04.970 align:middle line:84%
+Or we get a longer path in
+the graph, which contradicts
+
+00:43:04.970 --> 00:43:05.845 align:middle line:90%
+that we were longest.
+
+00:43:05.845 --> 00:43:08.810 align:middle line:90%
+
+
+00:43:08.810 --> 00:43:12.350 align:middle line:84%
+So either way, we
+get a contradiction.
+
+00:43:12.350 --> 00:43:15.740 align:middle line:84%
+And that proves
+that v0 is a source
+
+00:43:15.740 --> 00:43:19.200 align:middle line:84%
+and exactly symmetric argument
+proves that vk is a sink.
+
+00:43:19.200 --> 00:43:19.700 align:middle line:90%
+Cool.
+
+00:43:19.700 --> 00:43:22.940 align:middle line:90%
+So these things exist.
+
+00:43:22.940 --> 00:43:30.720 align:middle line:84%
+Now let's use them to construct
+an order to getting dressed.
+
+00:43:30.720 --> 00:43:33.170 align:middle line:84%
+I know you've been
+wondering the answer
+
+00:43:33.170 --> 00:43:34.430 align:middle line:90%
+to this gripping question.
+
+00:43:34.430 --> 00:43:36.480 align:middle line:84%
+How should I get
+dressed every morning?
+
+00:43:36.480 --> 00:43:43.135 align:middle line:84%
+Finally, in 61200 I learned
+how to do it for any graph.
+
+00:43:43.135 --> 00:43:46.640 align:middle line:90%
+
+
+00:43:46.640 --> 00:43:49.520 align:middle line:84%
+The idea algorithmically
+is very simple.
+
+00:43:49.520 --> 00:43:54.060 align:middle line:84%
+If you want a topological
+order for your graph,
+
+00:43:54.060 --> 00:43:55.890 align:middle line:90%
+what should I start with?
+
+00:43:55.890 --> 00:43:57.400 align:middle line:90%
+A source seems good.
+
+00:43:57.400 --> 00:43:59.770 align:middle line:84%
+Source has nothing that
+has to come before it.
+
+00:43:59.770 --> 00:44:03.000 align:middle line:84%
+So any one of these would
+be a valid first step.
+
+00:44:03.000 --> 00:44:07.060 align:middle line:84%
+So the algorithm is just take
+any source, do that first,
+
+00:44:07.060 --> 00:44:09.450 align:middle line:84%
+then conceptually
+remove that vertex
+
+00:44:09.450 --> 00:44:11.730 align:middle line:84%
+to represent that
+it's been finished
+
+00:44:11.730 --> 00:44:15.030 align:middle line:90%
+and then find another source.
+
+00:44:15.030 --> 00:44:19.210 align:middle line:84%
+And because from this lemma
+there's always a source,
+
+00:44:19.210 --> 00:44:20.910 align:middle line:90%
+you never get stuck.
+
+00:44:20.910 --> 00:44:22.150 align:middle line:90%
+So you can just keep going.
+
+00:44:22.150 --> 00:44:25.780 align:middle line:84%
+And eventually, you'll
+have executed every task.
+
+00:44:25.780 --> 00:44:28.630 align:middle line:84%
+So let's do it briefly
+on this example.
+
+00:44:28.630 --> 00:44:31.560 align:middle line:90%
+Say we do right sock first.
+
+00:44:31.560 --> 00:44:34.900 align:middle line:84%
+And we see if there
+are any new sources.
+
+00:44:34.900 --> 00:44:36.120 align:middle line:90%
+I think there are not.
+
+00:44:36.120 --> 00:44:39.550 align:middle line:84%
+This is still not a source
+because it has an incoming edge.
+
+00:44:39.550 --> 00:44:41.070 align:middle line:90%
+One left.
+
+00:44:41.070 --> 00:44:44.290 align:middle line:84%
+Then maybe we do our
+pants, put those on.
+
+00:44:44.290 --> 00:44:45.520 align:middle line:90%
+Seems like a good idea.
+
+00:44:45.520 --> 00:44:48.167 align:middle line:84%
+Now we can put on our
+right shoe finally.
+
+00:44:48.167 --> 00:44:49.750 align:middle line:84%
+I've been waiting
+for that right shoe.
+
+00:44:49.750 --> 00:44:52.458 align:middle line:84%
+Because there's no more incoming
+edges, because we've eliminated,
+
+00:44:52.458 --> 00:44:54.510 align:middle line:84%
+we've finished the
+tasks from before.
+
+00:44:54.510 --> 00:44:56.080 align:middle line:84%
+So if I write down
+the ordering, it
+
+00:44:56.080 --> 00:45:02.090 align:middle line:90%
+would be right sock, then pants.
+
+00:45:02.090 --> 00:45:03.400 align:middle line:90%
+Now I'm going to do right shoe.
+
+00:45:03.400 --> 00:45:07.730 align:middle line:90%
+
+
+00:45:07.730 --> 00:45:09.130 align:middle line:90%
+Then I don't know.
+
+00:45:09.130 --> 00:45:09.630 align:middle line:90%
+I'm lazy.
+
+00:45:09.630 --> 00:45:11.943 align:middle line:84%
+Let's do left sock
+and left shoe next.
+
+00:45:11.943 --> 00:45:18.530 align:middle line:90%
+
+
+00:45:18.530 --> 00:45:20.240 align:middle line:90%
+Then let's see.
+
+00:45:20.240 --> 00:45:22.890 align:middle line:84%
+At this point, I've eliminated
+the left half of the graph.
+
+00:45:22.890 --> 00:45:25.140 align:middle line:90%
+The only source is shirt.
+
+00:45:25.140 --> 00:45:26.700 align:middle line:90%
+So I have to do shirt next.
+
+00:45:26.700 --> 00:45:31.670 align:middle line:84%
+I had a lot of choices up till
+now, but that choice is forced.
+
+00:45:31.670 --> 00:45:33.230 align:middle line:84%
+After I've eliminated
+these two, this
+
+00:45:33.230 --> 00:45:37.340 align:middle line:84%
+becomes a source and
+this becomes a source.
+
+00:45:37.340 --> 00:45:39.990 align:middle line:84%
+So I can choose belt
+or jacket first.
+
+00:45:39.990 --> 00:45:46.010 align:middle line:84%
+Let's do belt. Still
+can't do winter coat,
+
+00:45:46.010 --> 00:45:48.860 align:middle line:84%
+because I need to
+do scarf before it.
+
+00:45:48.860 --> 00:45:52.700 align:middle line:84%
+So jacket is the only
+source at this point.
+
+00:45:52.700 --> 00:45:53.440 align:middle line:90%
+So I'll do that.
+
+00:45:53.440 --> 00:45:56.960 align:middle line:90%
+
+
+00:45:56.960 --> 00:45:58.670 align:middle line:90%
+I think you get the idea.
+
+00:45:58.670 --> 00:46:02.510 align:middle line:84%
+Now I could do hat, for example,
+both a source and a sink.
+
+00:46:02.510 --> 00:46:07.220 align:middle line:84%
+I can do scarf and then
+finally, I can do winter coat.
+
+00:46:07.220 --> 00:46:10.460 align:middle line:84%
+So that was a valid execution
+order or a valid topological
+
+00:46:10.460 --> 00:46:11.990 align:middle line:90%
+ordering.
+
+00:46:11.990 --> 00:46:12.780 align:middle line:90%
+Cool.
+
+00:46:12.780 --> 00:46:16.250 align:middle line:84%
+Let's prove that this always
+works a little more carefully
+
+00:46:16.250 --> 00:46:19.730 align:middle line:84%
+using induction instead
+of an algorithm,
+
+00:46:19.730 --> 00:46:24.990 align:middle line:84%
+because this is more of a math
+class than a algorithms class.
+
+00:46:24.990 --> 00:46:28.340 align:middle line:84%
+Though of course,
+we talk about both.
+
+00:46:28.340 --> 00:46:32.113 align:middle line:84%
+But I think it's good to
+get more induction practice.
+
+00:46:32.113 --> 00:46:37.130 align:middle line:90%
+
+
+00:46:37.130 --> 00:46:42.230 align:middle line:84%
+So in particular,
+induction with graphs
+
+00:46:42.230 --> 00:46:43.680 align:middle line:90%
+is still a pretty new thing.
+
+00:46:43.680 --> 00:46:45.260 align:middle line:84%
+But again, induction
+about graphs
+
+00:46:45.260 --> 00:46:48.200 align:middle line:84%
+is always induction or
+some regular induction
+
+00:46:48.200 --> 00:46:49.690 align:middle line:90%
+over natural numbers.
+
+00:46:49.690 --> 00:46:52.740 align:middle line:84%
+So we're going to do induction
+on the number of vertices
+
+00:46:52.740 --> 00:46:54.730 align:middle line:84%
+in the graph, which is
+how we normally do it.
+
+00:46:54.730 --> 00:47:00.180 align:middle line:84%
+So our p of n is that
+every DAG with n vertices
+
+00:47:00.180 --> 00:47:02.250 align:middle line:90%
+has a topological order.
+
+00:47:02.250 --> 00:47:05.490 align:middle line:84%
+I'm going to assume by induction
+that all smaller n have
+
+00:47:05.490 --> 00:47:11.160 align:middle line:84%
+this property and prove it for
+n, or prove it for v, size of v.
+
+00:47:11.160 --> 00:47:17.483 align:middle line:84%
+So what is the smallest
+that size of v can be?
+
+00:47:17.483 --> 00:47:19.150 align:middle line:84%
+Well, I didn't put
+it in the definition,
+
+00:47:19.150 --> 00:47:22.570 align:middle line:84%
+but I meant to say v has to
+be at least 1, as before.
+
+00:47:22.570 --> 00:47:24.610 align:middle line:84%
+We don't allow the empty
+graph with no vertices.
+
+00:47:24.610 --> 00:47:26.152 align:middle line:84%
+You have to have at
+least one vertex.
+
+00:47:26.152 --> 00:47:28.480 align:middle line:84%
+So the smallest
+graph has one vertex.
+
+00:47:28.480 --> 00:47:30.810 align:middle line:90%
+So here it is.
+
+00:47:30.810 --> 00:47:34.800 align:middle line:84%
+I guess, yeah, I mean,
+in a directed graph,
+
+00:47:34.800 --> 00:47:36.730 align:middle line:90%
+you could have a loop here.
+
+00:47:36.730 --> 00:47:38.560 align:middle line:90%
+But that's a cycle.
+
+00:47:38.560 --> 00:47:39.720 align:middle line:90%
+So we're not allowed.
+
+00:47:39.720 --> 00:47:44.650 align:middle line:84%
+In a DAG, there's only
+one graph of one vertex.
+
+00:47:44.650 --> 00:47:45.730 align:middle line:90%
+It's that one.
+
+00:47:45.730 --> 00:47:46.990 align:middle line:90%
+Let's call this a.
+
+00:47:46.990 --> 00:47:48.920 align:middle line:90%
+The ordering is a.
+
+00:47:48.920 --> 00:47:50.920 align:middle line:90%
+It satisfies all the properties.
+
+00:47:50.920 --> 00:47:52.220 align:middle line:90%
+That's their topological order.
+
+00:47:52.220 --> 00:47:53.730 align:middle line:90%
+So this is easy.
+
+00:47:53.730 --> 00:47:56.470 align:middle line:90%
+
+
+00:47:56.470 --> 00:48:00.190 align:middle line:84%
+More interesting is
+the induction step.
+
+00:48:00.190 --> 00:48:03.880 align:middle line:84%
+So now we can assume
+that v is at least two,
+
+00:48:03.880 --> 00:48:05.025 align:middle line:90%
+bigger than the base case.
+
+00:48:05.025 --> 00:48:08.830 align:middle line:90%
+
+
+00:48:08.830 --> 00:48:10.070 align:middle line:90%
+So what should we do?
+
+00:48:10.070 --> 00:48:13.730 align:middle line:84%
+Well, we have this nice lemma
+that tells us there's a source.
+
+00:48:13.730 --> 00:48:15.910 align:middle line:84%
+So whereas the
+algorithm took a source
+
+00:48:15.910 --> 00:48:18.500 align:middle line:84%
+and then had to do
+more work to continue,
+
+00:48:18.500 --> 00:48:22.090 align:middle line:84%
+we can just take one source
+and then use induction.
+
+00:48:22.090 --> 00:48:31.390 align:middle line:84%
+So by the lemma,
+there exists a source.
+
+00:48:31.390 --> 00:48:34.000 align:middle line:90%
+Let's call it s.
+
+00:48:34.000 --> 00:48:37.690 align:middle line:84%
+And the intuition is
+I want to do s first.
+
+00:48:37.690 --> 00:48:40.480 align:middle line:84%
+But to figure out how to
+do the rest of the graph,
+
+00:48:40.480 --> 00:48:41.990 align:middle line:90%
+I can use induction.
+
+00:48:41.990 --> 00:48:48.920 align:middle line:84%
+So let's let g
+prime be g minus s.
+
+00:48:48.920 --> 00:48:51.410 align:middle line:90%
+Remember, this was the graph--
+
+00:48:51.410 --> 00:48:54.750 align:middle line:84%
+g minus s was the graph induced
+by the subset of vertices
+
+00:48:54.750 --> 00:48:56.700 align:middle line:90%
+that's everything except s.
+
+00:48:56.700 --> 00:48:59.750 align:middle line:84%
+So in other words, erase
+the vertex s and all
+
+00:48:59.750 --> 00:49:02.330 align:middle line:84%
+of its incident edges,
+which in this case
+
+00:49:02.330 --> 00:49:04.020 align:middle line:90%
+will only be outgoing edges.
+
+00:49:04.020 --> 00:49:05.630 align:middle line:90%
+So here, we have s.
+
+00:49:05.630 --> 00:49:09.530 align:middle line:84%
+And there's some
+outgoing edges into g
+
+00:49:09.530 --> 00:49:14.090 align:middle line:90%
+prime and g is this whole graph.
+
+00:49:14.090 --> 00:49:18.830 align:middle line:84%
+So the point is number
+of vertices in g
+
+00:49:18.830 --> 00:49:22.320 align:middle line:84%
+prime is 1 less than the
+number of vertices in g.
+
+00:49:22.320 --> 00:49:23.910 align:middle line:90%
+We just removed s.
+
+00:49:23.910 --> 00:49:26.510 align:middle line:90%
+Everyone else is there.
+
+00:49:26.510 --> 00:49:31.140 align:middle line:84%
+But in particular, g prime
+is smaller than g was,
+
+00:49:31.140 --> 00:49:33.890 align:middle line:90%
+so we can use induction.
+
+00:49:33.890 --> 00:49:41.730 align:middle line:84%
+By the induction hypothesis,
+g prime satisfies this.
+
+00:49:41.730 --> 00:49:44.310 align:middle line:84%
+I guess we also need to
+check g prime is a DAG.
+
+00:49:44.310 --> 00:49:45.810 align:middle line:84%
+But if you remove
+a vertex, you're
+
+00:49:45.810 --> 00:49:47.680 align:middle line:90%
+not going to add any cycles.
+
+00:49:47.680 --> 00:49:50.490 align:middle line:90%
+So that's cool.
+
+00:49:50.490 --> 00:49:56.250 align:middle line:84%
+So g prime is a smaller DAG
+according to the measure
+
+00:49:56.250 --> 00:49:58.000 align:middle line:90%
+of number of vertices.
+
+00:49:58.000 --> 00:50:02.010 align:middle line:84%
+So by induction hypothesis,
+it has a topological order.
+
+00:50:02.010 --> 00:50:07.500 align:middle line:90%
+g prime has a topological order.
+
+00:50:07.500 --> 00:50:14.460 align:middle line:84%
+Let's call it v1,
+v2, up to v sub
+
+00:50:14.460 --> 00:50:16.792 align:middle line:84%
+I guess number of
+vertices minus 1.
+
+00:50:16.792 --> 00:50:18.250 align:middle line:84%
+That's how many
+vertices there are.
+
+00:50:18.250 --> 00:50:21.150 align:middle line:84%
+So by induction, I get
+an explicit ordering
+
+00:50:21.150 --> 00:50:22.420 align:middle line:90%
+of all those vertices.
+
+00:50:22.420 --> 00:50:27.880 align:middle line:84%
+And now I just put s
+first before all of those.
+
+00:50:27.880 --> 00:50:32.910 align:middle line:84%
+So we get s comma
+v1, v2 and so on.
+
+00:50:32.910 --> 00:50:35.760 align:middle line:90%
+v sub v minus 1.
+
+00:50:35.760 --> 00:50:42.090 align:middle line:84%
+This is a topological
+order of g.
+
+00:50:42.090 --> 00:50:43.930 align:middle line:84%
+And this is where
+I guess you have
+
+00:50:43.930 --> 00:50:46.000 align:middle line:90%
+to actually check something.
+
+00:50:46.000 --> 00:50:49.880 align:middle line:84%
+So I claim it's OK to put s
+before all these other vertices,
+
+00:50:49.880 --> 00:50:51.490 align:middle line:84%
+and that will be
+a valid ordering.
+
+00:50:51.490 --> 00:50:53.620 align:middle line:84%
+Intuitively, because
+s has nothing
+
+00:50:53.620 --> 00:50:55.160 align:middle line:90%
+that has to happen before it.
+
+00:50:55.160 --> 00:50:57.920 align:middle line:84%
+So if you check the constraint
+of a topological ordering,
+
+00:50:57.920 --> 00:51:00.730 align:middle line:84%
+every vertex listed
+must appear before all
+
+00:51:00.730 --> 00:51:02.480 align:middle line:90%
+vertices that it can reach.
+
+00:51:02.480 --> 00:51:04.600 align:middle line:84%
+Well, s definitely
+appears before all
+
+00:51:04.600 --> 00:51:08.080 align:middle line:84%
+vertices it can reach, because
+it appears before all vertices.
+
+00:51:08.080 --> 00:51:10.640 align:middle line:84%
+And the other
+vertices are also OK.
+
+00:51:10.640 --> 00:51:13.420 align:middle line:84%
+Like v1, let's say, appears
+before all the vertices
+
+00:51:13.420 --> 00:51:16.490 align:middle line:84%
+it can reach, because all
+the vertices it can reach,
+
+00:51:16.490 --> 00:51:18.020 align:middle line:90%
+it's inside g prime.
+
+00:51:18.020 --> 00:51:20.060 align:middle line:84%
+Once you're inside g
+prime, you can't escape.
+
+00:51:20.060 --> 00:51:22.910 align:middle line:90%
+You can't get back to s.
+
+00:51:22.910 --> 00:51:25.630 align:middle line:84%
+It's in a different strongly
+connected component.
+
+00:51:25.630 --> 00:51:30.080 align:middle line:84%
+Any vertex down here, which is
+all of the v1 through v minus 1,
+
+00:51:30.080 --> 00:51:33.500 align:middle line:84%
+cannot reach s because it
+only has outgoing edges.
+
+00:51:33.500 --> 00:51:36.392 align:middle line:84%
+And so they also appear before
+all the vertices they can reach,
+
+00:51:36.392 --> 00:51:38.850 align:middle line:84%
+because all the vertices they
+can reach are within g prime.
+
+00:51:38.850 --> 00:51:42.680 align:middle line:90%
+
+
+00:51:42.680 --> 00:51:43.770 align:middle line:90%
+So great.
+
+00:51:43.770 --> 00:51:48.930 align:middle line:84%
+Now, given a set of tasks
+with precedence constraints,
+
+00:51:48.930 --> 00:51:52.040 align:middle line:90%
+you can find a valid ordering.
+
+00:51:52.040 --> 00:51:54.230 align:middle line:84%
+So you can get dressed
+in the morning.
+
+00:51:54.230 --> 00:51:58.020 align:middle line:84%
+But most of us are
+computer scientists.
+
+00:51:58.020 --> 00:52:03.650 align:middle line:84%
+And so often we're not just
+one computer or one agent
+
+00:52:03.650 --> 00:52:05.100 align:middle line:90%
+executing a bunch of tasks.
+
+00:52:05.100 --> 00:52:08.190 align:middle line:84%
+But maybe we have many
+computers to execute our tasks.
+
+00:52:08.190 --> 00:52:09.990 align:middle line:90%
+What if we allow parallelism?
+
+00:52:09.990 --> 00:52:11.730 align:middle line:90%
+Can we do this any faster?
+
+00:52:11.730 --> 00:52:13.500 align:middle line:84%
+You imagine you
+want to get dressed,
+
+00:52:13.500 --> 00:52:16.460 align:middle line:84%
+but you have a crazy
+Rube Goldberg style
+
+00:52:16.460 --> 00:52:19.560 align:middle line:84%
+machine that can put on
+many garments all at once.
+
+00:52:19.560 --> 00:52:22.290 align:middle line:84%
+So maybe then you can do left
+and right sock in parallel.
+
+00:52:22.290 --> 00:52:24.590 align:middle line:84%
+If I had four arms,
+I would do that.
+
+00:52:24.590 --> 00:52:28.020 align:middle line:84%
+Maybe even three arms, I don't
+know, that's a good question.
+
+00:52:28.020 --> 00:52:30.830 align:middle line:84%
+So let's think
+about that version
+
+00:52:30.830 --> 00:52:37.310 align:middle line:84%
+where we can do
+parallel task execution.
+
+00:52:37.310 --> 00:52:41.250 align:middle line:84%
+Then I'd like to do it
+as fast as possible.
+
+00:52:41.250 --> 00:52:44.880 align:middle line:84%
+If I'm just a measly
+single processor
+
+00:52:44.880 --> 00:52:47.080 align:middle line:84%
+and I want to execute
+the tasks in this graph,
+
+00:52:47.080 --> 00:52:48.060 align:middle line:84%
+well, the number
+of steps it takes
+
+00:52:48.060 --> 00:52:50.560 align:middle line:84%
+me is exactly the number of
+vertices, no matter how I do it.
+
+00:52:50.560 --> 00:52:52.890 align:middle line:84%
+It doesn't really
+matter which ordering
+
+00:52:52.890 --> 00:52:54.820 align:middle line:90%
+I choose in terms of speed.
+
+00:52:54.820 --> 00:52:58.320 align:middle line:84%
+Assuming, I don't know,
+assuming instantaneous switching
+
+00:52:58.320 --> 00:53:01.210 align:middle line:90%
+time between different tasks.
+
+00:53:01.210 --> 00:53:04.190 align:middle line:84%
+But with parallel task
+scheduling, you can do more.
+
+00:53:04.190 --> 00:53:13.380 align:middle line:90%
+
+
+00:53:13.380 --> 00:53:16.910 align:middle line:84%
+So let me first define
+the problem a little bit,
+
+00:53:16.910 --> 00:53:18.410 align:middle line:84%
+and then we'll prove
+a nice theorem.
+
+00:53:18.410 --> 00:53:24.180 align:middle line:90%
+
+
+00:53:24.180 --> 00:53:27.570 align:middle line:84%
+So I want to define a schedule
+to say basically what order you
+
+00:53:27.570 --> 00:53:28.570 align:middle line:90%
+should do the tasks in.
+
+00:53:28.570 --> 00:53:30.810 align:middle line:84%
+But now I'm allowing
+multiple tasks
+
+00:53:30.810 --> 00:53:34.080 align:middle line:84%
+to be scheduled
+at the same time.
+
+00:53:34.080 --> 00:53:42.580 align:middle line:84%
+So a schedule is going to
+assign what time t of v,
+
+00:53:42.580 --> 00:53:57.460 align:middle line:84%
+it's going to be a natural
+number, to each vertex v. And it
+
+00:53:57.460 --> 00:54:05.770 align:middle line:84%
+needs to satisfy the property
+that if u can reach v and u
+
+00:54:05.770 --> 00:54:10.630 align:middle line:84%
+does not equal v, then the
+time that we schedule u
+
+00:54:10.630 --> 00:54:15.160 align:middle line:84%
+has to be strictly less
+than the time we schedule v.
+
+00:54:15.160 --> 00:54:18.260 align:middle line:84%
+And this is the analog
+of topological ordering.
+
+00:54:18.260 --> 00:54:21.740 align:middle line:84%
+Except now I can assign the
+same time to multiple tasks.
+
+00:54:21.740 --> 00:54:24.530 align:middle line:84%
+So maybe I do a bunch
+of tasks at time 0,
+
+00:54:24.530 --> 00:54:27.508 align:middle line:84%
+as long as none of them has
+to happen before another.
+
+00:54:27.508 --> 00:54:29.300 align:middle line:84%
+Then I could do a bunch
+of tasks at time 1,
+
+00:54:29.300 --> 00:54:32.110 align:middle line:84%
+a bunch of tasks at
+time 2, and so on.
+
+00:54:32.110 --> 00:54:38.720 align:middle line:84%
+And I'll call it the
+span of the schedule
+
+00:54:38.720 --> 00:54:48.170 align:middle line:84%
+is the number of
+distinct times t of v.
+
+00:54:48.170 --> 00:54:50.840 align:middle line:84%
+So I can look at all the
+different times assigned
+
+00:54:50.840 --> 00:54:51.870 align:middle line:90%
+to the vertices.
+
+00:54:51.870 --> 00:54:55.230 align:middle line:84%
+And if I use 17 different
+times, then my span is 17.
+
+00:54:55.230 --> 00:54:58.910 align:middle line:84%
+Span is a measure of how long it
+takes to execute the schedule.
+
+00:54:58.910 --> 00:55:02.280 align:middle line:84%
+Here I'm assuming an unlimited
+number of processors.
+
+00:55:02.280 --> 00:55:05.468 align:middle line:84%
+I can do all the tasks at once
+if I need if I'm allowed to.
+
+00:55:05.468 --> 00:55:07.760 align:middle line:84%
+If I have no edges in my
+graph, I'll just do everything
+
+00:55:07.760 --> 00:55:09.120 align:middle line:90%
+in time 0 and I'll be done.
+
+00:55:09.120 --> 00:55:12.560 align:middle line:84%
+And that will be a span of 1,
+because there's only one time
+
+00:55:12.560 --> 00:55:13.740 align:middle line:90%
+value that I needed.
+
+00:55:13.740 --> 00:55:15.720 align:middle line:84%
+But in general, we're
+going to need more.
+
+00:55:15.720 --> 00:55:18.240 align:middle line:84%
+I can't do left sock and
+left shoe at the same time,
+
+00:55:18.240 --> 00:55:21.360 align:middle line:84%
+because left sock has to happen
+strictly before left shoe.
+
+00:55:21.360 --> 00:55:23.120 align:middle line:90%
+That's what this says.
+
+00:55:23.120 --> 00:55:24.930 align:middle line:84%
+If one vertex can
+reach another vertex,
+
+00:55:24.930 --> 00:55:28.730 align:middle line:84%
+that's different than the
+time assigned to the earlier
+
+00:55:28.730 --> 00:55:31.760 align:middle line:84%
+precedent has to be strictly
+less than the later one.
+
+00:55:31.760 --> 00:55:34.010 align:middle line:84%
+So that's the definition
+of the problem.
+
+00:55:34.010 --> 00:55:38.760 align:middle line:90%
+And now that's a nice theorem.
+
+00:55:38.760 --> 00:55:44.165 align:middle line:84%
+It says the minimum possible
+span of any schedule.
+
+00:55:44.165 --> 00:55:52.230 align:middle line:90%
+
+
+00:55:52.230 --> 00:55:54.910 align:middle line:84%
+So certainly a schedule
+like this exists, right?
+
+00:55:54.910 --> 00:55:57.940 align:middle line:84%
+We could do the one given
+by the topological order.
+
+00:55:57.940 --> 00:56:01.890 align:middle line:84%
+We could do right sock in
+time 0, pants in time 1,
+
+00:56:01.890 --> 00:56:03.550 align:middle line:90%
+right shoe in time 2.
+
+00:56:03.550 --> 00:56:06.880 align:middle line:84%
+We could do this sequentially,
+one task at a time.
+
+00:56:06.880 --> 00:56:08.830 align:middle line:84%
+But if I want to
+minimize the span,
+
+00:56:08.830 --> 00:56:11.190 align:middle line:84%
+I want to do lots of
+things in parallel.
+
+00:56:11.190 --> 00:56:16.290 align:middle line:84%
+This is equal to the
+number of vertices
+
+00:56:16.290 --> 00:56:20.550 align:middle line:90%
+in a longest path in the graph.
+
+00:56:20.550 --> 00:56:23.490 align:middle line:84%
+So a very simple
+characterization of how long
+
+00:56:23.490 --> 00:56:26.160 align:middle line:90%
+this takes.
+
+00:56:26.160 --> 00:56:37.750 align:middle line:84%
+In this example, I think the
+longest path is shirt to jacket
+
+00:56:37.750 --> 00:56:40.825 align:middle line:90%
+to scarf to coat.
+
+00:56:40.825 --> 00:56:44.500 align:middle line:90%
+
+
+00:56:44.500 --> 00:56:50.162 align:middle line:90%
+That's a path of length 1, 2, 3.
+
+00:56:50.162 --> 00:56:52.370 align:middle line:84%
+But what I wrote there is
+not the length of the path.
+
+00:56:52.370 --> 00:56:55.690 align:middle line:84%
+I wrote the number of vertices
+in the path, and that's 4.
+
+00:56:55.690 --> 00:56:57.190 align:middle line:84%
+So this is the one
+time when we want
+
+00:56:57.190 --> 00:56:58.520 align:middle line:90%
+to count vertices, not edges.
+
+00:56:58.520 --> 00:57:01.270 align:middle line:84%
+So I write number of vertices
+in the longest path with shirt,
+
+00:57:01.270 --> 00:57:04.120 align:middle line:90%
+jacket, scarf, winter coat.
+
+00:57:04.120 --> 00:57:05.390 align:middle line:90%
+So that's four.
+
+00:57:05.390 --> 00:57:11.050 align:middle line:84%
+And so I claim this
+set of tasks can
+
+00:57:11.050 --> 00:57:13.160 align:middle line:90%
+be executed in just four steps.
+
+00:57:13.160 --> 00:57:16.360 align:middle line:84%
+Four rounds of
+parallel execution.
+
+00:57:16.360 --> 00:57:20.217 align:middle line:84%
+Namely, I think I
+need another color.
+
+00:57:20.217 --> 00:57:21.300 align:middle line:90%
+Let me see what I brought.
+
+00:57:21.300 --> 00:57:26.590 align:middle line:90%
+
+
+00:57:26.590 --> 00:57:27.275 align:middle line:90%
+Oh, purple.
+
+00:57:27.275 --> 00:57:29.800 align:middle line:90%
+
+
+00:57:29.800 --> 00:57:33.930 align:middle line:84%
+So how I do it is
+actually pretty intuitive.
+
+00:57:33.930 --> 00:57:37.830 align:middle line:84%
+I just want to take all
+the sources at each step.
+
+00:57:37.830 --> 00:57:40.050 align:middle line:84%
+So in the beginning,
+I had four sources.
+
+00:57:40.050 --> 00:57:42.410 align:middle line:84%
+I'm going to do all
+of those at time 0.
+
+00:57:42.410 --> 00:57:44.190 align:middle line:90%
+Then what's the source?
+
+00:57:44.190 --> 00:57:47.270 align:middle line:84%
+This becomes a source because
+both left sock and pants
+
+00:57:47.270 --> 00:57:48.720 align:middle line:90%
+were done in the previous step.
+
+00:57:48.720 --> 00:57:50.803 align:middle line:84%
+This becomes a source
+because right sock and pants
+
+00:57:50.803 --> 00:57:52.220 align:middle line:90%
+were done in the previous step.
+
+00:57:52.220 --> 00:57:54.870 align:middle line:84%
+This becomes a source and
+this becomes a source.
+
+00:57:54.870 --> 00:57:55.710 align:middle line:90%
+I think that's it.
+
+00:57:55.710 --> 00:57:59.390 align:middle line:84%
+So then in the second step,
+I'm going to do all these.
+
+00:57:59.390 --> 00:58:01.790 align:middle line:84%
+Everything above
+that purple line.
+
+00:58:01.790 --> 00:58:05.730 align:middle line:90%
+And then hat becomes a source.
+
+00:58:05.730 --> 00:58:06.840 align:middle line:90%
+Scarf becomes a source.
+
+00:58:06.840 --> 00:58:09.510 align:middle line:84%
+But winter coat is
+still being annoying.
+
+00:58:09.510 --> 00:58:12.080 align:middle line:84%
+So we do everything
+above that line.
+
+00:58:12.080 --> 00:58:14.980 align:middle line:84%
+And then in the fourth round,
+we just do winter coat.
+
+00:58:14.980 --> 00:58:18.090 align:middle line:90%
+
+
+00:58:18.090 --> 00:58:19.680 align:middle line:90%
+So that's the algorithm.
+
+00:58:19.680 --> 00:58:23.570 align:middle line:90%
+But let's prove.
+
+00:58:23.570 --> 00:58:25.400 align:middle line:84%
+It's not obvious that
+this algorithm takes
+
+00:58:25.400 --> 00:58:27.750 align:middle line:90%
+exactly the longest path time.
+
+00:58:27.750 --> 00:58:31.400 align:middle line:84%
+And there's a nice,
+elegant proof of it.
+
+00:58:31.400 --> 00:58:32.585 align:middle line:90%
+So let's go back here.
+
+00:58:32.585 --> 00:58:49.860 align:middle line:90%
+
+
+00:58:49.860 --> 00:58:51.840 align:middle line:84%
+So in general, when
+we want to prove
+
+00:58:51.840 --> 00:58:55.270 align:middle line:84%
+that two numbers are equal,
+usually we do it in two parts.
+
+00:58:55.270 --> 00:58:57.180 align:middle line:84%
+We prove that one
+number is greater than
+
+00:58:57.180 --> 00:58:59.070 align:middle line:84%
+or equal to the
+other, and one number
+
+00:58:59.070 --> 00:59:00.990 align:middle line:84%
+is less than or
+equal to the other.
+
+00:59:00.990 --> 00:59:03.010 align:middle line:84%
+We've seen that a couple
+of times, I think.
+
+00:59:03.010 --> 00:59:05.560 align:middle line:84%
+And this is definitely
+one of those situations.
+
+00:59:05.560 --> 00:59:07.320 align:middle line:84%
+So first let's
+think about why is
+
+00:59:07.320 --> 00:59:10.830 align:middle line:84%
+the minimum span of a schedule
+at least the number of vertices
+
+00:59:10.830 --> 00:59:13.020 align:middle line:90%
+in the longest path?
+
+00:59:13.020 --> 00:59:15.210 align:middle line:84%
+Well, that makes sense,
+because if I just
+
+00:59:15.210 --> 00:59:21.930 align:middle line:84%
+think about this longest path,
+it's some sequence of vertices.
+
+00:59:21.930 --> 00:59:24.190 align:middle line:90%
+And let's say it has length l.
+
+00:59:24.190 --> 00:59:28.740 align:middle line:84%
+So we start at number one or it
+has l different vertices in it.
+
+00:59:28.740 --> 00:59:31.970 align:middle line:84%
+Well, in the first
+round, just looking
+
+00:59:31.970 --> 00:59:34.370 align:middle line:84%
+at this path, the first
+round, the only thing I can do
+
+00:59:34.370 --> 00:59:35.840 align:middle line:90%
+is the first vertex in the path.
+
+00:59:35.840 --> 00:59:37.673 align:middle line:84%
+In the second round,
+the only thing I can do
+
+00:59:37.673 --> 00:59:38.930 align:middle line:90%
+is the second one.
+
+00:59:38.930 --> 00:59:43.140 align:middle line:84%
+To execute this path clearly
+requires at least l time steps.
+
+00:59:43.140 --> 00:59:49.160 align:middle line:84%
+So this is just to
+schedule the longest path.
+
+00:59:49.160 --> 00:59:53.905 align:middle line:84%
+You certainly need the number
+of vertices of that path.
+
+00:59:53.905 --> 00:59:56.490 align:middle line:90%
+
+
+00:59:56.490 --> 00:59:59.550 align:middle line:84%
+That's a bit hand-wavy,
+but pretty intuitive.
+
+00:59:59.550 --> 01:00:01.470 align:middle line:84%
+The interesting part
+is the other direction.
+
+01:00:01.470 --> 01:00:04.070 align:middle line:84%
+So let's suppose I
+found the longest path
+
+01:00:04.070 --> 01:00:05.690 align:middle line:90%
+and it has l vertices.
+
+01:00:05.690 --> 01:00:08.780 align:middle line:84%
+I claim that I
+can achieve, I can
+
+01:00:08.780 --> 01:00:13.850 align:middle line:84%
+find a schedule that does
+that, that is that fast.
+
+01:00:13.850 --> 01:00:16.820 align:middle line:90%
+And here it is.
+
+01:00:16.820 --> 01:00:24.050 align:middle line:84%
+Given a vertex, we're going
+to define its depth to be
+
+01:00:24.050 --> 01:00:35.040 align:middle line:84%
+the length of the
+longest path ending at v.
+
+01:00:35.040 --> 01:00:37.230 align:middle line:90%
+Or I'll say I guess 2v.
+
+01:00:37.230 --> 01:00:39.010 align:middle line:90%
+So it can start anywhere.
+
+01:00:39.010 --> 01:00:44.220 align:middle line:84%
+But I want the longest
+path that ends at v.
+
+01:00:44.220 --> 01:00:46.297 align:middle line:84%
+And I'm going to-- here
+I'll use length measuring
+
+01:00:46.297 --> 01:00:48.630 align:middle line:84%
+the number of edges, as usual,
+because it doesn't really
+
+01:00:48.630 --> 01:00:49.450 align:middle line:90%
+matter.
+
+01:00:49.450 --> 01:01:00.240 align:middle line:84%
+So I claim that
+depth is a schedule
+
+01:01:00.240 --> 01:01:04.140 align:middle line:90%
+and that it has the right span.
+
+01:01:04.140 --> 01:01:07.390 align:middle line:84%
+Because depth assigns
+a natural number 0,
+
+01:01:07.390 --> 01:01:11.130 align:middle line:84%
+1, 2, whatever to every
+vertex, and I claim
+
+01:01:11.130 --> 01:01:13.770 align:middle line:90%
+that it is a valid schedule.
+
+01:01:13.770 --> 01:01:14.870 align:middle line:90%
+So let's prove that.
+
+01:01:14.870 --> 01:01:25.140 align:middle line:90%
+
+
+01:01:25.140 --> 01:01:27.980 align:middle line:84%
+So what does it mean
+to be a valid schedule?
+
+01:01:27.980 --> 01:01:32.260 align:middle line:84%
+It says that if I have two
+vertices u and v, where
+
+01:01:32.260 --> 01:01:34.550 align:middle line:84%
+u can reach v and u
+is different from v,
+
+01:01:34.550 --> 01:01:39.220 align:middle line:84%
+then I have to prove that depth
+of u is less than depth of v.
+
+01:01:39.220 --> 01:01:50.325 align:middle line:84%
+So suppose u can reach v and
+suppose v does not equal u.
+
+01:01:50.325 --> 01:01:52.840 align:middle line:90%
+
+
+01:01:52.840 --> 01:01:59.795 align:middle line:84%
+We want to show depth of u
+is strictly less than depth
+
+01:01:59.795 --> 01:02:01.920 align:middle line:84%
+of v. This is what it means
+to be a valid schedule.
+
+01:02:01.920 --> 01:02:10.870 align:middle line:90%
+
+
+01:02:10.870 --> 01:02:15.460 align:middle line:84%
+What does it mean
+that u can reach v?
+
+01:02:15.460 --> 01:02:17.830 align:middle line:84%
+Probably still have the
+definition over here.
+
+01:02:17.830 --> 01:02:20.320 align:middle line:84%
+v is reachable from
+u or you can reach v
+
+01:02:20.320 --> 01:02:24.130 align:middle line:84%
+if there exists a walk from u
+to v. Or for DAGs it's the same,
+
+01:02:24.130 --> 01:02:27.620 align:middle line:84%
+in general, it's the same as
+there exists a path from u to v.
+
+01:02:27.620 --> 01:02:33.380 align:middle line:84%
+So we know that
+there exists a path,
+
+01:02:33.380 --> 01:02:40.940 align:middle line:84%
+let's call it puv, from u to
+v. That's the meaning of u
+
+01:02:40.940 --> 01:02:44.000 align:middle line:90%
+can reach v.
+
+01:02:44.000 --> 01:02:52.620 align:middle line:84%
+And we also know that it
+has length greater than 0.
+
+01:02:52.620 --> 01:02:53.120 align:middle line:90%
+Why?
+
+01:02:53.120 --> 01:02:55.580 align:middle line:84%
+Because these
+vertices are different
+
+01:02:55.580 --> 01:02:56.753 align:middle line:90%
+and there are no cycles.
+
+01:02:56.753 --> 01:02:59.420 align:middle line:90%
+
+
+01:02:59.420 --> 01:03:01.970 align:middle line:84%
+I guess the only way to have a
+length 0 path is if you start
+
+01:03:01.970 --> 01:03:03.600 align:middle line:90%
+and end at the same vertex.
+
+01:03:03.600 --> 01:03:05.810 align:middle line:84%
+But if v is different
+from u, that path
+
+01:03:05.810 --> 01:03:08.700 align:middle line:90%
+has to have a non-zero length.
+
+01:03:08.700 --> 01:03:11.540 align:middle line:84%
+This will be
+important in a moment.
+
+01:03:11.540 --> 01:03:14.180 align:middle line:84%
+OK, let's see, what
+else do we know?
+
+01:03:14.180 --> 01:03:21.170 align:middle line:84%
+We also know or we know
+that there's a path.
+
+01:03:21.170 --> 01:03:22.443 align:middle line:90%
+There's a longest path.
+
+01:03:22.443 --> 01:03:26.010 align:middle line:90%
+
+
+01:03:26.010 --> 01:03:31.590 align:middle line:90%
+pu to u.
+
+01:03:31.590 --> 01:03:34.480 align:middle line:84%
+My words are starting
+to sound like numbers.
+
+01:03:34.480 --> 01:03:35.160 align:middle line:90%
+This tou.
+
+01:03:35.160 --> 01:03:38.190 align:middle line:90%
+
+
+01:03:38.190 --> 01:03:39.670 align:middle line:90%
+That's the definition of depth.
+
+01:03:39.670 --> 01:03:41.160 align:middle line:84%
+Depth is the length
+of the longest
+
+01:03:41.160 --> 01:03:43.540 align:middle line:90%
+path that ends at that vertex.
+
+01:03:43.540 --> 01:03:46.920 align:middle line:84%
+So let's just take
+that longest path.
+
+01:03:46.920 --> 01:03:52.870 align:middle line:84%
+So this one has length
+exactly depth of u.
+
+01:03:52.870 --> 01:03:54.275 align:middle line:90%
+That's the definition of depth.
+
+01:03:54.275 --> 01:03:57.420 align:middle line:90%
+
+
+01:03:57.420 --> 01:03:58.960 align:middle line:90%
+It might be 0.
+
+01:03:58.960 --> 01:04:02.230 align:middle line:84%
+Maybe the longest path that
+ends at u, if u is the source,
+
+01:04:02.230 --> 01:04:05.490 align:middle line:84%
+it's just the path that starts
+at u and doesn't do anything.
+
+01:04:05.490 --> 01:04:08.970 align:middle line:90%
+But there is this path.
+
+01:04:08.970 --> 01:04:09.730 align:middle line:90%
+All right.
+
+01:04:09.730 --> 01:04:14.620 align:middle line:84%
+Now, my big idea is
+concatenate these two paths.
+
+01:04:14.620 --> 01:04:16.532 align:middle line:84%
+Because here we have
+a path that ends at u.
+
+01:04:16.532 --> 01:04:18.240 align:middle line:84%
+And here, we have a
+path that starts at u
+
+01:04:18.240 --> 01:04:22.390 align:middle line:84%
+and goes to v. So obvious thing
+to do is glue them together.
+
+01:04:22.390 --> 01:04:23.986 align:middle line:90%
+So let's concatenate.
+
+01:04:23.986 --> 01:04:28.060 align:middle line:90%
+
+
+01:04:28.060 --> 01:04:36.220 align:middle line:84%
+And I'll call this p sub v is
+going to be p sub u comma p sub
+
+01:04:36.220 --> 01:04:37.150 align:middle line:90%
+uv.
+
+01:04:37.150 --> 01:04:39.760 align:middle line:90%
+So follow the path pu.
+
+01:04:39.760 --> 01:04:41.590 align:middle line:90%
+Follow the path puv.
+
+01:04:41.590 --> 01:04:45.492 align:middle line:84%
+And the length of this
+path, so first of all,
+
+01:04:45.492 --> 01:04:47.950 align:middle line:84%
+it's a path because this one
+ended at u and this one starts
+
+01:04:47.950 --> 01:04:48.450 align:middle line:90%
+at u.
+
+01:04:48.450 --> 01:04:50.060 align:middle line:84%
+So you can actually
+concatenate them.
+
+01:04:50.060 --> 01:04:53.560 align:middle line:84%
+The length is just going to be
+the sum of these two lengths.
+
+01:04:53.560 --> 01:04:57.410 align:middle line:84%
+So it starts with a depth
+of u number of edges.
+
+01:04:57.410 --> 01:04:59.740 align:middle line:84%
+And then it has
+at least one more.
+
+01:04:59.740 --> 01:05:03.940 align:middle line:84%
+So the length is strictly
+greater than depth of u,
+
+01:05:03.940 --> 01:05:07.780 align:middle line:84%
+because it's just the
+sum of these two numbers.
+
+01:05:07.780 --> 01:05:11.090 align:middle line:84%
+Now, what do I know
+about this path?
+
+01:05:11.090 --> 01:05:19.900 align:middle line:84%
+It is a path that ends
+at v. pv ends at v.
+
+01:05:19.900 --> 01:05:23.720 align:middle line:84%
+Because if you look at the
+last vertex it visits, it's v.
+
+01:05:23.720 --> 01:05:27.990 align:middle line:84%
+So this is a path that
+ends at v and its length
+
+01:05:27.990 --> 01:05:30.650 align:middle line:84%
+is this, greater
+than depth of u.
+
+01:05:30.650 --> 01:05:34.370 align:middle line:84%
+Now, depth of v is the length
+of the longest path that
+
+01:05:34.370 --> 01:05:36.920 align:middle line:84%
+ends at v. And the longest
+path, is it greater than
+
+01:05:36.920 --> 01:05:38.730 align:middle line:90%
+or equal to any particular path?
+
+01:05:38.730 --> 01:05:40.050 align:middle line:90%
+So I found a path here.
+
+01:05:40.050 --> 01:05:47.300 align:middle line:84%
+That means that the longest
+path is greater than
+
+01:05:47.300 --> 01:05:48.595 align:middle line:90%
+or equal to this one.
+
+01:05:48.595 --> 01:05:51.290 align:middle line:90%
+
+
+01:05:51.290 --> 01:05:56.360 align:middle line:84%
+And that's strictly
+greater than depth of u.
+
+01:05:56.360 --> 01:05:58.340 align:middle line:84%
+And the length of
+the longest path here
+
+01:05:58.340 --> 01:06:02.420 align:middle line:90%
+is equal to depth of v.
+
+01:06:02.420 --> 01:06:05.540 align:middle line:84%
+So I've proved that depth of v
+is strictly greater than depth
+
+01:06:05.540 --> 01:06:06.150 align:middle line:90%
+of u.
+
+01:06:06.150 --> 01:06:08.880 align:middle line:84%
+Because I found a path that
+was longer than depth of u.
+
+01:06:08.880 --> 01:06:13.220 align:middle line:84%
+Therefore, depth of v is
+greater than depth of u.
+
+01:06:13.220 --> 01:06:16.790 align:middle line:90%
+So that's cool.
+
+01:06:16.790 --> 01:06:18.930 align:middle line:84%
+There's one last
+thing to check here.
+
+01:06:18.930 --> 01:06:23.670 align:middle line:84%
+So I proved that this is a
+schedule, that it processes
+
+01:06:23.670 --> 01:06:25.830 align:middle line:90%
+things in a valid order.
+
+01:06:25.830 --> 01:06:30.960 align:middle line:84%
+But we also need to check how
+many time steps does it take?
+
+01:06:30.960 --> 01:06:33.480 align:middle line:84%
+Why is it the number of
+vertices in the longest path
+
+01:06:33.480 --> 01:06:37.440 align:middle line:84%
+and not the number of
+edges, for example.
+
+01:06:37.440 --> 01:06:50.190 align:middle line:84%
+The span of depth I claim
+as 1 plus the number of--
+
+01:06:50.190 --> 01:06:52.710 align:middle line:90%
+
+
+01:06:52.710 --> 01:06:57.485 align:middle line:84%
+1 plus the length
+of longest path.
+
+01:06:57.485 --> 01:07:01.470 align:middle line:90%
+
+
+01:07:01.470 --> 01:07:04.120 align:middle line:84%
+This is what I wanted to prove,
+because length counts edges.
+
+01:07:04.120 --> 01:07:07.210 align:middle line:84%
+So if I add one more, that's the
+number of vertices in the path.
+
+01:07:07.210 --> 01:07:09.930 align:middle line:84%
+And that's exactly
+what this theorem says.
+
+01:07:09.930 --> 01:07:11.130 align:middle line:90%
+Why?
+
+01:07:11.130 --> 01:07:14.020 align:middle line:84%
+Because if you look at
+all the possible depths,
+
+01:07:14.020 --> 01:07:15.990 align:middle line:90%
+they start at 0.
+
+01:07:15.990 --> 01:07:18.400 align:middle line:84%
+All the sources are
+going to get depth 0.
+
+01:07:18.400 --> 01:07:20.510 align:middle line:90%
+And they go 1, 2, and so on.
+
+01:07:20.510 --> 01:07:24.150 align:middle line:84%
+And I claim they end at the
+length of the longest path.
+
+01:07:24.150 --> 01:07:28.720 align:middle line:90%
+
+
+01:07:28.720 --> 01:07:29.320 align:middle line:90%
+Why?
+
+01:07:29.320 --> 01:07:31.400 align:middle line:90%
+Because what are the depths?
+
+01:07:31.400 --> 01:07:33.640 align:middle line:84%
+The depths are the length
+of the longest path
+
+01:07:33.640 --> 01:07:35.600 align:middle line:90%
+ending at a particular vertex.
+
+01:07:35.600 --> 01:07:37.508 align:middle line:84%
+And we do this for
+all the vertices.
+
+01:07:37.508 --> 01:07:39.550 align:middle line:84%
+And so the maximum value
+this is going to take on
+
+01:07:39.550 --> 01:07:41.840 align:middle line:84%
+is just whatever the
+globally longest path is,
+
+01:07:41.840 --> 01:07:43.810 align:middle line:90%
+it ends anywhere.
+
+01:07:43.810 --> 01:07:46.550 align:middle line:90%
+So that's why we max out here.
+
+01:07:46.550 --> 01:07:50.260 align:middle line:84%
+And it's plus 1 because we
+started at 0 and we end it here.
+
+01:07:50.260 --> 01:07:52.110 align:middle line:84%
+So we have 1 through
+length of longest path.
+
+01:07:52.110 --> 01:07:53.360 align:middle line:90%
+That's length of longest path.
+
+01:07:53.360 --> 01:07:54.735 align:middle line:90%
+But then we have a plus 1 for 0.
+
+01:07:54.735 --> 01:07:59.920 align:middle line:90%
+
+
+01:07:59.920 --> 01:08:03.820 align:middle line:84%
+So that proves this
+theorem and tells us
+
+01:08:03.820 --> 01:08:05.560 align:middle line:84%
+how to optimally
+schedule if we have
+
+01:08:05.560 --> 01:08:09.610 align:middle line:84%
+an infinite number of processors
+or not infinite, but enough
+
+01:08:09.610 --> 01:08:11.910 align:middle line:84%
+that we could do all the
+tasks at once if we wanted to.
+
+01:08:11.910 --> 01:08:15.670 align:middle line:90%
+
+
+01:08:15.670 --> 01:08:17.990 align:middle line:90%
+Cool.
+
+01:08:17.990 --> 01:08:26.450 align:middle line:84%
+Let me recast these results in
+a slightly different form that's
+
+01:08:26.450 --> 01:08:28.869 align:middle line:84%
+interesting and will
+connect to the next lecture.
+
+01:08:28.869 --> 01:09:08.270 align:middle line:90%
+
+
+01:09:08.270 --> 01:09:10.069 align:middle line:84%
+Let me give you
+a couple of terms
+
+01:09:10.069 --> 01:09:14.210 align:middle line:84%
+that are concept called
+partial order, which
+
+01:09:14.210 --> 01:09:16.710 align:middle line:90%
+we'll talk about next time.
+
+01:09:16.710 --> 01:09:19.560 align:middle line:84%
+And they let us think
+about these kinds
+
+01:09:19.560 --> 01:09:21.910 align:middle line:84%
+of precedence relations
+in a different way.
+
+01:09:21.910 --> 01:09:23.640 align:middle line:84%
+So in particular,
+there's this idea
+
+01:09:23.640 --> 01:09:27.550 align:middle line:84%
+that, OK, left sock and
+left shoe, they're related.
+
+01:09:27.550 --> 01:09:30.731 align:middle line:84%
+Left sock has to happen
+before left shoe.
+
+01:09:30.731 --> 01:09:33.370 align:middle line:84%
+Right shoe and pants
+are also related.
+
+01:09:33.370 --> 01:09:35.350 align:middle line:84%
+Right shoe has to
+happen after pants.
+
+01:09:35.350 --> 01:09:38.290 align:middle line:84%
+Also winter coat has
+to happen after pants.
+
+01:09:38.290 --> 01:09:42.627 align:middle line:84%
+But for example, pants
+and shirt are unrelated.
+
+01:09:42.627 --> 01:09:43.960 align:middle line:90%
+They can happen in either order.
+
+01:09:43.960 --> 01:09:45.880 align:middle line:84%
+There's no path
+from pants to shirt.
+
+01:09:45.880 --> 01:09:48.100 align:middle line:84%
+There's no path
+from shirt to pants.
+
+01:09:48.100 --> 01:09:53.850 align:middle line:84%
+So let's define a
+notion of comparable,
+
+01:09:53.850 --> 01:09:57.630 align:middle line:84%
+meaning there is a precedence
+relation between them in one
+
+01:09:57.630 --> 01:09:58.685 align:middle line:90%
+direction or the other.
+
+01:09:58.685 --> 01:10:11.850 align:middle line:90%
+
+
+01:10:11.850 --> 01:10:15.600 align:middle line:84%
+So either u is reachable from
+v or v is reachable from u.
+
+01:10:15.600 --> 01:10:18.290 align:middle line:84%
+In either case, we call
+u and v comparable.
+
+01:10:18.290 --> 01:10:20.720 align:middle line:84%
+And otherwise, they're
+not comparable.
+
+01:10:20.720 --> 01:10:21.593 align:middle line:90%
+These are vertices.
+
+01:10:21.593 --> 01:10:24.590 align:middle line:90%
+
+
+01:10:24.590 --> 01:10:25.380 align:middle line:90%
+All right.
+
+01:10:25.380 --> 01:10:29.750 align:middle line:84%
+So there's two complementary
+notions I want to define.
+
+01:10:29.750 --> 01:10:39.863 align:middle line:84%
+A chain is a set of pairwise or
+mutually comparable vertices.
+
+01:10:39.863 --> 01:10:46.970 align:middle line:90%
+
+
+01:10:46.970 --> 01:10:59.230 align:middle line:84%
+And an anti-chain is a set of
+pairwise incomparable vertices.
+
+01:10:59.230 --> 01:11:11.240 align:middle line:90%
+
+
+01:11:11.240 --> 01:11:11.760 align:middle line:90%
+OK.
+
+01:11:11.760 --> 01:11:13.940 align:middle line:84%
+So we're thinking about
+sets of vertices, subsets
+
+01:11:13.940 --> 01:11:18.060 align:middle line:84%
+of the whole graph, that are
+either all mutually related,
+
+01:11:18.060 --> 01:11:22.380 align:middle line:84%
+they have a defined
+sequence for them, or not.
+
+01:11:22.380 --> 01:11:26.155 align:middle line:84%
+So for example,
+where's my purple?
+
+01:11:26.155 --> 01:11:28.675 align:middle line:90%
+
+
+01:11:28.675 --> 01:11:30.600 align:middle line:90%
+Need even more colors.
+
+01:11:30.600 --> 01:11:32.390 align:middle line:84%
+Hopefully this will
+still be clear.
+
+01:11:32.390 --> 01:11:41.090 align:middle line:84%
+So for example, if I take shirt
+and jacket and winter coat,
+
+01:11:41.090 --> 01:11:42.950 align:middle line:84%
+these are three
+vertices and I claim
+
+01:11:42.950 --> 01:11:46.050 align:middle line:84%
+they form a chain because
+these two are related,
+
+01:11:46.050 --> 01:11:48.030 align:middle line:84%
+these two are related,
+these two are related.
+
+01:11:48.030 --> 01:11:49.920 align:middle line:90%
+All pairs of them are related.
+
+01:11:49.920 --> 01:11:52.223 align:middle line:84%
+And in fact, they
+have a fixed order.
+
+01:11:52.223 --> 01:11:53.640 align:middle line:84%
+Shirt has to happen
+before jacket.
+
+01:11:53.640 --> 01:11:57.050 align:middle line:84%
+Jacket has to happen
+before winter coat.
+
+01:11:57.050 --> 01:12:00.260 align:middle line:84%
+I happen to skip scarf, but
+I could also put scarf in.
+
+01:12:00.260 --> 01:12:03.620 align:middle line:90%
+That would be a longer chain.
+
+01:12:03.620 --> 01:12:06.000 align:middle line:84%
+Chains basically
+correspond to paths,
+
+01:12:06.000 --> 01:12:08.690 align:middle line:84%
+except you can throw some
+of the vertices away.
+
+01:12:08.690 --> 01:12:11.890 align:middle line:84%
+So that's why I left
+a blank line here.
+
+01:12:11.890 --> 01:12:18.133 align:middle line:84%
+This is basically
+a subset of a path.
+
+01:12:18.133 --> 01:12:21.330 align:middle line:90%
+
+
+01:12:21.330 --> 01:12:23.320 align:middle line:84%
+Every chain is going to
+be a subset of a path.
+
+01:12:23.320 --> 01:12:27.030 align:middle line:84%
+An anti-chain, though, is the
+interesting new notion here.
+
+01:12:27.030 --> 01:12:28.530 align:middle line:84%
+That's going to be
+a set of vertices
+
+01:12:28.530 --> 01:12:29.890 align:middle line:90%
+that are mutually incomparable.
+
+01:12:29.890 --> 01:12:32.550 align:middle line:90%
+For example, all the sources.
+
+01:12:32.550 --> 01:12:35.490 align:middle line:84%
+By definition, you can't reach
+any of them for any other,
+
+01:12:35.490 --> 01:12:38.400 align:middle line:84%
+because if you start at a
+source, you can't get to any--
+
+01:12:38.400 --> 01:12:41.407 align:middle line:84%
+sorry, if you start outside,
+you can never get to a source.
+
+01:12:41.407 --> 01:12:42.490 align:middle line:90%
+That's what I want to say.
+
+01:12:42.490 --> 01:12:44.620 align:middle line:84%
+Unless you started
+at that exact source.
+
+01:12:44.620 --> 01:12:48.090 align:middle line:84%
+So all the circled red
+vertices for the sources
+
+01:12:48.090 --> 01:12:49.200 align:middle line:90%
+are an anti-chain.
+
+01:12:49.200 --> 01:12:52.307 align:middle line:84%
+So are all the squared
+ones at the bottom.
+
+01:12:52.307 --> 01:12:53.140 align:middle line:90%
+Those are the sinks.
+
+01:12:53.140 --> 01:12:54.250 align:middle line:90%
+There are four of them.
+
+01:12:54.250 --> 01:12:56.710 align:middle line:90%
+Those form an anti-chain.
+
+01:12:56.710 --> 01:13:00.741 align:middle line:90%
+
+
+01:13:00.741 --> 01:13:03.330 align:middle line:84%
+Now, I claim
+anti-chains are really
+
+01:13:03.330 --> 01:13:06.450 align:middle line:84%
+what's going on in the
+scheduling problem.
+
+01:13:06.450 --> 01:13:10.450 align:middle line:84%
+In the sense that all the tasks
+that are done at the same time
+
+01:13:10.450 --> 01:13:12.590 align:middle line:90%
+must be an anti-chain.
+
+01:13:12.590 --> 01:13:15.170 align:middle line:84%
+So if you look at all the
+things that happen at time 0,
+
+01:13:15.170 --> 01:13:16.340 align:middle line:90%
+those are the sources.
+
+01:13:16.340 --> 01:13:18.820 align:middle line:90%
+Those have to be an anti-chain.
+
+01:13:18.820 --> 01:13:22.210 align:middle line:84%
+All the things done at time 53
+also have to be an anti-chain.
+
+01:13:22.210 --> 01:13:25.030 align:middle line:84%
+Because if there's any relation
+between them, if one of them
+
+01:13:25.030 --> 01:13:29.020 align:middle line:84%
+had to proceed another, if
+there was a path between two
+
+01:13:29.020 --> 01:13:32.810 align:middle line:84%
+of the vertices done at time
+i, then that would be invalid.
+
+01:13:32.810 --> 01:13:34.240 align:middle line:90%
+You're not allowed to do that.
+
+01:13:34.240 --> 01:13:37.370 align:middle line:84%
+If u and v have a
+reachability relationship,
+
+01:13:37.370 --> 01:13:39.820 align:middle line:84%
+they must be done
+at different times.
+
+01:13:39.820 --> 01:13:42.280 align:middle line:84%
+So the things you do
+at a particular time
+
+01:13:42.280 --> 01:13:44.860 align:middle line:90%
+form an anti-chain.
+
+01:13:44.860 --> 01:13:49.970 align:middle line:84%
+And so by that exact theorem,
+we get this corollary.
+
+01:13:49.970 --> 01:14:13.010 align:middle line:90%
+
+
+01:14:13.010 --> 01:14:13.883 align:middle line:90%
+I should say fewest.
+
+01:14:13.883 --> 01:14:20.360 align:middle line:90%
+
+
+01:14:20.360 --> 01:14:21.920 align:middle line:84%
+Another way to
+look at a schedule
+
+01:14:21.920 --> 01:14:23.880 align:middle line:84%
+is it's partitioning
+the vertices.
+
+01:14:23.880 --> 01:14:25.940 align:middle line:84%
+The vertices are all
+the tasks I have to do.
+
+01:14:25.940 --> 01:14:29.460 align:middle line:84%
+And into the fewest
+number of anti-chains.
+
+01:14:29.460 --> 01:14:33.890 align:middle line:84%
+Anti-chain is a set of vertices
+I can do at the same time.
+
+01:14:33.890 --> 01:14:38.150 align:middle line:84%
+So the number of steps I need,
+the span of that schedule,
+
+01:14:38.150 --> 01:14:41.130 align:middle line:84%
+is exactly the
+number of anti-chains
+
+01:14:41.130 --> 01:14:43.100 align:middle line:84%
+I need to cover all the
+vertices, to execute
+
+01:14:43.100 --> 01:14:46.320 align:middle line:90%
+all the tasks.
+
+01:14:46.320 --> 01:14:48.650 align:middle line:84%
+The theorem is this
+has the same size
+
+01:14:48.650 --> 01:14:51.000 align:middle line:90%
+as the size of the partition.
+
+01:14:51.000 --> 01:14:58.480 align:middle line:84%
+The number of anti-chains you
+need is the longest chain.
+
+01:14:58.480 --> 01:15:05.450 align:middle line:90%
+
+
+01:15:05.450 --> 01:15:09.180 align:middle line:84%
+The proof is exactly
+you apply the schedule
+
+01:15:09.180 --> 01:15:12.280 align:middle line:84%
+and then your anti-chains are
+all the things I do at time 0.
+
+01:15:12.280 --> 01:15:13.230 align:middle line:90%
+That's one anti-chain.
+
+01:15:13.230 --> 01:15:15.810 align:middle line:84%
+All the things I do at time
+1, that's another anti-chain.
+
+01:15:15.810 --> 01:15:18.810 align:middle line:84%
+And so this is kind of a
+neat connection between--
+
+01:15:18.810 --> 01:15:20.530 align:middle line:90%
+these are kind of dual notions.
+
+01:15:20.530 --> 01:15:23.770 align:middle line:84%
+One, you want lots of
+comparisons possible.
+
+01:15:23.770 --> 01:15:27.660 align:middle line:84%
+And the anti-chain, you want
+no comparisons possible.
+
+01:15:27.660 --> 01:15:29.670 align:middle line:84%
+And this is saying
+that they're related
+
+01:15:29.670 --> 01:15:32.130 align:middle line:84%
+in that if I try to
+split into anti-chains,
+
+01:15:32.130 --> 01:15:34.860 align:middle line:84%
+the number of anti-chains
+I need to cover everything
+
+01:15:34.860 --> 01:15:37.560 align:middle line:90%
+is equal to the longest chain.
+
+01:15:37.560 --> 01:15:39.660 align:middle line:84%
+It turns out the
+reverse is also true.
+
+01:15:39.660 --> 01:15:44.850 align:middle line:84%
+If I want to partition
+into the fewest chains,
+
+01:15:44.850 --> 01:15:47.190 align:middle line:84%
+the number of chains
+I need is the same
+
+01:15:47.190 --> 01:15:50.130 align:middle line:90%
+as the longest anti-chain.
+
+01:15:50.130 --> 01:15:52.320 align:middle line:90%
+It's kind of cool.
+
+01:15:52.320 --> 01:15:55.715 align:middle line:84%
+I guess this should technically
+be largest, because it's a set.
+
+01:15:55.715 --> 01:15:59.870 align:middle line:90%
+
+
+01:15:59.870 --> 01:16:00.995 align:middle line:90%
+What else do I want to say?
+
+01:16:00.995 --> 01:16:05.170 align:middle line:90%
+
+
+01:16:05.170 --> 01:16:07.480 align:middle line:84%
+You can use this
+to prove some fun
+
+01:16:07.480 --> 01:16:15.070 align:middle line:84%
+facts like there's
+always a large chain
+
+01:16:15.070 --> 01:16:17.020 align:middle line:90%
+or a large anti-chain.
+
+01:16:17.020 --> 01:16:24.310 align:middle line:84%
+So for example, for
+any t, either there
+
+01:16:24.310 --> 01:16:34.990 align:middle line:84%
+exists a chain of length
+or of size greater than t
+
+01:16:34.990 --> 01:16:44.920 align:middle line:84%
+or there exists an anti-chain
+of size at least n over t
+
+01:16:44.920 --> 01:16:49.880 align:middle line:84%
+or I guess size of
+vertices over t.
+
+01:16:49.880 --> 01:16:52.820 align:middle line:84%
+This just follows from that
+thinking about the partitions.
+
+01:16:52.820 --> 01:16:55.880 align:middle line:84%
+If you know that all
+the chains are small,
+
+01:16:55.880 --> 01:16:58.720 align:middle line:84%
+suppose all the chains
+have size at most t,
+
+01:16:58.720 --> 01:17:04.700 align:middle line:84%
+then you know that the partition
+into anti-chains, or sorry, one
+
+01:17:04.700 --> 01:17:06.170 align:middle line:90%
+way or the other.
+
+01:17:06.170 --> 01:17:08.400 align:middle line:84%
+If I know all the
+chains are small,
+
+01:17:08.400 --> 01:17:14.940 align:middle line:84%
+then I know I can partition into
+anti-chains with that number.
+
+01:17:14.940 --> 01:17:17.150 align:middle line:84%
+So I can partition
+into t anti-chains
+
+01:17:17.150 --> 01:17:19.430 align:middle line:84%
+if all the chains
+have length at most t.
+
+01:17:19.430 --> 01:17:23.630 align:middle line:84%
+And that means that
+the longest anti-chain
+
+01:17:23.630 --> 01:17:26.750 align:middle line:84%
+has to be at least v over t,
+because all the vertices get
+
+01:17:26.750 --> 01:17:28.200 align:middle line:90%
+covered by the partition.
+
+01:17:28.200 --> 01:17:31.790 align:middle line:84%
+And so the biggest one is going
+to be bigger than the average.
+
+01:17:31.790 --> 01:17:33.570 align:middle line:90%
+So you can use it to do that.
+
+01:17:33.570 --> 01:17:35.910 align:middle line:84%
+You can use it to
+do other fun things.
+
+01:17:35.910 --> 01:17:38.120 align:middle line:90%
+Like have you ever wondered--
+
+01:17:38.120 --> 01:17:42.000 align:middle line:84%
+I don't know what your
+calendar looks like,
+
+01:17:42.000 --> 01:17:44.040 align:middle line:84%
+but for me, I have lots
+of conflicting events.
+
+01:17:44.040 --> 01:17:46.550 align:middle line:84%
+I have to be in many
+places at the same time.
+
+01:17:46.550 --> 01:17:47.790 align:middle line:90%
+It's pretty annoying.
+
+01:17:47.790 --> 01:17:49.880 align:middle line:84%
+And partly because I
+have many calendars
+
+01:17:49.880 --> 01:17:51.360 align:middle line:90%
+all displayed in the same place.
+
+01:17:51.360 --> 01:17:52.777 align:middle line:84%
+And so have you
+ever wondered, how
+
+01:17:52.777 --> 01:17:54.750 align:middle line:84%
+do you display a
+calendar like this?
+
+01:17:54.750 --> 01:18:00.350 align:middle line:84%
+Well, for one event that
+occurs strictly before another,
+
+01:18:00.350 --> 01:18:03.430 align:middle line:90%
+I'll draw an edge.
+
+01:18:03.430 --> 01:18:04.900 align:middle line:90%
+So here's an edge there.
+
+01:18:04.900 --> 01:18:07.020 align:middle line:90%
+There's an edge there.
+
+01:18:07.020 --> 01:18:10.120 align:middle line:84%
+Some of these have
+edges, some don't.
+
+01:18:10.120 --> 01:18:14.760 align:middle line:84%
+And then in particular, if I
+look at two conflicting events,
+
+01:18:14.760 --> 01:18:18.400 align:middle line:84%
+they will be incomparable
+according to this definition.
+
+01:18:18.400 --> 01:18:20.610 align:middle line:84%
+There will be no path from
+this vertex to this vertex
+
+01:18:20.610 --> 01:18:22.950 align:middle line:90%
+or this vertex to that vertex.
+
+01:18:22.950 --> 01:18:27.250 align:middle line:84%
+And so what I'm looking at here
+is a partition into chains.
+
+01:18:27.250 --> 01:18:30.000 align:middle line:84%
+Each of these chains has
+to be nicely ordered.
+
+01:18:30.000 --> 01:18:32.770 align:middle line:84%
+And I want to know how many
+different chains do I need?
+
+01:18:32.770 --> 01:18:35.700 align:middle line:84%
+Well, it turns out the answer is
+exactly the size of the largest
+
+01:18:35.700 --> 01:18:37.110 align:middle line:90%
+anti-chain.
+
+01:18:37.110 --> 01:18:40.620 align:middle line:84%
+In other words, the size of
+the largest set of events
+
+01:18:40.620 --> 01:18:43.950 align:middle line:84%
+that are pairwise
+conflicting, which is the best
+
+01:18:43.950 --> 01:18:45.328 align:middle line:90%
+you could hope for.
+
+01:18:45.328 --> 01:18:47.370 align:middle line:84%
+I need at least one column
+for each of these guys
+
+01:18:47.370 --> 01:18:49.300 align:middle line:84%
+if they're all conflicting
+with each other.
+
+01:18:49.300 --> 01:18:51.370 align:middle line:84%
+And it turns out you
+can always achieve that.
+
+01:18:51.370 --> 01:18:54.790 align:middle line:84%
+And that's how calendars
+draw their events.
+
+01:18:54.790 --> 01:18:57.110 align:middle line:90%
+All right, that's it.
+
+01:18:57.110 --> 01:19:01.000 align:middle line:90%

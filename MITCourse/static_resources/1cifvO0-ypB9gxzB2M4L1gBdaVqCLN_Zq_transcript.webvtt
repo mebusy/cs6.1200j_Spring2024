@@ -1,0 +1,5638 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.479 align:middle line:90%
+[SQUEAKING]
+
+00:00:01.479 --> 00:00:03.451 align:middle line:90%
+[RUSTLING]
+
+00:00:03.451 --> 00:00:05.916 align:middle line:90%
+[CLICKING]
+
+00:00:05.916 --> 00:00:10.130 align:middle line:90%
+
+
+00:00:10.130 --> 00:00:11.130 align:middle line:90%
+ERIK DEMAINE: All right.
+
+00:00:11.130 --> 00:00:13.140 align:middle line:90%
+Welcome back to 6.1200.
+
+00:00:13.140 --> 00:00:16.250 align:middle line:84%
+Today we continue our
+theme of probability,
+
+00:00:16.250 --> 00:00:19.910 align:middle line:84%
+as we will continue to do
+for the next few lectures.
+
+00:00:19.910 --> 00:00:25.350 align:middle line:84%
+First, a recap from last
+class and last recitation.
+
+00:00:25.350 --> 00:00:27.230 align:middle line:84%
+A key concept we'll
+be using today
+
+00:00:27.230 --> 00:00:28.762 align:middle line:90%
+is conditional probability.
+
+00:00:28.762 --> 00:00:29.720 align:middle line:90%
+Remember this notation?
+
+00:00:29.720 --> 00:00:32.990 align:middle line:84%
+It's the probability of event A
+occurring given that you already
+
+00:00:32.990 --> 00:00:36.320 align:middle line:84%
+know that B occurred, which
+is like, if you imagine
+
+00:00:36.320 --> 00:00:40.440 align:middle line:84%
+this entire blackboard
+as the sample space,
+
+00:00:40.440 --> 00:00:42.480 align:middle line:84%
+all of the possibilities
+of what could happen,
+
+00:00:42.480 --> 00:00:43.670 align:middle line:90%
+and we have events.
+
+00:00:43.670 --> 00:00:45.140 align:middle line:90%
+A is some subset of that space.
+
+00:00:45.140 --> 00:00:47.370 align:middle line:90%
+B is some subset of that space.
+
+00:00:47.370 --> 00:00:51.020 align:middle line:84%
+What the vertical bar B
+means, conditioning on B
+
+00:00:51.020 --> 00:00:55.520 align:middle line:84%
+means focusing on just this
+red subset of where B is.
+
+00:00:55.520 --> 00:00:57.020 align:middle line:84%
+And just think about
+the probability
+
+00:00:57.020 --> 00:00:59.457 align:middle line:84%
+of A happening relative
+to those events,
+
+00:00:59.457 --> 00:01:01.540 align:middle line:84%
+instead of thinking the
+probability of A happening
+
+00:01:01.540 --> 00:01:03.050 align:middle line:90%
+relative to all events.
+
+00:01:03.050 --> 00:01:06.730 align:middle line:84%
+And you can compute that as the
+probability of this intersection
+
+00:01:06.730 --> 00:01:09.550 align:middle line:84%
+divided by the probability
+of B. So we're just
+
+00:01:09.550 --> 00:01:11.600 align:middle line:84%
+focusing in-- assuming
+B already happened,
+
+00:01:11.600 --> 00:01:14.680 align:middle line:84%
+then this becomes our
+entire sample space
+
+00:01:14.680 --> 00:01:16.570 align:middle line:90%
+that we can restrict to.
+
+00:01:16.570 --> 00:01:19.720 align:middle line:84%
+OK, and then we can use
+that, for example, to compute
+
+00:01:19.720 --> 00:01:21.290 align:middle line:90%
+probabilities of events.
+
+00:01:21.290 --> 00:01:23.720 align:middle line:84%
+So this was the law
+of total probability.
+
+00:01:23.720 --> 00:01:28.150 align:middle line:84%
+Probability of an event A is if
+you pick your favorite event,
+
+00:01:28.150 --> 00:01:30.140 align:middle line:84%
+E, sort of like
+a proof by cases,
+
+00:01:30.140 --> 00:01:31.910 align:middle line:84%
+you get to choose
+any event E you want.
+
+00:01:31.910 --> 00:01:34.010 align:middle line:84%
+That's whatever's
+most convenient.
+
+00:01:34.010 --> 00:01:37.300 align:middle line:84%
+Then you can compute
+probability of A
+
+00:01:37.300 --> 00:01:39.800 align:middle line:84%
+by splitting into two
+cases-- one where E occurs,
+
+00:01:39.800 --> 00:01:41.300 align:middle line:90%
+and one where E does not occur.
+
+00:01:41.300 --> 00:01:43.720 align:middle line:84%
+So you take the probability
+that E occurs, you multiply it
+
+00:01:43.720 --> 00:01:46.750 align:middle line:84%
+by the probability
+that A occurs given E,
+
+00:01:46.750 --> 00:01:51.940 align:middle line:84%
+and you do the same for not
+E. And because E and not E
+
+00:01:51.940 --> 00:01:54.730 align:middle line:84%
+are by definition disjoint
+events, exactly one of them
+
+00:01:54.730 --> 00:01:57.860 align:middle line:90%
+happens, this works out.
+
+00:01:57.860 --> 00:02:02.700 align:middle line:84%
+You have the product rule
+here between these events
+
+00:02:02.700 --> 00:02:04.930 align:middle line:84%
+and the sum rule
+between these events.
+
+00:02:04.930 --> 00:02:07.680 align:middle line:84%
+I think, easiest to
+see in this tree.
+
+00:02:07.680 --> 00:02:09.550 align:middle line:84%
+I tend to draw my
+trees vertically.
+
+00:02:09.550 --> 00:02:11.400 align:middle line:84%
+You can draw them
+horizontally, whatever.
+
+00:02:11.400 --> 00:02:15.400 align:middle line:84%
+We have event E occurring
+or not occurring.
+
+00:02:15.400 --> 00:02:18.968 align:middle line:84%
+And then separately, we have
+event A or not A occurring.
+
+00:02:18.968 --> 00:02:21.010 align:middle line:84%
+And any of these could
+happen in any combination.
+
+00:02:21.010 --> 00:02:22.552 align:middle line:84%
+When we write down
+a tree, usually we
+
+00:02:22.552 --> 00:02:24.797 align:middle line:84%
+write on the edges
+conditional probabilities.
+
+00:02:24.797 --> 00:02:26.380 align:middle line:84%
+At the beginning
+there's no condition,
+
+00:02:26.380 --> 00:02:28.290 align:middle line:84%
+so it's just probability
+of E on one side
+
+00:02:28.290 --> 00:02:32.910 align:middle line:84%
+and probability of not
+E on the other side.
+
+00:02:32.910 --> 00:02:35.490 align:middle line:84%
+But then usually on
+this branch, we write,
+
+00:02:35.490 --> 00:02:39.130 align:middle line:84%
+what's the probability of
+A given that E occurred?
+
+00:02:39.130 --> 00:02:42.630 align:middle line:84%
+And on this branch, what's the
+probability that not A occurred,
+
+00:02:42.630 --> 00:02:43.948 align:middle line:90%
+given that E occurred?
+
+00:02:43.948 --> 00:02:45.490 align:middle line:84%
+This whole branch
+is that E occurred,
+
+00:02:45.490 --> 00:02:47.687 align:middle line:84%
+and then we care about--
+given that we got here,
+
+00:02:47.687 --> 00:02:49.270 align:middle line:84%
+what's the probability
+of A happening?
+
+00:02:49.270 --> 00:02:51.100 align:middle line:84%
+What's the probability
+of not A happening?
+
+00:02:51.100 --> 00:02:53.600 align:middle line:84%
+And similarly on the other side,
+what's the probability of A
+
+00:02:53.600 --> 00:02:57.420 align:middle line:84%
+and not A happening, given
+that E didn't happen?
+
+00:02:57.420 --> 00:02:59.670 align:middle line:90%
+Those are all the cases.
+
+00:02:59.670 --> 00:03:01.710 align:middle line:84%
+And then you can
+compute the probability
+
+00:03:01.710 --> 00:03:03.870 align:middle line:84%
+of each of these
+individual situations
+
+00:03:03.870 --> 00:03:09.150 align:middle line:84%
+by taking the product of these
+probabilities down the path.
+
+00:03:09.150 --> 00:03:11.140 align:middle line:84%
+That's what we have
+shown in the past.
+
+00:03:11.140 --> 00:03:12.515 align:middle line:84%
+And so in particular,
+if you want
+
+00:03:12.515 --> 00:03:16.260 align:middle line:84%
+to compute the probability of A,
+A is these two nodes together.
+
+00:03:16.260 --> 00:03:17.860 align:middle line:90%
+These are the two A branches.
+
+00:03:17.860 --> 00:03:21.900 align:middle line:84%
+And so that is this
+product plus this product.
+
+00:03:21.900 --> 00:03:23.950 align:middle line:84%
+By construction, everything
+here is disjoint.
+
+00:03:23.950 --> 00:03:25.783 align:middle line:84%
+And so you can just add
+the probabilities up
+
+00:03:25.783 --> 00:03:28.530 align:middle line:90%
+and you get this law.
+
+00:03:28.530 --> 00:03:31.440 align:middle line:90%
+We may use it today.
+
+00:03:31.440 --> 00:03:34.110 align:middle line:84%
+Today I want to talk about
+a related concept which
+
+00:03:34.110 --> 00:03:35.440 align:middle line:90%
+is independence.
+
+00:03:35.440 --> 00:03:39.150 align:middle line:84%
+So today is Independence
+Day, not starring Will Smith,
+
+00:03:39.150 --> 00:03:43.470 align:middle line:84%
+or any other modern versions
+of Independence Day.
+
+00:03:43.470 --> 00:03:47.320 align:middle line:84%
+And the tagline for Independence
+Day back in the '90s--
+
+00:03:47.320 --> 00:03:48.822 align:middle line:90%
+I was alive back then--
+
+00:03:48.822 --> 00:03:51.030 align:middle line:84%
+it says, "The question of
+whether or not we are alone
+
+00:03:51.030 --> 00:03:54.415 align:middle line:84%
+in the universe
+has been answered."
+
+00:03:54.415 --> 00:03:56.750 align:middle line:84%
+Are we independent from
+the rest of the universe,
+
+00:03:56.750 --> 00:03:57.600 align:middle line:90%
+or are we dependent?
+
+00:03:57.600 --> 00:04:01.070 align:middle line:84%
+It turns out the answer is,
+we're independent if and only
+
+00:04:01.070 --> 00:04:03.350 align:middle line:84%
+if the probability of A
+given B is the probability
+
+00:04:03.350 --> 00:04:05.610 align:middle line:84%
+of A. That's-- sorry,
+spoilers for the movie,
+
+00:04:05.610 --> 00:04:07.740 align:middle line:84%
+but that's what
+you get at the end.
+
+00:04:07.740 --> 00:04:11.810 align:middle line:84%
+So that's our mathematical
+definition of A
+
+00:04:11.810 --> 00:04:27.290 align:middle line:84%
+is independent of B if
+probability of A given B,
+
+00:04:27.290 --> 00:04:31.100 align:middle line:84%
+probability of A conditioned on
+B, is just the probability of A
+
+00:04:31.100 --> 00:04:31.710 align:middle line:90%
+again.
+
+00:04:31.710 --> 00:04:33.350 align:middle line:84%
+So in other words,
+conditioning on B
+
+00:04:33.350 --> 00:04:36.600 align:middle line:84%
+does not affect the probability
+of A. With the condition
+
+00:04:36.600 --> 00:04:39.740 align:middle line:84%
+and without the condition,
+you get the same thing.
+
+00:04:39.740 --> 00:04:45.590 align:middle line:84%
+We have to also say or the
+probability of B equals 0.
+
+00:04:45.590 --> 00:04:47.340 align:middle line:84%
+For this annoying
+technical reason,
+
+00:04:47.340 --> 00:04:50.180 align:middle line:84%
+which I forgot to mention up
+here, probability of A given B
+
+00:04:50.180 --> 00:04:52.340 align:middle line:84%
+is not defined when
+probability of B
+
+00:04:52.340 --> 00:04:55.820 align:middle line:84%
+is 0, because then you
+get a division by 0 error.
+
+00:04:55.820 --> 00:04:57.020 align:middle line:90%
+We don't like those.
+
+00:04:57.020 --> 00:05:02.140 align:middle line:84%
+So I don't even know what this
+means, when the probability of B
+
+00:05:02.140 --> 00:05:02.780 align:middle line:90%
+is 0.
+
+00:05:02.780 --> 00:05:05.360 align:middle line:84%
+So we need to say whether
+we're independent in that case,
+
+00:05:05.360 --> 00:05:07.690 align:middle line:90%
+and we are.
+
+00:05:07.690 --> 00:05:11.140 align:middle line:84%
+So it turns out the empty
+event, which never happens,
+
+00:05:11.140 --> 00:05:12.680 align:middle line:90%
+is independent of everything.
+
+00:05:12.680 --> 00:05:14.800 align:middle line:84%
+Also the full event,
+which always happens,
+
+00:05:14.800 --> 00:05:17.920 align:middle line:90%
+is independent of everything.
+
+00:05:17.920 --> 00:05:22.450 align:middle line:84%
+So this is a way to measure
+whether two things are
+
+00:05:22.450 --> 00:05:30.670 align:middle line:84%
+independent, meaning
+whether B happened
+
+00:05:30.670 --> 00:05:33.200 align:middle line:84%
+has any impact on
+whether A will happen.
+
+00:05:33.200 --> 00:05:35.330 align:middle line:84%
+That's intuitively
+what this means.
+
+00:05:35.330 --> 00:05:36.650 align:middle line:90%
+And it's a useful concept.
+
+00:05:36.650 --> 00:05:40.390 align:middle line:84%
+Here is-- wrong
+page-- an example
+
+00:05:40.390 --> 00:05:44.770 align:middle line:84%
+that gives you some intuition
+about why the Monty Hall problem
+
+00:05:44.770 --> 00:05:46.370 align:middle line:90%
+comes out the way it does.
+
+00:05:46.370 --> 00:05:49.515 align:middle line:90%
+So let's do Monty Hall.
+
+00:05:49.515 --> 00:05:54.270 align:middle line:90%
+
+
+00:05:54.270 --> 00:05:56.880 align:middle line:90%
+I'm going to define two events.
+
+00:05:56.880 --> 00:06:02.903 align:middle line:90%
+One is door 1 has a prize.
+
+00:06:02.903 --> 00:06:07.950 align:middle line:90%
+
+
+00:06:07.950 --> 00:06:10.460 align:middle line:84%
+So I forget the door
+names that Brynmor used.
+
+00:06:10.460 --> 00:06:12.960 align:middle line:84%
+So I'm just going to call them
+door number 1, 2, and 3, just
+
+00:06:12.960 --> 00:06:16.740 align:middle line:90%
+like in the game show.
+
+00:06:16.740 --> 00:06:20.393 align:middle line:84%
+And I don't have
+fancy colored boxes.
+
+00:06:20.393 --> 00:06:41.280 align:middle line:90%
+
+
+00:06:41.280 --> 00:06:44.133 align:middle line:84%
+OK, I'm not going to repeat the
+whole analysis of Monty Hall,
+
+00:06:44.133 --> 00:06:46.300 align:middle line:84%
+but I just want you to think
+about these two events.
+
+00:06:46.300 --> 00:06:49.750 align:middle line:84%
+So event A is that
+door 1 has the prize.
+
+00:06:49.750 --> 00:06:53.180 align:middle line:84%
+We know without anything
+else, this happens with 1/3
+
+00:06:53.180 --> 00:06:54.800 align:middle line:90%
+probability.
+
+00:06:54.800 --> 00:06:58.010 align:middle line:84%
+Event B is that
+door 2 is revealed
+
+00:06:58.010 --> 00:07:03.830 align:middle line:84%
+to not have the prize after
+the player chooses door 1.
+
+00:07:03.830 --> 00:07:05.400 align:middle line:90%
+OK, this is a bit of a mouthful.
+
+00:07:05.400 --> 00:07:10.280 align:middle line:84%
+But let's just suppose
+that the player starts
+
+00:07:10.280 --> 00:07:12.390 align:middle line:90%
+by choosing door number 1.
+
+00:07:12.390 --> 00:07:14.763 align:middle line:84%
+In the analysis we did, we
+had a uniform random choice
+
+00:07:14.763 --> 00:07:15.930 align:middle line:90%
+of choosing all three doors.
+
+00:07:15.930 --> 00:07:17.450 align:middle line:84%
+It doesn't actually matter
+which door you choose,
+
+00:07:17.450 --> 00:07:19.020 align:middle line:84%
+because everything
+else is random.
+
+00:07:19.020 --> 00:07:20.760 align:middle line:84%
+It's fine if you
+always choose door 1.
+
+00:07:20.760 --> 00:07:23.040 align:middle line:84%
+But whether it's random,
+whether it's deterministic,
+
+00:07:23.040 --> 00:07:27.320 align:middle line:84%
+let's just suppose the
+player chooses door 1.
+
+00:07:27.320 --> 00:07:30.470 align:middle line:84%
+And event B is,
+will door number 2
+
+00:07:30.470 --> 00:07:34.970 align:middle line:84%
+be revealed to not
+have the prize?
+
+00:07:34.970 --> 00:07:39.740 align:middle line:84%
+And now my question is,
+is Event A and event B,
+
+00:07:39.740 --> 00:07:42.050 align:middle line:84%
+are they independent
+from each other?
+
+00:07:42.050 --> 00:07:43.960 align:middle line:90%
+And I claim that they are.
+
+00:07:43.960 --> 00:07:50.440 align:middle line:90%
+
+
+00:07:50.440 --> 00:07:53.590 align:middle line:84%
+And the way we can determine
+that is by computing these two
+
+00:07:53.590 --> 00:07:57.020 align:middle line:84%
+probabilities, probability of
+A and probability of A given B.
+
+00:07:57.020 --> 00:08:06.010 align:middle line:84%
+Now, probability of A,
+we know is 1/3, right?
+
+00:08:06.010 --> 00:08:08.330 align:middle line:84%
+This is just, does
+door 1 have the prize?
+
+00:08:08.330 --> 00:08:11.510 align:middle line:84%
+So that's uniform
+random, so 1/3 for that.
+
+00:08:11.510 --> 00:08:13.550 align:middle line:84%
+And so for this
+to be independent,
+
+00:08:13.550 --> 00:08:17.500 align:middle line:84%
+it better be the case that
+probability of A given B is also
+
+00:08:17.500 --> 00:08:19.090 align:middle line:90%
+1/3.
+
+00:08:19.090 --> 00:08:21.730 align:middle line:84%
+And if you think
+about it, that is
+
+00:08:21.730 --> 00:08:25.360 align:middle line:84%
+one of the things we computed,
+because what we computed was,
+
+00:08:25.360 --> 00:08:30.170 align:middle line:84%
+what's the probability of
+the switching rule winning?
+
+00:08:30.170 --> 00:08:35.349 align:middle line:84%
+So we're supposing here
+the player chose door 1.
+
+00:08:35.349 --> 00:08:37.570 align:middle line:84%
+And so if in the
+switching strategy,
+
+00:08:37.570 --> 00:08:42.400 align:middle line:84%
+they will switch to,
+in the condition on B
+
+00:08:42.400 --> 00:08:44.800 align:middle line:84%
+means that the
+player chose door 1,
+
+00:08:44.800 --> 00:08:47.090 align:middle line:84%
+and door 2 was revealed
+not to have the prize,
+
+00:08:47.090 --> 00:08:49.210 align:middle line:84%
+and so we would
+switch to door 3.
+
+00:08:49.210 --> 00:08:51.640 align:middle line:84%
+And we worked out that
+the winning probability
+
+00:08:51.640 --> 00:08:53.990 align:middle line:84%
+in the switching
+strategy was 2/3.
+
+00:08:53.990 --> 00:08:57.160 align:middle line:84%
+So that means the probability
+that door 1 has the prize must
+
+00:08:57.160 --> 00:08:59.800 align:middle line:84%
+be one third, because the
+probability that door 3 has
+
+00:08:59.800 --> 00:09:01.870 align:middle line:90%
+the prize is 2/3.
+
+00:09:01.870 --> 00:09:03.770 align:middle line:90%
+And 1 minus 2/3 is 1/3.
+
+00:09:03.770 --> 00:09:07.250 align:middle line:84%
+So indeed, these are equal,
+and the events are independent.
+
+00:09:07.250 --> 00:09:12.310 align:middle line:84%
+And while I don't claim this
+is super-intuitive yet--
+
+00:09:12.310 --> 00:09:15.335 align:middle line:84%
+I mean, it's like you
+stare at it for an hour,
+
+00:09:15.335 --> 00:09:16.335 align:middle line:90%
+and then it's intuitive.
+
+00:09:16.335 --> 00:09:18.590 align:middle line:84%
+[LAUGHS] So it's not
+especially intuitive,
+
+00:09:18.590 --> 00:09:20.950 align:middle line:84%
+but I think while before
+we saw you can just
+
+00:09:20.950 --> 00:09:23.080 align:middle line:84%
+compute everything
+and find the answer,
+
+00:09:23.080 --> 00:09:25.250 align:middle line:84%
+I think this does give
+a little intuition.
+
+00:09:25.250 --> 00:09:29.710 align:middle line:84%
+The idea is that revealing
+door 2 to not have the prize
+
+00:09:29.710 --> 00:09:33.430 align:middle line:84%
+doesn't tell you anything about
+whether door 1 has the prize.
+
+00:09:33.430 --> 00:09:36.920 align:middle line:84%
+And that's intuitively
+why switching is good,
+
+00:09:36.920 --> 00:09:42.240 align:middle line:84%
+because you've reduced down
+to two possibilities instead
+
+00:09:42.240 --> 00:09:42.740 align:middle line:90%
+of three.
+
+00:09:42.740 --> 00:09:47.700 align:middle line:84%
+If you stick to A, it will be
+as if no doors were revealed.
+
+00:09:47.700 --> 00:09:49.800 align:middle line:84%
+Suppose you pick door
+number 1 at the beginning,
+
+00:09:49.800 --> 00:09:53.650 align:middle line:84%
+and you decide, I'm just
+going to stay no matter what.
+
+00:09:53.650 --> 00:09:55.200 align:middle line:84%
+Then whatever
+information they show
+
+00:09:55.200 --> 00:09:58.575 align:middle line:84%
+you doesn't tell you anything
+about whether door 1 will
+
+00:09:58.575 --> 00:09:59.200 align:middle line:90%
+have the prize.
+
+00:09:59.200 --> 00:10:02.130 align:middle line:84%
+And that's what this is
+confirming, that that vague
+
+00:10:02.130 --> 00:10:03.960 align:middle line:90%
+feeling that might be true.
+
+00:10:03.960 --> 00:10:06.870 align:middle line:84%
+This shows that indeed, this
+information being revealed
+
+00:10:06.870 --> 00:10:11.760 align:middle line:84%
+tells you nothing about
+whether A happened, I guess.
+
+00:10:11.760 --> 00:10:13.870 align:middle line:84%
+The probabilities are
+the same either way.
+
+00:10:13.870 --> 00:10:15.990 align:middle line:84%
+And so this gives
+you some intuition
+
+00:10:15.990 --> 00:10:19.085 align:middle line:84%
+for why the Monty Hall problem
+came out the way it did.
+
+00:10:19.085 --> 00:10:21.810 align:middle line:90%
+
+
+00:10:21.810 --> 00:10:23.440 align:middle line:84%
+Still, you should
+compute things,
+
+00:10:23.440 --> 00:10:25.415 align:middle line:84%
+but the goal by the
+end of this class
+
+00:10:25.415 --> 00:10:27.790 align:middle line:84%
+is you'll have at least some
+intuition about probability,
+
+00:10:27.790 --> 00:10:29.498 align:middle line:84%
+and hopefully it will
+be the correct one.
+
+00:10:29.498 --> 00:10:32.310 align:middle line:90%
+
+
+00:10:32.310 --> 00:10:34.510 align:middle line:84%
+Here's another situation
+to think about.
+
+00:10:34.510 --> 00:10:39.100 align:middle line:84%
+Suppose you have two events,
+A and B, which are disjoint.
+
+00:10:39.100 --> 00:10:40.980 align:middle line:84%
+So there are two subsets
+of the sample space,
+
+00:10:40.980 --> 00:10:42.850 align:middle line:84%
+and they don't have
+any elements in common.
+
+00:10:42.850 --> 00:10:48.900 align:middle line:84%
+So we'd normally write this as
+A intersect B is the empty set.
+
+00:10:48.900 --> 00:10:51.280 align:middle line:90%
+Then are they independent?
+
+00:10:51.280 --> 00:10:55.185 align:middle line:84%
+Well, let's just compute
+these probabilities.
+
+00:10:55.185 --> 00:10:57.310 align:middle line:84%
+Well, probability of A I
+don't know how to compute.
+
+00:10:57.310 --> 00:11:01.720 align:middle line:84%
+But probability of A given B,
+that I know how to compute.
+
+00:11:01.720 --> 00:11:05.700 align:middle line:84%
+I zoom into B, and I see how
+many As are in there, and 0.
+
+00:11:05.700 --> 00:11:11.440 align:middle line:84%
+There's no A inside B. In other
+words, the probability here,
+
+00:11:11.440 --> 00:11:14.157 align:middle line:84%
+probability of A
+intersect B is 0,
+
+00:11:14.157 --> 00:11:15.490 align:middle line:90%
+because there's no intersection.
+
+00:11:15.490 --> 00:11:18.590 align:middle line:84%
+So whatever the
+denominator is, is 0.
+
+00:11:18.590 --> 00:11:19.090 align:middle line:90%
+OK?
+
+00:11:19.090 --> 00:11:25.356 align:middle line:84%
+And so this means they are
+not independent typically.
+
+00:11:25.356 --> 00:11:29.760 align:middle line:90%
+
+
+00:11:29.760 --> 00:11:32.970 align:middle line:84%
+Unless some exceptional
+cases happen--
+
+00:11:32.970 --> 00:11:37.180 align:middle line:84%
+namely, I guess it could be
+that A is also the empty set.
+
+00:11:37.180 --> 00:11:40.020 align:middle line:84%
+There's nothing in
+A. Then probability
+
+00:11:40.020 --> 00:11:46.660 align:middle line:84%
+of A equals this thing,
+probability of A given B.
+
+00:11:46.660 --> 00:11:49.780 align:middle line:84%
+And the other situation
+is, probability of B
+
+00:11:49.780 --> 00:11:54.850 align:middle line:84%
+is 0, because that's another
+situation where we just have
+
+00:11:54.850 --> 00:11:56.840 align:middle line:90%
+independence by definition.
+
+00:11:56.840 --> 00:11:57.340 align:middle line:90%
+OK?
+
+00:11:57.340 --> 00:12:00.980 align:middle line:84%
+So disjoint events
+are not independent.
+
+00:12:00.980 --> 00:12:04.520 align:middle line:84%
+The intuition here is, if
+I tell you that B happened,
+
+00:12:04.520 --> 00:12:06.760 align:middle line:84%
+you know very well
+A did not happen,
+
+00:12:06.760 --> 00:12:09.880 align:middle line:84%
+because we assume these
+are disjoint events.
+
+00:12:09.880 --> 00:12:15.160 align:middle line:90%
+OK, another example is subsets.
+
+00:12:15.160 --> 00:12:17.720 align:middle line:84%
+Let's suppose--
+which one is easier?
+
+00:12:17.720 --> 00:12:23.660 align:middle line:84%
+B is a subset of A.
+So A is the big thing,
+
+00:12:23.660 --> 00:12:26.920 align:middle line:90%
+and B is nestled inside.
+
+00:12:26.920 --> 00:12:33.940 align:middle line:84%
+Then I want to know, what is
+the probability of A given B?
+
+00:12:33.940 --> 00:12:39.910 align:middle line:84%
+Well, if I zoom into B, It looks
+in completely A. All of this
+
+00:12:39.910 --> 00:12:45.930 align:middle line:84%
+is included inside A. And
+so this probability is 1.
+
+00:12:45.930 --> 00:12:48.195 align:middle line:84%
+And so this is another
+situation where
+
+00:12:48.195 --> 00:12:50.506 align:middle line:90%
+A and B are not independent.
+
+00:12:50.506 --> 00:12:53.250 align:middle line:90%
+
+
+00:12:53.250 --> 00:12:57.466 align:middle line:84%
+Unless some very
+special cases happen.
+
+00:12:57.466 --> 00:13:03.210 align:middle line:84%
+The namely, it could
+be A is everything.
+
+00:13:03.210 --> 00:13:03.960 align:middle line:90%
+A always occurs.
+
+00:13:03.960 --> 00:13:06.480 align:middle line:90%
+Probability of A equals 1.
+
+00:13:06.480 --> 00:13:10.620 align:middle line:84%
+Or again, it could be
+probability of B equals 0.
+
+00:13:10.620 --> 00:13:15.240 align:middle line:84%
+So if B is just nothing, then
+they're independent, just
+
+00:13:15.240 --> 00:13:16.210 align:middle line:90%
+by definition.
+
+00:13:16.210 --> 00:13:19.350 align:middle line:90%
+If A is everything, then yeah.
+
+00:13:19.350 --> 00:13:22.320 align:middle line:84%
+You're restricting to B,
+it's still everything.
+
+00:13:22.320 --> 00:13:23.610 align:middle line:90%
+Question.
+
+00:13:23.610 --> 00:13:24.400 align:middle line:90%
+AUDIENCE: Yeah.
+
+00:13:24.400 --> 00:13:26.880 align:middle line:90%
+Why do we say not independent?
+
+00:13:26.880 --> 00:13:27.755 align:middle line:90%
+Can we say dependent?
+
+00:13:27.755 --> 00:13:30.250 align:middle line:84%
+ERIK DEMAINE: [LAUGHS] Why
+don't we say dependent?
+
+00:13:30.250 --> 00:13:32.460 align:middle line:90%
+That's a good question.
+
+00:13:32.460 --> 00:13:36.190 align:middle line:84%
+I believe traditionally,
+not independent.
+
+00:13:36.190 --> 00:13:38.490 align:middle line:90%
+We could just say dependent.
+
+00:13:38.490 --> 00:13:40.960 align:middle line:84%
+I guess, I don't know
+what dependent means.
+
+00:13:40.960 --> 00:13:43.550 align:middle line:84%
+I guess you could try
+to define dependence
+
+00:13:43.550 --> 00:13:46.590 align:middle line:84%
+like amount of dependence, and
+maybe statisticians do that.
+
+00:13:46.590 --> 00:13:49.680 align:middle line:84%
+But in our worlds, we generally
+just define independent.
+
+00:13:49.680 --> 00:13:52.770 align:middle line:84%
+And then there's the converse,
+and we call it non-independent.
+
+00:13:52.770 --> 00:13:53.670 align:middle line:90%
+I agree, it's weird.
+
+00:13:53.670 --> 00:13:55.650 align:middle line:84%
+You could maybe think
+of it as dependent,
+
+00:13:55.650 --> 00:14:00.860 align:middle line:84%
+but I'm pretty sure
+it's not standard.
+
+00:14:00.860 --> 00:14:03.140 align:middle line:90%
+All right.
+
+00:14:03.140 --> 00:14:05.580 align:middle line:90%
+Let me tell you some more ways--
+
+00:14:05.580 --> 00:14:09.590 align:middle line:84%
+of course, you take two events,
+they're probably dependent,
+
+00:14:09.590 --> 00:14:11.000 align:middle line:90%
+in some sense.
+
+00:14:11.000 --> 00:14:13.520 align:middle line:84%
+Independence is kind
+of the special thing.
+
+00:14:13.520 --> 00:14:16.700 align:middle line:84%
+And it's what we are
+going to focus on,
+
+00:14:16.700 --> 00:14:20.090 align:middle line:84%
+is detecting when an
+event is independent.
+
+00:14:20.090 --> 00:14:24.410 align:middle line:84%
+So let me tell you some
+other ways to compute it.
+
+00:14:24.410 --> 00:14:27.050 align:middle line:84%
+So we can use this
+definition and compute it.
+
+00:14:27.050 --> 00:14:29.165 align:middle line:84%
+But it's oddly
+asymmetric, right?
+
+00:14:29.165 --> 00:14:31.790 align:middle line:84%
+We talk about the probability of
+A given B. What if it's easier
+
+00:14:31.790 --> 00:14:33.510 align:middle line:84%
+to compute the
+probability of B given A,
+
+00:14:33.510 --> 00:14:36.950 align:middle line:90%
+for example, or something else?
+
+00:14:36.950 --> 00:14:41.170 align:middle line:84%
+There's another nice
+characterization, which I'm
+
+00:14:41.170 --> 00:14:42.560 align:middle line:90%
+going to call the product rule.
+
+00:14:42.560 --> 00:14:46.340 align:middle line:84%
+We've already seen a product
+rule with inclusion-exclusion.
+
+00:14:46.340 --> 00:14:54.240 align:middle line:90%
+But here's another one.
+
+00:14:54.240 --> 00:14:59.710 align:middle line:90%
+
+
+00:14:59.710 --> 00:15:02.770 align:middle line:84%
+So an event A is independent
+of another event B
+
+00:15:02.770 --> 00:15:07.960 align:middle line:84%
+if and only if probability
+of A intersect B
+
+00:15:07.960 --> 00:15:10.416 align:middle line:84%
+is the product of
+the probabilities.
+
+00:15:10.416 --> 00:15:17.740 align:middle line:90%
+
+
+00:15:17.740 --> 00:15:24.460 align:middle line:84%
+OK, this is what makes
+sense, I guess in some sense.
+
+00:15:24.460 --> 00:15:27.400 align:middle line:84%
+Naively, if you want to
+think about the probability
+
+00:15:27.400 --> 00:15:29.450 align:middle line:84%
+of an intersection--
+in other words,
+
+00:15:29.450 --> 00:15:31.420 align:middle line:84%
+the probability of
+one event happening
+
+00:15:31.420 --> 00:15:34.040 align:middle line:84%
+and another event
+happening-- naively,
+
+00:15:34.040 --> 00:15:35.270 align:middle line:90%
+that would be the product.
+
+00:15:35.270 --> 00:15:37.970 align:middle line:84%
+And independence is exactly
+when you can do this.
+
+00:15:37.970 --> 00:15:39.530 align:middle line:84%
+If you're independent,
+this is true.
+
+00:15:39.530 --> 00:15:41.690 align:middle line:84%
+If you're not independent,
+this is false.
+
+00:15:41.690 --> 00:15:46.720 align:middle line:84%
+So this is in some sense why
+we care about independence.
+
+00:15:46.720 --> 00:15:50.310 align:middle line:84%
+And yeah, let me get
+another chalk here.
+
+00:15:50.310 --> 00:15:53.620 align:middle line:90%
+
+
+00:15:53.620 --> 00:15:57.320 align:middle line:84%
+And it's effectively what we're
+using in what I was saying.
+
+00:15:57.320 --> 00:16:00.010 align:middle line:84%
+Oh, the probability of
+this event happening
+
+00:16:00.010 --> 00:16:02.500 align:middle line:84%
+is the probability of
+this thing happening
+
+00:16:02.500 --> 00:16:05.920 align:middle line:84%
+times the probability of this
+thing happening conditioned
+
+00:16:05.920 --> 00:16:07.660 align:middle line:90%
+on this one.
+
+00:16:07.660 --> 00:16:13.060 align:middle line:84%
+That multiplication
+is OK in particular
+
+00:16:13.060 --> 00:16:20.330 align:middle line:84%
+because event E is independent
+of A given E, in some sense.
+
+00:16:20.330 --> 00:16:22.220 align:middle line:84%
+I guess this is not
+properly an event,
+
+00:16:22.220 --> 00:16:24.640 align:middle line:84%
+but you can think
+of it that way.
+
+00:16:24.640 --> 00:16:32.440 align:middle line:84%
+All right, let's prove
+this theorem by cases.
+
+00:16:32.440 --> 00:16:39.210 align:middle line:84%
+So case 1, what I'd
+like to branch on
+
+00:16:39.210 --> 00:16:43.590 align:middle line:84%
+is, is the probability
+of B equal to 0?
+
+00:16:43.590 --> 00:16:46.630 align:middle line:84%
+Because it's just annoying
+to work with this definition.
+
+00:16:46.630 --> 00:16:49.620 align:middle line:84%
+There's this special
+case of B equals 0.
+
+00:16:49.620 --> 00:16:52.600 align:middle line:84%
+So that turns out to be
+the natural case breakdown.
+
+00:16:52.600 --> 00:16:55.535 align:middle line:84%
+Case 2 is going to be
+probability of B is not 0.
+
+00:16:55.535 --> 00:17:01.320 align:middle line:90%
+
+
+00:17:01.320 --> 00:17:01.820 align:middle line:90%
+OK.
+
+00:17:01.820 --> 00:17:05.010 align:middle line:84%
+So when probability
+of B equals 0,
+
+00:17:05.010 --> 00:17:11.010 align:middle line:84%
+we know that A is
+independent of B.
+
+00:17:11.010 --> 00:17:14.910 align:middle line:90%
+That's part of the definition.
+
+00:17:14.910 --> 00:17:17.230 align:middle line:90%
+So this part is true.
+
+00:17:17.230 --> 00:17:18.900 align:middle line:84%
+So for this, if and
+only if to be true,
+
+00:17:18.900 --> 00:17:21.990 align:middle line:84%
+we better make sure that
+probability of A intersect B
+
+00:17:21.990 --> 00:17:24.420 align:middle line:90%
+is equal to that product.
+
+00:17:24.420 --> 00:17:26.950 align:middle line:90%
+But then this number is 0.
+
+00:17:26.950 --> 00:17:28.750 align:middle line:90%
+So this product is 0.
+
+00:17:28.750 --> 00:17:31.620 align:middle line:84%
+So what we really want is that
+the probability of A intersect B
+
+00:17:31.620 --> 00:17:32.590 align:middle line:90%
+is 0.
+
+00:17:32.590 --> 00:17:37.070 align:middle line:84%
+And indeed, probability
+of A intersect B
+
+00:17:37.070 --> 00:17:41.690 align:middle line:84%
+is at most,
+probability of B. Why?
+
+00:17:41.690 --> 00:17:44.810 align:middle line:84%
+Because this set is
+contained in this set,
+
+00:17:44.810 --> 00:17:46.598 align:middle line:90%
+and probability is monotone.
+
+00:17:46.598 --> 00:17:48.890 align:middle line:84%
+If you take a smaller set,
+it contains all the elements
+
+00:17:48.890 --> 00:17:49.440 align:middle line:90%
+of this set.
+
+00:17:49.440 --> 00:17:53.210 align:middle line:84%
+Then this probability will be
+less than or equal to that.
+
+00:17:53.210 --> 00:17:57.800 align:middle line:84%
+And probability of B
+is 0 by assumption.
+
+00:17:57.800 --> 00:18:01.100 align:middle line:84%
+And so it's also
+equal to probability
+
+00:18:01.100 --> 00:18:05.600 align:middle line:84%
+of A times probability
+of B. I guess
+
+00:18:05.600 --> 00:18:08.870 align:middle line:84%
+I'm also using that
+probabilities are non-negative.
+
+00:18:08.870 --> 00:18:11.970 align:middle line:84%
+And so I've sandwiched this
+probability between 0 and 0,
+
+00:18:11.970 --> 00:18:14.690 align:middle line:90%
+which means it equals 0.
+
+00:18:14.690 --> 00:18:17.400 align:middle line:84%
+It's both less than and
+greater than or equal to 0.
+
+00:18:17.400 --> 00:18:20.760 align:middle line:84%
+So it equals 0, and so
+we're done with that case.
+
+00:18:20.760 --> 00:18:21.260 align:middle line:90%
+OK.
+
+00:18:21.260 --> 00:18:24.050 align:middle line:84%
+Probability B not equal to 0
+is the more interesting case,
+
+00:18:24.050 --> 00:18:26.670 align:middle line:84%
+because that's when we get
+to work with this formula.
+
+00:18:26.670 --> 00:18:31.070 align:middle line:84%
+Probability of A given B is
+equal to probability of A.
+
+00:18:31.070 --> 00:18:33.630 align:middle line:84%
+So that's the definition
+of independence.
+
+00:18:33.630 --> 00:18:41.140 align:middle line:84%
+So we're at independence if and
+only if probability of A given B
+
+00:18:41.140 --> 00:18:46.210 align:middle line:90%
+equals probability of A.
+
+00:18:46.210 --> 00:18:46.910 align:middle line:90%
+OK.
+
+00:18:46.910 --> 00:18:54.100 align:middle line:84%
+So now we have some
+computation to do.
+
+00:18:54.100 --> 00:18:54.710 align:middle line:90%
+Let's see.
+
+00:18:54.710 --> 00:18:56.950 align:middle line:84%
+We also have a formula
+for probability
+
+00:18:56.950 --> 00:18:58.940 align:middle line:90%
+of A given B up here.
+
+00:18:58.940 --> 00:18:59.930 align:middle line:90%
+That's the definition.
+
+00:18:59.930 --> 00:19:01.310 align:middle line:90%
+So let's plug that in.
+
+00:19:01.310 --> 00:19:12.730 align:middle line:84%
+Probability of A intersect B
+divided by probability of B.
+
+00:19:12.730 --> 00:19:15.260 align:middle line:84%
+OK, so this is equal to that,
+and this is equal to that.
+
+00:19:15.260 --> 00:19:17.260 align:middle line:90%
+So these two things are equal.
+
+00:19:17.260 --> 00:19:21.400 align:middle line:84%
+And now on this equation, I
+see probability of A here.
+
+00:19:21.400 --> 00:19:23.620 align:middle line:84%
+I see probability of B
+on the denominator here.
+
+00:19:23.620 --> 00:19:26.690 align:middle line:84%
+I'd like to multiply both
+sides by probability of B.
+
+00:19:26.690 --> 00:19:30.760 align:middle line:84%
+And I get, this is
+equivalent to probability
+
+00:19:30.760 --> 00:19:35.010 align:middle line:84%
+of A times probability
+of B equals
+
+00:19:35.010 --> 00:19:38.700 align:middle line:84%
+probability of A
+intersect B, which is
+
+00:19:38.700 --> 00:19:41.580 align:middle line:90%
+exactly what I wanted to prove.
+
+00:19:41.580 --> 00:19:43.500 align:middle line:90%
+So I'm done.
+
+00:19:43.500 --> 00:19:45.210 align:middle line:84%
+Crucially here,
+though, I'm using--
+
+00:19:45.210 --> 00:19:47.970 align:middle line:84%
+in order to multiply both
+sides by a probability of B
+
+00:19:47.970 --> 00:19:51.760 align:middle line:84%
+and to get an if and only if,
+it's crucial that this is not 0.
+
+00:19:51.760 --> 00:19:54.432 align:middle line:84%
+If you multiply both
+sides of a formula by 0,
+
+00:19:54.432 --> 00:19:56.140 align:middle line:84%
+you don't get a very
+interesting formula,
+
+00:19:56.140 --> 00:19:58.420 align:middle line:84%
+and you don't get
+an if and only if.
+
+00:19:58.420 --> 00:20:00.640 align:middle line:84%
+But once I assume that
+probability is not 0,
+
+00:20:00.640 --> 00:20:04.290 align:middle line:84%
+then I can actually
+do the multiplication.
+
+00:20:04.290 --> 00:20:06.910 align:middle line:84%
+And I get a useful
+statement, and this is true.
+
+00:20:06.910 --> 00:20:09.040 align:middle line:84%
+So I get the cancellation
+that I wanted.
+
+00:20:09.040 --> 00:20:11.040 align:middle line:90%
+Otherwise I get 0 over 0.
+
+00:20:11.040 --> 00:20:12.000 align:middle line:90%
+OK.
+
+00:20:12.000 --> 00:20:16.890 align:middle line:84%
+So this tells us a different
+way to determine independence.
+
+00:20:16.890 --> 00:20:20.250 align:middle line:84%
+We could compute this
+thing and this thing,
+
+00:20:20.250 --> 00:20:25.710 align:middle line:84%
+or we can compute this
+thing and this thing.
+
+00:20:25.710 --> 00:20:28.230 align:middle line:84%
+And if they're equal,
+it's the same thing
+
+00:20:28.230 --> 00:20:30.130 align:middle line:90%
+as that condition being true.
+
+00:20:30.130 --> 00:20:33.598 align:middle line:84%
+Notably, this definition--
+or this condition.
+
+00:20:33.598 --> 00:20:35.640 align:middle line:84%
+Sometimes this is the
+definition of independence.
+
+00:20:35.640 --> 00:20:37.325 align:middle line:90%
+You might see both.
+
+00:20:37.325 --> 00:20:39.740 align:middle line:84%
+They're equivalent,
+so you use either one.
+
+00:20:39.740 --> 00:20:43.380 align:middle line:84%
+This definition is symmetric
+in A and B. If I swap A and B,
+
+00:20:43.380 --> 00:20:44.880 align:middle line:84%
+I get exactly the
+same thing, right?
+
+00:20:44.880 --> 00:20:47.470 align:middle line:84%
+A intersect B is the same as
+B intersect A. Probability
+
+00:20:47.470 --> 00:20:49.970 align:middle line:84%
+of A times probability of B is
+the same thing as probability
+
+00:20:49.970 --> 00:20:53.630 align:middle line:84%
+of B times probability
+of A. So I no longer
+
+00:20:53.630 --> 00:20:55.740 align:middle line:84%
+have to say A is
+independent of B.
+
+00:20:55.740 --> 00:20:58.130 align:middle line:84%
+I can just say A and B are
+independent without worrying
+
+00:20:58.130 --> 00:21:01.460 align:middle line:90%
+about which one's first.
+
+00:21:01.460 --> 00:21:14.890 align:middle line:84%
+So corollary, independent
+of is a symmetric relation.
+
+00:21:14.890 --> 00:21:23.000 align:middle line:90%
+
+
+00:21:23.000 --> 00:21:26.130 align:middle line:84%
+A is independent of B if and
+only if B is independent of A.
+
+00:21:26.130 --> 00:21:29.250 align:middle line:84%
+So I'll just talk about A and B
+being independent from now on.
+
+00:21:29.250 --> 00:21:31.080 align:middle line:84%
+This definition is not
+obviously symmetric,
+
+00:21:31.080 --> 00:21:33.960 align:middle line:84%
+but now that you know that
+these are interchangeable,
+
+00:21:33.960 --> 00:21:36.720 align:middle line:84%
+if it's easier to compute
+probability of B given A,
+
+00:21:36.720 --> 00:21:38.070 align:middle line:90%
+you can do that as well.
+
+00:21:38.070 --> 00:21:39.560 align:middle line:84%
+You can do
+probability of B given
+
+00:21:39.560 --> 00:21:41.990 align:middle line:84%
+A equals probability
+of B. That's just
+
+00:21:41.990 --> 00:21:44.750 align:middle line:90%
+as good as checking this one.
+
+00:21:44.750 --> 00:21:46.350 align:middle line:84%
+Not obvious from
+that definition,
+
+00:21:46.350 --> 00:21:49.910 align:middle line:84%
+but through this transformation
+(CHUCKLING) it becomes obvious.
+
+00:21:49.910 --> 00:21:50.440 align:middle line:90%
+All right.
+
+00:21:50.440 --> 00:21:54.296 align:middle line:90%
+
+
+00:21:54.296 --> 00:21:55.963 align:middle line:84%
+Let's do some more
+interesting examples.
+
+00:21:55.963 --> 00:22:08.780 align:middle line:90%
+
+
+00:22:08.780 --> 00:22:16.473 align:middle line:84%
+And let's start with flipping
+two independent fair coins.
+
+00:22:16.473 --> 00:22:19.430 align:middle line:90%
+
+
+00:22:19.430 --> 00:22:22.170 align:middle line:84%
+OK, now that you know
+what independence means,
+
+00:22:22.170 --> 00:22:24.620 align:middle line:84%
+we're going to be
+using it a lot,
+
+00:22:24.620 --> 00:22:27.950 align:middle line:84%
+in particular just
+as an assumption.
+
+00:22:27.950 --> 00:22:30.880 align:middle line:84%
+A lot of probability problems
+are not well-defined,
+
+00:22:30.880 --> 00:22:34.300 align:middle line:84%
+unless you specify as
+part of the statement
+
+00:22:34.300 --> 00:22:37.822 align:middle line:84%
+that two random events are
+independent from each other.
+
+00:22:37.822 --> 00:22:39.530 align:middle line:84%
+You already saw this
+in your problem set.
+
+00:22:39.530 --> 00:22:42.550 align:middle line:84%
+We wanted all of the
+errors that the bots
+
+00:22:42.550 --> 00:22:45.430 align:middle line:84%
+made to be independent
+from each other,
+
+00:22:45.430 --> 00:22:48.928 align:middle line:84%
+meaning whether one thing
+happens does not influence
+
+00:22:48.928 --> 00:22:49.970 align:middle line:90%
+the outcome of the other.
+
+00:22:49.970 --> 00:22:51.580 align:middle line:84%
+So a simple example
+of this, where
+
+00:22:51.580 --> 00:22:55.150 align:middle line:84%
+this is a reasonable assumption
+is you have two coins.
+
+00:22:55.150 --> 00:22:57.075 align:middle line:84%
+I don't use physical
+money anymore,
+
+00:22:57.075 --> 00:22:59.930 align:middle line:84%
+(CHUCKLING) but imagine you have
+two coins and you flip them.
+
+00:22:59.930 --> 00:23:01.960 align:middle line:84%
+Whether this one comes out heads
+and whether this one comes out
+
+00:23:01.960 --> 00:23:03.800 align:middle line:84%
+heads should be
+independent of each other.
+
+00:23:03.800 --> 00:23:06.290 align:middle line:84%
+Unless you, I don't know,
+glue the two coins together,
+
+00:23:06.290 --> 00:23:08.590 align:middle line:90%
+then they're very dependent.
+
+00:23:08.590 --> 00:23:09.435 align:middle line:90%
+I used dependent.
+
+00:23:09.435 --> 00:23:11.080 align:middle line:90%
+All right.
+
+00:23:11.080 --> 00:23:13.120 align:middle line:84%
+So usually when
+we're saying we're
+
+00:23:13.120 --> 00:23:15.460 align:middle line:84%
+going to flip a bunch of
+coins, we need to specify,
+
+00:23:15.460 --> 00:23:17.330 align:middle line:84%
+are they somehow
+linked together?
+
+00:23:17.330 --> 00:23:19.685 align:middle line:84%
+Maybe, I don't know,
+they have some quantum
+
+00:23:19.685 --> 00:23:21.310 align:middle line:84%
+entanglement, and
+whether one comes out
+
+00:23:21.310 --> 00:23:24.340 align:middle line:84%
+heads influences the other, or
+they're physically attached,
+
+00:23:24.340 --> 00:23:25.660 align:middle line:90%
+or something like that?
+
+00:23:25.660 --> 00:23:27.600 align:middle line:84%
+But normally, we
+think of the case
+
+00:23:27.600 --> 00:23:29.380 align:middle line:84%
+where the coins are
+all independent.
+
+00:23:29.380 --> 00:23:31.530 align:middle line:84%
+OK, so we're going to
+use independence also
+
+00:23:31.530 --> 00:23:34.030 align:middle line:84%
+as an assumption in
+the problem statement.
+
+00:23:34.030 --> 00:23:37.350 align:middle line:84%
+And that specifies
+in some sense what
+
+00:23:37.350 --> 00:23:38.973 align:middle line:90%
+your sample space should be.
+
+00:23:38.973 --> 00:23:41.140 align:middle line:84%
+Then there's another
+assumption here, which is fair.
+
+00:23:41.140 --> 00:23:45.150 align:middle line:84%
+That means that they come
+out 50% heads, 50% tails.
+
+00:23:45.150 --> 00:23:59.680 align:middle line:84%
+So the sample space is
+heads and tails squared.
+
+00:23:59.680 --> 00:24:04.150 align:middle line:84%
+So heads and tails cross heads
+and tails, the set of pairs,
+
+00:24:04.150 --> 00:24:13.000 align:middle line:84%
+heads tails, heads tails, or
+xy where x and y are in H or T.
+
+00:24:13.000 --> 00:24:15.010 align:middle line:84%
+I forget whether we've
+squared sets before,
+
+00:24:15.010 --> 00:24:17.280 align:middle line:90%
+but that's the meaning.
+
+00:24:17.280 --> 00:24:20.370 align:middle line:84%
+Just like the cross
+product of two of them.
+
+00:24:20.370 --> 00:24:23.470 align:middle line:84%
+And so there's the first
+coin and the second coin.
+
+00:24:23.470 --> 00:24:24.950 align:middle line:90%
+This is an ordered pair.
+
+00:24:24.950 --> 00:24:27.315 align:middle line:90%
+And they're each equally likely.
+
+00:24:27.315 --> 00:24:28.940 align:middle line:84%
+The assumption that
+they're independent
+
+00:24:28.940 --> 00:24:33.170 align:middle line:84%
+tells us they should be,
+all of these outcomes
+
+00:24:33.170 --> 00:24:36.110 align:middle line:84%
+are equally likely, or the
+assumption that they're
+
+00:24:36.110 --> 00:24:39.240 align:middle line:84%
+independent and fair makes them
+all equally likely, I guess.
+
+00:24:39.240 --> 00:24:41.220 align:middle line:84%
+All right, so let's do
+this more precisely.
+
+00:24:41.220 --> 00:24:50.023 align:middle line:84%
+Let's say A is the event that
+the first coin comes out heads.
+
+00:24:50.023 --> 00:24:53.240 align:middle line:90%
+
+
+00:24:53.240 --> 00:24:55.640 align:middle line:90%
+I'll say it is.
+
+00:24:55.640 --> 00:25:00.110 align:middle line:84%
+And let's let B be the event
+that the second coin comes out
+
+00:25:00.110 --> 00:25:00.610 align:middle line:90%
+heads.
+
+00:25:00.610 --> 00:25:07.910 align:middle line:90%
+
+
+00:25:07.910 --> 00:25:08.410 align:middle line:90%
+OK.
+
+00:25:08.410 --> 00:25:10.970 align:middle line:90%
+
+
+00:25:10.970 --> 00:25:12.560 align:middle line:84%
+I would like to
+claim that these two
+
+00:25:12.560 --> 00:25:16.140 align:middle line:84%
+events are independent from each
+other, not just by assumption,
+
+00:25:16.140 --> 00:25:19.940 align:middle line:84%
+but by computing according
+to either of these formulas.
+
+00:25:19.940 --> 00:25:23.840 align:middle line:84%
+So let's do that so we fully
+understand the situation.
+
+00:25:23.840 --> 00:25:27.010 align:middle line:90%
+I'm going to draw a tree here.
+
+00:25:27.010 --> 00:25:33.670 align:middle line:84%
+So this is the first coin,
+and this is the second coin.
+
+00:25:33.670 --> 00:25:35.343 align:middle line:90%
+Each one can be heads or tails.
+
+00:25:35.343 --> 00:25:42.250 align:middle line:90%
+
+
+00:25:42.250 --> 00:25:44.360 align:middle line:84%
+OK, and because
+we're assuming fair,
+
+00:25:44.360 --> 00:25:45.980 align:middle line:84%
+this should be
+probability of 1/2,
+
+00:25:45.980 --> 00:25:47.450 align:middle line:84%
+this should be
+probability of 1/2.
+
+00:25:47.450 --> 00:25:50.770 align:middle line:84%
+Also here, the probability
+of each of these coin
+
+00:25:50.770 --> 00:25:54.100 align:middle line:84%
+flips being heads or tails
+given the previous one,
+
+00:25:54.100 --> 00:25:56.090 align:middle line:84%
+it doesn't matter that
+the first one happened.
+
+00:25:56.090 --> 00:26:01.630 align:middle line:84%
+So we just write a 1/2,
+1/2 on all of these edges.
+
+00:26:01.630 --> 00:26:02.350 align:middle line:90%
+OK?
+
+00:26:02.350 --> 00:26:10.002 align:middle line:84%
+So now I want to say,
+let's say probability of B
+
+00:26:10.002 --> 00:26:11.710 align:middle line:84%
+given A. This is going
+to be a little bit
+
+00:26:11.710 --> 00:26:13.460 align:middle line:84%
+circular, because we're
+using independence
+
+00:26:13.460 --> 00:26:15.677 align:middle line:84%
+both as an assumption and
+the thing we're computing.
+
+00:26:15.677 --> 00:26:18.010 align:middle line:84%
+But we should be used to
+drawing these kinds of diagrams
+
+00:26:18.010 --> 00:26:20.950 align:middle line:84%
+under this implicit
+independence assumption by now.
+
+00:26:20.950 --> 00:26:24.240 align:middle line:84%
+We are told the
+number we write here
+
+00:26:24.240 --> 00:26:26.130 align:middle line:84%
+is the probability of
+this thing happening
+
+00:26:26.130 --> 00:26:28.410 align:middle line:90%
+given that this one happened.
+
+00:26:28.410 --> 00:26:36.420 align:middle line:84%
+So probability of B given
+A, so A is this edge.
+
+00:26:36.420 --> 00:26:40.800 align:middle line:84%
+But I guess this node is
+event A, in some sense.
+
+00:26:40.800 --> 00:26:43.860 align:middle line:84%
+A is that the first
+coin flip was a heads.
+
+00:26:43.860 --> 00:26:48.420 align:middle line:84%
+So probability of B given A
+is exactly the probability
+
+00:26:48.420 --> 00:26:50.760 align:middle line:84%
+written on this
+edge, because this
+
+00:26:50.760 --> 00:26:55.830 align:middle line:90%
+would be B given A, that event.
+
+00:26:55.830 --> 00:26:59.400 align:middle line:90%
+A happened, and then B happened.
+
+00:26:59.400 --> 00:27:03.090 align:middle line:84%
+Or I guess maybe the edge
+is more, but is thought
+
+00:27:03.090 --> 00:27:05.100 align:middle line:84%
+of this way, this is
+more like A intersect B
+
+00:27:05.100 --> 00:27:06.630 align:middle line:90%
+that they both happened.
+
+00:27:06.630 --> 00:27:12.270 align:middle line:84%
+But however you slice it, the
+probability of B given A is 1/2.
+
+00:27:12.270 --> 00:27:13.232 align:middle line:90%
+That's what we defined.
+
+00:27:13.232 --> 00:27:15.690 align:middle line:84%
+The probability of the second
+coin being a heads given that
+
+00:27:15.690 --> 00:27:19.060 align:middle line:84%
+the first one is also a heads
+shouldn't matter is 1/2.
+
+00:27:19.060 --> 00:27:24.660 align:middle line:84%
+And on the other hand, the
+probability of second coin being
+
+00:27:24.660 --> 00:27:26.320 align:middle line:90%
+heads by itself is 1/2.
+
+00:27:26.320 --> 00:27:27.880 align:middle line:90%
+So yes, it's independent.
+
+00:27:27.880 --> 00:27:28.440 align:middle line:90%
+Amazing.
+
+00:27:28.440 --> 00:27:30.050 align:middle line:90%
+OK, not a very exciting example.
+
+00:27:30.050 --> 00:27:33.690 align:middle line:90%
+
+
+00:27:33.690 --> 00:27:42.630 align:middle line:84%
+Slightly more exciting is
+that let's say first coin,
+
+00:27:42.630 --> 00:27:54.960 align:middle line:84%
+heads probability is p,
+and second coin heads
+
+00:27:54.960 --> 00:27:59.790 align:middle line:90%
+probability is q.
+
+00:27:59.790 --> 00:28:02.772 align:middle line:84%
+So I invest in some
+weighted coins.
+
+00:28:02.772 --> 00:28:04.980 align:middle line:84%
+It's the probability of p
+that the first one comes up
+
+00:28:04.980 --> 00:28:07.390 align:middle line:84%
+heads, probability of q the
+second one comes up heads.
+
+00:28:07.390 --> 00:28:10.085 align:middle line:84%
+Maybe p and q are equal to 1/2,
+or maybe there's something else.
+
+00:28:10.085 --> 00:28:12.720 align:middle line:90%
+
+
+00:28:12.720 --> 00:28:17.070 align:middle line:84%
+Then still, I get,
+for example, I
+
+00:28:17.070 --> 00:28:20.690 align:middle line:84%
+don't know the probability
+that A and B happens
+
+00:28:20.690 --> 00:28:24.315 align:middle line:90%
+is going to be p times q.
+
+00:28:24.315 --> 00:28:26.898 align:middle line:84%
+[CHUCKLES] It's hard to say this
+without assumption that these
+
+00:28:26.898 --> 00:28:28.523 align:middle line:84%
+are independent
+events, but this is how
+
+00:28:28.523 --> 00:28:29.760 align:middle line:90%
+we've been computing things.
+
+00:28:29.760 --> 00:28:34.490 align:middle line:84%
+And that's also a
+probability of A product
+
+00:28:34.490 --> 00:28:37.460 align:middle line:90%
+with the probability of B. OK.
+
+00:28:37.460 --> 00:28:38.690 align:middle line:90%
+Not very exciting.
+
+00:28:38.690 --> 00:28:42.710 align:middle line:84%
+Let's make this interesting and
+define some events that are not
+
+00:28:42.710 --> 00:28:47.270 align:middle line:84%
+just a function of
+one coin, but in fact
+
+00:28:47.270 --> 00:28:50.930 align:middle line:84%
+depend on the
+entire sample space.
+
+00:28:50.930 --> 00:28:52.910 align:middle line:84%
+So I'm going to go
+back to this example
+
+00:28:52.910 --> 00:29:02.780 align:middle line:84%
+and define S to be
+the event that--
+
+00:29:02.780 --> 00:29:08.630 align:middle line:84%
+I guess I should write A
+and B are independent here,
+
+00:29:08.630 --> 00:29:14.302 align:middle line:84%
+and A and B are
+independent here.
+
+00:29:14.302 --> 00:29:17.163 align:middle line:84%
+OK, but now I'm going to write
+an event that's not so obvious.
+
+00:29:17.163 --> 00:29:23.470 align:middle line:90%
+
+
+00:29:23.470 --> 00:29:27.280 align:middle line:84%
+The S event is going to be
+that the coin flips come out
+
+00:29:27.280 --> 00:29:30.375 align:middle line:84%
+the same, either both
+heads or both tails.
+
+00:29:30.375 --> 00:29:37.570 align:middle line:90%
+
+
+00:29:37.570 --> 00:29:40.010 align:middle line:84%
+This clearly involves
+both coin flips,
+
+00:29:40.010 --> 00:29:43.660 align:middle line:84%
+so you might think
+that S and A, say,
+
+00:29:43.660 --> 00:29:46.360 align:middle line:90%
+are dependent on each other.
+
+00:29:46.360 --> 00:29:48.200 align:middle line:90%
+Intuitively they are.
+
+00:29:48.200 --> 00:29:50.770 align:middle line:84%
+But according to
+this definition,
+
+00:29:50.770 --> 00:29:54.310 align:middle line:90%
+they are independent.
+
+00:29:54.310 --> 00:29:55.400 align:middle line:90%
+That's the claim.
+
+00:29:55.400 --> 00:29:58.570 align:middle line:90%
+So let's compute it.
+
+00:29:58.570 --> 00:30:02.080 align:middle line:84%
+I claim the easy one is to
+compute probability of S given
+
+00:30:02.080 --> 00:30:09.730 align:middle line:84%
+A. So in this diagram,
+A is that we're here,
+
+00:30:09.730 --> 00:30:12.370 align:middle line:90%
+that we flipped ahead so far.
+
+00:30:12.370 --> 00:30:15.940 align:middle line:84%
+And now I want to know the
+probability that the coins come
+
+00:30:15.940 --> 00:30:16.540 align:middle line:90%
+out the same.
+
+00:30:16.540 --> 00:30:18.040 align:middle line:84%
+Well, conditioned
+on A being a head,
+
+00:30:18.040 --> 00:30:19.710 align:middle line:84%
+so that's the same
+as the probability
+
+00:30:19.710 --> 00:30:24.250 align:middle line:90%
+of the second coin being heads.
+
+00:30:24.250 --> 00:30:28.835 align:middle line:84%
+So this is just the
+probability of B, which
+
+00:30:28.835 --> 00:30:29.960 align:middle line:90%
+is not quite what I wanted.
+
+00:30:29.960 --> 00:30:33.730 align:middle line:84%
+[LAUGHS] We wanted it to be
+probability of S, I guess.
+
+00:30:33.730 --> 00:30:39.330 align:middle line:84%
+But it is equal to the
+probability of B, which is 1/2,
+
+00:30:39.330 --> 00:30:41.130 align:middle line:90%
+by assumption.
+
+00:30:41.130 --> 00:30:44.160 align:middle line:84%
+On the other hand, we want to
+know, is the probability of S
+
+00:30:44.160 --> 00:30:47.010 align:middle line:90%
+the same thing?
+
+00:30:47.010 --> 00:30:51.660 align:middle line:84%
+Well, the probability of
+S corresponds to this node
+
+00:30:51.660 --> 00:30:55.420 align:middle line:90%
+and this node, right?
+
+00:30:55.420 --> 00:30:56.920 align:middle line:90%
+This is the heads heads case.
+
+00:30:56.920 --> 00:30:59.550 align:middle line:90%
+This is the tails tails case.
+
+00:30:59.550 --> 00:31:02.760 align:middle line:84%
+Well, we know the probability
+of this is a quarter,
+
+00:31:02.760 --> 00:31:04.720 align:middle line:90%
+because it's 1/2 times 1/2.
+
+00:31:04.720 --> 00:31:08.200 align:middle line:84%
+And the probability of this
+is also 1/4, 1/2 times 1/2.
+
+00:31:08.200 --> 00:31:10.920 align:middle line:84%
+We know all of these are
+equally likely at 1/4.
+
+00:31:10.920 --> 00:31:15.090 align:middle line:84%
+And so probability of S
+is the sum of those two.
+
+00:31:15.090 --> 00:31:20.520 align:middle line:84%
+This is 1/4 plus 1/4,
+also known as 1/2.
+
+00:31:20.520 --> 00:31:23.600 align:middle line:84%
+And so these two
+things are equal.
+
+00:31:23.600 --> 00:31:25.890 align:middle line:84%
+So you can think of
+this as a betting game.
+
+00:31:25.890 --> 00:31:32.480 align:middle line:84%
+Suppose I ask you to bet on
+whether two coins are going
+
+00:31:32.480 --> 00:31:35.450 align:middle line:84%
+to come out the same or
+different, and they're fair,
+
+00:31:35.450 --> 00:31:36.300 align:middle line:90%
+independent coins.
+
+00:31:36.300 --> 00:31:38.798 align:middle line:84%
+So I'm to flip them and you
+get $1 if they're the same
+
+00:31:38.798 --> 00:31:40.340 align:middle line:84%
+and you lose $1 if
+they're different,
+
+00:31:40.340 --> 00:31:42.740 align:middle line:90%
+or something like that.
+
+00:31:42.740 --> 00:31:45.848 align:middle line:84%
+If I flip the first coin
+and it comes out heads,
+
+00:31:45.848 --> 00:31:47.140 align:middle line:90%
+that doesn't tell you anything.
+
+00:31:47.140 --> 00:31:51.140 align:middle line:84%
+[CHUCKLES] You're still going to
+have 1/2 probability of winning
+
+00:31:51.140 --> 00:31:53.810 align:middle line:90%
+when the second flip happens.
+
+00:31:53.810 --> 00:31:56.270 align:middle line:84%
+Doing the first flip
+does not tell you
+
+00:31:56.270 --> 00:31:58.435 align:middle line:84%
+anything about whether
+the second flip is going
+
+00:31:58.435 --> 00:32:00.560 align:middle line:84%
+to be the same as the first
+one, because it's still
+
+00:32:00.560 --> 00:32:03.540 align:middle line:84%
+equally likely to be
+equal or not equal.
+
+00:32:03.540 --> 00:32:05.918 align:middle line:90%
+That's what this is formalizing.
+
+00:32:05.918 --> 00:32:07.460 align:middle line:84%
+But until you compute
+it, I would say
+
+00:32:07.460 --> 00:32:10.850 align:middle line:90%
+this is not exactly obvious.
+
+00:32:10.850 --> 00:32:11.760 align:middle line:90%
+All right.
+
+00:32:11.760 --> 00:32:14.100 align:middle line:90%
+Let's do the same thing.
+
+00:32:14.100 --> 00:32:21.550 align:middle line:90%
+So here A and S are independent.
+
+00:32:21.550 --> 00:32:25.000 align:middle line:84%
+Let's try the same
+thing with unfair coins.
+
+00:32:25.000 --> 00:32:28.660 align:middle line:84%
+Suppose we have
+probabilities p and q,
+
+00:32:28.660 --> 00:32:32.900 align:middle line:84%
+and we have S is the event that
+the coins come out the same.
+
+00:32:32.900 --> 00:32:34.395 align:middle line:90%
+Now things are not so easy.
+
+00:32:34.395 --> 00:32:40.120 align:middle line:90%
+
+
+00:32:40.120 --> 00:32:47.080 align:middle line:84%
+So what's the probability
+that they come out the same?
+
+00:32:47.080 --> 00:32:53.480 align:middle line:84%
+Maybe I should draw this tree
+again, for the unfair case.
+
+00:32:53.480 --> 00:32:58.370 align:middle line:84%
+So we've got heads,
+tails for the first coin.
+
+00:32:58.370 --> 00:33:00.470 align:middle line:90%
+So this is probability p.
+
+00:33:00.470 --> 00:33:02.480 align:middle line:90%
+This is probability 1 minus p.
+
+00:33:02.480 --> 00:33:11.500 align:middle line:84%
+And then we've got heads and
+tails for the second coin, which
+
+00:33:11.500 --> 00:33:18.010 align:middle line:84%
+we're assuming now is
+probability q and 1 minus q,
+
+00:33:18.010 --> 00:33:19.920 align:middle line:84%
+independent of what
+happened before.
+
+00:33:19.920 --> 00:33:23.885 align:middle line:90%
+
+
+00:33:23.885 --> 00:33:24.385 align:middle line:90%
+OK.
+
+00:33:24.385 --> 00:33:28.210 align:middle line:90%
+And still, S is this plus this.
+
+00:33:28.210 --> 00:33:31.010 align:middle line:84%
+And so we just take these
+products and add them up.
+
+00:33:31.010 --> 00:33:35.150 align:middle line:84%
+So the probability of S, the
+probability of heads heads.
+
+00:33:35.150 --> 00:33:36.760 align:middle line:90%
+Maybe I'll write it out.
+
+00:33:36.760 --> 00:33:42.520 align:middle line:84%
+Probability of heads heads plus
+the probability of tails tails.
+
+00:33:42.520 --> 00:33:45.940 align:middle line:90%
+The first one is p times q.
+
+00:33:45.940 --> 00:33:48.788 align:middle line:84%
+So the probability of
+getting the first heads is p.
+
+00:33:48.788 --> 00:33:50.830 align:middle line:84%
+The probability of getting
+the second heads is q.
+
+00:33:50.830 --> 00:33:52.538 align:middle line:84%
+And by assumption,
+these are independent,
+
+00:33:52.538 --> 00:33:55.060 align:middle line:90%
+so I can take their product.
+
+00:33:55.060 --> 00:34:00.850 align:middle line:84%
+And the other one is 1
+minus p times 1 minus q.
+
+00:34:00.850 --> 00:34:03.710 align:middle line:84%
+And now I just get
+some ugly algebra.
+
+00:34:03.710 --> 00:34:12.659 align:middle line:84%
+This is like 2pq minus p
+minus q plus 1, I think.
+
+00:34:12.659 --> 00:34:13.500 align:middle line:90%
+Check.
+
+00:34:13.500 --> 00:34:15.659 align:middle line:90%
+Yes.
+
+00:34:15.659 --> 00:34:16.829 align:middle line:90%
+OK.
+
+00:34:16.829 --> 00:34:21.510 align:middle line:84%
+On the other hand, let's try
+probability of S given A. This
+
+00:34:21.510 --> 00:34:26.139 align:middle line:84%
+one is actually easy,
+because this is saying, OK,
+
+00:34:26.139 --> 00:34:27.900 align:middle line:90%
+we conditioned-- here's A--
+
+00:34:27.900 --> 00:34:31.270 align:middle line:84%
+we condition on there being
+a heads in the first step.
+
+00:34:31.270 --> 00:34:32.858 align:middle line:84%
+What's the probability
+that the same?
+
+00:34:32.858 --> 00:34:35.400 align:middle line:84%
+Well, that's the same as the
+probability that the second coin
+
+00:34:35.400 --> 00:34:37.110 align:middle line:90%
+comes up heads as well.
+
+00:34:37.110 --> 00:34:38.899 align:middle line:90%
+And so that's exactly q.
+
+00:34:38.899 --> 00:34:41.429 align:middle line:90%
+
+
+00:34:41.429 --> 00:34:47.130 align:middle line:84%
+So these things are
+going to be independent.
+
+00:34:47.130 --> 00:34:53.850 align:middle line:84%
+So I guess S and
+A are independent,
+
+00:34:53.850 --> 00:35:03.390 align:middle line:84%
+if and only if 2pq minus
+p minus q plus 1 equals q.
+
+00:35:03.390 --> 00:35:13.490 align:middle line:84%
+In other words, 2pq minus
+p minus 2q plus 1 equals 0.
+
+00:35:13.490 --> 00:35:15.430 align:middle line:90%
+And this happens to factor.
+
+00:35:15.430 --> 00:35:16.680 align:middle line:90%
+I don't claim this as obvious.
+
+00:35:16.680 --> 00:35:25.300 align:middle line:84%
+But it is the same as 2q
+minus 1, p minus 1 equals 0.
+
+00:35:25.300 --> 00:35:30.080 align:middle line:90%
+
+
+00:35:30.080 --> 00:35:34.830 align:middle line:84%
+And so there's two ways
+for this to be true.
+
+00:35:34.830 --> 00:35:37.970 align:middle line:90%
+One is that p equals 1.
+
+00:35:37.970 --> 00:35:41.190 align:middle line:84%
+In other words, the first
+coin always comes up heads.
+
+00:35:41.190 --> 00:35:43.770 align:middle line:84%
+I would call that
+a one-sided coin,
+
+00:35:43.770 --> 00:35:47.120 align:middle line:84%
+or you can make them by
+manufacturing a coin that's
+
+00:35:47.120 --> 00:35:48.540 align:middle line:90%
+heads on both sides.
+
+00:35:48.540 --> 00:35:51.350 align:middle line:84%
+That's a two-sided coin,
+but really only one side.
+
+00:35:51.350 --> 00:35:54.050 align:middle line:90%
+Or q is 1/2.
+
+00:35:54.050 --> 00:35:59.490 align:middle line:90%
+
+
+00:35:59.490 --> 00:36:01.500 align:middle line:84%
+If the second coin
+is a fair coin,
+
+00:36:01.500 --> 00:36:04.880 align:middle line:84%
+then S and A are
+independent of each other.
+
+00:36:04.880 --> 00:36:10.020 align:middle line:84%
+And so this tells us
+that what we found here,
+
+00:36:10.020 --> 00:36:12.720 align:middle line:84%
+which was that S and A were
+independent of each other,
+
+00:36:12.720 --> 00:36:15.050 align:middle line:84%
+really means that
+the coins are fair.
+
+00:36:15.050 --> 00:36:18.590 align:middle line:84%
+Fair coins and one-sided
+coins are the only situation
+
+00:36:18.590 --> 00:36:24.080 align:middle line:84%
+where this S event here that
+the coins come out the same
+
+00:36:24.080 --> 00:36:27.210 align:middle line:84%
+is independent of the
+first or second coin.
+
+00:36:27.210 --> 00:36:30.260 align:middle line:84%
+So if we were playing this
+gambling game with unfair coins
+
+00:36:30.260 --> 00:36:33.200 align:middle line:84%
+and you knew p and q, and I told
+you that the first one came out
+
+00:36:33.200 --> 00:36:36.470 align:middle line:84%
+heads, that actually tells you
+something about whether you're
+
+00:36:36.470 --> 00:36:40.620 align:middle line:84%
+more or less likely for
+the next coin to match it,
+
+00:36:40.620 --> 00:36:44.000 align:middle line:84%
+because then matching
+is no longer symmetric.
+
+00:36:44.000 --> 00:36:45.020 align:middle line:90%
+All right.
+
+00:36:45.020 --> 00:36:49.010 align:middle line:84%
+So lots of examples
+of coin flipping.
+
+00:36:49.010 --> 00:36:50.427 align:middle line:84%
+Maybe it gives
+you some intuition
+
+00:36:50.427 --> 00:36:52.010 align:middle line:84%
+for some examples
+that are independent
+
+00:36:52.010 --> 00:36:53.280 align:middle line:90%
+and some that are dependent.
+
+00:36:53.280 --> 00:36:55.700 align:middle line:84%
+Why do we care
+about unfair coins?
+
+00:36:55.700 --> 00:37:02.130 align:middle line:84%
+Well, one fun fact is that
+normal coins are not fair.
+
+00:37:02.130 --> 00:37:05.630 align:middle line:84%
+They're more likely to come
+up the same orientation
+
+00:37:05.630 --> 00:37:09.020 align:middle line:84%
+that you started in than
+they are to flip over.
+
+00:37:09.020 --> 00:37:13.240 align:middle line:84%
+And there's a nice physics model
+by Persi Diaconis and others
+
+00:37:13.240 --> 00:37:20.170 align:middle line:84%
+from back in 2007 that computes
+that for normal coin flips,
+
+00:37:20.170 --> 00:37:24.710 align:middle line:84%
+you should get about 51% chance
+of staying on the same side.
+
+00:37:24.710 --> 00:37:28.180 align:middle line:84%
+So if you play this game with
+somebody and you make money,
+
+00:37:28.180 --> 00:37:29.880 align:middle line:90%
+please thank us.
+
+00:37:29.880 --> 00:37:31.750 align:middle line:90%
+[CHUCKLES]
+
+00:37:31.750 --> 00:37:33.910 align:middle line:84%
+There's this thing
+called precession coins.
+
+00:37:33.910 --> 00:37:36.520 align:middle line:84%
+When you flip them vigorously,
+(CHUCKLING) as they say,
+
+00:37:36.520 --> 00:37:39.250 align:middle line:84%
+they tend to also spin in
+this way, which does not
+
+00:37:39.250 --> 00:37:40.580 align:middle line:90%
+cause them to flip over.
+
+00:37:40.580 --> 00:37:43.960 align:middle line:84%
+And so they spend more
+time, a little more time
+
+00:37:43.960 --> 00:37:47.390 align:middle line:84%
+face original versus
+face upside down.
+
+00:37:47.390 --> 00:37:49.760 align:middle line:84%
+And that gives you a
+slightly higher chance.
+
+00:37:49.760 --> 00:37:53.270 align:middle line:84%
+On the right is a machine
+that always flips the coin
+
+00:37:53.270 --> 00:37:55.040 align:middle line:90%
+the same number of flips.
+
+00:37:55.040 --> 00:37:58.430 align:middle line:84%
+And so it always produces the
+same result. That's cheating.
+
+00:37:58.430 --> 00:38:02.050 align:middle line:84%
+This theoretical model was
+recently verified experimentally
+
+00:38:02.050 --> 00:38:07.560 align:middle line:84%
+for 350,000 real coin
+flips by these 50 authors.
+
+00:38:07.560 --> 00:38:10.520 align:middle line:84%
+This was like, an online
+internet collaboration, just
+
+00:38:10.520 --> 00:38:12.950 align:middle line:90%
+completed late last year.
+
+00:38:12.950 --> 00:38:19.010 align:middle line:84%
+And they compute maybe
+not 51% but 50.8%
+
+00:38:19.010 --> 00:38:22.380 align:middle line:84%
+is the thing that they get,
+or somewhere between 50.6%
+
+00:38:22.380 --> 00:38:23.430 align:middle line:90%
+and 50.9%.
+
+00:38:23.430 --> 00:38:26.850 align:middle line:84%
+So it confirms this intuition,
+although it does depend somewhat
+
+00:38:26.850 --> 00:38:30.360 align:middle line:84%
+which currency you
+use and who you are.
+
+00:38:30.360 --> 00:38:33.183 align:middle line:84%
+Different flippers have a
+different style in flipping,
+
+00:38:33.183 --> 00:38:35.850 align:middle line:84%
+and so your personal probability
+may be different from this one.
+
+00:38:35.850 --> 00:38:37.080 align:middle line:90%
+So keep that in mind.
+
+00:38:37.080 --> 00:38:40.130 align:middle line:84%
+There are a zillion videos
+online of these like,
+
+00:38:40.130 --> 00:38:43.993 align:middle line:84%
+12-hour marathons, just
+for verifiable science,
+
+00:38:43.993 --> 00:38:46.160 align:middle line:84%
+where you can watch people
+flipping coins and typing
+
+00:38:46.160 --> 00:38:48.360 align:middle line:84%
+in the result. And flip a
+coin, type in the results.
+
+00:38:48.360 --> 00:38:50.050 align:middle line:90%
+And anyway, that is--
+
+00:38:50.050 --> 00:38:50.802 align:middle line:90%
+[CHUCKLES]
+
+00:38:50.802 --> 00:38:52.010 align:middle line:90%
+[LAUGHTER]
+
+00:38:52.010 --> 00:38:54.240 align:middle line:84%
+--you can watch this
+for the next 12 hours,
+
+00:38:54.240 --> 00:38:56.390 align:middle line:90%
+or we could go back to lecture.
+
+00:38:56.390 --> 00:38:58.430 align:middle line:90%
+All right.
+
+00:38:58.430 --> 00:39:02.030 align:middle line:90%
+So some more concepts.
+
+00:39:02.030 --> 00:39:05.670 align:middle line:84%
+Independence between two events
+is kind of cool, but what if we
+
+00:39:05.670 --> 00:39:08.100 align:middle line:90%
+have more than two events?
+
+00:39:08.100 --> 00:39:09.720 align:middle line:84%
+We do this all the
+time in this class.
+
+00:39:09.720 --> 00:39:14.010 align:middle line:84%
+We talk about, I don't know,
+whether two vertices in a graph
+
+00:39:14.010 --> 00:39:15.460 align:middle line:90%
+are connected.
+
+00:39:15.460 --> 00:39:18.663 align:middle line:84%
+And then we want to know, well,
+what if we want the whole graph
+
+00:39:18.663 --> 00:39:19.330 align:middle line:90%
+to be connected?
+
+00:39:19.330 --> 00:39:22.450 align:middle line:84%
+What if we want all the vertices
+in the graph to be connected?
+
+00:39:22.450 --> 00:39:25.630 align:middle line:84%
+For that, it was enough
+to do things pairwise.
+
+00:39:25.630 --> 00:39:27.660 align:middle line:84%
+We said, well, if
+every pair of vertices
+
+00:39:27.660 --> 00:39:30.807 align:middle line:84%
+there's a path, then
+that's a connected graph.
+
+00:39:30.807 --> 00:39:33.390 align:middle line:84%
+That turned out to be the right
+answer for graph connectivity.
+
+00:39:33.390 --> 00:39:36.460 align:middle line:84%
+With probability, it's
+much more annoying.
+
+00:39:36.460 --> 00:39:40.140 align:middle line:84%
+So one thing you
+might define is what
+
+00:39:40.140 --> 00:39:41.836 align:middle line:90%
+we call pairwise independence.
+
+00:39:41.836 --> 00:39:48.750 align:middle line:90%
+
+
+00:39:48.750 --> 00:39:59.730 align:middle line:84%
+So I guess, let's suppose I
+have events E1 through En.
+
+00:39:59.730 --> 00:40:01.590 align:middle line:84%
+Then I'll call them
+pairwise independent
+
+00:40:01.590 --> 00:40:18.610 align:middle line:84%
+if for all i and j between 1
+and n, with i not equal to j,
+
+00:40:18.610 --> 00:40:26.830 align:middle line:90%
+Ei and Ej are independent.
+
+00:40:26.830 --> 00:40:30.260 align:middle line:84%
+Of course, Ei and Ei
+are not independent.
+
+00:40:30.260 --> 00:40:33.640 align:middle line:84%
+That's one of the
+overlapping cases.
+
+00:40:33.640 --> 00:40:36.590 align:middle line:84%
+So Ei is not going to be
+independent from itself,
+
+00:40:36.590 --> 00:40:39.250 align:middle line:84%
+but it should be independent
+from all the others.
+
+00:40:39.250 --> 00:40:43.480 align:middle line:84%
+OK, this would be the
+natural pairwise definition.
+
+00:40:43.480 --> 00:40:45.820 align:middle line:84%
+On the other hand, we
+have a stronger notion
+
+00:40:45.820 --> 00:40:47.566 align:middle line:90%
+called mutual independence.
+
+00:40:47.566 --> 00:40:53.410 align:middle line:90%
+
+
+00:40:53.410 --> 00:40:57.190 align:middle line:84%
+This is more annoying to
+verify, but it's probably
+
+00:40:57.190 --> 00:40:58.670 align:middle line:90%
+what you actually want.
+
+00:40:58.670 --> 00:41:01.650 align:middle line:84%
+And it says, not only
+if I take any two events
+
+00:41:01.650 --> 00:41:03.340 align:middle line:84%
+that are independent
+from each other,
+
+00:41:03.340 --> 00:41:06.280 align:middle line:84%
+but if I take any
+subset of events,
+
+00:41:06.280 --> 00:41:08.900 align:middle line:84%
+it's independent
+from any one event.
+
+00:41:08.900 --> 00:41:10.650 align:middle line:84%
+You could also compare
+subsets to subsets.
+
+00:41:10.650 --> 00:41:12.310 align:middle line:90%
+That doesn't turn out to matter.
+
+00:41:12.310 --> 00:41:16.890 align:middle line:84%
+So what matters is, if
+you fix any event Ei,
+
+00:41:16.890 --> 00:41:25.080 align:middle line:84%
+so i is between 1 and n,
+and I take another set j,
+
+00:41:25.080 --> 00:41:30.210 align:middle line:84%
+it's a subset of the
+elements from 1 to n,
+
+00:41:30.210 --> 00:41:33.720 align:middle line:84%
+except it should not have
+i, because we don't want
+
+00:41:33.720 --> 00:41:37.470 align:middle line:84%
+to compare Ei to
+itself, then we want
+
+00:41:37.470 --> 00:41:52.200 align:middle line:84%
+Ei to be independent from
+the intersection of the Ejs.
+
+00:41:52.200 --> 00:41:54.250 align:middle line:84%
+So I forget whether
+you've seen this notation.
+
+00:41:54.250 --> 00:41:55.810 align:middle line:90%
+You've seen big sigma for sums.
+
+00:41:55.810 --> 00:41:57.880 align:middle line:90%
+You've seen big pi for products.
+
+00:41:57.880 --> 00:42:02.190 align:middle line:84%
+This is big intersection
+for intersection.
+
+00:42:02.190 --> 00:42:05.180 align:middle line:84%
+I guess we ran out of
+clever Greek letters.
+
+00:42:05.180 --> 00:42:08.030 align:middle line:84%
+So this is just the
+intersection of Ej
+
+00:42:08.030 --> 00:42:13.070 align:middle line:84%
+for all little j
+and big J. So we
+
+00:42:13.070 --> 00:42:15.410 align:middle line:84%
+want each event Ei
+to be independent
+
+00:42:15.410 --> 00:42:18.600 align:middle line:84%
+from the intersection of any
+subset of the other events.
+
+00:42:18.600 --> 00:42:22.700 align:middle line:84%
+This is a pain to verify
+for lots of events.
+
+00:42:22.700 --> 00:42:25.200 align:middle line:84%
+Let's just think about it for
+three events for a little bit.
+
+00:42:25.200 --> 00:42:27.575 align:middle line:84%
+So there's on the one hand,
+we have pairwise independence
+
+00:42:27.575 --> 00:42:31.070 align:middle line:84%
+where you just compare E1
+versus E2, E2 versus E3, and E1
+
+00:42:31.070 --> 00:42:32.250 align:middle line:90%
+versus E3.
+
+00:42:32.250 --> 00:42:36.230 align:middle line:84%
+And here you do that, but
+then you also compare like,
+
+00:42:36.230 --> 00:42:39.090 align:middle line:84%
+E1 versus the
+intersection of E2 and E3.
+
+00:42:39.090 --> 00:42:43.770 align:middle line:84%
+And you compare E2 versus the
+intersection of E1 and E3.
+
+00:42:43.770 --> 00:42:47.855 align:middle line:84%
+And you compare E3 with the
+intersection of E1 and E2.
+
+00:42:47.855 --> 00:42:49.760 align:middle line:90%
+So twice as much work.
+
+00:42:49.760 --> 00:42:51.770 align:middle line:84%
+You check this
+independence definition
+
+00:42:51.770 --> 00:42:54.020 align:middle line:90%
+and you get your answer.
+
+00:42:54.020 --> 00:43:00.520 align:middle line:90%
+Let us do an example.
+
+00:43:00.520 --> 00:43:02.156 align:middle line:90%
+Maybe first, some motivation.
+
+00:43:02.156 --> 00:43:08.410 align:middle line:90%
+
+
+00:43:08.410 --> 00:43:10.874 align:middle line:90%
+Let's do some forensics.
+
+00:43:10.874 --> 00:43:13.540 align:middle line:90%
+
+
+00:43:13.540 --> 00:43:17.200 align:middle line:84%
+Suppose you are
+at a murder scene
+
+00:43:17.200 --> 00:43:20.048 align:middle line:84%
+and you find 9
+pieces of evidence.
+
+00:43:20.048 --> 00:43:21.590 align:middle line:84%
+That's a lot of
+evidence. (CHUCKLING)
+
+00:43:21.590 --> 00:43:25.420 align:middle line:84%
+It's really not realistic,
+but for sake of example,
+
+00:43:25.420 --> 00:43:30.820 align:middle line:84%
+say you find 9 markers
+that are consistent
+
+00:43:30.820 --> 00:43:35.530 align:middle line:84%
+with a particular suspect being
+at the scene of the crime.
+
+00:43:35.530 --> 00:43:39.430 align:middle line:90%
+DNA, whatever.
+
+00:43:39.430 --> 00:43:46.450 align:middle line:84%
+And let's say Mi is the
+event that a randomly
+
+00:43:46.450 --> 00:43:51.195 align:middle line:90%
+chosen human matches marker i.
+
+00:43:51.195 --> 00:43:57.810 align:middle line:90%
+
+
+00:43:57.810 --> 00:43:58.980 align:middle line:90%
+Oh.
+
+00:43:58.980 --> 00:44:03.670 align:middle line:84%
+Yeah, I should tell you another
+version of mutual independence,
+
+00:44:03.670 --> 00:44:04.483 align:middle line:90%
+which was useful.
+
+00:44:04.483 --> 00:44:07.050 align:middle line:90%
+
+
+00:44:07.050 --> 00:44:16.620 align:middle line:84%
+Equivalently, this is
+the product rule form.
+
+00:44:16.620 --> 00:44:23.850 align:middle line:84%
+For any j that's a
+subset of 1 up to n,
+
+00:44:23.850 --> 00:44:29.340 align:middle line:84%
+the probability of the
+intersection of Ej for j
+
+00:44:29.340 --> 00:44:34.980 align:middle line:84%
+and big J is equal to the
+product of the probabilities
+
+00:44:34.980 --> 00:44:40.590 align:middle line:84%
+of the individual
+events for j and big J.
+
+00:44:40.590 --> 00:44:42.510 align:middle line:84%
+OK, this is the
+natural generalization
+
+00:44:42.510 --> 00:44:47.430 align:middle line:84%
+of What we had for the
+product rule for independence
+
+00:44:47.430 --> 00:44:49.890 align:middle line:90%
+between two events.
+
+00:44:49.890 --> 00:44:52.710 align:middle line:90%
+OK, so back to forensics.
+
+00:44:52.710 --> 00:44:55.260 align:middle line:84%
+Suppose we have a bunch of
+these events, and for each one
+
+00:44:55.260 --> 00:44:57.390 align:middle line:84%
+we compute, and we
+know their probability
+
+00:44:57.390 --> 00:45:00.310 align:middle line:84%
+because we have taken lots
+of surveys or whatever.
+
+00:45:00.310 --> 00:45:04.230 align:middle line:84%
+Let's say the
+probability of each Mi
+
+00:45:04.230 --> 00:45:08.220 align:middle line:84%
+is equal to 10%,
+10% chance that you
+
+00:45:08.220 --> 00:45:10.810 align:middle line:84%
+match this particular
+marker for each marker,
+
+00:45:10.810 --> 00:45:12.198 align:middle line:90%
+just for simplicity.
+
+00:45:12.198 --> 00:45:13.990 align:middle line:84%
+So let's say it's the
+same for all of them.
+
+00:45:13.990 --> 00:45:15.940 align:middle line:84%
+In reality, it
+would be different.
+
+00:45:15.940 --> 00:45:19.500 align:middle line:90%
+So now what we care about.
+
+00:45:19.500 --> 00:45:21.900 align:middle line:84%
+Supposing that-- so
+this is just assuming
+
+00:45:21.900 --> 00:45:26.590 align:middle line:84%
+sampling a random human, maybe
+in the area, I don't know.
+
+00:45:26.590 --> 00:45:30.640 align:middle line:84%
+Let's say all humans because
+we're fair or something.
+
+00:45:30.640 --> 00:45:32.620 align:middle line:90%
+We have no prior assumption.
+
+00:45:32.620 --> 00:45:36.990 align:middle line:84%
+Then what we care about is the
+probability that all of these
+
+00:45:36.990 --> 00:45:40.590 align:middle line:84%
+come out as matching our
+particular human that we
+
+00:45:40.590 --> 00:45:41.140 align:middle line:90%
+have in mind.
+
+00:45:41.140 --> 00:45:43.260 align:middle line:84%
+So we have a suspect,
+and now we want
+
+00:45:43.260 --> 00:45:46.960 align:middle line:84%
+to take the intersection
+of all those events.
+
+00:45:46.960 --> 00:45:49.127 align:middle line:84%
+And suppose that human
+matches all of those markers.
+
+00:45:49.127 --> 00:45:50.918 align:middle line:84%
+Now we want to know,
+what's the probability
+
+00:45:50.918 --> 00:45:52.600 align:middle line:84%
+that that happened
+for a random human?
+
+00:45:52.600 --> 00:45:56.340 align:middle line:84%
+And you would like to say,
+this is 1 over 10 to the 9,
+
+00:45:56.340 --> 00:45:58.440 align:middle line:90%
+1 in a billion chance.
+
+00:45:58.440 --> 00:46:02.120 align:middle line:84%
+So there's only, like, six
+people who could match.
+
+00:46:02.120 --> 00:46:07.350 align:middle line:84%
+But that's only true if these
+events are mutually independent.
+
+00:46:07.350 --> 00:46:10.610 align:middle line:90%
+
+
+00:46:10.610 --> 00:46:12.608 align:middle line:84%
+It's actually true if
+and only if the events
+
+00:46:12.608 --> 00:46:13.650 align:middle line:90%
+are mutually independent.
+
+00:46:13.650 --> 00:46:16.890 align:middle line:84%
+This is a definition
+of mutual independence.
+
+00:46:16.890 --> 00:46:18.057 align:middle line:90%
+Well, OK.
+
+00:46:18.057 --> 00:46:19.890 align:middle line:84%
+So mutual independence
+is a little stronger.
+
+00:46:19.890 --> 00:46:22.820 align:middle line:84%
+It says not only the
+intersection of all 9 events
+
+00:46:22.820 --> 00:46:24.150 align:middle line:90%
+is the product.
+
+00:46:24.150 --> 00:46:26.340 align:middle line:84%
+Probability is the product
+of the probabilities,
+
+00:46:26.340 --> 00:46:28.890 align:middle line:84%
+but also for any subset
+of those 9 events.
+
+00:46:28.890 --> 00:46:30.060 align:middle line:90%
+So that's crucial.
+
+00:46:30.060 --> 00:46:31.920 align:middle line:84%
+We don't need that
+for this example.
+
+00:46:31.920 --> 00:46:34.710 align:middle line:84%
+This example, we only care
+about the intersection of all 9.
+
+00:46:34.710 --> 00:46:37.190 align:middle line:84%
+But if you want to prove
+that something is mutually
+
+00:46:37.190 --> 00:46:40.550 align:middle line:84%
+independent, you need to check
+all of the events intersected
+
+00:46:40.550 --> 00:46:42.440 align:middle line:84%
+together and also
+different subsets of them
+
+00:46:42.440 --> 00:46:43.440 align:middle line:90%
+intersected together.
+
+00:46:43.440 --> 00:46:46.080 align:middle line:84%
+So keep that in mind
+on problem sets.
+
+00:46:46.080 --> 00:46:51.963 align:middle line:84%
+Let's do a more interesting
+example where this matters.
+
+00:46:51.963 --> 00:47:05.620 align:middle line:90%
+
+
+00:47:05.620 --> 00:47:13.300 align:middle line:84%
+OK, back to coin flipping, the
+source of all examples today.
+
+00:47:13.300 --> 00:47:23.230 align:middle line:84%
+Let's say we flipped 3
+mutually independent coins.
+
+00:47:23.230 --> 00:47:24.180 align:middle line:90%
+Fair coins.
+
+00:47:24.180 --> 00:47:27.340 align:middle line:90%
+
+
+00:47:27.340 --> 00:47:30.552 align:middle line:84%
+So we're going to state
+independence as an assumption.
+
+00:47:30.552 --> 00:47:32.260 align:middle line:84%
+This is now saying
+that the coins are not
+
+00:47:32.260 --> 00:47:33.200 align:middle line:90%
+related in any way.
+
+00:47:33.200 --> 00:47:35.658 align:middle line:84%
+They're each flipped completely
+separately from each other,
+
+00:47:35.658 --> 00:47:40.310 align:middle line:84%
+no impact from one to the other,
+according to that definition,
+
+00:47:40.310 --> 00:47:41.120 align:middle line:90%
+say.
+
+00:47:41.120 --> 00:47:44.110 align:middle line:84%
+But now I'm going to define some
+events that are interesting.
+
+00:47:44.110 --> 00:47:53.400 align:middle line:84%
+So A is going to be the event
+that the first and second coins
+
+00:47:53.400 --> 00:48:00.300 align:middle line:84%
+come out the same
+when you flip them.
+
+00:48:00.300 --> 00:48:05.040 align:middle line:84%
+Event B is going to be the event
+that the second and third coins
+
+00:48:05.040 --> 00:48:05.825 align:middle line:90%
+come out the same.
+
+00:48:05.825 --> 00:48:09.000 align:middle line:90%
+
+
+00:48:09.000 --> 00:48:12.420 align:middle line:84%
+And event C is going
+to be the event
+
+00:48:12.420 --> 00:48:15.515 align:middle line:84%
+that the third and first
+coins come out the same.
+
+00:48:15.515 --> 00:48:21.270 align:middle line:90%
+
+
+00:48:21.270 --> 00:48:25.920 align:middle line:90%
+Are these events independent?
+
+00:48:25.920 --> 00:48:28.090 align:middle line:90%
+I don't think it's obvious.
+
+00:48:28.090 --> 00:48:29.540 align:middle line:90%
+So we compute.
+
+00:48:29.540 --> 00:48:44.820 align:middle line:90%
+
+
+00:48:44.820 --> 00:48:45.610 align:middle line:90%
+All right.
+
+00:48:45.610 --> 00:48:48.810 align:middle line:84%
+Let's start with
+pairwise independence.
+
+00:48:48.810 --> 00:48:52.640 align:middle line:84%
+Let's think about,
+say, the probability
+
+00:48:52.640 --> 00:48:56.360 align:middle line:84%
+of A intersect B
+versus the product
+
+00:48:56.360 --> 00:49:02.370 align:middle line:84%
+of the probabilities of A and
+B. If you restrict to just A,
+
+00:49:02.370 --> 00:49:03.052 align:middle line:90%
+for example--
+
+00:49:03.052 --> 00:49:04.510 align:middle line:84%
+let's start with
+probability of A--
+
+00:49:04.510 --> 00:49:07.100 align:middle line:90%
+
+
+00:49:07.100 --> 00:49:11.160 align:middle line:84%
+probability of A only depends
+on the first and second coins.
+
+00:49:11.160 --> 00:49:13.970 align:middle line:84%
+So this is exactly an
+example we saw before,
+
+00:49:13.970 --> 00:49:17.400 align:middle line:84%
+where we've just flipped
+two independent coins.
+
+00:49:17.400 --> 00:49:21.330 align:middle line:84%
+And we had this S was the event
+that the coins are the same.
+
+00:49:21.330 --> 00:49:25.380 align:middle line:84%
+So that's the probability of
+S. That's going to be 1/2.
+
+00:49:25.380 --> 00:49:28.050 align:middle line:90%
+So probability of A over here--
+
+00:49:28.050 --> 00:49:30.050 align:middle line:90%
+sorry for the relabeling.
+
+00:49:30.050 --> 00:49:34.880 align:middle line:84%
+This is just like probability
+of S before, and so it's 1/2.
+
+00:49:34.880 --> 00:49:38.220 align:middle line:84%
+OK, probability of each of these
+events is individually 1/2.
+
+00:49:38.220 --> 00:49:40.970 align:middle line:84%
+So what we would like is for
+the intersection of two of them
+
+00:49:40.970 --> 00:49:45.410 align:middle line:84%
+to be probability
+1/4, 1/2 times 1/2.
+
+00:49:45.410 --> 00:49:48.670 align:middle line:90%
+So let's see if it is.
+
+00:49:48.670 --> 00:49:49.370 align:middle line:90%
+All right.
+
+00:49:49.370 --> 00:49:51.520 align:middle line:84%
+Now we have to actually
+look at the problem.
+
+00:49:51.520 --> 00:49:56.660 align:middle line:84%
+So A is the event that the first
+and second coins are the same.
+
+00:49:56.660 --> 00:49:59.780 align:middle line:84%
+B is the event that the second
+and third coins are the same.
+
+00:49:59.780 --> 00:50:04.430 align:middle line:84%
+So this is like,
+coin 1 equals coin 2.
+
+00:50:04.430 --> 00:50:07.840 align:middle line:84%
+And this is like,
+coin 2 equals coin 3.
+
+00:50:07.840 --> 00:50:10.990 align:middle line:84%
+So if both of those
+things happen,
+
+00:50:10.990 --> 00:50:15.400 align:middle line:84%
+if C1 equals C2
+and C2 equals C3,
+
+00:50:15.400 --> 00:50:20.690 align:middle line:84%
+the intersection here is
+C1 equals C2, equals C3.
+
+00:50:20.690 --> 00:50:28.102 align:middle line:90%
+
+
+00:50:28.102 --> 00:50:32.350 align:middle line:84%
+So in other words,
+this is the probability
+
+00:50:32.350 --> 00:50:37.240 align:middle line:90%
+of heads heads heads.
+
+00:50:37.240 --> 00:50:40.630 align:middle line:84%
+I guess I'll write it
+as a set, probably.
+
+00:50:40.630 --> 00:50:41.380 align:middle line:90%
+Too many brackets.
+
+00:50:41.380 --> 00:50:43.297 align:middle line:84%
+I'm going to have all
+three types of brackets.
+
+00:50:43.297 --> 00:50:44.950 align:middle line:90%
+This is exciting.
+
+00:50:44.950 --> 00:50:47.440 align:middle line:84%
+Probability gets square
+brackets, then set
+
+00:50:47.440 --> 00:50:50.560 align:middle line:84%
+gets curly braces,
+then an ordered pair
+
+00:50:50.560 --> 00:50:52.640 align:middle line:90%
+gets round parentheses.
+
+00:50:52.640 --> 00:50:54.520 align:middle line:90%
+I'm happy they're all distinct.
+
+00:50:54.520 --> 00:50:55.785 align:middle line:90%
+It makes it so much clearer.
+
+00:50:55.785 --> 00:50:57.020 align:middle line:90%
+[CHUCKLES]
+
+00:50:57.020 --> 00:50:57.520 align:middle line:90%
+All right.
+
+00:50:57.520 --> 00:51:04.040 align:middle line:84%
+So this braced quantity in
+the middle here is an event.
+
+00:51:04.040 --> 00:51:06.340 align:middle line:84%
+Remember events are
+just sets over the set--
+
+00:51:06.340 --> 00:51:07.880 align:middle line:90%
+subsets of the sample space.
+
+00:51:07.880 --> 00:51:09.830 align:middle line:84%
+So it's a set of
+possible samples.
+
+00:51:09.830 --> 00:51:12.790 align:middle line:84%
+So A intersect B
+is the same thing
+
+00:51:12.790 --> 00:51:14.150 align:middle line:90%
+as all the coins being the same.
+
+00:51:14.150 --> 00:51:17.080 align:middle line:84%
+That means head heads
+heads, or tails tails tails.
+
+00:51:17.080 --> 00:51:20.470 align:middle line:84%
+So that probability-- we
+could rewrite this, of course,
+
+00:51:20.470 --> 00:51:22.460 align:middle line:84%
+as the probability
+of heads heads heads.
+
+00:51:22.460 --> 00:51:24.490 align:middle line:84%
+I'm going to omit
+some parens here
+
+00:51:24.490 --> 00:51:27.400 align:middle line:84%
+just for simplicity, plus the
+probability of tails tails
+
+00:51:27.400 --> 00:51:27.910 align:middle line:90%
+tails.
+
+00:51:27.910 --> 00:51:29.410 align:middle line:84%
+Because these are
+different samples,
+
+00:51:29.410 --> 00:51:30.827 align:middle line:84%
+they are disjoint
+from each other,
+
+00:51:30.827 --> 00:51:33.400 align:middle line:90%
+and so we can use the sum rule.
+
+00:51:33.400 --> 00:51:37.180 align:middle line:84%
+And the probability of each
+of those events is 1/8.
+
+00:51:37.180 --> 00:51:39.050 align:middle line:90%
+It's 1/2 to the power 3.
+
+00:51:39.050 --> 00:51:42.010 align:middle line:84%
+It's 1/2 times 1/2 times
+1/2, because each of them is
+
+00:51:42.010 --> 00:51:42.950 align:middle line:90%
+independent.
+
+00:51:42.950 --> 00:51:48.930 align:middle line:84%
+So this is 1/8 plus
+1/8, which is 1/4.
+
+00:51:48.930 --> 00:51:51.290 align:middle line:90%
+And that's not what we wanted.
+
+00:51:51.290 --> 00:51:54.360 align:middle line:90%
+
+
+00:51:54.360 --> 00:51:54.995 align:middle line:90%
+That's funny.
+
+00:51:54.995 --> 00:51:56.680 align:middle line:90%
+Did I make a mistake?
+
+00:51:56.680 --> 00:51:58.740 align:middle line:90%
+I did.
+
+00:51:58.740 --> 00:51:59.375 align:middle line:90%
+I did.
+
+00:51:59.375 --> 00:52:02.750 align:middle line:90%
+
+
+00:52:02.750 --> 00:52:03.250 align:middle line:90%
+Oh, no.
+
+00:52:03.250 --> 00:52:03.755 align:middle line:90%
+That's what I wanted.
+
+00:52:03.755 --> 00:52:03.970 align:middle line:90%
+Right?
+
+00:52:03.970 --> 00:52:04.720 align:middle line:90%
+Sorry.
+
+00:52:04.720 --> 00:52:09.120 align:middle line:84%
+This probability is A. What I
+wanted was this to equal not
+
+00:52:09.120 --> 00:52:12.180 align:middle line:84%
+probability of A, but
+probability of A times
+
+00:52:12.180 --> 00:52:16.980 align:middle line:84%
+probability of B.
+These were each 1/2.
+
+00:52:16.980 --> 00:52:20.470 align:middle line:84%
+And so their product is
+1/4, and so that matches.
+
+00:52:20.470 --> 00:52:23.320 align:middle line:84%
+So these are
+pairwise independent.
+
+00:52:23.320 --> 00:52:28.740 align:middle line:90%
+
+
+00:52:28.740 --> 00:52:31.570 align:middle line:84%
+OK, I only computed
+it for A intersect B.
+
+00:52:31.570 --> 00:52:33.540 align:middle line:84%
+But you should also
+in principle do it
+
+00:52:33.540 --> 00:52:37.170 align:middle line:84%
+for B intersect C, and A
+intersect C, all the pairs.
+
+00:52:37.170 --> 00:52:40.080 align:middle line:84%
+But by symmetry, if you think
+about this the right way,
+
+00:52:40.080 --> 00:52:42.240 align:middle line:84%
+those will all
+come out the same.
+
+00:52:42.240 --> 00:52:44.720 align:middle line:84%
+OK, I'll just wave
+my hands at that.
+
+00:52:44.720 --> 00:52:47.580 align:middle line:84%
+But what about
+mutual independence?
+
+00:52:47.580 --> 00:52:51.120 align:middle line:84%
+So these three events
+are pairwise independent,
+
+00:52:51.120 --> 00:52:53.250 align:middle line:84%
+but they are not
+mutually independent.
+
+00:52:53.250 --> 00:52:55.465 align:middle line:84%
+Let's prove that, or
+let's compute that.
+
+00:52:55.465 --> 00:53:05.450 align:middle line:90%
+
+
+00:53:05.450 --> 00:53:12.488 align:middle line:84%
+For that, we could do the
+probability of the intersection.
+
+00:53:12.488 --> 00:53:14.030 align:middle line:84%
+I claim it's a little
+easier to think
+
+00:53:14.030 --> 00:53:17.990 align:middle line:84%
+about this probability,
+the probability of C
+
+00:53:17.990 --> 00:53:21.050 align:middle line:84%
+given A intersect B, because we
+just thought a lot about what
+
+00:53:21.050 --> 00:53:22.530 align:middle line:90%
+a intersect B means.
+
+00:53:22.530 --> 00:53:24.290 align:middle line:84%
+It turns out to be
+equivalent to saying
+
+00:53:24.290 --> 00:53:26.690 align:middle line:90%
+that the 3 coins are the same.
+
+00:53:26.690 --> 00:53:30.120 align:middle line:84%
+So now, what is the
+probability of C
+
+00:53:30.120 --> 00:53:34.190 align:middle line:84%
+given that the 3
+coins are the same?
+
+00:53:34.190 --> 00:53:38.845 align:middle line:84%
+Proba-- C says the third coin
+and the first coin are the same.
+
+00:53:38.845 --> 00:53:41.450 align:middle line:90%
+
+
+00:53:41.450 --> 00:53:44.958 align:middle line:90%
+So what's this probability?
+
+00:53:44.958 --> 00:53:46.330 align:middle line:90%
+AUDIENCE: Is it 1?
+
+00:53:46.330 --> 00:53:47.475 align:middle line:90%
+ERIK DEMAINE: 1, yeah.
+
+00:53:47.475 --> 00:53:50.770 align:middle line:90%
+
+
+00:53:50.770 --> 00:53:54.460 align:middle line:84%
+Remember, this notation
+means, compute the probability
+
+00:53:54.460 --> 00:53:56.710 align:middle line:84%
+of this event, zooming
+into the special case
+
+00:53:56.710 --> 00:53:58.460 align:middle line:90%
+where A intersect B is true.
+
+00:53:58.460 --> 00:54:03.295 align:middle line:84%
+So the sample space
+has 8 possible spots.
+
+00:54:03.295 --> 00:54:05.950 align:middle line:90%
+It's like a cube.
+
+00:54:05.950 --> 00:54:09.400 align:middle line:84%
+I guess each axis
+is heads or tails.
+
+00:54:09.400 --> 00:54:13.240 align:middle line:84%
+So there's also
+a back face here.
+
+00:54:13.240 --> 00:54:17.290 align:middle line:84%
+And what we're saying here
+is, A intersect B is just
+
+00:54:17.290 --> 00:54:20.445 align:middle line:84%
+the two extremes-- heads heads
+heads, tails tails tails.
+
+00:54:20.445 --> 00:54:22.570 align:middle line:84%
+Maybe you're used to the
+cube and this is familiar,
+
+00:54:22.570 --> 00:54:24.237 align:middle line:84%
+that they're opposite
+corners like this.
+
+00:54:24.237 --> 00:54:25.300 align:middle line:90%
+Maybe not.
+
+00:54:25.300 --> 00:54:27.590 align:middle line:84%
+And so if we zoom into
+just those two places,
+
+00:54:27.590 --> 00:54:31.360 align:middle line:84%
+and we want to evaluate, well,
+what are the chances that coin
+
+00:54:31.360 --> 00:54:33.410 align:middle line:90%
+2 equals coin 3?
+
+00:54:33.410 --> 00:54:35.323 align:middle line:90%
+Or actually, what was it?
+
+00:54:35.323 --> 00:54:36.740 align:middle line:84%
+First and third
+coins. (CHUCKLING)
+
+00:54:36.740 --> 00:54:38.020 align:middle line:90%
+Well, it doesn't matter, right?
+
+00:54:38.020 --> 00:54:40.478 align:middle line:84%
+What are the chances that the
+first coin and the third coin
+
+00:54:40.478 --> 00:54:42.040 align:middle line:84%
+are the same in
+these two scenarios?
+
+00:54:42.040 --> 00:54:43.580 align:middle line:90%
+Well, 100%, it's guaranteed.
+
+00:54:43.580 --> 00:54:46.080 align:middle line:84%
+If you already know that all
+three coins are the same, which
+
+00:54:46.080 --> 00:54:48.840 align:middle line:84%
+is what we figured out A
+intersect B means, then
+
+00:54:48.840 --> 00:54:52.845 align:middle line:84%
+of course, the first and
+third coins are the same.
+
+00:54:52.845 --> 00:55:01.143 align:middle line:84%
+Whereas the probability of C
+without any condition is 1/2.
+
+00:55:01.143 --> 00:55:05.070 align:middle line:90%
+
+
+00:55:05.070 --> 00:55:06.510 align:middle line:90%
+Just like probability of A here.
+
+00:55:06.510 --> 00:55:08.880 align:middle line:84%
+That was the S that
+we computed before.
+
+00:55:08.880 --> 00:55:10.505 align:middle line:84%
+So these are different
+from each other.
+
+00:55:10.505 --> 00:55:13.590 align:middle line:90%
+
+
+00:55:13.590 --> 00:55:19.440 align:middle line:90%
+So not mutually independent.
+
+00:55:19.440 --> 00:55:21.840 align:middle line:84%
+So this is kind of an
+interesting example where
+
+00:55:21.840 --> 00:55:27.480 align:middle line:84%
+you have pairwise independence,
+but not full independence, not
+
+00:55:27.480 --> 00:55:29.170 align:middle line:90%
+triple-wise independence.
+
+00:55:29.170 --> 00:55:30.460 align:middle line:90%
+And there's only three events.
+
+00:55:30.460 --> 00:55:32.687 align:middle line:84%
+So that's the most
+you could hope for.
+
+00:55:32.687 --> 00:55:34.770 align:middle line:84%
+In computer science, these
+things actually matter.
+
+00:55:34.770 --> 00:55:37.630 align:middle line:84%
+When you do algorithms and
+like, hashing in particular,
+
+00:55:37.630 --> 00:55:39.400 align:middle line:84%
+it matters how much
+independence you have.
+
+00:55:39.400 --> 00:55:41.400 align:middle line:84%
+Some hash functions are
+pairwise independent,
+
+00:55:41.400 --> 00:55:44.130 align:middle line:84%
+or maybe 3-wise independent
+or 5-wise independent.
+
+00:55:44.130 --> 00:55:45.950 align:middle line:84%
+All these things are
+important concepts
+
+00:55:45.950 --> 00:55:48.360 align:middle line:90%
+in hashing, for example.
+
+00:55:48.360 --> 00:55:51.180 align:middle line:84%
+But we won't be talking
+about that here.
+
+00:55:51.180 --> 00:55:59.690 align:middle line:90%
+That's the next class, 6.121.
+
+00:55:59.690 --> 00:56:02.480 align:middle line:90%
+All right.
+
+00:56:02.480 --> 00:56:06.423 align:middle line:84%
+Finally, we have-- well, one or
+two more interesting examples.
+
+00:56:06.423 --> 00:56:12.950 align:middle line:90%
+
+
+00:56:12.950 --> 00:56:16.933 align:middle line:90%
+Big one is the birthday paradox.
+
+00:56:16.933 --> 00:56:19.490 align:middle line:90%
+
+
+00:56:19.490 --> 00:56:22.080 align:middle line:84%
+Or you might call it
+the birthday principle.
+
+00:56:22.080 --> 00:56:24.720 align:middle line:84%
+But I like living
+in a contradiction,
+
+00:56:24.720 --> 00:56:26.840 align:middle line:90%
+so we'll keep it as a paradox.
+
+00:56:26.840 --> 00:56:27.810 align:middle line:90%
+It's not a paradox.
+
+00:56:27.810 --> 00:56:35.270 align:middle line:84%
+It's just a surprising fun
+fact, something where intuition
+
+00:56:35.270 --> 00:56:37.086 align:middle line:90%
+does not match mathematics.
+
+00:56:37.086 --> 00:56:47.450 align:middle line:90%
+
+
+00:56:47.450 --> 00:56:52.580 align:middle line:84%
+So the paradox is that if
+you sample a bunch of people
+
+00:56:52.580 --> 00:56:55.430 align:middle line:84%
+and measure their
+birthdays, you're
+
+00:56:55.430 --> 00:56:59.480 align:middle line:84%
+a lot more likely
+than you might expect
+
+00:56:59.480 --> 00:57:02.290 align:middle line:84%
+to have two people
+with the same birthday.
+
+00:57:02.290 --> 00:57:02.790 align:middle line:90%
+OK?
+
+00:57:02.790 --> 00:57:05.293 align:middle line:90%
+Let's call them birthday twins.
+
+00:57:05.293 --> 00:57:06.710 align:middle line:84%
+If you're actually
+twins, then you
+
+00:57:06.710 --> 00:57:08.853 align:middle line:84%
+have the same birthday
+almost certainly,
+
+00:57:08.853 --> 00:57:09.895 align:middle line:90%
+unless you span midnight.
+
+00:57:09.895 --> 00:57:11.660 align:middle line:90%
+[CHUCKLES]
+
+00:57:11.660 --> 00:57:13.550 align:middle line:84%
+Are there any twins
+in the audience?
+
+00:57:13.550 --> 00:57:14.910 align:middle line:90%
+Like, both of you are here?
+
+00:57:14.910 --> 00:57:16.110 align:middle line:90%
+OK, I didn't think so.
+
+00:57:16.110 --> 00:57:18.800 align:middle line:84%
+So then I'm going to assume
+that your birthdays are all
+
+00:57:18.800 --> 00:57:20.490 align:middle line:90%
+independent from each other.
+
+00:57:20.490 --> 00:57:23.870 align:middle line:84%
+I think twins are pretty much
+the only way to get dependents.
+
+00:57:23.870 --> 00:57:27.440 align:middle line:84%
+And I'm going to
+assume that you're
+
+00:57:27.440 --> 00:57:29.490 align:middle line:84%
+equally likely to
+be on all days,
+
+00:57:29.490 --> 00:57:32.400 align:middle line:90%
+and that's less true in reality.
+
+00:57:32.400 --> 00:57:34.010 align:middle line:84%
+But the effect of
+the birthday paradox
+
+00:57:34.010 --> 00:57:37.180 align:middle line:84%
+will only be stronger if you
+have a non-uniform distribution
+
+00:57:37.180 --> 00:57:40.540 align:middle line:90%
+like we do in reality.
+
+00:57:40.540 --> 00:57:47.180 align:middle line:84%
+So given what you already
+know in this class,
+
+00:57:47.180 --> 00:57:51.310 align:middle line:84%
+in particular, the pigeonhole
+principle or the Pidgey hole
+
+00:57:51.310 --> 00:57:55.585 align:middle line:84%
+principle, if you're
+a Pokemon fan,
+
+00:57:55.585 --> 00:57:58.420 align:middle line:84%
+how many people do I
+need to take in order
+
+00:57:58.420 --> 00:58:01.630 align:middle line:84%
+to guarantee that I have
+a duplicate birthday?
+
+00:58:01.630 --> 00:58:02.580 align:middle line:90%
+Some birthday twins.
+
+00:58:02.580 --> 00:58:07.310 align:middle line:90%
+
+
+00:58:07.310 --> 00:58:09.560 align:middle line:84%
+Remember all the way back
+to the pigeonhole principle?
+
+00:58:09.560 --> 00:58:10.060 align:middle line:90%
+Yeah.
+
+00:58:10.060 --> 00:58:11.005 align:middle line:90%
+AUDIENCE: 366.
+
+00:58:11.005 --> 00:58:16.360 align:middle line:84%
+ERIK DEMAINE: 366
+for a 365-day year.
+
+00:58:16.360 --> 00:58:21.340 align:middle line:84%
+So d here, for
+example, could be 365.
+
+00:58:21.340 --> 00:58:22.840 align:middle line:90%
+365?
+
+00:58:22.840 --> 00:58:24.093 align:middle line:90%
+325?
+
+00:58:24.093 --> 00:58:25.260 align:middle line:90%
+How many days are in a year?
+
+00:58:25.260 --> 00:58:25.760 align:middle line:90%
+[CHUCKLES]
+
+00:58:25.760 --> 00:58:26.920 align:middle line:90%
+[LAUGHTER]
+
+00:58:26.920 --> 00:58:29.110 align:middle line:90%
+All right.
+
+00:58:29.110 --> 00:58:34.300 align:middle line:84%
+So in general, if
+n equals d plus 1,
+
+00:58:34.300 --> 00:58:38.580 align:middle line:84%
+then we get
+guaranteed duplicate.
+
+00:58:38.580 --> 00:58:40.415 align:middle line:84%
+And of course, if
+it's bigger also.
+
+00:58:40.415 --> 00:58:46.620 align:middle line:90%
+
+
+00:58:46.620 --> 00:58:49.810 align:middle line:84%
+And the surprising thing
+is that probabilistically--
+
+00:58:49.810 --> 00:58:51.550 align:middle line:84%
+so this is for
+worst case behavior.
+
+00:58:51.550 --> 00:58:54.210 align:middle line:84%
+I mean, if I had n equals
+d, could be each of you
+
+00:58:54.210 --> 00:58:58.260 align:middle line:84%
+has their own birthday, each
+person in their own birthday
+
+00:58:58.260 --> 00:59:00.300 align:middle line:90%
+pigeonhole.
+
+00:59:00.300 --> 00:59:03.330 align:middle line:84%
+But that's very
+unlikely, it turns out.
+
+00:59:03.330 --> 00:59:06.190 align:middle line:84%
+And we're about to
+compute how likely it is.
+
+00:59:06.190 --> 00:59:12.600 align:middle line:84%
+So maybe we can
+do an experiment,
+
+00:59:12.600 --> 00:59:17.040 align:middle line:84%
+which is, I'm going to see
+whether any two people have
+
+00:59:17.040 --> 00:59:19.630 align:middle line:84%
+the same birthday, if you're
+willing to raise your hand.
+
+00:59:19.630 --> 00:59:21.360 align:middle line:84%
+So please pay attention,
+because I want
+
+00:59:21.360 --> 00:59:23.140 align:middle line:90%
+to go through days really fast.
+
+00:59:23.140 --> 00:59:28.510 align:middle line:84%
+So let's start with August,
+the most common month.
+
+00:59:28.510 --> 00:59:34.040 align:middle line:84%
+So OK, among the August
+people, how many on August 1?
+
+00:59:34.040 --> 00:59:36.470 align:middle line:90%
+August 2?
+
+00:59:36.470 --> 00:59:38.570 align:middle line:90%
+August 3?
+
+00:59:38.570 --> 00:59:40.340 align:middle line:90%
+August 4?
+
+00:59:40.340 --> 00:59:41.870 align:middle line:90%
+August 5?
+
+00:59:41.870 --> 00:59:43.940 align:middle line:90%
+August 6?
+
+00:59:43.940 --> 00:59:45.860 align:middle line:90%
+August 7?
+
+00:59:45.860 --> 00:59:47.750 align:middle line:90%
+August 8?
+
+00:59:47.750 --> 00:59:49.640 align:middle line:90%
+August 9?
+
+00:59:49.640 --> 00:59:51.250 align:middle line:90%
+August 10?
+
+00:59:51.250 --> 00:59:52.400 align:middle line:90%
+10?
+
+00:59:52.400 --> 00:59:53.340 align:middle line:90%
+Just one?
+
+00:59:53.340 --> 00:59:54.500 align:middle line:90%
+August 11?
+
+00:59:54.500 --> 00:59:55.500 align:middle line:90%
+One?
+
+00:59:55.500 --> 00:59:56.400 align:middle line:90%
+August 12?
+
+00:59:56.400 --> 00:59:56.760 align:middle line:90%
+AUDIENCE: Two of us.
+
+00:59:56.760 --> 00:59:57.677 align:middle line:90%
+ERIK DEMAINE: Oh, two?
+
+00:59:57.677 --> 00:59:58.230 align:middle line:90%
+All right.
+
+00:59:58.230 --> 00:59:59.910 align:middle line:90%
+August 11, two August 11's.
+
+00:59:59.910 --> 01:00:00.655 align:middle line:90%
+Yay, we did it!
+
+01:00:00.655 --> 01:00:01.605 align:middle line:90%
+[LAUGHTER]
+
+01:00:01.605 --> 01:00:03.230 align:middle line:84%
+Didn't even have to
+get through August.
+
+01:00:03.230 --> 01:00:08.000 align:middle line:84%
+[CHUCKLES] Because we have
+a quite a few people here.
+
+01:00:08.000 --> 01:00:09.510 align:middle line:90%
+I don't know, maybe 100.
+
+01:00:09.510 --> 01:00:18.940 align:middle line:84%
+So turns out, for d equals 365,
+let's assume no leap years.
+
+01:00:18.940 --> 01:00:22.530 align:middle line:90%
+
+
+01:00:22.530 --> 01:00:24.305 align:middle line:90%
+So we had, like, 100 people.
+
+01:00:24.305 --> 01:00:27.660 align:middle line:84%
+I'm going to warm you
+up with 23 people.
+
+01:00:27.660 --> 01:00:31.820 align:middle line:84%
+23 people is where the
+probability is just
+
+01:00:31.820 --> 01:00:37.100 align:middle line:84%
+barely greater than 50%
+that there's two people.
+
+01:00:37.100 --> 01:00:40.210 align:middle line:90%
+So big difference from 365.
+
+01:00:40.210 --> 01:00:46.666 align:middle line:84%
+n equals 30, the
+probability goes up to 70%.
+
+01:00:46.666 --> 01:00:55.427 align:middle line:84%
+n equals 60, the
+probability goes up to 97%.
+
+01:00:55.427 --> 01:00:59.050 align:middle line:90%
+
+
+01:00:59.050 --> 01:01:01.690 align:middle line:90%
+Oh, 99%.
+
+01:01:01.690 --> 01:01:05.500 align:middle line:90%
+99.4%.
+
+01:01:05.500 --> 01:01:07.090 align:middle line:90%
+OK, very high.
+
+01:01:07.090 --> 01:01:10.510 align:middle line:90%
+n equals 100.
+
+01:01:10.510 --> 01:01:11.890 align:middle line:90%
+Any guesses how many 9s?
+
+01:01:11.890 --> 01:01:14.500 align:middle line:90%
+
+
+01:01:14.500 --> 01:01:16.840 align:middle line:90%
+5?
+
+01:01:16.840 --> 01:01:18.880 align:middle line:90%
+6?
+
+01:01:18.880 --> 01:01:20.680 align:middle line:90%
+Six 9s.
+
+01:01:20.680 --> 01:01:23.230 align:middle line:90%
+The Holy Grail of six 9s.
+
+01:01:23.230 --> 01:01:26.680 align:middle line:90%
+99.99997%.
+
+01:01:26.680 --> 01:01:28.090 align:middle line:90%
+That's a lot of 9s.
+
+01:01:28.090 --> 01:01:32.370 align:middle line:84%
+OK, so the probability
+grows exponentially.
+
+01:01:32.370 --> 01:01:34.290 align:middle line:84%
+But in particular,
+this break-even point
+
+01:01:34.290 --> 01:01:38.560 align:middle line:84%
+is surprisingly
+low, 23 versus 365.
+
+01:01:38.560 --> 01:01:41.520 align:middle line:84%
+It's a little bigger
+than the square root.
+
+01:01:41.520 --> 01:01:47.130 align:middle line:84%
+It's like, 1.2 times the
+square root of 365 is about 23.
+
+01:01:47.130 --> 01:01:50.110 align:middle line:84%
+So that's the
+surprise, the paradox.
+
+01:01:50.110 --> 01:01:51.170 align:middle line:90%
+Let's compute it.
+
+01:01:51.170 --> 01:01:56.430 align:middle line:90%
+
+
+01:01:56.430 --> 01:01:59.190 align:middle line:84%
+It's actually similar to
+something we computed before
+
+01:01:59.190 --> 01:02:07.680 align:middle line:84%
+in a combinatorics setting,
+which was the how many dollar
+
+01:02:07.680 --> 01:02:10.830 align:middle line:84%
+bills are there where none of
+the digits in the serial number
+
+01:02:10.830 --> 01:02:12.160 align:middle line:90%
+were duplicate?
+
+01:02:12.160 --> 01:02:14.380 align:middle line:84%
+So we computed
+that way back when.
+
+01:02:14.380 --> 01:02:16.210 align:middle line:84%
+I'm going to do a
+similar thing here.
+
+01:02:16.210 --> 01:02:17.760 align:middle line:90%
+Similar trick.
+
+01:02:17.760 --> 01:02:19.910 align:middle line:84%
+Let me first set up
+the sample space.
+
+01:02:19.910 --> 01:02:23.430 align:middle line:90%
+
+
+01:02:23.430 --> 01:02:26.610 align:middle line:84%
+This is like coin flipping,
+but more like dice rolling,
+
+01:02:26.610 --> 01:02:27.390 align:middle line:90%
+I suppose.
+
+01:02:27.390 --> 01:02:28.450 align:middle line:90%
+You have n people.
+
+01:02:28.450 --> 01:02:30.660 align:middle line:84%
+Each of them rolls
+a d-sided die.
+
+01:02:30.660 --> 01:02:35.400 align:middle line:84%
+So that means the sample space
+is just the set of tuples.
+
+01:02:35.400 --> 01:02:36.370 align:middle line:90%
+Do I want to call it d?
+
+01:02:36.370 --> 01:02:38.880 align:middle line:84%
+No let's call it
+b for birthday, b1
+
+01:02:38.880 --> 01:02:47.560 align:middle line:84%
+up to bn, where each bi is
+between 1 and d, let's say.
+
+01:02:47.560 --> 01:02:50.050 align:middle line:90%
+Let's number our days 1 to d.
+
+01:02:50.050 --> 01:02:51.953 align:middle line:90%
+And this is a curly brace.
+
+01:02:51.953 --> 01:02:55.320 align:middle line:90%
+
+
+01:02:55.320 --> 01:03:02.820 align:middle line:84%
+The events that we care about
+is getting duplicate birthdays.
+
+01:03:02.820 --> 01:03:05.670 align:middle line:84%
+So I'm going to
+call this S. So what
+
+01:03:05.670 --> 01:03:10.530 align:middle line:84%
+we are interested in is the
+set of tuples of birthdays
+
+01:03:10.530 --> 01:03:18.480 align:middle line:84%
+where there are some
+two indices, i and j
+
+01:03:18.480 --> 01:03:22.920 align:middle line:90%
+where bi equals bj.
+
+01:03:22.920 --> 01:03:24.520 align:middle line:90%
+That's the duplicate birthday.
+
+01:03:24.520 --> 01:03:28.050 align:middle line:90%
+That's the birthday twins.
+
+01:03:28.050 --> 01:03:30.420 align:middle line:84%
+This happens with
+high probability,
+
+01:03:30.420 --> 01:03:34.610 align:middle line:84%
+and is very annoying to
+compute the probability of.
+
+01:03:34.610 --> 01:03:36.560 align:middle line:84%
+But there's this
+one trick which you
+
+01:03:36.560 --> 01:03:40.280 align:middle line:84%
+may recall from
+when we were looking
+
+01:03:40.280 --> 01:03:42.480 align:middle line:84%
+at serial numbers
+on dollar bills.
+
+01:03:42.480 --> 01:03:45.680 align:middle line:84%
+Let's think about
+the complement event.
+
+01:03:45.680 --> 01:03:51.560 align:middle line:84%
+So if we look at E bar, this
+is the set of birthday tuples
+
+01:03:51.560 --> 01:03:53.690 align:middle line:90%
+where there are no duplicates.
+
+01:03:53.690 --> 01:03:55.800 align:middle line:90%
+And that's easier to figure out.
+
+01:03:55.800 --> 01:04:00.020 align:middle line:84%
+So we want to say for
+all i not equal to j,
+
+01:04:00.020 --> 01:04:04.070 align:middle line:90%
+bi does not equal bj.
+
+01:04:04.070 --> 01:04:07.500 align:middle line:84%
+OK, this is easier to
+think about as a process.
+
+01:04:07.500 --> 01:04:10.998 align:middle line:84%
+If we think of this going back
+to generalized product rule,
+
+01:04:10.998 --> 01:04:13.040 align:middle line:84%
+we want to know how many
+different ways are there
+
+01:04:13.040 --> 01:04:16.740 align:middle line:84%
+to do this where the first
+birthday that I choose,
+
+01:04:16.740 --> 01:04:18.090 align:middle line:90%
+it could be anyone.
+
+01:04:18.090 --> 01:04:18.805 align:middle line:90%
+I don't care.
+
+01:04:18.805 --> 01:04:20.180 align:middle line:84%
+There's d different
+possibilities
+
+01:04:20.180 --> 01:04:22.200 align:middle line:84%
+for the first birthday
+that I choose.
+
+01:04:22.200 --> 01:04:27.350 align:middle line:84%
+Then the next birthday I choose,
+there's d minus 1 options,
+
+01:04:27.350 --> 01:04:30.160 align:middle line:90%
+if I want to avoid duplication.
+
+01:04:30.160 --> 01:04:34.125 align:middle line:84%
+OK, then the next birthday,
+there's d minus 2 options.
+
+01:04:34.125 --> 01:04:35.920 align:middle line:84%
+Hopefully this is old
+hat by now and you're
+
+01:04:35.920 --> 01:04:37.400 align:middle line:84%
+used to generalized
+product rule.
+
+01:04:37.400 --> 01:04:39.770 align:middle line:84%
+And the hard part is
+knowing when to stop.
+
+01:04:39.770 --> 01:04:46.690 align:middle line:84%
+This is going to be d
+minus n plus 1, I think.
+
+01:04:46.690 --> 01:04:48.130 align:middle line:90%
+That should be the right--
+
+01:04:48.130 --> 01:04:49.570 align:middle line:90%
+sure, yeah.
+
+01:04:49.570 --> 01:04:53.340 align:middle line:84%
+This is generalized
+product rule.
+
+01:04:53.340 --> 01:04:56.440 align:middle line:90%
+
+
+01:04:56.440 --> 01:04:59.080 align:middle line:90%
+This is the number of ways.
+
+01:04:59.080 --> 01:05:03.490 align:middle line:84%
+And we're assuming that
+each tuple of birthdays
+
+01:05:03.490 --> 01:05:04.523 align:middle line:90%
+is equally likely.
+
+01:05:04.523 --> 01:05:06.190 align:middle line:84%
+This was our assumption,
+that everything
+
+01:05:06.190 --> 01:05:09.160 align:middle line:90%
+is independent and uniform.
+
+01:05:09.160 --> 01:05:10.840 align:middle line:84%
+So what we need to
+do is take the number
+
+01:05:10.840 --> 01:05:12.370 align:middle line:84%
+of ways this happens
+and divide it
+
+01:05:12.370 --> 01:05:14.450 align:middle line:84%
+by the entire size
+of the sample space.
+
+01:05:14.450 --> 01:05:21.760 align:middle line:84%
+Divide it by the size of S. OK,
+so I'm going to divide this by--
+
+01:05:21.760 --> 01:05:27.840 align:middle line:84%
+and this is going to give me
+the probability of E bar here.
+
+01:05:27.840 --> 01:05:31.650 align:middle line:84%
+The probability of getting
+no duplicate birthdays
+
+01:05:31.650 --> 01:05:34.590 align:middle line:84%
+is the number of ways to get
+no duplicate birthdays divided
+
+01:05:34.590 --> 01:05:37.030 align:middle line:84%
+by the number of different
+ways to get birthdays, period.
+
+01:05:37.030 --> 01:05:41.370 align:middle line:90%
+
+
+01:05:41.370 --> 01:05:44.470 align:middle line:84%
+This is the non
+generalized product rule.
+
+01:05:44.470 --> 01:05:45.785 align:middle line:90%
+What is the size of S here?
+
+01:05:45.785 --> 01:05:51.455 align:middle line:90%
+
+
+01:05:51.455 --> 01:05:53.400 align:middle line:90%
+AUDIENCE: d to the n.
+
+01:05:53.400 --> 01:05:54.240 align:middle line:90%
+ERIK DEMAINE: Yeah.
+
+01:05:54.240 --> 01:05:55.300 align:middle line:90%
+d to the n.
+
+01:05:55.300 --> 01:05:56.188 align:middle line:90%
+Thank you.
+
+01:05:56.188 --> 01:05:57.730 align:middle line:84%
+It's either n to
+the d or d to the n.
+
+01:05:57.730 --> 01:05:58.840 align:middle line:90%
+You got to think for a while.
+
+01:05:58.840 --> 01:05:59.965 align:middle line:90%
+It's like yeah, d to the n.
+
+01:05:59.965 --> 01:06:02.490 align:middle line:84%
+There's d ways for this,
+d ways for this, d ways.
+
+01:06:02.490 --> 01:06:06.090 align:middle line:84%
+So it's just the product
+of n d's, the product
+
+01:06:06.090 --> 01:06:08.140 align:middle line:90%
+of d times d times d n times.
+
+01:06:08.140 --> 01:06:14.580 align:middle line:84%
+So I'm going to write that
+as d times d times d times d.
+
+01:06:14.580 --> 01:06:16.600 align:middle line:84%
+There's exactly
+n terms upstairs,
+
+01:06:16.600 --> 01:06:20.130 align:middle line:84%
+and there's also n
+terms downstairs.
+
+01:06:20.130 --> 01:06:21.570 align:middle line:90%
+OK?
+
+01:06:21.570 --> 01:06:26.700 align:middle line:84%
+So now I have this crazy
+ratio between two products.
+
+01:06:26.700 --> 01:06:29.270 align:middle line:90%
+I just need to compute it.
+
+01:06:29.270 --> 01:06:32.120 align:middle line:90%
+OK, this is a bit annoying.
+
+01:06:32.120 --> 01:06:33.870 align:middle line:90%
+But one big insight--
+
+01:06:33.870 --> 01:06:37.730 align:middle line:84%
+so this thing is
+equal to, instead
+
+01:06:37.730 --> 01:06:40.400 align:middle line:84%
+of taking this product
+and this product
+
+01:06:40.400 --> 01:06:45.440 align:middle line:84%
+separately and dividing them,
+I could instead take this ratio
+
+01:06:45.440 --> 01:06:48.840 align:middle line:84%
+and multiply it by this ratio
+and multiply it by this ratio,
+
+01:06:48.840 --> 01:06:50.510 align:middle line:90%
+and so on.
+
+01:06:50.510 --> 01:06:53.000 align:middle line:84%
+That's why I wrote
+out this d to the n
+
+01:06:53.000 --> 01:06:57.210 align:middle line:84%
+as a bunch of d's, so I could
+take them element by element.
+
+01:06:57.210 --> 01:07:02.150 align:middle line:84%
+So this is going to be equal
+to the product from i equals 1
+
+01:07:02.150 --> 01:07:08.215 align:middle line:90%
+to d, d of n, sorry.
+
+01:07:08.215 --> 01:07:10.880 align:middle line:90%
+
+
+01:07:10.880 --> 01:07:12.570 align:middle line:90%
+There's n different terms.
+
+01:07:12.570 --> 01:07:16.800 align:middle line:84%
+Each of them is of the
+form d minus i over d.
+
+01:07:16.800 --> 01:07:20.030 align:middle line:84%
+And I have an index error,
+so I need to start at 0
+
+01:07:20.030 --> 01:07:23.590 align:middle line:90%
+and end at n minus 1.
+
+01:07:23.590 --> 01:07:25.720 align:middle line:84%
+OK, that will give me
+the right thing on top.
+
+01:07:25.720 --> 01:07:27.170 align:middle line:90%
+I start with d minus 0.
+
+01:07:27.170 --> 01:07:30.610 align:middle line:90%
+I end with d minus n minus 1.
+
+01:07:30.610 --> 01:07:35.350 align:middle line:84%
+OK, so this ugly formula
+actually gets pretty clean.
+
+01:07:35.350 --> 01:07:38.510 align:middle line:84%
+Now is when it's
+hard to evaluate.
+
+01:07:38.510 --> 01:07:41.920 align:middle line:90%
+But there's this great fact.
+
+01:07:41.920 --> 01:07:50.000 align:middle line:84%
+So first I'm going to rewrite
+this as a product minus 1.
+
+01:07:50.000 --> 01:07:52.240 align:middle line:90%
+This d over d is 1.
+
+01:07:52.240 --> 01:07:57.880 align:middle line:84%
+And then we have an i
+over d in the second half.
+
+01:07:57.880 --> 01:08:07.360 align:middle line:84%
+OK, this turns out to be nice,
+because 1 minus x is less than e
+
+01:08:07.360 --> 01:08:11.560 align:middle line:84%
+to the minus x. e here
+is Euler's constant.
+
+01:08:11.560 --> 01:08:15.710 align:middle line:84%
+2, roughly, a little
+bigger than 2.
+
+01:08:15.710 --> 01:08:19.823 align:middle line:84%
+And if you look at the Taylor
+expansion of e to the minus x,
+
+01:08:19.823 --> 01:08:21.740 align:middle line:84%
+which is something you
+may know from calculus,
+
+01:08:21.740 --> 01:08:23.470 align:middle line:90%
+it starts with 1 minus x.
+
+01:08:23.470 --> 01:08:26.270 align:middle line:84%
+And then it's like, plus x
+squared minus x cubed, whatever.
+
+01:08:26.270 --> 01:08:27.830 align:middle line:84%
+Maybe some
+denominators there too.
+
+01:08:27.830 --> 01:08:32.770 align:middle line:84%
+But 1 minus x is actually
+well-approximated by e
+
+01:08:32.770 --> 01:08:40.510 align:middle line:84%
+to the minus x, and so it's
+approximately equal for x small.
+
+01:08:40.510 --> 01:08:43.930 align:middle line:84%
+And if you think about what x
+is here, it's the probability.
+
+01:08:43.930 --> 01:08:46.460 align:middle line:84%
+It's less than 1, so
+that's pretty small.
+
+01:08:46.460 --> 01:08:49.160 align:middle line:84%
+And so this will actually be
+a pretty good approximation.
+
+01:08:49.160 --> 01:08:52.130 align:middle line:84%
+We're going to replace 1
+minus x with e to the minus x.
+
+01:08:52.130 --> 01:08:55.463 align:middle line:84%
+And then this product will
+be easy to evaluate, easier.
+
+01:08:55.463 --> 01:08:58.060 align:middle line:90%
+
+
+01:08:58.060 --> 01:09:04.220 align:middle line:84%
+So this is going to be
+e to the minus i over d.
+
+01:09:04.220 --> 01:09:07.279 align:middle line:90%
+
+
+01:09:07.279 --> 01:09:07.779 align:middle line:90%
+OK?
+
+01:09:07.779 --> 01:09:10.630 align:middle line:90%
+
+
+01:09:10.630 --> 01:09:12.010 align:middle line:90%
+Sorry, not equal.
+
+01:09:12.010 --> 01:09:14.680 align:middle line:90%
+This is going to be less than.
+
+01:09:14.680 --> 01:09:16.819 align:middle line:84%
+So it's a good approximation
+when x is small,
+
+01:09:16.819 --> 01:09:19.840 align:middle line:84%
+but it's always less than,
+because the next term
+
+01:09:19.840 --> 01:09:23.505 align:middle line:84%
+is positive, at least
+for x non-negative.
+
+01:09:23.505 --> 01:09:24.630 align:middle line:90%
+It's going to be less than.
+
+01:09:24.630 --> 01:09:26.950 align:middle line:84%
+And so if we get
+an upper bound--
+
+01:09:26.950 --> 01:09:29.979 align:middle line:84%
+remember, we're evaluating
+here the probability of E bar.
+
+01:09:29.979 --> 01:09:32.710 align:middle line:84%
+E bar is like our error
+case, the bad case,
+
+01:09:32.710 --> 01:09:34.104 align:middle line:90%
+we want to show is unlikely.
+
+01:09:34.104 --> 01:09:36.479 align:middle line:84%
+So if we can upper bound the
+probability of the bad thing
+
+01:09:36.479 --> 01:09:38.812 align:middle line:84%
+happening, that gives us a
+lower bound on the good thing
+
+01:09:38.812 --> 01:09:42.679 align:middle line:84%
+happening, good thing
+being birthday twins.
+
+01:09:42.679 --> 01:09:46.710 align:middle line:90%
+
+
+01:09:46.710 --> 01:09:53.010 align:middle line:84%
+OK, we're almost done
+with birthday paradox.
+
+01:09:53.010 --> 01:09:59.790 align:middle line:84%
+So the cool thing here is we
+have a product of exponentials.
+
+01:09:59.790 --> 01:10:02.790 align:middle line:84%
+You may recall that if
+you have, I don't know,
+
+01:10:02.790 --> 01:10:06.780 align:middle line:84%
+e to the x times
+e to the y, this
+
+01:10:06.780 --> 01:10:12.480 align:middle line:84%
+is equal to e to
+the x plus y, right?
+
+01:10:12.480 --> 01:10:14.610 align:middle line:84%
+This is taking the product
+of two exponentials,
+
+01:10:14.610 --> 01:10:16.800 align:middle line:90%
+is the exponential of the sum.
+
+01:10:16.800 --> 01:10:20.630 align:middle line:84%
+And more generally, if you take
+the product of n exponentials,
+
+01:10:20.630 --> 01:10:23.090 align:middle line:84%
+that will be the same
+as the exponential
+
+01:10:23.090 --> 01:10:25.640 align:middle line:90%
+of the sum of those n things.
+
+01:10:25.640 --> 01:10:30.276 align:middle line:84%
+So this is equal
+to e to the sum.
+
+01:10:30.276 --> 01:10:31.890 align:middle line:84%
+I didn't leave
+myself enough room.
+
+01:10:31.890 --> 01:10:41.760 align:middle line:84%
+e to the sum, i equals 0 to
+n minus 1 of minus i over d,
+
+01:10:41.760 --> 01:10:43.580 align:middle line:90%
+I guess.
+
+01:10:43.580 --> 01:10:45.323 align:middle line:84%
+Maybe I should put
+the minus out here.
+
+01:10:45.323 --> 01:10:46.240 align:middle line:90%
+It's a little cleaner.
+
+01:10:46.240 --> 01:10:51.800 align:middle line:90%
+
+
+01:10:51.800 --> 01:10:54.025 align:middle line:90%
+OK.
+
+01:10:54.025 --> 01:11:05.930 align:middle line:84%
+And I can parenthesize like this
+over d, because this d does not
+
+01:11:05.930 --> 01:11:06.840 align:middle line:90%
+depend on i.
+
+01:11:06.840 --> 01:11:11.610 align:middle line:84%
+So the sum of i over d is the
+same as the sum of i all over d.
+
+01:11:11.610 --> 01:11:13.530 align:middle line:84%
+I've still got this
+minus out front.
+
+01:11:13.530 --> 01:11:18.430 align:middle line:84%
+And this is our good friend
+arithmetic sum, the triangular
+
+01:11:18.430 --> 01:11:19.310 align:middle line:90%
+numbers.
+
+01:11:19.310 --> 01:11:20.810 align:middle line:90%
+It's indexed a little funny.
+
+01:11:20.810 --> 01:11:22.480 align:middle line:84%
+Usually we think
+1 up to n, which
+
+01:11:22.480 --> 01:11:25.750 align:middle line:90%
+is n times n plus 1 over 2.
+
+01:11:25.750 --> 01:11:27.640 align:middle line:90%
+This is 0 up to n minus 1.
+
+01:11:27.640 --> 01:11:29.710 align:middle line:90%
+0, of course, doesn't matter.
+
+01:11:29.710 --> 01:11:32.210 align:middle line:84%
+So it's really 1
+up to n minus 1.
+
+01:11:32.210 --> 01:11:41.830 align:middle line:84%
+So this is going to be e to the
+minus n times n minus 1 over 2.
+
+01:11:41.830 --> 01:11:43.490 align:middle line:84%
+And then the whole
+thing is over d.
+
+01:11:43.490 --> 01:11:46.700 align:middle line:84%
+So we end up with a
+d in the denominator.
+
+01:11:46.700 --> 01:11:47.200 align:middle line:90%
+OK.
+
+01:11:47.200 --> 01:11:49.210 align:middle line:84%
+So this was the
+probability that there
+
+01:11:49.210 --> 01:11:50.600 align:middle line:90%
+are no duplicate birthdays.
+
+01:11:50.600 --> 01:11:53.780 align:middle line:84%
+And you can see, it
+goes down exponentially.
+
+01:11:53.780 --> 01:12:03.001 align:middle line:84%
+This is remember, e to the
+minus x is 1 over e to the x.
+
+01:12:03.001 --> 01:12:06.430 align:middle line:84%
+So the denominator here is
+increasing exponentially
+
+01:12:06.430 --> 01:12:09.280 align:middle line:90%
+as we increase n.
+
+01:12:09.280 --> 01:12:13.120 align:middle line:84%
+And the big thing is-- and so
+that's why you get so many 9s
+
+01:12:13.120 --> 01:12:15.340 align:middle line:90%
+very quickly out here.
+
+01:12:15.340 --> 01:12:18.690 align:middle line:84%
+But if we're interested in this
+crossover point where we get
+
+01:12:18.690 --> 01:12:21.490 align:middle line:84%
+50/50 chance that there's a
+duplicate birthday versus not,
+
+01:12:21.490 --> 01:12:25.080 align:middle line:84%
+which is interesting, the big
+thing that matters is that we
+
+01:12:25.080 --> 01:12:26.920 align:middle line:90%
+have an n squared up here.
+
+01:12:26.920 --> 01:12:30.400 align:middle line:84%
+There's a minus n, but
+the big part is n squared.
+
+01:12:30.400 --> 01:12:32.070 align:middle line:84%
+And if we invert
+it, this is where
+
+01:12:32.070 --> 01:12:33.970 align:middle line:84%
+we're going to get a
+square root behavior.
+
+01:12:33.970 --> 01:12:41.910 align:middle line:84%
+So let's suppose that this
+probability is equal to 1/2,
+
+01:12:41.910 --> 01:12:43.900 align:middle line:90%
+or roughly equal to 1/2.
+
+01:12:43.900 --> 01:12:46.590 align:middle line:90%
+When does that happen?
+
+01:12:46.590 --> 01:12:48.880 align:middle line:84%
+We did some approximation
+here with this less than.
+
+01:12:48.880 --> 01:12:52.650 align:middle line:84%
+So this isn't going to be
+exactly right, but it's close.
+
+01:12:52.650 --> 01:12:57.810 align:middle line:84%
+We want this
+exponential to equal 2.
+
+01:12:57.810 --> 01:13:03.150 align:middle line:84%
+So we want e to the
+n, n minus 1 over 2d.
+
+01:13:03.150 --> 01:13:05.170 align:middle line:90%
+Sorry, move the e down here.
+
+01:13:05.170 --> 01:13:07.980 align:middle line:90%
+This is all in the exponent.
+
+01:13:07.980 --> 01:13:10.600 align:middle line:90%
+We want this to be equal to 2.
+
+01:13:10.600 --> 01:13:13.860 align:middle line:84%
+That's when 1 over
+it will equal 1/2.
+
+01:13:13.860 --> 01:13:16.320 align:middle line:90%
+So we take logs of both sides.
+
+01:13:16.320 --> 01:13:22.130 align:middle line:84%
+That's like, n times n
+minus 1 over 2d equals ln 2,
+
+01:13:22.130 --> 01:13:24.290 align:middle line:90%
+natural log.
+
+01:13:24.290 --> 01:13:27.030 align:middle line:90%
+So we maybe move this over.
+
+01:13:27.030 --> 01:13:33.320 align:middle line:84%
+We get n times n minus
+1 equals 2d ln 2.
+
+01:13:33.320 --> 01:13:35.870 align:middle line:84%
+And at this point, I'm going
+to wave my hands a little bit
+
+01:13:35.870 --> 01:13:38.130 align:middle line:84%
+and say, this minus 1
+doesn't matter too much.
+
+01:13:38.130 --> 01:13:40.470 align:middle line:84%
+And so basically this
+is a square root.
+
+01:13:40.470 --> 01:13:47.340 align:middle line:84%
+So it's going to be n is roughly
+the square root of 2d ln 2.
+
+01:13:47.340 --> 01:13:49.710 align:middle line:84%
+And so there's
+this constant term,
+
+01:13:49.710 --> 01:13:52.320 align:middle line:90%
+which is square root of 2 ln 2.
+
+01:13:52.320 --> 01:13:58.970 align:middle line:90%
+This is about 1.177.
+
+01:13:58.970 --> 01:14:04.550 align:middle line:84%
+So this is about 1.2 to
+the square root of d.
+
+01:14:04.550 --> 01:14:06.060 align:middle line:90%
+This is what I claimed before.
+
+01:14:06.060 --> 01:14:08.790 align:middle line:84%
+If you take 1.2 times
+the square root of 365,
+
+01:14:08.790 --> 01:14:10.860 align:middle line:90%
+you get approximately 23.
+
+01:14:10.860 --> 01:14:14.420 align:middle line:84%
+And if you compute it
+exactly, you get 23.
+
+01:14:14.420 --> 01:14:16.250 align:middle line:90%
+So kind of neat.
+
+01:14:16.250 --> 01:14:18.590 align:middle line:84%
+In general, if we
+have d days, you
+
+01:14:18.590 --> 01:14:21.870 align:middle line:84%
+need about square root of d
+people to get a duplicate.
+
+01:14:21.870 --> 01:14:24.200 align:middle line:84%
+This has all sorts
+of implications
+
+01:14:24.200 --> 01:14:29.300 align:middle line:84%
+in computer science, usually
+in the context of hash tables.
+
+01:14:29.300 --> 01:14:33.440 align:middle line:84%
+If you're randomly placing
+people into locations--
+
+01:14:33.440 --> 01:14:35.810 align:middle line:90%
+pigeonholes, I suppose--
+
+01:14:35.810 --> 01:14:37.758 align:middle line:84%
+it's once you have
+square root of n
+
+01:14:37.758 --> 01:14:39.300 align:middle line:84%
+or square root of
+d different people,
+
+01:14:39.300 --> 01:14:44.330 align:middle line:84%
+you're likely to get two
+that happen to cohabitate
+
+01:14:44.330 --> 01:14:46.730 align:middle line:90%
+if you choose them uniformly.
+
+01:14:46.730 --> 01:14:51.050 align:middle line:84%
+So for example, if
+you're a cryptographer
+
+01:14:51.050 --> 01:14:55.970 align:middle line:84%
+and you're signing
+your emails, you
+
+01:14:55.970 --> 01:14:59.630 align:middle line:84%
+want to guarantee that you
+don't have two emails that
+
+01:14:59.630 --> 01:15:02.577 align:middle line:84%
+have the same signature,
+because if you did,
+
+01:15:02.577 --> 01:15:04.910 align:middle line:84%
+someone who's receiving them
+and checking the signatures
+
+01:15:04.910 --> 01:15:07.110 align:middle line:84%
+can't distinguish
+between the two emails.
+
+01:15:07.110 --> 01:15:10.220 align:middle line:84%
+So that tells you, like the
+set of possible signatures
+
+01:15:10.220 --> 01:15:12.670 align:middle line:84%
+on your emails to be
+at least the square
+
+01:15:12.670 --> 01:15:15.230 align:middle line:84%
+of the number of possible
+emails you could write.
+
+01:15:15.230 --> 01:15:17.530 align:middle line:84%
+So this gives you a
+lower bound on how big
+
+01:15:17.530 --> 01:15:20.930 align:middle line:84%
+cryptographic signatures need
+to be in order to be safe,
+
+01:15:20.930 --> 01:15:23.920 align:middle line:84%
+just in terms of whether
+there are duplications.
+
+01:15:23.920 --> 01:15:27.280 align:middle line:84%
+Or you're Dropbox and
+you're trying to sync files
+
+01:15:27.280 --> 01:15:29.200 align:middle line:84%
+from one computer
+to another, and you
+
+01:15:29.200 --> 01:15:34.783 align:middle line:84%
+want to compute some hash on
+the files on both sides to see,
+
+01:15:34.783 --> 01:15:36.200 align:middle line:84%
+do I need to
+retransfer this file?
+
+01:15:36.200 --> 01:15:37.700 align:middle line:90%
+Did it change on either side?
+
+01:15:37.700 --> 01:15:40.480 align:middle line:84%
+It better be that the
+space of possible hashes
+
+01:15:40.480 --> 01:15:42.860 align:middle line:84%
+is at least the square of
+the number of possible files.
+
+01:15:42.860 --> 01:15:47.950 align:middle line:84%
+Otherwise you're going to
+get accidental hash matches.
+
+01:15:47.950 --> 01:15:50.200 align:middle line:90%
+All right.
+
+01:15:50.200 --> 01:15:51.080 align:middle line:90%
+A little more time.
+
+01:15:51.080 --> 01:15:57.400 align:middle line:84%
+So let me tell you about
+one independent concept
+
+01:15:57.400 --> 01:16:00.190 align:middle line:84%
+not particularly
+related to independence,
+
+01:16:00.190 --> 01:16:04.840 align:middle line:84%
+but related to conditional
+probability, which
+
+01:16:04.840 --> 01:16:07.740 align:middle line:90%
+is gambler's fallacy.
+
+01:16:07.740 --> 01:16:12.488 align:middle line:90%
+
+
+01:16:12.488 --> 01:16:13.275 align:middle line:90%
+Can't spell.
+
+01:16:13.275 --> 01:16:19.770 align:middle line:90%
+
+
+01:16:19.770 --> 01:16:23.140 align:middle line:84%
+Gambler's fallacy can
+be phrased many ways,
+
+01:16:23.140 --> 01:16:26.430 align:middle line:84%
+but let's talk about coins,
+because that's what we're doing.
+
+01:16:26.430 --> 01:16:34.550 align:middle line:84%
+Let's say you do 10 coin flips,
+and they all come out heads.
+
+01:16:34.550 --> 01:16:39.510 align:middle line:90%
+
+
+01:16:39.510 --> 01:16:45.030 align:middle line:84%
+And I want to know, what's the
+probability that the next coin
+
+01:16:45.030 --> 01:16:48.005 align:middle line:90%
+flip is also heads?
+
+01:16:48.005 --> 01:16:56.730 align:middle line:90%
+
+
+01:16:56.730 --> 01:16:59.700 align:middle line:90%
+What's the answer?
+
+01:16:59.700 --> 01:17:03.420 align:middle line:90%
+Sorry, fair coin, I should say.
+
+01:17:03.420 --> 01:17:05.370 align:middle line:90%
+I'll give you a fair coin.
+
+01:17:05.370 --> 01:17:08.310 align:middle line:84%
+Each flip is independent
+from the other flips.
+
+01:17:08.310 --> 01:17:11.564 align:middle line:84%
+What are the chances that
+the 11th flip is heads?
+
+01:17:11.564 --> 01:17:12.896 align:middle line:90%
+AUDIENCE: 1/2?
+
+01:17:12.896 --> 01:17:14.400 align:middle line:90%
+ERIK DEMAINE: 1/2.
+
+01:17:14.400 --> 01:17:15.310 align:middle line:90%
+I should hope so.
+
+01:17:15.310 --> 01:17:20.540 align:middle line:84%
+[CHUCKLES] If you're
+a probabilist,
+
+01:17:20.540 --> 01:17:27.140 align:middle line:84%
+or if you're a student in
+6.1200, the answer is 1/2.
+
+01:17:27.140 --> 01:17:32.220 align:middle line:84%
+If you're a gambler, probably
+an addicted gambler--
+
+01:17:32.220 --> 01:17:36.030 align:middle line:84%
+I mean, this is a statement
+about human psychology.
+
+01:17:36.030 --> 01:17:36.720 align:middle line:90%
+Who knows?
+
+01:17:36.720 --> 01:17:43.128 align:middle line:84%
+They say less than 1/2,
+because I'm due for a tails,
+
+01:17:43.128 --> 01:17:43.795 align:middle line:90%
+don't you think?
+
+01:17:43.795 --> 01:17:47.030 align:middle line:90%
+[CHUCKLES]
+
+01:17:47.030 --> 01:17:50.460 align:middle line:84%
+A hypothetical gambler imagines
+that the coin has memory.
+
+01:17:50.460 --> 01:17:52.110 align:middle line:84%
+It remembers all
+those heads it got.
+
+01:17:52.110 --> 01:17:53.850 align:middle line:84%
+And when you flip
+it the next time,
+
+01:17:53.850 --> 01:17:55.950 align:middle line:84%
+now, finally, it's
+going to be tails.
+
+01:17:55.950 --> 01:17:57.080 align:middle line:90%
+But no.
+
+01:17:57.080 --> 01:17:58.310 align:middle line:90%
+Probability is actually 1/2.
+
+01:17:58.310 --> 01:18:01.160 align:middle line:90%
+
+
+01:18:01.160 --> 01:18:02.970 align:middle line:84%
+This is something
+that's actually false.
+
+01:18:02.970 --> 01:18:05.250 align:middle line:84%
+Gambler believes, oh,
+finally I'm due for tails.
+
+01:18:05.250 --> 01:18:07.530 align:middle line:84%
+It's very unlikely that
+the next coin is tails.
+
+01:18:07.530 --> 01:18:10.190 align:middle line:84%
+I haven't seen an earthquake
+in the last hundred years.
+
+01:18:10.190 --> 01:18:12.230 align:middle line:84%
+Very likely I'll
+see one this year.
+
+01:18:12.230 --> 01:18:15.800 align:middle line:84%
+I mean, that may be true,
+but it also may not be true.
+
+01:18:15.800 --> 01:18:17.620 align:middle line:84%
+It depends on your
+prior probabilities
+
+01:18:17.620 --> 01:18:19.872 align:middle line:90%
+about earthquake models.
+
+01:18:19.872 --> 01:18:21.810 align:middle line:84%
+And if I tell you
+it's a fair coin,
+
+01:18:21.810 --> 01:18:23.570 align:middle line:90%
+then you know it's not true.
+
+01:18:23.570 --> 01:18:25.858 align:middle line:84%
+It has to be exactly
+half, every single time.
+
+01:18:25.858 --> 01:18:28.400 align:middle line:84%
+It's actually pretty likely to
+get a bunch of heads in a row.
+
+01:18:28.400 --> 01:18:30.980 align:middle line:84%
+Now, it's not that likely to
+get 10 coin flips in a row.
+
+01:18:30.980 --> 01:18:34.030 align:middle line:90%
+That's 1 in 1,000, roughly.
+
+01:18:34.030 --> 01:18:37.250 align:middle line:84%
+So a probabilist just
+says, wow, 1 in 1,000.
+
+01:18:37.250 --> 01:18:37.750 align:middle line:90%
+Cool.
+
+01:18:37.750 --> 01:18:40.120 align:middle line:84%
+Well, probably the
+next one is 1/2.
+
+01:18:40.120 --> 01:18:41.680 align:middle line:90%
+OK?
+
+01:18:41.680 --> 01:18:46.870 align:middle line:84%
+There's a third type of person,
+which I'll call the Bayesian.
+
+01:18:46.870 --> 01:18:50.570 align:middle line:84%
+And they would say, maybe
+it's bigger than 1/2.
+
+01:18:50.570 --> 01:18:53.330 align:middle line:84%
+Maybe you lied to me and
+the coin is not fair.
+
+01:18:53.330 --> 01:18:54.890 align:middle line:90%
+That's the other interpretation.
+
+01:18:54.890 --> 01:18:58.100 align:middle line:84%
+And if you flipped
+a coin 10 flips--
+
+01:18:58.100 --> 01:19:00.760 align:middle line:84%
+maybe it's not enough,
+but 11 or 12-- then you
+
+01:19:00.760 --> 01:19:01.990 align:middle line:90%
+start thinking, hmm.
+
+01:19:01.990 --> 01:19:04.745 align:middle line:84%
+I think there's something
+weird about this coin.
+
+01:19:04.745 --> 01:19:06.120 align:middle line:84%
+Then you want to
+inspect the coin
+
+01:19:06.120 --> 01:19:08.230 align:middle line:84%
+and see if it's heads on
+both sides or whatever.
+
+01:19:08.230 --> 01:19:11.220 align:middle line:84%
+So you can formalize
+this a little bit
+
+01:19:11.220 --> 01:19:13.650 align:middle line:84%
+using the law of
+total probability
+
+01:19:13.650 --> 01:19:19.410 align:middle line:84%
+combined with Bayes' rule
+in the following way.
+
+01:19:19.410 --> 01:19:22.800 align:middle line:84%
+I'm going to write this a little
+informally, but the probability
+
+01:19:22.800 --> 01:19:26.700 align:middle line:84%
+of a head conditioned on
+getting 10 heads previously,
+
+01:19:26.700 --> 01:19:31.067 align:middle line:84%
+you can split it into
+two parts and say, I'm
+
+01:19:31.067 --> 01:19:32.650 align:middle line:84%
+just going to think
+of a simple model.
+
+01:19:32.650 --> 01:19:36.570 align:middle line:84%
+Either the coin is really
+fair, or you're a cheater
+
+01:19:36.570 --> 01:19:38.560 align:middle line:84%
+and the coin is
+heads on both sides.
+
+01:19:38.560 --> 01:19:40.870 align:middle line:84%
+Those are the only two
+possibilities for this model.
+
+01:19:40.870 --> 01:19:42.995 align:middle line:84%
+Of course, you could consider
+a more general model,
+
+01:19:42.995 --> 01:19:44.705 align:middle line:84%
+and there's a whole
+world about this.
+
+01:19:44.705 --> 01:19:49.200 align:middle line:90%
+
+
+01:19:49.200 --> 01:19:58.800 align:middle line:84%
+So I'm going to call these
+two scenarios cheat and fair.
+
+01:19:58.800 --> 01:20:05.490 align:middle line:84%
+And hopefully this equation
+is relatively obvious.
+
+01:20:05.490 --> 01:20:06.683 align:middle line:90%
+Just, it's a mouthful.
+
+01:20:06.683 --> 01:20:13.980 align:middle line:90%
+
+
+01:20:13.980 --> 01:20:17.320 align:middle line:84%
+OK, everything here is
+conditioned on H to the 10.
+
+01:20:17.320 --> 01:20:19.710 align:middle line:84%
+So you can ignore that
+part, because we're
+
+01:20:19.710 --> 01:20:23.830 align:middle line:84%
+assuming throughout that we have
+10 coin flips starting as heads.
+
+01:20:23.830 --> 01:20:25.577 align:middle line:90%
+And now there are two scenarios.
+
+01:20:25.577 --> 01:20:27.910 align:middle line:84%
+It could be you're cheating,
+or it could be you're fair.
+
+01:20:27.910 --> 01:20:29.910 align:middle line:84%
+And these are
+disjoint scenarios.
+
+01:20:29.910 --> 01:20:32.460 align:middle line:84%
+So I can split
+things up according
+
+01:20:32.460 --> 01:20:34.630 align:middle line:90%
+to law of total probability.
+
+01:20:34.630 --> 01:20:38.580 align:middle line:84%
+It's the probability of cheat
+times the same thing conditioned
+
+01:20:38.580 --> 01:20:42.990 align:middle line:84%
+on cheating in addition, or
+probability of fair times
+
+01:20:42.990 --> 01:20:46.470 align:middle line:84%
+the probability of the same
+thing conditioning on fair,
+
+01:20:46.470 --> 01:20:48.367 align:middle line:84%
+in addition to what I
+conditioned on before.
+
+01:20:48.367 --> 01:20:50.200 align:middle line:84%
+So everything is
+conditioned on H to the 10.
+
+01:20:50.200 --> 01:20:51.730 align:middle line:90%
+And so you can write this out.
+
+01:20:51.730 --> 01:20:54.070 align:middle line:84%
+And we actually
+know what these are.
+
+01:20:54.070 --> 01:20:55.210 align:middle line:90%
+They look ugly.
+
+01:20:55.210 --> 01:20:58.680 align:middle line:84%
+But the probability of heads
+with a cheating coin that is
+
+01:20:58.680 --> 01:21:01.620 align:middle line:90%
+heads on both sides, that's 1.
+
+01:21:01.620 --> 01:21:06.510 align:middle line:84%
+So it's 1 times the
+probability of cheating,
+
+01:21:06.510 --> 01:21:12.110 align:middle line:84%
+of there being a cheat here,
+given H to the 10 plus this
+
+01:21:12.110 --> 01:21:14.570 align:middle line:84%
+probability, the probability
+of heads with a fair coin,
+
+01:21:14.570 --> 01:21:20.420 align:middle line:84%
+that we know is 1/2 half times
+probability of you're using
+
+01:21:20.420 --> 01:21:23.850 align:middle line:84%
+a fair coin, given that
+I've seen 10 heads.
+
+01:21:23.850 --> 01:21:27.620 align:middle line:84%
+Now these two quantities,
+you need more modeling
+
+01:21:27.620 --> 01:21:30.020 align:middle line:84%
+to understand what
+the chances are
+
+01:21:30.020 --> 01:21:34.680 align:middle line:84%
+that I'm using a cheating coin
+given that I saw 10 heads,
+
+01:21:34.680 --> 01:21:36.120 align:middle line:90%
+but you can compute it.
+
+01:21:36.120 --> 01:21:39.260 align:middle line:84%
+And so now, you can actually
+quantify how much bigger than
+
+01:21:39.260 --> 01:21:39.770 align:middle line:90%
+1/2.
+
+01:21:39.770 --> 01:21:42.150 align:middle line:84%
+In this particular
+model of cheating,
+
+01:21:42.150 --> 01:21:46.370 align:middle line:84%
+what's the chances that the
+next coin flip will be heads?
+
+01:21:46.370 --> 01:21:50.150 align:middle line:84%
+So fun example, and
+that's all for today.
+
+01:21:50.150 --> 01:21:52.750 align:middle line:90%
+Enjoy your Independence Day.
+
+01:21:52.750 --> 01:22:03.000 align:middle line:90%

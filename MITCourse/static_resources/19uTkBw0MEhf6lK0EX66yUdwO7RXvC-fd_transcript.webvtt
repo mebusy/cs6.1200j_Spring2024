@@ -1,0 +1,4949 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:00.960 align:middle line:90%
+[SQUEAKING]
+
+00:00:00.960 --> 00:00:03.360 align:middle line:90%
+[RUSTLING]
+
+00:00:03.360 --> 00:00:05.280 align:middle line:90%
+[CLICKING]
+
+00:00:05.280 --> 00:00:10.080 align:middle line:90%
+
+
+00:00:10.080 --> 00:00:11.060 align:middle line:90%
+[SIDE CONVERSATION]
+
+00:00:11.060 --> 00:00:12.390 align:middle line:90%
+ZACHARY ABEL: Good morning.
+
+00:00:12.390 --> 00:00:13.350 align:middle line:90%
+Good afternoon.
+
+00:00:13.350 --> 00:00:15.140 align:middle line:90%
+Let's go ahead and get started.
+
+00:00:15.140 --> 00:00:17.070 align:middle line:90%
+Welcome to lecture 16.
+
+00:00:17.070 --> 00:00:19.250 align:middle line:84%
+This is the last lecture
+worth of material
+
+00:00:19.250 --> 00:00:21.650 align:middle line:84%
+that we're covering
+before our quiz.
+
+00:00:21.650 --> 00:00:22.500 align:middle line:90%
+All right.
+
+00:00:22.500 --> 00:00:24.000 align:middle line:90%
+Let's talk about counting.
+
+00:00:24.000 --> 00:00:28.370 align:middle line:90%
+This is lecture 16 on counting.
+
+00:00:28.370 --> 00:00:30.350 align:middle line:84%
+And where we left
+off last time was
+
+00:00:30.350 --> 00:00:33.900 align:middle line:84%
+I had just mentioned the
+generalized product rule.
+
+00:00:33.900 --> 00:00:36.530 align:middle line:84%
+And we used the
+generalized product rule
+
+00:00:36.530 --> 00:00:39.440 align:middle line:84%
+to count the number
+of permutations
+
+00:00:39.440 --> 00:00:43.790 align:middle line:84%
+of a deck of comically
+oversized playing cards.
+
+00:00:43.790 --> 00:00:45.480 align:middle line:90%
+We had 52 cards.
+
+00:00:45.480 --> 00:00:47.870 align:middle line:84%
+And we decided if we want
+to choose an order among all
+
+00:00:47.870 --> 00:00:51.920 align:middle line:84%
+these cards, well, we have 52
+options for the first card.
+
+00:00:51.920 --> 00:00:53.660 align:middle line:90%
+Queen of diamonds this time.
+
+00:00:53.660 --> 00:00:57.870 align:middle line:84%
+After that, we have 51 options
+left for the second card.
+
+00:00:57.870 --> 00:01:00.030 align:middle line:90%
+Four of clubs this time.
+
+00:01:00.030 --> 00:01:03.390 align:middle line:84%
+Now we have 50 cards
+left, 50 options.
+
+00:01:03.390 --> 00:01:10.080 align:middle line:84%
+And notice whatever first
+two cards I chose initially,
+
+00:01:10.080 --> 00:01:12.510 align:middle line:84%
+whatever cards I chose is
+going to change the set
+
+00:01:12.510 --> 00:01:14.800 align:middle line:90%
+of available options left.
+
+00:01:14.800 --> 00:01:17.050 align:middle line:84%
+Instead of choosing the
+queen of diamonds first,
+
+00:01:17.050 --> 00:01:21.130 align:middle line:84%
+if I had chosen the
+eight of clubs first,
+
+00:01:21.130 --> 00:01:22.770 align:middle line:84%
+then it would be
+this 50 cards that
+
+00:01:22.770 --> 00:01:27.120 align:middle line:84%
+are remaining on step three
+rather than the previous set.
+
+00:01:27.120 --> 00:01:31.530 align:middle line:84%
+But still, on step three, we
+always have 50 choices left.
+
+00:01:31.530 --> 00:01:34.150 align:middle line:84%
+So now we're choosing
+the two of hearts.
+
+00:01:34.150 --> 00:01:36.840 align:middle line:84%
+On step four, we
+always have 49 choices
+
+00:01:36.840 --> 00:01:40.770 align:middle line:90%
+left, then 48, 47, et cetera.
+
+00:01:40.770 --> 00:01:45.990 align:middle line:84%
+And so we were able to sum this
+up into a general principle
+
+00:01:45.990 --> 00:01:47.740 align:middle line:84%
+called the generalized
+product rule,
+
+00:01:47.740 --> 00:01:51.720 align:middle line:84%
+which basically says if you're
+making a sequence of choices,
+
+00:01:51.720 --> 00:01:55.560 align:middle line:84%
+and at the i-th
+choice, you always
+
+00:01:55.560 --> 00:02:00.120 align:middle line:84%
+have a fixed number,
+ni, of possible choices
+
+00:02:00.120 --> 00:02:03.540 align:middle line:84%
+at that i-th step,
+then the number of ways
+
+00:02:03.540 --> 00:02:05.100 align:middle line:84%
+to make all your
+choices in sequence
+
+00:02:05.100 --> 00:02:09.270 align:middle line:84%
+is just n1 times n2 times
+n3 all the way to nk.
+
+00:02:09.270 --> 00:02:12.070 align:middle line:84%
+And that's what
+this says in text.
+
+00:02:12.070 --> 00:02:16.140 align:middle line:84%
+So if A is a set of length
+k sequences where there
+
+00:02:16.140 --> 00:02:19.480 align:middle line:84%
+are exactly n1 possible
+choices for the first one,
+
+00:02:19.480 --> 00:02:21.540 align:middle line:84%
+so 52 choices for
+the first card,
+
+00:02:21.540 --> 00:02:25.000 align:middle line:84%
+and then n2 possible
+choices at the second step,
+
+00:02:25.000 --> 00:02:27.990 align:middle line:84%
+no matter what you chose
+for the first step, then
+
+00:02:27.990 --> 00:02:30.660 align:middle line:84%
+n3 for the third
+step, no matter what
+
+00:02:30.660 --> 00:02:33.640 align:middle line:84%
+your first two choices were,
+and so on all the way down.
+
+00:02:33.640 --> 00:02:36.060 align:middle line:84%
+Then the size of
+your set is just
+
+00:02:36.060 --> 00:02:38.100 align:middle line:84%
+the product of the
+number of choices
+
+00:02:38.100 --> 00:02:40.170 align:middle line:84%
+you have in step one times
+the number of choices
+
+00:02:40.170 --> 00:02:43.290 align:middle line:84%
+you have in step two,
+et cetera, et cetera.
+
+00:02:43.290 --> 00:02:45.360 align:middle line:90%
+Does that idea make sense?
+
+00:02:45.360 --> 00:02:48.690 align:middle line:90%
+Let's do one more example here.
+
+00:02:48.690 --> 00:02:52.350 align:middle line:90%
+And this example is about money.
+
+00:02:52.350 --> 00:02:55.260 align:middle line:90%
+Money is a fun topic, right?
+
+00:02:55.260 --> 00:02:57.260 align:middle line:84%
+So anyone who has a
+dollar bill on them,
+
+00:02:57.260 --> 00:02:59.400 align:middle line:84%
+doesn't have to be a one,
+just any dollar bill.
+
+00:02:59.400 --> 00:03:02.100 align:middle line:84%
+Go ahead and pull it out for a
+second and then give it to me.
+
+00:03:02.100 --> 00:03:03.680 align:middle line:90%
+No, you can keep it.
+
+00:03:03.680 --> 00:03:05.700 align:middle line:84%
+But take a look at
+the serial number.
+
+00:03:05.700 --> 00:03:09.720 align:middle line:84%
+So every dollar bill
+has a serial number,
+
+00:03:09.720 --> 00:03:15.633 align:middle line:84%
+which is a length eight
+sequence of digits.
+
+00:03:15.633 --> 00:03:18.710 align:middle line:90%
+
+
+00:03:18.710 --> 00:03:21.138 align:middle line:84%
+How many possible serial
+numbers are there?
+
+00:03:21.138 --> 00:03:22.680 align:middle line:84%
+There might be some
+letters in there.
+
+00:03:22.680 --> 00:03:23.820 align:middle line:90%
+Ignore the letters.
+
+00:03:23.820 --> 00:03:25.260 align:middle line:90%
+There are eight digits.
+
+00:03:25.260 --> 00:03:28.860 align:middle line:84%
+How many possible serial
+numbers are there?
+
+00:03:28.860 --> 00:03:30.260 align:middle line:84%
+How many ways are
+there to choose
+
+00:03:30.260 --> 00:03:33.345 align:middle line:90%
+a sequence of eight digits?
+
+00:03:33.345 --> 00:03:33.845 align:middle line:90%
+Yes?
+
+00:03:33.845 --> 00:03:35.180 align:middle line:90%
+AUDIENCE: Eight factorial.
+
+00:03:35.180 --> 00:03:37.160 align:middle line:90%
+ZACHARY ABEL: 8 factorial?
+
+00:03:37.160 --> 00:03:40.610 align:middle line:90%
+Eight factorial serials.
+
+00:03:40.610 --> 00:03:42.270 align:middle line:90%
+Any other suggestions?
+
+00:03:42.270 --> 00:03:42.785 align:middle line:90%
+Yes.
+
+00:03:42.785 --> 00:03:43.910 align:middle line:90%
+AUDIENCE: 10 to the eighth.
+
+00:03:43.910 --> 00:03:45.230 align:middle line:90%
+ZACHARY ABEL: 10 to the eighth.
+
+00:03:45.230 --> 00:03:47.390 align:middle line:90%
+10 to the eighth.
+
+00:03:47.390 --> 00:03:49.280 align:middle line:90%
+Any other suggestions?
+
+00:03:49.280 --> 00:03:50.545 align:middle line:90%
+Yes?
+
+00:03:50.545 --> 00:03:52.670 align:middle line:84%
+AUDIENCE: [INAUDIBLE] all
+the way down [INAUDIBLE].
+
+00:03:52.670 --> 00:03:53.480 align:middle line:90%
+ZACHARY ABEL: OK.
+
+00:03:53.480 --> 00:03:57.770 align:middle line:84%
+10 times 9 times 8,
+all the way down to 3,
+
+00:03:57.770 --> 00:03:59.770 align:middle line:84%
+because we're only choosing
+eight digits instead
+
+00:03:59.770 --> 00:04:02.350 align:middle line:90%
+of choosing all 10 digits.
+
+00:04:02.350 --> 00:04:02.990 align:middle line:90%
+OK.
+
+00:04:02.990 --> 00:04:05.410 align:middle line:84%
+I'm going to put another
+suggestion in there, 8
+
+00:04:05.410 --> 00:04:06.120 align:middle line:90%
+to the 10.
+
+00:04:06.120 --> 00:04:08.920 align:middle line:90%
+
+
+00:04:08.920 --> 00:04:10.395 align:middle line:90%
+So which of these is right?
+
+00:04:10.395 --> 00:04:13.180 align:middle line:90%
+
+
+00:04:13.180 --> 00:04:15.580 align:middle line:84%
+So importantly, I never
+said that the digits
+
+00:04:15.580 --> 00:04:16.880 align:middle line:90%
+had to be distinct.
+
+00:04:16.880 --> 00:04:20.170 align:middle line:84%
+And in fact, very often,
+they're not distinct.
+
+00:04:20.170 --> 00:04:21.740 align:middle line:90%
+So if we choose--
+
+00:04:21.740 --> 00:04:22.270 align:middle line:90%
+so here.
+
+00:04:22.270 --> 00:04:24.110 align:middle line:90%
+1, 2, 3, 4, 5, 6, 7.
+
+00:04:24.110 --> 00:04:25.250 align:middle line:90%
+Here are the eight digits.
+
+00:04:25.250 --> 00:04:27.370 align:middle line:84%
+We're going to choose
+a number for each.
+
+00:04:27.370 --> 00:04:30.470 align:middle line:84%
+If I choose a 7 for
+our first digit,
+
+00:04:30.470 --> 00:04:33.640 align:middle line:90%
+well, I had 10 options, right?
+
+00:04:33.640 --> 00:04:36.130 align:middle line:84%
+How many options do I
+have for the next digit?
+
+00:04:36.130 --> 00:04:38.180 align:middle line:90%
+10, right?
+
+00:04:38.180 --> 00:04:40.430 align:middle line:84%
+I'm allowed to choose
+7 again if I want to.
+
+00:04:40.430 --> 00:04:42.500 align:middle line:90%
+So I have 10 options here.
+
+00:04:42.500 --> 00:04:44.050 align:middle line:90%
+Maybe I do choose 7 again.
+
+00:04:44.050 --> 00:04:46.150 align:middle line:90%
+How many options here?
+
+00:04:46.150 --> 00:04:48.280 align:middle line:90%
+Still 10.
+
+00:04:48.280 --> 00:04:50.150 align:middle line:90%
+Maybe I choose a 4 this time.
+
+00:04:50.150 --> 00:04:50.840 align:middle line:90%
+And so on.
+
+00:04:50.840 --> 00:04:53.290 align:middle line:84%
+I can fill this in
+every time I have
+
+00:04:53.290 --> 00:04:55.650 align:middle line:90%
+10 options for my next digit.
+
+00:04:55.650 --> 00:05:00.110 align:middle line:84%
+So the number of choices is
+10 times 10 times 10, 8 times.
+
+00:05:00.110 --> 00:05:02.540 align:middle line:90%
+10 to the eighth.
+
+00:05:02.540 --> 00:05:03.960 align:middle line:90%
+Does that make sense?
+
+00:05:03.960 --> 00:05:04.520 align:middle line:90%
+Cool.
+
+00:05:04.520 --> 00:05:06.960 align:middle line:84%
+This in fact, is just
+the regular product rule.
+
+00:05:06.960 --> 00:05:09.180 align:middle line:84%
+We didn't need the
+generalized product rule here
+
+00:05:09.180 --> 00:05:12.180 align:middle line:84%
+because the set of choices I
+have is just all 10 digits.
+
+00:05:12.180 --> 00:05:15.650 align:middle line:84%
+The set of choices I have
+is the same, all 10 digits.
+
+00:05:15.650 --> 00:05:18.390 align:middle line:84%
+The set of choices isn't
+changing as I make more choices.
+
+00:05:18.390 --> 00:05:20.900 align:middle line:90%
+Just regular product rule.
+
+00:05:20.900 --> 00:05:24.440 align:middle line:84%
+I put 8 to the 10 up there
+just to be a bit of a troll,
+
+00:05:24.440 --> 00:05:29.180 align:middle line:84%
+because 8 to the 10 and 10 to
+the 8 are easy to get confused.
+
+00:05:29.180 --> 00:05:31.250 align:middle line:84%
+And so if you think
+about it this way,
+
+00:05:31.250 --> 00:05:33.750 align:middle line:84%
+how many options do I have for
+this choice, for that choice,
+
+00:05:33.750 --> 00:05:34.740 align:middle line:90%
+for that choice?
+
+00:05:34.740 --> 00:05:37.160 align:middle line:84%
+It'll be easy to tell
+which one of these is right
+
+00:05:37.160 --> 00:05:39.500 align:middle line:90%
+and which one of them is wrong.
+
+00:05:39.500 --> 00:05:43.250 align:middle line:90%
+So 10 to the 8 serial numbers.
+
+00:05:43.250 --> 00:05:46.670 align:middle line:84%
+But we had-- some
+of these formulas
+
+00:05:46.670 --> 00:05:49.890 align:middle line:84%
+were sounding like wanted
+the digits to be distinct.
+
+00:05:49.890 --> 00:05:52.870 align:middle line:84%
+They're not always, but
+maybe sometimes they are.
+
+00:05:52.870 --> 00:05:55.350 align:middle line:84%
+So everyone who pulled
+out a dollar bill,
+
+00:05:55.350 --> 00:05:57.220 align:middle line:84%
+can you check your
+serial number?
+
+00:05:57.220 --> 00:06:00.205 align:middle line:84%
+And if all of your
+digits are distinct,
+
+00:06:00.205 --> 00:06:01.205 align:middle line:90%
+can you raise your hand?
+
+00:06:01.205 --> 00:06:11.940 align:middle line:90%
+
+
+00:06:11.940 --> 00:06:14.550 align:middle line:90%
+No one.
+
+00:06:14.550 --> 00:06:16.950 align:middle line:84%
+Can you raise your hand if
+you checked a dollar bill
+
+00:06:16.950 --> 00:06:19.170 align:middle line:90%
+and it failed?
+
+00:06:19.170 --> 00:06:24.660 align:middle line:84%
+OK, so I'm seeing about 20,
+25 people that carry cash.
+
+00:06:24.660 --> 00:06:28.350 align:middle line:84%
+So out of those 26
+bills, none of them
+
+00:06:28.350 --> 00:06:32.300 align:middle line:84%
+had all distinct digits,
+which is a shame,
+
+00:06:32.300 --> 00:06:34.300 align:middle line:84%
+because if someone did
+have all distinct digits,
+
+00:06:34.300 --> 00:06:35.640 align:middle line:90%
+I brought candy.
+
+00:06:35.640 --> 00:06:39.600 align:middle line:84%
+So maybe check the other
+dollars in your wallet.
+
+00:06:39.600 --> 00:06:42.480 align:middle line:84%
+But this gives us a
+natural counting question.
+
+00:06:42.480 --> 00:06:57.900 align:middle line:84%
+How many serials have
+all distinct digits?
+
+00:06:57.900 --> 00:06:59.670 align:middle line:84%
+And let's see if
+we can count this
+
+00:06:59.670 --> 00:07:04.260 align:middle line:84%
+using the product rule, or maybe
+the generalized product rule.
+
+00:07:04.260 --> 00:07:07.335 align:middle line:84%
+Once again 1, 2,
+3, 4, 5, 6, 7, 8.
+
+00:07:07.335 --> 00:07:10.750 align:middle line:84%
+I like to think about my
+choices in order one at a time.
+
+00:07:10.750 --> 00:07:13.030 align:middle line:84%
+So I just draw a little
+bar to remind myself,
+
+00:07:13.030 --> 00:07:15.240 align:middle line:84%
+I'm going to choose something
+here, and remind myself
+
+00:07:15.240 --> 00:07:16.900 align:middle line:90%
+how many options I had.
+
+00:07:16.900 --> 00:07:20.160 align:middle line:84%
+So let's see if we can
+construct serial numbers that
+
+00:07:20.160 --> 00:07:22.620 align:middle line:84%
+have all distinct
+digits length eight.
+
+00:07:22.620 --> 00:07:25.140 align:middle line:84%
+How many options do I
+have for my first digit?
+
+00:07:25.140 --> 00:07:28.210 align:middle line:90%
+10, absolutely.
+
+00:07:28.210 --> 00:07:29.590 align:middle line:90%
+I have 10 options here.
+
+00:07:29.590 --> 00:07:31.890 align:middle line:90%
+Maybe this time I chose a 3.
+
+00:07:31.890 --> 00:07:34.590 align:middle line:84%
+How many options do I
+have for the second digit?
+
+00:07:34.590 --> 00:07:36.660 align:middle line:90%
+Nine.
+
+00:07:36.660 --> 00:07:38.490 align:middle line:90%
+Is it always nine?
+
+00:07:38.490 --> 00:07:41.070 align:middle line:90%
+What if this digit had been 8?
+
+00:07:41.070 --> 00:07:42.600 align:middle line:90%
+Still 9, right?
+
+00:07:42.600 --> 00:07:44.850 align:middle line:84%
+No matter what I did here,
+there's always nine options
+
+00:07:44.850 --> 00:07:45.790 align:middle line:90%
+left.
+
+00:07:45.790 --> 00:07:48.330 align:middle line:90%
+So maybe I choose a 7.
+
+00:07:48.330 --> 00:07:50.600 align:middle line:90%
+How many options here?
+
+00:07:50.600 --> 00:07:51.110 align:middle line:90%
+Eight.
+
+00:07:51.110 --> 00:07:51.950 align:middle line:90%
+I've used two.
+
+00:07:51.950 --> 00:07:53.790 align:middle line:90%
+I'm not allowed to reuse them.
+
+00:07:53.790 --> 00:07:56.180 align:middle line:90%
+So there are eight options left.
+
+00:07:56.180 --> 00:08:03.470 align:middle line:84%
+Then seven, then six, then
+five, then four, then three.
+
+00:08:03.470 --> 00:08:06.650 align:middle line:84%
+And therefore, by the
+generalized product rule--
+
+00:08:06.650 --> 00:08:15.380 align:middle line:84%
+by the generalized product
+rule, the number of length eight
+
+00:08:15.380 --> 00:08:20.750 align:middle line:84%
+serial numbers with all distinct
+digits is 10 times 9 times
+
+00:08:20.750 --> 00:08:25.790 align:middle line:84%
+8, all the way down
+to 3, just the product
+
+00:08:25.790 --> 00:08:28.640 align:middle line:84%
+of the number of choices
+I have at each step.
+
+00:08:28.640 --> 00:08:31.500 align:middle line:84%
+Which, by the way, someone
+had guessed previously.
+
+00:08:31.500 --> 00:08:34.640 align:middle line:90%
+So well done with that.
+
+00:08:34.640 --> 00:08:37.820 align:middle line:84%
+And now you could ask, out of
+all the serials, out of all 10
+
+00:08:37.820 --> 00:08:40.820 align:middle line:84%
+to the 8 serial numbers,
+now we know how many of
+
+00:08:40.820 --> 00:08:42.600 align:middle line:90%
+them have all distinct digits.
+
+00:08:42.600 --> 00:08:44.510 align:middle line:90%
+What fraction is that?
+
+00:08:44.510 --> 00:08:46.670 align:middle line:90%
+Well, we just divide.
+
+00:08:46.670 --> 00:08:50.210 align:middle line:84%
+This number divided
+by 10 to the eighth
+
+00:08:50.210 --> 00:08:52.970 align:middle line:84%
+tells us there are
+actually only about 1.8%
+
+00:08:52.970 --> 00:08:55.550 align:middle line:84%
+of dollar bills that
+have all distinct digits.
+
+00:08:55.550 --> 00:08:58.560 align:middle line:90%
+So about less than 2%.
+
+00:08:58.560 --> 00:09:01.760 align:middle line:84%
+So since we had like
+25 or 30 dollar bills
+
+00:09:01.760 --> 00:09:03.440 align:middle line:84%
+that we checked
+collectively, it's
+
+00:09:03.440 --> 00:09:06.950 align:middle line:84%
+no surprise that we didn't
+get any of them that
+
+00:09:06.950 --> 00:09:10.010 align:middle line:90%
+fit this criterion.
+
+00:09:10.010 --> 00:09:11.960 align:middle line:84%
+If more people carried
+cash, maybe we'd
+
+00:09:11.960 --> 00:09:14.730 align:middle line:84%
+be seeing some
+candy payouts today.
+
+00:09:14.730 --> 00:09:17.540 align:middle line:90%
+Shame.
+
+00:09:17.540 --> 00:09:21.650 align:middle line:84%
+Questions about the
+generalized product rule?
+
+00:09:21.650 --> 00:09:22.400 align:middle line:90%
+Wonderful.
+
+00:09:22.400 --> 00:09:25.315 align:middle line:84%
+Let's move on to the next rule,
+which is the division rule.
+
+00:09:25.315 --> 00:09:31.490 align:middle line:90%
+
+
+00:09:31.490 --> 00:09:34.130 align:middle line:90%
+Wonderful.
+
+00:09:34.130 --> 00:09:36.595 align:middle line:84%
+So, so far, we've seen
+the bijection rule.
+
+00:09:36.595 --> 00:09:39.650 align:middle line:90%
+
+
+00:09:39.650 --> 00:09:51.260 align:middle line:84%
+So if f from a set A to
+a set B is a bijection,
+
+00:09:51.260 --> 00:09:56.120 align:middle line:84%
+then the size of A
+equals the size of B.
+
+00:09:56.120 --> 00:09:58.850 align:middle line:84%
+A bijection, by the way,
+is also called a one
+
+00:09:58.850 --> 00:10:00.540 align:middle line:90%
+to one correspondence.
+
+00:10:00.540 --> 00:10:08.690 align:middle line:84%
+One to one correspondence,
+where the picture in your head
+
+00:10:08.690 --> 00:10:10.940 align:middle line:84%
+should be that every
+one thing on the left
+
+00:10:10.940 --> 00:10:13.290 align:middle line:84%
+corresponds to one
+thing on the right.
+
+00:10:13.290 --> 00:10:15.890 align:middle line:90%
+They're paired up one to one.
+
+00:10:15.890 --> 00:10:20.370 align:middle line:84%
+Thinking of this function in our
+directed arrow drawing fashion,
+
+00:10:20.370 --> 00:10:23.520 align:middle line:84%
+everything from A has
+exactly one arrow out,
+
+00:10:23.520 --> 00:10:26.430 align:middle line:84%
+and everything in B has
+exactly one arrow in.
+
+00:10:26.430 --> 00:10:28.680 align:middle line:84%
+That's what it means
+to be a bijection.
+
+00:10:28.680 --> 00:10:30.570 align:middle line:84%
+So it's a one to
+one correspondence.
+
+00:10:30.570 --> 00:10:32.810 align:middle line:90%
+One arrow out, one arrow in.
+
+00:10:32.810 --> 00:10:35.780 align:middle line:84%
+We can generalize
+this a little bit.
+
+00:10:35.780 --> 00:10:56.370 align:middle line:84%
+So if instead every a in A
+has exactly one arrow out
+
+00:10:56.370 --> 00:11:09.150 align:middle line:84%
+and every b in B has
+exactly k arrows in,
+
+00:11:09.150 --> 00:11:14.550 align:middle line:84%
+then we can conclude that
+the size of A divided by k
+
+00:11:14.550 --> 00:11:20.083 align:middle line:84%
+equals the size of B.
+So here's my picture.
+
+00:11:20.083 --> 00:11:27.660 align:middle line:90%
+
+
+00:11:27.660 --> 00:11:30.460 align:middle line:84%
+Everything on the left
+has one arrow out.
+
+00:11:30.460 --> 00:11:34.020 align:middle line:84%
+Everything on the right has two
+arrows in, exactly two arrows
+
+00:11:34.020 --> 00:11:35.880 align:middle line:90%
+in every time.
+
+00:11:35.880 --> 00:11:38.040 align:middle line:84%
+Then there are double as
+many elements on the left
+
+00:11:38.040 --> 00:11:40.650 align:middle line:90%
+as there are on the right.
+
+00:11:40.650 --> 00:11:45.900 align:middle line:84%
+If it were three arrows in,
+if everything on the right
+
+00:11:45.900 --> 00:11:47.350 align:middle line:84%
+has exactly three
+arrows in, then
+
+00:11:47.350 --> 00:11:49.350 align:middle line:84%
+there are three times as
+many things on the left
+
+00:11:49.350 --> 00:11:51.540 align:middle line:90%
+as there are on the right.
+
+00:11:51.540 --> 00:11:54.340 align:middle line:84%
+So this is a generalization
+of a bijection,
+
+00:11:54.340 --> 00:11:56.760 align:middle line:84%
+or a one to one
+correspondence to what's
+
+00:11:56.760 --> 00:11:58.796 align:middle line:90%
+called a k to 1 correspondence.
+
+00:11:58.796 --> 00:12:04.740 align:middle line:90%
+
+
+00:12:04.740 --> 00:12:07.440 align:middle line:84%
+Because what this ends up doing
+is saying that we've divided
+
+00:12:07.440 --> 00:12:09.870 align:middle line:84%
+the left side into
+groups of size k
+
+00:12:09.870 --> 00:12:13.320 align:middle line:84%
+that correspond to each
+one thing on the right.
+
+00:12:13.320 --> 00:12:19.380 align:middle line:84%
+So this one thing on the
+right matches 1, 2, 3 things
+
+00:12:19.380 --> 00:12:20.500 align:middle line:90%
+on the left.
+
+00:12:20.500 --> 00:12:22.710 align:middle line:84%
+And everything on
+the right is paired
+
+00:12:22.710 --> 00:12:26.160 align:middle line:84%
+with three distinct
+things on the left.
+
+00:12:26.160 --> 00:12:29.130 align:middle line:84%
+And so this is a useful tool
+for counting that generalizes
+
+00:12:29.130 --> 00:12:30.190 align:middle line:90%
+the bijection rule.
+
+00:12:30.190 --> 00:12:33.900 align:middle line:84%
+We don't have to match things
+up one to one as long as we know
+
+00:12:33.900 --> 00:12:36.850 align:middle line:84%
+that we're matching the same
+number of things every time,
+
+00:12:36.850 --> 00:12:39.660 align:middle line:84%
+and then we just
+divide by that thing.
+
+00:12:39.660 --> 00:12:42.200 align:middle line:84%
+All right, let's
+put this to use.
+
+00:12:42.200 --> 00:12:45.610 align:middle line:90%
+
+
+00:12:45.610 --> 00:12:46.813 align:middle line:90%
+So example.
+
+00:12:46.813 --> 00:12:49.870 align:middle line:90%
+
+
+00:12:49.870 --> 00:12:51.225 align:middle line:90%
+Knights of the Round Table.
+
+00:12:51.225 --> 00:12:58.510 align:middle line:90%
+
+
+00:12:58.510 --> 00:13:02.123 align:middle line:84%
+So the setup here is we're
+going to have n knights.
+
+00:13:02.123 --> 00:13:05.440 align:middle line:90%
+
+
+00:13:05.440 --> 00:13:07.750 align:middle line:84%
+Maybe it should have
+been k knights. n knights
+
+00:13:07.750 --> 00:13:19.330 align:middle line:84%
+all sitting around table around
+a round table at n equally
+
+00:13:19.330 --> 00:13:20.310 align:middle line:90%
+spaced seats.
+
+00:13:20.310 --> 00:13:27.940 align:middle line:90%
+
+
+00:13:27.940 --> 00:13:32.590 align:middle line:84%
+How many different
+arrangements are
+
+00:13:32.590 --> 00:13:54.050 align:middle line:84%
+possible if rotations
+of a seating assignment
+
+00:13:54.050 --> 00:13:58.266 align:middle line:90%
+are considered equivalent?
+
+00:13:58.266 --> 00:14:01.490 align:middle line:90%
+
+
+00:14:01.490 --> 00:14:04.530 align:middle line:84%
+So n knights sitting
+around a table.
+
+00:14:04.530 --> 00:14:06.282 align:middle line:84%
+If you have one
+seating assignment
+
+00:14:06.282 --> 00:14:08.240 align:middle line:84%
+and you have a second
+seating assignment that's
+
+00:14:08.240 --> 00:14:10.550 align:middle line:84%
+just a rotation of
+the first, then we
+
+00:14:10.550 --> 00:14:12.650 align:middle line:84%
+want to consider those
+two assignments the same
+
+00:14:12.650 --> 00:14:13.980 align:middle line:90%
+seating assignment.
+
+00:14:13.980 --> 00:14:16.380 align:middle line:84%
+We don't care which
+exact seats they're in,
+
+00:14:16.380 --> 00:14:20.220 align:middle line:84%
+as long as the cyclic order
+around the circle is the same.
+
+00:14:20.220 --> 00:14:25.770 align:middle line:84%
+So for example, if n is
+4 and we have 1 here,
+
+00:14:25.770 --> 00:14:28.680 align:middle line:84%
+then 3 here, then
+4 here and 2 here,
+
+00:14:28.680 --> 00:14:32.030 align:middle line:84%
+that's one possible
+seating assignment.
+
+00:14:32.030 --> 00:14:33.660 align:middle line:90%
+Well, here's a different one.
+
+00:14:33.660 --> 00:14:37.190 align:middle line:90%
+1 here, 3 here, 4 here, 2 here.
+
+00:14:37.190 --> 00:14:39.728 align:middle line:84%
+But this assignment is the
+same as that assignment
+
+00:14:39.728 --> 00:14:41.270 align:middle line:84%
+because we've just
+rotated the table.
+
+00:14:41.270 --> 00:14:43.980 align:middle line:84%
+And we're just saying we don't
+care about rotating the table.
+
+00:14:43.980 --> 00:14:47.300 align:middle line:84%
+So in fact, we want to consider
+these to be equivalent seating
+
+00:14:47.300 --> 00:14:48.980 align:middle line:90%
+assignments.
+
+00:14:48.980 --> 00:14:53.010 align:middle line:84%
+Just like we want to consider
+this to be equivalent to 1,
+
+00:14:53.010 --> 00:14:57.690 align:middle line:84%
+then 3, then 4, then 2 this
+way, and equivalent to 1,
+
+00:14:57.690 --> 00:15:00.390 align:middle line:90%
+then 3, then 4, then 2 this way.
+
+00:15:00.390 --> 00:15:03.590 align:middle line:84%
+So all four of these
+rotated seating assignments
+
+00:15:03.590 --> 00:15:06.030 align:middle line:84%
+are equivalent because
+it's the same order,
+
+00:15:06.030 --> 00:15:08.660 align:middle line:84%
+they're just starting
+in a different place.
+
+00:15:08.660 --> 00:15:10.610 align:middle line:90%
+Does that make sense?
+
+00:15:10.610 --> 00:15:11.120 align:middle line:90%
+Cool.
+
+00:15:11.120 --> 00:15:12.390 align:middle line:90%
+So that's our question.
+
+00:15:12.390 --> 00:15:15.290 align:middle line:84%
+How many different seating
+arrangements for these n knights
+
+00:15:15.290 --> 00:15:20.990 align:middle line:84%
+are possible, given that we
+don't care about rotations?
+
+00:15:20.990 --> 00:15:24.930 align:middle line:84%
+And to solve it, let's see
+if we can use a k to 1 map,
+
+00:15:24.930 --> 00:15:26.750 align:middle line:84%
+because that's what
+we're trying to learn
+
+00:15:26.750 --> 00:15:28.195 align:middle line:90%
+at this point in this lecture.
+
+00:15:28.195 --> 00:15:31.010 align:middle line:90%
+
+
+00:15:31.010 --> 00:15:34.940 align:middle line:84%
+So here is the map I'm
+going to recommend.
+
+00:15:34.940 --> 00:15:46.710 align:middle line:84%
+Let's let A be the set of
+permutations of 1 through n.
+
+00:15:46.710 --> 00:15:48.910 align:middle line:84%
+Permutation just
+means a reordering.
+
+00:15:48.910 --> 00:15:52.890 align:middle line:84%
+So it's all of the orders
+of the set 1 through n.
+
+00:15:52.890 --> 00:16:05.850 align:middle line:84%
+And B is the set of cyclic
+seating arrangements.
+
+00:16:05.850 --> 00:16:08.850 align:middle line:84%
+So B is the thing
+we're trying to count,
+
+00:16:08.850 --> 00:16:12.030 align:middle line:84%
+how many different seating
+arrangements are possible.
+
+00:16:12.030 --> 00:16:14.260 align:middle line:90%
+Well A, we know how to count.
+
+00:16:14.260 --> 00:16:15.560 align:middle line:90%
+What's the size of A?
+
+00:16:15.560 --> 00:16:21.930 align:middle line:90%
+
+
+00:16:21.930 --> 00:16:22.753 align:middle line:90%
+What is it?
+
+00:16:22.753 --> 00:16:23.670 align:middle line:90%
+AUDIENCE: n factorial.
+
+00:16:23.670 --> 00:16:25.440 align:middle line:90%
+ZACHARY ABEL: n factorial.
+
+00:16:25.440 --> 00:16:27.658 align:middle line:90%
+That's exactly right.
+
+00:16:27.658 --> 00:16:29.700 align:middle line:84%
+That was our first example
+of generalized product
+
+00:16:29.700 --> 00:16:30.930 align:middle line:90%
+rule on Tuesday.
+
+00:16:30.930 --> 00:16:33.580 align:middle line:84%
+There are 52 factorial
+orders for a deck of cards.
+
+00:16:33.580 --> 00:16:37.720 align:middle line:84%
+There are n factorial orders
+for a set of n knights.
+
+00:16:37.720 --> 00:16:38.750 align:middle line:90%
+All right.
+
+00:16:38.750 --> 00:16:41.420 align:middle line:84%
+So if we want to use
+the division rule,
+
+00:16:41.420 --> 00:16:44.650 align:middle line:84%
+we have a set, A,
+where we know the size.
+
+00:16:44.650 --> 00:16:48.400 align:middle line:84%
+And we need to be able to define
+a function from A to the set B
+
+00:16:48.400 --> 00:16:50.830 align:middle line:84%
+that we care about and
+make sure that it's
+
+00:16:50.830 --> 00:16:53.800 align:middle line:90%
+a k to 1 map for some k.
+
+00:16:53.800 --> 00:16:55.580 align:middle line:84%
+And here's the map
+we're going to do.
+
+00:16:55.580 --> 00:17:00.370 align:middle line:84%
+So f is going to take in a
+permutation, so an element of a.
+
+00:17:00.370 --> 00:17:03.614 align:middle line:90%
+So a1, a2 up to a n.
+
+00:17:03.614 --> 00:17:06.220 align:middle line:90%
+
+
+00:17:06.220 --> 00:17:09.579 align:middle line:84%
+So it takes in a
+permutation, an element of A,
+
+00:17:09.579 --> 00:17:12.230 align:middle line:84%
+and it needs to spit
+out an element of B.
+
+00:17:12.230 --> 00:17:15.859 align:middle line:84%
+So it needs to spit out a cyclic
+ordering of these numbers.
+
+00:17:15.859 --> 00:17:21.339 align:middle line:84%
+And it's going to spit out
+this cyclic ordering that
+
+00:17:21.339 --> 00:17:25.030 align:middle line:84%
+just sets them in that
+order around the table.
+
+00:17:25.030 --> 00:17:31.480 align:middle line:84%
+Yeah, the most straightforward
+thing I can think of to do here.
+
+00:17:31.480 --> 00:17:34.300 align:middle line:84%
+Now that we have
+this function, let's
+
+00:17:34.300 --> 00:17:35.775 align:middle line:90%
+check if it's a k to 1 map.
+
+00:17:35.775 --> 00:17:41.470 align:middle line:90%
+
+
+00:17:41.470 --> 00:17:44.770 align:middle line:84%
+So what does it mean for
+f to be a k to 1 map?
+
+00:17:44.770 --> 00:17:50.650 align:middle line:90%
+Is f a k to 1 map?
+
+00:17:50.650 --> 00:17:55.120 align:middle line:84%
+Well, it means that
+everything in B
+
+00:17:55.120 --> 00:18:00.310 align:middle line:84%
+needs to come from
+exactly k elements of A.
+
+00:18:00.310 --> 00:18:16.540 align:middle line:84%
+So we want every cyclic
+order comes from exactly k
+
+00:18:16.540 --> 00:18:19.180 align:middle line:90%
+permutations.
+
+00:18:19.180 --> 00:18:24.400 align:middle line:84%
+And when we say "comes from,"
+we mean via this function f.
+
+00:18:24.400 --> 00:18:27.910 align:middle line:90%
+Via function f.
+
+00:18:27.910 --> 00:18:31.210 align:middle line:84%
+So as an example, maybe
+n is five this time
+
+00:18:31.210 --> 00:18:37.670 align:middle line:84%
+and we have the order 4, 5, 2,
+3, 1, some cyclic order here.
+
+00:18:37.670 --> 00:18:41.310 align:middle line:84%
+How many different
+permutations of 1 through 5
+
+00:18:41.310 --> 00:18:43.348 align:middle line:90%
+map to this cyclic ordering?
+
+00:18:43.348 --> 00:18:44.515 align:middle line:90%
+Who can give me one of them?
+
+00:18:44.515 --> 00:18:54.230 align:middle line:90%
+
+
+00:18:54.230 --> 00:18:57.500 align:middle line:84%
+So we have this function f
+that takes a permutation of 1
+
+00:18:57.500 --> 00:19:00.260 align:middle line:84%
+through n and just lays
+it out around the circle.
+
+00:19:00.260 --> 00:19:03.770 align:middle line:84%
+So who can give me a permutation
+that becomes this once you
+
+00:19:03.770 --> 00:19:06.680 align:middle line:90%
+lay it out around the circle?
+
+00:19:06.680 --> 00:19:08.790 align:middle line:84%
+Let's see if we can
+get some new hands.
+
+00:19:08.790 --> 00:19:10.080 align:middle line:90%
+Yes, please.
+
+00:19:10.080 --> 00:19:11.080 align:middle line:90%
+AUDIENCE: 1, 4, 5, 2, 3.
+
+00:19:11.080 --> 00:19:13.580 align:middle line:90%
+ZACHARY ABEL: 1, 4, 5, 2, 3.
+
+00:19:13.580 --> 00:19:16.520 align:middle line:90%
+1, 4, 5, 2, 3.
+
+00:19:16.520 --> 00:19:18.220 align:middle line:84%
+If we lay that around
+a circle, we're
+
+00:19:18.220 --> 00:19:20.040 align:middle line:90%
+going to get 1, 4, 5, 2, 3.
+
+00:19:20.040 --> 00:19:20.880 align:middle line:90%
+Looks good to me.
+
+00:19:20.880 --> 00:19:21.380 align:middle line:90%
+Excellent.
+
+00:19:21.380 --> 00:19:23.240 align:middle line:90%
+Who can give me another?
+
+00:19:23.240 --> 00:19:24.440 align:middle line:90%
+Yes?
+
+00:19:24.440 --> 00:19:25.940 align:middle line:90%
+AUDIENCE: 4, 5 2, 3 1.
+
+00:19:25.940 --> 00:19:27.440 align:middle line:90%
+ZACHARY ABEL: 4, 5, 2, 3, 1.
+
+00:19:27.440 --> 00:19:31.430 align:middle line:84%
+4, 5, 2, 3, 1 If we lay
+that around a circle,
+
+00:19:31.430 --> 00:19:34.380 align:middle line:84%
+we're going to get 4, 5,
+2, 3, 1 Looks good to me.
+
+00:19:34.380 --> 00:19:36.230 align:middle line:90%
+Same cyclic ordering.
+
+00:19:36.230 --> 00:19:39.120 align:middle line:84%
+All we're doing is
+choosing a starting point.
+
+00:19:39.120 --> 00:19:41.997 align:middle line:84%
+If we know what cyclic
+ordering we're aiming for,
+
+00:19:41.997 --> 00:19:43.580 align:middle line:84%
+well, we just have
+to choose who we're
+
+00:19:43.580 --> 00:19:47.420 align:middle line:84%
+going to start with and
+then list the rest of them
+
+00:19:47.420 --> 00:19:49.230 align:middle line:90%
+in order around the circle.
+
+00:19:49.230 --> 00:19:50.810 align:middle line:84%
+And that's how we
+can reconstruct
+
+00:19:50.810 --> 00:19:53.490 align:middle line:84%
+all of the permutations that
+map to the cyclic order.
+
+00:19:53.490 --> 00:19:54.980 align:middle line:84%
+If we start with
+2, then it's going
+
+00:19:54.980 --> 00:19:58.760 align:middle line:90%
+to look like 2, 3, 1, 4, 5.
+
+00:19:58.760 --> 00:20:00.920 align:middle line:84%
+If, instead, we
+start with 3, it's
+
+00:20:00.920 --> 00:20:05.570 align:middle line:84%
+going to look like
+3, 1, 4, 5, 2.
+
+00:20:05.570 --> 00:20:09.710 align:middle line:84%
+And the only one we haven't
+done yet is starting with 5.
+
+00:20:09.710 --> 00:20:13.682 align:middle line:90%
+5, 2, 3, 1, 4.
+
+00:20:13.682 --> 00:20:15.570 align:middle line:90%
+5, 2, 3, 1, 4.
+
+00:20:15.570 --> 00:20:18.560 align:middle line:90%
+And I claim that's all of them.
+
+00:20:18.560 --> 00:20:21.230 align:middle line:84%
+So in this case, for this
+particular cyclic ordering,
+
+00:20:21.230 --> 00:20:24.040 align:middle line:84%
+there were five permutations
+that mapped to it.
+
+00:20:24.040 --> 00:20:26.960 align:middle line:90%
+
+
+00:20:26.960 --> 00:20:37.950 align:middle line:84%
+In general, I claim for
+each cyclic ordering,
+
+00:20:37.950 --> 00:20:44.580 align:middle line:84%
+there exists exactly
+n permutations that
+
+00:20:44.580 --> 00:20:54.070 align:middle line:84%
+map to it for the same reason,
+we just saw for this example.
+
+00:20:54.070 --> 00:20:55.590 align:middle line:84%
+The only additional
+information we
+
+00:20:55.590 --> 00:20:58.620 align:middle line:84%
+need to reconstruct all
+of these permutations
+
+00:20:58.620 --> 00:21:05.670 align:middle line:84%
+is which starting point
+we're choosing, because just
+
+00:21:05.670 --> 00:21:13.790 align:middle line:90%
+need to pick a starting point.
+
+00:21:13.790 --> 00:21:17.280 align:middle line:90%
+
+
+00:21:17.280 --> 00:21:20.370 align:middle line:84%
+So for every cyclic
+ordering, there
+
+00:21:20.370 --> 00:21:22.860 align:middle line:84%
+exists exactly n
+permutations that
+
+00:21:22.860 --> 00:21:26.130 align:middle line:84%
+map to it, which is
+exactly the condition we
+
+00:21:26.130 --> 00:21:28.965 align:middle line:90%
+need for f to be an n to 1 map.
+
+00:21:28.965 --> 00:21:32.681 align:middle line:90%
+
+
+00:21:32.681 --> 00:21:36.230 align:middle line:90%
+n to 1 map.
+
+00:21:36.230 --> 00:21:39.400 align:middle line:84%
+Everything on the right
+comes from exactly n things
+
+00:21:39.400 --> 00:21:41.230 align:middle line:90%
+on the left.
+
+00:21:41.230 --> 00:21:44.355 align:middle line:84%
+And what do we conclude now
+that we know f is an n to 1 map?
+
+00:21:44.355 --> 00:21:53.560 align:middle line:90%
+
+
+00:21:53.560 --> 00:21:57.000 align:middle line:84%
+Why are k to one maps
+in general helpful?
+
+00:21:57.000 --> 00:22:00.520 align:middle line:90%
+
+
+00:22:00.520 --> 00:22:01.360 align:middle line:90%
+Yes?
+
+00:22:01.360 --> 00:22:02.860 align:middle line:84%
+AUDIENCE: [INAUDIBLE]
+the size of B.
+
+00:22:02.860 --> 00:22:04.402 align:middle line:84%
+ZACHARY ABEL: Yeah,
+we can understand
+
+00:22:04.402 --> 00:22:06.760 align:middle line:84%
+the size of B. k to 1 maps
+are helpful because they
+
+00:22:06.760 --> 00:22:10.630 align:middle line:84%
+let us relate the size
+of A to the size of B.
+
+00:22:10.630 --> 00:22:13.930 align:middle line:84%
+And in this example,
+we know the size of A.
+
+00:22:13.930 --> 00:22:15.830 align:middle line:90%
+We know it's an n to 1 map.
+
+00:22:15.830 --> 00:22:23.050 align:middle line:84%
+And therefore, we
+know the size of B.
+
+00:22:23.050 --> 00:22:25.810 align:middle line:84%
+So the size of B
+is just the size
+
+00:22:25.810 --> 00:22:31.330 align:middle line:84%
+of A divided by n, because we
+decided it's an n to 1 map.
+
+00:22:31.330 --> 00:22:34.750 align:middle line:84%
+And therefore, the size
+of B is n factorial
+
+00:22:34.750 --> 00:22:40.570 align:middle line:84%
+divided by n, also known
+as n minus 1 factorial.
+
+00:22:40.570 --> 00:22:44.120 align:middle line:90%
+Does that make sense?
+
+00:22:44.120 --> 00:22:44.620 align:middle line:90%
+Cool.
+
+00:22:44.620 --> 00:22:46.630 align:middle line:90%
+I see some nods.
+
+00:22:46.630 --> 00:22:48.260 align:middle line:90%
+I see some blank stares again.
+
+00:22:48.260 --> 00:22:49.490 align:middle line:90%
+That's fine.
+
+00:22:49.490 --> 00:22:52.300 align:middle line:84%
+Ask questions when
+you have them.
+
+00:22:52.300 --> 00:22:59.080 align:middle line:84%
+OK, let's look at one more
+example of the division rule.
+
+00:22:59.080 --> 00:23:01.610 align:middle line:84%
+I want to look at increasing
+serial numbers again,
+
+00:23:01.610 --> 00:23:02.990 align:middle line:90%
+but this time just length three.
+
+00:23:02.990 --> 00:23:04.960 align:middle line:84%
+Let's make it
+easier on ourselves.
+
+00:23:04.960 --> 00:23:16.540 align:middle line:84%
+So the number of serial
+numbers length three.
+
+00:23:16.540 --> 00:23:19.480 align:middle line:84%
+And now I want to know
+how many of them have
+
+00:23:19.480 --> 00:23:21.315 align:middle line:90%
+all three digits that are in--
+
+00:23:21.315 --> 00:23:23.860 align:middle line:90%
+
+
+00:23:23.860 --> 00:23:25.020 align:middle line:90%
+sorry, one moment.
+
+00:23:25.020 --> 00:23:28.670 align:middle line:90%
+
+
+00:23:28.670 --> 00:23:30.240 align:middle line:90%
+Sorry, I got ahead of myself.
+
+00:23:30.240 --> 00:23:31.020 align:middle line:90%
+Different example.
+
+00:23:31.020 --> 00:23:32.930 align:middle line:84%
+Still length three
+serial numbers,
+
+00:23:32.930 --> 00:23:34.310 align:middle line:90%
+I just want to count these.
+
+00:23:34.310 --> 00:23:35.310 align:middle line:90%
+That's all I want to do.
+
+00:23:35.310 --> 00:23:37.340 align:middle line:84%
+How many length
+three serial numbers
+
+00:23:37.340 --> 00:23:40.473 align:middle line:90%
+are there with distinct digits?
+
+00:23:40.473 --> 00:23:52.130 align:middle line:90%
+
+
+00:23:52.130 --> 00:23:55.170 align:middle line:84%
+And we already have one way
+that we know to count this.
+
+00:23:55.170 --> 00:23:56.990 align:middle line:84%
+We have the generalized
+product rule method
+
+00:23:56.990 --> 00:23:58.240 align:middle line:90%
+that we used for length eight.
+
+00:23:58.240 --> 00:23:59.910 align:middle line:84%
+We can do the same
+for length three.
+
+00:23:59.910 --> 00:24:02.000 align:middle line:84%
+I want to propose a
+different method that
+
+00:24:02.000 --> 00:24:04.460 align:middle line:90%
+uses the division rule instead.
+
+00:24:04.460 --> 00:24:07.670 align:middle line:90%
+And here's what I'm going to do.
+
+00:24:07.670 --> 00:24:16.010 align:middle line:84%
+Let's let P be the set of
+permutations of 1 through 10--
+
+00:24:16.010 --> 00:24:17.230 align:middle line:90%
+sorry, of 0 through 9.
+
+00:24:17.230 --> 00:24:20.840 align:middle line:90%
+
+
+00:24:20.840 --> 00:24:29.040 align:middle line:84%
+And let's let S be the set
+of length three serials
+
+00:24:29.040 --> 00:24:32.540 align:middle line:90%
+with distinct digits.
+
+00:24:32.540 --> 00:24:37.560 align:middle line:90%
+
+
+00:24:37.560 --> 00:24:38.210 align:middle line:90%
+All right.
+
+00:24:38.210 --> 00:24:45.540 align:middle line:90%
+
+
+00:24:45.540 --> 00:24:47.050 align:middle line:84%
+And I just checked
+my notes again.
+
+00:24:47.050 --> 00:24:49.800 align:middle line:90%
+I got myself confused yet again.
+
+00:24:49.800 --> 00:24:50.770 align:middle line:90%
+Forgive me.
+
+00:24:50.770 --> 00:24:56.460 align:middle line:84%
+Let me change the details of
+the example just a little bit.
+
+00:24:56.460 --> 00:24:59.520 align:middle line:84%
+I want the number of serials
+of length three with not only
+
+00:24:59.520 --> 00:25:03.230 align:middle line:84%
+distinct digits, but actually
+digits in increasing order.
+
+00:25:03.230 --> 00:25:10.770 align:middle line:90%
+
+
+00:25:10.770 --> 00:25:15.390 align:middle line:90%
+So I'm OK with 2 and 4 and 9.
+
+00:25:15.390 --> 00:25:19.308 align:middle line:90%
+I'm OK with 0, 1, 3.
+
+00:25:19.308 --> 00:25:20.910 align:middle line:90%
+0, 1, 2 is fine.
+
+00:25:20.910 --> 00:25:26.940 align:middle line:84%
+I'm not OK with 4, 2, 3, because
+4 and 2 are in the wrong order.
+
+00:25:26.940 --> 00:25:32.430 align:middle line:84%
+I'm not OK with 2, 2, 5 because
+I want strictly increasing.
+
+00:25:32.430 --> 00:25:38.790 align:middle line:84%
+So how many length three serials
+have strictly increasing digits?
+
+00:25:38.790 --> 00:25:41.100 align:middle line:90%
+Is the question clear?
+
+00:25:41.100 --> 00:25:44.790 align:middle line:90%
+OK, thank you.
+
+00:25:44.790 --> 00:25:47.020 align:middle line:84%
+And let's do the same
+thing we were doing before.
+
+00:25:47.020 --> 00:25:50.260 align:middle line:84%
+Let P be the set of
+permutations of 0 through 9
+
+00:25:50.260 --> 00:25:53.070 align:middle line:84%
+and let S be the set
+of length three serials
+
+00:25:53.070 --> 00:25:57.120 align:middle line:90%
+with increasing digits.
+
+00:25:57.120 --> 00:25:59.220 align:middle line:90%
+Strictly increasing digits.
+
+00:25:59.220 --> 00:26:01.800 align:middle line:84%
+And let's see if we can
+relate P with S in order
+
+00:26:01.800 --> 00:26:04.977 align:middle line:90%
+to count the size of S.
+
+00:26:04.977 --> 00:26:06.310 align:middle line:90%
+And here's what I'm going to do.
+
+00:26:06.310 --> 00:26:07.860 align:middle line:90%
+Let's define a function.
+
+00:26:07.860 --> 00:26:13.740 align:middle line:84%
+Let's define a function,
+g, from P to S.
+
+00:26:13.740 --> 00:26:16.110 align:middle line:84%
+And it's going to
+look like this.
+
+00:26:16.110 --> 00:26:23.080 align:middle line:84%
+g of a permutation
+a0, a1, a2 up to a9.
+
+00:26:23.080 --> 00:26:26.530 align:middle line:90%
+That's a generic element of P.
+
+00:26:26.530 --> 00:26:33.043 align:middle line:84%
+That's going to go to the serial
+that has a0, a1, a2 sorted.
+
+00:26:33.043 --> 00:26:36.310 align:middle line:90%
+
+
+00:26:36.310 --> 00:26:38.280 align:middle line:84%
+So take those three
+digits and them.
+
+00:26:38.280 --> 00:26:41.060 align:middle line:90%
+
+
+00:26:41.060 --> 00:26:44.830 align:middle line:84%
+That's a way to turn a
+permutation into a serial number
+
+00:26:44.830 --> 00:26:45.870 align:middle line:90%
+with increasing digits.
+
+00:26:45.870 --> 00:26:48.520 align:middle line:90%
+
+
+00:26:48.520 --> 00:26:51.790 align:middle line:84%
+By the way, a different way
+to think about this problem.
+
+00:26:51.790 --> 00:26:54.130 align:middle line:90%
+You can think of S--
+
+00:26:54.130 --> 00:27:06.880 align:middle line:84%
+S is equivalently the set
+of size three subsets of 0
+
+00:27:06.880 --> 00:27:08.260 align:middle line:90%
+through 9.
+
+00:27:08.260 --> 00:27:11.300 align:middle line:84%
+If we know they have to
+come in increasing order,
+
+00:27:11.300 --> 00:27:13.433 align:middle line:84%
+then all we care about
+is which three we chose.
+
+00:27:13.433 --> 00:27:17.920 align:middle line:90%
+
+
+00:27:17.920 --> 00:27:20.440 align:middle line:84%
+So if I tell you my serial
+has increasing order
+
+00:27:20.440 --> 00:27:24.220 align:middle line:84%
+and has the digits
+of 5 and 4 and 9,
+
+00:27:24.220 --> 00:27:27.160 align:middle line:84%
+then I know it
+has to be 4, 5, 9.
+
+00:27:27.160 --> 00:27:29.380 align:middle line:84%
+So just the set of three
+digits that we chose
+
+00:27:29.380 --> 00:27:31.990 align:middle line:84%
+is enough to know
+which serial it is.
+
+00:27:31.990 --> 00:27:35.080 align:middle line:84%
+So if we want to think about
+this as instead the set of size
+
+00:27:35.080 --> 00:27:40.750 align:middle line:84%
+three subsets, then this
+function g would look like this,
+
+00:27:40.750 --> 00:27:43.955 align:middle line:84%
+would just go to
+the set a0, a1, a2.
+
+00:27:43.955 --> 00:27:47.890 align:middle line:90%
+
+
+00:27:47.890 --> 00:27:51.040 align:middle line:84%
+So this is a way to map
+permutations of the digits 0
+
+00:27:51.040 --> 00:27:53.490 align:middle line:84%
+through 9 to subsets
+of size three.
+
+00:27:53.490 --> 00:27:56.650 align:middle line:90%
+
+
+00:27:56.650 --> 00:27:59.360 align:middle line:84%
+And now let's see if this
+g is a helpful function.
+
+00:27:59.360 --> 00:28:02.890 align:middle line:84%
+Let's see if it's
+k to 1 for some k.
+
+00:28:02.890 --> 00:28:06.670 align:middle line:84%
+So the question becomes,
+for every size three
+
+00:28:06.670 --> 00:28:12.340 align:middle line:84%
+subset of the digits, how
+many permutations map to it?
+
+00:28:12.340 --> 00:28:23.552 align:middle line:84%
+For example, how many
+permutations map to 3, 6, 7?
+
+00:28:23.552 --> 00:28:26.690 align:middle line:90%
+
+
+00:28:26.690 --> 00:28:29.720 align:middle line:84%
+One permutation
+maps to this set.
+
+00:28:29.720 --> 00:28:32.123 align:middle line:90%
+That was one suggestion.
+
+00:28:32.123 --> 00:28:33.540 align:middle line:84%
+Anyone have different
+suggestions?
+
+00:28:33.540 --> 00:28:34.373 align:middle line:90%
+Is it more than one?
+
+00:28:34.373 --> 00:28:37.370 align:middle line:90%
+
+
+00:28:37.370 --> 00:28:38.913 align:middle line:90%
+In the back.
+
+00:28:38.913 --> 00:28:39.830 align:middle line:90%
+AUDIENCE: 3 factorial.
+
+00:28:39.830 --> 00:28:42.920 align:middle line:90%
+ZACHARY ABEL: 3 factorial, OK.
+
+00:28:42.920 --> 00:28:46.350 align:middle line:84%
+So we have 1, we
+have 3 factorial.
+
+00:28:46.350 --> 00:28:47.970 align:middle line:90%
+Any other suggestions?
+
+00:28:47.970 --> 00:28:49.100 align:middle line:90%
+Yes.
+
+00:28:49.100 --> 00:28:50.810 align:middle line:84%
+AUDIENCE: 7 factorial
+times 3 factorial.
+
+00:28:50.810 --> 00:28:53.366 align:middle line:84%
+ZACHARY ABEL: 7 factorial
+times 3 factorial.
+
+00:28:53.366 --> 00:28:55.490 align:middle line:90%
+
+
+00:28:55.490 --> 00:28:57.740 align:middle line:84%
+I'm going to put a question
+mark next to each of these
+
+00:28:57.740 --> 00:28:59.280 align:middle line:90%
+because there are guesses.
+
+00:28:59.280 --> 00:29:01.490 align:middle line:84%
+Let's see if we can figure
+out which one is right.
+
+00:29:01.490 --> 00:29:06.080 align:middle line:84%
+So let's see how many
+permutations map us to this set.
+
+00:29:06.080 --> 00:29:09.882 align:middle line:84%
+Well, we need to pick some
+permutation, 1, 2, 3, 4, 5, 6,
+
+00:29:09.882 --> 00:29:13.920 align:middle line:84%
+7, 8, 10, some permutation
+of the 10 digits.
+
+00:29:13.920 --> 00:29:15.883 align:middle line:84%
+What do we know about
+these three digits?
+
+00:29:15.883 --> 00:29:19.440 align:middle line:90%
+
+
+00:29:19.440 --> 00:29:23.520 align:middle line:84%
+Our function says, you take
+the first three entries
+
+00:29:23.520 --> 00:29:25.440 align:middle line:90%
+and you form them into a set.
+
+00:29:25.440 --> 00:29:27.870 align:middle line:90%
+And that's the output.
+
+00:29:27.870 --> 00:29:31.360 align:middle line:84%
+So if our output is
+going to be 3, 6, 7,
+
+00:29:31.360 --> 00:29:33.000 align:middle line:84%
+then these first
+three entries have
+
+00:29:33.000 --> 00:29:36.810 align:middle line:90%
+to be 3, 6, and 7 in some order.
+
+00:29:36.810 --> 00:29:38.070 align:middle line:90%
+Yeah?
+
+00:29:38.070 --> 00:29:43.020 align:middle line:90%
+3, 6, 7 in some order.
+
+00:29:43.020 --> 00:29:45.545 align:middle line:84%
+I don't care which
+order, because I'm just
+
+00:29:45.545 --> 00:29:47.920 align:middle line:84%
+going to take the three of
+them and plop them into a set.
+
+00:29:47.920 --> 00:29:51.370 align:middle line:84%
+And a set doesn't care
+what order they are.
+
+00:29:51.370 --> 00:29:54.360 align:middle line:84%
+So I know that 3, 6,
+and 7 have to be in
+
+00:29:54.360 --> 00:29:57.640 align:middle line:84%
+have to be in some order at the
+beginning of my permutation.
+
+00:29:57.640 --> 00:29:59.290 align:middle line:84%
+What about the end
+of the permutation?
+
+00:29:59.290 --> 00:30:02.160 align:middle line:90%
+What do I know about this?
+
+00:30:02.160 --> 00:30:04.210 align:middle line:84%
+What constraints
+do I have on it,
+
+00:30:04.210 --> 00:30:07.390 align:middle line:84%
+knowing that G of this
+permutation equals this set?
+
+00:30:07.390 --> 00:30:07.930 align:middle line:90%
+Yeah?
+
+00:30:07.930 --> 00:30:09.660 align:middle line:84%
+AUDIENCE: You can't
+have 3, 6, or 7.
+
+00:30:09.660 --> 00:30:10.493 align:middle line:90%
+ZACHARY ABEL: Right.
+
+00:30:10.493 --> 00:30:12.240 align:middle line:90%
+You can't have 3, 6, or 7.
+
+00:30:12.240 --> 00:30:15.190 align:middle line:84%
+You have to have all the
+other digits in some order.
+
+00:30:15.190 --> 00:30:18.870 align:middle line:90%
+But anything goes, yeah.
+
+00:30:18.870 --> 00:30:28.080 align:middle line:84%
+So it's the other seven
+digits in some order.
+
+00:30:28.080 --> 00:30:31.860 align:middle line:84%
+This is exactly the
+set of permutations
+
+00:30:31.860 --> 00:30:35.080 align:middle line:84%
+where g of that permutation
+gives the set 3, 6, 7.
+
+00:30:35.080 --> 00:30:37.243 align:middle line:84%
+So we have to put 3,
+6, and 7 in some order
+
+00:30:37.243 --> 00:30:39.660 align:middle line:84%
+at the beginning, put the other
+seven digits in some order
+
+00:30:39.660 --> 00:30:40.540 align:middle line:90%
+at the end.
+
+00:30:40.540 --> 00:30:42.820 align:middle line:84%
+And how many ways
+are there to do that?
+
+00:30:42.820 --> 00:30:44.560 align:middle line:90%
+Well, this is product rule.
+
+00:30:44.560 --> 00:30:47.670 align:middle line:84%
+It's 3 factorial here on
+the left, 7 factorial here
+
+00:30:47.670 --> 00:30:48.870 align:middle line:90%
+on the right.
+
+00:30:48.870 --> 00:30:54.070 align:middle line:84%
+So 3 factorial times
+7 factorial is indeed
+
+00:30:54.070 --> 00:30:58.740 align:middle line:84%
+the number of permutations
+that map to this set.
+
+00:30:58.740 --> 00:31:00.670 align:middle line:90%
+Was that's specific to this set?
+
+00:31:00.670 --> 00:31:02.710 align:middle line:84%
+If I chose a different
+set of three digits,
+
+00:31:02.710 --> 00:31:04.906 align:middle line:84%
+would I get a different
+number of pre-images?
+
+00:31:04.906 --> 00:31:09.450 align:middle line:90%
+
+
+00:31:09.450 --> 00:31:14.910 align:middle line:84%
+Like, if I instead
+chose 0 and 5 and 8?
+
+00:31:14.910 --> 00:31:17.120 align:middle line:84%
+Well, it would be the
+same constraint, right?
+
+00:31:17.120 --> 00:31:19.790 align:middle line:84%
+I would have to have 0, 5
+and 8 in some order here,
+
+00:31:19.790 --> 00:31:22.310 align:middle line:84%
+and then the other seven
+digits in some order here.
+
+00:31:22.310 --> 00:31:26.830 align:middle line:84%
+It's still going to be 3
+factorial times 7 factorial.
+
+00:31:26.830 --> 00:31:36.340 align:middle line:84%
+So in fact, g is k
+to 1, where k equals
+
+00:31:36.340 --> 00:31:41.500 align:middle line:90%
+3 factorial times 7 factorial.
+
+00:31:41.500 --> 00:31:42.700 align:middle line:90%
+Yeah?
+
+00:31:42.700 --> 00:31:45.850 align:middle line:84%
+Because the same argument we
+did for this particular example,
+
+00:31:45.850 --> 00:31:47.280 align:middle line:84%
+in fact, works
+for every example.
+
+00:31:47.280 --> 00:31:49.930 align:middle line:90%
+
+
+00:31:49.930 --> 00:31:50.440 align:middle line:90%
+Great.
+
+00:31:50.440 --> 00:31:52.400 align:middle line:90%
+And since k is--
+
+00:31:52.400 --> 00:31:54.830 align:middle line:84%
+since this map is k
+to 1 and we know k,
+
+00:31:54.830 --> 00:31:58.780 align:middle line:84%
+we can compute the size
+of our various sets.
+
+00:31:58.780 --> 00:32:01.910 align:middle line:84%
+On one hand, we have
+permutations of 0 through 9.
+
+00:32:01.910 --> 00:32:04.900 align:middle line:90%
+So that was 10 factorial.
+
+00:32:04.900 --> 00:32:08.840 align:middle line:84%
+We put it through a k to
+1 map where k is this.
+
+00:32:08.840 --> 00:32:13.450 align:middle line:84%
+So 3 factorial times 7
+factorial in the denominator.
+
+00:32:13.450 --> 00:32:23.005 align:middle line:84%
+And this equals the size
+of the set S. Sound good?
+
+00:32:23.005 --> 00:32:26.540 align:middle line:90%
+
+
+00:32:26.540 --> 00:32:30.890 align:middle line:84%
+So we mapped from permutations
+to the set of the first three
+
+00:32:30.890 --> 00:32:31.465 align:middle line:90%
+elements.
+
+00:32:31.465 --> 00:32:32.840 align:middle line:84%
+And we decided
+that every time we
+
+00:32:32.840 --> 00:32:39.650 align:middle line:84%
+do that, we lose by a factor of
+3 factorial times 7 factorial.
+
+00:32:39.650 --> 00:32:45.590 align:middle line:84%
+And so this is the number of
+size 3 subsets of 10 objects.
+
+00:32:45.590 --> 00:32:50.190 align:middle line:84%
+This, by the way, is an
+extremely useful formula.
+
+00:32:50.190 --> 00:32:52.020 align:middle line:90%
+Let me generalize this.
+
+00:32:52.020 --> 00:33:10.160 align:middle line:84%
+So the number of subsets of
+size k from a set of size n is--
+
+00:33:10.160 --> 00:33:12.890 align:middle line:84%
+well, we can do the same
+kind of argument here.
+
+00:33:12.890 --> 00:33:16.170 align:middle line:84%
+Map permutations, n
+factorial of them,
+
+00:33:16.170 --> 00:33:18.990 align:middle line:84%
+where we take the
+first k elements
+
+00:33:18.990 --> 00:33:21.680 align:middle line:90%
+and turn them into a set.
+
+00:33:21.680 --> 00:33:23.750 align:middle line:84%
+And that reduces the
+number of options
+
+00:33:23.750 --> 00:33:26.540 align:middle line:84%
+we have by k factorial
+on the left, and n
+
+00:33:26.540 --> 00:33:29.940 align:middle line:84%
+minus k factorial on the right,
+the same way it did here.
+
+00:33:29.940 --> 00:33:36.140 align:middle line:84%
+So this is n factorial
+divided by k factorial times
+
+00:33:36.140 --> 00:33:39.830 align:middle line:90%
+n minus k factorial.
+
+00:33:39.830 --> 00:33:42.120 align:middle line:90%
+This is a really useful formula.
+
+00:33:42.120 --> 00:33:44.490 align:middle line:84%
+You're definitely going to
+want it on your cheat sheet.
+
+00:33:44.490 --> 00:33:45.975 align:middle line:84%
+But in fact,
+hopefully by the time
+
+00:33:45.975 --> 00:33:47.600 align:middle line:84%
+the quiz comes around
+next week, you'll
+
+00:33:47.600 --> 00:33:50.700 align:middle line:84%
+be so used to this
+formula and so sick of--
+
+00:33:50.700 --> 00:33:53.000 align:middle line:84%
+I mean, you'll love
+it so much that you
+
+00:33:53.000 --> 00:33:55.250 align:middle line:84%
+aren't you aren't going to
+need it on your cheat sheet
+
+00:33:55.250 --> 00:33:58.550 align:middle line:90%
+because you're going to know it.
+
+00:33:58.550 --> 00:34:02.450 align:middle line:84%
+And in fact, we have a
+special notation for it.
+
+00:34:02.450 --> 00:34:06.680 align:middle line:84%
+We write it as n on the top,
+k on the bottom surrounded
+
+00:34:06.680 --> 00:34:08.219 align:middle line:90%
+in parentheses.
+
+00:34:08.219 --> 00:34:10.260 align:middle line:90%
+Notice it's not a fraction.
+
+00:34:10.260 --> 00:34:11.760 align:middle line:90%
+We're not dividing n by k.
+
+00:34:11.760 --> 00:34:14.320 align:middle line:84%
+So don't write n divided
+by k in parentheses.
+
+00:34:14.320 --> 00:34:16.199 align:middle line:84%
+It's just n on top,
+k on the bottom,
+
+00:34:16.199 --> 00:34:18.540 align:middle line:90%
+parentheses on the sides.
+
+00:34:18.540 --> 00:34:25.080 align:middle line:84%
+And this is pronounced
+"n choose k."
+
+00:34:25.080 --> 00:34:27.550 align:middle line:84%
+So n choose k is
+written like this.
+
+00:34:27.550 --> 00:34:30.300 align:middle line:84%
+We have a formula
+for it like this.
+
+00:34:30.300 --> 00:34:34.290 align:middle line:84%
+And it's pronounced "n
+choose k" because, well,
+
+00:34:34.290 --> 00:34:39.600 align:middle line:84%
+we're choosing k things out
+of a possible set of n things.
+
+00:34:39.600 --> 00:34:41.639 align:middle line:84%
+And like I said,
+really useful formula.
+
+00:34:41.639 --> 00:34:45.540 align:middle line:84%
+If you're ordering pizza for
+dinner, there are 15 sides--
+
+00:34:45.540 --> 00:34:47.159 align:middle line:84%
+or sorry, 15
+toppings that you can
+
+00:34:47.159 --> 00:34:49.199 align:middle line:84%
+choose from to put on
+your pizza and you're
+
+00:34:49.199 --> 00:34:52.860 align:middle line:84%
+supposed to choose three of
+them for some special promotion.
+
+00:34:52.860 --> 00:34:54.940 align:middle line:84%
+How many ways are
+there to do that?
+
+00:34:54.940 --> 00:35:03.460 align:middle line:84%
+If we've got 15 toppings,
+we want to choose three.
+
+00:35:03.460 --> 00:35:05.670 align:middle line:84%
+How many ways are there to
+choose what your pizza is
+
+00:35:05.670 --> 00:35:06.930 align:middle line:90%
+going to look like?
+
+00:35:06.930 --> 00:35:09.190 align:middle line:84%
+We don't care about the
+order of the toppings.
+
+00:35:09.190 --> 00:35:12.480 align:middle line:84%
+We just care about the set of
+three toppings that you pick.
+
+00:35:12.480 --> 00:35:17.280 align:middle line:84%
+It's in the name
+15, choose three.
+
+00:35:17.280 --> 00:35:22.770 align:middle line:84%
+15 choose three, also known
+as 15 factorial divided
+
+00:35:22.770 --> 00:35:25.740 align:middle line:90%
+by 3 factorial 12 factorial.
+
+00:35:25.740 --> 00:35:27.450 align:middle line:90%
+Yeah?
+
+00:35:27.450 --> 00:35:29.490 align:middle line:90%
+Wonderful.
+
+00:35:29.490 --> 00:35:32.070 align:middle line:84%
+If I need to select
+four volunteers out
+
+00:35:32.070 --> 00:35:36.030 align:middle line:84%
+of this class of, let's
+say, 200 students,
+
+00:35:36.030 --> 00:35:40.000 align:middle line:84%
+how many ways are there to
+pick a set of four volunteers?
+
+00:35:40.000 --> 00:35:42.600 align:middle line:90%
+200 choose four.
+
+00:35:42.600 --> 00:35:44.693 align:middle line:90%
+If I flip a coin 100 times--
+
+00:35:44.693 --> 00:35:49.770 align:middle line:90%
+
+
+00:35:49.770 --> 00:36:05.280 align:middle line:84%
+flip a coin 100 times, how
+many resulting sequences
+
+00:36:05.280 --> 00:36:11.245 align:middle line:84%
+have 50 heads and 50
+tails in some order?
+
+00:36:11.245 --> 00:36:15.560 align:middle line:90%
+
+
+00:36:15.560 --> 00:36:18.350 align:middle line:84%
+There are two times
+two times two times
+
+00:36:18.350 --> 00:36:21.500 align:middle line:84%
+two 100 times number
+of options in total,
+
+00:36:21.500 --> 00:36:23.390 align:middle line:90%
+two to the 100 options.
+
+00:36:23.390 --> 00:36:27.380 align:middle line:84%
+How many of those results
+result in exactly 50 heads
+
+00:36:27.380 --> 00:36:32.450 align:middle line:84%
+and exactly 50 tails,
+possibly intermixed?
+
+00:36:32.450 --> 00:36:34.080 align:middle line:84%
+Well, if we remember
+from Tuesday,
+
+00:36:34.080 --> 00:36:41.120 align:middle line:84%
+we had this bijection between
+binary sequences and subsets
+
+00:36:41.120 --> 00:36:44.630 align:middle line:84%
+where we can turn a binary
+sequence into a subset
+
+00:36:44.630 --> 00:36:47.910 align:middle line:84%
+by just taking all the ones
+and leaving out all the zeros.
+
+00:36:47.910 --> 00:36:50.660 align:middle line:84%
+Take the indices
+of all the ones.
+
+00:36:50.660 --> 00:36:52.320 align:middle line:84%
+And you can do
+that here as well.
+
+00:36:52.320 --> 00:36:56.960 align:middle line:84%
+If we're looking at length
+100 binary sequences
+
+00:36:56.960 --> 00:37:02.430 align:middle line:84%
+with 50 ones and 50 zeros, where
+one is head and zero is tail.
+
+00:37:02.430 --> 00:37:12.810 align:middle line:84%
+So number of length
+100 binary sequences
+
+00:37:12.810 --> 00:37:19.070 align:middle line:84%
+with 50 ones and 50
+zeros from the bijection
+
+00:37:19.070 --> 00:37:20.310 align:middle line:90%
+we talked about on Tuesday.
+
+00:37:20.310 --> 00:37:28.250 align:middle line:84%
+This is in bijection
+with the number of size
+
+00:37:28.250 --> 00:37:37.730 align:middle line:90%
+50 subsets of one through 100.
+
+00:37:37.730 --> 00:37:41.420 align:middle line:84%
+All we're doing is choosing
+50 out of the 100 flips
+
+00:37:41.420 --> 00:37:45.950 align:middle line:84%
+to be ones, to be heads, and
+the rest are going to be tails.
+
+00:37:45.950 --> 00:37:48.722 align:middle line:84%
+So we're choosing
+50 out of the 100.
+
+00:37:48.722 --> 00:37:49.430 align:middle line:90%
+It's in the name.
+
+00:37:49.430 --> 00:37:55.670 align:middle line:90%
+100, choose 50.
+
+00:37:55.670 --> 00:37:59.420 align:middle line:84%
+That's the number of ways
+to flip a coin 100 times
+
+00:37:59.420 --> 00:38:01.650 align:middle line:84%
+and get exactly 50
+heads and 50 tails.
+
+00:38:01.650 --> 00:38:04.850 align:middle line:90%
+Did that make sense?
+
+00:38:04.850 --> 00:38:05.870 align:middle line:90%
+Wonderful.
+
+00:38:05.870 --> 00:38:09.240 align:middle line:84%
+Interestingly--
+it's a little wet.
+
+00:38:09.240 --> 00:38:10.160 align:middle line:90%
+Sorry.
+
+00:38:10.160 --> 00:38:13.820 align:middle line:90%
+100 choose 50 divided by--
+
+00:38:13.820 --> 00:38:14.750 align:middle line:90%
+what is it?
+
+00:38:14.750 --> 00:38:16.590 align:middle line:90%
+2 to the 100.
+
+00:38:16.590 --> 00:38:21.050 align:middle line:84%
+So the ratio, the fraction of
+all results that have exactly 50
+
+00:38:21.050 --> 00:38:23.870 align:middle line:84%
+heads and 50 tails out of
+the total number of results
+
+00:38:23.870 --> 00:38:26.753 align:middle line:84%
+you can have, turns
+out this is about 8%.
+
+00:38:26.753 --> 00:38:30.380 align:middle line:90%
+
+
+00:38:30.380 --> 00:38:32.420 align:middle line:84%
+Which, to me, is a
+little counterintuitive.
+
+00:38:32.420 --> 00:38:35.190 align:middle line:84%
+50/50 has got to be
+the most common result.
+
+00:38:35.190 --> 00:38:38.330 align:middle line:84%
+It's right in the middle,
+assuming we have a fair coin.
+
+00:38:38.330 --> 00:38:42.440 align:middle line:84%
+And yet it's not
+actually all that likely.
+
+00:38:42.440 --> 00:38:47.570 align:middle line:84%
+Turns out we're pretty
+likely to be very near 50%,
+
+00:38:47.570 --> 00:38:50.210 align:middle line:84%
+but it's kind of hard
+to hit it exactly.
+
+00:38:50.210 --> 00:38:52.650 align:middle line:84%
+If we were doing 1,000
+flips instead of 100,
+
+00:38:52.650 --> 00:38:54.540 align:middle line:90%
+I think it's closer to 1%.
+
+00:38:54.540 --> 00:38:57.110 align:middle line:84%
+And it gets rarer
+and rarer as you go.
+
+00:38:57.110 --> 00:39:00.230 align:middle line:84%
+But now we have the tools
+to count things like that.
+
+00:39:00.230 --> 00:39:03.020 align:middle line:90%
+Questions about this n choose k.
+
+00:39:03.020 --> 00:39:07.012 align:middle line:90%
+
+
+00:39:07.012 --> 00:39:09.520 align:middle line:84%
+For reasons that
+we'll see next week,
+
+00:39:09.520 --> 00:39:12.986 align:middle line:84%
+this n choose k is called
+a binomial coefficient.
+
+00:39:12.986 --> 00:39:20.370 align:middle line:90%
+
+
+00:39:20.370 --> 00:39:22.590 align:middle line:84%
+So binomial coefficient
+is the general name
+
+00:39:22.590 --> 00:39:25.290 align:middle line:90%
+for these n choose k terms.
+
+00:39:25.290 --> 00:39:28.330 align:middle line:90%
+Again, we'll see why on Tuesday.
+
+00:39:28.330 --> 00:39:30.090 align:middle line:84%
+But if you see this
+term, know that that's
+
+00:39:30.090 --> 00:39:33.030 align:middle line:90%
+what we're referring to.
+
+00:39:33.030 --> 00:39:35.850 align:middle line:90%
+All right.
+
+00:39:35.850 --> 00:39:38.340 align:middle line:90%
+Nice.
+
+00:39:38.340 --> 00:39:40.860 align:middle line:84%
+Now the last technique
+I want to talk about,
+
+00:39:40.860 --> 00:39:46.890 align:middle line:84%
+the last counting technique
+is extremely useful
+
+00:39:46.890 --> 00:39:49.140 align:middle line:90%
+and extremely versatile.
+
+00:39:49.140 --> 00:39:51.930 align:middle line:84%
+But that also means
+that there are
+
+00:39:51.930 --> 00:39:54.510 align:middle line:84%
+lots of ways to apply
+it and also lots of ways
+
+00:39:54.510 --> 00:39:57.090 align:middle line:90%
+to apply it incorrectly.
+
+00:39:57.090 --> 00:39:59.350 align:middle line:84%
+So let's talk
+about how to do it.
+
+00:39:59.350 --> 00:40:02.250 align:middle line:84%
+And more importantly,
+let's talk about what
+
+00:40:02.250 --> 00:40:05.710 align:middle line:84%
+we need to make sure of
+before we know with confidence
+
+00:40:05.710 --> 00:40:06.675 align:middle line:90%
+that we can apply it.
+
+00:40:06.675 --> 00:40:12.970 align:middle line:90%
+
+
+00:40:12.970 --> 00:40:16.690 align:middle line:84%
+And in fact, conveniently,
+it's built exactly
+
+00:40:16.690 --> 00:40:19.472 align:middle line:84%
+on the generalized product
+rule, this next technique
+
+00:40:19.472 --> 00:40:20.180 align:middle line:90%
+that we're using.
+
+00:40:20.180 --> 00:40:23.040 align:middle line:84%
+In fact, I'm going to keep
+that up so we can look at it.
+
+00:40:23.040 --> 00:40:36.700 align:middle line:90%
+
+
+00:40:36.700 --> 00:40:39.850 align:middle line:84%
+And this technique,
+the book calls
+
+00:40:39.850 --> 00:40:51.193 align:middle line:84%
+it counting with sequences,
+or counting with recipes.
+
+00:40:51.193 --> 00:40:54.090 align:middle line:90%
+
+
+00:40:54.090 --> 00:40:54.590 align:middle line:90%
+Excuse me.
+
+00:40:54.590 --> 00:41:00.070 align:middle line:84%
+The general idea is if you have
+some set you're trying to count,
+
+00:41:00.070 --> 00:41:02.800 align:middle line:84%
+well, it would be
+really convenient
+
+00:41:02.800 --> 00:41:05.300 align:middle line:90%
+if you could build up your set--
+
+00:41:05.300 --> 00:41:08.710 align:middle line:84%
+build all the elements
+of your set via sequence
+
+00:41:08.710 --> 00:41:11.590 align:middle line:84%
+of convenient choices
+where you always
+
+00:41:11.590 --> 00:41:14.380 align:middle line:84%
+have the same number
+of choices every time.
+
+00:41:14.380 --> 00:41:17.470 align:middle line:84%
+So then you can use the
+generalized product rule.
+
+00:41:17.470 --> 00:41:19.450 align:middle line:84%
+So counting with
+sequences or recipes
+
+00:41:19.450 --> 00:41:23.680 align:middle line:84%
+is just a way to construct your
+set with an easily digestible
+
+00:41:23.680 --> 00:41:26.410 align:middle line:90%
+sequence of simple choices.
+
+00:41:26.410 --> 00:41:28.990 align:middle line:84%
+And as long as you verify
+that that does indeed
+
+00:41:28.990 --> 00:41:31.990 align:middle line:84%
+construct your set
+exactly, then you
+
+00:41:31.990 --> 00:41:35.110 align:middle line:84%
+have your count with the
+generalized product rule.
+
+00:41:35.110 --> 00:41:37.670 align:middle line:84%
+This will make a lot more sense
+when we start applying it.
+
+00:41:37.670 --> 00:41:39.820 align:middle line:90%
+So let's start doing that.
+
+00:41:39.820 --> 00:41:45.640 align:middle line:84%
+And the example we're going to
+use is counting poker hands.
+
+00:41:45.640 --> 00:41:47.685 align:middle line:84%
+So we're going to use a
+standard deck of cards.
+
+00:41:47.685 --> 00:41:56.710 align:middle line:90%
+
+
+00:41:56.710 --> 00:42:00.690 align:middle line:84%
+A standard deck of
+cards has 13 of what are
+
+00:42:00.690 --> 00:42:04.050 align:middle line:90%
+called ranks and four suits.
+
+00:42:04.050 --> 00:42:07.800 align:middle line:84%
+So I'm told that some
+of you in the back
+
+00:42:07.800 --> 00:42:10.890 align:middle line:84%
+can't see my comically
+oversized playing cards.
+
+00:42:10.890 --> 00:42:12.620 align:middle line:90%
+So let's do better.
+
+00:42:12.620 --> 00:42:15.510 align:middle line:90%
+
+
+00:42:15.510 --> 00:42:17.110 align:middle line:90%
+So we have four suits.
+
+00:42:17.110 --> 00:42:19.720 align:middle line:84%
+We have spades and
+hearts in my left hand.
+
+00:42:19.720 --> 00:42:22.800 align:middle line:84%
+We have clubs and
+diamonds in my right hand.
+
+00:42:22.800 --> 00:42:24.700 align:middle line:90%
+Those are the four suits.
+
+00:42:24.700 --> 00:42:27.763 align:middle line:90%
+And then there are 13 ranks.
+
+00:42:27.763 --> 00:42:30.990 align:middle line:90%
+
+
+00:42:30.990 --> 00:42:32.620 align:middle line:90%
+No way this is going to work.
+
+00:42:32.620 --> 00:42:35.260 align:middle line:90%
+That goes ace, two--
+
+00:42:35.260 --> 00:42:37.290 align:middle line:84%
+I'm not going to
+try to fan them out.
+
+00:42:37.290 --> 00:42:38.310 align:middle line:90%
+Sorry.
+
+00:42:38.310 --> 00:42:48.040 align:middle line:84%
+3, 4, 5, 6, 7, 8, 9, 10, then
+Jack, then queen, then king.
+
+00:42:48.040 --> 00:42:51.330 align:middle line:84%
+Those are the 13
+different ranks.
+
+00:42:51.330 --> 00:42:56.470 align:middle line:84%
+Sometimes in poker, the ace
+is the lowest of the numbers.
+
+00:42:56.470 --> 00:42:58.740 align:middle line:84%
+Sometimes, it's the
+highest of the numbers.
+
+00:42:58.740 --> 00:43:02.030 align:middle line:84%
+We're not really going to
+care about that so much.
+
+00:43:02.030 --> 00:43:05.270 align:middle line:84%
+All we need to know is that
+there are four suits and 13
+
+00:43:05.270 --> 00:43:09.200 align:middle line:84%
+ranks, and the deck consists
+of every combination
+
+00:43:09.200 --> 00:43:10.320 align:middle line:90%
+of one of each.
+
+00:43:10.320 --> 00:43:13.700 align:middle line:90%
+So 13 times 4 is 52 cards.
+
+00:43:13.700 --> 00:43:18.320 align:middle line:90%
+So 13 ranks, four suits.
+
+00:43:18.320 --> 00:43:21.803 align:middle line:84%
+These are called hearts,
+clubs, spades, and diamonds.
+
+00:43:21.803 --> 00:43:24.740 align:middle line:90%
+
+
+00:43:24.740 --> 00:43:29.840 align:middle line:84%
+And there are 52 cards
+corresponding to every way
+
+00:43:29.840 --> 00:43:31.720 align:middle line:90%
+to choose one rank and one suit.
+
+00:43:31.720 --> 00:43:35.330 align:middle line:90%
+
+
+00:43:35.330 --> 00:43:37.770 align:middle line:84%
+That is the standard
+deck of cards.
+
+00:43:37.770 --> 00:43:41.660 align:middle line:84%
+We're going to be assuming
+that for these next examples.
+
+00:43:41.660 --> 00:43:45.170 align:middle line:90%
+Come to me, notes.
+
+00:43:45.170 --> 00:43:51.560 align:middle line:84%
+And in poker, a poker hand
+is a set of five cards.
+
+00:43:51.560 --> 00:44:01.650 align:middle line:84%
+So a poker hand is a subset
+of five cards out of the 52
+
+00:44:01.650 --> 00:44:03.840 align:middle line:90%
+possible cards.
+
+00:44:03.840 --> 00:44:07.290 align:middle line:84%
+And some subsets have more
+specialized properties
+
+00:44:07.290 --> 00:44:10.510 align:middle line:84%
+that are less common, and
+so they're more powerful.
+
+00:44:10.510 --> 00:44:14.670 align:middle line:84%
+And you get to beat your
+enemies with powerful hands.
+
+00:44:14.670 --> 00:44:17.730 align:middle line:90%
+That's poker, right?
+
+00:44:17.730 --> 00:44:20.140 align:middle line:84%
+So let's see some different
+kinds of poker hands.
+
+00:44:20.140 --> 00:44:22.835 align:middle line:84%
+And the first one I want to
+look at is four of a kind.
+
+00:44:22.835 --> 00:44:28.620 align:middle line:90%
+
+
+00:44:28.620 --> 00:44:31.360 align:middle line:84%
+So a poker hand is
+called a four of a kind
+
+00:44:31.360 --> 00:44:40.290 align:middle line:84%
+if you have all four cards
+of some rank and then
+
+00:44:40.290 --> 00:44:42.660 align:middle line:90%
+some fifth card.
+
+00:44:42.660 --> 00:44:44.850 align:middle line:84%
+So four of a kind,
+because you have all four
+
+00:44:44.850 --> 00:44:47.520 align:middle line:90%
+options of the same rank.
+
+00:44:47.520 --> 00:44:51.180 align:middle line:84%
+And we want to count how
+many four of a kind hands
+
+00:44:51.180 --> 00:44:53.500 align:middle line:84%
+are there in a
+standard 52 deck--
+
+00:44:53.500 --> 00:44:56.290 align:middle line:90%
+52-card deck.
+
+00:44:56.290 --> 00:45:01.810 align:middle line:84%
+And we're going to do this by
+counting with a recipe here.
+
+00:45:01.810 --> 00:45:05.870 align:middle line:84%
+And basically, I kind of
+already wrote the recipe,
+
+00:45:05.870 --> 00:45:08.380 align:middle line:90%
+but let's do it carefully.
+
+00:45:08.380 --> 00:45:16.030 align:middle line:84%
+Step one, I'm going
+to choose a rank R
+
+00:45:16.030 --> 00:45:21.750 align:middle line:84%
+and take all four
+cards of that rank.
+
+00:45:21.750 --> 00:45:25.150 align:middle line:90%
+
+
+00:45:25.150 --> 00:45:32.350 align:middle line:84%
+And then I'm going to
+pick one other card.
+
+00:45:32.350 --> 00:45:34.960 align:middle line:84%
+And putting these
+two steps together,
+
+00:45:34.960 --> 00:45:41.560 align:middle line:84%
+we have now constructed a poker
+hand, a set of five cards.
+
+00:45:41.560 --> 00:45:44.800 align:middle line:84%
+And the claim is
+that this recipe
+
+00:45:44.800 --> 00:45:48.165 align:middle line:84%
+is going to help us count the
+set of four of a kind hands.
+
+00:45:48.165 --> 00:45:51.220 align:middle line:90%
+
+
+00:45:51.220 --> 00:45:52.750 align:middle line:90%
+Great.
+
+00:45:52.750 --> 00:45:56.200 align:middle line:84%
+We can be a little
+more precise with this.
+
+00:45:56.200 --> 00:45:59.260 align:middle line:90%
+What we've really done--
+
+00:45:59.260 --> 00:46:00.370 align:middle line:90%
+excuse me.
+
+00:46:00.370 --> 00:46:01.870 align:middle line:90%
+So first, we've set up a set.
+
+00:46:01.870 --> 00:46:06.760 align:middle line:84%
+I'm going to call it A. It's
+going to be the set of R
+
+00:46:06.760 --> 00:46:21.340 align:middle line:84%
+and C, where R is a rank, C is
+a card with rank not equal to R.
+
+00:46:21.340 --> 00:46:23.445 align:middle line:90%
+So this is following our recipe.
+
+00:46:23.445 --> 00:46:25.070 align:middle line:84%
+We choose a rank for
+the four of a kind
+
+00:46:25.070 --> 00:46:27.695 align:middle line:84%
+and then we choose a fifth card,
+which can't be one of the four
+
+00:46:27.695 --> 00:46:29.890 align:middle line:90%
+we've already picked.
+
+00:46:29.890 --> 00:46:37.683 align:middle line:84%
+And B is the set of
+four of a kind hands.
+
+00:46:37.683 --> 00:46:40.510 align:middle line:90%
+
+
+00:46:40.510 --> 00:46:44.090 align:middle line:84%
+We have the set A of
+pairs, of sequences.
+
+00:46:44.090 --> 00:46:47.920 align:middle line:84%
+This is where counting
+with sequences comes in.
+
+00:46:47.920 --> 00:46:51.790 align:middle line:84%
+But B is really the set
+we're trying to count.
+
+00:46:51.790 --> 00:47:01.970 align:middle line:84%
+And we've set up
+a map from A to B.
+
+00:47:01.970 --> 00:47:05.270 align:middle line:84%
+We set up some
+function, f, from A
+
+00:47:05.270 --> 00:47:10.040 align:middle line:84%
+to B, which takes a
+rank and some other card
+
+00:47:10.040 --> 00:47:16.440 align:middle line:84%
+and turns it into the hand rank
+of hearts, rank of diamonds,
+
+00:47:16.440 --> 00:47:24.710 align:middle line:84%
+rank of spades, rank of clubs,
+and then this other card C.
+
+00:47:24.710 --> 00:47:27.590 align:middle line:84%
+Does that make sense, how
+this description of a recipe
+
+00:47:27.590 --> 00:47:30.865 align:middle line:84%
+turns into this set, this set,
+and this map between them?
+
+00:47:30.865 --> 00:47:34.980 align:middle line:90%
+
+
+00:47:34.980 --> 00:47:35.480 align:middle line:90%
+Wonderful.
+
+00:47:35.480 --> 00:47:38.300 align:middle line:90%
+No objections, so I'll continue.
+
+00:47:38.300 --> 00:47:44.670 align:middle line:84%
+And now the claim
+f is a bijection.
+
+00:47:44.670 --> 00:47:48.200 align:middle line:90%
+
+
+00:47:48.200 --> 00:47:50.160 align:middle line:84%
+This is where counting
+with recipes--
+
+00:47:50.160 --> 00:47:51.960 align:middle line:90%
+this is what the technique is.
+
+00:47:51.960 --> 00:47:54.370 align:middle line:84%
+We want to construct
+some set of sequences
+
+00:47:54.370 --> 00:47:57.830 align:middle line:84%
+where we're making a
+sequence of choices in order
+
+00:47:57.830 --> 00:47:59.650 align:middle line:84%
+and we want to prove
+that the resulting
+
+00:47:59.650 --> 00:48:05.080 align:middle line:84%
+set is in bijection with the set
+we're actually trying to count.
+
+00:48:05.080 --> 00:48:07.040 align:middle line:84%
+And as long as we can
+verify that bijection,
+
+00:48:07.040 --> 00:48:10.780 align:middle line:84%
+then we know the size of B,
+because we know the size of A
+
+00:48:10.780 --> 00:48:13.270 align:middle line:90%
+with generalized product rule.
+
+00:48:13.270 --> 00:48:17.300 align:middle line:84%
+So we need to verify
+f is a bijection.
+
+00:48:17.300 --> 00:48:18.940 align:middle line:84%
+And then we need to
+count the size of A
+
+00:48:18.940 --> 00:48:21.610 align:middle line:84%
+in order to figure
+out the size of B.
+
+00:48:21.610 --> 00:48:25.150 align:middle line:84%
+So what does it mean
+for f to be a bijection?
+
+00:48:25.150 --> 00:48:34.630 align:middle line:84%
+Well, we need f to be a
+function, total, surjective,
+
+00:48:34.630 --> 00:48:36.326 align:middle line:90%
+and injective.
+
+00:48:36.326 --> 00:48:44.170 align:middle line:90%
+
+
+00:48:44.170 --> 00:48:47.450 align:middle line:84%
+So what does it mean
+for f to be a function?
+
+00:48:47.450 --> 00:48:50.820 align:middle line:84%
+It means for every input,
+there's, at most, one output.
+
+00:48:50.820 --> 00:48:54.150 align:middle line:84%
+And that's usually
+built into the process.
+
+00:48:54.150 --> 00:48:56.310 align:middle line:84%
+We have some deterministic
+way of turning
+
+00:48:56.310 --> 00:48:59.740 align:middle line:84%
+this pair into this hand
+and there's not ambiguity.
+
+00:48:59.740 --> 00:49:02.140 align:middle line:84%
+This pair can't turn into
+seven different hands.
+
+00:49:02.140 --> 00:49:04.620 align:middle line:84%
+Usually, we get the
+function side for free
+
+00:49:04.620 --> 00:49:07.530 align:middle line:84%
+and it's not really
+worth commenting on much.
+
+00:49:07.530 --> 00:49:09.810 align:middle line:90%
+What does total mean?
+
+00:49:09.810 --> 00:49:16.383 align:middle line:84%
+Total means that every pair
+turns into at least one hand.
+
+00:49:16.383 --> 00:49:17.800 align:middle line:84%
+And since we know
+it's a function,
+
+00:49:17.800 --> 00:49:19.990 align:middle line:84%
+every pair turns into
+exactly one hand.
+
+00:49:19.990 --> 00:49:25.530 align:middle line:84%
+Specifically, it turns into a
+hand in the set we care about.
+
+00:49:25.530 --> 00:49:34.140 align:middle line:84%
+So we have our first meaningful
+question, is f of R, C, a four
+
+00:49:34.140 --> 00:49:45.280 align:middle line:84%
+of a kind for every way we
+have to fill out our recipe?
+
+00:49:45.280 --> 00:49:47.880 align:middle line:84%
+So is everything we construct--
+are all of the hands
+
+00:49:47.880 --> 00:49:52.250 align:middle line:84%
+that we construct really
+four of a kind hands,
+
+00:49:52.250 --> 00:49:54.920 align:middle line:84%
+or are we constructing
+some extraneous stuff?
+
+00:49:54.920 --> 00:49:56.630 align:middle line:84%
+If we're building
+extraneous stuff,
+
+00:49:56.630 --> 00:49:58.213 align:middle line:84%
+then we're not
+counting the right set,
+
+00:49:58.213 --> 00:50:00.130 align:middle line:84%
+because we're not
+building the right set.
+
+00:50:00.130 --> 00:50:02.950 align:middle line:90%
+So first meaningful question.
+
+00:50:02.950 --> 00:50:05.560 align:middle line:84%
+For every way we have
+to fill the recipe,
+
+00:50:05.560 --> 00:50:08.680 align:middle line:84%
+is the hand that we've
+constructed a hand
+
+00:50:08.680 --> 00:50:11.080 align:middle line:90%
+that we're trying to count?
+
+00:50:11.080 --> 00:50:14.430 align:middle line:84%
+And in this case, well, we
+can see that yes, yes, it
+
+00:50:14.430 --> 00:50:18.490 align:middle line:84%
+is because we have all four
+cards of the same rank.
+
+00:50:18.490 --> 00:50:22.480 align:middle line:84%
+And we have a fifth card that
+is not any of these cards
+
+00:50:22.480 --> 00:50:25.040 align:middle line:84%
+because it has rank
+that's different from R.
+
+00:50:25.040 --> 00:50:27.670 align:middle line:84%
+So this really is a size
+five subset with four cards
+
+00:50:27.670 --> 00:50:28.490 align:middle line:90%
+of the same rank.
+
+00:50:28.490 --> 00:50:32.050 align:middle line:90%
+So in this case, yes.
+
+00:50:32.050 --> 00:50:34.750 align:middle line:90%
+Great.
+
+00:50:34.750 --> 00:50:37.900 align:middle line:90%
+We need f to be surjective.
+
+00:50:37.900 --> 00:50:39.830 align:middle line:84%
+What does it mean
+to be surjective?
+
+00:50:39.830 --> 00:50:44.530 align:middle line:84%
+It means every four of a
+kind hand, everything in B,
+
+00:50:44.530 --> 00:50:57.130 align:middle line:84%
+comes from something in A.
+Can every four of a kind hand
+
+00:50:57.130 --> 00:50:58.020 align:middle line:90%
+be built?
+
+00:50:58.020 --> 00:51:02.770 align:middle line:90%
+
+
+00:51:02.770 --> 00:51:04.930 align:middle line:84%
+So can we really
+construct everything
+
+00:51:04.930 --> 00:51:07.300 align:middle line:90%
+that we're trying to count?
+
+00:51:07.300 --> 00:51:17.570 align:middle line:84%
+In this example-- let's
+look at an example.
+
+00:51:17.570 --> 00:51:21.170 align:middle line:84%
+If I have the four of a kind
+hand that has a three of hearts,
+
+00:51:21.170 --> 00:51:25.900 align:middle line:84%
+the seven of hearts, the three
+of diamonds, the three of clubs,
+
+00:51:25.900 --> 00:51:31.700 align:middle line:84%
+and the three of spades, how
+do I build that from my recipe?
+
+00:51:31.700 --> 00:51:35.680 align:middle line:84%
+How do I get that as an
+output of my function f?
+
+00:51:35.680 --> 00:51:37.665 align:middle line:90%
+What is R and what is C?
+
+00:51:37.665 --> 00:51:50.420 align:middle line:90%
+
+
+00:51:50.420 --> 00:51:52.316 align:middle line:90%
+Yep.
+
+00:51:52.316 --> 00:51:56.162 align:middle line:90%
+AUDIENCE: R is 3, and C is 7.
+
+00:51:56.162 --> 00:51:56.870 align:middle line:90%
+ZACHARY ABEL: OK.
+
+00:51:56.870 --> 00:52:01.940 align:middle line:84%
+R is three and C is
+the seven of hearts.
+
+00:52:01.940 --> 00:52:03.680 align:middle line:90%
+Oops.
+
+00:52:03.680 --> 00:52:05.220 align:middle line:90%
+That's exactly right.
+
+00:52:05.220 --> 00:52:06.950 align:middle line:84%
+The rank R is
+supposed to tell us
+
+00:52:06.950 --> 00:52:08.910 align:middle line:90%
+the rank that we have four of.
+
+00:52:08.910 --> 00:52:10.020 align:middle line:90%
+We have four 3's.
+
+00:52:10.020 --> 00:52:11.310 align:middle line:90%
+So the rank is 3.
+
+00:52:11.310 --> 00:52:14.450 align:middle line:84%
+The card C is supposed to
+be the fifth extraneous card
+
+00:52:14.450 --> 00:52:17.360 align:middle line:84%
+in the hand that isn't
+part of the four of a kind.
+
+00:52:17.360 --> 00:52:20.060 align:middle line:84%
+And that's the 7 of
+hearts in this example.
+
+00:52:20.060 --> 00:52:21.570 align:middle line:90%
+Was there any ambiguity?
+
+00:52:21.570 --> 00:52:24.200 align:middle line:90%
+
+
+00:52:24.200 --> 00:52:24.750 align:middle line:90%
+Sorry.
+
+00:52:24.750 --> 00:52:27.080 align:middle line:84%
+More importantly, will we
+always be able to do this?
+
+00:52:27.080 --> 00:52:29.900 align:middle line:84%
+For every four of a kind
+hand, will we always
+
+00:52:29.900 --> 00:52:33.260 align:middle line:84%
+be able to pick out a rank
+and pick out the fifth card?
+
+00:52:33.260 --> 00:52:34.960 align:middle line:90%
+Yeah.
+
+00:52:34.960 --> 00:52:35.460 align:middle line:90%
+Yeah.
+
+00:52:35.460 --> 00:52:37.640 align:middle line:90%
+So we are surjective.
+
+00:52:37.640 --> 00:52:43.190 align:middle line:84%
+We can build every hand
+that we care to build.
+
+00:52:43.190 --> 00:52:50.040 align:middle line:84%
+The last thing we need to check
+is, is our function injective?
+
+00:52:50.040 --> 00:52:55.500 align:middle line:84%
+And what it means for
+f to be injective is
+
+00:52:55.500 --> 00:53:11.580 align:middle line:84%
+can every four of a kind hand
+be built in exactly one way?
+
+00:53:11.580 --> 00:53:15.060 align:middle line:84%
+Exactly one way is what it means
+to be surjective and injective
+
+00:53:15.060 --> 00:53:17.940 align:middle line:90%
+combined.
+
+00:53:17.940 --> 00:53:21.400 align:middle line:84%
+So for every four
+of a kind hand,
+
+00:53:21.400 --> 00:53:25.620 align:middle line:84%
+is there only one way to
+build it with our recipe?
+
+00:53:25.620 --> 00:53:28.410 align:middle line:84%
+And in this case, yeah, for
+kind of the same reason.
+
+00:53:28.410 --> 00:53:30.930 align:middle line:84%
+We know which rank
+we have four of.
+
+00:53:30.930 --> 00:53:33.258 align:middle line:84%
+We know which card is
+the other card that
+
+00:53:33.258 --> 00:53:35.800 align:middle line:84%
+doesn't match that rank, and
+there's only one way to do that.
+
+00:53:35.800 --> 00:53:38.050 align:middle line:84%
+In fact, there's exactly
+one way to do that.
+
+00:53:38.050 --> 00:53:40.920 align:middle line:84%
+So we have built
+everything in our set
+
+00:53:40.920 --> 00:53:44.670 align:middle line:90%
+exactly once with our recipe.
+
+00:53:44.670 --> 00:53:50.070 align:middle line:84%
+So in this case, yes, which
+means it is injective.
+
+00:53:50.070 --> 00:53:55.450 align:middle line:84%
+And now we've decided,
+therefore f is a bijection.
+
+00:53:55.450 --> 00:53:59.730 align:middle line:90%
+
+
+00:53:59.730 --> 00:54:01.560 align:middle line:90%
+Are we done?
+
+00:54:01.560 --> 00:54:02.110 align:middle line:90%
+Wait.
+
+00:54:02.110 --> 00:54:04.140 align:middle line:90%
+What were we even trying to do?
+
+00:54:04.140 --> 00:54:04.750 align:middle line:90%
+Oh yeah.
+
+00:54:04.750 --> 00:54:07.000 align:middle line:84%
+We were trying to count the
+number of four of a kinds.
+
+00:54:07.000 --> 00:54:09.420 align:middle line:90%
+
+
+00:54:09.420 --> 00:54:12.450 align:middle line:84%
+We did one of the
+two important steps.
+
+00:54:12.450 --> 00:54:17.310 align:middle line:84%
+We showed that A is
+in bijection with B.
+
+00:54:17.310 --> 00:54:20.400 align:middle line:84%
+But now we need the actual
+number, the actual size of B.
+
+00:54:20.400 --> 00:54:22.050 align:middle line:90%
+We need the count.
+
+00:54:22.050 --> 00:54:23.910 align:middle line:84%
+And if we want to
+count the size of B,
+
+00:54:23.910 --> 00:54:28.650 align:middle line:84%
+now we know it's enough
+to count the size of A.
+
+00:54:28.650 --> 00:54:37.040 align:middle line:84%
+So we can use this time the
+generalized product rule.
+
+00:54:37.040 --> 00:54:43.540 align:middle line:90%
+
+
+00:54:43.540 --> 00:54:45.940 align:middle line:90%
+So size of a.
+
+00:54:45.940 --> 00:54:49.720 align:middle line:84%
+Well remember, we're choosing
+an R and we're choosing a C.
+
+00:54:49.720 --> 00:54:52.965 align:middle line:84%
+So how many options do
+we have for our rank R?
+
+00:54:52.965 --> 00:54:56.168 align:middle line:90%
+
+
+00:54:56.168 --> 00:54:56.710 align:middle line:90%
+AUDIENCE: 13.
+
+00:54:56.710 --> 00:54:57.418 align:middle line:90%
+ZACHARY ABEL: 13.
+
+00:54:57.418 --> 00:54:59.330 align:middle line:84%
+There are 13 ranks
+ace through king.
+
+00:54:59.330 --> 00:55:01.720 align:middle line:84%
+We can choose any
+one of them freely.
+
+00:55:01.720 --> 00:55:05.140 align:middle line:84%
+How many options do we
+have for this last card, C,
+
+00:55:05.140 --> 00:55:06.645 align:middle line:90%
+that doesn't have this rank?
+
+00:55:06.645 --> 00:55:11.240 align:middle line:90%
+
+
+00:55:11.240 --> 00:55:12.160 align:middle line:90%
+AUDIENCE: 48.
+
+00:55:12.160 --> 00:55:13.390 align:middle line:90%
+ZACHARY ABEL: 48?
+
+00:55:13.390 --> 00:55:14.270 align:middle line:90%
+Perfect.
+
+00:55:14.270 --> 00:55:15.650 align:middle line:90%
+There are 52 cards in the deck.
+
+00:55:15.650 --> 00:55:18.280 align:middle line:84%
+We've already chosen four
+of them of this rank.
+
+00:55:18.280 --> 00:55:20.660 align:middle line:90%
+There are 48 options left.
+
+00:55:20.660 --> 00:55:28.150 align:middle line:84%
+So by the generalized
+product rule, the size of a
+
+00:55:28.150 --> 00:55:29.520 align:middle line:90%
+is 13 times 48.
+
+00:55:29.520 --> 00:55:36.220 align:middle line:90%
+
+
+00:55:36.220 --> 00:55:40.820 align:middle line:84%
+So that's the other thing
+our recipe needs to satisfy.
+
+00:55:40.820 --> 00:55:44.130 align:middle line:84%
+It needs to form a bijection
+with the set we care about,
+
+00:55:44.130 --> 00:55:46.100 align:middle line:84%
+but it also needs
+to be easy to count
+
+00:55:46.100 --> 00:55:48.530 align:middle line:84%
+with the generalized
+product rule.
+
+00:55:48.530 --> 00:55:50.430 align:middle line:90%
+And that's the strategy.
+
+00:55:50.430 --> 00:55:52.100 align:middle line:90%
+Break down your set.
+
+00:55:52.100 --> 00:55:53.960 align:middle line:84%
+You can think of
+it as building up
+
+00:55:53.960 --> 00:55:57.380 align:middle line:84%
+your set via a sequence
+of simple choices.
+
+00:55:57.380 --> 00:55:59.840 align:middle line:90%
+Make sure it's a bijection.
+
+00:55:59.840 --> 00:56:02.720 align:middle line:84%
+And then count it with
+generalized product rule.
+
+00:56:02.720 --> 00:56:03.930 align:middle line:90%
+Let's do that again.
+
+00:56:03.930 --> 00:56:05.780 align:middle line:90%
+Let's look at another example.
+
+00:56:05.780 --> 00:56:14.533 align:middle line:84%
+This time, I want the number
+of hands with all four suits.
+
+00:56:14.533 --> 00:56:17.450 align:middle line:90%
+
+
+00:56:17.450 --> 00:56:20.720 align:middle line:84%
+How many hands have
+all four suits?
+
+00:56:20.720 --> 00:56:22.260 align:middle line:90%
+These are useless in poker.
+
+00:56:22.260 --> 00:56:24.770 align:middle line:84%
+This doesn't actually
+get you anything,
+
+00:56:24.770 --> 00:56:27.813 align:middle line:84%
+unless it has some other
+coincidences as well.
+
+00:56:27.813 --> 00:56:28.730 align:middle line:90%
+But it's fun to count.
+
+00:56:28.730 --> 00:56:30.930 align:middle line:84%
+How many hands have
+all four suits?
+
+00:56:30.930 --> 00:56:34.340 align:middle line:84%
+And let's see if we can break
+this down into a recipe.
+
+00:56:34.340 --> 00:56:34.890 align:middle line:90%
+All right.
+
+00:56:34.890 --> 00:56:35.643 align:middle line:90%
+Here's my recipe.
+
+00:56:35.643 --> 00:56:39.140 align:middle line:90%
+
+
+00:56:39.140 --> 00:56:41.425 align:middle line:90%
+Choose a heart card.
+
+00:56:41.425 --> 00:56:46.400 align:middle line:90%
+
+
+00:56:46.400 --> 00:56:48.110 align:middle line:90%
+Choose-- I'm sorry.
+
+00:56:48.110 --> 00:56:50.340 align:middle line:84%
+My notes have-- it
+was a club card first.
+
+00:56:50.340 --> 00:56:51.550 align:middle line:90%
+Then choose a heart card.
+
+00:56:51.550 --> 00:56:55.460 align:middle line:90%
+
+
+00:56:55.460 --> 00:56:56.920 align:middle line:90%
+Then choose a spade card.
+
+00:56:56.920 --> 00:57:01.760 align:middle line:90%
+
+
+00:57:01.760 --> 00:57:04.670 align:middle line:90%
+Choose a diamond card.
+
+00:57:04.670 --> 00:57:08.290 align:middle line:90%
+And then choose a fifth card.
+
+00:57:08.290 --> 00:57:11.630 align:middle line:90%
+
+
+00:57:11.630 --> 00:57:12.780 align:middle line:90%
+Here's my recipe.
+
+00:57:12.780 --> 00:57:15.342 align:middle line:84%
+Choose a card that
+has clubs, a card that
+
+00:57:15.342 --> 00:57:16.800 align:middle line:84%
+has hearts, a card
+that has spades,
+
+00:57:16.800 --> 00:57:19.360 align:middle line:84%
+a card that has diamonds, and
+then whatever other card I
+
+00:57:19.360 --> 00:57:22.190 align:middle line:90%
+want to fill the last spot.
+
+00:57:22.190 --> 00:57:26.610 align:middle line:84%
+And let's see if this is a
+valid recipe for this problem.
+
+00:57:26.610 --> 00:57:28.970 align:middle line:90%
+And we can boil that down.
+
+00:57:28.970 --> 00:57:32.300 align:middle line:84%
+We don't always have to think,
+OK, injective, surjective,
+
+00:57:32.300 --> 00:57:33.270 align:middle line:90%
+all that fun stuff.
+
+00:57:33.270 --> 00:57:37.190 align:middle line:84%
+We can boil it down into these
+bullet points, which we can even
+
+00:57:37.190 --> 00:57:39.270 align:middle line:90%
+compress a little further.
+
+00:57:39.270 --> 00:57:54.630 align:middle line:84%
+So first of all, is every hand
+constructed using our recipe
+
+00:57:54.630 --> 00:57:58.500 align:middle line:90%
+actually in our set?
+
+00:57:58.500 --> 00:58:03.990 align:middle line:84%
+So does every hand we construct
+really have all four suits?
+
+00:58:03.990 --> 00:58:09.365 align:middle line:90%
+And finally, does-- sorry.
+
+00:58:09.365 --> 00:58:16.800 align:middle line:90%
+
+
+00:58:16.800 --> 00:58:29.945 align:middle line:84%
+Can every hand in our set be
+constructed in exactly one way?
+
+00:58:29.945 --> 00:58:32.910 align:middle line:90%
+
+
+00:58:32.910 --> 00:58:35.530 align:middle line:84%
+These are the two
+questions we need to ask.
+
+00:58:35.530 --> 00:58:38.080 align:middle line:84%
+Can we build everything
+we care about
+
+00:58:38.080 --> 00:58:43.065 align:middle line:84%
+and can we build everything we
+care about in exactly one way?
+
+00:58:43.065 --> 00:58:45.700 align:middle line:90%
+
+
+00:58:45.700 --> 00:58:47.690 align:middle line:84%
+And if those two
+things are true,
+
+00:58:47.690 --> 00:58:52.210 align:middle line:84%
+then our map is a bijection
+and our recipe is valid.
+
+00:58:52.210 --> 00:58:55.120 align:middle line:84%
+But these are maybe easier
+to think about and remember
+
+00:58:55.120 --> 00:58:57.680 align:middle line:84%
+than going through all
+that bijection rigmarole.
+
+00:58:57.680 --> 00:58:59.900 align:middle line:84%
+Just remember that it's
+a bijection underneath.
+
+00:58:59.900 --> 00:59:00.950 align:middle line:90%
+That's what we're doing.
+
+00:59:00.950 --> 00:59:02.158 align:middle line:90%
+That's what the shepherds do.
+
+00:59:02.158 --> 00:59:04.180 align:middle line:90%
+They count with bijections.
+
+00:59:04.180 --> 00:59:08.290 align:middle line:90%
+So let's answer these questions.
+
+00:59:08.290 --> 00:59:12.280 align:middle line:84%
+Is every hand constructed
+with this recipe actually
+
+00:59:12.280 --> 00:59:13.850 align:middle line:90%
+a hand that has all four sets--
+
+00:59:13.850 --> 00:59:15.880 align:middle line:90%
+all four suits?
+
+00:59:15.880 --> 00:59:17.050 align:middle line:90%
+Yeah?
+
+00:59:17.050 --> 00:59:18.620 align:middle line:90%
+Yeah, absolutely.
+
+00:59:18.620 --> 00:59:20.112 align:middle line:84%
+These first four
+cards are always
+
+00:59:20.112 --> 00:59:21.320 align:middle line:90%
+going to have all four suits.
+
+00:59:21.320 --> 00:59:24.350 align:middle line:84%
+And the fifth card doesn't
+really help or hurt us.
+
+00:59:24.350 --> 00:59:26.690 align:middle line:84%
+So the answer to this
+first question is yes.
+
+00:59:26.690 --> 00:59:28.750 align:middle line:90%
+Yes, it does.
+
+00:59:28.750 --> 00:59:32.590 align:middle line:84%
+Can every hand in our set-- can
+every hand with all four suits
+
+00:59:32.590 --> 00:59:38.950 align:middle line:84%
+be constructed via recipe
+in exactly one way?
+
+00:59:38.950 --> 00:59:40.850 align:middle line:84%
+And let's look at
+an example for that.
+
+00:59:40.850 --> 00:59:42.030 align:middle line:90%
+Examples are really helpful.
+
+00:59:42.030 --> 00:59:52.480 align:middle line:90%
+
+
+00:59:52.480 --> 00:59:53.710 align:middle line:90%
+So here's my hand.
+
+00:59:53.710 --> 01:00:00.340 align:middle line:84%
+I'm going to look at the six of
+diamonds, the queen of hearts,
+
+01:00:00.340 --> 01:00:07.870 align:middle line:84%
+the ace of spades, the two of
+clubs, and the Jack of spades.
+
+01:00:07.870 --> 01:00:11.350 align:middle line:84%
+Let's say we're trying to build
+this particular hand using
+
+01:00:11.350 --> 01:00:13.270 align:middle line:90%
+our recipe.
+
+01:00:13.270 --> 01:00:15.050 align:middle line:84%
+Well, what does
+it tell us to do?
+
+01:00:15.050 --> 01:00:16.850 align:middle line:90%
+First, choose a club card.
+
+01:00:16.850 --> 01:00:17.510 align:middle line:90%
+All right.
+
+01:00:17.510 --> 01:00:19.250 align:middle line:84%
+I'm going to choose
+two of clubs.
+
+01:00:19.250 --> 01:00:20.570 align:middle line:90%
+Then choose a heart card.
+
+01:00:20.570 --> 01:00:21.070 align:middle line:90%
+Great.
+
+01:00:21.070 --> 01:00:24.280 align:middle line:84%
+I'm going to choose
+the queen of hearts.
+
+01:00:24.280 --> 01:00:26.530 align:middle line:90%
+Then choose a spade card.
+
+01:00:26.530 --> 01:00:28.720 align:middle line:90%
+Great, ace of spades.
+
+01:00:28.720 --> 01:00:32.920 align:middle line:84%
+Then choose a diamond
+card, six of diamonds.
+
+01:00:32.920 --> 01:00:38.510 align:middle line:84%
+And then my last card, whatever
+that is, it's Jack of spades.
+
+01:00:38.510 --> 01:00:42.680 align:middle line:84%
+So these are the choices I make
+in the five steps of my recipe.
+
+01:00:42.680 --> 01:00:44.620 align:middle line:90%
+I indeed have built this hand.
+
+01:00:44.620 --> 01:00:47.240 align:middle line:90%
+
+
+01:00:47.240 --> 01:00:50.570 align:middle line:84%
+Can I do that in
+exactly one way?
+
+01:00:50.570 --> 01:00:52.970 align:middle line:84%
+Is there only one way to
+fill out this recipe in order
+
+01:00:52.970 --> 01:00:53.845 align:middle line:90%
+to get this hand?
+
+01:00:53.845 --> 01:00:58.880 align:middle line:90%
+
+
+01:00:58.880 --> 01:01:00.210 align:middle line:90%
+Can someone find another?
+
+01:01:00.210 --> 01:01:01.055 align:middle line:90%
+Yep.
+
+01:01:01.055 --> 01:01:04.250 align:middle line:84%
+AUDIENCE: You could replace
+the A with the Jack.
+
+01:01:04.250 --> 01:01:07.290 align:middle line:84%
+ZACHARY ABEL: Yeah, the ace and
+the jack, the two spade cards,
+
+01:01:07.290 --> 01:01:09.800 align:middle line:90%
+those could have swapped places.
+
+01:01:09.800 --> 01:01:13.020 align:middle line:84%
+In step three when I was
+told to pick a spade card,
+
+01:01:13.020 --> 01:01:15.090 align:middle line:84%
+I could have picked
+the Jack instead.
+
+01:01:15.090 --> 01:01:18.410 align:middle line:84%
+And then the ace would be
+my fifth extraneous card
+
+01:01:18.410 --> 01:01:20.300 align:middle line:90%
+at the end.
+
+01:01:20.300 --> 01:01:22.520 align:middle line:84%
+So there are, in fact,
+two different ways
+
+01:01:22.520 --> 01:01:24.710 align:middle line:84%
+of filling out my
+recipe in order
+
+01:01:24.710 --> 01:01:27.410 align:middle line:90%
+to get this particular hand.
+
+01:01:27.410 --> 01:01:28.830 align:middle line:90%
+So it's not a bijection.
+
+01:01:28.830 --> 01:01:31.020 align:middle line:84%
+We have failed our
+second condition.
+
+01:01:31.020 --> 01:01:35.840 align:middle line:84%
+This recipe does not
+work with this method.
+
+01:01:35.840 --> 01:01:37.950 align:middle line:90%
+Sometimes, you can salvage it.
+
+01:01:37.950 --> 01:01:40.290 align:middle line:84%
+In this particular example,
+you can salvage it.
+
+01:01:40.290 --> 01:01:47.870 align:middle line:84%
+It turns out this map
+that we've constructed
+
+01:01:47.870 --> 01:01:52.160 align:middle line:84%
+is two to one, because there
+are always exactly two ways
+
+01:01:52.160 --> 01:01:54.260 align:middle line:90%
+to fill out the recipe.
+
+01:01:54.260 --> 01:01:56.820 align:middle line:84%
+Whichever card you
+have in the last spot,
+
+01:01:56.820 --> 01:01:59.600 align:middle line:84%
+it can potentially swap
+places with its partner
+
+01:01:59.600 --> 01:02:01.170 align:middle line:90%
+that has its same suit.
+
+01:02:01.170 --> 01:02:04.130 align:middle line:84%
+But there are always
+only two ways to do that.
+
+01:02:04.130 --> 01:02:06.240 align:middle line:84%
+So instead of
+constructing a bijection,
+
+01:02:06.240 --> 01:02:09.020 align:middle line:84%
+we've constructed
+a two to one map,
+
+01:02:09.020 --> 01:02:12.320 align:middle line:84%
+which means we can still
+count the number of ways
+
+01:02:12.320 --> 01:02:15.950 align:middle line:84%
+of filling out the recipe and
+then just divide it by two.
+
+01:02:15.950 --> 01:02:17.170 align:middle line:90%
+So let's do that.
+
+01:02:17.170 --> 01:02:20.360 align:middle line:90%
+
+
+01:02:20.360 --> 01:02:22.397 align:middle line:84%
+Number of ways to
+fill out this recipe.
+
+01:02:22.397 --> 01:02:23.980 align:middle line:84%
+Actually, let's just
+do it right here.
+
+01:02:23.980 --> 01:02:26.720 align:middle line:90%
+
+
+01:02:26.720 --> 01:02:32.160 align:middle line:84%
+How many ways are there to
+choose a card that has clubs?
+
+01:02:32.160 --> 01:02:35.370 align:middle line:90%
+Just call it out.
+
+01:02:35.370 --> 01:02:38.550 align:middle line:84%
+How many club cards
+are there in a deck?
+
+01:02:38.550 --> 01:02:39.910 align:middle line:90%
+13, yeah.
+
+01:02:39.910 --> 01:02:41.080 align:middle line:90%
+I think I heard that.
+
+01:02:41.080 --> 01:02:43.290 align:middle line:90%
+Let's pretend I did.
+
+01:02:43.290 --> 01:02:45.208 align:middle line:84%
+How many heart
+cards are in a deck?
+
+01:02:45.208 --> 01:02:45.750 align:middle line:90%
+AUDIENCE: 13.
+
+01:02:45.750 --> 01:02:47.310 align:middle line:90%
+ZACHARY ABEL: 13.
+
+01:02:47.310 --> 01:02:48.930 align:middle line:90%
+How many spades?
+
+01:02:48.930 --> 01:02:49.590 align:middle line:90%
+AUDIENCE: 13.
+
+01:02:49.590 --> 01:02:50.405 align:middle line:90%
+ZACHARY ABEL: How many diamonds?
+
+01:02:50.405 --> 01:02:50.860 align:middle line:90%
+AUDIENCE: 13.
+
+01:02:50.860 --> 01:02:51.568 align:middle line:90%
+ZACHARY ABEL: 13.
+
+01:02:51.568 --> 01:02:54.480 align:middle line:84%
+How many choices do I
+have for my last card?
+
+01:02:54.480 --> 01:02:57.360 align:middle line:90%
+48 again.
+
+01:02:57.360 --> 01:02:58.950 align:middle line:84%
+I'm allowed to
+choose any card that
+
+01:02:58.950 --> 01:03:01.920 align:middle line:84%
+isn't one of the four
+I've already picked,
+
+01:03:01.920 --> 01:03:04.920 align:middle line:84%
+which means the number of
+ways to fill out this recipe
+
+01:03:04.920 --> 01:03:09.300 align:middle line:84%
+is 13 times 13 times
+13 times 13 times 48.
+
+01:03:09.300 --> 01:03:16.230 align:middle line:84%
+So our answer is 13
+to the fourth times 48
+
+01:03:16.230 --> 01:03:21.360 align:middle line:84%
+divided by 2, because we
+decided it was a two to one map.
+
+01:03:21.360 --> 01:03:26.730 align:middle line:84%
+So this is the number of hands
+that have all four suits.
+
+01:03:26.730 --> 01:03:28.740 align:middle line:90%
+Did that make sense?
+
+01:03:28.740 --> 01:03:31.720 align:middle line:84%
+This is a perfectly
+valid way to do this.
+
+01:03:31.720 --> 01:03:35.560 align:middle line:84%
+This counting with
+sequences technique
+
+01:03:35.560 --> 01:03:37.690 align:middle line:84%
+generalizes very
+nicely to this k
+
+01:03:37.690 --> 01:03:42.020 align:middle line:84%
+to 1 mapping instead of 1
+to 1 mapping, a bijection.
+
+01:03:42.020 --> 01:03:44.290 align:middle line:84%
+Bijections are
+maybe more elegant,
+
+01:03:44.290 --> 01:03:46.370 align:middle line:84%
+or easier to think about,
+if you can make it.
+
+01:03:46.370 --> 01:03:49.100 align:middle line:84%
+But if it's 2 to 1
+instead, that's great.
+
+01:03:49.100 --> 01:03:51.220 align:middle line:90%
+Just divide by 2.
+
+01:03:51.220 --> 01:03:55.450 align:middle line:84%
+Just so we can see some
+different strategies,
+
+01:03:55.450 --> 01:03:58.690 align:middle line:84%
+here is a way that we
+could have done that
+
+01:03:58.690 --> 01:04:01.185 align:middle line:84%
+with a bijection instead
+of needing a 2 to 1 map.
+
+01:04:01.185 --> 01:04:09.280 align:middle line:90%
+
+
+01:04:09.280 --> 01:04:11.930 align:middle line:84%
+So a different recipe
+is the following.
+
+01:04:11.930 --> 01:04:24.783 align:middle line:84%
+So first, choose a suit S
+that will have two cards.
+
+01:04:24.783 --> 01:04:28.120 align:middle line:90%
+
+
+01:04:28.120 --> 01:04:31.940 align:middle line:84%
+So in every hand that
+has all four suits,
+
+01:04:31.940 --> 01:04:33.730 align:middle line:84%
+there's always one
+suit that has two cards
+
+01:04:33.730 --> 01:04:35.870 align:middle line:84%
+and the other three
+suits have one card.
+
+01:04:35.870 --> 01:04:39.210 align:middle line:84%
+So first, we're going to choose
+which suit has two cards.
+
+01:04:39.210 --> 01:04:42.850 align:middle line:90%
+
+
+01:04:42.850 --> 01:04:51.885 align:middle line:84%
+Call the other three suits T1,
+T2, T3 in alphabetical order.
+
+01:04:51.885 --> 01:04:57.490 align:middle line:90%
+
+
+01:04:57.490 --> 01:04:59.560 align:middle line:84%
+So once I've chosen
+which suit I'm
+
+01:04:59.560 --> 01:05:01.960 align:middle line:84%
+going to single
+out for the pair,
+
+01:05:01.960 --> 01:05:04.310 align:middle line:84%
+I've just given names to
+the other three suits.
+
+01:05:04.310 --> 01:05:07.160 align:middle line:84%
+And it's in alphabetical order,
+so there's no ambiguity there.
+
+01:05:07.160 --> 01:05:12.890 align:middle line:84%
+So now my four suits
+are S and T1, T2, T3.
+
+01:05:12.890 --> 01:05:27.230 align:middle line:84%
+Next thing I'm going to do,
+choose two cards with suit S.
+
+01:05:27.230 --> 01:05:32.160 align:middle line:90%
+Choose one card with suit T1.
+
+01:05:32.160 --> 01:05:33.990 align:middle line:90%
+Then choose one with suit T2.
+
+01:05:33.990 --> 01:05:35.398 align:middle line:90%
+Then choose one with suit T3.
+
+01:05:35.398 --> 01:05:36.273 align:middle line:90%
+And that's my recipe.
+
+01:05:36.273 --> 01:05:43.010 align:middle line:90%
+
+
+01:05:43.010 --> 01:05:46.050 align:middle line:84%
+And it turns out that this
+really does give a bijection.
+
+01:05:46.050 --> 01:05:48.170 align:middle line:84%
+This is a one to
+one map between ways
+
+01:05:48.170 --> 01:05:53.330 align:middle line:84%
+of filling out this recipe and
+hands that have all four suits.
+
+01:05:53.330 --> 01:05:56.180 align:middle line:84%
+Because that ambiguity of
+which of these two cards
+
+01:05:56.180 --> 01:05:57.120 align:middle line:90%
+are we choosing first?
+
+01:05:57.120 --> 01:05:58.578 align:middle line:84%
+Well, we're not
+choosing the first.
+
+01:05:58.578 --> 01:06:00.590 align:middle line:90%
+We're choosing them together.
+
+01:06:00.590 --> 01:06:02.510 align:middle line:84%
+So we've gotten rid
+of that ambiguity
+
+01:06:02.510 --> 01:06:04.410 align:middle line:90%
+by doing it in this way.
+
+01:06:04.410 --> 01:06:06.140 align:middle line:84%
+And let's see how
+many ways there
+
+01:06:06.140 --> 01:06:07.710 align:middle line:90%
+are to fill out this recipe.
+
+01:06:07.710 --> 01:06:09.540 align:middle line:84%
+First, we have to
+choose a suit S.
+
+01:06:09.540 --> 01:06:13.100 align:middle line:84%
+And there are four
+suits to choose from.
+
+01:06:13.100 --> 01:06:18.870 align:middle line:84%
+Then we have to choose two cards
+with suit S. And there are 13.
+
+01:06:18.870 --> 01:06:23.330 align:middle line:90%
+Choose two ways to do that.
+
+01:06:23.330 --> 01:06:28.580 align:middle line:84%
+Now choose a card with suit T1,
+13 ways, with suit T2, 13 ways,
+
+01:06:28.580 --> 01:06:31.340 align:middle line:90%
+with T3, 13 ways.
+
+01:06:31.340 --> 01:06:36.110 align:middle line:84%
+And so the answer is 4 times
+13 choose 2 times 13 times
+
+01:06:36.110 --> 01:06:38.720 align:middle line:90%
+13 times 13.
+
+01:06:38.720 --> 01:06:41.420 align:middle line:84%
+Which does look a little
+different from the answer
+
+01:06:41.420 --> 01:06:42.180 align:middle line:90%
+we got up there.
+
+01:06:42.180 --> 01:06:46.250 align:middle line:84%
+But if you check, they're
+actually the same answer.
+
+01:06:46.250 --> 01:06:47.400 align:middle line:90%
+Does that make sense?
+
+01:06:47.400 --> 01:06:48.710 align:middle line:90%
+Sound good?
+
+01:06:48.710 --> 01:06:50.720 align:middle line:90%
+Wonderful.
+
+01:06:50.720 --> 01:06:52.920 align:middle line:84%
+One last example
+I want to look at.
+
+01:06:52.920 --> 01:07:01.945 align:middle line:84%
+How many hands-- how many
+hands have at least one pair?
+
+01:07:01.945 --> 01:07:04.550 align:middle line:90%
+
+
+01:07:04.550 --> 01:07:07.075 align:middle line:90%
+So pair means same rank.
+
+01:07:07.075 --> 01:07:10.130 align:middle line:90%
+
+
+01:07:10.130 --> 01:07:13.620 align:middle line:84%
+So how many hands have at least
+two cards of the same rank?
+
+01:07:13.620 --> 01:07:17.250 align:middle line:84%
+So at least two queens, at least
+two sevens, something like that.
+
+01:07:17.250 --> 01:07:19.620 align:middle line:84%
+Maybe you have three
+or four queens.
+
+01:07:19.620 --> 01:07:23.010 align:middle line:84%
+Maybe you have two queens and
+two sevens, or three sevens.
+
+01:07:23.010 --> 01:07:25.510 align:middle line:84%
+All of that is fine as long
+as at least two of your cards
+
+01:07:25.510 --> 01:07:26.370 align:middle line:90%
+have the same rank.
+
+01:07:26.370 --> 01:07:30.100 align:middle line:90%
+
+
+01:07:30.100 --> 01:07:32.723 align:middle line:90%
+And here is my proposed recipe.
+
+01:07:32.723 --> 01:07:37.420 align:middle line:90%
+
+
+01:07:37.420 --> 01:07:40.530 align:middle line:90%
+Choose a rank for the pair.
+
+01:07:40.530 --> 01:07:43.090 align:middle line:90%
+
+
+01:07:43.090 --> 01:07:45.525 align:middle line:84%
+Let's call it choose
+rank R for the pair.
+
+01:07:45.525 --> 01:07:48.550 align:middle line:90%
+
+
+01:07:48.550 --> 01:07:59.505 align:middle line:84%
+Choose two cards with rank
+R. Choose three other cards.
+
+01:07:59.505 --> 01:08:03.730 align:middle line:90%
+
+
+01:08:03.730 --> 01:08:05.830 align:middle line:84%
+Here's a recipe
+to build up hands
+
+01:08:05.830 --> 01:08:07.870 align:middle line:90%
+that have at least one pair.
+
+01:08:07.870 --> 01:08:11.570 align:middle line:84%
+We know they have a pair because
+here's the pair in step two.
+
+01:08:11.570 --> 01:08:15.590 align:middle line:84%
+Everything we build
+has at least one pair.
+
+01:08:15.590 --> 01:08:18.609 align:middle line:84%
+And that's the first of our
+two important questions.
+
+01:08:18.609 --> 01:08:22.149 align:middle line:84%
+Does everything we
+build have our property?
+
+01:08:22.149 --> 01:08:24.760 align:middle line:90%
+The answer in this case is yes.
+
+01:08:24.760 --> 01:08:27.760 align:middle line:84%
+Does everything we
+want to build come
+
+01:08:27.760 --> 01:08:30.430 align:middle line:84%
+from our recipe
+in exactly one way
+
+01:08:30.430 --> 01:08:32.400 align:middle line:84%
+is the other question
+we need to ask.
+
+01:08:32.400 --> 01:08:44.439 align:middle line:90%
+
+
+01:08:44.439 --> 01:08:53.260 align:middle line:84%
+Does every hand with
+at least one pair
+
+01:08:53.260 --> 01:08:59.160 align:middle line:84%
+come from recipe
+in exactly one way?
+
+01:08:59.160 --> 01:09:01.750 align:middle line:90%
+
+
+01:09:01.750 --> 01:09:04.790 align:middle line:84%
+This is the other
+question we need to ask.
+
+01:09:04.790 --> 01:09:07.569 align:middle line:84%
+Usually, this is the harder
+of the two questions.
+
+01:09:07.569 --> 01:09:09.560 align:middle line:84%
+Because usually when
+trying to build our set,
+
+01:09:09.560 --> 01:09:12.760 align:middle line:84%
+we're building it in order to
+have the property we care about.
+
+01:09:12.760 --> 01:09:15.460 align:middle line:84%
+So that first of the
+two important questions
+
+01:09:15.460 --> 01:09:18.520 align:middle line:90%
+is usually fine.
+
+01:09:18.520 --> 01:09:21.609 align:middle line:90%
+Is this true?
+
+01:09:21.609 --> 01:09:24.939 align:middle line:84%
+And let's look at
+an example here.
+
+01:09:24.939 --> 01:09:33.220 align:middle line:84%
+So what if we want the hand
+ace of hearts, ace of spades,
+
+01:09:33.220 --> 01:09:41.020 align:middle line:84%
+two of clubs, two of diamonds,
+three of hearts/ How can I get
+
+01:09:41.020 --> 01:09:44.397 align:middle line:90%
+this hand with my recipe?
+
+01:09:44.397 --> 01:09:45.480 align:middle line:90%
+Can someone give me a way?
+
+01:09:45.480 --> 01:09:49.149 align:middle line:90%
+
+
+01:09:49.149 --> 01:09:50.800 align:middle line:90%
+Yep.
+
+01:09:50.800 --> 01:09:52.389 align:middle line:84%
+AUDIENCE: You can
+choose [INAUDIBLE].
+
+01:09:52.389 --> 01:09:57.545 align:middle line:90%
+
+
+01:09:57.545 --> 01:09:59.170 align:middle line:84%
+ZACHARY ABEL: OK,
+let's choose our rank
+
+01:09:59.170 --> 01:10:03.080 align:middle line:90%
+as A for our first step.
+
+01:10:03.080 --> 01:10:05.475 align:middle line:84%
+Second step is two
+cards with rank ace.
+
+01:10:05.475 --> 01:10:08.890 align:middle line:90%
+
+
+01:10:08.890 --> 01:10:13.660 align:middle line:84%
+Ace of hearts and ace of
+spades for our second step.
+
+01:10:13.660 --> 01:10:15.890 align:middle line:84%
+And for our third step,
+the other three cards.
+
+01:10:15.890 --> 01:10:19.550 align:middle line:84%
+In this case, that's two
+of clubs, two of diamonds,
+
+01:10:19.550 --> 01:10:20.700 align:middle line:90%
+three of hearts.
+
+01:10:20.700 --> 01:10:22.820 align:middle line:84%
+This is a way to fill
+out our recipe in order
+
+01:10:22.820 --> 01:10:24.170 align:middle line:90%
+to get that hand.
+
+01:10:24.170 --> 01:10:25.540 align:middle line:90%
+Who can give me another way?
+
+01:10:25.540 --> 01:10:28.670 align:middle line:90%
+
+
+01:10:28.670 --> 01:10:29.862 align:middle line:90%
+Yep.
+
+01:10:29.862 --> 01:10:30.950 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:10:30.950 --> 01:10:31.950 align:middle line:90%
+ZACHARY ABEL: All right.
+
+01:10:31.950 --> 01:10:33.003 align:middle line:90%
+Rank equals 2.
+
+01:10:33.003 --> 01:10:37.141 align:middle line:90%
+
+
+01:10:37.141 --> 01:10:39.740 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:10:39.740 --> 01:10:41.610 align:middle line:90%
+ZACHARY ABEL: All right.
+
+01:10:41.610 --> 01:10:44.960 align:middle line:84%
+Then the two cards of rank
+two we're going to pick
+
+01:10:44.960 --> 01:10:48.380 align:middle line:84%
+are going to be two of
+clubs and two of diamonds.
+
+01:10:48.380 --> 01:10:50.042 align:middle line:84%
+And then the last
+step of our recipe
+
+01:10:50.042 --> 01:10:52.250 align:middle line:84%
+is choose the other three
+cards, which, in this case,
+
+01:10:52.250 --> 01:10:57.290 align:middle line:84%
+are ace of hearts, ace of
+spades, and three of hearts.
+
+01:10:57.290 --> 01:10:59.600 align:middle line:84%
+So we found two different
+ways of filling out
+
+01:10:59.600 --> 01:11:02.330 align:middle line:90%
+our recipe to get this hand.
+
+01:11:02.330 --> 01:11:05.960 align:middle line:84%
+So we've already broken
+our second question.
+
+01:11:05.960 --> 01:11:09.680 align:middle line:90%
+This answer is no.
+
+01:11:09.680 --> 01:11:11.670 align:middle line:84%
+But we've already seen
+a possible backup.
+
+01:11:11.670 --> 01:11:15.300 align:middle line:84%
+If it's always two to
+one, then we're fine.
+
+01:11:15.300 --> 01:11:18.810 align:middle line:84%
+Then we just divide by
+2 and get our answer.
+
+01:11:18.810 --> 01:11:21.690 align:middle line:84%
+But let's look at a
+different example.
+
+01:11:21.690 --> 01:11:28.240 align:middle line:84%
+What if our hand is instead
+ace of hearts, ace of diamonds,
+
+01:11:28.240 --> 01:11:32.803 align:middle line:84%
+ace of clubs, three of
+clubs, five of spades?
+
+01:11:32.803 --> 01:11:35.490 align:middle line:90%
+
+
+01:11:35.490 --> 01:11:37.990 align:middle line:84%
+A recipe really breaks
+down into two phases.
+
+01:11:37.990 --> 01:11:42.300 align:middle line:84%
+First, pick a pair, and then
+pick the other three cards.
+
+01:11:42.300 --> 01:11:44.350 align:middle line:84%
+Pick the rank for our
+pair, then the-- sorry.
+
+01:11:44.350 --> 01:11:46.600 align:middle line:84%
+Pick a suit for the pair,
+then the ranks for the pair.
+
+01:11:46.600 --> 01:11:48.810 align:middle line:84%
+Really, pick a pair and
+then pick the other three
+
+01:11:48.810 --> 01:11:51.400 align:middle line:90%
+cards is what our recipe says.
+
+01:11:51.400 --> 01:11:55.150 align:middle line:84%
+Well, there are lots of ways
+to do that for this hand.
+
+01:11:55.150 --> 01:11:59.220 align:middle line:84%
+We could pick this pair for our
+first two steps of the recipe
+
+01:11:59.220 --> 01:12:01.830 align:middle line:84%
+and then choose the
+other three cards.
+
+01:12:01.830 --> 01:12:06.510 align:middle line:84%
+Or we could pick that pair and
+then choose the other three
+
+01:12:06.510 --> 01:12:07.510 align:middle line:90%
+cards.
+
+01:12:07.510 --> 01:12:10.890 align:middle line:84%
+Or we could pick that pair and
+then choose the other three
+
+01:12:10.890 --> 01:12:12.630 align:middle line:90%
+cards.
+
+01:12:12.630 --> 01:12:18.383 align:middle line:84%
+So this one had two ways,
+this hand has three ways.
+
+01:12:18.383 --> 01:12:21.930 align:middle line:90%
+
+
+01:12:21.930 --> 01:12:25.410 align:middle line:90%
+Here's another example.
+
+01:12:25.410 --> 01:12:27.040 align:middle line:90%
+Ace of diamonds--
+
+01:12:27.040 --> 01:12:27.600 align:middle line:90%
+Oops.
+
+01:12:27.600 --> 01:12:32.500 align:middle line:84%
+Ace of clubs, three of clubs,
+and then three of spades.
+
+01:12:32.500 --> 01:12:34.470 align:middle line:84%
+Same example as
+before, but now these
+
+01:12:34.470 --> 01:12:36.970 align:middle line:84%
+are both 3's instead
+of a 3 and 5.
+
+01:12:36.970 --> 01:12:39.190 align:middle line:90%
+How many pairs are there now?
+
+01:12:39.190 --> 01:12:42.550 align:middle line:90%
+1, 2, 3, 4 different pairs.
+
+01:12:42.550 --> 01:12:48.150 align:middle line:84%
+So there are four ways to
+build this with our recipe.
+
+01:12:48.150 --> 01:12:49.720 align:middle line:90%
+Let's keep going.
+
+01:12:49.720 --> 01:12:52.050 align:middle line:84%
+What if we have
+a four of a kind?
+
+01:12:52.050 --> 01:12:56.653 align:middle line:84%
+We have all four aces, and then
+we have the queen of diamonds.
+
+01:12:56.653 --> 01:12:59.190 align:middle line:90%
+
+
+01:12:59.190 --> 01:13:03.060 align:middle line:84%
+So that was clubs,
+hearts, spades, diamonds.
+
+01:13:03.060 --> 01:13:08.200 align:middle line:84%
+Now there are 1, 2, 3,
+4, 5, 6 different pairs.
+
+01:13:08.200 --> 01:13:11.820 align:middle line:84%
+So there are six different
+ways to construct
+
+01:13:11.820 --> 01:13:13.163 align:middle line:90%
+this hand with our recipe.
+
+01:13:13.163 --> 01:13:16.210 align:middle line:90%
+
+
+01:13:16.210 --> 01:13:18.740 align:middle line:84%
+Did all of these
+examples make sense?
+
+01:13:18.740 --> 01:13:19.480 align:middle line:90%
+Cool.
+
+01:13:19.480 --> 01:13:23.440 align:middle line:84%
+And what we've learned
+here is that this recipe
+
+01:13:23.440 --> 01:13:25.390 align:middle line:90%
+is utter garbage.
+
+01:13:25.390 --> 01:13:27.560 align:middle line:90%
+This recipe does not help.
+
+01:13:27.560 --> 01:13:30.340 align:middle line:84%
+It doesn't make a bijection
+because there are multiple ways
+
+01:13:30.340 --> 01:13:31.730 align:middle line:90%
+to build this hand.
+
+01:13:31.730 --> 01:13:33.680 align:middle line:84%
+It doesn't make a k to
+1 mapping because there
+
+01:13:33.680 --> 01:13:35.680 align:middle line:84%
+are different number of
+ways, depending on which
+
+01:13:35.680 --> 01:13:37.190 align:middle line:90%
+hand we're trying to build.
+
+01:13:37.190 --> 01:13:42.100 align:middle line:84%
+So we can't just count this and
+then divide by 2 or divide by 3.
+
+01:13:42.100 --> 01:13:42.910 align:middle line:90%
+Question?
+
+01:13:42.910 --> 01:13:45.850 align:middle line:84%
+AUDIENCE: Sorry, how did you
+get from four ways to six ways?
+
+01:13:45.850 --> 01:13:46.690 align:middle line:90%
+ZACHARY ABEL: Yeah.
+
+01:13:46.690 --> 01:13:53.290 align:middle line:84%
+So with this hand, steps one
+and two really say pick a pair.
+
+01:13:53.290 --> 01:13:55.580 align:middle line:84%
+And then step three says
+pick the other three cards.
+
+01:13:55.580 --> 01:13:58.330 align:middle line:84%
+Well, how many pairs can
+we pick in this hand?
+
+01:13:58.330 --> 01:14:04.190 align:middle line:84%
+There are four choose two
+ways to pick two of the aces.
+
+01:14:04.190 --> 01:14:07.720 align:middle line:90%
+4 choose 2 is 6.
+
+01:14:07.720 --> 01:14:08.990 align:middle line:90%
+Or we can just look at it.
+
+01:14:08.990 --> 01:14:14.570 align:middle line:90%
+It's 1, 2, 3, 4, 5, 6.
+
+01:14:14.570 --> 01:14:17.120 align:middle line:90%
+Those are all the pairs.
+
+01:14:17.120 --> 01:14:17.620 align:middle line:90%
+Yeah.
+
+01:14:17.620 --> 01:14:18.680 align:middle line:90%
+Good question.
+
+01:14:18.680 --> 01:14:22.550 align:middle line:90%
+So this recipe does not help.
+
+01:14:22.550 --> 01:14:25.092 align:middle line:84%
+I don't care how many ways there
+are to fill out this recipe.
+
+01:14:25.092 --> 01:14:27.633 align:middle line:84%
+I don't care how easy it is to
+count with generalized product
+
+01:14:27.633 --> 01:14:28.160 align:middle line:90%
+rule.
+
+01:14:28.160 --> 01:14:30.400 align:middle line:84%
+The thing it's
+counting is not at all
+
+01:14:30.400 --> 01:14:32.800 align:middle line:84%
+related to the
+problem we care about.
+
+01:14:32.800 --> 01:14:35.120 align:middle line:84%
+So this is the thing you
+need to watch out for.
+
+01:14:35.120 --> 01:14:39.442 align:middle line:84%
+And that's why these
+two questions are
+
+01:14:39.442 --> 01:14:41.650 align:middle line:84%
+the things you should ask
+yourself about every recipe
+
+01:14:41.650 --> 01:14:42.590 align:middle line:90%
+you see.
+
+01:14:42.590 --> 01:14:46.030 align:middle line:84%
+Can you build everything
+you care about?
+
+01:14:46.030 --> 01:14:50.290 align:middle line:84%
+And is everything you care
+about built in exactly one way?
+
+01:14:50.290 --> 01:14:52.600 align:middle line:84%
+And it takes some
+practice, and some skill,
+
+01:14:52.600 --> 01:14:55.600 align:middle line:84%
+and some patience to figure
+out the right recipe in order
+
+01:14:55.600 --> 01:14:57.890 align:middle line:84%
+to satisfy both of
+these constraints
+
+01:14:57.890 --> 01:15:02.020 align:middle line:84%
+and to work out any
+of the ambiguities
+
+01:15:02.020 --> 01:15:05.710 align:middle line:84%
+that we see in an
+example like this.
+
+01:15:05.710 --> 01:15:06.298 align:middle line:90%
+All right.
+
+01:15:06.298 --> 01:15:07.340 align:middle line:90%
+That's everything I have.
+
+01:15:07.340 --> 01:15:09.240 align:middle line:90%
+Thank you so much.
+
+01:15:09.240 --> 01:15:14.000 align:middle line:90%

@@ -1,0 +1,3477 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.912 align:middle line:90%
+[SQUEAKING]
+
+00:00:01.912 --> 00:00:04.302 align:middle line:90%
+[RUSTLING]
+
+00:00:04.302 --> 00:00:09.560 align:middle line:90%
+[CLICKING]
+
+00:00:09.560 --> 00:00:11.070 align:middle line:84%
+BRYNMOR CHAPMAN:
+Hello out there.
+
+00:00:11.070 --> 00:00:12.620 align:middle line:90%
+Can people hear me?
+
+00:00:12.620 --> 00:00:14.180 align:middle line:90%
+Oh, nice one.
+
+00:00:14.180 --> 00:00:17.342 align:middle line:84%
+People at least
+can intuitive what
+
+00:00:17.342 --> 00:00:18.550 align:middle line:90%
+it means when I wave at them.
+
+00:00:18.550 --> 00:00:22.082 align:middle line:90%
+
+
+00:00:22.082 --> 00:00:25.280 align:middle line:84%
+So today, we are
+going to continue
+
+00:00:25.280 --> 00:00:27.000 align:middle line:90%
+our discussion of probability.
+
+00:00:27.000 --> 00:00:32.180 align:middle line:84%
+And in particular, we're going
+to talk about a very naughty
+
+00:00:32.180 --> 00:00:36.590 align:middle line:84%
+word, what we call
+"random variables."
+
+00:00:36.590 --> 00:00:38.510 align:middle line:84%
+Unfortunately, a
+random variable is
+
+00:00:38.510 --> 00:00:40.015 align:middle line:90%
+neither random nor a variable.
+
+00:00:40.015 --> 00:00:44.000 align:middle line:90%
+
+
+00:00:44.000 --> 00:00:48.170 align:middle line:84%
+It's just called this
+for historical reasons.
+
+00:00:48.170 --> 00:00:49.350 align:middle line:90%
+It's very silly.
+
+00:00:49.350 --> 00:00:50.933 align:middle line:84%
+I'm just going to
+be referring to them
+
+00:00:50.933 --> 00:00:52.670 align:middle line:90%
+as RVs through the lecture.
+
+00:00:52.670 --> 00:00:54.210 align:middle line:90%
+This is what it stands for.
+
+00:00:54.210 --> 00:00:56.940 align:middle line:90%
+But it's a very silly name.
+
+00:00:56.940 --> 00:00:59.370 align:middle line:90%
+It's a bit of a misnomer.
+
+00:00:59.370 --> 00:01:02.225 align:middle line:90%
+So what is an RV?
+
+00:01:02.225 --> 00:01:07.731 align:middle line:90%
+
+
+00:01:07.731 --> 00:01:10.830 align:middle line:84%
+So basically, what
+an RV is, it's
+
+00:01:10.830 --> 00:01:12.490 align:middle line:90%
+neither random nor a variable.
+
+00:01:12.490 --> 00:01:25.300 align:middle line:84%
+It is a function from our sample
+space to, say, the real numbers.
+
+00:01:25.300 --> 00:01:26.320 align:middle line:90%
+That's all it is.
+
+00:01:26.320 --> 00:01:28.830 align:middle line:90%
+It's just a function.
+
+00:01:28.830 --> 00:01:33.940 align:middle line:84%
+You can have-- the codomain R
+is not particularly important.
+
+00:01:33.940 --> 00:01:38.550 align:middle line:84%
+You could just as easily have
+codomain N. You could also
+
+00:01:38.550 --> 00:01:39.880 align:middle line:90%
+have complex-valued RVs.
+
+00:01:39.880 --> 00:01:44.315 align:middle line:84%
+But we won't be looking
+at those in this class.
+
+00:01:44.315 --> 00:01:45.690 align:middle line:84%
+For now, you can
+just think of it
+
+00:01:45.690 --> 00:01:53.340 align:middle line:84%
+real valued function whose
+domain is the sample space.
+
+00:01:53.340 --> 00:02:02.070 align:middle line:84%
+So for instance, suppose
+our sample space--
+
+00:02:02.070 --> 00:02:07.789 align:middle line:84%
+or suppose our experiment is
+we're flipping three coins.
+
+00:02:07.789 --> 00:02:10.709 align:middle line:90%
+
+
+00:02:10.709 --> 00:02:13.440 align:middle line:84%
+So we're going to assume
+for now that they are fair.
+
+00:02:13.440 --> 00:02:15.757 align:middle line:90%
+They're normal physical coins.
+
+00:02:15.757 --> 00:02:16.590 align:middle line:90%
+They're independent.
+
+00:02:16.590 --> 00:02:20.300 align:middle line:84%
+If you flip one, it's not going
+to affect the outcome of any
+
+00:02:20.300 --> 00:02:21.950 align:middle line:90%
+of the others.
+
+00:02:21.950 --> 00:02:23.950 align:middle line:84%
+So what is our sample
+space in this case?
+
+00:02:23.950 --> 00:02:29.060 align:middle line:90%
+
+
+00:02:29.060 --> 00:02:30.660 align:middle line:84%
+What does our sample
+space look like?
+
+00:02:30.660 --> 00:02:31.910 align:middle line:90%
+Am I giving the right lecture?
+
+00:02:31.910 --> 00:02:33.132 align:middle line:90%
+This is 6 1200, right?
+
+00:02:33.132 --> 00:02:33.632 align:middle line:90%
+OK.
+
+00:02:33.632 --> 00:02:37.488 align:middle line:90%
+
+
+00:02:37.488 --> 00:02:42.510 align:middle line:84%
+If we flip three coins, what
+are the possible outcomes?
+
+00:02:42.510 --> 00:02:43.010 align:middle line:90%
+Yeah?
+
+00:02:43.010 --> 00:02:44.960 align:middle line:84%
+AUDIENCE: Each of them
+being heads or tails.
+
+00:02:44.960 --> 00:02:48.555 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah, each
+of them being heads or tails.
+
+00:02:48.555 --> 00:02:56.445 align:middle line:84%
+So if we flip three coins, our
+sample space is going to be--
+
+00:02:56.445 --> 00:02:59.140 align:middle line:90%
+
+
+00:02:59.140 --> 00:03:01.645 align:middle line:90%
+so each coin can take either--
+
+00:03:01.645 --> 00:03:03.400 align:middle line:90%
+it can be either heads or tails.
+
+00:03:03.400 --> 00:03:04.400 align:middle line:90%
+There are three of them.
+
+00:03:04.400 --> 00:03:08.290 align:middle line:84%
+So we're going to be considering
+ordered triples of either heads
+
+00:03:08.290 --> 00:03:10.330 align:middle line:90%
+or tails.
+
+00:03:10.330 --> 00:03:13.690 align:middle line:84%
+And maybe we've
+got this function
+
+00:03:13.690 --> 00:03:24.040 align:middle line:84%
+f that maps an outcome omega to
+the number of heads in omega.
+
+00:03:24.040 --> 00:03:28.900 align:middle line:90%
+
+
+00:03:28.900 --> 00:03:32.300 align:middle line:90%
+So that's one possible RV.
+
+00:03:32.300 --> 00:03:35.200 align:middle line:84%
+We're taking an
+outcome, and we're
+
+00:03:35.200 --> 00:03:40.600 align:middle line:84%
+mapping it to some number,
+the number of heads.
+
+00:03:40.600 --> 00:03:48.910 align:middle line:84%
+Another one could
+be maybe instead,
+
+00:03:48.910 --> 00:03:52.785 align:middle line:84%
+we just look at is the first
+coin flip heads or tails?
+
+00:03:52.785 --> 00:03:57.290 align:middle line:90%
+
+
+00:03:57.290 --> 00:04:01.370 align:middle line:84%
+Oh, maybe I should not
+write it as that just yet.
+
+00:04:01.370 --> 00:04:14.100 align:middle line:84%
+So 1, if and only if first flip
+is heads, and it's 0 otherwise.
+
+00:04:14.100 --> 00:04:17.750 align:middle line:90%
+
+
+00:04:17.750 --> 00:04:20.430 align:middle line:84%
+So these are two
+examples of RVs.
+
+00:04:20.430 --> 00:04:25.130 align:middle line:84%
+They are functions that map
+outcomes to real numbers.
+
+00:04:25.130 --> 00:04:27.360 align:middle line:84%
+Does this make
+sense to everybody?
+
+00:04:27.360 --> 00:04:30.710 align:middle line:90%
+
+
+00:04:30.710 --> 00:04:38.420 align:middle line:84%
+We could have one more that's
+h of omega is 1 if all three
+
+00:04:38.420 --> 00:04:48.540 align:middle line:90%
+coins match, 0 otherwise.
+
+00:04:48.540 --> 00:04:51.315 align:middle line:90%
+
+
+00:04:51.315 --> 00:04:55.620 align:middle line:84%
+So these are just examples
+of RVs that we could have.
+
+00:04:55.620 --> 00:05:01.620 align:middle line:84%
+So g and h in particular
+have a special property.
+
+00:05:01.620 --> 00:05:04.200 align:middle line:90%
+They are either 1 or 0.
+
+00:05:04.200 --> 00:05:06.930 align:middle line:90%
+
+
+00:05:06.930 --> 00:05:09.610 align:middle line:84%
+So this is what we
+call an indicator.
+
+00:05:09.610 --> 00:05:21.990 align:middle line:90%
+
+
+00:05:21.990 --> 00:05:25.170 align:middle line:84%
+So all that an indicator
+is, is just an RV
+
+00:05:25.170 --> 00:05:27.455 align:middle line:90%
+whose codomain is 0 and 1.
+
+00:05:27.455 --> 00:05:28.540 align:middle line:90%
+That's all it is.
+
+00:05:28.540 --> 00:05:29.870 align:middle line:90%
+It's just a binary RV.
+
+00:05:29.870 --> 00:05:47.736 align:middle line:90%
+
+
+00:05:47.736 --> 00:05:51.220 align:middle line:84%
+And RVs, and in
+particular, indicator RVs,
+
+00:05:51.220 --> 00:05:54.100 align:middle line:90%
+naturally give rise to events.
+
+00:05:54.100 --> 00:05:55.065 align:middle line:90%
+Does anybody see how?
+
+00:05:55.065 --> 00:06:09.040 align:middle line:90%
+
+
+00:06:09.040 --> 00:06:10.210 align:middle line:90%
+Yeah?
+
+00:06:10.210 --> 00:06:12.430 align:middle line:84%
+AUDIENCE: You can define
+a subset of outcomes
+
+00:06:12.430 --> 00:06:17.780 align:middle line:84%
+where the indicator RV is 1, and
+that is equivalent to an event,
+
+00:06:17.780 --> 00:06:20.328 align:middle line:84%
+and it's 0 when it's
+not in that event.
+
+00:06:20.328 --> 00:06:21.620 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah, exactly.
+
+00:06:21.620 --> 00:06:22.930 align:middle line:90%
+So the answer was--
+
+00:06:22.930 --> 00:06:25.670 align:middle line:84%
+now, in particular, if
+you have an indicator RV,
+
+00:06:25.670 --> 00:06:28.970 align:middle line:84%
+you can look at the set
+of outcomes where it's 1.
+
+00:06:28.970 --> 00:06:30.310 align:middle line:90%
+That's an event.
+
+00:06:30.310 --> 00:06:35.365 align:middle line:84%
+Or its complement is the set
+of outcomes where it's 0.
+
+00:06:35.365 --> 00:06:51.030 align:middle line:84%
+So more generally, if we
+have an RV f and a value x,
+
+00:06:51.030 --> 00:06:52.523 align:middle line:90%
+we can define the event.
+
+00:06:52.523 --> 00:06:58.920 align:middle line:90%
+
+
+00:06:58.920 --> 00:07:00.810 align:middle line:84%
+So slightly weird
+notation here--
+
+00:07:00.810 --> 00:07:19.800 align:middle line:84%
+f equals x by the set of
+outcomes omega, where f of omega
+
+00:07:19.800 --> 00:07:21.075 align:middle line:90%
+equals x.
+
+00:07:21.075 --> 00:07:26.640 align:middle line:90%
+
+
+00:07:26.640 --> 00:07:31.320 align:middle line:84%
+Or you may also have seen
+the notation f inverse
+
+00:07:31.320 --> 00:07:38.190 align:middle line:84%
+of x, inverse here meaning
+inverse as a relation, not
+
+00:07:38.190 --> 00:07:40.140 align:middle line:90%
+as a bijection.
+
+00:07:40.140 --> 00:07:42.640 align:middle line:84%
+But if you haven't seen this
+notation, don't worry about it.
+
+00:07:42.640 --> 00:07:46.670 align:middle line:84%
+This is what we call it
+in terms of probability.
+
+00:07:46.670 --> 00:07:51.260 align:middle line:90%
+
+
+00:07:51.260 --> 00:07:54.060 align:middle line:84%
+And vice versa-- if
+you have an event,
+
+00:07:54.060 --> 00:07:57.520 align:middle line:84%
+you can define the
+indicator of that event.
+
+00:07:57.520 --> 00:08:03.470 align:middle line:90%
+
+
+00:08:03.470 --> 00:08:16.400 align:middle line:84%
+So if we have an event A,
+corresponds to the event,
+
+00:08:16.400 --> 00:08:18.830 align:middle line:84%
+this is the notation I
+was trying to use before,
+
+00:08:18.830 --> 00:08:26.150 align:middle line:84%
+blackboard bold 1 of A. This
+notation here just means
+
+00:08:26.150 --> 00:08:33.409 align:middle line:84%
+the indicator that is 1
+precisely for the outcomes in A,
+
+00:08:33.409 --> 00:08:44.400 align:middle line:84%
+so if omega is in
+A, and 0 otherwise.
+
+00:08:44.400 --> 00:08:47.490 align:middle line:90%
+
+
+00:08:47.490 --> 00:08:48.880 align:middle line:90%
+Does that make sense?
+
+00:08:48.880 --> 00:08:51.130 align:middle line:84%
+Does this correspondence
+make sense?
+
+00:08:51.130 --> 00:08:52.210 align:middle line:90%
+Yeah, question?
+
+00:08:52.210 --> 00:08:54.010 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:08:54.010 --> 00:08:56.010 align:middle line:84%
+BRYNMOR CHAPMAN: Explain
+the notation again, OK.
+
+00:08:56.010 --> 00:09:01.170 align:middle line:84%
+Yeah, so basically,
+we are taking an event
+
+00:09:01.170 --> 00:09:06.300 align:middle line:84%
+and using it to define
+an indicator RV.
+
+00:09:06.300 --> 00:09:08.730 align:middle line:84%
+This notation is
+just how we write it.
+
+00:09:08.730 --> 00:09:19.330 align:middle line:84%
+This is called the
+indicator of A.
+
+00:09:19.330 --> 00:09:22.740 align:middle line:84%
+And all it means is
+just the indicator RV,
+
+00:09:22.740 --> 00:09:26.200 align:middle line:84%
+which takes the value 1
+on all of the events in A,
+
+00:09:26.200 --> 00:09:29.140 align:middle line:84%
+and it takes the value 0 on all
+of the events that-- or sorry,
+
+00:09:29.140 --> 00:09:33.000 align:middle line:84%
+all of the outcomes that aren't
+an A. Does that make sense?
+
+00:09:33.000 --> 00:09:34.690 align:middle line:90%
+Cool.
+
+00:09:34.690 --> 00:09:36.040 align:middle line:90%
+Any other questions?
+
+00:09:36.040 --> 00:09:40.050 align:middle line:90%
+
+
+00:09:40.050 --> 00:09:40.550 align:middle line:90%
+OK.
+
+00:09:40.550 --> 00:09:45.822 align:middle line:90%
+
+
+00:09:45.822 --> 00:09:50.100 align:middle line:84%
+Or actually, maybe we should
+keep that visible for now.
+
+00:09:50.100 --> 00:09:57.940 align:middle line:90%
+
+
+00:09:57.940 --> 00:10:03.280 align:middle line:84%
+We can also define a different
+kind of event, f greater than
+
+00:10:03.280 --> 00:10:04.110 align:middle line:90%
+or equal to x.
+
+00:10:04.110 --> 00:10:08.674 align:middle line:90%
+
+
+00:10:08.674 --> 00:10:12.830 align:middle line:84%
+So that one obviously doesn't
+make sense for complex numbers.
+
+00:10:12.830 --> 00:10:16.160 align:middle line:84%
+But for real numbers or
+any subset of the reals,
+
+00:10:16.160 --> 00:10:18.250 align:middle line:90%
+this is perfectly fine.
+
+00:10:18.250 --> 00:10:22.330 align:middle line:84%
+As you might expect,
+this is going
+
+00:10:22.330 --> 00:10:29.530 align:middle line:84%
+to be the event that contains
+all of the outcomes omega, such
+
+00:10:29.530 --> 00:10:37.490 align:middle line:84%
+that f of omega is greater
+than or equal to x,
+
+00:10:37.490 --> 00:10:39.315 align:middle line:84%
+so analogous to what
+we just defined.
+
+00:10:39.315 --> 00:10:44.118 align:middle line:90%
+
+
+00:10:44.118 --> 00:10:50.010 align:middle line:84%
+And more generally, we
+could say, f in some set S--
+
+00:10:50.010 --> 00:10:55.320 align:middle line:84%
+or maybe T, because S
+is our sample space,
+
+00:10:55.320 --> 00:10:59.670 align:middle line:84%
+this is going to be omega
+such that f of omega
+
+00:10:59.670 --> 00:11:15.430 align:middle line:84%
+is in T. Does that make
+sense to everybody?
+
+00:11:15.430 --> 00:11:22.196 align:middle line:90%
+
+
+00:11:22.196 --> 00:11:27.660 align:middle line:84%
+So as you might expect, we
+can condition on these events,
+
+00:11:27.660 --> 00:11:32.100 align:middle line:84%
+just as we can condition
+on any other events.
+
+00:11:32.100 --> 00:11:34.890 align:middle line:84%
+We can also have independence
+of random variables,
+
+00:11:34.890 --> 00:11:38.680 align:middle line:84%
+just as we have
+independence of events.
+
+00:11:38.680 --> 00:11:39.180 align:middle line:90%
+Sorry.
+
+00:11:39.180 --> 00:11:45.850 align:middle line:90%
+
+
+00:11:45.850 --> 00:11:50.350 align:middle line:84%
+So, for instance,
+now we could talk
+
+00:11:50.350 --> 00:11:55.210 align:middle line:90%
+about the probability that--
+
+00:11:55.210 --> 00:11:57.730 align:middle line:90%
+what did we call them--
+
+00:11:57.730 --> 00:12:08.535 align:middle line:84%
+f equals 2, conditioned
+on h equals 1.
+
+00:12:08.535 --> 00:12:17.470 align:middle line:90%
+
+
+00:12:17.470 --> 00:12:20.170 align:middle line:90%
+So what is this probability?
+
+00:12:20.170 --> 00:12:20.985 align:middle line:90%
+What is it saying?
+
+00:12:20.985 --> 00:12:31.210 align:middle line:90%
+
+
+00:12:31.210 --> 00:12:33.400 align:middle line:90%
+Yeah?
+
+00:12:33.400 --> 00:12:35.000 align:middle line:90%
+Oh, is that a hand or just--
+
+00:12:35.000 --> 00:12:35.580 align:middle line:90%
+OK, sorry.
+
+00:12:35.580 --> 00:12:41.390 align:middle line:90%
+
+
+00:12:41.390 --> 00:12:42.050 align:middle line:90%
+Yeah?
+
+00:12:42.050 --> 00:12:44.240 align:middle line:84%
+AUDIENCE: That the
+probability [INAUDIBLE]
+
+00:12:44.240 --> 00:12:46.100 align:middle line:90%
+given that all the [INAUDIBLE].
+
+00:12:46.100 --> 00:12:47.700 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah, exactly.
+
+00:12:47.700 --> 00:12:50.240 align:middle line:84%
+So we're looking
+at the probability
+
+00:12:50.240 --> 00:12:54.680 align:middle line:84%
+that we have exactly two heads,
+conditioned on all three coins
+
+00:12:54.680 --> 00:12:57.152 align:middle line:90%
+being the same.
+
+00:12:57.152 --> 00:12:58.860 align:middle line:84%
+So we could think of
+these as two events,
+
+00:12:58.860 --> 00:13:03.600 align:middle line:84%
+A and B. If we actually
+write out what this means,
+
+00:13:03.600 --> 00:13:15.890 align:middle line:84%
+this is the probability that
+f equals 2 and h equals 1,
+
+00:13:15.890 --> 00:13:20.515 align:middle line:84%
+divided by probability
+that h equals 1.
+
+00:13:20.515 --> 00:13:23.370 align:middle line:90%
+
+
+00:13:23.370 --> 00:13:26.080 align:middle line:84%
+And this probability
+in particular is zero.
+
+00:13:26.080 --> 00:13:28.925 align:middle line:90%
+
+
+00:13:28.925 --> 00:13:30.450 align:middle line:84%
+So if all three
+coins are the same,
+
+00:13:30.450 --> 00:13:34.875 align:middle line:84%
+it's impossible for exactly
+two of them to be heads.
+
+00:13:34.875 --> 00:13:37.240 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:13:37.240 --> 00:13:39.310 align:middle line:84%
+We're basically doing
+exactly the same thing
+
+00:13:39.310 --> 00:13:41.890 align:middle line:84%
+with these weirdly
+written events
+
+00:13:41.890 --> 00:13:43.965 align:middle line:90%
+as we did with any other events.
+
+00:13:43.965 --> 00:13:50.960 align:middle line:90%
+
+
+00:13:50.960 --> 00:13:54.350 align:middle line:84%
+And we can also extend
+this to independence.
+
+00:13:54.350 --> 00:13:57.670 align:middle line:90%
+
+
+00:13:57.670 --> 00:13:59.950 align:middle line:84%
+But I should point out
+here that things are
+
+00:13:59.950 --> 00:14:01.710 align:middle line:90%
+going to diverge a little bit.
+
+00:14:01.710 --> 00:14:13.756 align:middle line:90%
+
+
+00:14:13.756 --> 00:14:29.770 align:middle line:84%
+So we're going to say that two
+RVs are independent if and only
+
+00:14:29.770 --> 00:14:41.210 align:middle line:84%
+if for all possible x and y,
+the probability that f equals
+
+00:14:41.210 --> 00:14:54.350 align:middle line:84%
+x and g equals y equals the
+probability that f equals
+
+00:14:54.350 --> 00:15:00.880 align:middle line:84%
+x times the probability
+that g equals y.
+
+00:15:00.880 --> 00:15:06.810 align:middle line:90%
+
+
+00:15:06.810 --> 00:15:11.250 align:middle line:84%
+So it's similar to
+what we had for events.
+
+00:15:11.250 --> 00:15:12.360 align:middle line:90%
+How is it different?
+
+00:15:12.360 --> 00:15:23.000 align:middle line:90%
+
+
+00:15:23.000 --> 00:15:26.640 align:middle line:84%
+Well, for events, we didn't
+have this quantifier.
+
+00:15:26.640 --> 00:15:30.920 align:middle line:84%
+We just said that two events are
+independent if the probability
+
+00:15:30.920 --> 00:15:33.020 align:middle line:84%
+of their intersection is
+the same as the product
+
+00:15:33.020 --> 00:15:34.470 align:middle line:90%
+of their probabilities.
+
+00:15:34.470 --> 00:15:37.121 align:middle line:90%
+
+
+00:15:37.121 --> 00:15:40.640 align:middle line:84%
+Now we have to
+quantify everything.
+
+00:15:40.640 --> 00:15:45.380 align:middle line:84%
+It's not just enough to say
+the event that each of them
+
+00:15:45.380 --> 00:15:47.370 align:middle line:90%
+takes value 0 is independent.
+
+00:15:47.370 --> 00:15:49.790 align:middle line:84%
+We kind of need that for
+all possible pairs of values
+
+00:15:49.790 --> 00:15:51.260 align:middle line:90%
+that they could take.
+
+00:15:51.260 --> 00:15:53.590 align:middle line:84%
+Does that at least
+intuitively make sense?
+
+00:15:53.590 --> 00:15:56.330 align:middle line:90%
+
+
+00:15:56.330 --> 00:15:58.670 align:middle line:90%
+Yes, no?
+
+00:15:58.670 --> 00:16:01.260 align:middle line:84%
+Some nods, tentative
+nods, at least.
+
+00:16:01.260 --> 00:16:01.760 align:middle line:90%
+OK.
+
+00:16:01.760 --> 00:16:05.760 align:middle line:90%
+
+
+00:16:05.760 --> 00:16:11.090 align:middle line:84%
+Or just as with normal
+events, we could equivalently
+
+00:16:11.090 --> 00:16:23.570 align:middle line:84%
+say, for all x, y,
+either probability that g
+
+00:16:23.570 --> 00:16:27.270 align:middle line:90%
+equals y equals 0--
+
+00:16:27.270 --> 00:16:28.945 align:middle line:90%
+whoops, not of, or--
+
+00:16:28.945 --> 00:16:31.970 align:middle line:90%
+
+
+00:16:31.970 --> 00:16:36.680 align:middle line:84%
+probability that f equals
+x, conditioned on g
+
+00:16:36.680 --> 00:16:42.990 align:middle line:84%
+equals y, which is the same as
+the unconditional probability.
+
+00:16:42.990 --> 00:16:48.555 align:middle line:90%
+
+
+00:16:48.555 --> 00:16:50.180 align:middle line:84%
+So if you prefer,
+you could think of it
+
+00:16:50.180 --> 00:16:52.560 align:middle line:84%
+in terms of conditional
+probability.
+
+00:16:52.560 --> 00:16:55.820 align:middle line:90%
+
+
+00:16:55.820 --> 00:16:58.100 align:middle line:84%
+So we're basically
+saying that two random--
+
+00:16:58.100 --> 00:17:02.240 align:middle line:84%
+two RVs are independent if and
+only if all of the events that
+
+00:17:02.240 --> 00:17:06.770 align:middle line:84%
+they generate-- the events
+f equals x and g equals y--
+
+00:17:06.770 --> 00:17:10.760 align:middle line:84%
+those are all
+independent events.
+
+00:17:10.760 --> 00:17:14.599 align:middle line:84%
+And intuitively, it's saying
+that if we know something
+
+00:17:14.599 --> 00:17:18.660 align:middle line:84%
+about the value that
+g takes, for instance,
+
+00:17:18.660 --> 00:17:21.534 align:middle line:84%
+it doesn't tell us anything
+about what value f takes.
+
+00:17:21.534 --> 00:17:26.414 align:middle line:90%
+
+
+00:17:26.414 --> 00:17:36.270 align:middle line:84%
+So example-- where were
+they-- f, g, and h,
+
+00:17:36.270 --> 00:17:37.780 align:middle line:90%
+are those independent?
+
+00:17:37.780 --> 00:17:40.270 align:middle line:90%
+So are f and g independent?
+
+00:17:40.270 --> 00:17:56.933 align:middle line:90%
+
+
+00:17:56.933 --> 00:17:59.100 align:middle line:84%
+Who thinks f and g, as I've
+defined them over there,
+
+00:17:59.100 --> 00:18:00.840 align:middle line:90%
+are independent?
+
+00:18:00.840 --> 00:18:03.870 align:middle line:90%
+Show of hands?
+
+00:18:03.870 --> 00:18:05.100 align:middle line:90%
+Yeah?
+
+00:18:05.100 --> 00:18:07.920 align:middle line:84%
+Who thinks they're
+not independent?
+
+00:18:07.920 --> 00:18:09.150 align:middle line:90%
+A few hands.
+
+00:18:09.150 --> 00:18:11.910 align:middle line:90%
+Who's still fast asleep?
+
+00:18:11.910 --> 00:18:14.070 align:middle line:90%
+Oh, that's unfortunate.
+
+00:18:14.070 --> 00:18:14.800 align:middle line:90%
+I'm sorry.
+
+00:18:14.800 --> 00:18:17.310 align:middle line:90%
+Me, too.
+
+00:18:17.310 --> 00:18:20.357 align:middle line:84%
+OK, so does anybody want to
+give me an explanation one
+
+00:18:20.357 --> 00:18:21.065 align:middle line:90%
+way or the other?
+
+00:18:21.065 --> 00:18:25.760 align:middle line:90%
+
+
+00:18:25.760 --> 00:18:27.390 align:middle line:84%
+Presumably, somebody
+who is not asleep.
+
+00:18:27.390 --> 00:18:29.473 align:middle line:84%
+I don't need an explanation
+for why you're asleep.
+
+00:18:29.473 --> 00:18:33.170 align:middle line:90%
+
+
+00:18:33.170 --> 00:18:34.290 align:middle line:90%
+Anybody else?
+
+00:18:34.290 --> 00:18:36.230 align:middle line:90%
+No?
+
+00:18:36.230 --> 00:18:37.110 align:middle line:90%
+Yeah?
+
+00:18:37.110 --> 00:18:42.170 align:middle line:84%
+AUDIENCE: I'm not sure, but
+maybe if g is 0, then f can be--
+
+00:18:42.170 --> 00:18:43.800 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah, exactly.
+
+00:18:43.800 --> 00:18:50.180 align:middle line:84%
+So if g is 0, that tells us
+something about the value
+
+00:18:50.180 --> 00:18:51.822 align:middle line:90%
+that f can take.
+
+00:18:51.822 --> 00:18:53.050 align:middle line:90%
+It cannot be 3.
+
+00:18:53.050 --> 00:18:58.098 align:middle line:90%
+
+
+00:18:58.098 --> 00:19:03.660 align:middle line:84%
+So the events g is 0 and f is
+3 are not independent events.
+
+00:19:03.660 --> 00:19:06.180 align:middle line:90%
+So the RVs are not independent.
+
+00:19:06.180 --> 00:19:11.510 align:middle line:90%
+
+
+00:19:11.510 --> 00:19:16.140 align:middle line:84%
+Or perhaps even more
+obvious, if f is 0,
+
+00:19:16.140 --> 00:19:18.080 align:middle line:90%
+that tells us exactly what g is.
+
+00:19:18.080 --> 00:19:19.240 align:middle line:90%
+g must also be 0.
+
+00:19:19.240 --> 00:19:23.480 align:middle line:90%
+
+
+00:19:23.480 --> 00:19:29.195 align:middle line:90%
+What about f and h?
+
+00:19:29.195 --> 00:19:38.430 align:middle line:90%
+
+
+00:19:38.430 --> 00:19:40.830 align:middle line:90%
+So f is the number of heads.
+
+00:19:40.830 --> 00:19:45.600 align:middle line:84%
+h is 1 if and only if
+all three coins match.
+
+00:19:45.600 --> 00:19:49.020 align:middle line:84%
+Who thinks those
+are independent?
+
+00:19:49.020 --> 00:19:50.550 align:middle line:90%
+No?
+
+00:19:50.550 --> 00:19:52.770 align:middle line:90%
+Who thinks they're not?
+
+00:19:52.770 --> 00:19:53.830 align:middle line:90%
+A few hands?
+
+00:19:53.830 --> 00:19:56.550 align:middle line:90%
+OK, why?
+
+00:19:56.550 --> 00:19:57.090 align:middle line:90%
+Yeah?
+
+00:19:57.090 --> 00:20:00.943 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:20:00.943 --> 00:20:01.860 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:20:01.860 --> 00:20:02.753 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:20:02.753 --> 00:20:03.670 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:20:03.670 --> 00:20:06.030 align:middle line:84%
+So f basically
+tells us everything
+
+00:20:06.030 --> 00:20:08.710 align:middle line:90%
+we need to know about h.
+
+00:20:08.710 --> 00:20:10.410 align:middle line:90%
+h is just a function of f.
+
+00:20:10.410 --> 00:20:14.180 align:middle line:84%
+And, well, neither
+of them is trivial.
+
+00:20:14.180 --> 00:20:19.760 align:middle line:84%
+So if we know f, no matter
+what it is, we know what h is.
+
+00:20:19.760 --> 00:20:21.920 align:middle line:84%
+So these are also
+not independent.
+
+00:20:21.920 --> 00:20:23.365 align:middle line:90%
+What about g and h?
+
+00:20:23.365 --> 00:20:38.390 align:middle line:90%
+
+
+00:20:38.390 --> 00:20:40.492 align:middle line:84%
+Who thinks g and
+h are independent?
+
+00:20:40.492 --> 00:20:41.760 align:middle line:90%
+Any hands?
+
+00:20:41.760 --> 00:20:43.730 align:middle line:90%
+Who thinks they're not?
+
+00:20:43.730 --> 00:20:44.610 align:middle line:90%
+Oh, nobody.
+
+00:20:44.610 --> 00:20:45.325 align:middle line:90%
+OK, why?
+
+00:20:45.325 --> 00:20:51.110 align:middle line:90%
+
+
+00:20:51.110 --> 00:20:52.317 align:middle line:90%
+Yeah?
+
+00:20:52.317 --> 00:20:55.520 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:20:55.520 --> 00:20:56.490 align:middle line:90%
+BRYNMOR CHAPMAN: Sorry?
+
+00:20:56.490 --> 00:20:58.115 align:middle line:84%
+AUDIENCE: The first
+one doesn't tell us
+
+00:20:58.115 --> 00:20:59.673 align:middle line:90%
+anything about the other two.
+
+00:20:59.673 --> 00:21:00.590 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:21:00.590 --> 00:21:02.090 align:middle line:84%
+Intuitively, that's
+what's going on.
+
+00:21:02.090 --> 00:21:04.710 align:middle line:84%
+The first flip doesn't tell us
+anything about the other two.
+
+00:21:04.710 --> 00:21:06.650 align:middle line:84%
+And, in particular,
+it doesn't tell us
+
+00:21:06.650 --> 00:21:08.810 align:middle line:84%
+anything about whether
+the other two match
+
+00:21:08.810 --> 00:21:12.238 align:middle line:90%
+each other and the first flip.
+
+00:21:12.238 --> 00:21:18.660 align:middle line:84%
+So we could put it all into
+here and figure it out.
+
+00:21:18.660 --> 00:21:23.492 align:middle line:84%
+But I will leave that as
+an exercise to the reader.
+
+00:21:23.492 --> 00:21:28.200 align:middle line:84%
+Basically, no matter what
+happens, you've got a 1
+
+00:21:28.200 --> 00:21:30.210 align:middle line:84%
+in 4 chance that the
+other two coins are
+
+00:21:30.210 --> 00:21:32.460 align:middle line:90%
+going to match the first one.
+
+00:21:32.460 --> 00:21:35.400 align:middle line:84%
+And that matches the
+probability that they all
+
+00:21:35.400 --> 00:21:36.300 align:middle line:90%
+match to begin with.
+
+00:21:36.300 --> 00:21:40.860 align:middle line:90%
+
+
+00:21:40.860 --> 00:21:45.030 align:middle line:84%
+OK, does anybody have any
+questions about independence
+
+00:21:45.030 --> 00:21:48.030 align:middle line:90%
+before we move on?
+
+00:21:48.030 --> 00:21:49.055 align:middle line:90%
+People reasonably happy?
+
+00:21:49.055 --> 00:21:57.032 align:middle line:90%
+
+
+00:21:57.032 --> 00:22:02.565 align:middle line:84%
+So the next topic
+is distributions.
+
+00:22:02.565 --> 00:22:08.820 align:middle line:90%
+
+
+00:22:08.820 --> 00:22:13.380 align:middle line:84%
+So for those of you who
+have seen RVs before,
+
+00:22:13.380 --> 00:22:15.070 align:middle line:90%
+this is probably the context--
+
+00:22:15.070 --> 00:22:19.820 align:middle line:84%
+or this is probably the context
+in which you've seen them.
+
+00:22:19.820 --> 00:22:25.070 align:middle line:84%
+Historically, this is where
+they started, and more or less
+
+00:22:25.070 --> 00:22:27.080 align:middle line:90%
+why they got their name.
+
+00:22:27.080 --> 00:22:32.030 align:middle line:84%
+But basically, the
+distribution is--
+
+00:22:32.030 --> 00:22:36.560 align:middle line:84%
+it's basically a fancy way
+of talking about the RV
+
+00:22:36.560 --> 00:22:38.960 align:middle line:84%
+without the underlying
+sample space.
+
+00:22:38.960 --> 00:22:42.260 align:middle line:84%
+It's talking about
+the probabilities
+
+00:22:42.260 --> 00:22:48.656 align:middle line:84%
+that it takes each individual
+value in its range.
+
+00:22:48.656 --> 00:22:51.320 align:middle line:84%
+So there are kind of
+two equivalent ways
+
+00:22:51.320 --> 00:22:57.230 align:middle line:84%
+to talk about it, at
+least for real-valued RVs.
+
+00:22:57.230 --> 00:23:20.580 align:middle line:84%
+So for an RV f, we define the
+Probability Mass Function, often
+
+00:23:20.580 --> 00:23:34.090 align:middle line:90%
+abbreviated as PMF, of omega--
+
+00:23:34.090 --> 00:23:37.260 align:middle line:90%
+oh, sorry, x.
+
+00:23:37.260 --> 00:23:43.070 align:middle line:84%
+And this is just the
+probability that f equals x.
+
+00:23:43.070 --> 00:23:59.825 align:middle line:90%
+
+
+00:23:59.825 --> 00:24:03.880 align:middle line:84%
+So does that definition
+make sense to everybody?
+
+00:24:03.880 --> 00:24:09.510 align:middle line:84%
+The PMF of an RV is just
+talking about the probability
+
+00:24:09.510 --> 00:24:13.160 align:middle line:84%
+that that RV takes each
+individual value in its range.
+
+00:24:13.160 --> 00:24:19.432 align:middle line:90%
+
+
+00:24:19.432 --> 00:24:28.060 align:middle line:84%
+So you could think of this as
+a probability space over R.
+
+00:24:28.060 --> 00:24:31.570 align:middle line:84%
+So that's how RVs originated,
+talking about probability spaces
+
+00:24:31.570 --> 00:24:35.050 align:middle line:90%
+over R.
+
+00:24:35.050 --> 00:24:38.830 align:middle line:84%
+Equivalently, you
+could also define
+
+00:24:38.830 --> 00:25:04.240 align:middle line:84%
+the Cumulative Distribution
+Function, CDF, as CDF sub f x.
+
+00:25:04.240 --> 00:25:08.620 align:middle line:84%
+This is just the
+probability that f
+
+00:25:08.620 --> 00:25:18.330 align:middle line:84%
+is less than or equal to x,
+which is the sum y less than x
+
+00:25:18.330 --> 00:25:25.490 align:middle line:84%
+of the probability
+that f equals x.
+
+00:25:25.490 --> 00:25:46.364 align:middle line:90%
+
+
+00:25:46.364 --> 00:25:51.150 align:middle line:84%
+So I should warn you
+that if you see--
+
+00:25:51.150 --> 00:25:54.990 align:middle line:84%
+in many other
+probability classes,
+
+00:25:54.990 --> 00:25:58.230 align:middle line:84%
+a PMF or something
+analogous to a PMF
+
+00:25:58.230 --> 00:26:03.540 align:middle line:84%
+would often be called a PDF,
+for a Probability Density
+
+00:26:03.540 --> 00:26:06.330 align:middle line:84%
+Function instead of
+Probability Mass Function.
+
+00:26:06.330 --> 00:26:12.502 align:middle line:84%
+And I believe, in particular,
+the text does this.
+
+00:26:12.502 --> 00:26:17.230 align:middle line:84%
+So for the purposes of our
+class, those are the same.
+
+00:26:17.230 --> 00:26:22.240 align:middle line:84%
+If you see PDF, think
+to yourselves PMF.
+
+00:26:22.240 --> 00:26:24.070 align:middle line:84%
+We prefer this
+notation because this
+
+00:26:24.070 --> 00:26:26.570 align:middle line:84%
+is what's used for
+discrete distributions.
+
+00:26:26.570 --> 00:26:30.640 align:middle line:84%
+But if you have a continuous
+distribution like--
+
+00:26:30.640 --> 00:26:33.730 align:middle line:84%
+well, it's kind of hard to
+talk about the probability
+
+00:26:33.730 --> 00:26:38.590 align:middle line:84%
+that a uniform random variable
+over the interval from 0 to 1
+
+00:26:38.590 --> 00:26:41.420 align:middle line:84%
+takes exactly a
+particular value.
+
+00:26:41.420 --> 00:26:43.490 align:middle line:84%
+If you throw a dart
+at a dart board,
+
+00:26:43.490 --> 00:26:47.140 align:middle line:84%
+you're never going to hit one
+particular point, essentially.
+
+00:26:47.140 --> 00:26:50.693 align:middle line:84%
+You have null events,
+so it doesn't really
+
+00:26:50.693 --> 00:26:52.360 align:middle line:84%
+make sense to talk
+about the probability
+
+00:26:52.360 --> 00:26:55.010 align:middle line:84%
+that you hit a particular
+point, because that's always 0.
+
+00:26:55.010 --> 00:26:59.180 align:middle line:84%
+So instead, you look at the
+density function instead.
+
+00:26:59.180 --> 00:27:02.110 align:middle line:84%
+But for discrete
+distributions, it
+
+00:27:02.110 --> 00:27:04.450 align:middle line:84%
+does make sense to talk
+about the probability
+
+00:27:04.450 --> 00:27:08.110 align:middle line:84%
+that you hit exactly
+one particular value.
+
+00:27:08.110 --> 00:27:11.130 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:27:11.130 --> 00:27:14.530 align:middle line:84%
+So for this class, PMF
+and PDF are the same.
+
+00:27:14.530 --> 00:27:16.995 align:middle line:84%
+If you see continuous
+probability, they won't be.
+
+00:27:16.995 --> 00:27:22.250 align:middle line:90%
+
+
+00:27:22.250 --> 00:27:26.850 align:middle line:84%
+So, often, it is useful
+to talk about RVs
+
+00:27:26.850 --> 00:27:32.310 align:middle line:84%
+in terms of their distributions,
+in terms of their PMFs or CDFs.
+
+00:27:32.310 --> 00:27:37.620 align:middle line:84%
+And just kind of forget about
+the underlying sample space.
+
+00:27:37.620 --> 00:27:41.100 align:middle line:90%
+So a couple of examples--
+
+00:27:41.100 --> 00:27:50.850 align:middle line:84%
+indicator-- indicators-- what
+does the PMF of an indicator
+
+00:27:50.850 --> 00:27:51.410 align:middle line:90%
+look like?
+
+00:27:51.410 --> 00:27:59.850 align:middle line:90%
+
+
+00:27:59.850 --> 00:28:02.650 align:middle line:84%
+Well, it can only take
+two possible values.
+
+00:28:02.650 --> 00:28:07.720 align:middle line:84%
+So it's going to be 0
+everywhere, except at 0 and 1.
+
+00:28:07.720 --> 00:28:09.908 align:middle line:84%
+And at one of those, it
+will take the value p.
+
+00:28:09.908 --> 00:28:11.950 align:middle line:84%
+At the other one, it'll
+take the value 1 minus p.
+
+00:28:11.950 --> 00:28:14.710 align:middle line:90%
+
+
+00:28:14.710 --> 00:28:16.930 align:middle line:90%
+And we call these--
+
+00:28:16.930 --> 00:28:19.276 align:middle line:84%
+we say that these have a
+Bernoulli distribution.
+
+00:28:19.276 --> 00:28:29.272 align:middle line:90%
+
+
+00:28:29.272 --> 00:28:35.420 align:middle line:84%
+So PMFs basically
+look like this.
+
+00:28:35.420 --> 00:28:37.900 align:middle line:90%
+You'll have two values.
+
+00:28:37.900 --> 00:28:44.260 align:middle line:90%
+Everywhere else, it's 0.
+
+00:28:44.260 --> 00:28:50.310 align:middle line:84%
+And the CDF is going
+to look like this.
+
+00:28:50.310 --> 00:29:07.130 align:middle line:90%
+
+
+00:29:07.130 --> 00:29:08.300 align:middle line:90%
+Oh, wait, no.
+
+00:29:08.300 --> 00:29:12.320 align:middle line:90%
+
+
+00:29:12.320 --> 00:29:13.180 align:middle line:90%
+It should be at 1.
+
+00:29:13.180 --> 00:29:26.000 align:middle line:90%
+
+
+00:29:26.000 --> 00:29:28.615 align:middle line:84%
+Another useful one is a
+uniform random variable.
+
+00:29:28.615 --> 00:29:34.260 align:middle line:90%
+
+
+00:29:34.260 --> 00:29:43.500 align:middle line:84%
+So a uniform RV, it can take any
+value with equal probability.
+
+00:29:43.500 --> 00:29:51.350 align:middle line:84%
+So in particular, let's look
+at an RV on the set up to n.
+
+00:29:51.350 --> 00:29:57.230 align:middle line:90%
+
+
+00:29:57.230 --> 00:30:08.480 align:middle line:84%
+So here, the PDF of x is going
+to be 1/n if and only if x is
+
+00:30:08.480 --> 00:30:17.480 align:middle line:90%
+in this set, and 0 otherwise.
+
+00:30:17.480 --> 00:30:23.140 align:middle line:84%
+And CDF of x, what
+is that going to be?
+
+00:30:23.140 --> 00:30:30.980 align:middle line:90%
+
+
+00:30:30.980 --> 00:30:33.950 align:middle line:84%
+Well you're basically going
+to have a piecewise function.
+
+00:30:33.950 --> 00:30:46.100 align:middle line:84%
+So it's going to
+be 0 up until 1.
+
+00:30:46.100 --> 00:30:51.260 align:middle line:90%
+Then at 1, it'll go up to 1/n.
+
+00:30:51.260 --> 00:30:53.455 align:middle line:84%
+At 2, it'll go up
+to 2/n, et cetera.
+
+00:30:53.455 --> 00:30:56.145 align:middle line:90%
+
+
+00:30:56.145 --> 00:30:57.895 align:middle line:84%
+So you get something
+that looks like that.
+
+00:30:57.895 --> 00:31:20.480 align:middle line:90%
+
+
+00:31:20.480 --> 00:31:22.117 align:middle line:90%
+Ah, yeah, question?
+
+00:31:22.117 --> 00:31:24.432 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:31:24.432 --> 00:31:26.890 align:middle line:84%
+BRYNMOR CHAPMAN: Oh, explain
+again how I got to this graph.
+
+00:31:26.890 --> 00:31:32.390 align:middle line:90%
+
+
+00:31:32.390 --> 00:31:35.810 align:middle line:90%
+Well, the CDF is--
+
+00:31:35.810 --> 00:31:38.930 align:middle line:84%
+you could think of it
+as a sum of the PDF--
+
+00:31:38.930 --> 00:31:43.286 align:middle line:90%
+or, sorry, sum of the PMF.
+
+00:31:43.286 --> 00:31:52.640 align:middle line:84%
+So the CDF at 1,
+it's the probability
+
+00:31:52.640 --> 00:31:58.010 align:middle line:84%
+that this uniform RV
+is no greater than 1.
+
+00:31:58.010 --> 00:31:59.530 align:middle line:90%
+How can that happen?
+
+00:31:59.530 --> 00:32:03.010 align:middle line:84%
+Well, only if you
+take the value 1.
+
+00:32:03.010 --> 00:32:06.320 align:middle line:84%
+That happens with
+probability 1/n.
+
+00:32:06.320 --> 00:32:11.920 align:middle line:84%
+So at 1, we should
+get probability 1/n.
+
+00:32:11.920 --> 00:32:16.060 align:middle line:90%
+
+
+00:32:16.060 --> 00:32:21.110 align:middle line:84%
+Anything between 1 and 2
+has that same probability.
+
+00:32:21.110 --> 00:32:25.300 align:middle line:84%
+The CDF of 1 and 1/2, the
+probability that we're no
+
+00:32:25.300 --> 00:32:28.240 align:middle line:84%
+greater than 1 and 1/2 is the
+same as the probability that
+
+00:32:28.240 --> 00:32:31.820 align:middle line:84%
+we're no greater than 1 because
+we can't take any value between
+
+00:32:31.820 --> 00:32:34.850 align:middle line:90%
+1 and 1 and 1/2.
+
+00:32:34.850 --> 00:32:40.780 align:middle line:84%
+So all the way up to 2,
+it's going to be constant.
+
+00:32:40.780 --> 00:32:45.850 align:middle line:84%
+And then at 2, it's going
+to jump up by another 1/n,
+
+00:32:45.850 --> 00:32:49.060 align:middle line:84%
+because at that point, the
+probability that we're no
+
+00:32:49.060 --> 00:32:51.340 align:middle line:84%
+greater than 2 is the
+probability that we take either
+
+00:32:51.340 --> 00:32:55.720 align:middle line:84%
+of these two values, which
+happens with probability 2/n.
+
+00:32:55.720 --> 00:33:00.830 align:middle line:84%
+So we get this piecewise step
+function that at every integer,
+
+00:33:00.830 --> 00:33:02.810 align:middle line:90%
+it increases by 1/n.
+
+00:33:02.810 --> 00:33:03.790 align:middle line:90%
+Does that make sense?
+
+00:33:03.790 --> 00:33:15.740 align:middle line:90%
+
+
+00:33:15.740 --> 00:33:20.160 align:middle line:84%
+Is there any way that you
+can beat random chance?
+
+00:33:20.160 --> 00:33:22.740 align:middle line:84%
+Is there any way that
+you can do better,
+
+00:33:22.740 --> 00:33:27.250 align:middle line:84%
+like win with probability
+greater than 1/2?
+
+00:33:27.250 --> 00:33:28.543 align:middle line:90%
+It's not really obvious.
+
+00:33:28.543 --> 00:33:31.256 align:middle line:90%
+
+
+00:33:31.256 --> 00:33:35.250 align:middle line:84%
+So let's simplify
+the game a bit.
+
+00:33:35.250 --> 00:33:42.050 align:middle line:84%
+So suppose I guarantee that one
+of the boxes has more than 5
+
+00:33:42.050 --> 00:33:43.740 align:middle line:84%
+candies, and the
+other one doesn't?
+
+00:33:43.740 --> 00:33:47.590 align:middle line:84%
+[LAUGHS] Can you then
+beat random chance?
+
+00:33:47.590 --> 00:33:50.120 align:middle line:90%
+
+
+00:33:50.120 --> 00:33:51.660 align:middle line:90%
+I'm seeing some nods.
+
+00:33:51.660 --> 00:33:54.395 align:middle line:90%
+Yeah, how?
+
+00:33:54.395 --> 00:33:58.300 align:middle line:84%
+How do you beat random
+chance in that case?
+
+00:33:58.300 --> 00:33:59.770 align:middle line:90%
+Yeah?
+
+00:33:59.770 --> 00:34:04.618 align:middle line:84%
+AUDIENCE: The boxes [INAUDIBLE]
+boxes [INAUDIBLE] less than 5
+
+00:34:04.618 --> 00:34:05.898 align:middle line:90%
+[INAUDIBLE].
+
+00:34:05.898 --> 00:34:07.190 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah, exactly.
+
+00:34:07.190 --> 00:34:09.199 align:middle line:90%
+You pick either box.
+
+00:34:09.199 --> 00:34:10.010 align:middle line:90%
+You open it.
+
+00:34:10.010 --> 00:34:12.980 align:middle line:84%
+If it has more than 5,
+that's the box with more.
+
+00:34:12.980 --> 00:34:14.210 align:middle line:90%
+You stick with that.
+
+00:34:14.210 --> 00:34:16.730 align:middle line:84%
+If it doesn't have more than
+5, well, the other one does.
+
+00:34:16.730 --> 00:34:19.603 align:middle line:90%
+So the other one has more.
+
+00:34:19.603 --> 00:34:25.480 align:middle line:84%
+So if you know that one of
+the boxes has more than 5,
+
+00:34:25.480 --> 00:34:29.500 align:middle line:84%
+and the other one doesn't, then
+you can win with certainty.
+
+00:34:29.500 --> 00:34:31.070 align:middle line:90%
+It's still not probabilistic.
+
+00:34:31.070 --> 00:34:34.340 align:middle line:84%
+Well, I suppose you could
+think of it as probabilistic,
+
+00:34:34.340 --> 00:34:36.850 align:middle line:84%
+but you can definitely
+do better than 1/2.
+
+00:34:36.850 --> 00:34:40.095 align:middle line:90%
+
+
+00:34:40.095 --> 00:34:43.719 align:middle line:84%
+Does this give you any ideas
+as to how you might win with
+
+00:34:43.719 --> 00:34:47.409 align:middle line:84%
+probability greater than 1/2
+even if you don't know that one
+
+00:34:47.409 --> 00:34:49.420 align:middle line:84%
+of the boxes has
+more than 5 candies,
+
+00:34:49.420 --> 00:34:51.610 align:middle line:90%
+and the other one doesn't?
+
+00:34:51.610 --> 00:34:53.620 align:middle line:90%
+Any ideas?
+
+00:34:53.620 --> 00:34:54.489 align:middle line:90%
+Yeah?
+
+00:34:54.489 --> 00:35:02.150 align:middle line:84%
+AUDIENCE: [INAUDIBLE] anyways
+to [INAUDIBLE] better than 1/2?
+
+00:35:02.150 --> 00:35:03.390 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+00:35:03.390 --> 00:35:09.620 align:middle line:84%
+So your colleague's
+proposal was, do it anyway.
+
+00:35:09.620 --> 00:35:13.560 align:middle line:84%
+If you open up a box
+with less than 5 candies,
+
+00:35:13.560 --> 00:35:16.070 align:middle line:84%
+you switch and hope that
+the other one has at least
+
+00:35:16.070 --> 00:35:18.650 align:middle line:90%
+more than what you found.
+
+00:35:18.650 --> 00:35:21.990 align:middle line:84%
+If you open up a box that
+has more than 5 candies,
+
+00:35:21.990 --> 00:35:24.610 align:middle line:84%
+you stick with it and hope
+that the other one has fewer.
+
+00:35:24.610 --> 00:35:28.010 align:middle line:90%
+
+
+00:35:28.010 --> 00:35:31.640 align:middle line:84%
+Does anybody see a
+problem with this?
+
+00:35:31.640 --> 00:35:33.265 align:middle line:84%
+What is the
+probability of winning?
+
+00:35:33.265 --> 00:35:36.710 align:middle line:90%
+
+
+00:35:36.710 --> 00:35:37.920 align:middle line:90%
+Yeah?
+
+00:35:37.920 --> 00:35:44.523 align:middle line:84%
+AUDIENCE: Whoever
+gave us [INAUDIBLE].
+
+00:35:44.523 --> 00:35:45.440 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:35:45.440 --> 00:35:50.060 align:middle line:90%
+So let me try and rephrase that.
+
+00:35:50.060 --> 00:35:51.800 align:middle line:84%
+I haven't given you
+any probabilities
+
+00:35:51.800 --> 00:35:55.080 align:middle line:84%
+of what the probability
+is that I've
+
+00:35:55.080 --> 00:35:58.534 align:middle line:84%
+put a certain number of
+candies in either box.
+
+00:35:58.534 --> 00:36:02.460 align:middle line:84%
+So it kind of depends
+on what I've done.
+
+00:36:02.460 --> 00:36:05.285 align:middle line:90%
+There are two cases.
+
+00:36:05.285 --> 00:36:09.820 align:middle line:84%
+If I have split them, like
+greater than 5 and less,
+
+00:36:09.820 --> 00:36:11.230 align:middle line:90%
+then you win with certainty.
+
+00:36:11.230 --> 00:36:16.485 align:middle line:84%
+If I haven't, then you win
+with probability exactly 1/2.
+
+00:36:16.485 --> 00:36:19.440 align:middle line:84%
+If they're both
+greater than 5, you
+
+00:36:19.440 --> 00:36:22.890 align:middle line:84%
+win if you picked the
+bigger one to begin with.
+
+00:36:22.890 --> 00:36:25.740 align:middle line:84%
+And if they're both
+less than 5, then you
+
+00:36:25.740 --> 00:36:29.700 align:middle line:84%
+win if you picked the
+smaller one to begin with.
+
+00:36:29.700 --> 00:36:32.200 align:middle line:84%
+So you're still not
+doing worse than 1/2.
+
+00:36:32.200 --> 00:36:34.698 align:middle line:84%
+But you're not doing
+better, or you're not
+
+00:36:34.698 --> 00:36:36.240 align:middle line:84%
+guaranteeing that
+you're doing better
+
+00:36:36.240 --> 00:36:41.010 align:middle line:84%
+because I made no guarantees
+as to how I was splitting up
+
+00:36:41.010 --> 00:36:41.860 align:middle line:90%
+the candies.
+
+00:36:41.860 --> 00:36:43.750 align:middle line:84%
+I may put fewer than
+5 in both of them.
+
+00:36:43.750 --> 00:36:48.960 align:middle line:84%
+Or, as I did this time, I
+may put more than 5 in both.
+
+00:36:48.960 --> 00:36:53.160 align:middle line:84%
+But can you use a similar
+idea to get greater than 1/2
+
+00:36:53.160 --> 00:36:55.175 align:middle line:84%
+probability, no
+matter what I've done?
+
+00:36:55.175 --> 00:37:17.730 align:middle line:90%
+
+
+00:37:17.730 --> 00:37:20.310 align:middle line:84%
+What if instead, you know that
+I've put more than 2 candies
+
+00:37:20.310 --> 00:37:22.850 align:middle line:90%
+in one box and not the other?
+
+00:37:22.850 --> 00:37:31.620 align:middle line:90%
+
+
+00:37:31.620 --> 00:37:32.840 align:middle line:90%
+Can you win in that case?
+
+00:37:32.840 --> 00:37:45.180 align:middle line:90%
+
+
+00:37:45.180 --> 00:37:46.920 align:middle line:90%
+Anyone?
+
+00:37:46.920 --> 00:37:48.960 align:middle line:84%
+If you know that I've
+put more than 2 candies
+
+00:37:48.960 --> 00:37:52.955 align:middle line:84%
+in one box and not the
+other one, how do you win?
+
+00:37:52.955 --> 00:38:03.330 align:middle line:90%
+
+
+00:38:03.330 --> 00:38:06.316 align:middle line:84%
+It's not a trick
+question, I promise.
+
+00:38:06.316 --> 00:38:09.718 align:middle line:90%
+[LAUGHS]
+
+00:38:09.718 --> 00:38:17.010 align:middle line:90%
+
+
+00:38:17.010 --> 00:38:18.978 align:middle line:84%
+Just as what your
+colleague said with 5,
+
+00:38:18.978 --> 00:38:21.270 align:middle line:84%
+you can open up one of the
+boxes and see whether or not
+
+00:38:21.270 --> 00:38:23.820 align:middle line:90%
+it has more than 2 candies.
+
+00:38:23.820 --> 00:38:26.250 align:middle line:84%
+If you know that one of the
+boxes has more than 2 candies
+
+00:38:26.250 --> 00:38:29.280 align:middle line:84%
+and the other one doesn't, you
+can identify which is which
+
+00:38:29.280 --> 00:38:30.725 align:middle line:90%
+by looking at one of them.
+
+00:38:30.725 --> 00:38:33.810 align:middle line:90%
+
+
+00:38:33.810 --> 00:38:40.980 align:middle line:84%
+So why don't I start
+writing some of this down?
+
+00:38:40.980 --> 00:38:46.230 align:middle line:90%
+So if one box--
+
+00:38:46.230 --> 00:38:56.094 align:middle line:84%
+so exactly one box has
+at least one candy,
+
+00:38:56.094 --> 00:39:00.040 align:middle line:84%
+then we open up our box,
+we see whether or not
+
+00:39:00.040 --> 00:39:04.852 align:middle line:84%
+it has any candies, and
+if it does, we take it.
+
+00:39:04.852 --> 00:39:05.865 align:middle line:90%
+So we can win.
+
+00:39:05.865 --> 00:39:09.790 align:middle line:90%
+
+
+00:39:09.790 --> 00:39:14.050 align:middle line:90%
+So if we know that two boxes--
+
+00:39:14.050 --> 00:39:19.630 align:middle line:84%
+sorry, if one box has greater
+than or equal to 2 candies.
+
+00:39:19.630 --> 00:39:25.180 align:middle line:90%
+If we know this, we can win.
+
+00:39:25.180 --> 00:39:27.940 align:middle line:84%
+If we know that one of them
+has greater than or equal to 3
+
+00:39:27.940 --> 00:39:29.715 align:middle line:90%
+candies, we can still win.
+
+00:39:29.715 --> 00:39:33.440 align:middle line:90%
+
+
+00:39:33.440 --> 00:39:39.610 align:middle line:84%
+The problem is, we don't
+actually know any of these.
+
+00:39:39.610 --> 00:39:42.200 align:middle line:84%
+So what can we do about
+that lack of knowledge?
+
+00:39:42.200 --> 00:39:46.470 align:middle line:90%
+
+
+00:39:46.470 --> 00:39:47.707 align:middle line:90%
+Yeah?
+
+00:39:47.707 --> 00:39:48.990 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:39:48.990 --> 00:39:51.210 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah, exactly.
+
+00:39:51.210 --> 00:39:54.070 align:middle line:84%
+So we don't know,
+but we can guess.
+
+00:39:54.070 --> 00:39:57.830 align:middle line:84%
+One of these 10
+things has to be true.
+
+00:39:57.830 --> 00:40:01.627 align:middle line:90%
+
+
+00:40:01.627 --> 00:40:03.960 align:middle line:84%
+I've told you that I've put
+different numbers of candies
+
+00:40:03.960 --> 00:40:06.000 align:middle line:90%
+in each box.
+
+00:40:06.000 --> 00:40:07.600 align:middle line:90%
+So there is some divider.
+
+00:40:07.600 --> 00:40:09.520 align:middle line:84%
+One of these-- well,
+at least one is true.
+
+00:40:09.520 --> 00:40:11.937 align:middle line:84%
+Maybe I've put 0 in one and
+10 in the other, in which case
+
+00:40:11.937 --> 00:40:12.870 align:middle line:90%
+they're all true.
+
+00:40:12.870 --> 00:40:15.450 align:middle line:84%
+But at least one of
+them has to be true.
+
+00:40:15.450 --> 00:40:19.710 align:middle line:84%
+So if you randomly guess
+one of them and just say,
+
+00:40:19.710 --> 00:40:24.480 align:middle line:84%
+pretend that you know it,
+and adopt the strategy
+
+00:40:24.480 --> 00:40:29.080 align:middle line:84%
+we were just talking about,
+if you guessed correctly,
+
+00:40:29.080 --> 00:40:31.590 align:middle line:90%
+then you win.
+
+00:40:31.590 --> 00:40:33.700 align:middle line:84%
+And if you didn't
+guess correctly,
+
+00:40:33.700 --> 00:40:35.980 align:middle line:84%
+as your colleague in
+the back pointed out,
+
+00:40:35.980 --> 00:40:37.680 align:middle line:90%
+you still don't lose, at least.
+
+00:40:37.680 --> 00:40:40.650 align:middle line:84%
+You still win with
+probability 1/2.
+
+00:40:40.650 --> 00:40:43.090 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:40:43.090 --> 00:40:46.000 align:middle line:90%
+
+
+00:40:46.000 --> 00:40:58.090 align:middle line:84%
+So our strat is
+guess a threshold,
+
+00:40:58.090 --> 00:40:59.655 align:middle line:90%
+and then assume it's true.
+
+00:40:59.655 --> 00:41:09.916 align:middle line:90%
+
+
+00:41:09.916 --> 00:41:11.500 align:middle line:84%
+So what exactly
+is the probability
+
+00:41:11.500 --> 00:41:12.555 align:middle line:90%
+of winning if we do this?
+
+00:41:12.555 --> 00:41:30.040 align:middle line:90%
+
+
+00:41:30.040 --> 00:41:33.850 align:middle line:84%
+Well, it's going
+to be we can use
+
+00:41:33.850 --> 00:41:35.540 align:middle line:90%
+the law of total probability.
+
+00:41:35.540 --> 00:41:39.940 align:middle line:84%
+It's going to be the probability
+that we win conditioned
+
+00:41:39.940 --> 00:41:47.610 align:middle line:84%
+on being correct, times the
+probability that we are actually
+
+00:41:47.610 --> 00:41:57.330 align:middle line:84%
+correct, plus the
+probability that we win,
+
+00:41:57.330 --> 00:42:03.330 align:middle line:84%
+conditioned on being wrong,
+times the probability that we're
+
+00:42:03.330 --> 00:42:03.830 align:middle line:90%
+wrong.
+
+00:42:03.830 --> 00:42:11.058 align:middle line:90%
+
+
+00:42:11.058 --> 00:42:13.300 align:middle line:84%
+So what are each of
+these probabilities?
+
+00:42:13.300 --> 00:42:22.590 align:middle line:90%
+
+
+00:42:22.590 --> 00:42:24.480 align:middle line:84%
+What's the probability
+that we win
+
+00:42:24.480 --> 00:42:27.666 align:middle line:90%
+if we made the correct guess--
+
+00:42:27.666 --> 00:42:31.110 align:middle line:90%
+or a correct guess, rather?
+
+00:42:31.110 --> 00:42:31.660 align:middle line:90%
+One.
+
+00:42:31.660 --> 00:42:32.470 align:middle line:90%
+Yeah, exactly.
+
+00:42:32.470 --> 00:42:37.800 align:middle line:90%
+
+
+00:42:37.800 --> 00:42:42.250 align:middle line:84%
+What's the probability that
+we made a correct guess?
+
+00:42:42.250 --> 00:42:42.850 align:middle line:90%
+Yeah?
+
+00:42:42.850 --> 00:42:43.900 align:middle line:90%
+AUDIENCE: 1/10.
+
+00:42:43.900 --> 00:42:45.550 align:middle line:90%
+BRYNMOR CHAPMAN: 1/10.
+
+00:42:45.550 --> 00:42:49.010 align:middle line:84%
+Well, it might be greater,
+but it's at least 1/10.
+
+00:42:49.010 --> 00:42:55.360 align:middle line:84%
+So it's at least
+1 times 1/10 plus,
+
+00:42:55.360 --> 00:42:58.770 align:middle line:84%
+what's the probability that we
+win conditioned on being wrong?
+
+00:42:58.770 --> 00:43:07.030 align:middle line:90%
+
+
+00:43:07.030 --> 00:43:07.720 align:middle line:90%
+Yeah?
+
+00:43:07.720 --> 00:43:08.620 align:middle line:90%
+AUDIENCE: 1/2.
+
+00:43:08.620 --> 00:43:09.930 align:middle line:90%
+BRYNMOR CHAPMAN: 1/2, yeah.
+
+00:43:09.930 --> 00:43:14.930 align:middle line:90%
+
+
+00:43:14.930 --> 00:43:18.440 align:middle line:84%
+So if we guess wrong, say
+without loss of generality,
+
+00:43:18.440 --> 00:43:20.615 align:middle line:90%
+our threshold is too low.
+
+00:43:20.615 --> 00:43:22.240 align:middle line:84%
+We're going to open
+up a box, and we're
+
+00:43:22.240 --> 00:43:24.280 align:middle line:84%
+going to stick with it
+regardless of what it is.
+
+00:43:24.280 --> 00:43:30.070 align:middle line:84%
+So we win if and only if we
+happen to pick the bigger one.
+
+00:43:30.070 --> 00:43:33.940 align:middle line:90%
+So we win with probability 1/2.
+
+00:43:33.940 --> 00:43:36.615 align:middle line:84%
+And what's the probability
+that we made the wrong guess?
+
+00:43:36.615 --> 00:43:52.460 align:middle line:90%
+
+
+00:43:52.460 --> 00:43:53.150 align:middle line:90%
+Yeah?
+
+00:43:53.150 --> 00:43:54.478 align:middle line:90%
+AUDIENCE: Is it 9/10?
+
+00:43:54.478 --> 00:43:55.645 align:middle line:90%
+BRYNMOR CHAPMAN: 9/10, yeah.
+
+00:43:55.645 --> 00:44:10.250 align:middle line:90%
+
+
+00:44:10.250 --> 00:44:11.910 align:middle line:90%
+So what is this going to be?
+
+00:44:11.910 --> 00:44:13.540 align:middle line:90%
+This is going to be what, 55%?
+
+00:44:13.540 --> 00:44:19.770 align:middle line:90%
+
+
+00:44:19.770 --> 00:44:24.505 align:middle line:84%
+So it's not that much better
+than 1/2, but it is better.
+
+00:44:24.505 --> 00:44:32.360 align:middle line:90%
+
+
+00:44:32.360 --> 00:44:36.310 align:middle line:84%
+So does that make
+sense to everybody?
+
+00:44:36.310 --> 00:44:38.060 align:middle line:90%
+So we've-- oh, yeah?
+
+00:44:38.060 --> 00:44:43.120 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:44:43.120 --> 00:44:47.440 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah, so
+we don't actually know that.
+
+00:44:47.440 --> 00:44:51.505 align:middle line:84%
+So it's possible
+that I could have
+
+00:44:51.505 --> 00:44:55.122 align:middle line:84%
+a large difference in the
+number of candies in each box.
+
+00:44:55.122 --> 00:45:00.640 align:middle line:84%
+We do know that there's at least
+a 1/10 probability that we pick
+
+00:45:00.640 --> 00:45:01.810 align:middle line:90%
+the right threshold.
+
+00:45:01.810 --> 00:45:02.970 align:middle line:90%
+It could be more than that.
+
+00:45:02.970 --> 00:45:07.810 align:middle line:90%
+
+
+00:45:07.810 --> 00:45:11.960 align:middle line:84%
+But if there are, say,
+two correct thresholds,
+
+00:45:11.960 --> 00:45:16.366 align:middle line:84%
+then instead of this, you have
+1 by 2/10 plus 1/2 by 8/10.
+
+00:45:16.366 --> 00:45:20.440 align:middle line:84%
+AUDIENCE: Why is
+1/10 [INAUDIBLE]?
+
+00:45:20.440 --> 00:45:23.290 align:middle line:84%
+BRYNMOR CHAPMAN: Oh, because
+these are the thresholds
+
+00:45:23.290 --> 00:45:25.100 align:middle line:90%
+that we're picking from.
+
+00:45:25.100 --> 00:45:28.780 align:middle line:84%
+So we do know that there
+are between 0 and 10 candies
+
+00:45:28.780 --> 00:45:29.840 align:middle line:90%
+in each box.
+
+00:45:29.840 --> 00:45:33.780 align:middle line:84%
+So we're going to pick a
+threshold that's in that range.
+
+00:45:33.780 --> 00:45:41.052 align:middle line:90%
+
+
+00:45:41.052 --> 00:45:43.385 align:middle line:90%
+But yeah, if I have put--
+
+00:45:43.385 --> 00:45:46.030 align:middle line:90%
+
+
+00:45:46.030 --> 00:45:49.470 align:middle line:84%
+if I have allowed you to pick
+more than one correct threshold,
+
+00:45:49.470 --> 00:45:54.830 align:middle line:84%
+then that just increases
+by 5% per candy difference
+
+00:45:54.830 --> 00:45:55.630 align:middle line:90%
+between the boxes.
+
+00:45:55.630 --> 00:46:03.920 align:middle line:90%
+
+
+00:46:03.920 --> 00:46:07.750 align:middle line:84%
+Are people reasonably
+happy with this?
+
+00:46:07.750 --> 00:46:10.910 align:middle line:84%
+So this is an example
+of a problem where
+
+00:46:10.910 --> 00:46:13.310 align:middle line:84%
+we've taken something that
+isn't exactly a probability
+
+00:46:13.310 --> 00:46:16.010 align:middle line:84%
+problem to begin with,
+but we've turned it
+
+00:46:16.010 --> 00:46:17.490 align:middle line:90%
+into a probability problem.
+
+00:46:17.490 --> 00:46:20.360 align:middle line:84%
+And we've given what we call
+a probabilistic algorithm
+
+00:46:20.360 --> 00:46:23.198 align:middle line:90%
+for solving it.
+
+00:46:23.198 --> 00:46:27.050 align:middle line:84%
+So yeah, if you do
+it deterministically,
+
+00:46:27.050 --> 00:46:28.350 align:middle line:90%
+there's not much you can do.
+
+00:46:28.350 --> 00:46:32.190 align:middle line:84%
+You pick a box, and if I happen
+to feed you the correct one,
+
+00:46:32.190 --> 00:46:35.230 align:middle line:90%
+then you win.
+
+00:46:35.230 --> 00:46:37.960 align:middle line:84%
+But you can do much better
+if you introduce randomness
+
+00:46:37.960 --> 00:46:41.780 align:middle line:84%
+into your algorithm and
+make random choices.
+
+00:46:41.780 --> 00:46:45.460 align:middle line:84%
+So you will see a
+lot more of this in--
+
+00:46:45.460 --> 00:46:50.270 align:middle line:84%
+oh, sorry, 6 1210, and
+even more of that in 1220.
+
+00:46:50.270 --> 00:46:51.850 align:middle line:90%
+And, Eric, do you remember?
+
+00:46:51.850 --> 00:46:56.350 align:middle line:90%
+5210, 5220?
+
+00:46:56.350 --> 00:46:58.610 align:middle line:84%
+There are other randomized
+algorithms classes.
+
+00:46:58.610 --> 00:47:01.420 align:middle line:84%
+There are some higher-level
+ones whose numbers
+
+00:47:01.420 --> 00:47:04.310 align:middle line:84%
+I forget that are entirely
+about randomized algorithms.
+
+00:47:04.310 --> 00:47:07.960 align:middle line:84%
+So it's a very powerful
+tool that is frequently used
+
+00:47:07.960 --> 00:47:12.490 align:middle line:84%
+in computer science to make
+your algorithms more efficient
+
+00:47:12.490 --> 00:47:14.610 align:middle line:84%
+or make them better
+in various ways.
+
+00:47:14.610 --> 00:47:23.190 align:middle line:90%
+
+
+00:47:23.190 --> 00:47:28.180 align:middle line:84%
+So now that we've finished
+with our candy boxes,
+
+00:47:28.180 --> 00:47:29.750 align:middle line:84%
+unless anybody has
+any questions--
+
+00:47:29.750 --> 00:47:33.060 align:middle line:84%
+questions about candy
+boxes before we move on?
+
+00:47:33.060 --> 00:47:33.560 align:middle line:90%
+No?
+
+00:47:33.560 --> 00:47:34.060 align:middle line:90%
+OK.
+
+00:47:34.060 --> 00:47:39.560 align:middle line:90%
+
+
+00:47:39.560 --> 00:47:46.970 align:middle line:84%
+So let's give another example
+of a very common distribution
+
+00:47:46.970 --> 00:48:00.810 align:middle line:84%
+called the binomial
+distribution.
+
+00:48:00.810 --> 00:48:05.774 align:middle line:90%
+
+
+00:48:05.774 --> 00:48:08.657 align:middle line:84%
+So this is a distribution
+that arises very frequently
+
+00:48:08.657 --> 00:48:09.490 align:middle line:90%
+in computer science.
+
+00:48:09.490 --> 00:48:14.576 align:middle line:90%
+
+
+00:48:14.576 --> 00:48:17.420 align:middle line:84%
+And, in fact, we've already
+been dealing with it implicitly
+
+00:48:17.420 --> 00:48:18.240 align:middle line:90%
+in this class.
+
+00:48:18.240 --> 00:48:21.320 align:middle line:90%
+We just haven't named it.
+
+00:48:21.320 --> 00:48:31.120 align:middle line:84%
+It's parameterized by two
+values, so bin of n, comma, p.
+
+00:48:31.120 --> 00:48:38.600 align:middle line:84%
+And basically, this models
+the following experiment.
+
+00:48:38.600 --> 00:48:41.263 align:middle line:90%
+So we have n coins.
+
+00:48:41.263 --> 00:48:49.570 align:middle line:90%
+
+
+00:48:49.570 --> 00:48:52.240 align:middle line:90%
+These are all-- they're coins.
+
+00:48:52.240 --> 00:48:53.470 align:middle line:90%
+They're independent.
+
+00:48:53.470 --> 00:48:56.450 align:middle line:84%
+Flipping one doesn't
+affect any of the others.
+
+00:48:56.450 --> 00:48:57.856 align:middle line:84%
+They're all mutually
+independent.
+
+00:48:57.856 --> 00:49:09.280 align:middle line:90%
+
+
+00:49:09.280 --> 00:49:11.180 align:middle line:90%
+And they're biased.
+
+00:49:11.180 --> 00:49:13.850 align:middle line:84%
+They're not
+necessarily fair coins.
+
+00:49:13.850 --> 00:49:16.200 align:middle line:84%
+Each comes up heads
+with probability p.
+
+00:49:16.200 --> 00:49:31.215 align:middle line:90%
+
+
+00:49:31.215 --> 00:49:40.100 align:middle line:84%
+And then the RV x, which
+is the number of coins
+
+00:49:40.100 --> 00:49:48.900 align:middle line:84%
+that come up heads, is or has
+the binomial distribution.
+
+00:49:48.900 --> 00:50:08.780 align:middle line:90%
+
+
+00:50:08.780 --> 00:50:12.050 align:middle line:90%
+Oops, I ran out of room, sorry.
+
+00:50:12.050 --> 00:50:12.550 align:middle line:90%
+OK.
+
+00:50:12.550 --> 00:50:17.840 align:middle line:90%
+
+
+00:50:17.840 --> 00:50:23.220 align:middle line:84%
+So we've already seen this in
+particular with p equals 1/2.
+
+00:50:23.220 --> 00:50:27.990 align:middle line:84%
+Flip several fair coins and
+count the number of heads.
+
+00:50:27.990 --> 00:50:32.390 align:middle line:84%
+We did that at the very
+beginning with n equals 3.
+
+00:50:32.390 --> 00:50:35.310 align:middle line:84%
+But more generally,
+you can flip n coins,
+
+00:50:35.310 --> 00:50:38.340 align:middle line:84%
+and they can be biased towards
+heads with probability p
+
+00:50:38.340 --> 00:50:40.280 align:middle line:84%
+or away from heads,
+as the case may be.
+
+00:50:40.280 --> 00:50:48.870 align:middle line:90%
+
+
+00:50:48.870 --> 00:50:51.390 align:middle line:84%
+You could also model different
+things, like maybe you've
+
+00:50:51.390 --> 00:50:53.650 align:middle line:90%
+got a very complicated device.
+
+00:50:53.650 --> 00:50:56.280 align:middle line:84%
+Each component may
+or may not fail.
+
+00:50:56.280 --> 00:50:57.280 align:middle line:90%
+They're all independent.
+
+00:50:57.280 --> 00:50:59.490 align:middle line:84%
+They all fail with
+probability p.
+
+00:50:59.490 --> 00:51:01.630 align:middle line:84%
+Then you could also count
+the number of failures.
+
+00:51:01.630 --> 00:51:04.480 align:middle line:84%
+This would also follow
+the binomial distribution.
+
+00:51:04.480 --> 00:51:14.696 align:middle line:90%
+
+
+00:51:14.696 --> 00:51:20.670 align:middle line:84%
+So can anybody tell me the PMF
+of a binomial distribution?
+
+00:51:20.670 --> 00:51:49.029 align:middle line:90%
+
+
+00:51:49.029 --> 00:51:52.090 align:middle line:84%
+AUDIENCE: n choose x times
+p to the x [INAUDIBLE]?
+
+00:51:52.090 --> 00:51:54.860 align:middle line:90%
+
+
+00:51:54.860 --> 00:51:58.040 align:middle line:84%
+BRYNMOR CHAPMAN: So, sorry,
+could you repeat that?
+
+00:51:58.040 --> 00:52:02.090 align:middle line:84%
+AUDIENCE: n choose x plus
+p to the x [INAUDIBLE]
+
+00:52:02.090 --> 00:52:07.250 align:middle line:90%
+
+
+00:52:07.250 --> 00:52:08.750 align:middle line:90%
+BRYNMOR CHAPMAN: Nice.
+
+00:52:08.750 --> 00:52:09.700 align:middle line:90%
+OK, why?
+
+00:52:09.700 --> 00:52:15.440 align:middle line:90%
+
+
+00:52:15.440 --> 00:52:25.290 align:middle line:84%
+AUDIENCE: [INAUDIBLE] with x and
+y [INAUDIBLE] the probability
+
+00:52:25.290 --> 00:52:32.880 align:middle line:84%
+of [INAUDIBLE] p to
+the x [INAUDIBLE],
+
+00:52:32.880 --> 00:52:37.433 align:middle line:84%
+and 1 minus p
+[INAUDIBLE] failures.
+
+00:52:37.433 --> 00:52:38.350 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:52:38.350 --> 00:52:45.090 align:middle line:84%
+So if you look at sequences
+of these coin flips,
+
+00:52:45.090 --> 00:52:52.540 align:middle line:84%
+there are n choose x sequences
+that have exactly x heads.
+
+00:52:52.540 --> 00:52:58.395 align:middle line:84%
+And if you have a sequence
+with exactly x heads,
+
+00:52:58.395 --> 00:53:02.160 align:middle line:84%
+each index which is a heads,
+that's heads with probability p.
+
+00:53:02.160 --> 00:53:04.530 align:middle line:84%
+And each index that's
+tails, of which there
+
+00:53:04.530 --> 00:53:08.400 align:middle line:84%
+are n minus x of them, is tails
+with probability n minus--
+
+00:53:08.400 --> 00:53:09.510 align:middle line:90%
+sorry, 1 minus p.
+
+00:53:09.510 --> 00:53:12.720 align:middle line:90%
+
+
+00:53:12.720 --> 00:53:15.970 align:middle line:84%
+So product rule says that we can
+multiply all of those together.
+
+00:53:15.970 --> 00:53:20.990 align:middle line:84%
+We get p to the x, 1
+minus p to the n minus x.
+
+00:53:20.990 --> 00:53:28.700 align:middle line:84%
+And now each of those sequences,
+the distinct outcomes, each
+
+00:53:28.700 --> 00:53:30.120 align:middle line:84%
+occurs with the
+same probability.
+
+00:53:30.120 --> 00:53:34.505 align:middle line:84%
+So we just count them and then
+multiply by that probability.
+
+00:53:34.505 --> 00:53:36.330 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:53:36.330 --> 00:53:42.625 align:middle line:90%
+
+
+00:53:42.625 --> 00:53:43.743 align:middle line:90%
+What about the CDF?
+
+00:53:43.743 --> 00:54:12.410 align:middle line:90%
+
+
+00:54:12.410 --> 00:54:15.790 align:middle line:84%
+Can anybody tell me what the CDF
+of the binomial distribution is?
+
+00:54:15.790 --> 00:54:22.740 align:middle line:90%
+
+
+00:54:22.740 --> 00:54:24.090 align:middle line:90%
+Yeah?
+
+00:54:24.090 --> 00:54:26.890 align:middle line:84%
+AUDIENCE: Isn't it just
+summing up the p of f?
+
+00:54:26.890 --> 00:54:32.070 align:middle line:84%
+So summation of n to the
+x, p to the x, 1 minus e,
+
+00:54:32.070 --> 00:54:33.510 align:middle line:90%
+and [INAUDIBLE].
+
+00:54:33.510 --> 00:54:35.170 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah, exactly.
+
+00:54:35.170 --> 00:54:48.686 align:middle line:84%
+So let's say from i equals 0
+to floor of x of PMF, of i.
+
+00:54:48.686 --> 00:55:02.310 align:middle line:90%
+
+
+00:55:02.310 --> 00:55:06.930 align:middle line:84%
+So that is frequently
+how you want
+
+00:55:06.930 --> 00:55:09.700 align:middle line:90%
+to compute a CDF in practice.
+
+00:55:09.700 --> 00:55:14.773 align:middle line:84%
+It is often easy to
+figure out the PMF.
+
+00:55:14.773 --> 00:55:17.590 align:middle line:90%
+
+
+00:55:17.590 --> 00:55:22.810 align:middle line:84%
+And then you can just compute
+sums to give you the CDF.
+
+00:55:22.810 --> 00:55:25.660 align:middle line:84%
+There are other cases where
+it's easier to go in reverse,
+
+00:55:25.660 --> 00:55:29.000 align:middle line:84%
+like maybe the CDF
+is easier to compute,
+
+00:55:29.000 --> 00:55:31.480 align:middle line:84%
+and then you can compute
+finite differences to get back
+
+00:55:31.480 --> 00:55:32.190 align:middle line:90%
+to the PMF.
+
+00:55:32.190 --> 00:55:35.014 align:middle line:90%
+
+
+00:55:35.014 --> 00:55:38.860 align:middle line:84%
+But the fact that both of these
+are equivalent ways of talking
+
+00:55:38.860 --> 00:55:42.610 align:middle line:84%
+about the distribution
+means that you
+
+00:55:42.610 --> 00:55:44.950 align:middle line:84%
+can use either one of
+them, and the other one
+
+00:55:44.950 --> 00:55:47.160 align:middle line:84%
+can be computed fairly
+easily from the first.
+
+00:55:47.160 --> 00:56:02.200 align:middle line:90%
+
+
+00:56:02.200 --> 00:56:07.450 align:middle line:84%
+So unfortunately, there are
+summations involved, though.
+
+00:56:07.450 --> 00:56:12.013 align:middle line:84%
+So that can be a
+little bit unwieldy.
+
+00:56:12.013 --> 00:56:15.330 align:middle line:90%
+
+
+00:56:15.330 --> 00:56:19.380 align:middle line:84%
+So it is often easier, rather
+than dealing with the CDF
+
+00:56:19.380 --> 00:56:22.980 align:middle line:90%
+exactly, to approximate it.
+
+00:56:22.980 --> 00:56:25.950 align:middle line:84%
+And this might be good
+enough for whatever purpose
+
+00:56:25.950 --> 00:56:26.885 align:middle line:90%
+you have in mind.
+
+00:56:26.885 --> 00:56:33.018 align:middle line:90%
+
+
+00:56:33.018 --> 00:56:39.930 align:middle line:90%
+So let's see how we can do that.
+
+00:56:39.930 --> 00:56:45.100 align:middle line:84%
+Or actually, for the
+sake of notation,
+
+00:56:45.100 --> 00:56:48.400 align:middle line:90%
+let's abbreviate the PMF.
+
+00:56:48.400 --> 00:56:49.310 align:middle line:90%
+Let's just call it f.
+
+00:56:49.310 --> 00:57:01.052 align:middle line:90%
+
+
+00:57:01.052 --> 00:57:03.140 align:middle line:90%
+And big F can be the CDF.
+
+00:57:03.140 --> 00:57:09.900 align:middle line:90%
+
+
+00:57:09.900 --> 00:57:16.435 align:middle line:84%
+So how could we approximate
+f of, say, alpha times n?
+
+00:57:16.435 --> 00:57:32.720 align:middle line:90%
+
+
+00:57:32.720 --> 00:57:33.260 align:middle line:90%
+Any ideas?
+
+00:57:33.260 --> 00:57:53.120 align:middle line:90%
+
+
+00:57:53.120 --> 00:57:54.650 align:middle line:84%
+Well, first, why
+don't we write out
+
+00:57:54.650 --> 00:58:00.680 align:middle line:84%
+what exactly this says
+in terms of factorials?
+
+00:58:00.680 --> 00:58:03.350 align:middle line:84%
+So this is going
+to be n factorial,
+
+00:58:03.350 --> 00:58:12.090 align:middle line:84%
+divided by alpha n factorial,
+times 1 minus alpha times
+
+00:58:12.090 --> 00:58:23.010 align:middle line:84%
+n factorial, times p to
+the alpha n, 1 minus p
+
+00:58:23.010 --> 00:58:27.230 align:middle line:90%
+to the 1 minus alpha n.
+
+00:58:27.230 --> 00:58:31.350 align:middle line:90%
+
+
+00:58:31.350 --> 00:58:32.900 align:middle line:90%
+Now, who remembers Stirling?
+
+00:58:32.900 --> 00:58:36.780 align:middle line:90%
+
+
+00:58:36.780 --> 00:58:38.940 align:middle line:90%
+Oh, hand, yeah.
+
+00:58:38.940 --> 00:58:44.580 align:middle line:84%
+OK, how can we use
+Stirling to simplify this?
+
+00:58:44.580 --> 00:58:46.115 align:middle line:90%
+Oh, was that not a hand?
+
+00:58:46.115 --> 00:58:49.320 align:middle line:90%
+
+
+00:58:49.320 --> 00:58:50.200 align:middle line:90%
+Oh, sorry.
+
+00:58:50.200 --> 00:58:55.380 align:middle line:90%
+[LAUGHS]
+
+00:58:55.380 --> 00:58:58.603 align:middle line:84%
+Well, we've got a bunch
+of factorials here, right?
+
+00:58:58.603 --> 00:59:04.200 align:middle line:90%
+
+
+00:59:04.200 --> 00:59:09.730 align:middle line:84%
+If we approximate each of these
+factorials using Stirling,
+
+00:59:09.730 --> 00:59:11.900 align:middle line:84%
+then we're going to end
+up with the following.
+
+00:59:11.900 --> 00:59:16.905 align:middle line:84%
+So n factorial is going
+to be root 2 pi n.
+
+00:59:16.905 --> 00:59:19.960 align:middle line:90%
+
+
+00:59:19.960 --> 00:59:24.430 align:middle line:84%
+Actually, let's split
+up the terms nicely--
+
+00:59:24.430 --> 00:59:27.320 align:middle line:90%
+
+
+00:59:27.320 --> 00:59:43.150 align:middle line:84%
+over root 2 pi alpha n,
+root 2 pi 1 minus alpha n,
+
+00:59:43.150 --> 00:59:46.660 align:middle line:90%
+and then multiply this by--
+
+00:59:46.660 --> 00:59:47.540 align:middle line:90%
+OK.
+
+00:59:47.540 --> 00:59:51.130 align:middle line:84%
+So for the top,
+we have n minus--
+
+00:59:51.130 --> 00:59:57.310 align:middle line:90%
+sorry, n divided by e to the n.
+
+00:59:57.310 --> 01:00:02.350 align:middle line:84%
+On the bottom, we've
+got alpha n divided by e
+
+01:00:02.350 --> 01:00:13.070 align:middle line:84%
+to the alpha n, 1 minus alpha
+n divided by e to the 1 minus
+
+01:00:13.070 --> 01:00:16.160 align:middle line:90%
+alpha times n.
+
+01:00:16.160 --> 01:00:21.410 align:middle line:84%
+And then these p
+and 1 minus p terms,
+
+01:00:21.410 --> 01:00:22.835 align:middle line:90%
+we can just keep as they are--
+
+01:00:22.835 --> 01:00:27.058 align:middle line:90%
+
+
+01:00:27.058 --> 01:00:28.705 align:middle line:90%
+to the 1 minus alpha.
+
+01:00:28.705 --> 01:00:34.764 align:middle line:90%
+
+
+01:00:34.764 --> 01:00:38.065 align:middle line:84%
+So a little bit unwieldy as
+it is, but we can simplify it.
+
+01:00:38.065 --> 01:00:44.690 align:middle line:90%
+
+
+01:00:44.690 --> 01:00:46.285 align:middle line:90%
+How can we simplify this?
+
+01:00:46.285 --> 01:00:51.860 align:middle line:90%
+
+
+01:00:51.860 --> 01:00:53.790 align:middle line:84%
+Well, those n's and
+e's over on the right,
+
+01:00:53.790 --> 01:00:55.248 align:middle line:84%
+those aren't really
+doing anything.
+
+01:00:55.248 --> 01:00:57.950 align:middle line:90%
+
+
+01:00:57.950 --> 01:01:02.300 align:middle line:84%
+We've got n/e to the alpha n,
+n/e to the 1 minus alpha times
+
+01:01:02.300 --> 01:01:02.910 align:middle line:90%
+n.
+
+01:01:02.910 --> 01:01:10.930 align:middle line:84%
+And here, we've got n/e to the
+n, so we can get rid of those.
+
+01:01:10.930 --> 01:01:13.360 align:middle line:84%
+This is just going to
+end up being 1 divided
+
+01:01:13.360 --> 01:01:23.230 align:middle line:84%
+by alpha to the alpha n, 1 minus
+alpha to the 1 minus alpha times
+
+01:01:23.230 --> 01:01:23.730 align:middle line:90%
+n.
+
+01:01:23.730 --> 01:01:29.821 align:middle line:90%
+
+
+01:01:29.821 --> 01:01:37.030 align:middle line:84%
+And over here, we have 1
+over root 2 pi alpha times
+
+01:01:37.030 --> 01:01:41.020 align:middle line:90%
+1 minus alpha times n.
+
+01:01:41.020 --> 01:01:43.230 align:middle line:90%
+And then our p terms remain.
+
+01:01:43.230 --> 01:01:56.620 align:middle line:90%
+
+
+01:01:56.620 --> 01:02:01.185 align:middle line:90%
+OK, what next?
+
+01:02:01.185 --> 01:02:16.220 align:middle line:90%
+
+
+01:02:16.220 --> 01:02:19.610 align:middle line:84%
+Well, let's try shoving these
+p's and 1 minus p's in here.
+
+01:02:19.610 --> 01:02:25.040 align:middle line:84%
+So this carries
+down, and we've got p
+
+01:02:25.040 --> 01:02:37.490 align:middle line:84%
+over alpha to the alpha
+n times 1 minus p over 1
+
+01:02:37.490 --> 01:02:43.105 align:middle line:84%
+minus alpha to the 1
+minus alpha times n.
+
+01:02:43.105 --> 01:03:07.270 align:middle line:90%
+
+
+01:03:07.270 --> 01:03:08.235 align:middle line:90%
+What can we do next?
+
+01:03:08.235 --> 01:03:27.895 align:middle line:90%
+
+
+01:03:27.895 --> 01:03:29.770 align:middle line:84%
+Well, what happens if
+we take the log of this
+
+01:03:29.770 --> 01:03:31.125 align:middle line:90%
+and then raise 2 to that power?
+
+01:03:31.125 --> 01:03:34.000 align:middle line:90%
+
+
+01:03:34.000 --> 01:03:37.335 align:middle line:84%
+It's going to be the
+same thing, right?
+
+01:03:37.335 --> 01:03:38.710 align:middle line:84%
+But as it turns
+out, that's going
+
+01:03:38.710 --> 01:03:40.240 align:middle line:90%
+to make our life a bit easier.
+
+01:03:40.240 --> 01:03:43.030 align:middle line:90%
+So this continues to carry down.
+
+01:03:43.030 --> 01:03:47.650 align:middle line:90%
+So 2 to the--
+
+01:03:47.650 --> 01:03:58.880 align:middle line:84%
+this is now going to be n times
+alpha log of p over alpha,
+
+01:03:58.880 --> 01:04:08.630 align:middle line:84%
+plus 1 minus alpha times
+log of 1 minus p, divided
+
+01:04:08.630 --> 01:04:13.893 align:middle line:84%
+by 1 minus alpha,
+and parentheses here.
+
+01:04:13.893 --> 01:04:20.270 align:middle line:90%
+
+
+01:04:20.270 --> 01:04:21.946 align:middle line:84%
+All right, any of
+you here physicists?
+
+01:04:21.946 --> 01:04:24.620 align:middle line:90%
+
+
+01:04:24.620 --> 01:04:25.990 align:middle line:90%
+Proficient in physics?
+
+01:04:25.990 --> 01:04:30.470 align:middle line:90%
+
+
+01:04:30.470 --> 01:04:32.815 align:middle line:84%
+Does that exponent look
+familiar to anyone?
+
+01:04:32.815 --> 01:04:59.680 align:middle line:90%
+
+
+01:04:59.680 --> 01:05:02.660 align:middle line:84%
+Well, as it turns
+out, this exponent,
+
+01:05:02.660 --> 01:05:05.980 align:middle line:84%
+even though it
+looks kind of ugly,
+
+01:05:05.980 --> 01:05:09.630 align:middle line:84%
+it's always negative, except
+for when p equals alpha.
+
+01:05:09.630 --> 01:05:13.120 align:middle line:90%
+
+
+01:05:13.120 --> 01:05:15.465 align:middle line:84%
+So what happens
+when p equals alpha?
+
+01:05:15.465 --> 01:05:20.080 align:middle line:90%
+
+
+01:05:20.080 --> 01:05:23.150 align:middle line:84%
+Well, we've got a log
+of p over alpha here.
+
+01:05:23.150 --> 01:05:24.130 align:middle line:90%
+That's 0.
+
+01:05:24.130 --> 01:05:29.150 align:middle line:84%
+Log of 1 minus p over
+1 minus alpha, also 0.
+
+01:05:29.150 --> 01:05:31.420 align:middle line:90%
+So the exponent is 0 there.
+
+01:05:31.420 --> 01:05:37.390 align:middle line:84%
+And if p is not equal to alpha,
+then because log is concave,
+
+01:05:37.390 --> 01:05:39.130 align:middle line:90%
+this is just going to be--
+
+01:05:39.130 --> 01:05:40.460 align:middle line:90%
+it's going to be negative.
+
+01:05:40.460 --> 01:05:44.800 align:middle line:84%
+So we've got this bump
+at p equals alpha.
+
+01:05:44.800 --> 01:05:47.095 align:middle line:84%
+And it's going to get
+exponentially smaller everywhere
+
+01:05:47.095 --> 01:05:47.595 align:middle line:90%
+else.
+
+01:05:47.595 --> 01:05:51.970 align:middle line:90%
+
+
+01:05:51.970 --> 01:05:55.190 align:middle line:84%
+Does that make
+sense to everybody?
+
+01:05:55.190 --> 01:05:58.520 align:middle line:90%
+
+
+01:05:58.520 --> 01:06:01.460 align:middle line:84%
+So if we actually put in
+some concrete values--
+
+01:06:01.460 --> 01:06:07.781 align:middle line:84%
+so for the sake of simplicity,
+let's say p equals 0.5,
+
+01:06:07.781 --> 01:06:12.630 align:middle line:90%
+n equals, say, 100.
+
+01:06:12.630 --> 01:06:16.982 align:middle line:84%
+Evaluating 100, choose whatever,
+is going to be a bit of a pain.
+
+01:06:16.982 --> 01:06:23.540 align:middle line:84%
+But if we just use this
+approximation, then we can get,
+
+01:06:23.540 --> 01:06:25.940 align:middle line:84%
+actually, some pretty
+good approximations.
+
+01:06:25.940 --> 01:06:48.110 align:middle line:84%
+So if alpha also equals
+0.5, what happens?
+
+01:06:48.110 --> 01:06:52.770 align:middle line:84%
+Well, as we just established,
+this exponent is 0.
+
+01:06:52.770 --> 01:06:55.410 align:middle line:90%
+So this term is 1.
+
+01:06:55.410 --> 01:07:00.090 align:middle line:84%
+Here, we've got 2 pi alpha
+times 1 minus alpha times n.
+
+01:07:00.090 --> 01:07:03.030 align:middle line:84%
+So this is going to
+be 1 over root pi--
+
+01:07:03.030 --> 01:07:09.435 align:middle line:84%
+sorry, 1 over root 2 pi
+times 1/2 times 1/2 times n.
+
+01:07:09.435 --> 01:07:12.720 align:middle line:84%
+So that's going to
+simplify to pi n over 2.
+
+01:07:12.720 --> 01:07:15.270 align:middle line:90%
+It's going to be--
+
+01:07:15.270 --> 01:07:23.670 align:middle line:84%
+f of 50 is approximately
+equal to 1 over square root
+
+01:07:23.670 --> 01:07:26.465 align:middle line:90%
+of pi times 50.
+
+01:07:26.465 --> 01:07:30.552 align:middle line:90%
+
+
+01:07:30.552 --> 01:07:42.000 align:middle line:84%
+And as it turns out, this is
+about 0.08, so pretty small.
+
+01:07:42.000 --> 01:08:00.710 align:middle line:90%
+What about alpha equals 0.25?
+
+01:08:00.710 --> 01:08:04.130 align:middle line:84%
+As it turns out,
+when alpha is 0.25,
+
+01:08:04.130 --> 01:08:06.380 align:middle line:90%
+this doesn't change too much.
+
+01:08:06.380 --> 01:08:10.460 align:middle line:84%
+But this term starts
+decreasing exponentially.
+
+01:08:10.460 --> 01:08:19.849 align:middle line:84%
+So we actually end up with f of
+25 is about 10 to the minus 7.
+
+01:08:19.849 --> 01:08:22.500 align:middle line:90%
+
+
+01:08:22.500 --> 01:08:25.670 align:middle line:84%
+So if you flip 100
+coins, the probability
+
+01:08:25.670 --> 01:08:28.996 align:middle line:84%
+that you get exactly
+25 heads is minuscule.
+
+01:08:28.996 --> 01:08:33.218 align:middle line:90%
+
+
+01:08:33.218 --> 01:08:35.880 align:middle line:84%
+And I think the last
+lecture, right, Eric,
+
+01:08:35.880 --> 01:08:36.960 align:middle line:90%
+is about tail bounds?
+
+01:08:36.960 --> 01:08:38.300 align:middle line:90%
+Do you remember?
+
+01:08:38.300 --> 01:08:39.740 align:middle line:90%
+OK.
+
+01:08:39.740 --> 01:08:42.380 align:middle line:84%
+So, yeah, last
+lecture, we'll discuss
+
+01:08:42.380 --> 01:08:50.850 align:middle line:84%
+how to get bounds on the
+CDF instead of just the PMF.
+
+01:08:50.850 --> 01:08:54.180 align:middle line:84%
+And, yeah, as it
+turns out, it's kind
+
+01:08:54.180 --> 01:09:07.410 align:middle line:84%
+of funny, the probability that
+you get at most 24 heads, how
+
+01:09:07.410 --> 01:09:09.390 align:middle line:84%
+do you think this compares
+with the probability
+
+01:09:09.390 --> 01:09:10.535 align:middle line:90%
+that you get exactly 25?
+
+01:09:10.535 --> 01:09:25.540 align:middle line:90%
+
+
+01:09:25.540 --> 01:09:29.600 align:middle line:84%
+It turns out that this is
+actually smaller than f of 25.
+
+01:09:29.600 --> 01:09:32.370 align:middle line:90%
+
+
+01:09:32.370 --> 01:09:34.569 align:middle line:84%
+Because it's decreasing
+exponentially,
+
+01:09:34.569 --> 01:09:36.970 align:middle line:84%
+the CDF is also
+decreasing exponentially.
+
+01:09:36.970 --> 01:09:40.859 align:middle line:84%
+So it turns out that it's
+more likely to get exactly 25
+
+01:09:40.859 --> 01:09:43.170 align:middle line:84%
+heads than to get fewer than
+25 heads, which might be
+
+01:09:43.170 --> 01:09:44.550 align:middle line:90%
+a little bit counterintuitive.
+
+01:09:44.550 --> 01:09:48.102 align:middle line:84%
+For larger numbers, that's
+definitely not true.
+
+01:09:48.102 --> 01:09:52.490 align:middle line:84%
+It's much more likely that
+I'll get fewer than 50 heads
+
+01:09:52.490 --> 01:09:57.530 align:middle line:84%
+than exactly 50 heads, because
+the probability of exactly 50
+
+01:09:57.530 --> 01:10:00.665 align:middle line:90%
+heads is 8%.
+
+01:10:00.665 --> 01:10:03.110 align:middle line:84%
+So the probability of
+fewer than 50 heads
+
+01:10:03.110 --> 01:10:07.384 align:middle line:84%
+is going to be half of
+the complement of that.
+
+01:10:07.384 --> 01:10:11.030 align:middle line:90%
+So what's that, 47%, 46%?
+
+01:10:11.030 --> 01:10:12.200 align:middle line:90%
+I can't math--
+
+01:10:12.200 --> 01:10:14.570 align:middle line:90%
+46%.
+
+01:10:14.570 --> 01:10:17.810 align:middle line:84%
+So it's much more likely that
+you get fewer than 50 heads
+
+01:10:17.810 --> 01:10:19.640 align:middle line:90%
+than exactly 50 heads.
+
+01:10:19.640 --> 01:10:21.560 align:middle line:84%
+But then because it
+decreases exponentially
+
+01:10:21.560 --> 01:10:23.810 align:middle line:84%
+as you get close to
+the tail, it turns out
+
+01:10:23.810 --> 01:10:26.605 align:middle line:84%
+it's more likely to get
+exactly 25 than fewer.
+
+01:10:26.605 --> 01:10:29.610 align:middle line:90%
+
+
+01:10:29.610 --> 01:10:31.152 align:middle line:84%
+So that's all we
+have time for today.
+
+01:10:31.152 --> 01:10:33.152 align:middle line:84%
+Or, sorry, that's all we
+have planned for today.
+
+01:10:33.152 --> 01:10:35.390 align:middle line:84%
+We have a little bit of
+time left over for questions
+
+01:10:35.390 --> 01:10:37.170 align:middle line:90%
+if you want to come up and ask.
+
+01:10:37.170 --> 01:10:41.620 align:middle line:84%
+And otherwise, we will
+see you next week.
+
+01:10:41.620 --> 01:10:47.000 align:middle line:90%

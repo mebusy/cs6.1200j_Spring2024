@@ -1,0 +1,4601 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.430 align:middle line:90%
+[SQUEAKING]
+
+00:00:02.430 --> 00:00:03.402 align:middle line:90%
+[RUSTLING]
+
+00:00:03.402 --> 00:00:04.374 align:middle line:90%
+
+
+00:00:04.374 --> 00:00:05.346 align:middle line:90%
+[CLICKING]
+
+00:00:05.346 --> 00:00:11.180 align:middle line:90%
+
+
+00:00:11.180 --> 00:00:12.410 align:middle line:90%
+BRYNMOR CHAPMAN: Hello.
+
+00:00:12.410 --> 00:00:13.920 align:middle line:90%
+Can people hear me?
+
+00:00:13.920 --> 00:00:15.750 align:middle line:90%
+[SIDE CONVERSATION]
+
+00:00:15.750 --> 00:00:16.250 align:middle line:90%
+Hello?
+
+00:00:16.250 --> 00:00:19.160 align:middle line:90%
+[SIDE CONVERSATION]
+
+00:00:19.160 --> 00:00:20.880 align:middle line:90%
+Getting some thumbs up.
+
+00:00:20.880 --> 00:00:23.754 align:middle line:90%
+[SIDE CONVERSATION]
+
+00:00:23.754 --> 00:00:29.990 align:middle line:90%
+
+
+00:00:29.990 --> 00:00:30.660 align:middle line:90%
+OK.
+
+00:00:30.660 --> 00:00:32.090 align:middle line:90%
+Why don't we get started?
+
+00:00:32.090 --> 00:00:33.060 align:middle line:90%
+Hello, everybody.
+
+00:00:33.060 --> 00:00:34.310 align:middle line:90%
+I'm Brynmor.
+
+00:00:34.310 --> 00:00:35.730 align:middle line:84%
+If you've been
+coming to lecture,
+
+00:00:35.730 --> 00:00:38.280 align:middle line:84%
+you've already
+met Erik and Zach.
+
+00:00:38.280 --> 00:00:41.360 align:middle line:84%
+I'm the third instructor
+for this course.
+
+00:00:41.360 --> 00:00:43.740 align:middle line:84%
+Today, we are going to
+switch gears a little bit.
+
+00:00:43.740 --> 00:00:46.470 align:middle line:84%
+So we're going to move
+on from state machines.
+
+00:00:46.470 --> 00:00:51.210 align:middle line:84%
+And we're going to start a new
+unit on algorithmic analysis.
+
+00:00:51.210 --> 00:00:56.510 align:middle line:84%
+So we'll be looking at that
+until the end of next week.
+
+00:00:56.510 --> 00:01:00.170 align:middle line:84%
+This lecture is going
+to be about sums.
+
+00:01:00.170 --> 00:01:00.810 align:middle line:90%
+OK.
+
+00:01:00.810 --> 00:01:03.920 align:middle line:90%
+So sums are quite useful.
+
+00:01:03.920 --> 00:01:05.990 align:middle line:84%
+As I hinted at a
+moment ago, they're
+
+00:01:05.990 --> 00:01:07.470 align:middle line:90%
+good for algorithmic analysis.
+
+00:01:07.470 --> 00:01:12.230 align:middle line:84%
+You'll use everything in this
+unit quite a bit if you take
+
+00:01:12.230 --> 00:01:15.650 align:middle line:84%
+6.1210 or any other
+algorithms course.
+
+00:01:15.650 --> 00:01:20.332 align:middle line:84%
+They're also useful for things
+like probability, counting,
+
+00:01:20.332 --> 00:01:22.790 align:middle line:84%
+machine learning-- everything's
+useful for machine learning
+
+00:01:22.790 --> 00:01:24.020 align:middle line:90%
+nowadays--
+
+00:01:24.020 --> 00:01:27.140 align:middle line:84%
+recurrences and a
+bunch of other things.
+
+00:01:27.140 --> 00:01:31.530 align:middle line:90%
+So let's start with an example.
+
+00:01:31.530 --> 00:01:32.042 align:middle line:90%
+OK.
+
+00:01:32.042 --> 00:01:33.625 align:middle line:84%
+Has anybody here
+ever won the lottery?
+
+00:01:33.625 --> 00:01:36.320 align:middle line:90%
+
+
+00:01:36.320 --> 00:01:36.920 align:middle line:90%
+Hands.
+
+00:01:36.920 --> 00:01:37.670 align:middle line:90%
+Nobody?
+
+00:01:37.670 --> 00:01:38.520 align:middle line:90%
+Really?
+
+00:01:38.520 --> 00:01:39.020 align:middle line:90%
+Oh.
+
+00:01:39.020 --> 00:01:39.810 align:middle line:90%
+Come on, guys.
+
+00:01:39.810 --> 00:01:41.210 align:middle line:90%
+OK.
+
+00:01:41.210 --> 00:01:43.670 align:middle line:84%
+Well, does anybody
+know how it works?
+
+00:01:43.670 --> 00:01:47.360 align:middle line:84%
+So if you win $1
+million in the lottery,
+
+00:01:47.360 --> 00:01:50.510 align:middle line:84%
+it turns out you don't actually
+get a check for $1 million
+
+00:01:50.510 --> 00:01:51.090 align:middle line:90%
+in the MAIL.
+
+00:01:51.090 --> 00:01:54.230 align:middle line:90%
+Or you do, but it won't cash.
+
+00:01:54.230 --> 00:01:56.850 align:middle line:84%
+It actually comes
+in installments.
+
+00:01:56.850 --> 00:01:57.440 align:middle line:90%
+OK.
+
+00:01:57.440 --> 00:02:04.040 align:middle line:84%
+So imagine you get $50,000
+now and $50,000 next year
+
+00:02:04.040 --> 00:02:06.020 align:middle line:90%
+and so on for the next 20 years.
+
+00:02:06.020 --> 00:02:11.300 align:middle line:84%
+So in total, it ends up being
+$1 million in some sense.
+
+00:02:11.300 --> 00:02:13.480 align:middle line:90%
+Right?
+
+00:02:13.480 --> 00:02:16.270 align:middle line:90%
+But does it have the same value?
+
+00:02:16.270 --> 00:02:20.050 align:middle line:84%
+Who would prefer to have
+$1 million right now?
+
+00:02:20.050 --> 00:02:20.870 align:middle line:90%
+Lots of hands.
+
+00:02:20.870 --> 00:02:23.740 align:middle line:84%
+Who would prefer to
+have the installments,
+
+00:02:23.740 --> 00:02:26.590 align:middle line:90%
+$50,000 per year for 20 years?
+
+00:02:26.590 --> 00:02:27.850 align:middle line:90%
+Well, a few hands.
+
+00:02:27.850 --> 00:02:30.197 align:middle line:90%
+Can I get some reasons?
+
+00:02:30.197 --> 00:02:32.030 align:middle line:84%
+AUDIENCE: So you don't
+waste it all at once.
+
+00:02:32.030 --> 00:02:34.030 align:middle line:84%
+BRYNMOR CHAPMAN: Oh,
+that's an excellent reason.
+
+00:02:34.030 --> 00:02:36.130 align:middle line:90%
+
+
+00:02:36.130 --> 00:02:36.920 align:middle line:90%
+Supposed to be.
+
+00:02:36.920 --> 00:02:38.680 align:middle line:90%
+Anybody else?
+
+00:02:38.680 --> 00:02:39.620 align:middle line:90%
+A reason either way.
+
+00:02:39.620 --> 00:02:40.120 align:middle line:90%
+Yeah?
+
+00:02:40.120 --> 00:02:41.920 align:middle line:84%
+AUDIENCE: Inflation
+would make [INAUDIBLE].
+
+00:02:41.920 --> 00:02:43.188 align:middle line:90%
+BRYNMOR CHAPMAN: Sorry?
+
+00:02:43.188 --> 00:02:45.730 align:middle line:84%
+AUDIENCE: Inflation will make
+the installments less valuable.
+
+00:02:45.730 --> 00:02:46.510 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:02:46.510 --> 00:02:47.010 align:middle line:90%
+OK.
+
+00:02:47.010 --> 00:02:49.510 align:middle line:84%
+So that's an argument for
+getting the million dollars
+
+00:02:49.510 --> 00:02:50.120 align:middle line:90%
+right now.
+
+00:02:50.120 --> 00:02:51.371 align:middle line:90%
+Right?
+
+00:02:51.371 --> 00:02:59.110 align:middle line:84%
+The $50,000 you get in 20 years,
+if a gallon of milk costs $4
+
+00:02:59.110 --> 00:03:03.460 align:middle line:84%
+today and $10 in 20 years,
+that $50,000 isn't going to go
+
+00:03:03.460 --> 00:03:05.822 align:middle line:90%
+so far.
+
+00:03:05.822 --> 00:03:10.150 align:middle line:84%
+So at least in terms
+of the actual buying
+
+00:03:10.150 --> 00:03:13.930 align:middle line:84%
+power of the money, you'd really
+prefer to have that $1 million
+
+00:03:13.930 --> 00:03:18.310 align:middle line:84%
+right now because money now
+is more valuable than money
+
+00:03:18.310 --> 00:03:20.730 align:middle line:84%
+in the future, inflation
+or, relatedly, you
+
+00:03:20.730 --> 00:03:22.570 align:middle line:84%
+can invest this money
+and it'll end up
+
+00:03:22.570 --> 00:03:25.690 align:middle line:84%
+being more worth
+more in 20 years.
+
+00:03:25.690 --> 00:03:31.105 align:middle line:84%
+So this is exactly how
+a loan works, right?
+
+00:03:31.105 --> 00:03:33.250 align:middle line:84%
+You get a lump
+sump of money now.
+
+00:03:33.250 --> 00:03:35.920 align:middle line:84%
+And you pay it back
+in installments.
+
+00:03:35.920 --> 00:03:38.560 align:middle line:90%
+And you account for interest.
+
+00:03:38.560 --> 00:03:40.530 align:middle line:84%
+So this is what's
+known as an annuity.
+
+00:03:40.530 --> 00:03:50.242 align:middle line:90%
+
+
+00:03:50.242 --> 00:03:53.410 align:middle line:84%
+So for an annuity, we're going
+to make some fairly simplified
+
+00:03:53.410 --> 00:03:54.080 align:middle line:90%
+assumptions.
+
+00:03:54.080 --> 00:03:56.040 align:middle line:84%
+We're going to assume
+a fixed interest rate.
+
+00:03:56.040 --> 00:04:04.570 align:middle line:90%
+
+
+00:04:04.570 --> 00:04:06.730 align:middle line:90%
+Let's call it p.
+
+00:04:06.730 --> 00:04:10.030 align:middle line:84%
+So as an example,
+the Federal Reserve
+
+00:04:10.030 --> 00:04:14.560 align:middle line:84%
+says that interest rate
+right now is about 5.33%
+
+00:04:14.560 --> 00:04:20.560 align:middle line:84%
+So let's just take that
+as a working example,
+
+00:04:20.560 --> 00:04:23.060 align:middle line:84%
+or at least that's what it was
+at the beginning of the week.
+
+00:04:23.060 --> 00:04:26.350 align:middle line:90%
+I haven't checked it today.
+
+00:04:26.350 --> 00:04:38.670 align:middle line:84%
+And we're going to get m
+dollars every year for n years.
+
+00:04:38.670 --> 00:04:41.260 align:middle line:90%
+
+
+00:04:41.260 --> 00:04:46.660 align:middle line:84%
+So in the example that we were
+just looking at, m is 50k,
+
+00:04:46.660 --> 00:04:52.270 align:middle line:84%
+n is 20 years, and we've got
+this interest rate p, 5.33%.
+
+00:04:52.270 --> 00:04:53.030 align:middle line:90%
+OK.
+
+00:04:53.030 --> 00:04:59.350 align:middle line:84%
+So what does this mean about
+the value of money over time?
+
+00:04:59.350 --> 00:05:06.100 align:middle line:84%
+Well $1 now, if we get this
+$1 now, it's going to be worth
+
+00:05:06.100 --> 00:05:09.610 align:middle line:84%
+or it's equivalent
+to getting 1 plus p
+
+00:05:09.610 --> 00:05:13.065 align:middle line:90%
+dollars one year from now.
+
+00:05:13.065 --> 00:05:19.000 align:middle line:90%
+
+
+00:05:19.000 --> 00:05:21.160 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:05:21.160 --> 00:05:24.260 align:middle line:84%
+If I take my $1 now
+and I invest it,
+
+00:05:24.260 --> 00:05:27.920 align:middle line:84%
+I'll end up with
+$1.05 in a year.
+
+00:05:27.920 --> 00:05:28.750 align:middle line:90%
+OK.
+
+00:05:28.750 --> 00:05:33.850 align:middle line:84%
+Or in two years, it'll be 1
+plus p squared or, in k years,
+
+00:05:33.850 --> 00:05:35.980 align:middle line:90%
+it'll be 1 plus p to the k.
+
+00:05:35.980 --> 00:05:41.650 align:middle line:84%
+Conversely, what if I get
+that dollar in 10 years?
+
+00:05:41.650 --> 00:05:45.370 align:middle line:84%
+How much is that worth
+in today's money?
+
+00:05:45.370 --> 00:05:47.310 align:middle line:90%
+Anybody?
+
+00:05:47.310 --> 00:05:47.810 align:middle line:90%
+Hand.
+
+00:05:47.810 --> 00:05:51.510 align:middle line:90%
+
+
+00:05:51.510 --> 00:05:54.150 align:middle line:90%
+No?
+
+00:05:54.150 --> 00:05:55.300 align:middle line:90%
+Are we still asleep?
+
+00:05:55.300 --> 00:05:57.150 align:middle line:90%
+Too early in the morning?
+
+00:05:57.150 --> 00:05:57.660 align:middle line:90%
+OK.
+
+00:05:57.660 --> 00:06:01.990 align:middle line:84%
+Well, conversely, if I
+get my dollar in 10 years,
+
+00:06:01.990 --> 00:06:05.470 align:middle line:84%
+it's going to be worth 1
+divided by 1 plus p to the 10th.
+
+00:06:05.470 --> 00:06:08.250 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:06:08.250 --> 00:06:11.340 align:middle line:90%
+Yes, no, kind of, thumbs up?
+
+00:06:11.340 --> 00:06:12.310 align:middle line:90%
+A few thumbs up.
+
+00:06:12.310 --> 00:06:12.870 align:middle line:90%
+OK.
+
+00:06:12.870 --> 00:06:13.920 align:middle line:90%
+Good.
+
+00:06:13.920 --> 00:06:16.020 align:middle line:90%
+I'll take it.
+
+00:06:16.020 --> 00:06:17.940 align:middle line:90%
+OK.
+
+00:06:17.940 --> 00:06:24.720 align:middle line:84%
+So basically, what's going on
+is we're getting m dollars now,
+
+00:06:24.720 --> 00:06:31.950 align:middle line:84%
+m dollars in one year, m
+dollars in two years, OK,
+
+00:06:31.950 --> 00:06:37.260 align:middle line:90%
+dot, dot, dot, up to n years.
+
+00:06:37.260 --> 00:06:43.290 align:middle line:84%
+And we'd like to figure out what
+the equivalent value is today.
+
+00:06:43.290 --> 00:06:49.325 align:middle line:84%
+So this m dollars now, now
+this is worth m dollars today.
+
+00:06:49.325 --> 00:06:55.230 align:middle line:90%
+
+
+00:06:55.230 --> 00:06:56.700 align:middle line:90%
+OK.
+
+00:06:56.700 --> 00:07:02.490 align:middle line:84%
+This m dollars in one year
+is going to be worth--
+
+00:07:02.490 --> 00:07:08.400 align:middle line:84%
+whoops-- m times 1
+plus p to the minus 1.
+
+00:07:08.400 --> 00:07:09.150 align:middle line:90%
+OK.
+
+00:07:09.150 --> 00:07:14.820 align:middle line:84%
+This m dollars in two years is
+going to be m times 1 plus p
+
+00:07:14.820 --> 00:07:19.080 align:middle line:90%
+to the minus 2, et cetera.
+
+00:07:19.080 --> 00:07:24.480 align:middle line:84%
+And the m dollars that we get in
+n years is going to be m times 1
+
+00:07:24.480 --> 00:07:29.010 align:middle line:90%
+plus p to the minus n.
+
+00:07:29.010 --> 00:07:31.930 align:middle line:84%
+I guess this is
+n minus 1, right?
+
+00:07:31.930 --> 00:07:33.210 align:middle line:90%
+Yeah.
+
+00:07:33.210 --> 00:07:34.760 align:middle line:90%
+We're starting at 0 years.
+
+00:07:34.760 --> 00:07:40.788 align:middle line:90%
+
+
+00:07:40.788 --> 00:07:44.580 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:07:44.580 --> 00:07:46.420 align:middle line:90%
+So what is the total value?
+
+00:07:46.420 --> 00:07:50.670 align:middle line:84%
+The total equivalent
+value in today's money?
+
+00:07:50.670 --> 00:07:52.410 align:middle line:90%
+OK.
+
+00:07:52.410 --> 00:07:54.760 align:middle line:90%
+We'd like this in a closed form.
+
+00:07:54.760 --> 00:07:57.990 align:middle line:90%
+So right now we've kind of got--
+
+00:07:57.990 --> 00:08:00.150 align:middle line:84%
+we're trying to
+sum all of this up.
+
+00:08:00.150 --> 00:08:01.050 align:middle line:90%
+Right.
+
+00:08:01.050 --> 00:08:02.650 align:middle line:84%
+But it's not a very
+nice expression.
+
+00:08:02.650 --> 00:08:03.150 align:middle line:90%
+OK.
+
+00:08:03.150 --> 00:08:04.740 align:middle line:84%
+We'd like a closed
+form, something
+
+00:08:04.740 --> 00:08:07.320 align:middle line:84%
+that you can put into one of
+those old-fashioned calculators
+
+00:08:07.320 --> 00:08:08.820 align:middle line:84%
+if you've ever seen
+it, those things
+
+00:08:08.820 --> 00:08:11.250 align:middle line:84%
+that you hold in your hand
+and push the buttons on it?
+
+00:08:11.250 --> 00:08:12.480 align:middle line:90%
+No.
+
+00:08:12.480 --> 00:08:13.210 align:middle line:90%
+Oh, yeah.
+
+00:08:13.210 --> 00:08:15.550 align:middle line:84%
+There are some old
+souls in the audience.
+
+00:08:15.550 --> 00:08:17.026 align:middle line:90%
+OK.
+
+00:08:17.026 --> 00:08:17.770 align:middle line:90%
+But yeah.
+
+00:08:17.770 --> 00:08:21.750 align:middle line:84%
+We don't want any ellipses
+like this or sigma notation
+
+00:08:21.750 --> 00:08:22.810 align:middle line:90%
+or anything like that.
+
+00:08:22.810 --> 00:08:24.450 align:middle line:84%
+We just want a nice,
+clean expression
+
+00:08:24.450 --> 00:08:26.020 align:middle line:84%
+that you can put
+into a calculator.
+
+00:08:26.020 --> 00:08:28.890 align:middle line:84%
+So how can we go
+about computing it?
+
+00:08:28.890 --> 00:08:29.570 align:middle line:90%
+Any ideas?
+
+00:08:29.570 --> 00:08:40.179 align:middle line:90%
+
+
+00:08:40.179 --> 00:08:43.510 align:middle line:84%
+What if we were to replace
+this 1 plus p with an x?
+
+00:08:43.510 --> 00:08:46.010 align:middle line:90%
+Would that make it any easier?
+
+00:08:46.010 --> 00:08:58.700 align:middle line:84%
+So we've got m plus mx
+plus mx squared plus mx
+
+00:08:58.700 --> 00:09:01.520 align:middle line:90%
+to the n minus 1.
+
+00:09:01.520 --> 00:09:03.450 align:middle line:84%
+Are people happier
+with this expression?
+
+00:09:03.450 --> 00:09:06.140 align:middle line:90%
+
+
+00:09:06.140 --> 00:09:07.260 align:middle line:90%
+Getting some nods.
+
+00:09:07.260 --> 00:09:08.715 align:middle line:90%
+OK.
+
+00:09:08.715 --> 00:09:11.510 align:middle line:90%
+What is it?
+
+00:09:11.510 --> 00:09:12.565 align:middle line:90%
+Anybody remember?
+
+00:09:12.565 --> 00:09:16.250 align:middle line:90%
+
+
+00:09:16.250 --> 00:09:17.090 align:middle line:90%
+Yeah?
+
+00:09:17.090 --> 00:09:18.506 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:09:18.506 --> 00:09:19.920 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:09:19.920 --> 00:09:21.450 align:middle line:90%
+It's a geometric series.
+
+00:09:21.450 --> 00:09:23.242 align:middle line:90%
+OK.
+
+00:09:23.242 --> 00:09:31.610 align:middle line:84%
+So this is going to
+be m times 1 minus x.
+
+00:09:31.610 --> 00:09:33.830 align:middle line:90%
+Oops.
+
+00:09:33.830 --> 00:09:36.325 align:middle line:90%
+n over 1 minus x.
+
+00:09:36.325 --> 00:09:41.272 align:middle line:90%
+
+
+00:09:41.272 --> 00:09:45.060 align:middle line:84%
+So we knew this
+expression already.
+
+00:09:45.060 --> 00:09:47.480 align:middle line:90%
+How could we check it?
+
+00:09:47.480 --> 00:09:48.810 align:middle line:90%
+Or how did you check it?
+
+00:09:48.810 --> 00:09:51.500 align:middle line:90%
+I believe you already have.
+
+00:09:51.500 --> 00:09:52.910 align:middle line:90%
+Yeah?
+
+00:09:52.910 --> 00:09:55.190 align:middle line:84%
+AUDIENCE: Are you sure
+that's the [iNAUDIBLE]?
+
+00:09:55.190 --> 00:09:59.157 align:middle line:90%
+
+
+00:09:59.157 --> 00:09:59.990 align:middle line:90%
+BRYNMOR CHAPMAN: Oh.
+
+00:09:59.990 --> 00:10:03.350 align:middle line:90%
+
+
+00:10:03.350 --> 00:10:04.030 align:middle line:90%
+Thank you.
+
+00:10:04.030 --> 00:10:14.310 align:middle line:90%
+
+
+00:10:14.310 --> 00:10:14.810 align:middle line:90%
+Yeah.
+
+00:10:14.810 --> 00:10:20.230 align:middle line:90%
+
+
+00:10:20.230 --> 00:10:20.730 align:middle line:90%
+Yep.
+
+00:10:20.730 --> 00:10:21.272 align:middle line:90%
+You're right.
+
+00:10:21.272 --> 00:10:22.340 align:middle line:90%
+Thank you.
+
+00:10:22.340 --> 00:10:24.777 align:middle line:90%
+So how could you prove this?
+
+00:10:24.777 --> 00:10:26.360 align:middle line:84%
+Or how would I have
+failed to prove it
+
+00:10:26.360 --> 00:10:28.440 align:middle line:90%
+if I tried to do it just now?
+
+00:10:28.440 --> 00:10:28.940 align:middle line:90%
+Yeah?
+
+00:10:28.940 --> 00:10:30.084 align:middle line:90%
+AUDIENCE: Subtract it?
+
+00:10:30.084 --> 00:10:31.001 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:10:31.001 --> 00:10:40.630 align:middle line:90%
+
+
+00:10:40.630 --> 00:10:42.490 align:middle line:90%
+OK?
+
+00:10:42.490 --> 00:10:46.280 align:middle line:84%
+So this is what we call
+the guess and check method.
+
+00:10:46.280 --> 00:10:52.510 align:middle line:84%
+So if we've got a sum
+like this, and we know
+
+00:10:52.510 --> 00:10:56.680 align:middle line:84%
+or we can reasonably guess
+a nice closed form for it,
+
+00:10:56.680 --> 00:10:59.620 align:middle line:84%
+then we can prove
+it by induction.
+
+00:10:59.620 --> 00:11:02.090 align:middle line:90%
+That's fairly straightforward.
+
+00:11:02.090 --> 00:11:06.100 align:middle line:84%
+The hard part is figuring out
+what that closed form should be.
+
+00:11:06.100 --> 00:11:09.310 align:middle line:90%
+
+
+00:11:09.310 --> 00:11:12.100 align:middle line:84%
+And in this case,
+the inductive step
+
+00:11:12.100 --> 00:11:15.820 align:middle line:84%
+reduces to some fairly simple
+algebra as you already saw,
+
+00:11:15.820 --> 00:11:16.820 align:middle line:90%
+I think in recitation.
+
+00:11:16.820 --> 00:11:18.100 align:middle line:90%
+Is that right?
+
+00:11:18.100 --> 00:11:20.830 align:middle line:90%
+Rec 02 maybe?
+
+00:11:20.830 --> 00:11:21.430 align:middle line:90%
+Yeah.
+
+00:11:21.430 --> 00:11:22.490 align:middle line:90%
+Yes.
+
+00:11:22.490 --> 00:11:23.540 align:middle line:90%
+Thumbs up from Zach.
+
+00:11:23.540 --> 00:11:26.110 align:middle line:84%
+Even if you don't
+remember, Zach does.
+
+00:11:26.110 --> 00:11:27.490 align:middle line:90%
+[LAUGHS]
+
+00:11:27.490 --> 00:11:31.480 align:middle line:90%
+
+
+00:11:31.480 --> 00:11:35.200 align:middle line:84%
+So how might we discover this
+closed form if we didn't already
+
+00:11:35.200 --> 00:11:36.910 align:middle line:90%
+know it, though?
+
+00:11:36.910 --> 00:11:37.590 align:middle line:90%
+Any ideas?
+
+00:11:37.590 --> 00:11:43.450 align:middle line:90%
+
+
+00:11:43.450 --> 00:11:46.300 align:middle line:90%
+Yeah?
+
+00:11:46.300 --> 00:11:49.570 align:middle line:84%
+AUDIENCE: Multiply the
+series by [INAUDIBLE].
+
+00:11:49.570 --> 00:11:52.600 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah, exactly.
+
+00:11:52.600 --> 00:11:55.875 align:middle line:84%
+So this is what we call
+the perturbation method.
+
+00:11:55.875 --> 00:12:09.070 align:middle line:90%
+
+
+00:12:09.070 --> 00:12:13.690 align:middle line:84%
+So the answer was if we
+multiply this entire thing by x
+
+00:12:13.690 --> 00:12:17.650 align:middle line:84%
+and subtract it, then
+things will cancel.
+
+00:12:17.650 --> 00:12:23.440 align:middle line:84%
+So this is one example of what
+we call the perturbation method.
+
+00:12:23.440 --> 00:12:25.090 align:middle line:90%
+This is something that--
+
+00:12:25.090 --> 00:12:27.790 align:middle line:84%
+does anybody know
+the story of Gauss
+
+00:12:27.790 --> 00:12:29.420 align:middle line:84%
+in the kindergarten
+or first grade
+
+00:12:29.420 --> 00:12:34.853 align:middle line:84%
+when he was given a massive sum
+to evaluate by his teacher and 3
+
+00:12:34.853 --> 00:12:37.520 align:middle line:84%
+seconds, he gave the teacher his
+answer and the teacher is like,
+
+00:12:37.520 --> 00:12:38.103 align:middle line:90%
+what the hell?
+
+00:12:38.103 --> 00:12:39.580 align:middle line:90%
+No, go back to your seat.
+
+00:12:39.580 --> 00:12:40.290 align:middle line:90%
+OK.
+
+00:12:40.290 --> 00:12:40.790 align:middle line:90%
+Yeah.
+
+00:12:40.790 --> 00:12:42.770 align:middle line:84%
+So perturbation
+method in action.
+
+00:12:42.770 --> 00:12:47.400 align:middle line:84%
+So Gauss was asked to
+evaluate 1 plus 2 plus--
+
+00:12:47.400 --> 00:12:50.620 align:middle line:90%
+
+
+00:12:50.620 --> 00:12:52.100 align:middle line:90%
+I think the story was 100.
+
+00:12:52.100 --> 00:12:53.410 align:middle line:90%
+Not actually sure.
+
+00:12:53.410 --> 00:12:59.140 align:middle line:84%
+And Gauss observed that if you
+take this series and perturb it
+
+00:12:59.140 --> 00:13:09.160 align:middle line:84%
+a little bit, so in this case
+flip it around, and then add
+
+00:13:09.160 --> 00:13:12.200 align:middle line:84%
+them together, you end up
+with something very nice.
+
+00:13:12.200 --> 00:13:12.700 align:middle line:90%
+Right?
+
+00:13:12.700 --> 00:13:25.420 align:middle line:90%
+
+
+00:13:25.420 --> 00:13:30.370 align:middle line:84%
+So he's got two
+copies of this sum.
+
+00:13:30.370 --> 00:13:34.050 align:middle line:84%
+So two S is equal to
+this thing, which means
+
+00:13:34.050 --> 00:13:37.355 align:middle line:90%
+that S should be equal to that.
+
+00:13:37.355 --> 00:13:40.050 align:middle line:90%
+
+
+00:13:40.050 --> 00:13:41.620 align:middle line:90%
+So fairly straightforward.
+
+00:13:41.620 --> 00:13:44.390 align:middle line:84%
+We can do the same thing with
+this geometric series here.
+
+00:13:44.390 --> 00:13:50.220 align:middle line:90%
+
+
+00:13:50.220 --> 00:13:52.840 align:middle line:84%
+So for simplicity, I'm
+going to drop the m.
+
+00:13:52.840 --> 00:13:59.820 align:middle line:84%
+So if instead we have s
+equals 1 plus x plus x squared
+
+00:13:59.820 --> 00:14:04.830 align:middle line:84%
+plus x to the n minus 1,
+and here your colleague
+
+00:14:04.830 --> 00:14:07.170 align:middle line:84%
+said that we should
+multiply this by x.
+
+00:14:07.170 --> 00:14:09.780 align:middle line:90%
+So Sx equals--
+
+00:14:09.780 --> 00:14:11.380 align:middle line:84%
+I'm going to shift
+everything over
+
+00:14:11.380 --> 00:14:14.000 align:middle line:84%
+so that it's a little bit
+easier to see what's going on.
+
+00:14:14.000 --> 00:14:22.420 align:middle line:90%
+
+
+00:14:22.420 --> 00:14:24.300 align:middle line:84%
+And now this time
+instead of adding them,
+
+00:14:24.300 --> 00:14:25.633 align:middle line:90%
+we're going to want to subtract.
+
+00:14:25.633 --> 00:14:27.840 align:middle line:90%
+
+
+00:14:27.840 --> 00:14:32.670 align:middle line:84%
+This 1 doesn't have
+anything to subtract.
+
+00:14:32.670 --> 00:14:36.210 align:middle line:84%
+And now here we've
+got plus x minus x
+
+00:14:36.210 --> 00:14:38.050 align:middle line:90%
+plus x squared minus x squared.
+
+00:14:38.050 --> 00:14:45.580 align:middle line:84%
+So everything is going to
+cancel until we get to the end.
+
+00:14:45.580 --> 00:14:49.050 align:middle line:84%
+And here we've got
+minus x to the n.
+
+00:14:49.050 --> 00:14:55.200 align:middle line:84%
+So now we've got S
+minus xS is equal to 1
+
+00:14:55.200 --> 00:15:01.470 align:middle line:84%
+minus x to the n which
+means that S is 1 minus x
+
+00:15:01.470 --> 00:15:04.355 align:middle line:90%
+to the n over 1 minus x.
+
+00:15:04.355 --> 00:15:08.045 align:middle line:90%
+
+
+00:15:08.045 --> 00:15:12.660 align:middle line:84%
+So if we didn't know the
+formula for a geometric series
+
+00:15:12.660 --> 00:15:15.930 align:middle line:84%
+off the top of our heads,
+which I clearly didn't, we
+
+00:15:15.930 --> 00:15:18.210 align:middle line:84%
+could derive it
+like this and then
+
+00:15:18.210 --> 00:15:19.920 align:middle line:90%
+we can check it by induction.
+
+00:15:19.920 --> 00:15:22.150 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:15:22.150 --> 00:15:31.860 align:middle line:90%
+
+
+00:15:31.860 --> 00:15:36.720 align:middle line:84%
+So if we go back to our
+annuity example, we had--
+
+00:15:36.720 --> 00:15:41.010 align:middle line:90%
+so m was 50k.
+
+00:15:41.010 --> 00:15:46.050 align:middle line:90%
+n is 20 years.
+
+00:15:46.050 --> 00:15:55.614 align:middle line:84%
+p was 0.0533 which means
+that our x here was--
+
+00:15:55.614 --> 00:15:57.320 align:middle line:90%
+was it 1 over 1 minus p?
+
+00:15:57.320 --> 00:16:01.200 align:middle line:90%
+
+
+00:16:01.200 --> 00:16:05.750 align:middle line:90%
+1 over 1 plus p.
+
+00:16:05.750 --> 00:16:10.260 align:middle line:90%
+
+
+00:16:10.260 --> 00:16:14.880 align:middle line:84%
+So if we plug this in, it
+turns out that the value
+
+00:16:14.880 --> 00:16:24.852 align:middle line:84%
+of our annuity is
+actually about 638,000.
+
+00:16:24.852 --> 00:16:28.963 align:middle line:84%
+So it's not just less
+than the $1 million
+
+00:16:28.963 --> 00:16:29.880 align:middle line:90%
+that we were promised.
+
+00:16:29.880 --> 00:16:31.414 align:middle line:90%
+It's like substantially less.
+
+00:16:31.414 --> 00:16:31.914 align:middle line:90%
+Right?
+
+00:16:31.914 --> 00:16:39.320 align:middle line:90%
+
+
+00:16:39.320 --> 00:16:41.760 align:middle line:84%
+What if we took an even
+more extreme example?
+
+00:16:41.760 --> 00:16:44.940 align:middle line:84%
+Like suppose instead of
+$50,000 per year for 20 years,
+
+00:16:44.940 --> 00:16:48.050 align:middle line:84%
+we got $1 per year
+for million years.
+
+00:16:48.050 --> 00:16:50.420 align:middle line:84%
+For simplicity, let's
+just say it's forever.
+
+00:16:50.420 --> 00:16:54.680 align:middle line:84%
+So suppose we get $1 forever,
+like every year forever.
+
+00:16:54.680 --> 00:16:55.795 align:middle line:90%
+How much is that worth?
+
+00:16:55.795 --> 00:17:03.020 align:middle line:90%
+
+
+00:17:03.020 --> 00:17:05.750 align:middle line:90%
+Half a million, 100,000?
+
+00:17:05.750 --> 00:17:07.434 align:middle line:90%
+Yeah?
+
+00:17:07.434 --> 00:17:08.253 align:middle line:90%
+AUDIENCE: $20.
+
+00:17:08.253 --> 00:17:09.170 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:17:09.170 --> 00:17:09.670 align:middle line:90%
+About $20.
+
+00:17:09.670 --> 00:17:12.170 align:middle line:90%
+
+
+00:17:12.170 --> 00:17:15.510 align:middle line:84%
+So this x to the
+n just goes to 0.
+
+00:17:15.510 --> 00:17:21.480 align:middle line:84%
+Turns out that if we have
+m equals 1, n is infinity.
+
+00:17:21.480 --> 00:17:24.079 align:middle line:90%
+Same p as we had before.
+
+00:17:24.079 --> 00:17:25.609 align:middle line:90%
+It's about 20.
+
+00:17:25.609 --> 00:17:29.720 align:middle line:84%
+So it might be a little
+bit counterintuitive
+
+00:17:29.720 --> 00:17:35.780 align:middle line:84%
+that getting money,
+like, forever, it still
+
+00:17:35.780 --> 00:17:39.890 align:middle line:90%
+has finite value, right?
+
+00:17:39.890 --> 00:17:43.830 align:middle line:84%
+But yeah, I don't know,
+maybe if you think about it,
+
+00:17:43.830 --> 00:17:48.290 align:middle line:90%
+it kind of makes sense.
+
+00:17:48.290 --> 00:17:51.800 align:middle line:84%
+Like that money that
+you're getting like n years
+
+00:17:51.800 --> 00:17:54.155 align:middle line:90%
+from now, who cares?
+
+00:17:54.155 --> 00:17:56.280 align:middle line:84%
+You're not even going to
+be alive to use it, right?
+
+00:17:56.280 --> 00:17:58.370 align:middle line:84%
+So maybe it also
+kind of makes sense
+
+00:17:58.370 --> 00:18:01.465 align:middle line:90%
+that it's not worth very much.
+
+00:18:01.465 --> 00:18:04.100 align:middle line:90%
+
+
+00:18:04.100 --> 00:18:07.430 align:middle line:84%
+And in the real world,
+there are actually
+
+00:18:07.430 --> 00:18:09.540 align:middle line:90%
+perpetual annuities like this.
+
+00:18:09.540 --> 00:18:11.960 align:middle line:90%
+They do exist.
+
+00:18:11.960 --> 00:18:15.950 align:middle line:84%
+I believe there is a surviving
+one issued by a Dutch water
+
+00:18:15.950 --> 00:18:20.180 align:middle line:90%
+company in the 17th century.
+
+00:18:20.180 --> 00:18:23.850 align:middle line:84%
+I think they issued five
+that are still around today.
+
+00:18:23.850 --> 00:18:29.180 align:middle line:84%
+And one was acquired
+by Yale in, let's see,
+
+00:18:29.180 --> 00:18:33.390 align:middle line:84%
+maybe 30 odd years ago,
+I think, for $24,000.
+
+00:18:33.390 --> 00:18:38.780 align:middle line:84%
+And it gets them about $12
+annually so only worth it
+
+00:18:38.780 --> 00:18:40.320 align:middle line:90%
+for the historical value.
+
+00:18:40.320 --> 00:18:42.625 align:middle line:90%
+The money is a complete wash.
+
+00:18:42.625 --> 00:18:49.331 align:middle line:90%
+
+
+00:18:49.331 --> 00:18:53.660 align:middle line:84%
+So are people reasonably happy
+with the perturbation method?
+
+00:18:53.660 --> 00:18:54.170 align:middle line:90%
+Yeah?
+
+00:18:54.170 --> 00:18:55.980 align:middle line:90%
+Some thumbs up?
+
+00:18:55.980 --> 00:18:56.480 align:middle line:90%
+OK.
+
+00:18:56.480 --> 00:18:59.990 align:middle line:84%
+So Let's move on to a
+slightly different method
+
+00:18:59.990 --> 00:19:02.470 align:middle line:90%
+for evaluating other sums.
+
+00:19:02.470 --> 00:19:05.060 align:middle line:90%
+
+
+00:19:05.060 --> 00:19:08.812 align:middle line:84%
+So this is what's called
+the ansatz method.
+
+00:19:08.812 --> 00:19:10.680 align:middle line:90%
+Am I spelling this correctly?
+
+00:19:10.680 --> 00:19:11.200 align:middle line:90%
+I hope so.
+
+00:19:11.200 --> 00:19:17.630 align:middle line:90%
+
+
+00:19:17.630 --> 00:19:19.790 align:middle line:84%
+Or if you don't
+like German, I think
+
+00:19:19.790 --> 00:19:22.845 align:middle line:84%
+it is, you could also just call
+it the educated guess method.
+
+00:19:22.845 --> 00:19:25.670 align:middle line:90%
+
+
+00:19:25.670 --> 00:19:29.920 align:middle line:84%
+So suppose we have
+the following sum.
+
+00:19:29.920 --> 00:19:38.650 align:middle line:84%
+Sum from k equals 1
+to n of k squared.
+
+00:19:38.650 --> 00:19:40.930 align:middle line:90%
+OK.
+
+00:19:40.930 --> 00:19:44.240 align:middle line:84%
+So first, does anybody
+already know the answer?
+
+00:19:44.240 --> 00:19:45.900 align:middle line:90%
+What does the sum evaluate to?
+
+00:19:45.900 --> 00:19:49.190 align:middle line:90%
+
+
+00:19:49.190 --> 00:19:49.690 align:middle line:90%
+Oh.
+
+00:19:49.690 --> 00:19:50.120 align:middle line:90%
+Nobody.
+
+00:19:50.120 --> 00:19:50.620 align:middle line:90%
+OK.
+
+00:19:50.620 --> 00:19:54.250 align:middle line:84%
+In that case, next question
+is open to everyone.
+
+00:19:54.250 --> 00:19:59.350 align:middle line:84%
+Does anybody have any idea
+what vaguely the solution
+
+00:19:59.350 --> 00:20:00.120 align:middle line:90%
+might look like?
+
+00:20:00.120 --> 00:20:04.150 align:middle line:90%
+
+
+00:20:04.150 --> 00:20:04.970 align:middle line:90%
+Yeah?
+
+00:20:04.970 --> 00:20:07.523 align:middle line:84%
+AUDIENCE: It should
+be some sort of cubic.
+
+00:20:07.523 --> 00:20:08.440 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:20:08.440 --> 00:20:11.770 align:middle line:90%
+It should be some sort of cubic.
+
+00:20:11.770 --> 00:20:13.820 align:middle line:84%
+We're summing up a
+bunch of squares--
+
+00:20:13.820 --> 00:20:16.480 align:middle line:90%
+well, n squares.
+
+00:20:16.480 --> 00:20:19.310 align:middle line:84%
+A bunch of them are
+about n squared.
+
+00:20:19.310 --> 00:20:22.780 align:middle line:84%
+And so we should get something
+that's about n cubed.
+
+00:20:22.780 --> 00:20:35.221 align:middle line:84%
+So guess S is
+approximately n cubed.
+
+00:20:35.221 --> 00:20:36.730 align:middle line:84%
+Now, it won't do
+us too much good
+
+00:20:36.730 --> 00:20:39.980 align:middle line:84%
+to put that into our
+guess and check method.
+
+00:20:39.980 --> 00:20:41.093 align:middle line:90%
+Yeah?
+
+00:20:41.093 --> 00:20:44.051 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:20:44.051 --> 00:20:47.670 align:middle line:90%
+
+
+00:20:47.670 --> 00:20:49.910 align:middle line:84%
+BRYNMOR CHAPMAN:
+Intuition, basically.
+
+00:20:49.910 --> 00:20:52.960 align:middle line:90%
+
+
+00:20:52.960 --> 00:20:58.960 align:middle line:84%
+So one way you could think about
+it is so half of these terms
+
+00:20:58.960 --> 00:21:02.750 align:middle line:84%
+are going to be larger
+than n over 2 squared.
+
+00:21:02.750 --> 00:21:07.060 align:middle line:84%
+So that's one
+fourth of n squared.
+
+00:21:07.060 --> 00:21:08.902 align:middle line:90%
+You've got n over 2 of those.
+
+00:21:08.902 --> 00:21:10.360 align:middle line:84%
+So you should have
+something that's
+
+00:21:10.360 --> 00:21:13.195 align:middle line:90%
+at least one eighth of n cubed.
+
+00:21:13.195 --> 00:21:14.070 align:middle line:90%
+Does that make sense?
+
+00:21:14.070 --> 00:21:17.860 align:middle line:90%
+
+
+00:21:17.860 --> 00:21:19.520 align:middle line:84%
+And then for an
+upper bound, you've
+
+00:21:19.520 --> 00:21:22.200 align:middle line:84%
+got n terms which are
+all at most n squared.
+
+00:21:22.200 --> 00:21:24.500 align:middle line:84%
+And so it's going to be
+something between one eighth n
+
+00:21:24.500 --> 00:21:27.590 align:middle line:90%
+cubed and n cubed itself.
+
+00:21:27.590 --> 00:21:29.900 align:middle line:90%
+Does that make sense?
+
+00:21:29.900 --> 00:21:31.850 align:middle line:84%
+We're hinting at
+something else that we'll
+
+00:21:31.850 --> 00:21:34.430 align:middle line:90%
+do a little bit later.
+
+00:21:34.430 --> 00:21:39.800 align:middle line:84%
+If you squint really hard, a sum
+kind of looks like an integral.
+
+00:21:39.800 --> 00:21:41.810 align:middle line:84%
+So if you integrate
+that, you're going
+
+00:21:41.810 --> 00:21:43.820 align:middle line:84%
+to get something that
+looks like n cubed.
+
+00:21:43.820 --> 00:21:44.900 align:middle line:90%
+OK.
+
+00:21:44.900 --> 00:21:46.370 align:middle line:90%
+Another question?
+
+00:21:46.370 --> 00:21:48.800 align:middle line:84%
+AUDIENCE: Oh, my question was
+just if you could write down
+
+00:21:48.800 --> 00:21:51.788 align:middle line:84%
+[INAUDIBLE] so that it's easier
+to visualize, like some of them
+
+00:21:51.788 --> 00:21:54.080 align:middle line:84%
+are greater than n [INAUDIBLE]
+squared and some of them
+
+00:21:54.080 --> 00:21:54.800 align:middle line:90%
+are less.
+
+00:21:54.800 --> 00:21:55.940 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:21:55.940 --> 00:21:57.510 align:middle line:90%
+We could do that if you like.
+
+00:21:57.510 --> 00:22:03.680 align:middle line:84%
+So we've got 1 plus 2
+squared plus 3 squared
+
+00:22:03.680 --> 00:22:14.216 align:middle line:84%
+plus n over 2 squared plus
+all the way up to n squared.
+
+00:22:14.216 --> 00:22:20.610 align:middle line:84%
+So these terms, plus or minus
+1 term if it's even or odd,
+
+00:22:20.610 --> 00:22:27.900 align:middle line:84%
+so these are all greater than
+or equal to n over 2 squared.
+
+00:22:27.900 --> 00:22:31.230 align:middle line:84%
+And we've got n over 2 of them
+or n over 2 plus 1, or whatever.
+
+00:22:31.230 --> 00:22:36.330 align:middle line:84%
+So the sum is going
+to be at least n
+
+00:22:36.330 --> 00:22:44.850 align:middle line:84%
+over 2 squared times n over
+2 is one eighth n cubed.
+
+00:22:44.850 --> 00:22:46.260 align:middle line:90%
+OK.
+
+00:22:46.260 --> 00:22:46.930 align:middle line:90%
+Yeah?
+
+00:22:46.930 --> 00:22:47.920 align:middle line:90%
+Question.
+
+00:22:47.920 --> 00:22:51.180 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:22:51.180 --> 00:22:57.937 align:middle line:90%
+
+
+00:22:57.937 --> 00:22:58.770 align:middle line:90%
+BRYNMOR CHAPMAN: Ah.
+
+00:22:58.770 --> 00:22:59.270 align:middle line:90%
+OK.
+
+00:22:59.270 --> 00:23:03.870 align:middle line:84%
+So we're getting a
+more refined guess.
+
+00:23:03.870 --> 00:23:07.860 align:middle line:84%
+So actually, I would argue that
+n cubed is already good enough
+
+00:23:07.860 --> 00:23:11.580 align:middle line:90%
+for what we're doing anyway.
+
+00:23:11.580 --> 00:23:13.210 align:middle line:90%
+And here's why.
+
+00:23:13.210 --> 00:23:17.000 align:middle line:84%
+So as we said, it's
+not very precise.
+
+00:23:17.000 --> 00:23:17.500 align:middle line:90%
+Right?
+
+00:23:17.500 --> 00:23:20.820 align:middle line:84%
+We don't know, like you said,
+the leading coefficient should
+
+00:23:20.820 --> 00:23:23.430 align:middle line:90%
+probably be 1/3.
+
+00:23:23.430 --> 00:23:26.880 align:middle line:84%
+But we're just going
+to start from guessing
+
+00:23:26.880 --> 00:23:28.980 align:middle line:90%
+that it's a cubic of some sort.
+
+00:23:28.980 --> 00:23:31.980 align:middle line:84%
+We don't know anything
+about the coefficients,
+
+00:23:31.980 --> 00:23:34.205 align:middle line:84%
+but it seems like
+a reasonable guess.
+
+00:23:34.205 --> 00:23:37.920 align:middle line:90%
+
+
+00:23:37.920 --> 00:23:45.120 align:middle line:84%
+So we're going to say that S
+is equal to a times n cubed
+
+00:23:45.120 --> 00:23:51.016 align:middle line:90%
+plus bn squared plus cn plus d.
+
+00:23:51.016 --> 00:23:53.555 align:middle line:90%
+
+
+00:23:53.555 --> 00:23:55.180 align:middle line:84%
+We're just going to
+take that on faith,
+
+00:23:55.180 --> 00:23:56.975 align:middle line:84%
+assume it, and see
+where it leads us.
+
+00:23:56.975 --> 00:24:00.360 align:middle line:90%
+
+
+00:24:00.360 --> 00:24:04.770 align:middle line:84%
+So if we assume that,
+what can we deduce?
+
+00:24:04.770 --> 00:24:05.525 align:middle line:90%
+Any ideas?
+
+00:24:05.525 --> 00:24:10.410 align:middle line:90%
+
+
+00:24:10.410 --> 00:24:12.000 align:middle line:84%
+How might we go
+about figuring out
+
+00:24:12.000 --> 00:24:13.535 align:middle line:90%
+what a, b, c, and d should be?
+
+00:24:13.535 --> 00:24:25.200 align:middle line:90%
+
+
+00:24:25.200 --> 00:24:29.250 align:middle line:84%
+Well, what if we
+look at, small n?
+
+00:24:29.250 --> 00:24:31.640 align:middle line:90%
+So if we have, say, n equals 0?
+
+00:24:31.640 --> 00:24:34.350 align:middle line:90%
+
+
+00:24:34.350 --> 00:24:36.140 align:middle line:84%
+What happens if we
+put in n equals 0?
+
+00:24:36.140 --> 00:24:39.406 align:middle line:90%
+
+
+00:24:39.406 --> 00:24:41.811 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:24:41.811 --> 00:24:43.920 align:middle line:90%
+BRYNMOR CHAPMAN: Exactly.
+
+00:24:43.920 --> 00:24:44.850 align:middle line:90%
+OK.
+
+00:24:44.850 --> 00:24:54.030 align:middle line:84%
+So then we have a times 0 cubed
+plus b times 0 squared plus c
+
+00:24:54.030 --> 00:24:58.530 align:middle line:90%
+times 0 plus d equals what?
+
+00:24:58.530 --> 00:25:00.330 align:middle line:84%
+What is the value
+of our sum at 0?
+
+00:25:00.330 --> 00:25:01.108 align:middle line:90%
+AUDIENCE: 0.
+
+00:25:01.108 --> 00:25:01.900 align:middle line:90%
+BRYNMOR CHAPMAN: 0.
+
+00:25:01.900 --> 00:25:02.100 align:middle line:90%
+Yeah.
+
+00:25:02.100 --> 00:25:03.575 align:middle line:90%
+We've just got the empty sum.
+
+00:25:03.575 --> 00:25:09.870 align:middle line:90%
+
+
+00:25:09.870 --> 00:25:10.910 align:middle line:90%
+What else can we do?
+
+00:25:10.910 --> 00:25:16.970 align:middle line:90%
+
+
+00:25:16.970 --> 00:25:18.500 align:middle line:84%
+AUDIENCE: You plug
+in n equals 1.
+
+00:25:18.500 --> 00:25:19.417 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:25:19.417 --> 00:25:19.920 align:middle line:90%
+n equals 1.
+
+00:25:19.920 --> 00:25:22.910 align:middle line:84%
+That seems like
+another decent choice.
+
+00:25:22.910 --> 00:25:25.670 align:middle line:84%
+And so this time, we'll
+end up with a plus
+
+00:25:25.670 --> 00:25:31.340 align:middle line:90%
+b plus c plus d equals what?
+
+00:25:31.340 --> 00:25:34.188 align:middle line:84%
+What's the value
+of our sum there?
+
+00:25:34.188 --> 00:25:35.000 align:middle line:90%
+AUDIENCE: 1.
+
+00:25:35.000 --> 00:25:35.792 align:middle line:90%
+BRYNMOR CHAPMAN: 1.
+
+00:25:35.792 --> 00:25:38.210 align:middle line:90%
+
+
+00:25:38.210 --> 00:25:48.650 align:middle line:84%
+And if we continue like this,
+we get 8a plus 4b plus 2C plus d
+
+00:25:48.650 --> 00:25:53.930 align:middle line:90%
+equals 5, so 1 plus 4.
+
+00:25:53.930 --> 00:25:54.868 align:middle line:90%
+Question.
+
+00:25:54.868 --> 00:25:57.307 align:middle line:84%
+AUDIENCE: Do we have the
+values of a, b, c, and d?
+
+00:25:57.307 --> 00:25:58.140 align:middle line:90%
+BRYNMOR CHAPMAN: No.
+
+00:25:58.140 --> 00:25:59.670 align:middle line:84%
+We're trying to
+figure those out.
+
+00:25:59.670 --> 00:26:04.580 align:middle line:84%
+So we're just taking it on
+faith that S has this form.
+
+00:26:04.580 --> 00:26:07.922 align:middle line:84%
+AUDIENCE: But if n equals
+1 then we solve one.
+
+00:26:07.922 --> 00:26:09.380 align:middle line:84%
+BRYNMOR CHAPMAN:
+So we already know
+
+00:26:09.380 --> 00:26:12.620 align:middle line:84%
+that because S was defined
+as the sum of squares.
+
+00:26:12.620 --> 00:26:16.740 align:middle line:84%
+So if we sum up all of the
+squares up to n equals 1,
+
+00:26:16.740 --> 00:26:17.760 align:middle line:90%
+we get 1.
+
+00:26:17.760 --> 00:26:21.435 align:middle line:84%
+If we sum them up to n
+equals 2, we get 5, cetera.
+
+00:26:21.435 --> 00:26:24.626 align:middle line:90%
+
+
+00:26:24.626 --> 00:26:25.400 align:middle line:90%
+Is this enough?
+
+00:26:25.400 --> 00:26:31.386 align:middle line:90%
+
+
+00:26:31.386 --> 00:26:32.386 align:middle line:90%
+AUDIENCE: Need one more.
+
+00:26:32.386 --> 00:26:33.303 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:26:33.303 --> 00:26:34.050 align:middle line:90%
+We need one more.
+
+00:26:34.050 --> 00:26:37.280 align:middle line:90%
+So let's put in n equals 3.
+
+00:26:37.280 --> 00:26:48.530 align:middle line:84%
+Here we've got 27a plus 9b
+plus 3c plus d equals 14.
+
+00:26:48.530 --> 00:26:51.200 align:middle line:90%
+Can I arithmetic at least?
+
+00:26:51.200 --> 00:26:52.640 align:middle line:90%
+I think I can arithmetic.
+
+00:26:52.640 --> 00:26:54.120 align:middle line:90%
+1 plus 4 plus 9.
+
+00:26:54.120 --> 00:26:55.590 align:middle line:90%
+That sounds like 14.
+
+00:26:55.590 --> 00:26:56.090 align:middle line:90%
+OK.
+
+00:26:56.090 --> 00:27:01.700 align:middle line:84%
+So now we've got a system
+of four equations and four
+
+00:27:01.700 --> 00:27:02.820 align:middle line:90%
+variables.
+
+00:27:02.820 --> 00:27:05.600 align:middle line:84%
+So we should be
+able to solve it.
+
+00:27:05.600 --> 00:27:07.688 align:middle line:90%
+OK.
+
+00:27:07.688 --> 00:27:09.730 align:middle line:84%
+Has anybody figured out
+what the solution is yet?
+
+00:27:09.730 --> 00:27:12.500 align:middle line:90%
+
+
+00:27:12.500 --> 00:27:13.650 align:middle line:90%
+Well, d equals 0.
+
+00:27:13.650 --> 00:27:16.250 align:middle line:90%
+That's an easy one.
+
+00:27:16.250 --> 00:27:23.640 align:middle line:84%
+I think it turns out to be
+a equals 1/3, b equals 1/2,
+
+00:27:23.640 --> 00:27:26.510 align:middle line:90%
+c equals 1/6.
+
+00:27:26.510 --> 00:27:27.235 align:middle line:90%
+Is that right?
+
+00:27:27.235 --> 00:27:30.350 align:middle line:90%
+
+
+00:27:30.350 --> 00:27:34.180 align:middle line:84%
+And yeah, d equals 0 because
+we've got a bunch of zeros here.
+
+00:27:34.180 --> 00:27:37.070 align:middle line:90%
+
+
+00:27:37.070 --> 00:27:38.774 align:middle line:90%
+OK.
+
+00:27:38.774 --> 00:27:41.080 align:middle line:90%
+So are we done?
+
+00:27:41.080 --> 00:27:42.205 align:middle line:90%
+Have we found our solution?
+
+00:27:42.205 --> 00:27:48.800 align:middle line:90%
+
+
+00:27:48.800 --> 00:27:49.460 align:middle line:90%
+Yeah?
+
+00:27:49.460 --> 00:27:50.923 align:middle line:84%
+AUDIENCE: Got to
+prove the values.
+
+00:27:50.923 --> 00:27:51.840 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:27:51.840 --> 00:27:56.100 align:middle line:84%
+So we've maybe found our
+solution but we don't know.
+
+00:27:56.100 --> 00:28:00.000 align:middle line:84%
+We just pulled this out
+of a hat and assumed it.
+
+00:28:00.000 --> 00:28:03.260 align:middle line:84%
+So we should actually
+prove that this is correct.
+
+00:28:03.260 --> 00:28:13.570 align:middle line:84%
+So now we're going to take S
+equals 1/3 n cubed plus 1/2 n
+
+00:28:13.570 --> 00:28:18.880 align:middle line:84%
+squared plus 1/6 n and use
+that as our guess and go back
+
+00:28:18.880 --> 00:28:21.710 align:middle line:84%
+to the guess and check method
+and prove this by induction.
+
+00:28:21.710 --> 00:28:26.080 align:middle line:90%
+
+
+00:28:26.080 --> 00:28:28.600 align:middle line:84%
+We're actually going to
+want strong induction.
+
+00:28:28.600 --> 00:28:30.080 align:middle line:90%
+These are our base cases.
+
+00:28:30.080 --> 00:28:31.840 align:middle line:84%
+We've already proven
+that, essentially.
+
+00:28:31.840 --> 00:28:35.320 align:middle line:84%
+That's what we used to
+derive a, b, c, and d.
+
+00:28:35.320 --> 00:28:38.500 align:middle line:84%
+And our inductive step is just
+going to be a bunch of algebra.
+
+00:28:38.500 --> 00:28:40.580 align:middle line:84%
+So I'm not going to go
+into that right now.
+
+00:28:40.580 --> 00:28:46.600 align:middle line:84%
+But yeah, if you're interested,
+feel free to prove it.
+
+00:28:46.600 --> 00:28:49.210 align:middle line:90%
+OK.
+
+00:28:49.210 --> 00:28:49.790 align:middle line:90%
+Yeah.
+
+00:28:49.790 --> 00:28:52.600 align:middle line:84%
+And if it works,
+we'll have a proof
+
+00:28:52.600 --> 00:28:55.370 align:middle line:90%
+that our formula was correct.
+
+00:28:55.370 --> 00:28:58.750 align:middle line:84%
+And if it doesn't, we go
+back to the drawing board.
+
+00:28:58.750 --> 00:29:00.890 align:middle line:84%
+We know that this
+form was wrong.
+
+00:29:00.890 --> 00:29:04.210 align:middle line:84%
+And so maybe we try and
+figure out a different form
+
+00:29:04.210 --> 00:29:07.420 align:middle line:90%
+that our answer might take.
+
+00:29:07.420 --> 00:29:09.550 align:middle line:90%
+Does that make sense?
+
+00:29:09.550 --> 00:29:10.800 align:middle line:90%
+Are people happy with that?
+
+00:29:10.800 --> 00:29:16.330 align:middle line:90%
+
+
+00:29:16.330 --> 00:29:17.425 align:middle line:90%
+Any questions?
+
+00:29:17.425 --> 00:29:19.050 align:middle line:84%
+Maybe I should phrase
+it the other way.
+
+00:29:19.050 --> 00:29:25.090 align:middle line:90%
+
+
+00:29:25.090 --> 00:29:26.530 align:middle line:90%
+AUDIENCE: What's your name?
+
+00:29:26.530 --> 00:29:27.363 align:middle line:90%
+BRYNMOR CHAPMAN: Oh.
+
+00:29:27.363 --> 00:29:30.560 align:middle line:84%
+I'm Brynmor, like the
+Pennsylvania College.
+
+00:29:30.560 --> 00:29:32.060 align:middle line:90%
+Same word spelled differently.
+
+00:29:32.060 --> 00:29:35.980 align:middle line:90%
+
+
+00:29:35.980 --> 00:29:38.450 align:middle line:90%
+I saw another hand over here.
+
+00:29:38.450 --> 00:29:41.898 align:middle line:90%
+Was that a question or a--
+
+00:29:41.898 --> 00:29:44.920 align:middle line:84%
+AUDIENCE: Your 1/3, 1/2, 1/6,
+that's just like if you do
+
+00:29:44.920 --> 00:29:45.923 align:middle line:90%
+the algebra pretty much?
+
+00:29:45.923 --> 00:29:46.840 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:29:46.840 --> 00:29:51.040 align:middle line:84%
+So that's if you solve
+this system of equations.
+
+00:29:51.040 --> 00:29:52.400 align:middle line:90%
+That's what comes out.
+
+00:29:52.400 --> 00:29:54.610 align:middle line:84%
+You could do
+Gaussian elimination,
+
+00:29:54.610 --> 00:29:57.057 align:middle line:84%
+or invert the
+matrix, or whatever.
+
+00:29:57.057 --> 00:29:58.640 align:middle line:84%
+AUDIENCE: But if you
+didn't know that,
+
+00:29:58.640 --> 00:30:01.407 align:middle line:84%
+did you just know that because
+it was on your notes or did you
+
+00:30:01.407 --> 00:30:02.990 align:middle line:84%
+have a way to figure
+it out instantly,
+
+00:30:02.990 --> 00:30:04.000 align:middle line:90%
+like the way you just wrote it?
+
+00:30:04.000 --> 00:30:05.000 align:middle line:90%
+BRYNMOR CHAPMAN: Oh, no.
+
+00:30:05.000 --> 00:30:06.957 align:middle line:90%
+I'm not that good.
+
+00:30:06.957 --> 00:30:07.790 align:middle line:90%
+AUDIENCE: All right.
+
+00:30:07.790 --> 00:30:08.610 align:middle line:90%
+I'm just checking.
+
+00:30:08.610 --> 00:30:10.360 align:middle line:84%
+BRYNMOR CHAPMAN: Oh,
+I mean, no, I totally
+
+00:30:10.360 --> 00:30:12.250 align:middle line:90%
+don't have it on my notes.
+
+00:30:12.250 --> 00:30:13.420 align:middle line:90%
+Yeah.
+
+00:30:13.420 --> 00:30:14.000 align:middle line:90%
+Yeah.
+
+00:30:14.000 --> 00:30:14.505 align:middle line:90%
+Question.
+
+00:30:14.505 --> 00:30:15.880 align:middle line:84%
+AUDIENCE: Is there
+any particular
+
+00:30:15.880 --> 00:30:19.342 align:middle line:84%
+reason you chose this form
+as your educated guess?
+
+00:30:19.342 --> 00:30:22.043 align:middle line:90%
+[INAUDIBLE]
+
+00:30:22.043 --> 00:30:22.960 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:30:22.960 --> 00:30:28.180 align:middle line:84%
+So as we were discussing
+before we dove into it,
+
+00:30:28.180 --> 00:30:30.040 align:middle line:84%
+we think that it's
+probably going
+
+00:30:30.040 --> 00:30:33.760 align:middle line:90%
+to look something like n cubed.
+
+00:30:33.760 --> 00:30:36.830 align:middle line:84%
+We don't know exactly
+how close it is to that,
+
+00:30:36.830 --> 00:30:39.100 align:middle line:84%
+but it's kind of
+reasonable to assume
+
+00:30:39.100 --> 00:30:42.970 align:middle line:84%
+that it's a polynomial
+like a cubic polynomial.
+
+00:30:42.970 --> 00:30:48.943 align:middle line:84%
+So maybe we could have started
+with something like this
+
+00:30:48.943 --> 00:30:49.443 align:middle line:90%
+instead.
+
+00:30:49.443 --> 00:30:53.140 align:middle line:90%
+
+
+00:30:53.140 --> 00:30:55.630 align:middle line:84%
+Like maybe it's some
+constant times n
+
+00:30:55.630 --> 00:30:58.120 align:middle line:90%
+cubed plus quadratic term.
+
+00:30:58.120 --> 00:31:03.300 align:middle line:84%
+And then the ansatz
+method would have failed.
+
+00:31:03.300 --> 00:31:05.877 align:middle line:84%
+We would have ended up with
+suspicious looking guess.
+
+00:31:05.877 --> 00:31:07.710 align:middle line:84%
+We would have tried to
+prove it by induction
+
+00:31:07.710 --> 00:31:10.560 align:middle line:90%
+and it wouldn't have worked.
+
+00:31:10.560 --> 00:31:19.130 align:middle line:84%
+But yeah, as it turns out,
+this is a reasonable guess.
+
+00:31:19.130 --> 00:31:19.630 align:middle line:90%
+Yeah?
+
+00:31:19.630 --> 00:31:21.990 align:middle line:84%
+AUDIENCE: If we don't
+know if it's a bad guess,
+
+00:31:21.990 --> 00:31:25.380 align:middle line:84%
+and we try to prove
+it by induction,
+
+00:31:25.380 --> 00:31:27.040 align:middle line:84%
+and we don't see
+how to prove it,
+
+00:31:27.040 --> 00:31:28.720 align:middle line:84%
+how do we know that
+means it's wrong?
+
+00:31:28.720 --> 00:31:32.820 align:middle line:84%
+What if we just didn't figure
+out the right way to prove it?
+
+00:31:32.820 --> 00:31:35.700 align:middle line:84%
+BRYNMOR CHAPMAN: So the question
+is if we have a bad guess,
+
+00:31:35.700 --> 00:31:37.442 align:middle line:84%
+and we can't prove
+it by induction,
+
+00:31:37.442 --> 00:31:39.150 align:middle line:84%
+how do we know that
+the guess is actually
+
+00:31:39.150 --> 00:31:41.760 align:middle line:84%
+wrong and not that
+we're doing something
+
+00:31:41.760 --> 00:31:44.100 align:middle line:90%
+suspicious with the proof?
+
+00:31:44.100 --> 00:31:46.710 align:middle line:90%
+So that's a good question.
+
+00:31:46.710 --> 00:31:50.790 align:middle line:84%
+So maybe I should digress
+here a little bit.
+
+00:31:50.790 --> 00:31:54.930 align:middle line:84%
+If you're trying to figure
+out a proof or a disproof
+
+00:31:54.930 --> 00:31:57.510 align:middle line:84%
+for a statement that you're not
+quite sure whether it's true
+
+00:31:57.510 --> 00:32:01.050 align:middle line:84%
+or not, often the thing
+that you'll want to do
+
+00:32:01.050 --> 00:32:03.310 align:middle line:90%
+is attempt to prove it.
+
+00:32:03.310 --> 00:32:06.312 align:middle line:84%
+see where your proof
+seems to be breaking, like
+
+00:32:06.312 --> 00:32:07.770 align:middle line:84%
+if you find a block,
+like something
+
+00:32:07.770 --> 00:32:10.170 align:middle line:84%
+that you can't figure
+out, and then try and use
+
+00:32:10.170 --> 00:32:12.900 align:middle line:90%
+that to generate a disproof.
+
+00:32:12.900 --> 00:32:15.250 align:middle line:84%
+And then you can
+iterate on that.
+
+00:32:15.250 --> 00:32:19.530 align:middle line:84%
+And if your disproof
+gets stuck somewhere,
+
+00:32:19.530 --> 00:32:22.500 align:middle line:84%
+maybe try and use that
+block to try and come up
+
+00:32:22.500 --> 00:32:23.850 align:middle line:90%
+with a different proof.
+
+00:32:23.850 --> 00:32:25.746 align:middle line:90%
+OK?
+
+00:32:25.746 --> 00:32:29.250 align:middle line:84%
+And eventually,
+hopefully, you'll
+
+00:32:29.250 --> 00:32:31.710 align:middle line:84%
+be able to come up
+with one or the other.
+
+00:32:31.710 --> 00:32:40.170 align:middle line:84%
+So in this case, there's
+a fairly clear path
+
+00:32:40.170 --> 00:32:41.850 align:middle line:90%
+towards a disproof.
+
+00:32:41.850 --> 00:32:43.600 align:middle line:90%
+Put in more numbers.
+
+00:32:43.600 --> 00:32:46.310 align:middle line:90%
+OK.
+
+00:32:46.310 --> 00:32:49.280 align:middle line:90%
+So we could try n equals 4.
+
+00:32:49.280 --> 00:32:53.130 align:middle line:90%
+
+
+00:32:53.130 --> 00:33:02.370 align:middle line:84%
+Then we'd have 64a plus 16b
+plus 4c plus d should be equal
+
+00:33:02.370 --> 00:33:03.830 align:middle line:90%
+to, what is it, 30?
+
+00:33:03.830 --> 00:33:06.396 align:middle line:90%
+
+
+00:33:06.396 --> 00:33:08.370 align:middle line:90%
+So that's a decent sanity check.
+
+00:33:08.370 --> 00:33:09.220 align:middle line:90%
+Right?
+
+00:33:09.220 --> 00:33:12.690 align:middle line:84%
+Like if that doesn't work,
+then we know that we've
+
+00:33:12.690 --> 00:33:15.360 align:middle line:90%
+screwed something up.
+
+00:33:15.360 --> 00:33:16.780 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:33:16.780 --> 00:33:17.280 align:middle line:90%
+Yeah.
+
+00:33:17.280 --> 00:33:18.198 align:middle line:90%
+Question?
+
+00:33:18.198 --> 00:33:25.650 align:middle line:84%
+AUDIENCE: [INAUDIBLE] How
+did you decide that those
+
+00:33:25.650 --> 00:33:26.860 align:middle line:90%
+would be the base cases?
+
+00:33:26.860 --> 00:33:28.920 align:middle line:90%
+Is it just for simplicity sake?
+
+00:33:28.920 --> 00:33:31.700 align:middle line:84%
+BRYNMOR CHAPMAN: So that's
+because we have four variables
+
+00:33:31.700 --> 00:33:32.200 align:middle line:90%
+here.
+
+00:33:32.200 --> 00:33:33.970 align:middle line:90%
+We've got a, b, c, and d.
+
+00:33:33.970 --> 00:33:38.156 align:middle line:84%
+So we needed four equations,
+like four constraints.
+
+00:33:38.156 --> 00:33:41.700 align:middle line:90%
+
+
+00:33:41.700 --> 00:33:42.330 align:middle line:90%
+Yeah.
+
+00:33:42.330 --> 00:33:45.210 align:middle line:84%
+Like we could equally well
+have chosen like n equals 1,
+
+00:33:45.210 --> 00:33:48.240 align:middle line:84%
+n equals 2, n equals
+5, n equals 100.
+
+00:33:48.240 --> 00:33:50.110 align:middle line:84%
+It would have given
+us the correct answer.
+
+00:33:50.110 --> 00:33:56.270 align:middle line:84%
+It just would have taken
+more complicated computation.
+
+00:33:56.270 --> 00:33:56.779 align:middle line:90%
+Yeah.
+
+00:33:56.779 --> 00:33:57.446 align:middle line:90%
+AUDIENCE: Sorry.
+
+00:33:57.446 --> 00:34:01.323 align:middle line:84%
+Will there ever be an n over
+2 multiplier that works out
+
+00:34:01.323 --> 00:34:06.020 align:middle line:90%
+to be n over 2 [INAUDIBLE]?
+
+00:34:06.020 --> 00:34:07.700 align:middle line:90%
+BRYNMOR CHAPMAN: Oh, here.
+
+00:34:07.700 --> 00:34:09.069 align:middle line:90%
+Here you mean?
+
+00:34:09.069 --> 00:34:09.949 align:middle line:90%
+AUDIENCE: Yeah.
+
+00:34:09.949 --> 00:34:11.967 align:middle line:84%
+Or where the next
+n over 2 would be.
+
+00:34:11.967 --> 00:34:12.800 align:middle line:90%
+BRYNMOR CHAPMAN: Oh.
+
+00:34:12.800 --> 00:34:13.300 align:middle line:90%
+OK.
+
+00:34:13.300 --> 00:34:16.070 align:middle line:90%
+So the squared term is--
+
+00:34:16.070 --> 00:34:19.610 align:middle line:84%
+right, because each of these
+terms here is at least n over 2
+
+00:34:19.610 --> 00:34:21.080 align:middle line:90%
+squared.
+
+00:34:21.080 --> 00:34:23.880 align:middle line:84%
+The last term is because
+there are n over 2 of them.
+
+00:34:23.880 --> 00:34:27.080 align:middle line:84%
+And we're trying to
+evaluate the sum.
+
+00:34:27.080 --> 00:34:29.270 align:middle line:84%
+So we're summing up n
+over 2 things that are all
+
+00:34:29.270 --> 00:34:30.505 align:middle line:90%
+at least n over 2 squared.
+
+00:34:30.505 --> 00:34:34.040 align:middle line:90%
+
+
+00:34:34.040 --> 00:34:36.600 align:middle line:84%
+AUDIENCE: What about these 1
+plus 2 squared plus 3 squared
+
+00:34:36.600 --> 00:34:37.423 align:middle line:90%
+[INAUDIBLE]?
+
+00:34:37.423 --> 00:34:39.090 align:middle line:84%
+BRYNMOR CHAPMAN:
+They're are at least 0.
+
+00:34:39.090 --> 00:34:40.020 align:middle line:90%
+We don't care.
+
+00:34:40.020 --> 00:34:41.480 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:34:41.480 --> 00:34:42.397 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:34:42.397 --> 00:34:48.020 align:middle line:90%
+
+
+00:34:48.020 --> 00:34:53.150 align:middle line:84%
+OK, are people reasonably
+happy with this?
+
+00:34:53.150 --> 00:34:54.710 align:middle line:90%
+Yeah, OK.
+
+00:34:54.710 --> 00:34:58.226 align:middle line:84%
+So let's move on to
+a third technique.
+
+00:34:58.226 --> 00:35:14.360 align:middle line:90%
+
+
+00:35:14.360 --> 00:35:20.790 align:middle line:84%
+So sometimes, we're going to
+end up with sums of sums--
+
+00:35:20.790 --> 00:35:24.290 align:middle line:84%
+nested summations which
+we call double sums.
+
+00:35:24.290 --> 00:35:28.770 align:middle line:84%
+So for instance, what
+if we had the following?
+
+00:35:28.770 --> 00:35:39.140 align:middle line:84%
+So I equals 1 to n of the sum
+from j equals 1 to i of j.
+
+00:35:39.140 --> 00:35:44.420 align:middle line:90%
+So now, before we had--
+
+00:35:44.420 --> 00:35:48.830 align:middle line:84%
+the thing inside our sum was
+this nice simple expression
+
+00:35:48.830 --> 00:35:50.930 align:middle line:90%
+k squared.
+
+00:35:50.930 --> 00:35:55.550 align:middle line:84%
+Now our summand is
+itself a summation.
+
+00:35:55.550 --> 00:35:56.700 align:middle line:90%
+What can we do about that?
+
+00:35:56.700 --> 00:35:58.325 align:middle line:84%
+How would we evaluate
+things like this?
+
+00:35:58.325 --> 00:36:02.982 align:middle line:90%
+
+
+00:36:02.982 --> 00:36:06.980 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:36:06.980 --> 00:36:08.840 align:middle line:84%
+BRYNMOR CHAPMAN:
+Yeah, so the answer
+
+00:36:08.840 --> 00:36:13.190 align:middle line:84%
+was to evaluate the inner sum
+first, figure out a closed
+
+00:36:13.190 --> 00:36:16.310 align:middle line:84%
+form as a function
+of i, and then we
+
+00:36:16.310 --> 00:36:17.990 align:middle line:90%
+can evaluate the outer sum.
+
+00:36:17.990 --> 00:36:23.245 align:middle line:84%
+So in this case, what
+do we end up with?
+
+00:36:23.245 --> 00:36:25.120 align:middle line:84%
+What happens when we
+evaluate this inner sum?
+
+00:36:25.120 --> 00:36:32.060 align:middle line:90%
+
+
+00:36:32.060 --> 00:36:34.358 align:middle line:84%
+I claim that this is
+something that we already
+
+00:36:34.358 --> 00:36:36.400 align:middle line:84%
+know how to do, something
+that we've seen before.
+
+00:36:36.400 --> 00:36:39.770 align:middle line:90%
+
+
+00:36:39.770 --> 00:36:41.240 align:middle line:90%
+Yeah?
+
+00:36:41.240 --> 00:36:44.870 align:middle line:84%
+AUDIENCE: i minus
+i plus 1 over n?
+
+00:36:44.870 --> 00:36:46.880 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah, exactly.
+
+00:36:46.880 --> 00:36:53.140 align:middle line:84%
+So this is the sum from i
+equals 1 to n of i times i
+
+00:36:53.140 --> 00:36:57.130 align:middle line:90%
+plus 1, all divided by 2.
+
+00:36:57.130 --> 00:37:02.450 align:middle line:84%
+Now how could we
+evaluate this sum?
+
+00:37:02.450 --> 00:37:05.050 align:middle line:84%
+This expression is a little bit
+more complicated than the ones
+
+00:37:05.050 --> 00:37:07.542 align:middle line:90%
+that we had before.
+
+00:37:07.542 --> 00:37:10.060 align:middle line:84%
+is there a way that
+we can simplify it?
+
+00:37:10.060 --> 00:37:11.860 align:middle line:90%
+Yeah?
+
+00:37:11.860 --> 00:37:14.260 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:37:14.260 --> 00:37:18.010 align:middle line:90%
+
+
+00:37:18.010 --> 00:37:20.920 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah, so
+let's distribute this i
+
+00:37:20.920 --> 00:37:22.660 align:middle line:90%
+and then break the sum up.
+
+00:37:22.660 --> 00:37:29.440 align:middle line:84%
+So if we distribute
+this, we end up
+
+00:37:29.440 --> 00:37:35.830 align:middle line:84%
+with i squared plus
+i divided by 2.
+
+00:37:35.830 --> 00:37:41.990 align:middle line:84%
+And now we've got
+a sum of a sum.
+
+00:37:41.990 --> 00:37:44.296 align:middle line:84%
+So we can split it into
+two different summations.
+
+00:37:44.296 --> 00:37:48.130 align:middle line:90%
+
+
+00:37:48.130 --> 00:37:59.380 align:middle line:84%
+i equals 1 to n i
+squared plus sum of i.
+
+00:37:59.380 --> 00:38:05.620 align:middle line:84%
+So I've taken each of these
+terms and split it into its own
+
+00:38:05.620 --> 00:38:09.340 align:middle line:84%
+sum and also pulled this
+factor of 1/2 out in front.
+
+00:38:09.340 --> 00:38:14.060 align:middle line:84%
+So this is now something
+that we know how to evaluate.
+
+00:38:14.060 --> 00:38:16.390 align:middle line:90%
+We just evaluated it.
+
+00:38:16.390 --> 00:38:19.270 align:middle line:84%
+This is also something
+we know how to evaluate.
+
+00:38:19.270 --> 00:38:20.910 align:middle line:90%
+Also, we just evaluated it.
+
+00:38:20.910 --> 00:38:23.920 align:middle line:90%
+
+
+00:38:23.920 --> 00:38:28.940 align:middle line:84%
+So this comes out to the
+answer that we had there,
+
+00:38:28.940 --> 00:38:51.160 align:middle line:84%
+so 1/6 n cubed plus 1/4 n
+squared plus 1/12 n plus 1/4
+
+00:38:51.160 --> 00:38:54.970 align:middle line:90%
+times n times n plus 1.
+
+00:38:54.970 --> 00:39:01.190 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:39:01.190 --> 00:39:17.200 align:middle line:90%
+
+
+00:39:17.200 --> 00:39:23.630 align:middle line:84%
+Suppose instead we had something
+similar but slightly different.
+
+00:39:23.630 --> 00:39:29.080 align:middle line:90%
+
+
+00:39:29.080 --> 00:39:36.955 align:middle line:84%
+So sum from i equals 1 to
+n, sum from j equals i to n.
+
+00:39:36.955 --> 00:39:44.400 align:middle line:90%
+
+
+00:39:44.400 --> 00:39:48.090 align:middle line:84%
+So our inner sum now,
+instead of going from 1 to i,
+
+00:39:48.090 --> 00:39:49.650 align:middle line:90%
+it's going from i to n.
+
+00:39:49.650 --> 00:40:01.800 align:middle line:90%
+
+
+00:40:01.800 --> 00:40:07.380 align:middle line:84%
+Now we could evaluate this in
+the same way as we just did.
+
+00:40:07.380 --> 00:40:10.800 align:middle line:84%
+But it turns out that there's
+a slightly easier way.
+
+00:40:10.800 --> 00:40:13.960 align:middle line:84%
+We can exchange the
+order of summation.
+
+00:40:13.960 --> 00:40:33.390 align:middle line:90%
+
+
+00:40:33.390 --> 00:40:37.620 align:middle line:84%
+And what I mean by that is
+that we want the outer sum
+
+00:40:37.620 --> 00:40:41.730 align:middle line:84%
+to be in terms of j and the
+inner sum to be in terms of i.
+
+00:40:41.730 --> 00:40:51.500 align:middle line:84%
+So what are the
+possible values of j?
+
+00:40:51.500 --> 00:41:01.650 align:middle line:90%
+
+
+00:41:01.650 --> 00:41:03.090 align:middle line:90%
+So in our-- yes?
+
+00:41:03.090 --> 00:41:07.440 align:middle line:90%
+
+
+00:41:07.440 --> 00:41:08.850 align:middle line:90%
+Yeah?
+
+00:41:08.850 --> 00:41:10.080 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:41:10.080 --> 00:41:10.997 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:41:10.997 --> 00:41:15.610 align:middle line:90%
+
+
+00:41:15.610 --> 00:41:20.770 align:middle line:84%
+So if i equals 1 here,
+j equals i, j equals 1.
+
+00:41:20.770 --> 00:41:23.190 align:middle line:84%
+So that's the
+smallest value of j.
+
+00:41:23.190 --> 00:41:27.330 align:middle line:90%
+And j can clearly go up to n.
+
+00:41:27.330 --> 00:41:37.650 align:middle line:90%
+
+
+00:41:37.650 --> 00:41:39.875 align:middle line:84%
+What are the bounds of
+summation on our inner sum?
+
+00:41:39.875 --> 00:41:45.360 align:middle line:90%
+
+
+00:41:45.360 --> 00:41:46.670 align:middle line:90%
+How would we compute this?
+
+00:41:46.670 --> 00:41:53.490 align:middle line:90%
+
+
+00:41:53.490 --> 00:41:57.810 align:middle line:84%
+What constraints do we
+have on i and k originally?
+
+00:41:57.810 --> 00:42:04.650 align:middle line:90%
+
+
+00:42:04.650 --> 00:42:07.830 align:middle line:84%
+When we know that 1 is less
+than or equal to i less than
+
+00:42:07.830 --> 00:42:12.600 align:middle line:84%
+or equal to n i less than
+or equal to j less than
+
+00:42:12.600 --> 00:42:13.260 align:middle line:90%
+or equal to n.
+
+00:42:13.260 --> 00:42:17.070 align:middle line:90%
+
+
+00:42:17.070 --> 00:42:20.610 align:middle line:84%
+So we could phrase
+this as 1 less
+
+00:42:20.610 --> 00:42:23.790 align:middle line:84%
+than or equal to i less
+than or equal to j less than
+
+00:42:23.790 --> 00:42:24.485 align:middle line:90%
+or equal to n.
+
+00:42:24.485 --> 00:42:28.950 align:middle line:90%
+
+
+00:42:28.950 --> 00:42:32.675 align:middle line:84%
+And now we've got bounds
+on i in terms of j.
+
+00:42:32.675 --> 00:42:42.360 align:middle line:90%
+
+
+00:42:42.360 --> 00:42:44.050 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:42:44.050 --> 00:42:46.920 align:middle line:90%
+
+
+00:42:46.920 --> 00:42:52.260 align:middle line:84%
+So we still want the sum over
+the same set of pairs, i and j.
+
+00:42:52.260 --> 00:42:54.340 align:middle line:84%
+We're just expressing
+it differently.
+
+00:42:54.340 --> 00:42:57.870 align:middle line:90%
+
+
+00:42:57.870 --> 00:42:59.375 align:middle line:90%
+And now our sum n is the same.
+
+00:42:59.375 --> 00:43:02.910 align:middle line:90%
+
+
+00:43:02.910 --> 00:43:06.090 align:middle line:84%
+Does it make sense to
+everybody how we got this?
+
+00:43:06.090 --> 00:43:07.260 align:middle line:90%
+Yeah?
+
+00:43:07.260 --> 00:43:09.424 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:43:09.424 --> 00:43:14.100 align:middle line:90%
+
+
+00:43:14.100 --> 00:43:19.620 align:middle line:84%
+BRYNMOR CHAPMAN: So this
+just came from the bounds
+
+00:43:19.620 --> 00:43:22.560 align:middle line:90%
+on our inner sum.
+
+00:43:22.560 --> 00:43:27.390 align:middle line:84%
+We're saying that j should
+range from i up to n.
+
+00:43:27.390 --> 00:43:35.250 align:middle line:84%
+And so then we just stick this
+pair of inequalities in here.
+
+00:43:35.250 --> 00:43:38.690 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:43:38.690 --> 00:43:42.260 align:middle line:84%
+Are you reasonably
+happy with this?
+
+00:43:42.260 --> 00:43:46.910 align:middle line:84%
+So now we've exchanged
+the order of summation.
+
+00:43:46.910 --> 00:43:52.670 align:middle line:84%
+We've got j for our outer
+sum, i for our inner sum.
+
+00:43:52.670 --> 00:43:55.970 align:middle line:84%
+And now we've got a
+much simpler sum here
+
+00:43:55.970 --> 00:43:58.130 align:middle line:90%
+that we can easily evaluate.
+
+00:43:58.130 --> 00:43:59.365 align:middle line:90%
+What is our inner sum?
+
+00:43:59.365 --> 00:44:08.857 align:middle line:90%
+
+
+00:44:08.857 --> 00:44:09.690 align:middle line:90%
+AUDIENCE: j squared.
+
+00:44:09.690 --> 00:44:10.607 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:44:10.607 --> 00:44:20.630 align:middle line:90%
+
+
+00:44:20.630 --> 00:44:27.020 align:middle line:84%
+The sum end has no dependence
+on the index of summation.
+
+00:44:27.020 --> 00:44:28.830 align:middle line:90%
+So we've just got j terms.
+
+00:44:28.830 --> 00:44:30.110 align:middle line:90%
+All of them are j.
+
+00:44:30.110 --> 00:44:31.105 align:middle line:90%
+So it's j squared.
+
+00:44:31.105 --> 00:44:37.016 align:middle line:90%
+
+
+00:44:37.016 --> 00:44:39.535 align:middle line:84%
+And now this is just the
+sum that we had before.
+
+00:44:39.535 --> 00:44:56.150 align:middle line:90%
+
+
+00:44:56.150 --> 00:44:57.690 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:44:57.690 --> 00:45:00.770 align:middle line:90%
+
+
+00:45:00.770 --> 00:45:01.865 align:middle line:90%
+Yeah?
+
+00:45:01.865 --> 00:45:04.910 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:45:04.910 --> 00:45:11.330 align:middle line:90%
+
+
+00:45:11.330 --> 00:45:16.928 align:middle line:90%
+BRYNMOR CHAPMAN: This one here?
+
+00:45:16.928 --> 00:45:19.916 align:middle line:90%
+
+
+00:45:19.916 --> 00:45:23.130 align:middle line:84%
+So that's just an expression
+that you've already seen.
+
+00:45:23.130 --> 00:45:25.280 align:middle line:84%
+We've already seen how to
+evaluate the sum from j
+
+00:45:25.280 --> 00:45:28.550 align:middle line:90%
+equals 1 to i of j.
+
+00:45:28.550 --> 00:45:30.680 align:middle line:84%
+So that's just
+plugging in that closed
+
+00:45:30.680 --> 00:45:32.875 align:middle line:90%
+formula for that inner sum.
+
+00:45:32.875 --> 00:45:42.500 align:middle line:90%
+
+
+00:45:42.500 --> 00:45:44.125 align:middle line:84%
+Are people reasonably
+happy with this?
+
+00:45:44.125 --> 00:45:46.850 align:middle line:90%
+
+
+00:45:46.850 --> 00:45:48.023 align:middle line:90%
+Yeah?
+
+00:45:48.023 --> 00:45:51.105 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:45:51.105 --> 00:45:52.105 align:middle line:90%
+BRYNMOR CHAPMAN: Did we?
+
+00:45:52.105 --> 00:45:56.660 align:middle line:90%
+
+
+00:45:56.660 --> 00:45:58.340 align:middle line:90%
+Oh yeah, here-ish.
+
+00:45:58.340 --> 00:46:00.890 align:middle line:90%
+
+
+00:46:00.890 --> 00:46:15.950 align:middle line:84%
+I mean, here it's the particular
+example where n equals 100.
+
+00:46:15.950 --> 00:46:19.750 align:middle line:84%
+So why don't we move on to
+the last topic for today?
+
+00:46:19.750 --> 00:46:30.880 align:middle line:90%
+
+
+00:46:30.880 --> 00:46:38.745 align:middle line:84%
+So what happens if we
+have the following sum?
+
+00:46:38.745 --> 00:46:52.030 align:middle line:90%
+
+
+00:46:52.030 --> 00:46:55.663 align:middle line:84%
+Any idea how we might come up
+with a closed form for this?
+
+00:46:55.663 --> 00:46:57.330 align:middle line:84%
+Does anybody already
+know a closed form?
+
+00:46:57.330 --> 00:47:01.100 align:middle line:90%
+
+
+00:47:01.100 --> 00:47:01.600 align:middle line:90%
+Nobody?
+
+00:47:01.600 --> 00:47:02.822 align:middle line:90%
+Really?
+
+00:47:02.822 --> 00:47:04.530 align:middle line:84%
+That's good because
+it's an open problem.
+
+00:47:04.530 --> 00:47:07.450 align:middle line:90%
+
+
+00:47:07.450 --> 00:47:09.200 align:middle line:84%
+Well, I suppose that
+doesn't make it good.
+
+00:47:09.200 --> 00:47:11.450 align:middle line:84%
+If you have a closed form,
+you could a paper about it.
+
+00:47:11.450 --> 00:47:14.360 align:middle line:90%
+That would be pretty exciting.
+
+00:47:14.360 --> 00:47:19.070 align:middle line:84%
+So it turns out that there isn't
+any nice closed form for this,
+
+00:47:19.070 --> 00:47:21.670 align:middle line:90%
+as far as we know.
+
+00:47:21.670 --> 00:47:25.645 align:middle line:84%
+So does that mean we should
+just-- hands in the air,
+
+00:47:25.645 --> 00:47:26.145 align:middle line:90%
+give up?
+
+00:47:26.145 --> 00:47:30.110 align:middle line:90%
+
+
+00:47:30.110 --> 00:47:31.450 align:middle line:90%
+Getting some nods.
+
+00:47:31.450 --> 00:47:36.940 align:middle line:84%
+Yeah, I mean, I suppose that's
+a question of philosophy.
+
+00:47:36.940 --> 00:47:39.710 align:middle line:84%
+But we can still say
+something about it, right?
+
+00:47:39.710 --> 00:47:44.080 align:middle line:84%
+Maybe we don't need to know
+exactly what this sum is.
+
+00:47:44.080 --> 00:47:47.270 align:middle line:84%
+But as long as we figure out
+something, that's close enough,
+
+00:47:47.270 --> 00:47:49.420 align:middle line:90%
+maybe we're still happy.
+
+00:47:49.420 --> 00:47:51.450 align:middle line:84%
+So maybe we want
+to approximate it.
+
+00:47:51.450 --> 00:48:05.544 align:middle line:90%
+
+
+00:48:05.544 --> 00:48:10.750 align:middle line:84%
+So can anybody give me a
+guess as to an approximation
+
+00:48:10.750 --> 00:48:11.340 align:middle line:90%
+for this sum?
+
+00:48:11.340 --> 00:48:17.920 align:middle line:90%
+
+
+00:48:17.920 --> 00:48:20.120 align:middle line:84%
+AUDIENCE: So we were just
+integrating that as well?
+
+00:48:20.120 --> 00:48:23.515 align:middle line:90%
+BRYNMOR CHAPMAN: Mm-hmm.
+
+00:48:23.515 --> 00:48:27.880 align:middle line:84%
+So the answer was, again, if we
+squint really hard and pretend
+
+00:48:27.880 --> 00:48:31.780 align:middle line:84%
+that this is an integral,
+maybe s is approximately equal
+
+00:48:31.780 --> 00:48:39.670 align:middle line:84%
+to the integral of root
+x dx, say from 1 to n,
+
+00:48:39.670 --> 00:48:50.920 align:middle line:84%
+which is going to be
+about 2/3 n to the 3/2.
+
+00:48:50.920 --> 00:48:53.170 align:middle line:90%
+Is that about right?
+
+00:48:53.170 --> 00:48:55.480 align:middle line:84%
+I swear I've done
+calculus before.
+
+00:48:55.480 --> 00:48:58.060 align:middle line:90%
+It's been a while.
+
+00:48:58.060 --> 00:49:05.180 align:middle line:84%
+So the question then becomes,
+how close is that approximation?
+
+00:49:05.180 --> 00:49:08.410 align:middle line:90%
+
+
+00:49:08.410 --> 00:49:11.740 align:middle line:84%
+Do we think we're
+within a factor of 2?
+
+00:49:11.740 --> 00:49:15.890 align:middle line:84%
+Do you think we're
+off by n by root n?
+
+00:49:15.890 --> 00:49:19.000 align:middle line:90%
+Off by 1 maybe?
+
+00:49:19.000 --> 00:49:21.973 align:middle line:90%
+It's not entirely clear.
+
+00:49:21.973 --> 00:49:28.380 align:middle line:84%
+So in order to figure
+this out, we're
+
+00:49:28.380 --> 00:49:30.635 align:middle line:84%
+going to use what we
+call the integral method.
+
+00:49:30.635 --> 00:49:34.560 align:middle line:90%
+
+
+00:49:34.560 --> 00:49:42.480 align:middle line:84%
+So give me a moment
+to draw this.
+
+00:49:42.480 --> 00:49:48.210 align:middle line:84%
+And redux looks a
+little bit like that
+
+00:49:48.210 --> 00:49:49.370 align:middle line:90%
+if you squint really hard.
+
+00:49:49.370 --> 00:49:57.990 align:middle line:90%
+
+
+00:49:57.990 --> 00:50:08.960 align:middle line:84%
+So suppose we have a weakly
+increasing function of x.
+
+00:50:08.960 --> 00:50:18.180 align:middle line:90%
+
+
+00:50:18.180 --> 00:50:22.445 align:middle line:84%
+So root x is indeed weakly
+increasing, so that'll work.
+
+00:50:22.445 --> 00:50:25.320 align:middle line:90%
+
+
+00:50:25.320 --> 00:50:29.030 align:middle line:84%
+Now, recall Riemann sums
+from integral calculus.
+
+00:50:29.030 --> 00:50:32.310 align:middle line:90%
+
+
+00:50:32.310 --> 00:50:33.490 align:middle line:90%
+No post-traumatic stress?
+
+00:50:33.490 --> 00:50:35.130 align:middle line:90%
+Are we OK?
+
+00:50:35.130 --> 00:50:43.250 align:middle line:84%
+So how could we approximate
+the integral of f of x?
+
+00:50:43.250 --> 00:50:48.660 align:middle line:90%
+
+
+00:50:48.660 --> 00:50:50.190 align:middle line:90%
+Yeah?
+
+00:50:50.190 --> 00:50:53.310 align:middle line:84%
+AUDIENCE: [INAUDIBLE] the
+right hand [INAUDIBLE].
+
+00:50:53.310 --> 00:50:54.270 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:50:54.270 --> 00:51:02.070 align:middle line:84%
+So if we've got 1, 2,
+3, 4, dot, dot, dot,
+
+00:51:02.070 --> 00:51:06.425 align:middle line:84%
+we can draw a bunch of
+rectangles, like this.
+
+00:51:06.425 --> 00:51:11.730 align:middle line:90%
+
+
+00:51:11.730 --> 00:51:15.155 align:middle line:90%
+And this step function here--
+
+00:51:15.155 --> 00:51:18.432 align:middle line:90%
+
+
+00:51:18.432 --> 00:51:20.390 align:middle line:84%
+actually, maybe I should
+get a different color.
+
+00:51:20.390 --> 00:51:42.772 align:middle line:90%
+
+
+00:51:42.772 --> 00:51:44.480 align:middle line:84%
+For completeness,
+maybe I should do that.
+
+00:51:44.480 --> 00:51:51.600 align:middle line:90%
+
+
+00:51:51.600 --> 00:51:55.200 align:middle line:84%
+So this step function
+here that I've
+
+00:51:55.200 --> 00:51:57.900 align:middle line:90%
+drawn is f of the floor of x.
+
+00:51:57.900 --> 00:52:01.350 align:middle line:90%
+f is weakly increasing.
+
+00:52:01.350 --> 00:52:06.670 align:middle line:84%
+So that means floor of x is
+an under approximation for x.
+
+00:52:06.670 --> 00:52:11.540 align:middle line:84%
+So f of floor of x is an under
+approximation for f of x.
+
+00:52:11.540 --> 00:52:17.340 align:middle line:90%
+
+
+00:52:17.340 --> 00:52:22.840 align:middle line:84%
+Now what happens if we
+integrate this step function?
+
+00:52:22.840 --> 00:52:35.870 align:middle line:90%
+
+
+00:52:35.870 --> 00:52:50.780 align:middle line:84%
+What is the integral from
+1 to n of f of floor of x?
+
+00:52:50.780 --> 00:52:51.440 align:middle line:90%
+Yeah?
+
+00:52:51.440 --> 00:52:53.092 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:52:53.092 --> 00:52:54.050 align:middle line:90%
+BRYNMOR CHAPMAN: Sorry?
+
+00:52:54.050 --> 00:52:56.522 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:52:56.522 --> 00:52:57.522 align:middle line:90%
+BRYNMOR CHAPMAN: Almost.
+
+00:52:57.522 --> 00:53:05.630 align:middle line:90%
+
+
+00:53:05.630 --> 00:53:09.110 align:middle line:90%
+So in this case, it actually--
+
+00:53:09.110 --> 00:53:10.450 align:middle line:90%
+does it turn out to be s?
+
+00:53:10.450 --> 00:53:13.195 align:middle line:90%
+
+
+00:53:13.195 --> 00:53:15.560 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:53:15.560 --> 00:53:17.310 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah, exactly.
+
+00:53:17.310 --> 00:53:19.910 align:middle line:90%
+We're missing a term here.
+
+00:53:19.910 --> 00:53:28.160 align:middle line:84%
+So we can break this
+into n minus 1 integrals.
+
+00:53:28.160 --> 00:53:32.390 align:middle line:84%
+We've got an interval
+of width n minus 1.
+
+00:53:32.390 --> 00:53:37.970 align:middle line:84%
+This is constant on each of
+those width-1 subintervals.
+
+00:53:37.970 --> 00:53:42.230 align:middle line:84%
+So we can break it apart into
+a whole bunch of rectangles.
+
+00:53:42.230 --> 00:53:50.540 align:middle line:84%
+So this is going to be the sum
+from i equals 1 to n minus 1
+
+00:53:50.540 --> 00:53:55.160 align:middle line:90%
+of f of i.
+
+00:53:55.160 --> 00:53:57.890 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:53:57.890 --> 00:54:02.510 align:middle line:84%
+So we've got
+intervals of width 1.
+
+00:54:02.510 --> 00:54:06.420 align:middle line:84%
+Our function is constant
+on each of those intervals.
+
+00:54:06.420 --> 00:54:12.410 align:middle line:84%
+And it's equal to the left-hand
+side of that interval.
+
+00:54:12.410 --> 00:54:16.490 align:middle line:84%
+Does that make
+sense to everybody.
+
+00:54:16.490 --> 00:54:23.170 align:middle line:84%
+And this is just going
+to be s minus f of n.
+
+00:54:23.170 --> 00:54:32.960 align:middle line:90%
+
+
+00:54:32.960 --> 00:54:34.210 align:middle line:90%
+Sorry?
+
+00:54:34.210 --> 00:54:36.680 align:middle line:84%
+AUDIENCE: Why is n
+minus 1 the [INAUDIBLE]?
+
+00:54:36.680 --> 00:54:39.320 align:middle line:84%
+BRYNMOR CHAPMAN: So the question
+is, why are we using n minus 1
+
+00:54:39.320 --> 00:54:40.820 align:middle line:90%
+as the bound here?
+
+00:54:40.820 --> 00:54:47.630 align:middle line:84%
+So that's because the width
+of this interval is n minus 1.
+
+00:54:47.630 --> 00:54:52.820 align:middle line:84%
+We're splitting into n minus
+1 intervals of width 1.
+
+00:54:52.820 --> 00:55:01.730 align:middle line:84%
+So for instance, if we went
+up to, say, n equals 5.
+
+00:55:01.730 --> 00:55:07.190 align:middle line:84%
+So if we were trying to sum f
+of 1, f of 2, f of 3, f of 4,
+
+00:55:07.190 --> 00:55:13.480 align:middle line:84%
+f of 5, we would then want
+to compare to this integral
+
+00:55:13.480 --> 00:55:22.450 align:middle line:84%
+here, so the
+integral from 1 to 5.
+
+00:55:22.450 --> 00:55:24.546 align:middle line:90%
+And this gives us 4 rectangles.
+
+00:55:24.546 --> 00:55:27.730 align:middle line:90%
+
+
+00:55:27.730 --> 00:55:34.490 align:middle line:84%
+We've got the integral from 1 to
+2 from 2 to 3, 3 to 4, 4 to 5.
+
+00:55:34.490 --> 00:55:43.330 align:middle line:84%
+And the integral, say, from 2 to
+3 has width 1 and height f of 2.
+
+00:55:43.330 --> 00:55:51.940 align:middle line:84%
+So maybe we could phrase
+this as 1 times f of i.
+
+00:55:51.940 --> 00:55:52.860 align:middle line:90%
+Does that make sense?
+
+00:55:52.860 --> 00:56:06.370 align:middle line:90%
+
+
+00:56:06.370 --> 00:56:08.530 align:middle line:84%
+So we've got an
+underapproximation
+
+00:56:08.530 --> 00:56:10.330 align:middle line:90%
+for our integral now.
+
+00:56:10.330 --> 00:56:15.160 align:middle line:84%
+So I haven't actually
+written the integral.
+
+00:56:15.160 --> 00:56:24.030 align:middle line:84%
+So let's let i equal the
+integral from 1 to n f of x dx.
+
+00:56:24.030 --> 00:56:27.318 align:middle line:90%
+
+
+00:56:27.318 --> 00:56:33.650 align:middle line:84%
+So we said that this function
+here underapproximates f.
+
+00:56:33.650 --> 00:56:38.860 align:middle line:84%
+So this integral
+under approximates i.
+
+00:56:38.860 --> 00:56:43.090 align:middle line:84%
+So that tells us that
+i is greater than
+
+00:56:43.090 --> 00:56:47.230 align:middle line:90%
+or equal to s minus f of n.
+
+00:56:47.230 --> 00:56:51.580 align:middle line:90%
+
+
+00:56:51.580 --> 00:56:55.270 align:middle line:84%
+Now equivalently, we could
+phrase this as a bound on s
+
+00:56:55.270 --> 00:56:58.330 align:middle line:84%
+in terms of i because s
+was what we originally
+
+00:56:58.330 --> 00:57:01.420 align:middle line:90%
+wanted to figure out.
+
+00:57:01.420 --> 00:57:04.870 align:middle line:84%
+So instead, we could write
+this as s is less than
+
+00:57:04.870 --> 00:57:10.555 align:middle line:90%
+or equal to i plus f of n.
+
+00:57:10.555 --> 00:57:11.430 align:middle line:90%
+Does that make sense?
+
+00:57:11.430 --> 00:57:23.980 align:middle line:90%
+
+
+00:57:23.980 --> 00:57:29.176 align:middle line:84%
+What if, instead,
+we overapproximated?
+
+00:57:29.176 --> 00:57:38.920 align:middle line:90%
+
+
+00:57:38.920 --> 00:57:45.585 align:middle line:84%
+So now we've got f
+of the ceiling of x.
+
+00:57:45.585 --> 00:57:56.350 align:middle line:90%
+
+
+00:57:56.350 --> 00:57:58.060 align:middle line:84%
+So the new step
+function that I've just
+
+00:57:58.060 --> 00:58:03.890 align:middle line:84%
+drawn in green is
+f of ceiling of x,
+
+00:58:03.890 --> 00:58:08.970 align:middle line:84%
+which is an
+overapproximation for f of x.
+
+00:58:08.970 --> 00:58:15.000 align:middle line:84%
+So if we integrate it
+the integral from 1 to n
+
+00:58:15.000 --> 00:58:23.960 align:middle line:84%
+of f of ceiling of x dx should
+be greater than or equal to i.
+
+00:58:23.960 --> 00:58:28.050 align:middle line:90%
+
+
+00:58:28.050 --> 00:58:35.340 align:middle line:84%
+Now, doing exactly the same
+thing as we had before,
+
+00:58:35.340 --> 00:58:36.575 align:middle line:90%
+what is this integral?
+
+00:58:36.575 --> 00:58:46.170 align:middle line:90%
+
+
+00:58:46.170 --> 00:58:47.580 align:middle line:90%
+Yeah?
+
+00:58:47.580 --> 00:58:49.818 align:middle line:84%
+AUDIENCE: Sum from
+2 to n of f of i?
+
+00:58:49.818 --> 00:58:50.735 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:58:50.735 --> 00:58:53.265 align:middle line:90%
+
+
+00:58:53.265 --> 00:58:59.370 align:middle line:84%
+So sum from i equals
+2 to n of f of i--
+
+00:58:59.370 --> 00:59:07.985 align:middle line:84%
+say times 1-- and this
+is just s minus f of 1.
+
+00:59:07.985 --> 00:59:14.070 align:middle line:90%
+
+
+00:59:14.070 --> 00:59:19.680 align:middle line:90%
+So s minus f of 1 is at least i.
+
+00:59:19.680 --> 00:59:27.840 align:middle line:84%
+Once again, we can rephrase this
+as a bound on s in terms of i.
+
+00:59:27.840 --> 00:59:39.020 align:middle line:84%
+So s is greater than or
+equal to i plus f of 1.
+
+00:59:39.020 --> 00:59:53.490 align:middle line:90%
+
+
+00:59:53.490 --> 00:59:56.050 align:middle line:84%
+So does that make
+sense to everybody?
+
+00:59:56.050 --> 01:00:02.520 align:middle line:90%
+
+
+01:00:02.520 --> 01:00:12.150 align:middle line:84%
+So putting these together now,
+we have i plus f of 1 less than
+
+01:00:12.150 --> 01:00:18.180 align:middle line:84%
+or equal to s less than
+or equal to i plus f of n.
+
+01:00:18.180 --> 01:00:25.860 align:middle line:90%
+
+
+01:00:25.860 --> 01:00:29.460 align:middle line:84%
+So this is what we call the
+integral bound for increasing
+
+01:00:29.460 --> 01:00:30.460 align:middle line:90%
+functions.
+
+01:00:30.460 --> 01:01:03.512 align:middle line:90%
+
+
+01:01:03.512 --> 01:01:05.095 align:middle line:84%
+Are people reasonably
+happy with this?
+
+01:01:05.095 --> 01:01:07.800 align:middle line:90%
+
+
+01:01:07.800 --> 01:01:12.410 align:middle line:84%
+So if we go back to our original
+question where f of x equals
+
+01:01:12.410 --> 01:01:15.535 align:middle line:84%
+root x, what are
+the bounds we get?
+
+01:01:15.535 --> 01:01:18.050 align:middle line:90%
+
+
+01:01:18.050 --> 01:01:19.420 align:middle line:90%
+What is i first?
+
+01:01:19.420 --> 01:01:25.130 align:middle line:90%
+
+
+01:01:25.130 --> 01:01:27.330 align:middle line:84%
+It wasn't quite what
+I wrote down before.
+
+01:01:27.330 --> 01:01:28.290 align:middle line:90%
+Yeah?
+
+01:01:28.290 --> 01:01:30.610 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:01:30.610 --> 01:01:31.370 align:middle line:90%
+
+
+01:01:31.370 --> 01:01:32.910 align:middle line:84%
+BRYNMOR CHAPMAN:
+It is from 1 to n.
+
+01:01:32.910 --> 01:01:37.910 align:middle line:84%
+Remember what I wrote originally
+was a 2/3 n to the 3/2,
+
+01:01:37.910 --> 01:01:40.630 align:middle line:84%
+which is, I believe, the
+integral from 0 to n.
+
+01:01:40.630 --> 01:01:43.190 align:middle line:90%
+
+
+01:01:43.190 --> 01:01:50.930 align:middle line:84%
+So what we actually have here
+is i equals the integral from 1
+
+01:01:50.930 --> 01:02:05.030 align:middle line:84%
+to n of x to the 1/2 dx, which
+is equal to 2/3 x to the 3/2
+
+01:02:05.030 --> 01:02:15.860 align:middle line:84%
+evaluated at 1 and n, which
+is going to be 2/3 times n
+
+01:02:15.860 --> 01:02:23.980 align:middle line:84%
+to the 3/2 minus 1, so
+almost what we had before.
+
+01:02:23.980 --> 01:02:28.640 align:middle line:90%
+
+
+01:02:28.640 --> 01:02:35.570 align:middle line:84%
+So our lower bound, then,
+is this value plus f of 1.
+
+01:02:35.570 --> 01:02:37.440 align:middle line:90%
+f of 1 is just root 1.
+
+01:02:37.440 --> 01:02:40.100 align:middle line:90%
+It's 1.
+
+01:02:40.100 --> 01:02:44.360 align:middle line:84%
+And our upper bound
+is i plus root n.
+
+01:02:44.360 --> 01:02:47.240 align:middle line:90%
+
+
+01:02:47.240 --> 01:02:51.920 align:middle line:84%
+So it turns out that 2/3 n
+to the 3/2 is a pretty good
+
+01:02:51.920 --> 01:02:54.210 align:middle line:90%
+approximation.
+
+01:02:54.210 --> 01:03:00.370 align:middle line:84%
+It's going to be a little bit
+larger than that but not much.
+
+01:03:00.370 --> 01:03:05.360 align:middle line:84%
+We're going to be within
+an additive root n.
+
+01:03:05.360 --> 01:03:12.040 align:middle line:84%
+And given that our approximation
+is the cube of that,
+
+01:03:12.040 --> 01:03:15.570 align:middle line:90%
+that's actually pretty good.
+
+01:03:15.570 --> 01:03:19.793 align:middle line:84%
+Does that make
+sense to everybody?
+
+01:03:19.793 --> 01:03:21.335 align:middle line:84%
+Everybody reasonably
+happy with that?
+
+01:03:21.335 --> 01:03:49.560 align:middle line:90%
+
+
+01:03:49.560 --> 01:03:56.650 align:middle line:84%
+What if, instead, we had s
+equals sum from i equals 1 to n
+
+01:03:56.650 --> 01:03:58.650 align:middle line:90%
+of, say, 1 over i?
+
+01:03:58.650 --> 01:04:04.948 align:middle line:90%
+
+
+01:04:04.948 --> 01:04:06.615 align:middle line:84%
+Can we apply our
+integral bound to this?
+
+01:04:06.615 --> 01:04:12.100 align:middle line:90%
+
+
+01:04:12.100 --> 01:04:15.280 align:middle line:90%
+Who thinks yes?
+
+01:04:15.280 --> 01:04:17.860 align:middle line:90%
+Who thinks no?
+
+01:04:17.860 --> 01:04:21.380 align:middle line:84%
+Can anybody explain why
+in either direction?
+
+01:04:21.380 --> 01:04:21.880 align:middle line:90%
+Yeah?
+
+01:04:21.880 --> 01:04:25.120 align:middle line:90%
+
+
+01:04:25.120 --> 01:04:30.680 align:middle line:84%
+AUDIENCE: [INAUDIBLE] but
+it's going to be [INAUDIBLE],
+
+01:04:30.680 --> 01:04:33.370 align:middle line:84%
+but after 1, it's going to
+be a convergent [INAUDIBLE]
+
+01:04:33.370 --> 01:04:36.550 align:middle line:90%
+between 1 and 0.
+
+01:04:36.550 --> 01:04:41.020 align:middle line:84%
+BRYNMOR CHAPMAN: So
+the answer was after 1,
+
+01:04:41.020 --> 01:04:42.293 align:middle line:90%
+it's going to converge.
+
+01:04:42.293 --> 01:04:44.920 align:middle line:90%
+
+
+01:04:44.920 --> 01:04:46.230 align:middle line:90%
+I would dispute that.
+
+01:04:46.230 --> 01:04:49.630 align:middle line:90%
+
+
+01:04:49.630 --> 01:04:51.370 align:middle line:90%
+Yeah?
+
+01:04:51.370 --> 01:04:53.290 align:middle line:84%
+AUDIENCE: If I recall
+correctly, the integral
+
+01:04:53.290 --> 01:04:55.990 align:middle line:90%
+is natural log [INAUDIBLE].
+
+01:04:55.990 --> 01:05:00.100 align:middle line:90%
+
+
+01:05:00.100 --> 01:05:02.500 align:middle line:84%
+BRYNMOR CHAPMAN:
+OK, fair enough.
+
+01:05:02.500 --> 01:05:04.725 align:middle line:84%
+So even if we could
+apply the integral bound,
+
+01:05:04.725 --> 01:05:05.850 align:middle line:90%
+it may not get us very far.
+
+01:05:05.850 --> 01:05:09.730 align:middle line:90%
+
+
+01:05:09.730 --> 01:05:11.510 align:middle line:84%
+I think there's a
+bigger problem here.
+
+01:05:11.510 --> 01:05:12.040 align:middle line:90%
+Yeah?
+
+01:05:12.040 --> 01:05:13.470 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:05:13.470 --> 01:05:14.720 align:middle line:90%
+BRYNMOR CHAPMAN: That's right.
+
+01:05:14.720 --> 01:05:19.000 align:middle line:84%
+So remember that our
+assumption was that f
+
+01:05:19.000 --> 01:05:21.310 align:middle line:90%
+should be weakly increasing.
+
+01:05:21.310 --> 01:05:25.220 align:middle line:84%
+1 over i is not,
+or 1 over x is not.
+
+01:05:25.220 --> 01:05:25.780 align:middle line:90%
+Yeah?
+
+01:05:25.780 --> 01:05:31.840 align:middle line:84%
+AUDIENCE: Well, at least it's
+weakly decreasing [INAUDIBLE].
+
+01:05:31.840 --> 01:05:34.960 align:middle line:84%
+BRYNMOR CHAPMAN: So
+the observation here
+
+01:05:34.960 --> 01:05:39.640 align:middle line:84%
+is that if we take f
+of x equals 1 over x,
+
+01:05:39.640 --> 01:05:41.216 align:middle line:90%
+this is weakly decreasing.
+
+01:05:41.216 --> 01:05:48.160 align:middle line:90%
+
+
+01:05:48.160 --> 01:05:52.390 align:middle line:90%
+So we can do something similar.
+
+01:05:52.390 --> 01:05:54.140 align:middle line:90%
+What exactly are we going to do?
+
+01:05:54.140 --> 01:06:10.380 align:middle line:84%
+Well, let's take g of x to be
+equal to f of n plus 1 minus x.
+
+01:06:10.380 --> 01:06:15.040 align:middle line:90%
+
+
+01:06:15.040 --> 01:06:19.455 align:middle line:90%
+Now what do we know about g?
+
+01:06:19.455 --> 01:06:34.360 align:middle line:90%
+
+
+01:06:34.360 --> 01:06:37.870 align:middle line:84%
+So basically, what
+we've done here,
+
+01:06:37.870 --> 01:06:41.180 align:middle line:84%
+we are essentially
+negating the argument.
+
+01:06:41.180 --> 01:06:45.200 align:middle line:84%
+So we're kind of
+flipping it horizontally.
+
+01:06:45.200 --> 01:06:48.430 align:middle line:84%
+We started with a weakly
+decreasing function.
+
+01:06:48.430 --> 01:06:50.627 align:middle line:84%
+So when we flip it
+like this, we're
+
+01:06:50.627 --> 01:06:52.710 align:middle line:84%
+going to end up with a
+weakly increasing function.
+
+01:06:52.710 --> 01:07:05.710 align:middle line:90%
+
+
+01:07:05.710 --> 01:07:06.700 align:middle line:90%
+Yeah?
+
+01:07:06.700 --> 01:07:07.910 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:07:07.910 --> 01:07:12.700 align:middle line:90%
+
+
+01:07:12.700 --> 01:07:14.950 align:middle line:84%
+BRYNMOR CHAPMAN: So are you
+worried about the n plus 1
+
+01:07:14.950 --> 01:07:16.425 align:middle line:90%
+as opposed to the n?
+
+01:07:16.425 --> 01:07:17.800 align:middle line:84%
+AUDIENCE: Yeah,
+I'm just confused
+
+01:07:17.800 --> 01:07:21.165 align:middle line:84%
+on why you can't do that
+or how that flips it.
+
+01:07:21.165 --> 01:07:22.540 align:middle line:84%
+BRYNMOR CHAPMAN:
+So basically, we
+
+01:07:22.540 --> 01:07:27.070 align:middle line:84%
+are mapping 1 to
+n and vice versa.
+
+01:07:27.070 --> 01:07:29.230 align:middle line:84%
+And then everything
+in between should just
+
+01:07:29.230 --> 01:07:31.660 align:middle line:90%
+interpolate linearly.
+
+01:07:31.660 --> 01:07:36.020 align:middle line:84%
+So if we put 1 into here,
+we end up with f of n.
+
+01:07:36.020 --> 01:07:38.710 align:middle line:84%
+If we put n into here,
+we end up with f of 1.
+
+01:07:38.710 --> 01:07:40.210 align:middle line:90%
+Does that make sense?
+
+01:07:40.210 --> 01:07:42.070 align:middle line:84%
+So the question
+is, why do we have
+
+01:07:42.070 --> 01:07:45.670 align:middle line:84%
+the n plus 1 there instead
+of just an n or a minus x
+
+01:07:45.670 --> 01:07:49.890 align:middle line:84%
+or something like that,
+which kind of gets
+
+01:07:49.890 --> 01:07:53.285 align:middle line:84%
+into the next question--
+what is s in terms of g?
+
+01:07:53.285 --> 01:08:12.090 align:middle line:90%
+
+
+01:08:12.090 --> 01:08:16.529 align:middle line:84%
+So maybe it would be better
+to write it using ellipses
+
+01:08:16.529 --> 01:08:18.569 align:middle line:90%
+instead of sigma notation.
+
+01:08:18.569 --> 01:08:24.479 align:middle line:84%
+So we defined it as
+f of 1 plus f of 2,
+
+01:08:24.479 --> 01:08:28.234 align:middle line:90%
+plus dot, dot, dot plus f of n.
+
+01:08:28.234 --> 01:08:31.170 align:middle line:90%
+
+
+01:08:31.170 --> 01:08:35.074 align:middle line:84%
+Now how can we rewrite
+this in terms of g?
+
+01:08:35.074 --> 01:08:40.740 align:middle line:90%
+
+
+01:08:40.740 --> 01:08:42.870 align:middle line:84%
+AUDIENCE: p over n
+plus p over n minus 1.
+
+01:08:42.870 --> 01:08:43.787 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+01:08:43.787 --> 01:08:54.029 align:middle line:90%
+
+
+01:08:54.029 --> 01:08:58.630 align:middle line:84%
+So this is actually equal
+to the sum of g of i--
+
+01:08:58.630 --> 01:08:59.464 align:middle line:90%
+same bounds.
+
+01:08:59.464 --> 01:09:03.090 align:middle line:90%
+
+
+01:09:03.090 --> 01:09:10.625 align:middle line:90%
+So now what can we do?
+
+01:09:10.625 --> 01:09:17.694 align:middle line:90%
+
+
+01:09:17.694 --> 01:09:19.140 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:09:19.140 --> 01:09:21.270 align:middle line:84%
+BRYNMOR CHAPMAN:
+Yeah, g satisfies
+
+01:09:21.270 --> 01:09:26.010 align:middle line:84%
+all of the requirements that we
+needed for our integral bound.
+
+01:09:26.010 --> 01:09:30.300 align:middle line:84%
+So we can apply the integral
+bound now to g instead of
+
+01:09:30.300 --> 01:09:31.410 align:middle line:90%
+to our original f.
+
+01:09:31.410 --> 01:09:33.960 align:middle line:90%
+
+
+01:09:33.960 --> 01:09:46.310 align:middle line:84%
+So now we know that i plus g
+of 1 less than or equal to s
+
+01:09:46.310 --> 01:09:51.740 align:middle line:84%
+less than or equal
+to i plus g of n.
+
+01:09:51.740 --> 01:09:57.350 align:middle line:84%
+So the integral is
+exactly the same.
+
+01:09:57.350 --> 01:09:59.310 align:middle line:90%
+We've just flipped it.
+
+01:09:59.310 --> 01:10:03.200 align:middle line:84%
+But the area under it
+is going to be the same.
+
+01:10:03.200 --> 01:10:05.430 align:middle line:90%
+And what is this g of 1?
+
+01:10:05.430 --> 01:10:08.605 align:middle line:84%
+Well, this g of
+1 is just f of n.
+
+01:10:08.605 --> 01:10:12.980 align:middle line:90%
+
+
+01:10:12.980 --> 01:10:14.965 align:middle line:90%
+g of n is just f of 1.
+
+01:10:14.965 --> 01:10:24.886 align:middle line:90%
+
+
+01:10:24.886 --> 01:10:29.800 align:middle line:84%
+So this is the integral bound
+for weakly decreasing f.
+
+01:10:29.800 --> 01:10:40.040 align:middle line:90%
+
+
+01:10:40.040 --> 01:10:41.610 align:middle line:84%
+Does that make
+sense to everybody?
+
+01:10:41.610 --> 01:10:46.100 align:middle line:90%
+
+
+01:10:46.100 --> 01:10:47.256 align:middle line:90%
+Yeah?
+
+01:10:47.256 --> 01:10:49.400 align:middle line:84%
+AUDIENCE: Could this also
+[INAUDIBLE] a negative
+
+01:10:49.400 --> 01:10:50.260 align:middle line:90%
+[INAUDIBLE]?
+
+01:10:50.260 --> 01:10:53.480 align:middle line:90%
+
+
+01:10:53.480 --> 01:10:55.390 align:middle line:84%
+BRYNMOR CHAPMAN:
+Strictly speaking--
+
+01:10:55.390 --> 01:10:58.610 align:middle line:90%
+
+
+01:10:58.610 --> 01:11:01.769 align:middle line:84%
+AUDIENCE: Do we need it to
+be positive or negative?
+
+01:11:01.769 --> 01:11:07.520 align:middle line:90%
+
+
+01:11:07.520 --> 01:11:10.070 align:middle line:84%
+BRYNMOR CHAPMAN: So you
+end up with a slightly
+
+01:11:10.070 --> 01:11:19.000 align:middle line:84%
+different problem if you
+just negate it, which is--
+
+01:11:19.000 --> 01:11:23.120 align:middle line:90%
+
+
+01:11:23.120 --> 01:11:26.690 align:middle line:84%
+well, I'll hint
+at it in a moment.
+
+01:11:26.690 --> 01:11:32.200 align:middle line:84%
+What happens if you take
+limits as n goes to infinity?
+
+01:11:32.200 --> 01:11:34.160 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:11:34.160 --> 01:11:35.360 align:middle line:90%
+BRYNMOR CHAPMAN: Pardon?
+
+01:11:35.360 --> 01:11:38.540 align:middle line:84%
+AUDIENCE: Oh, it's
+n goes to infinity.
+
+01:11:38.540 --> 01:11:41.630 align:middle line:84%
+BRYNMOR CHAPMAN:
+Yeah, so you have to--
+
+01:11:41.630 --> 01:11:45.300 align:middle line:84%
+you can do that, but you'd
+have to adjust for it,
+
+01:11:45.300 --> 01:11:48.500 align:middle line:84%
+and it doesn't work quite
+as nicely with the limits.
+
+01:11:48.500 --> 01:11:51.170 align:middle line:84%
+So the answer is, strictly
+speaking, yes, you
+
+01:11:51.170 --> 01:11:55.310 align:middle line:90%
+could negate it if you want to.
+
+01:11:55.310 --> 01:11:59.165 align:middle line:90%
+But flipping it, and--
+
+01:11:59.165 --> 01:12:04.730 align:middle line:90%
+
+
+01:12:04.730 --> 01:12:06.630 align:middle line:84%
+I personally find it
+easier to think about.
+
+01:12:06.630 --> 01:12:13.320 align:middle line:90%
+
+
+01:12:13.320 --> 01:12:17.930 align:middle line:84%
+So that was the idea, to
+negate f instead of x.
+
+01:12:17.930 --> 01:12:24.530 align:middle line:84%
+But segue into the
+last thing-- we've
+
+01:12:24.530 --> 01:12:27.090 align:middle line:84%
+got a couple of minutes,
+or eight minutes.
+
+01:12:27.090 --> 01:12:27.655 align:middle line:90%
+Oh, nice.
+
+01:12:27.655 --> 01:12:30.350 align:middle line:90%
+
+
+01:12:30.350 --> 01:12:38.570 align:middle line:84%
+So what about s equals sum
+from I equals 1 to infinity of,
+
+01:12:38.570 --> 01:12:40.510 align:middle line:90%
+let's say--
+
+01:12:40.510 --> 01:12:42.490 align:middle line:84%
+because as somebody
+pointed out, we do not
+
+01:12:42.490 --> 01:12:44.360 align:middle line:90%
+want to be working with logs.
+
+01:12:44.360 --> 01:12:47.250 align:middle line:90%
+So let's say 1 over i squared.
+
+01:12:47.250 --> 01:12:51.400 align:middle line:90%
+
+
+01:12:51.400 --> 01:12:59.490 align:middle line:84%
+So how could we evaluate
+this infinite sum?
+
+01:12:59.490 --> 01:13:14.380 align:middle line:90%
+
+
+01:13:14.380 --> 01:13:17.520 align:middle line:84%
+Well, we can basically do
+what we were just doing right.
+
+01:13:17.520 --> 01:13:21.220 align:middle line:90%
+
+
+01:13:21.220 --> 01:13:23.530 align:middle line:84%
+Well, does anybody
+remember how we actually
+
+01:13:23.530 --> 01:13:25.605 align:middle line:90%
+define what an infinite sum is?
+
+01:13:25.605 --> 01:13:29.800 align:middle line:90%
+
+
+01:13:29.800 --> 01:13:32.235 align:middle line:84%
+It's just going to be a
+limit of partial sums.
+
+01:13:32.235 --> 01:13:43.300 align:middle line:90%
+
+
+01:13:43.300 --> 01:13:52.540 align:middle line:84%
+Now all of these, we
+know how to evaluate.
+
+01:13:52.540 --> 01:14:02.740 align:middle line:84%
+So each of these,
+if we take i sub
+
+01:14:02.740 --> 01:14:09.490 align:middle line:84%
+n to be equal to the integral
+from 1 to n of 1 over i
+
+01:14:09.490 --> 01:14:10.780 align:middle line:90%
+squared--
+
+01:14:10.780 --> 01:14:14.180 align:middle line:90%
+sorry, 1 over x squared dx--
+
+01:14:14.180 --> 01:14:16.780 align:middle line:90%
+
+
+01:14:16.780 --> 01:14:18.615 align:middle line:90%
+what is this integral?
+
+01:14:18.615 --> 01:14:53.200 align:middle line:90%
+
+
+01:14:53.200 --> 01:14:54.920 align:middle line:90%
+Anybody want to evaluate that?
+
+01:14:54.920 --> 01:14:57.730 align:middle line:90%
+No, we don't like calculus?
+
+01:14:57.730 --> 01:14:58.250 align:middle line:90%
+Me too.
+
+01:14:58.250 --> 01:14:59.542 align:middle line:90%
+That's why I'm asking for help.
+
+01:14:59.542 --> 01:15:00.301 align:middle line:90%
+Yeah?
+
+01:15:00.301 --> 01:15:03.130 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:15:03.130 --> 01:15:06.225 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah,
+1 minus 1 over n.
+
+01:15:06.225 --> 01:15:10.090 align:middle line:90%
+
+
+01:15:10.090 --> 01:15:11.480 align:middle line:90%
+Why are you laughing at me?
+
+01:15:11.480 --> 01:15:13.210 align:middle line:90%
+That's so rude.
+
+01:15:13.210 --> 01:15:15.580 align:middle line:90%
+Oh, come on, guys.
+
+01:15:15.580 --> 01:15:18.290 align:middle line:84%
+So we know what these
+partial sums are,
+
+01:15:18.290 --> 01:15:21.670 align:middle line:84%
+or we have approximations
+for these partial sums.
+
+01:15:21.670 --> 01:15:27.023 align:middle line:84%
+So the partial sum s sub n is
+going to be bounded on one side
+
+01:15:27.023 --> 01:15:27.523 align:middle line:90%
+by--
+
+01:15:27.523 --> 01:15:31.383 align:middle line:90%
+
+
+01:15:31.383 --> 01:15:32.925 align:middle line:84%
+oops, why don't I
+write it like this?
+
+01:15:32.925 --> 01:15:36.090 align:middle line:90%
+
+
+01:15:36.090 --> 01:15:42.000 align:middle line:84%
+So i sub n plus f of n
+less than or equal to s
+
+01:15:42.000 --> 01:15:47.070 align:middle line:84%
+sub n less than or equal
+to i sub n plus f of 1.
+
+01:15:47.070 --> 01:15:54.335 align:middle line:84%
+Now what happens
+when we take limits?
+
+01:15:54.335 --> 01:15:57.390 align:middle line:90%
+
+
+01:15:57.390 --> 01:16:02.050 align:middle line:84%
+So weak inequalities
+are preserved by limits.
+
+01:16:02.050 --> 01:16:15.060 align:middle line:84%
+So the limit of i sub n plus f
+of n is going to be less than
+
+01:16:15.060 --> 01:16:20.940 align:middle line:84%
+or equal to s, less
+than or equal to limit
+
+01:16:20.940 --> 01:16:24.725 align:middle line:90%
+of i sub n plus f of 1.
+
+01:16:24.725 --> 01:16:37.661 align:middle line:90%
+
+
+01:16:37.661 --> 01:16:38.930 align:middle line:90%
+Now what does the limit do?
+
+01:16:38.930 --> 01:16:46.680 align:middle line:90%
+
+
+01:16:46.680 --> 01:16:48.280 align:middle line:90%
+Well, we can separate these.
+
+01:16:48.280 --> 01:16:50.345 align:middle line:90%
+What's the limit of i sub n?
+
+01:16:50.345 --> 01:16:54.510 align:middle line:90%
+
+
+01:16:54.510 --> 01:16:57.090 align:middle line:90%
+Yeah?
+
+01:16:57.090 --> 01:16:59.730 align:middle line:84%
+AUDIENCE: 1 minus
+infinity or [INAUDIBLE].
+
+01:16:59.730 --> 01:17:03.840 align:middle line:84%
+BRYNMOR CHAPMAN: 1 minus 1
+divided by infinity, basically.
+
+01:17:03.840 --> 01:17:09.570 align:middle line:84%
+So as n goes to infinity,
+this 1 over n term disappears.
+
+01:17:09.570 --> 01:17:15.570 align:middle line:84%
+So this part is
+just going to be 1.
+
+01:17:15.570 --> 01:17:17.375 align:middle line:90%
+What's the limit of f of n?
+
+01:17:17.375 --> 01:17:21.630 align:middle line:90%
+
+
+01:17:21.630 --> 01:17:23.130 align:middle line:90%
+Yeah?
+
+01:17:23.130 --> 01:17:24.630 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:17:24.630 --> 01:17:26.626 align:middle line:90%
+BRYNMOR CHAPMAN: Also infinity.
+
+01:17:26.626 --> 01:17:27.600 align:middle line:90%
+AUDIENCE: It's also 0.
+
+01:17:27.600 --> 01:17:29.040 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah, 0.
+
+01:17:29.040 --> 01:17:33.360 align:middle line:90%
+
+
+01:17:33.360 --> 01:17:35.190 align:middle line:84%
+Less than or equal
+to s less than
+
+01:17:35.190 --> 01:17:39.600 align:middle line:84%
+or equal to-- we just
+established that this is 1.
+
+01:17:39.600 --> 01:17:40.520 align:middle line:90%
+What's f of 1?
+
+01:17:40.520 --> 01:17:43.360 align:middle line:90%
+
+
+01:17:43.360 --> 01:17:43.860 align:middle line:90%
+1.
+
+01:17:43.860 --> 01:17:49.470 align:middle line:90%
+
+
+01:17:49.470 --> 01:17:53.083 align:middle line:90%
+So we have an approximation.
+
+01:17:53.083 --> 01:17:53.750 align:middle line:90%
+It's a good one.
+
+01:17:53.750 --> 01:17:59.910 align:middle line:90%
+
+
+01:17:59.910 --> 01:18:01.870 align:middle line:84%
+I'm seeing some people
+like, yeah, good enough,
+
+01:18:01.870 --> 01:18:03.540 align:middle line:90%
+let's just go home.
+
+01:18:03.540 --> 01:18:07.560 align:middle line:84%
+Some people like, what the hell,
+we're off by a factor of 2.
+
+01:18:07.560 --> 01:18:12.672 align:middle line:84%
+Yeah, it's between 1
+and 2-- not so great.
+
+01:18:12.672 --> 01:18:14.255 align:middle line:84%
+Any ideas how we
+could make it better?
+
+01:18:14.255 --> 01:18:21.090 align:middle line:90%
+
+
+01:18:21.090 --> 01:18:22.880 align:middle line:84%
+How can we make our
+bounds more precise?
+
+01:18:22.880 --> 01:18:38.060 align:middle line:90%
+
+
+01:18:38.060 --> 01:18:40.470 align:middle line:84%
+Maybe if we go back
+to the picture,
+
+01:18:40.470 --> 01:18:42.820 align:middle line:84%
+it'll be a little
+bit easier to see.
+
+01:18:42.820 --> 01:18:54.980 align:middle line:90%
+
+
+01:18:54.980 --> 01:18:57.590 align:middle line:84%
+This lack of precision
+is coming from the fact
+
+01:18:57.590 --> 01:19:02.540 align:middle line:84%
+that we're looking at the
+difference between these two
+
+01:19:02.540 --> 01:19:04.110 align:middle line:90%
+step functions.
+
+01:19:04.110 --> 01:19:09.740 align:middle line:84%
+So the farther apart they are,
+the worse our approximation
+
+01:19:09.740 --> 01:19:10.910 align:middle line:90%
+is going to be.
+
+01:19:10.910 --> 01:19:18.020 align:middle line:84%
+So if we just forget
+about the first few terms,
+
+01:19:18.020 --> 01:19:22.730 align:middle line:84%
+compute those exactly, and
+then just approximate the rest,
+
+01:19:22.730 --> 01:19:26.090 align:middle line:84%
+we're going to end up
+with a more precise bound.
+
+01:19:26.090 --> 01:19:43.190 align:middle line:84%
+So if, instead, we say, s equals
+1 plus 1/4 plus 1/9 plus the sum
+
+01:19:43.190 --> 01:19:53.755 align:middle line:84%
+from i equals 1 to infinity
+of 1 over i plus 3 squared--
+
+01:19:53.755 --> 01:19:58.910 align:middle line:90%
+
+
+01:19:58.910 --> 01:20:00.085 align:middle line:90%
+sorry, it's a bit crowded.
+
+01:20:00.085 --> 01:20:06.420 align:middle line:90%
+
+
+01:20:06.420 --> 01:20:08.350 align:middle line:84%
+Now, what happens if we
+approximate this sum?
+
+01:20:08.350 --> 01:20:19.520 align:middle line:90%
+
+
+01:20:19.520 --> 01:20:20.770 align:middle line:90%
+How close are we going to get?
+
+01:20:20.770 --> 01:20:56.300 align:middle line:90%
+
+
+01:20:56.300 --> 01:21:04.820 align:middle line:84%
+Well, our error term,
+remember, was just
+
+01:21:04.820 --> 01:21:08.570 align:middle line:90%
+the first term in our series.
+
+01:21:08.570 --> 01:21:14.960 align:middle line:84%
+We are going to be between the
+integral and the integral plus
+
+01:21:14.960 --> 01:21:17.840 align:middle line:90%
+the first term.
+
+01:21:17.840 --> 01:21:23.860 align:middle line:84%
+Here, the first term
+is much smaller.
+
+01:21:23.860 --> 01:21:26.530 align:middle line:90%
+So this time, we've got--
+
+01:21:26.530 --> 01:21:27.440 align:middle line:90%
+what is it?
+
+01:21:27.440 --> 01:21:30.010 align:middle line:90%
+1 over 16.
+
+01:21:30.010 --> 01:21:35.090 align:middle line:84%
+So instead of being
+between i and i plus 1,
+
+01:21:35.090 --> 01:21:42.310 align:middle line:84%
+we're now between i and i plus
+1 over 16 for a different i--
+
+01:21:42.310 --> 01:21:43.540 align:middle line:90%
+same i?
+
+01:21:43.540 --> 01:21:44.810 align:middle line:90%
+No, different i.
+
+01:21:44.810 --> 01:21:49.180 align:middle line:90%
+
+
+01:21:49.180 --> 01:21:51.610 align:middle line:84%
+Does that make
+sense to everybody?
+
+01:21:51.610 --> 01:21:53.330 align:middle line:84%
+So if you want a
+better approximation,
+
+01:21:53.330 --> 01:21:55.540 align:middle line:84%
+just strip some
+terms of the front
+
+01:21:55.540 --> 01:22:01.630 align:middle line:84%
+and approximate the tail of the
+sum instead of the entire thing.
+
+01:22:01.630 --> 01:22:05.200 align:middle line:84%
+So that's all we
+have time for today.
+
+01:22:05.200 --> 01:22:05.980 align:middle line:90%
+Let's see.
+
+01:22:05.980 --> 01:22:08.110 align:middle line:84%
+I'm not sure if we
+we'll see you next week.
+
+01:22:08.110 --> 01:22:09.830 align:middle line:90%
+Somebody will see you next week.
+
+01:22:09.830 --> 01:22:12.910 align:middle line:90%
+Zach we'll see you next week.
+
+01:22:12.910 --> 01:22:14.930 align:middle line:84%
+Feel free to come up if
+you have any questions.
+
+01:22:14.930 --> 01:22:16.590 align:middle line:90%
+Yeah?
+
+01:22:16.590 --> 01:22:21.000 align:middle line:90%

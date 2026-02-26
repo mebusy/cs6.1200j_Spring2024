@@ -1,0 +1,5377 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.395 align:middle line:90%
+[SQUEAKING]
+
+00:00:02.395 --> 00:00:04.311 align:middle line:90%
+[RUSTLING]
+
+00:00:04.311 --> 00:00:10.470 align:middle line:90%
+[CLICKING]
+
+00:00:10.470 --> 00:00:12.115 align:middle line:84%
+ERIK DEMAINE: Welcome
+back to 6.1200.
+
+00:00:12.115 --> 00:00:15.080 align:middle line:84%
+I hope you all had
+a good spring break.
+
+00:00:15.080 --> 00:00:20.153 align:middle line:84%
+Today, this week, we continue
+our segment on graph theory.
+
+00:00:20.153 --> 00:00:21.320 align:middle line:90%
+I'm going to do more graphs.
+
+00:00:21.320 --> 00:00:23.310 align:middle line:90%
+Today is undirected graphs.
+
+00:00:23.310 --> 00:00:26.000 align:middle line:84%
+And next class will
+be directed graphs.
+
+00:00:26.000 --> 00:00:30.020 align:middle line:84%
+But remember, an undirected
+graph, or the full mouthful
+
+00:00:30.020 --> 00:00:32.270 align:middle line:84%
+is simple undirected
+graph is what we defined
+
+00:00:32.270 --> 00:00:34.160 align:middle line:90%
+a couple of lectures ago.
+
+00:00:34.160 --> 00:00:37.890 align:middle line:84%
+We have a set of vertices,
+V. We have a set of edges,
+
+00:00:37.890 --> 00:00:40.850 align:middle line:84%
+E. Vertices can be
+anything, but the edges
+
+00:00:40.850 --> 00:00:42.900 align:middle line:90%
+have to be pairs of vertices.
+
+00:00:42.900 --> 00:00:45.480 align:middle line:84%
+And those vertices
+have to be distinct.
+
+00:00:45.480 --> 00:00:48.420 align:middle line:84%
+So the set of edges is
+always a subset of this.
+
+00:00:48.420 --> 00:00:50.810 align:middle line:84%
+This would be the maximum
+possible set of edges.
+
+00:00:50.810 --> 00:00:55.470 align:middle line:84%
+You have two-item set u, v
+for all vertices u and v,
+
+00:00:55.470 --> 00:00:58.020 align:middle line:90%
+where u does not equal v.
+
+00:00:58.020 --> 00:01:01.240 align:middle line:84%
+So today I'm just
+going to remove--
+
+00:01:01.240 --> 00:01:03.350 align:middle line:84%
+omit these adjectives
+and just say graph.
+
+00:01:03.350 --> 00:01:05.019 align:middle line:84%
+But whenever I say
+graph today, I really
+
+00:01:05.019 --> 00:01:07.090 align:middle line:90%
+mean simple undirected graph.
+
+00:01:07.090 --> 00:01:10.220 align:middle line:84%
+And we're going to walk
+around in graphs today.
+
+00:01:10.220 --> 00:01:14.530 align:middle line:84%
+So let's define
+a notion of walk.
+
+00:01:14.530 --> 00:01:19.310 align:middle line:84%
+This is going to be similar to
+an execution in state machines.
+
+00:01:19.310 --> 00:01:21.880 align:middle line:84%
+Next lecture will be
+even more like that.
+
+00:01:21.880 --> 00:01:27.280 align:middle line:84%
+But for today a walk is
+a sequence of vertices.
+
+00:01:27.280 --> 00:01:30.320 align:middle line:84%
+I'm going to write that
+sequence with arrows,
+
+00:01:30.320 --> 00:01:34.270 align:middle line:90%
+but it's really just a list.
+
+00:01:34.270 --> 00:01:38.230 align:middle line:84%
+It's a finite
+sequence, let's say,
+
+00:01:38.230 --> 00:01:49.510 align:middle line:84%
+where each consecutive vi to vi
+plus 1 is an edge in the graph.
+
+00:01:49.510 --> 00:01:53.800 align:middle line:84%
+So this is like a valid
+transition in the state machine
+
+00:01:53.800 --> 00:01:55.480 align:middle line:90%
+world.
+
+00:01:55.480 --> 00:02:02.480 align:middle line:84%
+So this is like i equals
+0, 1 up to k minus 1
+
+00:02:02.480 --> 00:02:05.000 align:middle line:90%
+is when that needs to apply.
+
+00:02:05.000 --> 00:02:06.980 align:middle line:90%
+So if you have--
+
+00:02:06.980 --> 00:02:08.560 align:middle line:90%
+let me draw a graph here.
+
+00:02:08.560 --> 00:02:14.960 align:middle line:90%
+
+
+00:02:14.960 --> 00:02:18.380 align:middle line:84%
+It's one of the first graphs
+I ever drew in my life.
+
+00:02:18.380 --> 00:02:22.700 align:middle line:84%
+I still remember it for reasons
+we will talk about in a moment.
+
+00:02:22.700 --> 00:02:25.970 align:middle line:84%
+Here's a graph with 5
+vertices, a bunch of edges.
+
+00:02:25.970 --> 00:02:27.790 align:middle line:90%
+And let me get a color.
+
+00:02:27.790 --> 00:02:32.510 align:middle line:90%
+
+
+00:02:32.510 --> 00:02:41.930 align:middle line:84%
+So for example, this
+is a path, which is--
+
+00:02:41.930 --> 00:02:52.550 align:middle line:84%
+sorry-- is a walk, which I
+would write a to b to d to e
+
+00:02:52.550 --> 00:02:56.890 align:middle line:90%
+to b back to d up to c.
+
+00:02:56.890 --> 00:02:58.250 align:middle line:90%
+That's writing it with commas.
+
+00:02:58.250 --> 00:02:59.667 align:middle line:84%
+You can also write
+it with arrows.
+
+00:02:59.667 --> 00:03:01.340 align:middle line:90%
+It's the same thing.
+
+00:03:01.340 --> 00:03:04.030 align:middle line:90%
+So that's an example of a walk.
+
+00:03:04.030 --> 00:03:07.250 align:middle line:84%
+And for some terminology--
+it would be helpful--
+
+00:03:07.250 --> 00:03:13.880 align:middle line:84%
+we're going to call this
+a walk from v0 to vk.
+
+00:03:13.880 --> 00:03:16.360 align:middle line:84%
+V0 is just the first
+vertex in the sequence. vk
+
+00:03:16.360 --> 00:03:18.080 align:middle line:90%
+is the last sequence.
+
+00:03:18.080 --> 00:03:21.100 align:middle line:84%
+But I'm defining what
+from and to means.
+
+00:03:21.100 --> 00:03:26.230 align:middle line:84%
+And we'll define the length
+of this path to equal k.
+
+00:03:26.230 --> 00:03:31.190 align:middle line:84%
+k is the number of
+edges in this sequence,
+
+00:03:31.190 --> 00:03:32.470 align:middle line:90%
+not the number of vertices.
+
+00:03:32.470 --> 00:03:35.360 align:middle line:84%
+The number of edges is one fewer
+than the number of vertices.
+
+00:03:35.360 --> 00:03:39.350 align:middle line:84%
+So in this example, we have
+1, 2, 3, 4, 5, 6 edges.
+
+00:03:39.350 --> 00:03:43.550 align:middle line:90%
+So this is a length 6 walk.
+
+00:03:43.550 --> 00:03:50.230 align:middle line:84%
+In particular, we allow
+length to equal 0.
+
+00:03:50.230 --> 00:03:52.310 align:middle line:84%
+What does a length
+zero walk look like?
+
+00:03:52.310 --> 00:03:54.680 align:middle line:84%
+Well, it's a vertex,
+and that's it.
+
+00:03:54.680 --> 00:03:55.800 align:middle line:90%
+You just stay there.
+
+00:03:55.800 --> 00:03:59.100 align:middle line:84%
+So c by itself is
+a zero length walk.
+
+00:03:59.100 --> 00:04:03.000 align:middle line:84%
+e by itself is a
+zero length walk.
+
+00:04:03.000 --> 00:04:06.950 align:middle line:90%
+Not so exciting yet.
+
+00:04:06.950 --> 00:04:09.685 align:middle line:84%
+Let's define a related
+notion, which is path.
+
+00:04:09.685 --> 00:04:12.830 align:middle line:90%
+
+
+00:04:12.830 --> 00:04:20.930 align:middle line:84%
+And this is a special kind of
+walk with no repeated vertices
+
+00:04:20.930 --> 00:04:21.595 align:middle line:90%
+or edges.
+
+00:04:21.595 --> 00:04:30.020 align:middle line:90%
+
+
+00:04:30.020 --> 00:04:32.700 align:middle line:84%
+So in particular,
+not this path--
+
+00:04:32.700 --> 00:04:37.415 align:middle line:84%
+this walk is not a path,
+because it visits some vertices
+
+00:04:37.415 --> 00:04:38.040 align:middle line:90%
+multiple times.
+
+00:04:38.040 --> 00:04:38.953 align:middle line:90%
+It visits b twice.
+
+00:04:38.953 --> 00:04:40.370 align:middle line:84%
+You can see that
+in this sequence.
+
+00:04:40.370 --> 00:04:42.620 align:middle line:84%
+It also visits some
+edges multiple times. b
+
+00:04:42.620 --> 00:04:45.020 align:middle line:90%
+to d is repeated.
+
+00:04:45.020 --> 00:05:01.120 align:middle line:84%
+So if I redraw this
+graph, an example
+
+00:05:01.120 --> 00:05:05.660 align:middle line:84%
+of a path between the same two
+vertices would be this one.
+
+00:05:05.660 --> 00:05:08.350 align:middle line:84%
+This is still starting
+at a and ending at c.
+
+00:05:08.350 --> 00:05:12.093 align:middle line:84%
+But now it's shorter, and it
+doesn't repeat any vertices.
+
+00:05:12.093 --> 00:05:14.920 align:middle line:90%
+
+
+00:05:14.920 --> 00:05:20.235 align:middle line:84%
+In particular, with walks,
+if you don't repeat a vertex,
+
+00:05:20.235 --> 00:05:21.860 align:middle line:84%
+you probably also
+don't repeat an edge.
+
+00:05:21.860 --> 00:05:24.160 align:middle line:84%
+But I think it's helpful here to
+highlight we really don't want
+
+00:05:24.160 --> 00:05:25.370 align:middle line:90%
+to repeat vertices or edges.
+
+00:05:25.370 --> 00:05:26.890 align:middle line:84%
+This will get a
+little more subtle
+
+00:05:26.890 --> 00:05:31.150 align:middle line:84%
+when we talk about closed
+walks in a little bit.
+
+00:05:31.150 --> 00:05:33.740 align:middle line:84%
+So why might we care
+about walking in a graph?
+
+00:05:33.740 --> 00:05:35.510 align:middle line:90%
+Lots of practical motivations.
+
+00:05:35.510 --> 00:05:37.420 align:middle line:84%
+Every time you, I
+don't know, look up
+
+00:05:37.420 --> 00:05:41.680 align:middle line:84%
+something in Google Maps, you're
+finding a path from a to b.
+
+00:05:41.680 --> 00:05:45.340 align:middle line:84%
+Maybe you want the shortest
+path, or the least energy path,
+
+00:05:45.340 --> 00:05:47.290 align:middle line:90%
+or so on.
+
+00:05:47.290 --> 00:05:48.740 align:middle line:90%
+So we care about paths a lot.
+
+00:05:48.740 --> 00:05:51.140 align:middle line:84%
+When we're finding routes
+in transportation networks,
+
+00:05:51.140 --> 00:05:53.780 align:middle line:84%
+we care about them when we're
+finding routes on the internet
+
+00:05:53.780 --> 00:05:55.670 align:middle line:90%
+or on a computer network.
+
+00:05:55.670 --> 00:05:58.070 align:middle line:84%
+In both those cases, the
+vertices are places you can be,
+
+00:05:58.070 --> 00:06:01.590 align:middle line:84%
+and the edges are the routes,
+like the streets you can take,
+
+00:06:01.590 --> 00:06:03.020 align:middle line:90%
+for example.
+
+00:06:03.020 --> 00:06:05.300 align:middle line:84%
+In a social network, if
+the vertices are people
+
+00:06:05.300 --> 00:06:07.190 align:middle line:84%
+and the edges are
+friendships, then
+
+00:06:07.190 --> 00:06:10.020 align:middle line:84%
+you might care about degrees
+of separation between people,
+
+00:06:10.020 --> 00:06:13.790 align:middle line:84%
+like a famous experiment
+where they asked people
+
+00:06:13.790 --> 00:06:16.520 align:middle line:84%
+to send physical
+letters to people
+
+00:06:16.520 --> 00:06:17.940 align:middle line:90%
+they knew on a first name basis.
+
+00:06:17.940 --> 00:06:19.140 align:middle line:90%
+This is like in the '60s--
+
+00:06:19.140 --> 00:06:20.600 align:middle line:90%
+Milgram.
+
+00:06:20.600 --> 00:06:24.200 align:middle line:84%
+And they found that the
+distance between two people
+
+00:06:24.200 --> 00:06:25.230 align:middle line:90%
+is only about six.
+
+00:06:25.230 --> 00:06:26.490 align:middle line:90%
+These days it's about five.
+
+00:06:26.490 --> 00:06:29.360 align:middle line:84%
+We're getting more connected,
+despite more people.
+
+00:06:29.360 --> 00:06:32.010 align:middle line:84%
+Anyway, those are
+some motivations.
+
+00:06:32.010 --> 00:06:35.810 align:middle line:84%
+Also, in things
+like the 8 puzzle
+
+00:06:35.810 --> 00:06:38.220 align:middle line:84%
+that we talked
+about some time ago,
+
+00:06:38.220 --> 00:06:40.670 align:middle line:84%
+you can think of each
+of these configurations
+
+00:06:40.670 --> 00:06:43.050 align:middle line:90%
+as vertices in a graph.
+
+00:06:43.050 --> 00:06:45.330 align:middle line:90%
+And the edges are transitions.
+
+00:06:45.330 --> 00:06:48.990 align:middle line:84%
+And because every
+time I make a move,
+
+00:06:48.990 --> 00:06:50.640 align:middle line:90%
+I can also unmake that move.
+
+00:06:50.640 --> 00:06:52.340 align:middle line:90%
+This is an undirected graph.
+
+00:06:52.340 --> 00:06:54.470 align:middle line:84%
+Everywhere I can go, I
+can immediately go back.
+
+00:06:54.470 --> 00:06:58.560 align:middle line:84%
+And you might care about, what
+does this graph look like?
+
+00:06:58.560 --> 00:06:59.060 align:middle line:90%
+It's big.
+
+00:06:59.060 --> 00:07:00.980 align:middle line:90%
+It's got like 100,000 vertices.
+
+00:07:00.980 --> 00:07:02.420 align:middle line:90%
+So I can't draw it here.
+
+00:07:02.420 --> 00:07:05.630 align:middle line:84%
+But you can explore
+it by moving around.
+
+00:07:05.630 --> 00:07:07.540 align:middle line:90%
+Can you get everywhere?
+
+00:07:07.540 --> 00:07:08.750 align:middle line:90%
+That's a good question.
+
+00:07:08.750 --> 00:07:10.600 align:middle line:90%
+And that's the next topic.
+
+00:07:10.600 --> 00:07:15.370 align:middle line:84%
+Connectivity is what this
+lecture is mostly about.
+
+00:07:15.370 --> 00:07:19.886 align:middle line:84%
+So let's talk
+about connectivity.
+
+00:07:19.886 --> 00:07:24.430 align:middle line:90%
+
+
+00:07:24.430 --> 00:07:28.390 align:middle line:84%
+So we'll call two
+vertices connected
+
+00:07:28.390 --> 00:07:30.165 align:middle line:90%
+if there's a walk between them.
+
+00:07:30.165 --> 00:07:44.440 align:middle line:90%
+
+
+00:07:44.440 --> 00:07:46.840 align:middle line:84%
+I'd like to say there's a
+walk between them, which
+
+00:07:46.840 --> 00:07:49.180 align:middle line:84%
+is not caring about
+which one you start at
+
+00:07:49.180 --> 00:07:50.960 align:middle line:90%
+and which you end at.
+
+00:07:50.960 --> 00:07:54.860 align:middle line:84%
+But the way we define walk
+is it starts at one place
+
+00:07:54.860 --> 00:07:56.460 align:middle line:90%
+and it goes to the other.
+
+00:07:56.460 --> 00:07:59.270 align:middle line:84%
+Of course, if v0 to
+vk is a walk, then
+
+00:07:59.270 --> 00:08:02.420 align:middle line:84%
+also vk backwards to
+v0 is also a walk.
+
+00:08:02.420 --> 00:08:05.630 align:middle line:84%
+If I flip this sequence,
+if I reverse it,
+
+00:08:05.630 --> 00:08:09.072 align:middle line:84%
+it's still a walk,
+because edges are sets.
+
+00:08:09.072 --> 00:08:11.280 align:middle line:84%
+They don't care about which
+order you follow them in.
+
+00:08:11.280 --> 00:08:12.900 align:middle line:84%
+So if you can go
+from vi to vi plus 1,
+
+00:08:12.900 --> 00:08:17.240 align:middle line:84%
+you can go from vi plus 1 to
+vi in an undirected graph.
+
+00:08:17.240 --> 00:08:25.992 align:middle line:84%
+So this is equivalent to there
+existing a walk from v to u.
+
+00:08:25.992 --> 00:08:27.950 align:middle line:84%
+It doesn't matter which
+one you put on the left
+
+00:08:27.950 --> 00:08:29.242 align:middle line:90%
+and which you put on the right.
+
+00:08:29.242 --> 00:08:30.830 align:middle line:90%
+These are the same thing.
+
+00:08:30.830 --> 00:08:32.125 align:middle line:90%
+Technically, this is a theorem.
+
+00:08:32.125 --> 00:08:33.000 align:middle line:90%
+You have to prove it.
+
+00:08:33.000 --> 00:08:35.320 align:middle line:84%
+And the proof is just
+reverse the walk.
+
+00:08:35.320 --> 00:08:42.020 align:middle line:90%
+
+
+00:08:42.020 --> 00:08:44.850 align:middle line:84%
+If I have a walk from u
+to v, I can reverse it.
+
+00:08:44.850 --> 00:08:46.110 align:middle line:90%
+And I get a walk from v to u.
+
+00:08:46.110 --> 00:08:48.652 align:middle line:84%
+If I have a walk from v to u,
+I can reverse it and get a walk
+
+00:08:48.652 --> 00:08:50.170 align:middle line:84%
+from u to v. So in
+either direction,
+
+00:08:50.170 --> 00:08:51.560 align:middle line:90%
+these two things are equivalent.
+
+00:08:51.560 --> 00:08:53.930 align:middle line:84%
+And so we just say there's
+a walk between u and v,
+
+00:08:53.930 --> 00:08:56.230 align:middle line:84%
+or we say u and v are
+connected, or v and u are
+
+00:08:56.230 --> 00:08:58.930 align:middle line:90%
+connected-- all the same thing.
+
+00:08:58.930 --> 00:09:02.600 align:middle line:84%
+There are some other
+equivalent properties to this.
+
+00:09:02.600 --> 00:09:05.590 align:middle line:90%
+So I want to write some more.
+
+00:09:05.590 --> 00:09:10.515 align:middle line:84%
+The other big one is there
+exists a path from v to u.
+
+00:09:10.515 --> 00:09:14.320 align:middle line:90%
+
+
+00:09:14.320 --> 00:09:17.300 align:middle line:84%
+This is perhaps a good
+moment to mention--
+
+00:09:17.300 --> 00:09:19.420 align:middle line:84%
+so we're using the
+words walk and path
+
+00:09:19.420 --> 00:09:23.240 align:middle line:84%
+here in one consistent
+way throughout this class.
+
+00:09:23.240 --> 00:09:25.660 align:middle line:84%
+But there are other classes,
+such as the very next class,
+
+00:09:25.660 --> 00:09:29.630 align:middle line:84%
+6.121, where this
+is called path,
+
+00:09:29.630 --> 00:09:31.130 align:middle line:90%
+and this is called simple path.
+
+00:09:31.130 --> 00:09:32.330 align:middle line:90%
+So just a warning--
+
+00:09:32.330 --> 00:09:33.760 align:middle line:84%
+there's two sets
+of terminologies
+
+00:09:33.760 --> 00:09:36.340 align:middle line:84%
+for whether a walk
+is allowed to--
+
+00:09:36.340 --> 00:09:37.870 align:middle line:90%
+walks can always repeat.
+
+00:09:37.870 --> 00:09:40.910 align:middle line:84%
+Vertices, paths,
+sometimes they can.
+
+00:09:40.910 --> 00:09:41.870 align:middle line:90%
+Sometimes they can't.
+
+00:09:41.870 --> 00:09:43.550 align:middle line:90%
+And in this class, they cannot.
+
+00:09:43.550 --> 00:09:46.030 align:middle line:84%
+So we're going to use walk
+to mean the general thing,
+
+00:09:46.030 --> 00:09:48.155 align:middle line:84%
+and path to mean the specific
+thing where you don't
+
+00:09:48.155 --> 00:09:51.100 align:middle line:90%
+repeat any vertices or edges.
+
+00:09:51.100 --> 00:09:54.900 align:middle line:84%
+So I claim there's a walk
+from u to v if and only
+
+00:09:54.900 --> 00:09:58.055 align:middle line:84%
+if there's a path from u
+to v. Let's prove this.
+
+00:09:58.055 --> 00:10:03.390 align:middle line:90%
+
+
+00:10:03.390 --> 00:10:06.610 align:middle line:84%
+So remember, how do we prove
+that two things are equivalent?
+
+00:10:06.610 --> 00:10:08.040 align:middle line:84%
+How do we prove
+an if and only if?
+
+00:10:08.040 --> 00:10:09.310 align:middle line:90%
+We do it in two parts.
+
+00:10:09.310 --> 00:10:11.770 align:middle line:84%
+We prove left to right
+and right to left.
+
+00:10:11.770 --> 00:10:14.670 align:middle line:84%
+So I'm going to do
+right to left first,
+
+00:10:14.670 --> 00:10:16.630 align:middle line:90%
+because this is the easy one.
+
+00:10:16.630 --> 00:10:21.820 align:middle line:84%
+Why is it, I ask you, if
+I have a path from u to v,
+
+00:10:21.820 --> 00:10:25.050 align:middle line:84%
+is there necessarily
+a walk from u to v?
+
+00:10:25.050 --> 00:10:27.660 align:middle line:90%
+Any suggestions?
+
+00:10:27.660 --> 00:10:28.238 align:middle line:90%
+Yeah.
+
+00:10:28.238 --> 00:10:29.988 align:middle line:84%
+AUDIENCE: By definition,
+a path is a walk.
+
+00:10:29.988 --> 00:10:31.690 align:middle line:90%
+ERIK DEMAINE: A path is a walk.
+
+00:10:31.690 --> 00:10:33.370 align:middle line:84%
+A path is a special
+kind of walk.
+
+00:10:33.370 --> 00:10:35.730 align:middle line:84%
+So if I have a path, then
+definitely I have a walk,
+
+00:10:35.730 --> 00:10:37.240 align:middle line:90%
+because that path is the walk.
+
+00:10:37.240 --> 00:10:44.040 align:middle line:84%
+So I would usually write
+a path is a kind of walk.
+
+00:10:44.040 --> 00:10:46.450 align:middle line:90%
+So that's the easy direction.
+
+00:10:46.450 --> 00:10:50.150 align:middle line:84%
+The more impressive thing
+is that if there's a walk,
+
+00:10:50.150 --> 00:10:52.760 align:middle line:84%
+then there's actually--
+not only is there a walk,
+
+00:10:52.760 --> 00:10:56.030 align:middle line:84%
+but there's a walk that doesn't
+repeat any vertices or edges.
+
+00:10:56.030 --> 00:10:57.820 align:middle line:90%
+This is trickier.
+
+00:10:57.820 --> 00:11:04.270 align:middle line:84%
+And I'm going to tell
+you how to find it,
+
+00:11:04.270 --> 00:11:06.495 align:middle line:90%
+because it needs a nifty idea.
+
+00:11:06.495 --> 00:11:09.160 align:middle line:90%
+
+
+00:11:09.160 --> 00:11:11.510 align:middle line:84%
+But first, we
+write the template,
+
+00:11:11.510 --> 00:11:15.680 align:middle line:84%
+which is we want to prove that
+if there's a walk from u to v,
+
+00:11:15.680 --> 00:11:16.550 align:middle line:90%
+then there's a path.
+
+00:11:16.550 --> 00:11:21.250 align:middle line:84%
+So let's assume there's a walk
+from u to v. And let's give it--
+
+00:11:21.250 --> 00:11:23.230 align:middle line:84%
+I'm not going to
+give it a name yet.
+
+00:11:23.230 --> 00:11:25.010 align:middle line:90%
+So there exists a walk.
+
+00:11:25.010 --> 00:11:26.240 align:middle line:90%
+There might be many walks.
+
+00:11:26.240 --> 00:11:29.180 align:middle line:84%
+I want to try to choose not
+necessarily a particular one,
+
+00:11:29.180 --> 00:11:32.950 align:middle line:84%
+but a more restricted type of
+walk that's possible, because I
+
+00:11:32.950 --> 00:11:35.140 align:middle line:90%
+know that these at least exist.
+
+00:11:35.140 --> 00:11:37.725 align:middle line:84%
+So I want to take
+a shortest walk--
+
+00:11:37.725 --> 00:11:46.350 align:middle line:90%
+
+
+00:11:46.350 --> 00:11:51.090 align:middle line:84%
+shortest in terms of length,
+so minimum possible length.
+
+00:11:51.090 --> 00:11:53.670 align:middle line:84%
+Among all walks,
+I want one of them
+
+00:11:53.670 --> 00:11:56.770 align:middle line:84%
+that minimizes the
+length of the walk.
+
+00:11:56.770 --> 00:11:58.150 align:middle line:90%
+We know there exists some walk.
+
+00:11:58.150 --> 00:12:01.110 align:middle line:84%
+So there is some solution
+here because you can't
+
+00:12:01.110 --> 00:12:02.980 align:middle line:90%
+go below a walk of length zero.
+
+00:12:02.980 --> 00:12:05.610 align:middle line:90%
+There's some shortest.
+
+00:12:05.610 --> 00:12:07.870 align:middle line:84%
+And this one I'm
+going to give a name.
+
+00:12:07.870 --> 00:12:11.350 align:middle line:84%
+Let's say it starts at u,
+which is also called v0.
+
+00:12:11.350 --> 00:12:14.040 align:middle line:84%
+Then it goes to v1,
+then it goes to v2,
+
+00:12:14.040 --> 00:12:19.980 align:middle line:84%
+and so on, until it reaches vk,
+which equals v. So it's a walk
+
+00:12:19.980 --> 00:12:25.930 align:middle line:84%
+from u to v, using some
+number of edges in between.
+
+00:12:25.930 --> 00:12:27.470 align:middle line:90%
+But now I know it's shortest.
+
+00:12:27.470 --> 00:12:31.740 align:middle line:90%
+
+
+00:12:31.740 --> 00:12:42.330 align:middle line:84%
+So I claim that this
+is a path from u
+
+00:12:42.330 --> 00:12:44.980 align:middle line:84%
+to v. I claim that there
+are no repeated vertices
+
+00:12:44.980 --> 00:12:47.560 align:middle line:90%
+or edges in this sequence.
+
+00:12:47.560 --> 00:12:51.290 align:middle line:84%
+In particular, I claim that
+there are no repeated vertices.
+
+00:12:51.290 --> 00:13:06.400 align:middle line:84%
+So let's prove the claim,
+so maybe as a picture first.
+
+00:13:06.400 --> 00:13:12.280 align:middle line:84%
+So suppose that-- let's
+do it by contradiction.
+
+00:13:12.280 --> 00:13:17.930 align:middle line:84%
+Let's suppose that the
+path does repeat a vertex.
+
+00:13:17.930 --> 00:13:21.550 align:middle line:84%
+So it starts at u,
+and then it goes--
+
+00:13:21.550 --> 00:13:27.640 align:middle line:84%
+which is v0, then it
+goes to v1 and so on.
+
+00:13:27.640 --> 00:13:33.640 align:middle line:84%
+Maybe at some point
+after going for a while,
+
+00:13:33.640 --> 00:13:36.450 align:middle line:84%
+it comes back to a
+vertex it's been to
+
+00:13:36.450 --> 00:13:40.490 align:middle line:84%
+before proceeding
+to vk over here,
+
+00:13:40.490 --> 00:13:46.290 align:middle line:84%
+which is v. This is what a walk
+looks like that repeats at least
+
+00:13:46.290 --> 00:13:47.440 align:middle line:90%
+one vertex.
+
+00:13:47.440 --> 00:13:48.940 align:middle line:84%
+I claim this is the
+general picture,
+
+00:13:48.940 --> 00:13:51.810 align:middle line:84%
+but you can write
+it down in words.
+
+00:13:51.810 --> 00:13:55.750 align:middle line:84%
+Then the idea is, well,
+if the walk did this--
+
+00:13:55.750 --> 00:14:00.210 align:middle line:84%
+maybe I should draw this as
+a continuous path in red.
+
+00:14:00.210 --> 00:14:04.810 align:middle line:84%
+If the walk did this, where
+it repeats this vertex twice,
+
+00:14:04.810 --> 00:14:06.870 align:middle line:90%
+why not just do this?
+
+00:14:06.870 --> 00:14:08.730 align:middle line:90%
+That's a shorter path.
+
+00:14:08.730 --> 00:14:11.620 align:middle line:84%
+And that contradicts that we
+started with the shortest path.
+
+00:14:11.620 --> 00:14:13.900 align:middle line:84%
+If this path is strictly
+shorter than this one,
+
+00:14:13.900 --> 00:14:15.780 align:middle line:90%
+that's a contradiction.
+
+00:14:15.780 --> 00:14:19.050 align:middle line:84%
+Write that down a
+little more carefully.
+
+00:14:19.050 --> 00:14:24.690 align:middle line:84%
+So for contradiction,
+let's say that vi equals
+
+00:14:24.690 --> 00:14:28.830 align:middle line:90%
+vj for some i less than j.
+
+00:14:28.830 --> 00:14:35.370 align:middle line:84%
+So this would be both vi
+and vj are the same vertex
+
+00:14:35.370 --> 00:14:36.820 align:middle line:90%
+in this sequence.
+
+00:14:36.820 --> 00:14:38.170 align:middle line:90%
+The vertex gets repeated.
+
+00:14:38.170 --> 00:14:39.610 align:middle line:90%
+That's the general situation.
+
+00:14:39.610 --> 00:14:42.250 align:middle line:84%
+I can assume i is less than
+j, just by relabeling i and j,
+
+00:14:42.250 --> 00:14:44.030 align:middle line:90%
+swapping i and j if I need to.
+
+00:14:44.030 --> 00:14:51.730 align:middle line:84%
+And now the idea is that v0
+up to vi, which equals vj,
+
+00:14:51.730 --> 00:14:56.980 align:middle line:84%
+and then going directly
+to vj plus 1, vj plus 2,
+
+00:14:56.980 --> 00:15:07.630 align:middle line:84%
+and so on, up to vk is a shorter
+walk between the same two
+
+00:15:07.630 --> 00:15:12.410 align:middle line:84%
+vertices, still from u to v.
+And so that is a contradiction.
+
+00:15:12.410 --> 00:15:17.590 align:middle line:90%
+
+
+00:15:17.590 --> 00:15:20.030 align:middle line:84%
+And so that ends the
+proof of the claim.
+
+00:15:20.030 --> 00:15:24.250 align:middle line:84%
+And that ends the proof of this
+claim, that if there's a walk,
+
+00:15:24.250 --> 00:15:25.460 align:middle line:90%
+I can turn it into a path.
+
+00:15:25.460 --> 00:15:27.650 align:middle line:90%
+I take the shortest walk.
+
+00:15:27.650 --> 00:15:32.650 align:middle line:84%
+And it turns out that must be a
+path-- proof by contradiction.
+
+00:15:32.650 --> 00:15:34.550 align:middle line:90%
+So a bunch of work there.
+
+00:15:34.550 --> 00:15:37.340 align:middle line:84%
+But now, for
+connectivity's sake,
+
+00:15:37.340 --> 00:15:38.890 align:middle line:84%
+we can use walk when
+it's convenient.
+
+00:15:38.890 --> 00:15:41.820 align:middle line:84%
+We can use path when
+it's convenient.
+
+00:15:41.820 --> 00:15:44.620 align:middle line:84%
+For connectivity, these two
+notions are interchangeable.
+
+00:15:44.620 --> 00:15:47.650 align:middle line:90%
+We can use whatever is nicest.
+
+00:15:47.650 --> 00:15:51.510 align:middle line:84%
+Let me mention a couple other
+fun properties of connectivity
+
+00:15:51.510 --> 00:15:53.550 align:middle line:90%
+over here.
+
+00:15:53.550 --> 00:15:57.060 align:middle line:84%
+So this one, walk from
+u to v versus v to u
+
+00:15:57.060 --> 00:15:58.633 align:middle line:90%
+is a property we call symmetry.
+
+00:15:58.633 --> 00:16:01.980 align:middle line:90%
+
+
+00:16:01.980 --> 00:16:04.740 align:middle line:84%
+And there are two
+other properties
+
+00:16:04.740 --> 00:16:06.790 align:middle line:90%
+that are nice to know.
+
+00:16:06.790 --> 00:16:14.380 align:middle line:84%
+One is called reflexivity, or
+this is the reflexive property.
+
+00:16:14.380 --> 00:16:18.150 align:middle line:84%
+Every vertex is
+connected to itself.
+
+00:16:18.150 --> 00:16:19.470 align:middle line:90%
+Why?
+
+00:16:19.470 --> 00:16:23.730 align:middle line:84%
+Because we allowed zero
+length walks and paths.
+
+00:16:23.730 --> 00:16:27.070 align:middle line:84%
+Starting at v and doing
+nothing, that is a valid walk.
+
+00:16:27.070 --> 00:16:29.880 align:middle line:90%
+So that's a walk from v to v.
+
+00:16:29.880 --> 00:16:34.516 align:middle line:84%
+And another useful
+fact is transitivity.
+
+00:16:34.516 --> 00:16:37.070 align:middle line:90%
+
+
+00:16:37.070 --> 00:16:40.340 align:middle line:84%
+Connectedness is a
+transitive relation.
+
+00:16:40.340 --> 00:16:45.770 align:middle line:84%
+If we have u and v
+are connected and we
+
+00:16:45.770 --> 00:16:56.400 align:middle line:84%
+have v and w are connected, then
+we know u and w are connected.
+
+00:16:56.400 --> 00:16:58.910 align:middle line:90%
+
+
+00:16:58.910 --> 00:17:00.950 align:middle line:90%
+Why?
+
+00:17:00.950 --> 00:17:04.170 align:middle line:84%
+This is a particularly
+nice proof by picture.
+
+00:17:04.170 --> 00:17:07.170 align:middle line:84%
+Please don't think that proof by
+picture is a valid proof method,
+
+00:17:07.170 --> 00:17:10.349 align:middle line:84%
+but I'll tell you the
+words in a second.
+
+00:17:10.349 --> 00:17:13.410 align:middle line:84%
+Suppose we have
+vertices u, v, and w.
+
+00:17:13.410 --> 00:17:15.710 align:middle line:84%
+And there's some path
+from u to v. And there's
+
+00:17:15.710 --> 00:17:17.750 align:middle line:90%
+some path from v to w.
+
+00:17:17.750 --> 00:17:20.250 align:middle line:84%
+Well, then there's
+a path from u to w.
+
+00:17:20.250 --> 00:17:27.113 align:middle line:84%
+You just concatenate the paths,
+or concatenate the walks.
+
+00:17:27.113 --> 00:17:30.080 align:middle line:90%
+
+
+00:17:30.080 --> 00:17:32.760 align:middle line:84%
+At this point, we could
+assume we had paths initially,
+
+00:17:32.760 --> 00:17:35.940 align:middle line:84%
+but when we glue them together,
+it won't be a path anymore
+
+00:17:35.940 --> 00:17:36.820 align:middle line:90%
+necessarily.
+
+00:17:36.820 --> 00:17:37.660 align:middle line:90%
+It might be a walk.
+
+00:17:37.660 --> 00:17:39.577 align:middle line:84%
+There might be some
+repetitions here and here.
+
+00:17:39.577 --> 00:17:43.912 align:middle line:84%
+But for the easy proof,
+just take two walks.
+
+00:17:43.912 --> 00:17:44.620 align:middle line:90%
+Concatenate them.
+
+00:17:44.620 --> 00:17:45.460 align:middle line:90%
+It's still a walk.
+
+00:17:45.460 --> 00:17:48.720 align:middle line:84%
+Therefore, u and
+w are connected.
+
+00:17:48.720 --> 00:17:51.160 align:middle line:84%
+Next week we'll talk about
+these properties-- symmetry,
+
+00:17:51.160 --> 00:17:53.130 align:middle line:84%
+reflexivity, and
+transitivity-- even more,
+
+00:17:53.130 --> 00:17:55.980 align:middle line:84%
+so this is kind of a
+foreshadowing of that.
+
+00:17:55.980 --> 00:18:03.010 align:middle line:84%
+But it lets us define some cool
+concepts about connectivity.
+
+00:18:03.010 --> 00:18:12.840 align:middle line:84%
+So first, we're going to
+call a graph connected
+
+00:18:12.840 --> 00:18:23.550 align:middle line:84%
+if u and v are connected
+for all vertices u and v.
+
+00:18:23.550 --> 00:18:26.860 align:middle line:84%
+So we sometimes call
+this pairwise connected.
+
+00:18:26.860 --> 00:18:32.100 align:middle line:84%
+Pairwise is a useful notion
+when you have something
+
+00:18:32.100 --> 00:18:34.260 align:middle line:84%
+that only makes sense
+on pairs of elements,
+
+00:18:34.260 --> 00:18:36.930 align:middle line:84%
+but you want it to apply
+to the whole structure,
+
+00:18:36.930 --> 00:18:39.710 align:middle line:84%
+in this case, the whole graph,
+not just pairs of vertices.
+
+00:18:39.710 --> 00:18:42.800 align:middle line:84%
+Then you just put a for
+all over the two things.
+
+00:18:42.800 --> 00:18:44.990 align:middle line:84%
+And that would be
+pairwise connected.
+
+00:18:44.990 --> 00:18:48.290 align:middle line:84%
+But it really doesn't
+matter how you--
+
+00:18:48.290 --> 00:18:51.410 align:middle line:84%
+connected is kind of a
+robust notion because
+
+00:18:51.410 --> 00:18:54.050 align:middle line:90%
+of things like transitivity.
+
+00:18:54.050 --> 00:18:56.270 align:middle line:84%
+In an undirected graph,
+it's the same to say
+
+00:18:56.270 --> 00:18:58.320 align:middle line:84%
+that every pair of
+vertices is connected,
+
+00:18:58.320 --> 00:19:00.470 align:middle line:84%
+as it is to say that
+there's some vertex
+
+00:19:00.470 --> 00:19:03.290 align:middle line:84%
+that every other
+vertex is connected
+
+00:19:03.290 --> 00:19:06.330 align:middle line:90%
+to because of transitivity.
+
+00:19:06.330 --> 00:19:09.030 align:middle line:84%
+We know if you can get from
+a to b and from b to c,
+
+00:19:09.030 --> 00:19:12.170 align:middle line:84%
+then you can also
+get from a to c.
+
+00:19:12.170 --> 00:19:16.820 align:middle line:84%
+So this is why connectivity
+is the right notion.
+
+00:19:16.820 --> 00:19:19.550 align:middle line:84%
+Even more interesting
+is a notion
+
+00:19:19.550 --> 00:19:21.256 align:middle line:90%
+called connected components.
+
+00:19:21.256 --> 00:19:49.200 align:middle line:90%
+
+
+00:19:49.200 --> 00:19:53.350 align:middle line:84%
+Maybe let me draw an example
+before I define this carefully.
+
+00:19:53.350 --> 00:19:55.800 align:middle line:84%
+So this graph, for
+example, is connected.
+
+00:19:55.800 --> 00:19:58.090 align:middle line:84%
+From every vertex you
+can get to any other.
+
+00:19:58.090 --> 00:19:59.865 align:middle line:90%
+Let's draw a disconnected graph.
+
+00:19:59.865 --> 00:20:04.270 align:middle line:90%
+
+
+00:20:04.270 --> 00:20:07.150 align:middle line:84%
+I should have it
+over here somewhere.
+
+00:20:07.150 --> 00:20:09.930 align:middle line:90%
+
+
+00:20:09.930 --> 00:20:13.620 align:middle line:84%
+Let's say I've
+got this guy here,
+
+00:20:13.620 --> 00:20:23.470 align:middle line:84%
+and maybe just a vertex and
+some edge, a, b, c, d, e, f, g.
+
+00:20:23.470 --> 00:20:25.180 align:middle line:90%
+So this is one graph.
+
+00:20:25.180 --> 00:20:30.250 align:middle line:90%
+It has six vertices, four edges.
+
+00:20:30.250 --> 00:20:32.430 align:middle line:84%
+And it's, obviously,
+not connected.
+
+00:20:32.430 --> 00:20:34.340 align:middle line:84%
+There's no walk, for
+example, from here
+
+00:20:34.340 --> 00:20:40.850 align:middle line:84%
+to here, or from here to there,
+b to f, c to e, whatever.
+
+00:20:40.850 --> 00:20:43.940 align:middle line:84%
+But it's still possible to get
+from a to c, a to b, a to d.
+
+00:20:43.940 --> 00:20:46.710 align:middle line:84%
+So a can get to
+everyone in this chunk.
+
+00:20:46.710 --> 00:20:48.870 align:middle line:84%
+And that chunk we call
+a connected component.
+
+00:20:48.870 --> 00:20:51.450 align:middle line:84%
+So in this graph, there are
+three connected components.
+
+00:20:51.450 --> 00:20:54.710 align:middle line:84%
+These are the mutually
+reachable regions of the graph.
+
+00:20:54.710 --> 00:20:57.380 align:middle line:90%
+
+
+00:20:57.380 --> 00:21:00.080 align:middle line:84%
+So to define that
+precisely, I'm going
+
+00:21:00.080 --> 00:21:04.233 align:middle line:84%
+to introduce a new term,
+which is induced subgraph.
+
+00:21:04.233 --> 00:21:20.780 align:middle line:90%
+
+
+00:21:20.780 --> 00:21:24.050 align:middle line:84%
+So what does induced
+subgraph mean?
+
+00:21:24.050 --> 00:21:25.680 align:middle line:90%
+It's a notion.
+
+00:21:25.680 --> 00:21:27.860 align:middle line:84%
+Given one graph,
+it defines a graph
+
+00:21:27.860 --> 00:21:29.640 align:middle line:84%
+that lives inside
+the original graph.
+
+00:21:29.640 --> 00:21:31.810 align:middle line:84%
+It's a subset of the
+vertices and edges.
+
+00:21:31.810 --> 00:21:34.290 align:middle line:90%
+That's what subgraph means.
+
+00:21:34.290 --> 00:21:37.750 align:middle line:84%
+And it's defined by
+a set of vertices.
+
+00:21:37.750 --> 00:21:40.750 align:middle line:84%
+So it's the subgraph induced by
+a particular set of vertices.
+
+00:21:40.750 --> 00:21:45.210 align:middle line:84%
+In this case, the vertex
+set is all the vertices
+
+00:21:45.210 --> 00:21:48.340 align:middle line:84%
+connected to v. This is a
+nice shorthand for saying,
+
+00:21:48.340 --> 00:21:52.630 align:middle line:84%
+give me all the u, where
+u and v are connected.
+
+00:21:52.630 --> 00:21:54.978 align:middle line:90%
+
+
+00:21:54.978 --> 00:21:57.270 align:middle line:84%
+And as we said, it doesn't
+matter whether I say u and v
+
+00:21:57.270 --> 00:22:00.420 align:middle line:90%
+or v and u-- same thing.
+
+00:22:00.420 --> 00:22:05.118 align:middle line:84%
+And the edge set is determined
+by this word induced.
+
+00:22:05.118 --> 00:22:07.410 align:middle line:84%
+When I say induced, I mean
+I just specify the vertices,
+
+00:22:07.410 --> 00:22:10.750 align:middle line:84%
+and then I want all the edges
+that could possibly make sense.
+
+00:22:10.750 --> 00:22:15.930 align:middle line:84%
+So in other words, I want
+to take all of the edges u,
+
+00:22:15.930 --> 00:22:20.610 align:middle line:84%
+v that were in my original
+edge set with the property
+
+00:22:20.610 --> 00:22:25.740 align:middle line:84%
+that both u and v are
+in my new vertex set.
+
+00:22:25.740 --> 00:22:31.580 align:middle line:84%
+So for example, in this graph,
+if I take the subgraph induced
+
+00:22:31.580 --> 00:22:37.070 align:middle line:84%
+by a, b, c, d, that means
+I take these four vertices
+
+00:22:37.070 --> 00:22:38.550 align:middle line:90%
+and none of the others.
+
+00:22:38.550 --> 00:22:42.950 align:middle line:84%
+And I take all the edges that
+are among those four vertices.
+
+00:22:42.950 --> 00:22:44.760 align:middle line:90%
+So that would be three of them.
+
+00:22:44.760 --> 00:22:48.560 align:middle line:84%
+These three edges-- a to
+b, b to c, and b to d--
+
+00:22:48.560 --> 00:22:53.690 align:middle line:84%
+are the three edges in my
+induced subgraph a, b, c, d.
+
+00:22:53.690 --> 00:22:57.110 align:middle line:84%
+If I just take the
+subset f and g,
+
+00:22:57.110 --> 00:23:00.260 align:middle line:84%
+these are all the vertices
+connected to f, say.
+
+00:23:00.260 --> 00:23:04.040 align:middle line:84%
+Then my subgraph will just be
+this picture with these two
+
+00:23:04.040 --> 00:23:07.310 align:middle line:84%
+vertices and one
+edge connecting them.
+
+00:23:07.310 --> 00:23:10.770 align:middle line:84%
+So that's what induced
+subgraph means.
+
+00:23:10.770 --> 00:23:13.670 align:middle line:84%
+And so in particular, if I
+take the induced subgraph
+
+00:23:13.670 --> 00:23:15.763 align:middle line:84%
+for vertices connected
+to a particular vertex,
+
+00:23:15.763 --> 00:23:17.430 align:middle line:84%
+I get what I call a
+connected component.
+
+00:23:17.430 --> 00:23:20.250 align:middle line:84%
+So this is one connected
+component here.
+
+00:23:20.250 --> 00:23:21.680 align:middle line:90%
+This is another one.
+
+00:23:21.680 --> 00:23:22.937 align:middle line:90%
+And this is another one.
+
+00:23:22.937 --> 00:23:24.770 align:middle line:84%
+And those are the three
+connected components
+
+00:23:24.770 --> 00:23:25.740 align:middle line:90%
+of the graph.
+
+00:23:25.740 --> 00:23:33.155 align:middle line:84%
+And in general, the connected
+components partition the graph.
+
+00:23:33.155 --> 00:23:48.930 align:middle line:90%
+
+
+00:23:48.930 --> 00:23:54.240 align:middle line:84%
+Partition means, in this case,
+that every vertex or edge
+
+00:23:54.240 --> 00:23:57.310 align:middle line:84%
+is in exactly one
+connected component.
+
+00:23:57.310 --> 00:23:59.940 align:middle line:90%
+
+
+00:23:59.940 --> 00:24:03.275 align:middle line:84%
+So everybody is
+represented exactly once.
+
+00:24:03.275 --> 00:24:08.670 align:middle line:90%
+
+
+00:24:08.670 --> 00:24:11.040 align:middle line:84%
+This is just a fact which
+we will take as given.
+
+00:24:11.040 --> 00:24:15.360 align:middle line:84%
+It, in some sense, follows
+from the symmetry, reflexivity,
+
+00:24:15.360 --> 00:24:18.665 align:middle line:84%
+and transitivity of the
+connectivity relation.
+
+00:24:18.665 --> 00:24:21.990 align:middle line:90%
+
+
+00:24:21.990 --> 00:24:22.830 align:middle line:90%
+Cool.
+
+00:24:22.830 --> 00:24:24.400 align:middle line:90%
+So that's connected components.
+
+00:24:24.400 --> 00:24:29.150 align:middle line:84%
+Again, many possible motivations
+for connected components.
+
+00:24:29.150 --> 00:24:32.510 align:middle line:84%
+You would hope that the road
+network of North America,
+
+00:24:32.510 --> 00:24:35.460 align:middle line:84%
+the continental-- let's say
+continental United States is
+
+00:24:35.460 --> 00:24:35.960 align:middle line:90%
+connected.
+
+00:24:35.960 --> 00:24:39.530 align:middle line:84%
+It probably isn't because of
+some weird things, disconnected
+
+00:24:39.530 --> 00:24:42.050 align:middle line:90%
+things going on with Canada.
+
+00:24:42.050 --> 00:24:47.420 align:middle line:84%
+Or you might wonder, is the
+state space of this eight puzzle
+
+00:24:47.420 --> 00:24:48.240 align:middle line:90%
+connected?
+
+00:24:48.240 --> 00:24:51.125 align:middle line:84%
+Can you get from any
+configuration to any other?
+
+00:24:51.125 --> 00:24:52.500 align:middle line:84%
+We already know
+the answer is no.
+
+00:24:52.500 --> 00:24:54.500 align:middle line:84%
+We proved you can't get
+from an even permutation
+
+00:24:54.500 --> 00:24:56.030 align:middle line:90%
+to an odd permutation.
+
+00:24:56.030 --> 00:25:01.650 align:middle line:84%
+So this example
+happens to be even.
+
+00:25:01.650 --> 00:25:04.380 align:middle line:84%
+You can see the number of
+inversions written down here.
+
+00:25:04.380 --> 00:25:06.080 align:middle line:90%
+It's always even.
+
+00:25:06.080 --> 00:25:11.570 align:middle line:84%
+And if I take any other
+permutation that's even,
+
+00:25:11.570 --> 00:25:13.440 align:middle line:84%
+it turns out it's
+possible to get there.
+
+00:25:13.440 --> 00:25:14.550 align:middle line:90%
+We didn't prove that.
+
+00:25:14.550 --> 00:25:17.270 align:middle line:84%
+What we did prove is that if we
+take a different configuration
+
+00:25:17.270 --> 00:25:18.900 align:middle line:84%
+where the number of
+inversions is odd,
+
+00:25:18.900 --> 00:25:21.380 align:middle line:84%
+all of these
+configurations cannot get
+
+00:25:21.380 --> 00:25:24.040 align:middle line:84%
+to-- they're in a different
+connected component from this
+
+00:25:24.040 --> 00:25:24.580 align:middle line:90%
+one.
+
+00:25:24.580 --> 00:25:26.080 align:middle line:84%
+And so it turns out
+the eight puzzle
+
+00:25:26.080 --> 00:25:28.220 align:middle line:84%
+has exactly two
+connected components,
+
+00:25:28.220 --> 00:25:31.060 align:middle line:84%
+one for the even permutations,
+one for the odds.
+
+00:25:31.060 --> 00:25:34.040 align:middle line:84%
+The Rubik's cube, for example,
+depending on how you define it,
+
+00:25:34.040 --> 00:25:37.570 align:middle line:90%
+has 12 connected components.
+
+00:25:37.570 --> 00:25:40.000 align:middle line:84%
+In general, you might care
+about how many different types
+
+00:25:40.000 --> 00:25:42.375 align:middle line:84%
+of states there are
+for a given puzzle.
+
+00:25:42.375 --> 00:25:45.730 align:middle line:90%
+
+
+00:25:45.730 --> 00:25:51.520 align:middle line:84%
+So that's a brief
+tour of connectivity.
+
+00:25:51.520 --> 00:25:55.420 align:middle line:90%
+The next concept is--
+
+00:25:55.420 --> 00:25:57.970 align:middle line:90%
+maybe I'll start with--
+
+00:25:57.970 --> 00:26:00.340 align:middle line:84%
+right now, we're just
+walking aimlessly
+
+00:26:00.340 --> 00:26:02.030 align:middle line:90%
+from one vertex to another.
+
+00:26:02.030 --> 00:26:05.200 align:middle line:84%
+Let's think about
+closing a loop.
+
+00:26:05.200 --> 00:26:07.820 align:middle line:84%
+What if I-- I guess
+it's even more aimless.
+
+00:26:07.820 --> 00:26:08.750 align:middle line:90%
+I started a vertex.
+
+00:26:08.750 --> 00:26:11.420 align:middle line:84%
+And what if I want to come
+back to the same vertex?
+
+00:26:11.420 --> 00:26:13.590 align:middle line:84%
+This is what we
+call a closed walk.
+
+00:26:13.590 --> 00:26:28.880 align:middle line:90%
+
+
+00:26:28.880 --> 00:26:32.010 align:middle line:84%
+So if a walk happens to start
+and end at the same vertex,
+
+00:26:32.010 --> 00:26:36.260 align:middle line:84%
+if v0 equals vk, then
+we call it closed.
+
+00:26:36.260 --> 00:26:40.070 align:middle line:84%
+And so in particular, we could
+try to apply the closed notion
+
+00:26:40.070 --> 00:26:42.080 align:middle line:90%
+to a path.
+
+00:26:42.080 --> 00:26:43.293 align:middle line:90%
+That would be kind of nice.
+
+00:26:43.293 --> 00:26:48.770 align:middle line:90%
+
+
+00:26:48.770 --> 00:26:53.652 align:middle line:84%
+And we're going to give
+that a name, which is cycle.
+
+00:26:53.652 --> 00:26:56.510 align:middle line:90%
+A cycle is roughly--
+
+00:26:56.510 --> 00:27:00.140 align:middle line:84%
+this is not going
+to be quite correct.
+
+00:27:00.140 --> 00:27:04.700 align:middle line:90%
+Start with a closed path.
+
+00:27:04.700 --> 00:27:07.710 align:middle line:84%
+Can someone tell me what would
+be wrong with this definition?
+
+00:27:07.710 --> 00:27:11.630 align:middle line:90%
+If I say, OK, I want to close--
+
+00:27:11.630 --> 00:27:13.910 align:middle line:84%
+so closed is an adjective
+that means you start and end
+
+00:27:13.910 --> 00:27:15.120 align:middle line:90%
+at the same vertex.
+
+00:27:15.120 --> 00:27:17.670 align:middle line:84%
+If I apply it to path,
+that means a walk,
+
+00:27:17.670 --> 00:27:20.450 align:middle line:84%
+let's say, from some
+vertex v to the same vertex
+
+00:27:20.450 --> 00:27:23.190 align:middle line:84%
+v with no repeated
+vertices or edges.
+
+00:27:23.190 --> 00:27:24.890 align:middle line:90%
+Any problems with that?
+
+00:27:24.890 --> 00:27:26.158 align:middle line:90%
+Yeah.
+
+00:27:26.158 --> 00:27:28.110 align:middle line:84%
+AUDIENCE: The last
+part, [INAUDIBLE]
+
+00:27:28.110 --> 00:27:30.337 align:middle line:84%
+the one you start with,
+it's going to be repeated.
+
+00:27:30.337 --> 00:27:31.170 align:middle line:90%
+ERIK DEMAINE: Right.
+
+00:27:31.170 --> 00:27:33.290 align:middle line:84%
+The one you start with
+is going to be repeated,
+
+00:27:33.290 --> 00:27:34.620 align:middle line:90%
+because that's what we wanted.
+
+00:27:34.620 --> 00:27:36.900 align:middle line:84%
+We want the start and
+the end to be the same.
+
+00:27:36.900 --> 00:27:38.840 align:middle line:90%
+So there is no closed path.
+
+00:27:38.840 --> 00:27:41.510 align:middle line:84%
+Actually, there's kind
+of one closed path, which
+
+00:27:41.510 --> 00:27:43.730 align:middle line:84%
+is the path that just
+starts at a vertex v
+
+00:27:43.730 --> 00:27:44.930 align:middle line:90%
+and doesn't go anywhere.
+
+00:27:44.930 --> 00:27:46.800 align:middle line:90%
+That I also want to exclude.
+
+00:27:46.800 --> 00:27:50.520 align:middle line:84%
+This is not what I
+want to call a cycle.
+
+00:27:50.520 --> 00:27:51.590 align:middle line:90%
+So there are two things.
+
+00:27:51.590 --> 00:27:56.190 align:middle line:84%
+I want a closed path of
+length more than zero.
+
+00:27:56.190 --> 00:27:58.940 align:middle line:84%
+You're not allowed to
+just stay where you are.
+
+00:27:58.940 --> 00:28:05.960 align:middle line:84%
+And I need to add this exception
+that the first vertex equals
+
+00:28:05.960 --> 00:28:06.870 align:middle line:90%
+the last vertex.
+
+00:28:06.870 --> 00:28:09.070 align:middle line:84%
+I don't want any other
+vertices to be the same.
+
+00:28:09.070 --> 00:28:12.890 align:middle line:90%
+
+
+00:28:12.890 --> 00:28:16.680 align:middle line:84%
+So this is-- now this is
+sort of a correct definition,
+
+00:28:16.680 --> 00:28:19.290 align:middle line:84%
+except I'm not a big fan of
+definitions with exceptions.
+
+00:28:19.290 --> 00:28:22.910 align:middle line:84%
+So I will write another
+equivalent and less
+
+00:28:22.910 --> 00:28:25.460 align:middle line:84%
+controversial definition,
+which is let's start
+
+00:28:25.460 --> 00:28:28.490 align:middle line:90%
+with our notion of walk.
+
+00:28:28.490 --> 00:28:31.190 align:middle line:90%
+And we want a closed one.
+
+00:28:31.190 --> 00:28:33.560 align:middle line:84%
+And so that implies
+that the first vertex
+
+00:28:33.560 --> 00:28:34.650 align:middle line:90%
+equals the last vertex.
+
+00:28:34.650 --> 00:28:39.265 align:middle line:84%
+And we want no other
+repeated vertices or edges.
+
+00:28:39.265 --> 00:28:48.710 align:middle line:90%
+
+
+00:28:48.710 --> 00:28:52.430 align:middle line:84%
+And whereas with walk, it was--
+or with path, it wasn't that big
+
+00:28:52.430 --> 00:28:54.848 align:middle line:84%
+a deal that I said
+no repeated edges,
+
+00:28:54.848 --> 00:28:57.390 align:middle line:84%
+because if you repeat an edge,
+you also repeat its endpoints.
+
+00:28:57.390 --> 00:29:00.600 align:middle line:84%
+So repeating an edge
+implies repeating vertices.
+
+00:29:00.600 --> 00:29:02.940 align:middle line:84%
+But I put them both in
+there, just for emphasis.
+
+00:29:02.940 --> 00:29:04.910 align:middle line:90%
+Here it actually matters--
+
+00:29:04.910 --> 00:29:06.620 align:middle line:90%
+say, a path with no--
+
+00:29:06.620 --> 00:29:09.765 align:middle line:84%
+a closed walk with no other
+repeated vertices or edges.
+
+00:29:09.765 --> 00:29:11.640 align:middle line:84%
+There's another thing
+that I want to exclude,
+
+00:29:11.640 --> 00:29:14.810 align:middle line:90%
+which is suppose I have an edge.
+
+00:29:14.810 --> 00:29:16.540 align:middle line:90%
+And I get my red color.
+
+00:29:16.540 --> 00:29:21.460 align:middle line:90%
+
+
+00:29:21.460 --> 00:29:23.990 align:middle line:90%
+And I start at this vertex.
+
+00:29:23.990 --> 00:29:25.160 align:middle line:90%
+I go to the other one.
+
+00:29:25.160 --> 00:29:26.950 align:middle line:90%
+And I come back.
+
+00:29:26.950 --> 00:29:30.110 align:middle line:84%
+You might say, oh, that
+looks like a length 2 cycle.
+
+00:29:30.110 --> 00:29:31.310 align:middle line:90%
+But it's not.
+
+00:29:31.310 --> 00:29:33.290 align:middle line:84%
+I don't want to call
+this a length 2 cycle.
+
+00:29:33.290 --> 00:29:35.110 align:middle line:84%
+And it's not allowed
+by this definition,
+
+00:29:35.110 --> 00:29:39.350 align:middle line:90%
+because it repeats an edge.
+
+00:29:39.350 --> 00:29:41.530 align:middle line:84%
+It doesn't repeat any
+vertices, other than the ones
+
+00:29:41.530 --> 00:29:42.238 align:middle line:90%
+it's supposed to.
+
+00:29:42.238 --> 00:29:48.190 align:middle line:84%
+It starts-- the sequence
+here is u, v, u.
+
+00:29:48.190 --> 00:29:51.250 align:middle line:90%
+It looks like an emoji.
+
+00:29:51.250 --> 00:29:56.110 align:middle line:84%
+So there's no repeated vertices,
+except the first 1 equaling
+
+00:29:56.110 --> 00:29:56.810 align:middle line:90%
+the last one.
+
+00:29:56.810 --> 00:29:58.100 align:middle line:90%
+But there is a repeated edge.
+
+00:29:58.100 --> 00:29:59.660 align:middle line:90%
+And so I don't allow this.
+
+00:29:59.660 --> 00:30:01.900 align:middle line:90%
+This is not a cycle.
+
+00:30:01.900 --> 00:30:03.910 align:middle line:84%
+So in fact, in an
+undirected graph,
+
+00:30:03.910 --> 00:30:07.090 align:middle line:84%
+a cycle has to have
+length at least three.
+
+00:30:07.090 --> 00:30:10.780 align:middle line:84%
+The definition says it
+has to be at least one.
+
+00:30:10.780 --> 00:30:14.385 align:middle line:84%
+Oh, I probably need of length
+greater than 0 here again.
+
+00:30:14.385 --> 00:30:19.190 align:middle line:90%
+
+
+00:30:19.190 --> 00:30:19.980 align:middle line:90%
+Cool.
+
+00:30:19.980 --> 00:30:24.990 align:middle line:84%
+So cycle is sort of
+the analog of path.
+
+00:30:24.990 --> 00:30:27.613 align:middle line:84%
+And closed walk is
+the analog of walk.
+
+00:30:27.613 --> 00:30:29.030 align:middle line:84%
+Obviously, it's
+the closed version
+
+00:30:29.030 --> 00:30:30.738 align:middle line:84%
+where you come back
+to where you started.
+
+00:30:30.738 --> 00:30:34.850 align:middle line:84%
+Cycle is the best analog
+we have to a closed path.
+
+00:30:34.850 --> 00:30:39.090 align:middle line:84%
+And these are nice
+in a certain sense,
+
+00:30:39.090 --> 00:30:41.380 align:middle line:90%
+which I want to talk about.
+
+00:30:41.380 --> 00:30:45.440 align:middle line:90%
+
+
+00:30:45.440 --> 00:30:54.410 align:middle line:84%
+So let's talk about a notion
+which is an Euler walk.
+
+00:30:54.410 --> 00:30:58.963 align:middle line:84%
+And then we'll get to the
+notion of a closed walk.
+
+00:30:58.963 --> 00:31:28.390 align:middle line:90%
+
+
+00:31:28.390 --> 00:31:33.550 align:middle line:84%
+So an Euler walk is a
+particular kind of nice walk
+
+00:31:33.550 --> 00:31:37.670 align:middle line:84%
+that visits all of the
+edges exactly once.
+
+00:31:37.670 --> 00:31:39.250 align:middle line:90%
+That's the definition.
+
+00:31:39.250 --> 00:31:42.850 align:middle line:84%
+Let's think about
+graphs where you
+
+00:31:42.850 --> 00:31:45.680 align:middle line:84%
+can take a walk, starting
+somewhere, ending somewhere,
+
+00:31:45.680 --> 00:31:48.110 align:middle line:84%
+and visit every
+edge exactly once.
+
+00:31:48.110 --> 00:31:55.910 align:middle line:84%
+For example, this
+graph has such a walk,
+
+00:31:55.910 --> 00:31:57.200 align:middle line:90%
+the first graph that I drew.
+
+00:31:57.200 --> 00:32:00.730 align:middle line:84%
+This is why I was fascinated
+with it, reading some Scientific
+
+00:32:00.730 --> 00:32:04.720 align:middle line:84%
+American article
+by Martin Gardner.
+
+00:32:04.720 --> 00:32:08.930 align:middle line:84%
+You can draw this graph
+without picking up your pen.
+
+00:32:08.930 --> 00:32:12.140 align:middle line:84%
+You pen down, you draw,
+and then you pen up.
+
+00:32:12.140 --> 00:32:13.850 align:middle line:90%
+And that got all of the edges.
+
+00:32:13.850 --> 00:32:17.192 align:middle line:84%
+I didn't draw the vertices, but
+hopefully you can imagine that.
+
+00:32:17.192 --> 00:32:18.900 align:middle line:84%
+Maybe you should draw
+the vertices first,
+
+00:32:18.900 --> 00:32:21.840 align:middle line:84%
+and then you can draw all
+the edges in one swoop.
+
+00:32:21.840 --> 00:32:25.310 align:middle line:84%
+So this is kind
+of a nice notion,
+
+00:32:25.310 --> 00:32:29.720 align:middle line:84%
+if you like drawing things
+with pen or pencil or stylus,
+
+00:32:29.720 --> 00:32:30.800 align:middle line:90%
+or whatever.
+
+00:32:30.800 --> 00:32:32.960 align:middle line:90%
+It's actually a very old notion.
+
+00:32:32.960 --> 00:32:35.250 align:middle line:90%
+It goes back to Euler.
+
+00:32:35.250 --> 00:32:36.770 align:middle line:84%
+Unsurprisingly,
+this guy Leonhard
+
+00:32:36.770 --> 00:32:41.300 align:middle line:84%
+Euler, who you know from the
+number E. That's E for Euler.
+
+00:32:41.300 --> 00:32:45.500 align:middle line:84%
+In 1736, he drew this
+rather beautiful diagram
+
+00:32:45.500 --> 00:32:50.210 align:middle line:84%
+of some islands and bridges
+in Konigsberg, which then was
+
+00:32:50.210 --> 00:32:52.940 align:middle line:90%
+in Germany, now is in Russia.
+
+00:32:52.940 --> 00:32:56.090 align:middle line:84%
+And it has-- this
+place, the city
+
+00:32:56.090 --> 00:32:59.880 align:middle line:84%
+is famous for very beautiful
+bridges, as many cities are.
+
+00:32:59.880 --> 00:33:02.540 align:middle line:84%
+But this one has a lot of
+them and some non-trivial,
+
+00:33:02.540 --> 00:33:04.770 align:middle line:90%
+interesting topology.
+
+00:33:04.770 --> 00:33:06.980 align:middle line:90%
+And so he wondered--
+
+00:33:06.980 --> 00:33:11.240 align:middle line:84%
+the question was posed, can
+you visit all of the bridges
+
+00:33:11.240 --> 00:33:12.355 align:middle line:90%
+without any repeats?
+
+00:33:12.355 --> 00:33:14.360 align:middle line:90%
+It seems natural.
+
+00:33:14.360 --> 00:33:16.100 align:middle line:84%
+And if you think
+about it, this is
+
+00:33:16.100 --> 00:33:17.520 align:middle line:90%
+the vertices are like islands.
+
+00:33:17.520 --> 00:33:19.440 align:middle line:90%
+The edges are bridges.
+
+00:33:19.440 --> 00:33:23.210 align:middle line:84%
+And you want to visit all
+the edges exactly once.
+
+00:33:23.210 --> 00:33:27.230 align:middle line:84%
+So a natural problem, also,
+if you're sightseeing.
+
+00:33:27.230 --> 00:33:30.720 align:middle line:84%
+And just for fun, because
+I dug up this 1736 paper,
+
+00:33:30.720 --> 00:33:35.180 align:middle line:84%
+here are some more beautiful
+figures from that paper,
+
+00:33:35.180 --> 00:33:36.810 align:middle line:84%
+thinking about all
+the different cases.
+
+00:33:36.810 --> 00:33:38.570 align:middle line:84%
+So he characterized--
+and this is
+
+00:33:38.570 --> 00:33:41.420 align:middle line:84%
+like the first paper, or
+one of the very first papers
+
+00:33:41.420 --> 00:33:42.527 align:middle line:90%
+in graph theory.
+
+00:33:42.527 --> 00:33:44.360 align:middle line:84%
+This started the whole
+world of graph theory
+
+00:33:44.360 --> 00:33:45.380 align:middle line:90%
+we're talking about.
+
+00:33:45.380 --> 00:33:49.530 align:middle line:84%
+He's characterizing when this
+is possible and when it isn't.
+
+00:33:49.530 --> 00:33:53.760 align:middle line:84%
+It turns out, in this original
+example, it's not possible.
+
+00:33:53.760 --> 00:33:57.900 align:middle line:84%
+Today some of these bridges have
+collapsed or been destroyed,
+
+00:33:57.900 --> 00:33:59.040 align:middle line:90%
+so maybe it's possible.
+
+00:33:59.040 --> 00:34:05.277 align:middle line:84%
+I don't know about current
+day Konigsberg, but that's--
+
+00:34:05.277 --> 00:34:06.860 align:middle line:84%
+what we're going to
+talk about now is,
+
+00:34:06.860 --> 00:34:11.010 align:middle line:90%
+when do Euler walks exist?
+
+00:34:11.010 --> 00:34:14.020 align:middle line:84%
+Why was it possible
+for that house graph,
+
+00:34:14.020 --> 00:34:22.620 align:middle line:90%
+but not possible for this graph?
+
+00:34:22.620 --> 00:34:25.060 align:middle line:84%
+This is the complete
+graph on four vertices.
+
+00:34:25.060 --> 00:34:28.570 align:middle line:84%
+And you can't draw
+this in a single path.
+
+00:34:28.570 --> 00:34:32.850 align:middle line:84%
+Why is my red chalk always
+the farthest possible point?
+
+00:34:32.850 --> 00:34:34.363 align:middle line:90%
+So let's try.
+
+00:34:34.363 --> 00:34:36.280 align:middle line:84%
+This will not be a proof
+that you can't do it,
+
+00:34:36.280 --> 00:34:40.840 align:middle line:84%
+but we will shortly prove that
+you can't do it in one stroke.
+
+00:34:40.840 --> 00:34:46.000 align:middle line:84%
+So I can go here,
+here, here, here, here.
+
+00:34:46.000 --> 00:34:48.725 align:middle line:84%
+It's pretty good, but
+I missed this edge.
+
+00:34:48.725 --> 00:34:52.560 align:middle line:90%
+
+
+00:34:52.560 --> 00:34:56.217 align:middle line:90%
+This edge is uncovered.
+
+00:34:56.217 --> 00:34:58.300 align:middle line:84%
+And it turns out it's not
+possible for that graph.
+
+00:34:58.300 --> 00:34:59.950 align:middle line:90%
+It was possible for this graph.
+
+00:34:59.950 --> 00:35:08.100 align:middle line:84%
+Even better would be,
+I guess, in the case--
+
+00:35:08.100 --> 00:35:11.720 align:middle line:84%
+in the tourism case, let's go
+back to Konigsberg for a second.
+
+00:35:11.720 --> 00:35:15.570 align:middle line:84%
+Suppose your hotel is in
+island A. You start there.
+
+00:35:15.570 --> 00:35:17.570 align:middle line:84%
+You'd kind of like to
+end at the same hotel
+
+00:35:17.570 --> 00:35:20.850 align:middle line:84%
+without having to
+repeat a bridge again.
+
+00:35:20.850 --> 00:35:23.575 align:middle line:84%
+So that would be an
+Euler closed walk.
+
+00:35:23.575 --> 00:35:31.970 align:middle line:90%
+
+
+00:35:31.970 --> 00:35:34.910 align:middle line:84%
+And that we call an Euler
+tour, just because that's
+
+00:35:34.910 --> 00:35:36.830 align:middle line:90%
+more common terminology for it.
+
+00:35:36.830 --> 00:35:38.850 align:middle line:84%
+So that's really
+where you start.
+
+00:35:38.850 --> 00:35:41.520 align:middle line:84%
+So closed means that you start
+and end at the same place.
+
+00:35:41.520 --> 00:35:43.670 align:middle line:84%
+Euler means you visit
+every edge exactly once,
+
+00:35:43.670 --> 00:35:45.260 align:middle line:90%
+every edge of the graph.
+
+00:35:45.260 --> 00:35:47.310 align:middle line:90%
+So that's even nicer.
+
+00:35:47.310 --> 00:35:51.350 align:middle line:84%
+It turns out that's not
+possible in this graph.
+
+00:35:51.350 --> 00:35:56.090 align:middle line:84%
+If you look at it, I
+started at this vertex here.
+
+00:35:56.090 --> 00:36:00.800 align:middle line:90%
+And I ended at this vertex here.
+
+00:36:00.800 --> 00:36:02.882 align:middle line:84%
+And that was the
+best I could do.
+
+00:36:02.882 --> 00:36:05.090 align:middle line:84%
+I couldn't actually start
+and end at the same vertex.
+
+00:36:05.090 --> 00:36:11.740 align:middle line:84%
+If, for example, I added another
+vertex and a couple more edges,
+
+00:36:11.740 --> 00:36:16.120 align:middle line:84%
+then it would be possible for me
+to complete the tour like this.
+
+00:36:16.120 --> 00:36:18.960 align:middle line:84%
+So the new graph I drew
+here with six vertices
+
+00:36:18.960 --> 00:36:21.550 align:middle line:84%
+instead of five, that
+one has an Euler tour.
+
+00:36:21.550 --> 00:36:23.740 align:middle line:84%
+The original one just
+had an Euler walk.
+
+00:36:23.740 --> 00:36:26.160 align:middle line:90%
+And this one has neither.
+
+00:36:26.160 --> 00:36:28.895 align:middle line:84%
+So how can we characterize
+which graphs these are?
+
+00:36:28.895 --> 00:36:31.800 align:middle line:90%
+
+
+00:36:31.800 --> 00:36:34.000 align:middle line:84%
+So we're not going to
+read Euler's paper.
+
+00:36:34.000 --> 00:36:37.650 align:middle line:84%
+It's in Latin-- a bit
+hard for me to read.
+
+00:36:37.650 --> 00:36:41.285 align:middle line:90%
+We'll write our own proof.
+
+00:36:41.285 --> 00:36:42.910 align:middle line:84%
+This will be the main
+theorem of today.
+
+00:36:42.910 --> 00:36:45.690 align:middle line:84%
+Though, we have a fun
+topic afterwards as well.
+
+00:36:45.690 --> 00:36:48.630 align:middle line:84%
+So first, let's think
+about the tour case.
+
+00:36:48.630 --> 00:36:50.400 align:middle line:90%
+That turns out to be cleaner.
+
+00:36:50.400 --> 00:37:01.170 align:middle line:84%
+So a graph has an Euler tour
+if and only if it's connected.
+
+00:37:01.170 --> 00:37:03.720 align:middle line:84%
+That's certainly
+necessary because we said
+
+00:37:03.720 --> 00:37:05.685 align:middle line:90%
+it should visit every vertex.
+
+00:37:05.685 --> 00:37:08.060 align:middle line:84%
+You don't have to include this
+as part of the definition,
+
+00:37:08.060 --> 00:37:11.920 align:middle line:84%
+but it makes the
+characterization cleaner.
+
+00:37:11.920 --> 00:37:20.445 align:middle line:84%
+And we also need that every
+vertex has even degree.
+
+00:37:20.445 --> 00:37:24.550 align:middle line:90%
+
+
+00:37:24.550 --> 00:37:26.960 align:middle line:84%
+For an Euler tour,
+for a closed walk,
+
+00:37:26.960 --> 00:37:29.150 align:middle line:84%
+we need every vertex
+to have even degree.
+
+00:37:29.150 --> 00:37:31.220 align:middle line:84%
+Let's check that
+in our examples.
+
+00:37:31.220 --> 00:37:33.550 align:middle line:84%
+This graph, remember,
+the degree of a vertex
+
+00:37:33.550 --> 00:37:35.300 align:middle line:84%
+is how many edges
+are incident to it.
+
+00:37:35.300 --> 00:37:40.390 align:middle line:84%
+So the degree of
+this vertex is 3.
+
+00:37:40.390 --> 00:37:42.020 align:middle line:90%
+The degree of this vertex is 3.
+
+00:37:42.020 --> 00:37:45.040 align:middle line:84%
+This graph is symmetric, so
+all the vertices have degree 3.
+
+00:37:45.040 --> 00:37:49.630 align:middle line:84%
+3 is an odd number,
+and not even.
+
+00:37:49.630 --> 00:37:51.770 align:middle line:90%
+In this graph, this is degree 2.
+
+00:37:51.770 --> 00:37:52.910 align:middle line:90%
+This is degree 4.
+
+00:37:52.910 --> 00:37:53.810 align:middle line:90%
+This is degree 4.
+
+00:37:53.810 --> 00:37:55.300 align:middle line:90%
+So far, everything is even.
+
+00:37:55.300 --> 00:37:57.260 align:middle line:90%
+This one is degree 3.
+
+00:37:57.260 --> 00:37:59.200 align:middle line:84%
+This one is degree 3
+in the original graph.
+
+00:37:59.200 --> 00:38:01.900 align:middle line:84%
+If I add this
+dotted part, then I
+
+00:38:01.900 --> 00:38:06.180 align:middle line:84%
+convert this into degree 4,
+and degree 4, and degree 2
+
+00:38:06.180 --> 00:38:07.000 align:middle line:90%
+down here.
+
+00:38:07.000 --> 00:38:08.920 align:middle line:84%
+And so then all the
+vertices have even degree.
+
+00:38:08.920 --> 00:38:12.930 align:middle line:84%
+So it seems to be working, but
+let's not do a proof by example.
+
+00:38:12.930 --> 00:38:14.675 align:middle line:90%
+Let's prove it in general.
+
+00:38:14.675 --> 00:38:23.400 align:middle line:90%
+
+
+00:38:23.400 --> 00:38:27.340 align:middle line:84%
+Again, the top level statement
+here is an if and only if.
+
+00:38:27.340 --> 00:38:29.770 align:middle line:84%
+So we need to prove each
+direction separately.
+
+00:38:29.770 --> 00:38:32.140 align:middle line:84%
+Let's start with
+the easy direction,
+
+00:38:32.140 --> 00:38:33.900 align:middle line:90%
+which is left to right.
+
+00:38:33.900 --> 00:38:37.410 align:middle line:90%
+So if I have an Euler tour--
+
+00:38:37.410 --> 00:38:39.420 align:middle line:90%
+let's give it a name.
+
+00:38:39.420 --> 00:38:51.840 align:middle line:84%
+Consider an Euler
+tour v0 to v1 to vk.
+
+00:38:51.840 --> 00:38:57.155 align:middle line:84%
+And vk equals v0 because
+it's a closed walk.
+
+00:38:57.155 --> 00:38:59.830 align:middle line:90%
+
+
+00:38:59.830 --> 00:39:01.803 align:middle line:90%
+Now I want to look at--
+
+00:39:01.803 --> 00:39:04.450 align:middle line:90%
+
+
+00:39:04.450 --> 00:39:17.700 align:middle line:84%
+let's basically count edges
+incident to vi or some vertex.
+
+00:39:17.700 --> 00:39:21.700 align:middle line:90%
+
+
+00:39:21.700 --> 00:39:23.690 align:middle line:84%
+I think that's an
+unnecessary sentence.
+
+00:39:23.690 --> 00:39:27.580 align:middle line:90%
+Let me rewind.
+
+00:39:27.580 --> 00:39:33.520 align:middle line:90%
+Let's look at each visit.
+
+00:39:33.520 --> 00:39:45.110 align:middle line:84%
+vi minus 1 to vi to vi
+plus 1 to a vertex vi.
+
+00:39:45.110 --> 00:39:48.130 align:middle line:84%
+So in this path,
+I'm just looking
+
+00:39:48.130 --> 00:39:52.090 align:middle line:84%
+at a little piece of the path
+of two consecutive edges from vi
+
+00:39:52.090 --> 00:39:54.430 align:middle line:90%
+minus 1 to vi to vi plus 1.
+
+00:39:54.430 --> 00:39:58.840 align:middle line:84%
+And I'd like this to work
+even with wraparound.
+
+00:39:58.840 --> 00:40:04.120 align:middle line:84%
+Because this is a closed tour,
+we start at v0 and we end at v0.
+
+00:40:04.120 --> 00:40:06.990 align:middle line:90%
+So we do some stuff.
+
+00:40:06.990 --> 00:40:09.900 align:middle line:90%
+And then we end up back at v0.
+
+00:40:09.900 --> 00:40:13.980 align:middle line:84%
+And so I'd like to just consider
+three consecutive vertices
+
+00:40:13.980 --> 00:40:15.400 align:middle line:90%
+on this tour.
+
+00:40:15.400 --> 00:40:15.900 align:middle line:90%
+Sorry.
+
+00:40:15.900 --> 00:40:17.460 align:middle line:90%
+Wrong directions.
+
+00:40:17.460 --> 00:40:20.890 align:middle line:90%
+This way, including possibly v0.
+
+00:40:20.890 --> 00:40:29.470 align:middle line:84%
+So to do that, I want to treat
+this modulo, k plus 1, I guess.
+
+00:40:29.470 --> 00:40:31.860 align:middle line:84%
+And this also
+modulo or no modulo
+
+00:40:31.860 --> 00:40:37.000 align:middle line:84%
+k, actually, because
+vk equals v0.
+
+00:40:37.000 --> 00:40:40.785 align:middle line:84%
+So if I work modulo k with these
+indices, for every vertex i,
+
+00:40:40.785 --> 00:40:43.140 align:middle line:84%
+I look at the one previous
+possibly wrapping around
+
+00:40:43.140 --> 00:40:47.520 align:middle line:84%
+to vk minus 1 or vi plus
+1, possibly wrapping around
+
+00:40:47.520 --> 00:40:52.140 align:middle line:84%
+back to v0, then this
+is a well-defined notion
+
+00:40:52.140 --> 00:40:55.150 align:middle line:90%
+for every vertex on this visit.
+
+00:40:55.150 --> 00:40:58.650 align:middle line:84%
+When I look at this,
+that visit to vi,
+
+00:40:58.650 --> 00:41:01.090 align:middle line:84%
+in particular, that's
+visiting a vertex.
+
+00:41:01.090 --> 00:41:13.400 align:middle line:84%
+And it also includes or visits
+two edges incident to vi,
+
+00:41:13.400 --> 00:41:15.152 align:middle line:84%
+sort of "what goes
+in must come out."
+
+00:41:15.152 --> 00:41:16.610 align:middle line:84%
+So if I'm looking
+at a vertex here,
+
+00:41:16.610 --> 00:41:21.710 align:middle line:90%
+vi, this is the previous one.
+
+00:41:21.710 --> 00:41:23.990 align:middle line:90%
+Oh, this is the previous one.
+
+00:41:23.990 --> 00:41:27.030 align:middle line:90%
+i minus 1 to vi plus 1.
+
+00:41:27.030 --> 00:41:30.540 align:middle line:84%
+But by visiting vi, I visited
+one edge coming into vi.
+
+00:41:30.540 --> 00:41:33.210 align:middle line:84%
+And I visited one
+edge coming out of vi.
+
+00:41:33.210 --> 00:41:35.090 align:middle line:90%
+And so that's two.
+
+00:41:35.090 --> 00:41:38.600 align:middle line:84%
+And maybe this path visits
+this vertex vi, again,
+
+00:41:38.600 --> 00:41:40.140 align:middle line:90%
+as some other vertex vj.
+
+00:41:40.140 --> 00:41:42.000 align:middle line:84%
+But every time it
+visits a vertex,
+
+00:41:42.000 --> 00:41:44.900 align:middle line:84%
+it visits two edges
+incident to it.
+
+00:41:44.900 --> 00:41:48.590 align:middle line:84%
+So that means the total
+number of edges visited
+
+00:41:48.590 --> 00:41:51.560 align:middle line:84%
+is going to be even, because I
+just keep adding two, and then
+
+00:41:51.560 --> 00:41:53.010 align:middle line:90%
+two more and two more.
+
+00:41:53.010 --> 00:41:57.240 align:middle line:84%
+So total number
+of edges, I guess,
+
+00:41:57.240 --> 00:42:10.760 align:middle line:84%
+visited edges incident to
+any vertex must be even.
+
+00:42:10.760 --> 00:42:14.520 align:middle line:90%
+
+
+00:42:14.520 --> 00:42:18.840 align:middle line:84%
+And how many edges incident
+to that vertex do I visit?
+
+00:42:18.840 --> 00:42:21.840 align:middle line:84%
+Well, all of them,
+because an Euler walk
+
+00:42:21.840 --> 00:42:25.800 align:middle line:84%
+has to visit every edge
+exactly once by the end.
+
+00:42:25.800 --> 00:42:28.255 align:middle line:84%
+So this total number of
+visited edges incident
+
+00:42:28.255 --> 00:42:30.463 align:middle line:84%
+to a vertex, that's exactly
+the degree of the vertex.
+
+00:42:30.463 --> 00:42:33.720 align:middle line:90%
+
+
+00:42:33.720 --> 00:42:36.250 align:middle line:84%
+It's exactly the total
+number of incident edges.
+
+00:42:36.250 --> 00:42:38.890 align:middle line:84%
+So this shows that if
+you have an Euler tour,
+
+00:42:38.890 --> 00:42:42.630 align:middle line:90%
+all the degrees must be even.
+
+00:42:42.630 --> 00:42:44.080 align:middle line:90%
+What goes in must come out.
+
+00:42:44.080 --> 00:42:46.560 align:middle line:84%
+It also has to be
+connected, just because it
+
+00:42:46.560 --> 00:42:48.070 align:middle line:90%
+has to visit every vertex.
+
+00:42:48.070 --> 00:42:50.890 align:middle line:84%
+And so by visiting every
+vertex in particular,
+
+00:42:50.890 --> 00:42:53.410 align:middle line:84%
+that is a walk between
+any pair of vertices.
+
+00:42:53.410 --> 00:42:56.580 align:middle line:84%
+Or you take pieces of that walk,
+and you can go from any vertex
+
+00:42:56.580 --> 00:42:58.020 align:middle line:90%
+to any other.
+
+00:42:58.020 --> 00:43:00.060 align:middle line:90%
+So that's one direction.
+
+00:43:00.060 --> 00:43:01.230 align:middle line:90%
+That's the easy one.
+
+00:43:01.230 --> 00:43:03.640 align:middle line:90%
+Let's do the hard one.
+
+00:43:03.640 --> 00:43:36.830 align:middle line:90%
+
+
+00:43:36.830 --> 00:43:38.580 align:middle line:84%
+And although I won't
+be explicit about it,
+
+00:43:38.580 --> 00:43:41.510 align:middle line:84%
+this proof also, in some
+sense, gives you a strategy
+
+00:43:41.510 --> 00:43:43.190 align:middle line:90%
+for finding these tours.
+
+00:43:43.190 --> 00:43:44.570 align:middle line:90%
+They're not too hard to find.
+
+00:43:44.570 --> 00:43:47.430 align:middle line:90%
+
+
+00:43:47.430 --> 00:43:47.973 align:middle line:90%
+Next page.
+
+00:43:47.973 --> 00:43:50.720 align:middle line:90%
+
+
+00:43:50.720 --> 00:43:55.100 align:middle line:84%
+So now we want to go
+from right to left.
+
+00:43:55.100 --> 00:44:01.230 align:middle line:84%
+So we get to assume that
+the graph is connected
+
+00:44:01.230 --> 00:44:03.980 align:middle line:84%
+and that all the vertices
+have even degree.
+
+00:44:03.980 --> 00:44:07.830 align:middle line:90%
+
+
+00:44:07.830 --> 00:44:11.790 align:middle line:90%
+So we say, all degrees even.
+
+00:44:11.790 --> 00:44:17.320 align:middle line:84%
+And we want to show that
+the graph has an Euler tour.
+
+00:44:17.320 --> 00:44:20.670 align:middle line:84%
+For this proof-- so
+there's one clever idea,
+
+00:44:20.670 --> 00:44:22.356 align:middle line:84%
+and then the rest
+is just mechanical.
+
+00:44:22.356 --> 00:44:25.320 align:middle line:90%
+
+
+00:44:25.320 --> 00:44:28.410 align:middle line:84%
+Whereas before in this proof
+that I just erased, in order
+
+00:44:28.410 --> 00:44:30.570 align:middle line:84%
+to convert a walk
+into a path, we
+
+00:44:30.570 --> 00:44:33.780 align:middle line:84%
+took the shortest path, the
+shortest walk, and the shortest
+
+00:44:33.780 --> 00:44:36.060 align:middle line:84%
+walk ended up
+having to be a path.
+
+00:44:36.060 --> 00:44:38.860 align:middle line:84%
+For an Euler tour, we kind
+of want to do the opposite.
+
+00:44:38.860 --> 00:44:43.650 align:middle line:84%
+I want the longest walk that
+doesn't repeat any edges.
+
+00:44:43.650 --> 00:44:45.150 align:middle line:84%
+The longest walk
+that doesn't repeat
+
+00:44:45.150 --> 00:44:47.880 align:middle line:84%
+any edges, that turns out
+it will visit every edge
+
+00:44:47.880 --> 00:44:50.100 align:middle line:90%
+exactly once.
+
+00:44:50.100 --> 00:44:52.260 align:middle line:84%
+So for that, it's
+maybe useful to define
+
+00:44:52.260 --> 00:44:54.735 align:middle line:90%
+another term, which is trail.
+
+00:44:54.735 --> 00:44:56.360 align:middle line:84%
+We're really not
+going to use this much
+
+00:44:56.360 --> 00:44:58.500 align:middle line:84%
+in the class, so feel
+free to forget it,
+
+00:44:58.500 --> 00:45:03.290 align:middle line:84%
+other than in the context
+of this proof, which is
+
+00:45:03.290 --> 00:45:06.290 align:middle line:90%
+a walk with no repeated edges.
+
+00:45:06.290 --> 00:45:10.440 align:middle line:84%
+So in other words, it visits
+every edge at most once.
+
+00:45:10.440 --> 00:45:13.800 align:middle line:84%
+And then we're going to
+take the longest trail.
+
+00:45:13.800 --> 00:45:16.770 align:middle line:84%
+So subject to every edge
+being visited at most once,
+
+00:45:16.770 --> 00:45:19.880 align:middle line:84%
+I want to visit as
+many edges as possible.
+
+00:45:19.880 --> 00:45:25.410 align:middle line:84%
+And that turns out it
+will be an Euler walk.
+
+00:45:25.410 --> 00:45:35.240 align:middle line:84%
+So let's take the longest
+trail in the graph.
+
+00:45:35.240 --> 00:45:38.930 align:middle line:84%
+And I'll call it
+T. And it's going
+
+00:45:38.930 --> 00:45:44.290 align:middle line:84%
+to, say, start at vertex
+v0, go to v1, and go to vk.
+
+00:45:44.290 --> 00:45:48.650 align:middle line:90%
+
+
+00:45:48.650 --> 00:45:50.960 align:middle line:84%
+I need to prove two
+things about this trail.
+
+00:45:50.960 --> 00:45:56.740 align:middle line:84%
+In order to be an Euler
+tour, it has to be Euler.
+
+00:45:56.740 --> 00:45:58.530 align:middle line:84%
+It has to visit every
+edge exactly once,
+
+00:45:58.530 --> 00:46:00.770 align:middle line:90%
+and it has to be closed.
+
+00:46:00.770 --> 00:46:03.640 align:middle line:84%
+It turns out it's helpful
+to prove closed first.
+
+00:46:03.640 --> 00:46:11.330 align:middle line:84%
+So first claim is that
+this trail T is closed.
+
+00:46:11.330 --> 00:46:18.450 align:middle line:90%
+
+
+00:46:18.450 --> 00:46:20.770 align:middle line:90%
+So we start at v0.
+
+00:46:20.770 --> 00:46:21.940 align:middle line:90%
+We end at vk.
+
+00:46:21.940 --> 00:46:24.840 align:middle line:90%
+Closed means that v0 equals vk.
+
+00:46:24.840 --> 00:46:28.270 align:middle line:84%
+So if we do-- let's do a
+proof by contradiction.
+
+00:46:28.270 --> 00:46:37.530 align:middle line:90%
+
+
+00:46:37.530 --> 00:46:43.400 align:middle line:90%
+Suppose v0 does not equal vk.
+
+00:46:43.400 --> 00:46:46.200 align:middle line:90%
+
+
+00:46:46.200 --> 00:46:48.690 align:middle line:84%
+And I want to get a
+contradiction, which basically
+
+00:46:48.690 --> 00:46:51.830 align:middle line:84%
+means that somehow I want to
+show the trail was not actually
+
+00:46:51.830 --> 00:46:55.460 align:middle line:90%
+longest in that case.
+
+00:46:55.460 --> 00:46:57.480 align:middle line:90%
+So again, we have some--
+
+00:46:57.480 --> 00:46:59.600 align:middle line:90%
+we start at v0.
+
+00:46:59.600 --> 00:47:01.610 align:middle line:90%
+We do some wiggly path.
+
+00:47:01.610 --> 00:47:06.140 align:middle line:84%
+And we end at vk, and
+supposing these are different.
+
+00:47:06.140 --> 00:47:08.670 align:middle line:84%
+I'd like to claim that I
+can make this walk longer.
+
+00:47:08.670 --> 00:47:12.830 align:middle line:84%
+In particular, I claim that
+there's an edge out of vk
+
+00:47:12.830 --> 00:47:15.560 align:middle line:84%
+that I haven't visited
+yet, which means
+
+00:47:15.560 --> 00:47:19.170 align:middle line:90%
+I could extend the path by one.
+
+00:47:19.170 --> 00:47:20.520 align:middle line:90%
+That's my claim.
+
+00:47:20.520 --> 00:47:24.180 align:middle line:84%
+And I'm going to do that by
+counting the edges at vk.
+
+00:47:24.180 --> 00:47:26.450 align:middle line:90%
+How many have I used?
+
+00:47:26.450 --> 00:47:29.270 align:middle line:84%
+Very similar to this
+proof actually--
+
+00:47:29.270 --> 00:47:33.300 align:middle line:84%
+so vk, so this is another
+sequence from v0 to vk,
+
+00:47:33.300 --> 00:47:35.940 align:middle line:84%
+except now we have
+not equals at the end.
+
+00:47:35.940 --> 00:47:42.120 align:middle line:84%
+So let's think about all
+the visits to vk by this--
+
+00:47:42.120 --> 00:47:43.620 align:middle line:84%
+I should really be
+pointing at this.
+
+00:47:43.620 --> 00:47:44.880 align:middle line:90%
+So here's vk.
+
+00:47:44.880 --> 00:47:46.830 align:middle line:84%
+We know there's a
+visit at the end.
+
+00:47:46.830 --> 00:47:48.390 align:middle line:84%
+Possibly it's
+visited in between.
+
+00:47:48.390 --> 00:47:50.550 align:middle line:90%
+Maybe some of the vi's equal vk.
+
+00:47:50.550 --> 00:47:53.830 align:middle line:84%
+We know v0 doesn't equal vk,
+but some of the others might.
+
+00:47:53.830 --> 00:47:58.210 align:middle line:84%
+Every time I visit one of those,
+it looks exactly like this.
+
+00:47:58.210 --> 00:48:04.170 align:middle line:84%
+In other words, I visit
+two edges incident to vk.
+
+00:48:04.170 --> 00:48:17.550 align:middle line:84%
+So let's say for every vi that's
+equal to vk we visit two edges
+
+00:48:17.550 --> 00:48:22.800 align:middle line:90%
+incident to vk.
+
+00:48:22.800 --> 00:48:26.850 align:middle line:84%
+So that's an even
+number in total.
+
+00:48:26.850 --> 00:48:31.530 align:middle line:90%
+This is for i not equal to k.
+
+00:48:31.530 --> 00:48:34.390 align:middle line:84%
+But then there's this
+last visit at the end.
+
+00:48:34.390 --> 00:48:36.940 align:middle line:84%
+And this one is special
+because we stopped.
+
+00:48:36.940 --> 00:48:39.970 align:middle line:84%
+There's no edge after vk because
+this doesn't loop around.
+
+00:48:39.970 --> 00:48:43.980 align:middle line:84%
+So there's an edge before
+coming into vk, but none after.
+
+00:48:43.980 --> 00:48:54.210 align:middle line:84%
+So that means, I guess, for i
+equal k, for that visit to vk,
+
+00:48:54.210 --> 00:49:00.730 align:middle line:84%
+we visit one edge
+incident to vk.
+
+00:49:00.730 --> 00:49:03.740 align:middle line:90%
+
+
+00:49:03.740 --> 00:49:08.390 align:middle line:84%
+So in this trail how many edges
+incident to vk did we visit?
+
+00:49:08.390 --> 00:49:11.810 align:middle line:84%
+An odd number, because we
+had an even number for all
+
+00:49:11.810 --> 00:49:15.680 align:middle line:84%
+the earlier visits, and then we
+had one more at the end, so even
+
+00:49:15.680 --> 00:49:17.720 align:middle line:90%
+plus one is odd.
+
+00:49:17.720 --> 00:49:31.220 align:middle line:84%
+So that means T visits an odd
+number of edges incident to vk.
+
+00:49:31.220 --> 00:49:33.920 align:middle line:84%
+But we assume that
+the degrees are even.
+
+00:49:33.920 --> 00:49:36.080 align:middle line:84%
+And that means there's
+at least one more
+
+00:49:36.080 --> 00:49:40.880 align:middle line:90%
+edge that we assumed here.
+
+00:49:40.880 --> 00:49:42.120 align:middle line:90%
+All degrees are even.
+
+00:49:42.120 --> 00:49:45.000 align:middle line:84%
+So in particular,
+vk's degree is even.
+
+00:49:45.000 --> 00:49:53.080 align:middle line:84%
+And so that means there
+exists an edge incident to vk
+
+00:49:53.080 --> 00:49:59.230 align:middle line:90%
+not visited by T.
+
+00:49:59.230 --> 00:50:14.710 align:middle line:84%
+But then we can extend T. It can
+go from v0 up to vk, and then
+
+00:50:14.710 --> 00:50:18.460 align:middle line:90%
+plus whatever one more edge.
+
+00:50:18.460 --> 00:50:23.080 align:middle line:84%
+So if I call this
+edge here, vk comma vk
+
+00:50:23.080 --> 00:50:26.510 align:middle line:84%
+plus 1, because I haven't
+defined a vk plus 1 yet,
+
+00:50:26.510 --> 00:50:32.920 align:middle line:84%
+then this will become
+a strictly longer trail
+
+00:50:32.920 --> 00:50:37.450 align:middle line:84%
+because that edge wasn't
+visited before, but now it is.
+
+00:50:37.450 --> 00:50:40.390 align:middle line:90%
+This is a longer trail--
+
+00:50:40.390 --> 00:50:41.590 align:middle line:90%
+contradiction.
+
+00:50:41.590 --> 00:50:46.360 align:middle line:90%
+
+
+00:50:46.360 --> 00:50:47.400 align:middle line:90%
+What did it contradict?
+
+00:50:47.400 --> 00:50:51.690 align:middle line:84%
+I assumed here that
+v0 does not equal vk.
+
+00:50:51.690 --> 00:50:53.850 align:middle line:84%
+So in fact, we learned
+that v0 equals vk.
+
+00:50:53.850 --> 00:50:55.020 align:middle line:90%
+In other words, T is closed.
+
+00:50:55.020 --> 00:50:56.520 align:middle line:90%
+So I proved this claim.
+
+00:50:56.520 --> 00:50:58.920 align:middle line:84%
+I haven't yet proved
+the whole thing I want.
+
+00:50:58.920 --> 00:51:05.390 align:middle line:84%
+So at this point, I've proved
+that my walk is closed.
+
+00:51:05.390 --> 00:51:08.483 align:middle line:84%
+But I still need to
+prove that it's Euler.
+
+00:51:08.483 --> 00:51:10.150 align:middle line:84%
+Those are the two
+things I need to show.
+
+00:51:10.150 --> 00:51:13.940 align:middle line:90%
+
+
+00:51:13.940 --> 00:51:15.685 align:middle line:90%
+So let's do that next.
+
+00:51:15.685 --> 00:51:36.740 align:middle line:90%
+
+
+00:51:36.740 --> 00:51:41.455 align:middle line:84%
+So second claim-- and this will
+be the last one for this proof.
+
+00:51:41.455 --> 00:51:47.350 align:middle line:90%
+
+
+00:51:47.350 --> 00:51:50.620 align:middle line:90%
+So T visits every edge.
+
+00:51:50.620 --> 00:51:57.670 align:middle line:84%
+I'm going to give it a name, u,
+v, in the edge set of the graph.
+
+00:51:57.670 --> 00:52:02.360 align:middle line:84%
+So this is what I want,
+because, by definition,
+
+00:52:02.360 --> 00:52:05.600 align:middle line:84%
+because I started with a trail,
+it has no repeated edges.
+
+00:52:05.600 --> 00:52:07.222 align:middle line:84%
+So if this is every
+edge at most once,
+
+00:52:07.222 --> 00:52:09.430 align:middle line:84%
+and this is saying that it
+visits every edge at least
+
+00:52:09.430 --> 00:52:12.880 align:middle line:84%
+once, and therefore,
+it, in fact,
+
+00:52:12.880 --> 00:52:14.510 align:middle line:90%
+visits every edge exactly once.
+
+00:52:14.510 --> 00:52:17.230 align:middle line:84%
+And that's the
+definition of Euler.
+
+00:52:17.230 --> 00:52:19.215 align:middle line:90%
+So that's what I need to prove.
+
+00:52:19.215 --> 00:52:23.590 align:middle line:90%
+
+
+00:52:23.590 --> 00:52:27.430 align:middle line:90%
+Again, proof by contradiction--
+
+00:52:27.430 --> 00:52:31.586 align:middle line:84%
+not sure why, but today has
+lots of contradictions in it.
+
+00:52:31.586 --> 00:52:34.750 align:middle line:90%
+It seems to be the easiest way.
+
+00:52:34.750 --> 00:52:40.520 align:middle line:84%
+Suppose not-- this is a
+very concise way to say,
+
+00:52:40.520 --> 00:52:44.210 align:middle line:84%
+suppose that it doesn't
+visit some edge u, v, and e.
+
+00:52:44.210 --> 00:52:46.695 align:middle line:90%
+I'll write it out.
+
+00:52:46.695 --> 00:53:00.570 align:middle line:84%
+It doesn't visit some
+edge u, v, and e.
+
+00:53:00.570 --> 00:53:02.300 align:middle line:84%
+Again, I want to
+get a contradiction
+
+00:53:02.300 --> 00:53:04.950 align:middle line:90%
+to T being the longest trail.
+
+00:53:04.950 --> 00:53:08.840 align:middle line:84%
+So I'm going to somehow
+try to make T longer.
+
+00:53:08.840 --> 00:53:14.250 align:middle line:84%
+So it doesn't visit u, v, but
+it visits some stuff, v0 to vk.
+
+00:53:14.250 --> 00:53:17.390 align:middle line:84%
+So let's try to
+connect them together.
+
+00:53:17.390 --> 00:53:24.840 align:middle line:84%
+So we've got-- here's the
+edge u, v that's not covered.
+
+00:53:24.840 --> 00:53:28.820 align:middle line:90%
+And then over here, we have v0.
+
+00:53:28.820 --> 00:53:32.820 align:middle line:84%
+Some crazy path that can
+revisit vertices and whatever.
+
+00:53:32.820 --> 00:53:33.390 align:middle line:90%
+It's a walk.
+
+00:53:33.390 --> 00:53:33.890 align:middle line:90%
+Sorry.
+
+00:53:33.890 --> 00:53:36.110 align:middle line:84%
+I keep saying path
+when I mean walk.
+
+00:53:36.110 --> 00:53:38.270 align:middle line:84%
+vk-- oh, actually,
+at this point,
+
+00:53:38.270 --> 00:53:40.380 align:middle line:90%
+we know that vk equals v0.
+
+00:53:40.380 --> 00:53:45.370 align:middle line:84%
+So it ends where it
+started, but somehow it
+
+00:53:45.370 --> 00:53:46.400 align:middle line:90%
+doesn't use this edge.
+
+00:53:46.400 --> 00:53:47.690 align:middle line:90%
+It might use these vertices.
+
+00:53:47.690 --> 00:53:49.270 align:middle line:90%
+It might not.
+
+00:53:49.270 --> 00:53:58.120 align:middle line:84%
+But what I'd like
+to do is connect v
+
+00:53:58.120 --> 00:54:02.470 align:middle line:90%
+to v0, which is also vk.
+
+00:54:02.470 --> 00:54:03.615 align:middle line:90%
+Why can I do that?
+
+00:54:03.615 --> 00:54:06.700 align:middle line:90%
+
+
+00:54:06.700 --> 00:54:08.260 align:middle line:90%
+How do I know?
+
+00:54:08.260 --> 00:54:09.700 align:middle line:90%
+I claim there's a walk.
+
+00:54:09.700 --> 00:54:15.070 align:middle line:90%
+
+
+00:54:15.070 --> 00:54:15.710 align:middle line:90%
+Yeah.
+
+00:54:15.710 --> 00:54:17.418 align:middle line:84%
+AUDIENCE: Because the
+graph is connected.
+
+00:54:17.418 --> 00:54:20.680 align:middle line:84%
+ERIK DEMAINE: Because we
+assume the graph is connected.
+
+00:54:20.680 --> 00:54:22.700 align:middle line:90%
+Way up here-- assume connected.
+
+00:54:22.700 --> 00:54:24.755 align:middle line:84%
+That's part of this
+characterization.
+
+00:54:24.755 --> 00:54:26.380 align:middle line:84%
+So when we're going
+from right to left,
+
+00:54:26.380 --> 00:54:28.047 align:middle line:84%
+we get to assume the
+graph is connected.
+
+00:54:28.047 --> 00:54:30.230 align:middle line:84%
+Therefore, all pairs of
+vertices have a walk.
+
+00:54:30.230 --> 00:54:32.360 align:middle line:84%
+So in particular, these
+two vertices have a walk.
+
+00:54:32.360 --> 00:54:34.060 align:middle line:90%
+Now, it's not part of the trail.
+
+00:54:34.060 --> 00:54:35.090 align:middle line:90%
+It's just another walk.
+
+00:54:35.090 --> 00:54:37.570 align:middle line:84%
+So this thing over here
+is T. And this thing
+
+00:54:37.570 --> 00:54:40.330 align:middle line:90%
+I'm going to call w.
+
+00:54:40.330 --> 00:54:42.520 align:middle line:90%
+So let's write down some words.
+
+00:54:42.520 --> 00:54:49.252 align:middle line:90%
+
+
+00:54:49.252 --> 00:54:52.490 align:middle line:90%
+g is connected.
+
+00:54:52.490 --> 00:54:59.180 align:middle line:90%
+So there exists a walk w--
+
+00:54:59.180 --> 00:55:00.743 align:middle line:90%
+or sorry.
+
+00:55:00.743 --> 00:55:01.910 align:middle line:90%
+You'll notice I called it x.
+
+00:55:01.910 --> 00:55:07.942 align:middle line:84%
+I guess x for
+connection from v to vk.
+
+00:55:07.942 --> 00:55:18.440 align:middle line:90%
+
+
+00:55:18.440 --> 00:55:22.730 align:middle line:84%
+I think I really want this to
+be a path, if you don't mind.
+
+00:55:22.730 --> 00:55:25.770 align:middle line:84%
+We know for connectivity's
+sake this is the same thing.
+
+00:55:25.770 --> 00:55:27.800 align:middle line:84%
+If there's a walk,
+there's also a path.
+
+00:55:27.800 --> 00:55:30.110 align:middle line:84%
+Now, let's assume,
+furthermore, this
+
+00:55:30.110 --> 00:55:34.710 align:middle line:84%
+is a path, in particular
+because I want it to be a trail.
+
+00:55:34.710 --> 00:55:38.600 align:middle line:84%
+So I don't want it
+to repeat any edges.
+
+00:55:38.600 --> 00:55:41.150 align:middle line:84%
+And a path won't repeat
+vertices or edges.
+
+00:55:41.150 --> 00:55:42.730 align:middle line:90%
+So that's a little better.
+
+00:55:42.730 --> 00:55:45.110 align:middle line:90%
+It's even better.
+
+00:55:45.110 --> 00:55:48.230 align:middle line:84%
+And I'm going to give
+this path some words.
+
+00:55:48.230 --> 00:55:51.200 align:middle line:84%
+So it starts at v, which
+we're going to call x0.
+
+00:55:51.200 --> 00:56:01.173 align:middle line:84%
+And then it goes to x1, and so
+on to xl, I guess, which is vk.
+
+00:56:01.173 --> 00:56:04.340 align:middle line:90%
+
+
+00:56:04.340 --> 00:56:08.200 align:middle line:90%
+It ends at vk, which is also v0.
+
+00:56:08.200 --> 00:56:13.930 align:middle line:84%
+Now, I claim I can
+make the path longer.
+
+00:56:13.930 --> 00:56:14.540 align:middle line:90%
+Sorry.
+
+00:56:14.540 --> 00:56:18.530 align:middle line:84%
+I can make the original
+trail T longer as follows.
+
+00:56:18.530 --> 00:56:20.150 align:middle line:90%
+I'm going to start at u.
+
+00:56:20.150 --> 00:56:24.130 align:middle line:84%
+I'm going to go to v.
+I'm going to follow x.
+
+00:56:24.130 --> 00:56:27.260 align:middle line:90%
+And now I'm at the loop.
+
+00:56:27.260 --> 00:56:28.960 align:middle line:90%
+And then I want to loop around.
+
+00:56:28.960 --> 00:56:32.500 align:middle line:84%
+That doesn't quite work,
+because, plausibly,
+
+00:56:32.500 --> 00:56:36.730 align:middle line:84%
+some of the vertices
+along x here, maybe
+
+00:56:36.730 --> 00:56:40.720 align:middle line:84%
+there's some vertex here, which
+is actually on this path--
+
+00:56:40.720 --> 00:56:43.950 align:middle line:90%
+sorry-- on the trail T.
+
+00:56:43.950 --> 00:56:45.520 align:middle line:84%
+I want to give
+this vertex a name.
+
+00:56:45.520 --> 00:56:47.200 align:middle line:90%
+So the whole path is called x.
+
+00:56:47.200 --> 00:56:51.990 align:middle line:84%
+This vertex I want
+to call x sub i.
+
+00:56:51.990 --> 00:56:57.960 align:middle line:84%
+So let's let x sub
+i, which is also
+
+00:56:57.960 --> 00:57:08.610 align:middle line:84%
+some v sub j be the
+first vertex of x that's
+
+00:57:08.610 --> 00:57:16.330 align:middle line:90%
+on T. We start at some vertex.
+
+00:57:16.330 --> 00:57:19.390 align:middle line:84%
+It might-- it may be the very
+first vertex v is actually on T.
+
+00:57:19.390 --> 00:57:23.130 align:middle line:84%
+So then x sub i is
+actually x sub 0.
+
+00:57:23.130 --> 00:57:25.050 align:middle line:84%
+But we know eventually
+we get on to T,
+
+00:57:25.050 --> 00:57:27.840 align:middle line:84%
+because the last
+vertex on this path x--
+
+00:57:27.840 --> 00:57:29.440 align:middle line:90%
+this is the path x.
+
+00:57:29.440 --> 00:57:34.920 align:middle line:84%
+We know the last vertex
+is vk, and that's on T.
+
+00:57:34.920 --> 00:57:37.350 align:middle line:84%
+So somewhere along the way--
+it could be the first vertex;
+
+00:57:37.350 --> 00:57:39.808 align:middle line:84%
+it could be the last one; it
+could be anywhere in between--
+
+00:57:39.808 --> 00:57:43.620 align:middle line:84%
+we intersect T. And that's
+going to be my path.
+
+00:57:43.620 --> 00:57:49.470 align:middle line:84%
+So I'm going to start at u, go
+to v, follow x until I reach T,
+
+00:57:49.470 --> 00:57:52.040 align:middle line:90%
+and now T is a loop--
+
+00:57:52.040 --> 00:57:53.880 align:middle line:90%
+is a closed walk.
+
+00:57:53.880 --> 00:58:01.010 align:middle line:84%
+And I'm going to follow
+that walk as it was before.
+
+00:58:01.010 --> 00:58:02.793 align:middle line:84%
+I wish I didn't draw
+this quite so long--
+
+00:58:02.793 --> 00:58:05.870 align:middle line:90%
+
+
+00:58:05.870 --> 00:58:07.295 align:middle line:90%
+exactly what I had before.
+
+00:58:07.295 --> 00:58:10.380 align:middle line:84%
+It visits exactly the
+same edges I had before.
+
+00:58:10.380 --> 00:58:12.390 align:middle line:90%
+We walk, so we can stop here.
+
+00:58:12.390 --> 00:58:18.620 align:middle line:84%
+I claim that this red walk
+that I drew is a longer trail.
+
+00:58:18.620 --> 00:58:19.680 align:middle line:90%
+Why is it longer?
+
+00:58:19.680 --> 00:58:23.520 align:middle line:84%
+Because it has this edge now,
+u, v, which it didn't before.
+
+00:58:23.520 --> 00:58:25.500 align:middle line:84%
+And it has all the
+edges we had before.
+
+00:58:25.500 --> 00:58:27.907 align:middle line:84%
+Maybe it has some more
+here, but it also might not.
+
+00:58:27.907 --> 00:58:29.490 align:middle line:84%
+Maybe these two
+vertices are the same,
+
+00:58:29.490 --> 00:58:31.860 align:middle line:84%
+but we've got at
+least plus 1 here.
+
+00:58:31.860 --> 00:58:34.470 align:middle line:84%
+And we visited all the
+edges we had before.
+
+00:58:34.470 --> 00:58:38.130 align:middle line:84%
+And because of the way we
+chose xi, all of these edges
+
+00:58:38.130 --> 00:58:39.960 align:middle line:90%
+were not used before.
+
+00:58:39.960 --> 00:58:43.860 align:middle line:90%
+So it's still a trail.
+
+00:58:43.860 --> 00:58:46.710 align:middle line:90%
+And so I guess what do I write?
+
+00:58:46.710 --> 00:58:52.740 align:middle line:84%
+u to v, which is
+also known as x0.
+
+00:58:52.740 --> 00:58:55.308 align:middle line:90%
+Then we go to xi.
+
+00:58:55.308 --> 00:58:58.770 align:middle line:90%
+xi equals vj.
+
+00:58:58.770 --> 00:59:05.520 align:middle line:84%
+And then we go to vj plus 1, and
+so on, around T. In the notes,
+
+00:59:05.520 --> 00:59:06.640 align:middle line:90%
+I wrote it explicitly.
+
+00:59:06.640 --> 00:59:09.480 align:middle line:90%
+You go from vj up to vk.
+
+00:59:09.480 --> 00:59:10.560 align:middle line:90%
+And then you loop around.
+
+00:59:10.560 --> 00:59:14.530 align:middle line:84%
+And you go from
+v0 up to vj again.
+
+00:59:14.530 --> 00:59:20.190 align:middle line:84%
+And that will be all
+the edges we had before.
+
+00:59:20.190 --> 00:59:21.883 align:middle line:90%
+So it's longer.
+
+00:59:21.883 --> 00:59:25.080 align:middle line:90%
+
+
+00:59:25.080 --> 00:59:28.320 align:middle line:84%
+And this will be a trail
+because we didn't--
+
+00:59:28.320 --> 00:59:32.460 align:middle line:84%
+all the edges that we added were
+not in the original trail T.
+
+00:59:32.460 --> 00:59:35.080 align:middle line:84%
+And because we assumed a
+path here, there weren't
+
+00:59:35.080 --> 00:59:37.330 align:middle line:90%
+any duplicate edges within x.
+
+00:59:37.330 --> 00:59:39.590 align:middle line:90%
+And so I think we're good.
+
+00:59:39.590 --> 00:59:42.816 align:middle line:90%
+And that proves a contradiction.
+
+00:59:42.816 --> 00:59:45.790 align:middle line:90%
+
+
+00:59:45.790 --> 00:59:49.910 align:middle line:84%
+Because we assumed that T was
+the longest trail, therefore,
+
+00:59:49.910 --> 00:59:53.240 align:middle line:84%
+T actually visits every
+edge in the graph.
+
+00:59:53.240 --> 00:59:55.330 align:middle line:84%
+It also visits every
+vertex at least
+
+00:59:55.330 --> 00:59:57.380 align:middle line:84%
+once, just because the
+graph is connected.
+
+00:59:57.380 --> 01:00:00.050 align:middle line:84%
+If you visit all the edges
+and your graph is connected,
+
+01:00:00.050 --> 01:00:02.540 align:middle line:84%
+then you definitely
+visit all the vertices.
+
+01:00:02.540 --> 01:00:06.290 align:middle line:90%
+So that proves this theorem.
+
+01:00:06.290 --> 01:00:07.630 align:middle line:90%
+Any questions?
+
+01:00:07.630 --> 01:00:09.880 align:middle line:90%
+A lot of details there.
+
+01:00:09.880 --> 01:00:12.255 align:middle line:84%
+That's one of our bigger
+proofs, but it's pretty cool.
+
+01:00:12.255 --> 01:00:18.280 align:middle line:90%
+
+
+01:00:18.280 --> 01:00:22.400 align:middle line:90%
+Let me-- this was Euler tours.
+
+01:00:22.400 --> 01:00:26.620 align:middle line:84%
+You might also wonder
+about Euler walks.
+
+01:00:26.620 --> 01:00:29.680 align:middle line:84%
+So we've now shown in
+particular that this graph
+
+01:00:29.680 --> 01:00:32.540 align:middle line:84%
+with the extra vertex
+here is indeed Eulerian.
+
+01:00:32.540 --> 01:00:36.540 align:middle line:84%
+I mean, I also drew it,
+but we now understand why.
+
+01:00:36.540 --> 01:00:39.180 align:middle line:84%
+When I remove this vertex,
+not all the vertex degrees
+
+01:00:39.180 --> 01:00:40.320 align:middle line:90%
+were even.
+
+01:00:40.320 --> 01:00:42.420 align:middle line:90%
+Two of them were odd.
+
+01:00:42.420 --> 01:00:45.870 align:middle line:84%
+It turns out that's
+the right answer.
+
+01:00:45.870 --> 01:00:50.040 align:middle line:84%
+So corollary, remember,
+means a theorem
+
+01:00:50.040 --> 01:00:52.170 align:middle line:84%
+you can prove from
+the previous theorem,
+
+01:00:52.170 --> 01:00:54.600 align:middle line:90%
+or follows fairly easily.
+
+01:00:54.600 --> 01:01:02.810 align:middle line:84%
+So I claim that a graph
+has an open Euler walk.
+
+01:01:02.810 --> 01:01:06.570 align:middle line:90%
+
+
+01:01:06.570 --> 01:01:08.533 align:middle line:90%
+Open here just means not closed.
+
+01:01:08.533 --> 01:01:11.070 align:middle line:90%
+
+
+01:01:11.070 --> 01:01:13.170 align:middle line:84%
+So we've already
+characterized the situation
+
+01:01:13.170 --> 01:01:14.470 align:middle line:90%
+of closed Euler walks.
+
+01:01:14.470 --> 01:01:15.900 align:middle line:90%
+That's this theorem.
+
+01:01:15.900 --> 01:01:17.430 align:middle line:90%
+That's the Euler tour.
+
+01:01:17.430 --> 01:01:18.847 align:middle line:84%
+So what's left is
+to characterize
+
+01:01:18.847 --> 01:01:21.180 align:middle line:84%
+when there's an open Euler
+walk, where you start and end
+
+01:01:21.180 --> 01:01:22.690 align:middle line:90%
+at different vertices.
+
+01:01:22.690 --> 01:01:25.440 align:middle line:84%
+So let's ignore--
+let's suppose that we
+
+01:01:25.440 --> 01:01:29.050 align:middle line:84%
+don't have a closed Euler walk,
+but we do have an open one.
+
+01:01:29.050 --> 01:01:30.780 align:middle line:84%
+I claim this is
+possible if and only
+
+01:01:30.780 --> 01:01:36.490 align:middle line:84%
+if the graph is connected
+as before, and exactly
+
+01:01:36.490 --> 01:01:39.510 align:middle line:90%
+two vertices have odd degree.
+
+01:01:39.510 --> 01:01:48.820 align:middle line:90%
+
+
+01:01:48.820 --> 01:01:54.460 align:middle line:84%
+Intuitively, those odd degree
+vertices are where you start
+
+01:01:54.460 --> 01:01:55.790 align:middle line:90%
+and where you end.
+
+01:01:55.790 --> 01:01:59.560 align:middle line:84%
+If you look at this
+example with this erased,
+
+01:01:59.560 --> 01:02:02.360 align:middle line:84%
+I started here,
+which had degree 3.
+
+01:02:02.360 --> 01:02:06.400 align:middle line:84%
+I walked around, and I ended
+here, which also had degree 3.
+
+01:02:06.400 --> 01:02:09.760 align:middle line:84%
+So the odd degree is essentially
+to compensate for starting
+
+01:02:09.760 --> 01:02:11.390 align:middle line:90%
+and ending at those vertices.
+
+01:02:11.390 --> 01:02:13.490 align:middle line:84%
+And that turns out
+to be all you can do.
+
+01:02:13.490 --> 01:02:15.800 align:middle line:84%
+So if you have a graph with
+all even degree vertices,
+
+01:02:15.800 --> 01:02:17.360 align:middle line:90%
+then there's an Euler tour.
+
+01:02:17.360 --> 01:02:21.070 align:middle line:84%
+And if you have a graph with
+two odd degree vertices,
+
+01:02:21.070 --> 01:02:22.460 align:middle line:90%
+then there's an Euler walk.
+
+01:02:22.460 --> 01:02:25.700 align:middle line:84%
+If you have more than
+two odd degree vertices,
+
+01:02:25.700 --> 01:02:27.650 align:middle line:90%
+like here, there's neither.
+
+01:02:27.650 --> 01:02:31.373 align:middle line:84%
+What if I have one
+odd degree vertex?
+
+01:02:31.373 --> 01:02:35.220 align:middle line:90%
+
+
+01:02:35.220 --> 01:02:36.000 align:middle line:90%
+Yeah.
+
+01:02:36.000 --> 01:02:36.850 align:middle line:90%
+AUDIENCE: That's impossible.
+
+01:02:36.850 --> 01:02:38.200 align:middle line:90%
+ERIK DEMAINE: That's impossible.
+
+01:02:38.200 --> 01:02:39.325 align:middle line:90%
+What are you talking about?
+
+01:02:39.325 --> 01:02:41.590 align:middle line:84%
+Because the number of odd
+degree vertices is even.
+
+01:02:41.590 --> 01:02:45.180 align:middle line:84%
+I think you probably showed that
+in recitation, or even lecture.
+
+01:02:45.180 --> 01:02:45.870 align:middle line:90%
+I forget.
+
+01:02:45.870 --> 01:02:48.630 align:middle line:84%
+It follows from the
+handshaking lemma from lecture.
+
+01:02:48.630 --> 01:02:51.120 align:middle line:90%
+So those are your options.
+
+01:02:51.120 --> 01:02:52.740 align:middle line:90%
+Cool.
+
+01:02:52.740 --> 01:02:54.640 align:middle line:90%
+Let me sketch a proof of this.
+
+01:02:54.640 --> 01:02:59.353 align:middle line:84%
+And then I want to go to the
+last topic, which is trees.
+
+01:02:59.353 --> 01:03:04.110 align:middle line:90%
+
+
+01:03:04.110 --> 01:03:10.060 align:middle line:84%
+So I want to-- the easy
+direction, as before,
+
+01:03:10.060 --> 01:03:12.490 align:middle line:84%
+if you have an Euler walk,
+you're still connected.
+
+01:03:12.490 --> 01:03:14.460 align:middle line:84%
+And if you do the
+counting right,
+
+01:03:14.460 --> 01:03:19.920 align:middle line:84%
+you can see the number of
+degree 2 vertices should be odd,
+
+01:03:19.920 --> 01:03:23.910 align:middle line:84%
+because it's just
+like this proof.
+
+01:03:23.910 --> 01:03:25.870 align:middle line:90%
+But now it's not symmetric.
+
+01:03:25.870 --> 01:03:28.970 align:middle line:84%
+We can no longer do these things
+modulo k, which was really nice.
+
+01:03:28.970 --> 01:03:31.750 align:middle line:84%
+Every visit looked the
+same, because now there's--
+
+01:03:31.750 --> 01:03:34.030 align:middle line:84%
+v0 and vk are visited
+in a different way
+
+01:03:34.030 --> 01:03:35.600 align:middle line:90%
+from every other vertex.
+
+01:03:35.600 --> 01:03:39.910 align:middle line:84%
+And just like we said before,
+the last vertex, the last visit
+
+01:03:39.910 --> 01:03:42.200 align:middle line:84%
+has only one edge
+coming into it.
+
+01:03:42.200 --> 01:03:43.688 align:middle line:90%
+So that makes this one odd.
+
+01:03:43.688 --> 01:03:45.980 align:middle line:84%
+And the first vertex has only
+one edge going out of it,
+
+01:03:45.980 --> 01:03:47.180 align:middle line:90%
+so it makes that vertex odd.
+
+01:03:47.180 --> 01:03:50.710 align:middle line:90%
+So this is easy.
+
+01:03:50.710 --> 01:03:53.770 align:middle line:84%
+The proof is in the notes
+if you're interested.
+
+01:03:53.770 --> 01:03:57.190 align:middle line:84%
+The interesting part
+is the other direction.
+
+01:03:57.190 --> 01:04:00.033 align:middle line:84%
+I mean, this is
+roughly as before.
+
+01:04:00.033 --> 01:04:03.760 align:middle line:90%
+
+
+01:04:03.760 --> 01:04:05.620 align:middle line:84%
+Let's suppose that
+we have exactly two
+
+01:04:05.620 --> 01:04:06.980 align:middle line:90%
+vertices of odd degree.
+
+01:04:06.980 --> 01:04:09.020 align:middle line:84%
+I want to claim there's
+an open Euler walk.
+
+01:04:09.020 --> 01:04:12.470 align:middle line:84%
+And I want to do it without
+repeating this giant proof.
+
+01:04:12.470 --> 01:04:13.980 align:middle line:90%
+That's a lot of work to--
+
+01:04:13.980 --> 01:04:15.980 align:middle line:84%
+I mean, you could repeat
+it and be more careful.
+
+01:04:15.980 --> 01:04:17.605 align:middle line:84%
+And you can prove
+the Euler walk thing.
+
+01:04:17.605 --> 01:04:20.080 align:middle line:84%
+But in fact, there's a way
+to convert this problem
+
+01:04:20.080 --> 01:04:22.400 align:middle line:90%
+into the Euler tour problem.
+
+01:04:22.400 --> 01:04:23.900 align:middle line:84%
+So I'm going to
+do it by picture.
+
+01:04:23.900 --> 01:04:25.630 align:middle line:90%
+Suppose you have a graph.
+
+01:04:25.630 --> 01:04:32.190 align:middle line:84%
+And you have two vertices, u
+and v, which are odd degree.
+
+01:04:32.190 --> 01:04:35.910 align:middle line:84%
+Maybe they're also just odd in
+general, but their odd degree.
+
+01:04:35.910 --> 01:04:38.950 align:middle line:84%
+And now I'm going
+to modify the graph.
+
+01:04:38.950 --> 01:04:41.770 align:middle line:84%
+I'm going to construct
+a new graph, G prime.
+
+01:04:41.770 --> 01:04:46.030 align:middle line:84%
+So this graph that
+I drew is G here.
+
+01:04:46.030 --> 01:04:53.850 align:middle line:84%
+And in G prime, I'm going to add
+a new vertex x and two edges,
+
+01:04:53.850 --> 01:05:01.440 align:middle line:84%
+from u to x and x to
+v. Why did I do that?
+
+01:05:01.440 --> 01:05:04.680 align:middle line:84%
+Because now all the
+degrees are even.
+
+01:05:04.680 --> 01:05:07.870 align:middle line:90%
+In G, the degree of u was odd.
+
+01:05:07.870 --> 01:05:10.120 align:middle line:90%
+And in G prime, it's one larger.
+
+01:05:10.120 --> 01:05:11.140 align:middle line:90%
+So now it's even.
+
+01:05:11.140 --> 01:05:13.780 align:middle line:90%
+Same for v. And x has degree 2.
+
+01:05:13.780 --> 01:05:15.490 align:middle line:90%
+So now everything's even.
+
+01:05:15.490 --> 01:05:23.040 align:middle line:84%
+So that means G prime
+has an Euler tour
+
+01:05:23.040 --> 01:05:25.330 align:middle line:90%
+by the previous theorem.
+
+01:05:25.330 --> 01:05:27.910 align:middle line:84%
+So that was-- I don't
+have to repeat the proof.
+
+01:05:27.910 --> 01:05:30.310 align:middle line:84%
+I can apply the
+theorem as a whole.
+
+01:05:30.310 --> 01:05:44.470 align:middle line:84%
+And now I want to convert this
+tour into an Euler walk in G.
+
+01:05:44.470 --> 01:05:46.130 align:middle line:90%
+How do I do that?
+
+01:05:46.130 --> 01:05:49.870 align:middle line:90%
+I just erase these two edges.
+
+01:05:49.870 --> 01:05:54.970 align:middle line:84%
+The Euler tour visits every
+edge in G prime exactly once.
+
+01:05:54.970 --> 01:05:56.150 align:middle line:90%
+And it's a loop.
+
+01:05:56.150 --> 01:05:57.760 align:middle line:84%
+So in particular,
+at some point, it
+
+01:05:57.760 --> 01:06:00.080 align:middle line:84%
+crosses over, let's
+say, from u to x.
+
+01:06:00.080 --> 01:06:02.110 align:middle line:84%
+And then it can't go
+back along the same edge,
+
+01:06:02.110 --> 01:06:04.280 align:middle line:90%
+because you can't repeat edges.
+
+01:06:04.280 --> 01:06:06.980 align:middle line:84%
+So then it has to go-- let's
+say it goes from u to x to v,
+
+01:06:06.980 --> 01:06:09.550 align:middle line:84%
+or it might go from v
+to x to u at some point
+
+01:06:09.550 --> 01:06:15.910 align:middle line:90%
+in the closed walk, in the tour.
+
+01:06:15.910 --> 01:06:20.620 align:middle line:84%
+And when it does
+that, I want to--
+
+01:06:20.620 --> 01:06:24.400 align:middle line:84%
+instead of going from
+somewhere to u to x to v,
+
+01:06:24.400 --> 01:06:26.430 align:middle line:84%
+I'm going to start
+at v. And then I'm
+
+01:06:26.430 --> 01:06:31.290 align:middle line:84%
+going to keep going along the
+tour until I get back to u.
+
+01:06:31.290 --> 01:06:34.170 align:middle line:84%
+And that will include
+everything in the tour,
+
+01:06:34.170 --> 01:06:36.910 align:middle line:90%
+except for these two edges.
+
+01:06:36.910 --> 01:06:39.910 align:middle line:84%
+And so that, actually,
+will be an Euler walk in G.
+
+01:06:39.910 --> 01:06:43.470 align:middle line:84%
+So that maybe went a little
+fast there, but hopefully
+
+01:06:43.470 --> 01:06:45.040 align:middle line:90%
+that's fairly intuitive.
+
+01:06:45.040 --> 01:06:48.270 align:middle line:84%
+This is a very powerful
+idea called reduction,
+
+01:06:48.270 --> 01:06:52.115 align:middle line:84%
+where you take your problem
+that you want to solve
+
+01:06:52.115 --> 01:06:53.490 align:middle line:84%
+and you convert
+it into a problem
+
+01:06:53.490 --> 01:06:55.090 align:middle line:84%
+that you already
+know how to solve.
+
+01:06:55.090 --> 01:06:57.940 align:middle line:84%
+So we already-- we just
+solved Euler tours.
+
+01:06:57.940 --> 01:07:00.460 align:middle line:84%
+And now we want to
+solve open Euler walks.
+
+01:07:00.460 --> 01:07:02.700 align:middle line:90%
+And we could do it by adding--
+
+01:07:02.700 --> 01:07:05.895 align:middle line:84%
+augmenting the graph a little
+bit, applying the theorem,
+
+01:07:05.895 --> 01:07:07.770 align:middle line:84%
+and then we need to make
+sure that the result
+
+01:07:07.770 --> 01:07:10.228 align:middle line:84%
+from that theorem is actually
+good enough for what we need.
+
+01:07:10.228 --> 01:07:13.830 align:middle line:84%
+We can convert our Euler
+tour into an Euler walk.
+
+01:07:13.830 --> 01:07:16.660 align:middle line:84%
+But because tours
+are cyclic in nature,
+
+01:07:16.660 --> 01:07:19.530 align:middle line:84%
+you can rotate it to
+start at v and keep going
+
+01:07:19.530 --> 01:07:22.200 align:middle line:84%
+and visit everything
+and end at u.
+
+01:07:22.200 --> 01:07:22.700 align:middle line:90%
+Cool.
+
+01:07:22.700 --> 01:07:24.830 align:middle line:84%
+So that also proves
+that you start and end
+
+01:07:24.830 --> 01:07:29.570 align:middle line:84%
+at the two odd degree
+vertices in G, which is nice.
+
+01:07:29.570 --> 01:07:30.560 align:middle line:90%
+Questions?
+
+01:07:30.560 --> 01:07:35.030 align:middle line:90%
+
+
+01:07:35.030 --> 01:07:36.543 align:middle line:90%
+Let's go back to--
+
+01:07:36.543 --> 01:07:42.770 align:middle line:90%
+
+
+01:07:42.770 --> 01:07:45.920 align:middle line:90%
+back to trees.
+
+01:07:45.920 --> 01:07:49.760 align:middle line:84%
+So we talked about walks,
+paths, cycles, connectivity,
+
+01:07:49.760 --> 01:07:51.440 align:middle line:90%
+Euler things.
+
+01:07:51.440 --> 01:07:53.635 align:middle line:90%
+And the last topic is trees.
+
+01:07:53.635 --> 01:08:02.270 align:middle line:90%
+
+
+01:08:02.270 --> 01:08:03.580 align:middle line:90%
+That's a very sad board.
+
+01:08:03.580 --> 01:08:17.870 align:middle line:90%
+
+
+01:08:17.870 --> 01:08:20.450 align:middle line:84%
+I guess now for something
+completely different.
+
+01:08:20.450 --> 01:08:24.886 align:middle line:84%
+Now we know how to draw graphs
+without raising our pen.
+
+01:08:24.886 --> 01:08:28.140 align:middle line:84%
+I define something called a
+tree, which you've probably
+
+01:08:28.140 --> 01:08:31.560 align:middle line:84%
+heard the word tree many
+times in the past, not just
+
+01:08:31.560 --> 01:08:34.590 align:middle line:84%
+nature trees, but also
+computer science trees
+
+01:08:34.590 --> 01:08:37.920 align:middle line:84%
+are all over the place,
+like your directory tree.
+
+01:08:37.920 --> 01:08:38.604 align:middle line:90%
+I don't know.
+
+01:08:38.604 --> 01:08:39.729 align:middle line:90%
+There are trees everywhere.
+
+01:08:39.729 --> 01:08:41.550 align:middle line:84%
+If you've done any
+data structures,
+
+01:08:41.550 --> 01:08:44.136 align:middle line:84%
+you know about trees,
+tree data structures.
+
+01:08:44.136 --> 01:08:47.399 align:middle line:90%
+
+
+01:08:47.399 --> 01:08:50.090 align:middle line:84%
+So what is the mathematical
+notion of a tree?
+
+01:08:50.090 --> 01:08:57.390 align:middle line:90%
+
+
+01:08:57.390 --> 01:08:58.479 align:middle line:90%
+It's a graph.
+
+01:08:58.479 --> 01:09:02.529 align:middle line:84%
+And again, today, we're using
+simple undirected graphs.
+
+01:09:02.529 --> 01:09:04.439 align:middle line:90%
+And trees always require that.
+
+01:09:04.439 --> 01:09:07.720 align:middle line:84%
+It's a graph that is both
+connected and acyclic.
+
+01:09:07.720 --> 01:09:12.149 align:middle line:90%
+Acyclic just means no cycles.
+
+01:09:12.149 --> 01:09:13.510 align:middle line:90%
+What's a cycle?
+
+01:09:13.510 --> 01:09:14.380 align:middle line:90%
+It's been a while.
+
+01:09:14.380 --> 01:09:18.420 align:middle line:84%
+Remember, a cycle is a closed
+path of positive length.
+
+01:09:18.420 --> 01:09:20.859 align:middle line:84%
+So it doesn't repeat
+any vertices or edges,
+
+01:09:20.859 --> 01:09:25.560 align:middle line:84%
+except that the very first
+vertex equals the last vertex.
+
+01:09:25.560 --> 01:09:29.859 align:middle line:84%
+So if there are no cycles,
+there's no way to do this.
+
+01:09:29.859 --> 01:09:31.300 align:middle line:90%
+Then we call it a tree.
+
+01:09:31.300 --> 01:09:32.803 align:middle line:90%
+And some examples of trees.
+
+01:09:32.803 --> 01:09:37.329 align:middle line:90%
+
+
+01:09:37.329 --> 01:09:37.829 align:middle line:90%
+Sure.
+
+01:09:37.829 --> 01:09:40.470 align:middle line:90%
+
+
+01:09:40.470 --> 01:09:41.735 align:middle line:90%
+Just a path is a tree.
+
+01:09:41.735 --> 01:09:45.660 align:middle line:90%
+
+
+01:09:45.660 --> 01:09:48.720 align:middle line:84%
+This is a special kind
+of tree we call a star--
+
+01:09:48.720 --> 01:09:50.580 align:middle line:84%
+one vertex connected
+to a bunch of things.
+
+01:09:50.580 --> 01:09:52.510 align:middle line:84%
+In general, it looks
+something like this.
+
+01:09:52.510 --> 01:09:54.279 align:middle line:84%
+If you've seen
+computer science trees,
+
+01:09:54.279 --> 01:09:56.670 align:middle line:84%
+this can be a little
+bit different.
+
+01:09:56.670 --> 01:09:58.567 align:middle line:84%
+So the only thing
+we're requiring here
+
+01:09:58.567 --> 01:09:59.650 align:middle line:90%
+is that they're connected.
+
+01:09:59.650 --> 01:10:00.400 align:middle line:90%
+So this is a tree.
+
+01:10:00.400 --> 01:10:01.025 align:middle line:90%
+This is a tree.
+
+01:10:01.025 --> 01:10:02.440 align:middle line:84%
+But together, this
+is not a tree.
+
+01:10:02.440 --> 01:10:04.180 align:middle line:84%
+It's actually what
+we call a forest.
+
+01:10:04.180 --> 01:10:06.480 align:middle line:84%
+This would be a forest
+with three trees in it.
+
+01:10:06.480 --> 01:10:08.795 align:middle line:84%
+Or individually, these
+are each a tree graph.
+
+01:10:08.795 --> 01:10:14.190 align:middle line:90%
+
+
+01:10:14.190 --> 01:10:16.890 align:middle line:84%
+Let's prove some
+properties about trees
+
+01:10:16.890 --> 01:10:18.050 align:middle line:90%
+because they're so useful.
+
+01:10:18.050 --> 01:10:26.040 align:middle line:90%
+
+
+01:10:26.040 --> 01:10:27.260 align:middle line:90%
+Just nice to work with.
+
+01:10:27.260 --> 01:10:30.900 align:middle line:90%
+
+
+01:10:30.900 --> 01:10:32.760 align:middle line:84%
+In particular, there's
+a very useful notion
+
+01:10:32.760 --> 01:10:36.030 align:middle line:90%
+about trees called leaves.
+
+01:10:36.030 --> 01:10:43.690 align:middle line:84%
+You can guess where this
+came from, from real trees.
+
+01:10:43.690 --> 01:10:47.440 align:middle line:90%
+But the idea is very simple.
+
+01:10:47.440 --> 01:10:49.210 align:middle line:84%
+Just a leaf is a
+vertex of degree 1.
+
+01:10:49.210 --> 01:10:52.450 align:middle line:90%
+You can apply this to any graph.
+
+01:10:52.450 --> 01:10:54.040 align:middle line:84%
+Sometimes you have
+vertices degree 1.
+
+01:10:54.040 --> 01:10:55.240 align:middle line:90%
+Sometimes you don't.
+
+01:10:55.240 --> 01:10:58.050 align:middle line:90%
+But trees have leaves.
+
+01:10:58.050 --> 01:11:00.510 align:middle line:90%
+Shocking news.
+
+01:11:00.510 --> 01:11:01.860 align:middle line:90%
+So this is--
+
+01:11:01.860 --> 01:11:04.320 align:middle line:90%
+I'll call it the leaf lemma.
+
+01:11:04.320 --> 01:11:08.170 align:middle line:84%
+It's not quite true that
+all trees have leaves.
+
+01:11:08.170 --> 01:11:13.170 align:middle line:84%
+They have to start growing
+for a little while first.
+
+01:11:13.170 --> 01:11:17.290 align:middle line:84%
+And in mathematics,
+this is every tree of--
+
+01:11:17.290 --> 01:11:20.240 align:middle line:90%
+
+
+01:11:20.240 --> 01:11:22.790 align:middle line:90%
+I guess width is better--
+
+01:11:22.790 --> 01:11:34.040 align:middle line:84%
+at least two vertices
+has at least two leaves.
+
+01:11:34.040 --> 01:11:36.360 align:middle line:90%
+So as long as your graph--
+
+01:11:36.360 --> 01:11:38.822 align:middle line:84%
+as long as your tree
+is not this graph--
+
+01:11:38.822 --> 01:11:40.530 align:middle line:84%
+maybe I'll add it to
+my list of examples.
+
+01:11:40.530 --> 01:11:41.970 align:middle line:90%
+These were all trees.
+
+01:11:41.970 --> 01:11:47.420 align:middle line:84%
+Also, single vertex is a tree,
+but it doesn't have any edges.
+
+01:11:47.420 --> 01:11:50.910 align:middle line:84%
+And it has degree 0 vertex,
+no degree 1 vertices.
+
+01:11:50.910 --> 01:11:53.250 align:middle line:84%
+So other than this
+exceptional case,
+
+01:11:53.250 --> 01:11:56.060 align:middle line:84%
+every other tree has
+at least two leaves.
+
+01:11:56.060 --> 01:11:57.660 align:middle line:84%
+Where are the leaves
+in these graphs?
+
+01:11:57.660 --> 01:11:58.830 align:middle line:90%
+Here's a leaf.
+
+01:11:58.830 --> 01:11:59.657 align:middle line:90%
+Here's a leaf.
+
+01:11:59.657 --> 01:12:00.240 align:middle line:90%
+Here's a leaf.
+
+01:12:00.240 --> 01:12:01.760 align:middle line:90%
+Here's a leaf.
+
+01:12:01.760 --> 01:12:03.208 align:middle line:90%
+This one just has two.
+
+01:12:03.208 --> 01:12:04.750 align:middle line:84%
+This one has a whole
+bunch of leaves.
+
+01:12:04.750 --> 01:12:07.910 align:middle line:90%
+
+
+01:12:07.910 --> 01:12:16.230 align:middle line:84%
+Let's sketch a
+proof of this lemma,
+
+01:12:16.230 --> 01:12:19.690 align:middle line:90%
+which is a familiar technique.
+
+01:12:19.690 --> 01:12:22.840 align:middle line:90%
+Take a longest something.
+
+01:12:22.840 --> 01:12:25.380 align:middle line:84%
+In this case, the
+something is path.
+
+01:12:25.380 --> 01:12:27.930 align:middle line:84%
+Remember, a path is a walk that
+doesn't repeat any vertices
+
+01:12:27.930 --> 01:12:29.020 align:middle line:90%
+or edges.
+
+01:12:29.020 --> 01:12:31.510 align:middle line:84%
+So I want to take a longest
+path in one of these graphs.
+
+01:12:31.510 --> 01:12:36.240 align:middle line:84%
+For example, if
+I take this, this
+
+01:12:36.240 --> 01:12:40.740 align:middle line:84%
+turns out to be a longest
+path in this graph, length 4.
+
+01:12:40.740 --> 01:12:43.950 align:middle line:84%
+I believe you cannot find
+a path of length 5 here.
+
+01:12:43.950 --> 01:12:47.250 align:middle line:84%
+You can find walks that are
+arbitrarily long, but paths,
+
+01:12:47.250 --> 01:12:49.750 align:middle line:84%
+you can only find length 4
+in this particular graph.
+
+01:12:49.750 --> 01:12:54.600 align:middle line:84%
+I claim that the first vertex
+and the last vertex in that path
+
+01:12:54.600 --> 01:12:58.050 align:middle line:90%
+must be leaves.
+
+01:12:58.050 --> 01:13:01.583 align:middle line:90%
+So ends must be leaves.
+
+01:13:01.583 --> 01:13:05.190 align:middle line:90%
+
+
+01:13:05.190 --> 01:13:06.433 align:middle line:90%
+And they must be distinct.
+
+01:13:06.433 --> 01:13:10.560 align:middle line:90%
+
+
+01:13:10.560 --> 01:13:12.130 align:middle line:90%
+Why are they distinct?
+
+01:13:12.130 --> 01:13:14.020 align:middle line:90%
+Well, this is a path.
+
+01:13:14.020 --> 01:13:15.660 align:middle line:84%
+And a path can't
+repeat vertices.
+
+01:13:15.660 --> 01:13:18.260 align:middle line:84%
+So unless the path
+has length zero,
+
+01:13:18.260 --> 01:13:21.660 align:middle line:84%
+the start vertex and the
+end vertex are different.
+
+01:13:21.660 --> 01:13:24.748 align:middle line:84%
+It's not length zero, basically,
+because we're not in this case.
+
+01:13:24.748 --> 01:13:26.040 align:middle line:90%
+In this case, there's no edges.
+
+01:13:26.040 --> 01:13:27.180 align:middle line:90%
+You can't follow anything.
+
+01:13:27.180 --> 01:13:28.530 align:middle line:84%
+But as long as there's
+at least one edge,
+
+01:13:28.530 --> 01:13:30.738 align:middle line:84%
+then you know there is a
+path of length at least one.
+
+01:13:30.738 --> 01:13:34.145 align:middle line:84%
+And so the start vertex and the
+end vertex will be different.
+
+01:13:34.145 --> 01:13:36.020 align:middle line:84%
+And furthermore, I claim
+they must be leaves.
+
+01:13:36.020 --> 01:13:38.340 align:middle line:90%
+Basically, if this wasn't--
+
+01:13:38.340 --> 01:13:41.330 align:middle line:84%
+if this vertex didn't have
+degree 1, so there wasn't just
+
+01:13:41.330 --> 01:13:44.870 align:middle line:84%
+this one way to exit, there'd
+be another edge incident
+
+01:13:44.870 --> 01:13:45.600 align:middle line:90%
+to that vertex.
+
+01:13:45.600 --> 01:13:50.210 align:middle line:84%
+And then you could have made a
+longer path, so a contradiction.
+
+01:13:50.210 --> 01:13:51.840 align:middle line:90%
+I'm going to call it there.
+
+01:13:51.840 --> 01:13:53.763 align:middle line:84%
+And you can read the
+notes for more details.
+
+01:13:53.763 --> 01:13:57.560 align:middle line:90%
+
+
+01:13:57.560 --> 01:14:00.050 align:middle line:84%
+And instead, I'm
+going to tell you what
+
+01:14:00.050 --> 01:14:01.260 align:middle line:90%
+you can do with these leaves.
+
+01:14:01.260 --> 01:14:02.093 align:middle line:90%
+Why are they useful?
+
+01:14:02.093 --> 01:14:06.260 align:middle line:90%
+
+
+01:14:06.260 --> 01:14:10.630 align:middle line:84%
+Every tree except the one
+vertex tree has a leaf.
+
+01:14:10.630 --> 01:14:13.240 align:middle line:90%
+
+
+01:14:13.240 --> 01:14:15.730 align:middle line:84%
+And if you've ever
+taken care of a plant,
+
+01:14:15.730 --> 01:14:18.010 align:middle line:84%
+sometimes it's useful
+to prune the plant.
+
+01:14:18.010 --> 01:14:19.540 align:middle line:90%
+It grows better.
+
+01:14:19.540 --> 01:14:26.380 align:middle line:84%
+In our case, pruning is
+a very useful operation
+
+01:14:26.380 --> 01:14:29.950 align:middle line:90%
+that lets us use induction.
+
+01:14:29.950 --> 01:14:33.680 align:middle line:84%
+We've seen some
+inductions for graphs.
+
+01:14:33.680 --> 01:14:36.610 align:middle line:84%
+And trees are really nice
+to induct on, because they
+
+01:14:36.610 --> 01:14:38.373 align:middle line:90%
+have leaves to trim.
+
+01:14:38.373 --> 01:14:41.140 align:middle line:90%
+
+
+01:14:41.140 --> 01:14:50.410 align:middle line:84%
+So this is a theorem
+for any leaf l in a tree
+
+01:14:50.410 --> 01:14:55.360 align:middle line:90%
+T, T minus l is a tree.
+
+01:14:55.360 --> 01:14:57.950 align:middle line:90%
+
+
+01:14:57.950 --> 01:14:59.660 align:middle line:90%
+What is T minus l?
+
+01:14:59.660 --> 01:15:12.110 align:middle line:84%
+This is the graph induced
+by all the vertices minus l.
+
+01:15:12.110 --> 01:15:13.610 align:middle line:84%
+So in other words,
+it's the graph
+
+01:15:13.610 --> 01:15:16.190 align:middle line:84%
+you get if you take the
+tree and you clip off
+
+01:15:16.190 --> 01:15:20.013 align:middle line:90%
+the leaf and its incident edge.
+
+01:15:20.013 --> 01:15:21.180 align:middle line:90%
+That's the negative version.
+
+01:15:21.180 --> 01:15:25.730 align:middle line:84%
+The positive version is you
+say, I keep everything except l.
+
+01:15:25.730 --> 01:15:28.340 align:middle line:84%
+And I take all the edges
+among those vertices
+
+01:15:28.340 --> 01:15:29.300 align:middle line:90%
+that do not include l.
+
+01:15:29.300 --> 01:15:31.500 align:middle line:90%
+That will end up having--
+
+01:15:31.500 --> 01:15:33.860 align:middle line:90%
+let's call this T prime.
+
+01:15:33.860 --> 01:15:36.440 align:middle line:84%
+The number of
+edges in T prime is
+
+01:15:36.440 --> 01:15:40.560 align:middle line:84%
+going to be 1 less than
+the number of edges in T.
+
+01:15:40.560 --> 01:15:42.320 align:middle line:84%
+And the number of
+vertices is also
+
+01:15:42.320 --> 01:15:47.340 align:middle line:84%
+going to be one less, because we
+removed one vertex and one edge.
+
+01:15:47.340 --> 01:15:48.710 align:middle line:90%
+So here's our tree.
+
+01:15:48.710 --> 01:15:51.320 align:middle line:90%
+Here's a leaf.
+
+01:15:51.320 --> 01:15:57.300 align:middle line:84%
+This whole picture is T. And
+this inner picture is T prime.
+
+01:15:57.300 --> 01:15:59.240 align:middle line:90%
+This is a leaf l.
+
+01:15:59.240 --> 01:16:04.745 align:middle line:84%
+So T prime or T minus l
+is this smaller thing.
+
+01:16:04.745 --> 01:16:06.120 align:middle line:84%
+A very useful
+thing-- in general,
+
+01:16:06.120 --> 01:16:07.670 align:middle line:84%
+if you remove a
+vertex from a graph,
+
+01:16:07.670 --> 01:16:10.910 align:middle line:84%
+you also remove all
+of its incident edges.
+
+01:16:10.910 --> 01:16:14.830 align:middle line:84%
+So this is a thing which
+is pretty easy to prove,
+
+01:16:14.830 --> 01:16:17.110 align:middle line:84%
+because what we're
+saying is suppose that T
+
+01:16:17.110 --> 01:16:19.570 align:middle line:90%
+is connected and acyclic.
+
+01:16:19.570 --> 01:16:22.400 align:middle line:84%
+The claim is that T prime is
+also connected in acyclic.
+
+01:16:22.400 --> 01:16:25.910 align:middle line:84%
+And you can just show
+that that's true.
+
+01:16:25.910 --> 01:16:28.300 align:middle line:90%
+It's not very hard.
+
+01:16:28.300 --> 01:16:30.640 align:middle line:90%
+Again, see the notes.
+
+01:16:30.640 --> 01:16:32.710 align:middle line:84%
+And what this enables
+to do, together,
+
+01:16:32.710 --> 01:16:35.050 align:middle line:84%
+the leaf lemma and
+this tree-pruning lemma
+
+01:16:35.050 --> 01:16:38.680 align:middle line:84%
+let you do induction over
+trees in a really nice way.
+
+01:16:38.680 --> 01:16:43.030 align:middle line:84%
+So let's argue-- let's see an
+example of that with something
+
+01:16:43.030 --> 01:16:46.390 align:middle line:90%
+called the size of the tree.
+
+01:16:46.390 --> 01:17:00.100 align:middle line:84%
+Any tree with n vertices
+has n minus 1 edges always.
+
+01:17:00.100 --> 01:17:03.820 align:middle line:84%
+If you look at these
+examples, the one vertex tree
+
+01:17:03.820 --> 01:17:05.570 align:middle line:90%
+has zero edges.
+
+01:17:05.570 --> 01:17:09.060 align:middle line:84%
+The four vertex path
+has three edges.
+
+01:17:09.060 --> 01:17:12.960 align:middle line:84%
+The six vertex star
+has five edges.
+
+01:17:12.960 --> 01:17:16.340 align:middle line:84%
+This thing has one fewer
+edge than vertices.
+
+01:17:16.340 --> 01:17:17.728 align:middle line:90%
+I won't count.
+
+01:17:17.728 --> 01:17:20.270 align:middle line:84%
+I guess there are three kinds
+of mathematicians in the world.
+
+01:17:20.270 --> 01:17:23.940 align:middle line:84%
+Those who can count,
+and those who can't.
+
+01:17:23.940 --> 01:17:26.440 align:middle line:90%
+So I'm the latter kind.
+
+01:17:26.440 --> 01:17:29.120 align:middle line:90%
+
+
+01:17:29.120 --> 01:17:31.250 align:middle line:84%
+So finally, we get
+to an induction.
+
+01:17:31.250 --> 01:17:32.940 align:middle line:84%
+We haven't done
+induction all day.
+
+01:17:32.940 --> 01:17:34.040 align:middle line:90%
+It's terrible.
+
+01:17:34.040 --> 01:17:37.010 align:middle line:90%
+Finally, we can do induction.
+
+01:17:37.010 --> 01:17:39.293 align:middle line:84%
+So we're going to--
+remember, whenever
+
+01:17:39.293 --> 01:17:41.210 align:middle line:84%
+you do an induction over
+graphs, you're really
+
+01:17:41.210 --> 01:17:44.592 align:middle line:84%
+just doing regular induction or
+strong induction over numbers.
+
+01:17:44.592 --> 01:17:46.550 align:middle line:84%
+And so in this case,
+we're going to induct over
+
+01:17:46.550 --> 01:17:48.360 align:middle line:84%
+the number of
+vertices in the graph.
+
+01:17:48.360 --> 01:17:51.830 align:middle line:84%
+So our induction hypothesis
+is this, that for a number n,
+
+01:17:51.830 --> 01:17:57.500 align:middle line:84%
+P of n is the statement that
+any tree with n vertices
+
+01:17:57.500 --> 01:18:00.110 align:middle line:90%
+has exactly n minus 1 edges.
+
+01:18:00.110 --> 01:18:01.390 align:middle line:90%
+I should write exactly here.
+
+01:18:01.390 --> 01:18:04.472 align:middle line:90%
+
+
+01:18:04.472 --> 01:18:06.180 align:middle line:84%
+And we're going to
+prove it by induction.
+
+01:18:06.180 --> 01:18:09.070 align:middle line:90%
+So we probably need a base case.
+
+01:18:09.070 --> 01:18:12.430 align:middle line:84%
+What is the smallest
+possible thing that n can be?
+
+01:18:12.430 --> 01:18:13.520 align:middle line:90%
+1.
+
+01:18:13.520 --> 01:18:16.610 align:middle line:84%
+Remember, we forbid
+zero vertex graphs.
+
+01:18:16.610 --> 01:18:18.830 align:middle line:84%
+You have to have at least
+one vertex to be a graph.
+
+01:18:18.830 --> 01:18:22.930 align:middle line:84%
+So in n equals 1, that means
+there's only one graph with n
+
+01:18:22.930 --> 01:18:25.400 align:middle line:90%
+equals 1, and it has zero edges.
+
+01:18:25.400 --> 01:18:28.390 align:middle line:90%
+Great.
+
+01:18:28.390 --> 01:18:31.255 align:middle line:84%
+Well, my vertex looks
+a lot like my number 0.
+
+01:18:31.255 --> 01:18:31.755 align:middle line:90%
+Sorry.
+
+01:18:31.755 --> 01:18:34.400 align:middle line:90%
+
+
+01:18:34.400 --> 01:18:36.350 align:middle line:90%
+So let's do the induction step.
+
+01:18:36.350 --> 01:18:38.770 align:middle line:84%
+Now we're going to use all
+of these beautiful lemmas
+
+01:18:38.770 --> 01:18:42.100 align:middle line:90%
+that we have about leaves.
+
+01:18:42.100 --> 01:18:46.010 align:middle line:84%
+So let's suppose that
+n is bigger than 1.
+
+01:18:46.010 --> 01:18:48.400 align:middle line:84%
+In other words, n
+is at least two.
+
+01:18:48.400 --> 01:18:50.540 align:middle line:84%
+And therefore, the
+leaf lemma applies.
+
+01:18:50.540 --> 01:18:52.190 align:middle line:84%
+It says if you have
+n at least two,
+
+01:18:52.190 --> 01:18:54.110 align:middle line:90%
+you have at least two leaves.
+
+01:18:54.110 --> 01:18:56.350 align:middle line:84%
+I actually only
+need one of them.
+
+01:18:56.350 --> 01:19:05.150 align:middle line:84%
+But let's say, by leaf
+lemma, there exists a leaf.
+
+01:19:05.150 --> 01:19:07.700 align:middle line:90%
+And let's call it l.
+
+01:19:07.700 --> 01:19:12.080 align:middle line:84%
+Now, I'm going to apply
+this tree pruning lemma that
+
+01:19:12.080 --> 01:19:13.550 align:middle line:90%
+says now I have a leaf.
+
+01:19:13.550 --> 01:19:15.590 align:middle line:90%
+I can remove it.
+
+01:19:15.590 --> 01:19:16.590 align:middle line:90%
+Clip it.
+
+01:19:16.590 --> 01:19:23.370 align:middle line:84%
+Take a new graph, T prime, which
+is everything in T except l.
+
+01:19:23.370 --> 01:19:34.315 align:middle line:84%
+So by tree pruning T prime,
+which is T minus l, is a tree.
+
+01:19:34.315 --> 01:19:37.430 align:middle line:90%
+
+
+01:19:37.430 --> 01:19:38.700 align:middle line:90%
+Not only is it a tree.
+
+01:19:38.700 --> 01:19:40.030 align:middle line:90%
+It's a smaller tree.
+
+01:19:40.030 --> 01:19:42.920 align:middle line:90%
+
+
+01:19:42.920 --> 01:19:46.203 align:middle line:84%
+It has exactly n
+minus 1 vertices.
+
+01:19:46.203 --> 01:19:49.580 align:middle line:90%
+
+
+01:19:49.580 --> 01:19:55.280 align:middle line:84%
+So I can apply induction,
+because in their induction step,
+
+01:19:55.280 --> 01:19:58.570 align:middle line:84%
+we get to assume that this
+property is true for all smaller
+
+01:19:58.570 --> 01:19:59.070 align:middle line:90%
+n.
+
+01:19:59.070 --> 01:20:00.120 align:middle line:90%
+That's strong induction.
+
+01:20:00.120 --> 01:20:01.860 align:middle line:84%
+In particular, it's
+true for n minus 1.
+
+01:20:01.860 --> 01:20:03.970 align:middle line:90%
+That's weak induction.
+
+01:20:03.970 --> 01:20:08.320 align:middle line:84%
+So by the induction
+hypothesis, we
+
+01:20:08.320 --> 01:20:16.090 align:middle line:84%
+know that T prime has one
+fewer edge than vertex,
+
+01:20:16.090 --> 01:20:19.100 align:middle line:90%
+and it has n minus 1 vertices.
+
+01:20:19.100 --> 01:20:21.973 align:middle line:90%
+And so it has n minus 2 edges.
+
+01:20:21.973 --> 01:20:25.480 align:middle line:90%
+
+
+01:20:25.480 --> 01:20:29.300 align:middle line:84%
+And T prime was everything
+in T except for one edge,
+
+01:20:29.300 --> 01:20:32.200 align:middle line:90%
+that measly edge connected to l.
+
+01:20:32.200 --> 01:20:39.495 align:middle line:84%
+So T has one more
+edge than T prime.
+
+01:20:39.495 --> 01:20:44.500 align:middle line:90%
+
+
+01:20:44.500 --> 01:20:48.740 align:middle line:90%
+So it has n minus 1 edges.
+
+01:20:48.740 --> 01:20:51.890 align:middle line:84%
+And that's what
+we needed to show.
+
+01:20:51.890 --> 01:20:54.920 align:middle line:84%
+This is very nice for
+inducting over trees.
+
+01:20:54.920 --> 01:20:57.470 align:middle line:84%
+The idea is if you have a tree,
+you're going to do induction.
+
+01:20:57.470 --> 01:20:59.990 align:middle line:84%
+You should take a
+leaf and prune it.
+
+01:20:59.990 --> 01:21:01.877 align:middle line:84%
+Usually, that's
+what you want to do.
+
+01:21:01.877 --> 01:21:03.960 align:middle line:84%
+Sometimes it's useful to
+know there's two of them.
+
+01:21:03.960 --> 01:21:05.730 align:middle line:84%
+You could take any
+vertex and remove it.
+
+01:21:05.730 --> 01:21:07.890 align:middle line:84%
+But if I took a vertex
+in the middle of my tree,
+
+01:21:07.890 --> 01:21:09.810 align:middle line:84%
+it might disconnect
+into multiple trees.
+
+01:21:09.810 --> 01:21:11.540 align:middle line:84%
+And then I have to
+do a lot more work.
+
+01:21:11.540 --> 01:21:13.350 align:middle line:84%
+By choosing a leaf,
+when I remove it,
+
+01:21:13.350 --> 01:21:14.910 align:middle line:90%
+I guarantee I'm still a tree.
+
+01:21:14.910 --> 01:21:16.800 align:middle line:84%
+And so I can still
+apply induction.
+
+01:21:16.800 --> 01:21:19.010 align:middle line:90%
+It's very helpful.
+
+01:21:19.010 --> 01:21:22.670 align:middle line:84%
+That's lots of fun
+things about trees.
+
+01:21:22.670 --> 01:21:24.780 align:middle line:84%
+It turns out the
+reverse is true.
+
+01:21:24.780 --> 01:21:28.830 align:middle line:84%
+If you have any connected graph
+with one fewer edge than vertex,
+
+01:21:28.830 --> 01:21:31.130 align:middle line:90%
+it must be a tree.
+
+01:21:31.130 --> 01:21:34.800 align:middle line:84%
+Trees also have unique paths
+between any two vertices.
+
+01:21:34.800 --> 01:21:37.920 align:middle line:84%
+And any graph that has unique
+paths between any two vertices
+
+01:21:37.920 --> 01:21:40.100 align:middle line:90%
+is a tree.
+
+01:21:40.100 --> 01:21:47.180 align:middle line:84%
+Other fun things, like they're
+the minimal connected graphs
+
+01:21:47.180 --> 01:21:49.260 align:middle line:90%
+or maximal acyclic graphs--
+
+01:21:49.260 --> 01:21:51.290 align:middle line:84%
+lots of fun properties,
+which you can find
+
+01:21:51.290 --> 01:21:53.100 align:middle line:90%
+in the notes or the textbook.
+
+01:21:53.100 --> 01:21:54.000 align:middle line:90%
+That's it for trees.
+
+01:21:54.000 --> 01:21:56.740 align:middle line:84%
+Next time we'll do
+directed graphs.
+
+01:21:56.740 --> 01:22:02.000 align:middle line:90%

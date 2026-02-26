@@ -1,0 +1,4511 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:00.500 align:middle line:90%
+
+
+00:00:00.500 --> 00:00:02.000 align:middle line:90%
+[SQUEAKING]
+
+00:00:02.000 --> 00:00:04.500 align:middle line:90%
+[RUSTLING]
+
+00:00:04.500 --> 00:00:05.500 align:middle line:90%
+[CLICKING]
+
+00:00:05.500 --> 00:00:11.000 align:middle line:90%
+
+
+00:00:11.000 --> 00:00:12.600 align:middle line:84%
+BRYNMOR CHAPMAN:
+Hello, everybody.
+
+00:00:12.600 --> 00:00:14.360 align:middle line:90%
+Can people hear me in the back?
+
+00:00:14.360 --> 00:00:15.120 align:middle line:90%
+Is it working?
+
+00:00:15.120 --> 00:00:16.100 align:middle line:90%
+Cool.
+
+00:00:16.100 --> 00:00:22.100 align:middle line:84%
+OK, so I believe that last
+time, we started counting,
+
+00:00:22.100 --> 00:00:26.030 align:middle line:84%
+and you saw the sum
+rule in particular.
+
+00:00:26.030 --> 00:00:28.710 align:middle line:84%
+So let's take a look
+at a quick example.
+
+00:00:28.710 --> 00:00:31.910 align:middle line:84%
+So I've got a very standard
+deck of playing cards here,
+
+00:00:31.910 --> 00:00:33.740 align:middle line:90%
+as you can see.
+
+00:00:33.740 --> 00:00:36.316 align:middle line:84%
+How many kings and
+queens are there?
+
+00:00:36.316 --> 00:00:37.310 align:middle line:90%
+AUDIENCE: Eight.
+
+00:00:37.310 --> 00:00:38.268 align:middle line:90%
+BRYNMOR CHAPMAN: Eight.
+
+00:00:38.268 --> 00:00:39.485 align:middle line:90%
+Why is that?
+
+00:00:39.485 --> 00:00:41.360 align:middle line:84%
+AUDIENCE: There's four
+kings and four queens.
+
+00:00:41.360 --> 00:00:43.040 align:middle line:84%
+BRYNMOR CHAPMAN:
+Yeah, so the answer
+
+00:00:43.040 --> 00:00:46.290 align:middle line:84%
+was that there are four
+suits for each rank.
+
+00:00:46.290 --> 00:00:49.380 align:middle line:84%
+We've got, therefore,
+four kings, four queens.
+
+00:00:49.380 --> 00:00:51.390 align:middle line:84%
+Nothing is both a
+king and a queen.
+
+00:00:51.390 --> 00:00:52.980 align:middle line:84%
+So you can just
+add them together.
+
+00:00:52.980 --> 00:00:57.380 align:middle line:84%
+You've got eight cards that
+are either kings or queens.
+
+00:00:57.380 --> 00:00:59.550 align:middle line:84%
+What if the sets
+are not disjoint?
+
+00:00:59.550 --> 00:01:01.910 align:middle line:84%
+So what if I instead
+wanted to count
+
+00:01:01.910 --> 00:01:05.019 align:middle line:84%
+the number of cards that are
+either hearts or face cards?
+
+00:01:05.019 --> 00:01:08.000 align:middle line:90%
+
+
+00:01:08.000 --> 00:01:10.790 align:middle line:90%
+So then what do I do?
+
+00:01:10.790 --> 00:01:14.610 align:middle line:90%
+So I've got 12 face cards here.
+
+00:01:14.610 --> 00:01:16.860 align:middle line:84%
+My hands are a little bit
+too small for playing cards,
+
+00:01:16.860 --> 00:01:19.962 align:middle line:84%
+but hopefully, you
+can roughly see.
+
+00:01:19.962 --> 00:01:21.235 align:middle line:90%
+How many hearts are there?
+
+00:01:21.235 --> 00:01:24.950 align:middle line:90%
+
+
+00:01:24.950 --> 00:01:31.430 align:middle line:84%
+Yeah, 13 hearts, so 13 hearts
+in one hand, 12 face cards
+
+00:01:31.430 --> 00:01:33.513 align:middle line:90%
+in the other, so 25?
+
+00:01:33.513 --> 00:01:37.460 align:middle line:90%
+
+
+00:01:37.460 --> 00:01:38.180 align:middle line:90%
+No?
+
+00:01:38.180 --> 00:01:38.965 align:middle line:90%
+What's gone wrong?
+
+00:01:38.965 --> 00:01:43.747 align:middle line:90%
+
+
+00:01:43.747 --> 00:01:45.330 align:middle line:84%
+Can anybody tell me
+what's gone wrong?
+
+00:01:45.330 --> 00:01:46.160 align:middle line:90%
+Yeah.
+
+00:01:46.160 --> 00:01:48.850 align:middle line:84%
+AUDIENCE: You've got some cards
+that are both hearts and face
+
+00:01:48.850 --> 00:01:49.350 align:middle line:90%
+cards.
+
+00:01:49.350 --> 00:01:51.725 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah, I've
+got two kings of hearts here,
+
+00:01:51.725 --> 00:01:53.660 align:middle line:90%
+so I'm cheating.
+
+00:01:53.660 --> 00:01:56.960 align:middle line:90%
+So what do?
+
+00:01:56.960 --> 00:01:59.250 align:middle line:84%
+AUDIENCE: Well, since
+you're double-counting
+
+00:01:59.250 --> 00:02:02.020 align:middle line:84%
+the cards that are
+both hearts and faces,
+
+00:02:02.020 --> 00:02:03.938 align:middle line:84%
+you can subtract
+off one of them.
+
+00:02:03.938 --> 00:02:05.230 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah, exactly.
+
+00:02:05.230 --> 00:02:07.650 align:middle line:84%
+So the answer was, I've
+got three cards that
+
+00:02:07.650 --> 00:02:09.699 align:middle line:90%
+are both hearts and face cards.
+
+00:02:09.699 --> 00:02:12.400 align:middle line:84%
+So these are the three cards
+that I've counted twice.
+
+00:02:12.400 --> 00:02:15.990 align:middle line:84%
+I've got two each of
+these three cards.
+
+00:02:15.990 --> 00:02:20.612 align:middle line:84%
+So if I just discard one
+copy, then I'll be fine.
+
+00:02:20.612 --> 00:02:24.090 align:middle line:84%
+So I subtract off everything
+that's in the intersection.
+
+00:02:24.090 --> 00:02:27.910 align:middle line:84%
+So I had 25 before,
+subtract off those three,
+
+00:02:27.910 --> 00:02:30.750 align:middle line:84%
+and I end up with 22 that
+are either hearts or--
+
+00:02:30.750 --> 00:02:32.110 align:middle line:90%
+well, these cards are too big.
+
+00:02:32.110 --> 00:02:34.440 align:middle line:84%
+Maybe I should have actually
+brought standard cards.
+
+00:02:34.440 --> 00:02:38.410 align:middle line:84%
+I've got 22 cards that are
+either hearts or face cards.
+
+00:02:38.410 --> 00:02:42.090 align:middle line:90%
+Does that make sense to people?
+
+00:02:42.090 --> 00:02:45.870 align:middle line:84%
+So this is what we call the
+inclusion-exclusion rule
+
+00:02:45.870 --> 00:02:51.030 align:middle line:84%
+or the principle of
+inclusion and exclusion,
+
+00:02:51.030 --> 00:02:55.590 align:middle line:84%
+so often abbreviated as
+the PIE for Principle
+
+00:02:55.590 --> 00:02:58.450 align:middle line:90%
+of Inclusion-Exclusion.
+
+00:02:58.450 --> 00:03:06.534 align:middle line:84%
+So if I have 2 sets A and B and
+I want to compute their union,
+
+00:03:06.534 --> 00:03:10.340 align:middle line:84%
+the size of this union-- ew,
+well, this chalk is terrible.
+
+00:03:10.340 --> 00:03:15.200 align:middle line:84%
+Sorry-- the size
+of their union is
+
+00:03:15.200 --> 00:03:21.260 align:middle line:84%
+going to be the sizes of the
+individual sets minus the size
+
+00:03:21.260 --> 00:03:22.500 align:middle line:90%
+of the intersection.
+
+00:03:22.500 --> 00:03:26.825 align:middle line:90%
+
+
+00:03:26.825 --> 00:03:29.472 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:03:29.472 --> 00:03:33.914 align:middle line:84%
+It may be a little bit easier
+to see if we draw a picture.
+
+00:03:33.914 --> 00:03:40.770 align:middle line:84%
+So hopefully, people remember
+Venn diagrams from grade school.
+
+00:03:40.770 --> 00:03:41.960 align:middle line:90%
+Yeah?
+
+00:03:41.960 --> 00:03:42.750 align:middle line:90%
+Maybe?
+
+00:03:42.750 --> 00:03:43.250 align:middle line:90%
+No?
+
+00:03:43.250 --> 00:03:46.710 align:middle line:84%
+Well, this is a Venn diagram, a
+couple of overlapping circles.
+
+00:03:46.710 --> 00:03:49.220 align:middle line:84%
+So maybe we've got
+hearts on one side,
+
+00:03:49.220 --> 00:03:52.290 align:middle line:84%
+and we've got
+faces on the other.
+
+00:03:52.290 --> 00:03:54.540 align:middle line:84%
+But then we've got some
+things that are in the middle.
+
+00:03:54.540 --> 00:03:57.560 align:middle line:84%
+So this can be our set
+A. This can be our set B.
+
+00:03:57.560 --> 00:04:01.840 align:middle line:84%
+And here, we've got king
+of hearts, queen of hearts,
+
+00:04:01.840 --> 00:04:05.605 align:middle line:90%
+and jack of hearts.
+
+00:04:05.605 --> 00:04:08.420 align:middle line:84%
+So if we want to compute
+the size of the union,
+
+00:04:08.420 --> 00:04:11.770 align:middle line:84%
+we're going to take the things
+that are only on the heart side,
+
+00:04:11.770 --> 00:04:13.520 align:middle line:84%
+the things that are
+only on the face side,
+
+00:04:13.520 --> 00:04:15.562 align:middle line:84%
+and then the things that
+are in the intersection,
+
+00:04:15.562 --> 00:04:17.382 align:middle line:90%
+we only want to count them once.
+
+00:04:17.382 --> 00:04:19.515 align:middle line:84%
+But that's counted
+in both of A and B.
+
+00:04:19.515 --> 00:04:21.640 align:middle line:84%
+So we're going to add
+together the sizes of A and B
+
+00:04:21.640 --> 00:04:24.100 align:middle line:84%
+and then subtract out
+the middle Does that
+
+00:04:24.100 --> 00:04:27.710 align:middle line:90%
+make sense to everybody?
+
+00:04:27.710 --> 00:04:31.030 align:middle line:84%
+So what happens if
+we have three sets?
+
+00:04:31.030 --> 00:04:31.725 align:middle line:90%
+Any ideas?
+
+00:04:31.725 --> 00:04:41.230 align:middle line:90%
+
+
+00:04:41.230 --> 00:04:43.090 align:middle line:84%
+Well, can we do
+something similar?
+
+00:04:43.090 --> 00:04:45.975 align:middle line:84%
+So let's draw a three-way
+Venn diagram this time.
+
+00:04:45.975 --> 00:04:49.490 align:middle line:90%
+
+
+00:04:49.490 --> 00:04:54.180 align:middle line:84%
+So we've got A here,
+B here, C here.
+
+00:04:54.180 --> 00:05:01.020 align:middle line:84%
+So is it true that
+A union B union C
+
+00:05:01.020 --> 00:05:07.140 align:middle line:84%
+is equal to the sum
+of the individual sets
+
+00:05:07.140 --> 00:05:09.430 align:middle line:84%
+minus the pairwise
+intersections?
+
+00:05:09.430 --> 00:05:16.470 align:middle line:90%
+
+
+00:05:16.470 --> 00:05:25.890 align:middle line:84%
+Oops, that should be
+a B. Is this true?
+
+00:05:25.890 --> 00:05:27.740 align:middle line:90%
+Yeah.
+
+00:05:27.740 --> 00:05:41.010 align:middle line:84%
+AUDIENCE: [INAUDIBLE] A and B,
+A and C, B and C [INAUDIBLE]
+
+00:05:41.010 --> 00:05:41.680 align:middle line:90%
+overlap.
+
+00:05:41.680 --> 00:05:43.780 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:05:43.780 --> 00:05:47.460 align:middle line:84%
+So your classmate's observation
+was that these intersections
+
+00:05:47.460 --> 00:05:50.284 align:middle line:90%
+themselves overlap.
+
+00:05:50.284 --> 00:05:55.780 align:middle line:84%
+So if we think about how many
+times we've counted each item--
+
+00:05:55.780 --> 00:05:57.752 align:middle line:84%
+everything here, we've
+only counted once.
+
+00:05:57.752 --> 00:05:59.460 align:middle line:84%
+Everything here, we've
+only counted once.
+
+00:05:59.460 --> 00:06:01.200 align:middle line:84%
+Everything here, we've
+only counted once.
+
+00:06:01.200 --> 00:06:03.710 align:middle line:90%
+That's fairly easy.
+
+00:06:03.710 --> 00:06:09.112 align:middle line:84%
+What about the things in these
+kind of weirdly shaped segments?
+
+00:06:09.112 --> 00:06:12.530 align:middle line:84%
+So those appear in two
+of the individual sets
+
+00:06:12.530 --> 00:06:15.420 align:middle line:84%
+and in one of the
+pairwise intersections.
+
+00:06:15.420 --> 00:06:18.990 align:middle line:84%
+So we've also
+counted these ones.
+
+00:06:18.990 --> 00:06:21.662 align:middle line:84%
+But now we've got a
+problem in the middle.
+
+00:06:21.662 --> 00:06:24.020 align:middle line:84%
+How many times have
+we counted this?
+
+00:06:24.020 --> 00:06:27.590 align:middle line:84%
+Well, we've counted it once
+for A, once for B, once for C,
+
+00:06:27.590 --> 00:06:29.300 align:middle line:84%
+and then we've
+subtracted it once
+
+00:06:29.300 --> 00:06:33.690 align:middle line:84%
+each for A intersect B, A
+intersect C, and B intersect C.
+
+00:06:33.690 --> 00:06:35.780 align:middle line:84%
+So we've counted this
+zero times in total.
+
+00:06:35.780 --> 00:06:38.450 align:middle line:90%
+
+
+00:06:38.450 --> 00:06:41.090 align:middle line:84%
+So what we actually
+want is to add back
+
+00:06:41.090 --> 00:06:48.662 align:middle line:84%
+in the three-way intersection,
+and that gives us
+
+00:06:48.662 --> 00:06:49.495 align:middle line:90%
+the correct formula.
+
+00:06:49.495 --> 00:06:52.144 align:middle line:90%
+
+
+00:06:52.144 --> 00:06:55.250 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:06:55.250 --> 00:06:57.720 align:middle line:90%
+Yeah?
+
+00:06:57.720 --> 00:06:59.950 align:middle line:84%
+So let's take a look
+at an example then.
+
+00:06:59.950 --> 00:07:06.500 align:middle line:90%
+
+
+00:07:06.500 --> 00:07:17.740 align:middle line:84%
+How many numbers k in the range
+from 1 to n are coprime with n?
+
+00:07:17.740 --> 00:07:32.420 align:middle line:90%
+
+
+00:07:32.420 --> 00:07:35.078 align:middle line:90%
+How could we figure this out?
+
+00:07:35.078 --> 00:07:37.370 align:middle line:84%
+And those of you who already
+know the totient function,
+
+00:07:37.370 --> 00:07:38.245 align:middle line:90%
+don't invoke that.
+
+00:07:38.245 --> 00:07:45.050 align:middle line:90%
+
+
+00:07:45.050 --> 00:07:47.810 align:middle line:84%
+How could we use the principle
+of inclusion-exclusion
+
+00:07:47.810 --> 00:07:48.900 align:middle line:90%
+to compute this?
+
+00:07:48.900 --> 00:07:49.665 align:middle line:90%
+Any ideas?
+
+00:07:49.665 --> 00:07:53.920 align:middle line:90%
+
+
+00:07:53.920 --> 00:07:55.040 align:middle line:90%
+Tentative hands?
+
+00:07:55.040 --> 00:07:57.340 align:middle line:90%
+Maybe?
+
+00:07:57.340 --> 00:07:58.310 align:middle line:90%
+Yeah.
+
+00:07:58.310 --> 00:08:03.130 align:middle line:84%
+AUDIENCE: I guess you can do
+the prime factorization of n
+
+00:08:03.130 --> 00:08:07.030 align:middle line:84%
+and then check what
+numbers within--
+
+00:08:07.030 --> 00:08:11.740 align:middle line:84%
+well, I don't know the
+specifics but basically check
+
+00:08:11.740 --> 00:08:17.200 align:middle line:84%
+which numbers are multiples
+of a specific factor
+
+00:08:17.200 --> 00:08:20.590 align:middle line:84%
+and then count which
+are the ones that
+
+00:08:20.590 --> 00:08:22.460 align:middle line:90%
+share factors between them.
+
+00:08:22.460 --> 00:08:25.480 align:middle line:90%
+
+
+00:08:25.480 --> 00:08:29.500 align:middle line:84%
+BRYNMOR CHAPMAN: So the idea
+was look at which numbers
+
+00:08:29.500 --> 00:08:31.720 align:middle line:90%
+share a prime factor with n.
+
+00:08:31.720 --> 00:08:34.450 align:middle line:84%
+So for simplicity,
+let's assume for now
+
+00:08:34.450 --> 00:08:38.019 align:middle line:84%
+that n is the product of, say,
+three primes, p, q, and r.
+
+00:08:38.019 --> 00:08:42.070 align:middle line:90%
+
+
+00:08:42.070 --> 00:08:45.310 align:middle line:84%
+So then how could we
+figure out how many
+
+00:08:45.310 --> 00:08:46.620 align:middle line:90%
+things share a factor of p?
+
+00:08:46.620 --> 00:08:56.340 align:middle line:90%
+
+
+00:08:56.340 --> 00:08:57.810 align:middle line:90%
+Yeah.
+
+00:08:57.810 --> 00:09:00.373 align:middle line:84%
+AUDIENCE: The quotient
+when you divide n by p.
+
+00:09:00.373 --> 00:09:01.290 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:09:01.290 --> 00:09:06.850 align:middle line:84%
+So there are going to be n/p
+that share a factor of p.
+
+00:09:06.850 --> 00:09:10.530 align:middle line:90%
+So let's say that--
+
+00:09:10.530 --> 00:09:16.680 align:middle line:84%
+let's call this set A sub
+p, the set of numbers--
+
+00:09:16.680 --> 00:09:20.430 align:middle line:84%
+the subset of these numbers
+that share a factor of p.
+
+00:09:20.430 --> 00:09:22.620 align:middle line:84%
+So there are going
+to be n/p of those.
+
+00:09:22.620 --> 00:09:26.580 align:middle line:84%
+What about the things
+that share a factor of q?
+
+00:09:26.580 --> 00:09:28.680 align:middle line:90%
+Same thing.
+
+00:09:28.680 --> 00:09:31.110 align:middle line:84%
+So similarly, we
+can define A sub q
+
+00:09:31.110 --> 00:09:34.890 align:middle line:84%
+to be the set of numbers
+that share a factor of q.
+
+00:09:34.890 --> 00:09:38.460 align:middle line:84%
+And then we've got this,
+and similarly, A sub r
+
+00:09:38.460 --> 00:09:41.015 align:middle line:84%
+is going to be the set of
+things that share a factor of r.
+
+00:09:41.015 --> 00:09:49.610 align:middle line:90%
+
+
+00:09:49.610 --> 00:09:51.425 align:middle line:84%
+Now, what exactly are
+we trying to compute?
+
+00:09:51.425 --> 00:09:58.020 align:middle line:90%
+
+
+00:09:58.020 --> 00:10:00.660 align:middle line:84%
+What we really want
+is the complement
+
+00:10:00.660 --> 00:10:03.330 align:middle line:84%
+of the union of
+these three sets.
+
+00:10:03.330 --> 00:10:16.200 align:middle line:84%
+So we're trying to compute the
+size of n minus Ap union Aq
+
+00:10:16.200 --> 00:10:17.970 align:middle line:90%
+union Ar.
+
+00:10:17.970 --> 00:10:31.390 align:middle line:90%
+
+
+00:10:31.390 --> 00:10:34.050 align:middle line:84%
+So now we can use
+inclusion-exclusion.
+
+00:10:34.050 --> 00:10:37.150 align:middle line:84%
+We're trying to compute
+the union of this set.
+
+00:10:37.150 --> 00:10:41.550 align:middle line:84%
+That's going to be the sum of
+the sizes of the individual sets
+
+00:10:41.550 --> 00:10:43.320 align:middle line:90%
+minus the--
+
+00:10:43.320 --> 00:10:47.710 align:middle line:84%
+oh, I did this the wrong
+way around, didn't I?
+
+00:10:47.710 --> 00:10:48.440 align:middle line:90%
+Oh, no, I didn't.
+
+00:10:48.440 --> 00:10:50.320 align:middle line:90%
+That was the right one.
+
+00:10:50.320 --> 00:10:53.230 align:middle line:84%
+So the sum of the
+individual sizes
+
+00:10:53.230 --> 00:10:57.250 align:middle line:84%
+minus the sum of the pairwise
+intersections plus the sum
+
+00:10:57.250 --> 00:10:59.410 align:middle line:84%
+of the three-way
+intersection-- so
+
+00:10:59.410 --> 00:11:01.550 align:middle line:84%
+what are the sizes of
+these intersections?
+
+00:11:01.550 --> 00:11:20.680 align:middle line:90%
+
+
+00:11:20.680 --> 00:11:22.905 align:middle line:84%
+What's the size of the
+intersection of Ap and Aq?
+
+00:11:22.905 --> 00:11:29.620 align:middle line:90%
+
+
+00:11:29.620 --> 00:11:30.400 align:middle line:90%
+Yeah.
+
+00:11:30.400 --> 00:11:31.480 align:middle line:90%
+AUDIENCE: n over pq.
+
+00:11:31.480 --> 00:11:32.800 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:11:32.800 --> 00:11:34.690 align:middle line:90%
+So the answer was n over pq.
+
+00:11:34.690 --> 00:11:37.640 align:middle line:90%
+
+
+00:11:37.640 --> 00:11:39.830 align:middle line:90%
+So p and q are distinct primes.
+
+00:11:39.830 --> 00:11:43.990 align:middle line:84%
+If something shares both the
+factor of p and a factor of q,
+
+00:11:43.990 --> 00:11:46.840 align:middle line:90%
+it has to be a multiple of pq.
+
+00:11:46.840 --> 00:11:49.650 align:middle line:90%
+So there are n over pq of those.
+
+00:11:49.650 --> 00:11:58.950 align:middle line:84%
+Similarly, we have n
+over pr and n over qr.
+
+00:11:58.950 --> 00:12:01.320 align:middle line:84%
+What about the
+three-way intersection?
+
+00:12:01.320 --> 00:12:06.010 align:middle line:84%
+How many things share a
+factor of p, q, and r?
+
+00:12:06.010 --> 00:12:06.510 align:middle line:90%
+Yeah.
+
+00:12:06.510 --> 00:12:07.510 align:middle line:90%
+AUDIENCE: That's just n.
+
+00:12:07.510 --> 00:12:10.590 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah, it's
+just n itself, so minus 1.
+
+00:12:10.590 --> 00:12:19.470 align:middle line:90%
+
+
+00:12:19.470 --> 00:12:23.010 align:middle line:84%
+And if you do some
+messy algebra,
+
+00:12:23.010 --> 00:12:32.160 align:middle line:84%
+this turns out to p minus
+1, q minus 1, r minus 1,
+
+00:12:32.160 --> 00:12:41.824 align:middle line:84%
+which is also equal to n times
+1 minus 1/p, 1 minus 1/q,
+
+00:12:41.824 --> 00:12:43.130 align:middle line:90%
+1 minus 1/r.
+
+00:12:43.130 --> 00:12:48.957 align:middle line:90%
+
+
+00:12:48.957 --> 00:12:50.540 align:middle line:84%
+So hopefully, it's
+not too hard to see
+
+00:12:50.540 --> 00:12:55.310 align:middle line:84%
+how this could generalize to get
+the more general form of Euler's
+
+00:12:55.310 --> 00:12:57.860 align:middle line:90%
+totient.
+
+00:12:57.860 --> 00:13:02.390 align:middle line:84%
+Does this application
+make sense to people?
+
+00:13:02.390 --> 00:13:03.240 align:middle line:90%
+Any questions?
+
+00:13:03.240 --> 00:13:04.224 align:middle line:90%
+Yeah.
+
+00:13:04.224 --> 00:13:06.132 align:middle line:90%
+AUDIENCE: [INAUDIBLE]?
+
+00:13:06.132 --> 00:13:08.090 align:middle line:84%
+BRYNMOR CHAPMAN: Oh,
+that's just the assumption
+
+00:13:08.090 --> 00:13:11.440 align:middle line:84%
+that we made for
+the sake of example.
+
+00:13:11.440 --> 00:13:25.510 align:middle line:90%
+
+
+00:13:25.510 --> 00:13:30.300 align:middle line:84%
+So that's inclusion-exclusion
+with two or three sets,
+
+00:13:30.300 --> 00:13:33.510 align:middle line:84%
+but more generally, you
+can continue the pattern.
+
+00:13:33.510 --> 00:13:42.220 align:middle line:84%
+So if you have, say, n sets A1,
+A2, all the way up to A sub n
+
+00:13:42.220 --> 00:13:56.070 align:middle line:84%
+and you want to figure out
+the union of all of these,
+
+00:13:56.070 --> 00:14:00.460 align:middle line:84%
+so as we did before, we're going
+to add up the individual sizes
+
+00:14:00.460 --> 00:14:02.910 align:middle line:90%
+of the individual sets.
+
+00:14:02.910 --> 00:14:09.430 align:middle line:90%
+
+
+00:14:09.430 --> 00:14:12.106 align:middle line:84%
+Then we're going to subtract
+off the pairwise intersections.
+
+00:14:12.106 --> 00:14:22.081 align:middle line:90%
+
+
+00:14:22.081 --> 00:14:36.420 align:middle line:84%
+Then we're going to add in
+the three-way intersections,
+
+00:14:36.420 --> 00:14:40.210 align:middle line:84%
+and we're just going to keep
+on going until eventually we
+
+00:14:40.210 --> 00:14:45.080 align:middle line:84%
+get to plus or minus the size
+of the n-way intersection,
+
+00:14:45.080 --> 00:14:50.640 align:middle line:84%
+so A1 cap A2 cap all
+the way to A sub n.
+
+00:14:50.640 --> 00:14:54.490 align:middle line:90%
+
+
+00:14:54.490 --> 00:15:00.100 align:middle line:84%
+And the sign on that last term
+will depend on the parity of n.
+
+00:15:00.100 --> 00:15:01.425 align:middle line:90%
+Does that make sense to people?
+
+00:15:01.425 --> 00:15:11.290 align:middle line:90%
+
+
+00:15:11.290 --> 00:15:16.630 align:middle line:84%
+So perhaps a more formal
+way of expressing this
+
+00:15:16.630 --> 00:15:17.900 align:middle line:90%
+is the following.
+
+00:15:17.900 --> 00:15:21.220 align:middle line:90%
+
+
+00:15:21.220 --> 00:15:27.280 align:middle line:84%
+So suppose we have some set
+u, which we're going to say
+
+00:15:27.280 --> 00:15:32.710 align:middle line:90%
+is a union of n sets.
+
+00:15:32.710 --> 00:15:36.160 align:middle line:90%
+
+
+00:15:36.160 --> 00:15:40.534 align:middle line:84%
+So this is going to be
+our universe of discourse.
+
+00:15:40.534 --> 00:15:43.550 align:middle line:84%
+And so this means
+that by convention,
+
+00:15:43.550 --> 00:15:48.565 align:middle line:84%
+if we intersect no sets,
+this is just going to be u.
+
+00:15:48.565 --> 00:15:52.040 align:middle line:90%
+
+
+00:15:52.040 --> 00:15:55.520 align:middle line:84%
+So just like if we union no
+sets, we start with nothing
+
+00:15:55.520 --> 00:15:57.990 align:middle line:84%
+and then start unioning
+in more things,
+
+00:15:57.990 --> 00:15:59.527 align:middle line:84%
+and we should get
+a union of sets.
+
+00:15:59.527 --> 00:16:01.860 align:middle line:84%
+If we start with everything
+and then start intersecting,
+
+00:16:01.860 --> 00:16:03.300 align:middle line:84%
+we should get an
+intersection of sets.
+
+00:16:03.300 --> 00:16:05.190 align:middle line:84%
+So that's where this
+convention comes from.
+
+00:16:05.190 --> 00:16:06.562 align:middle line:90%
+Yeah.
+
+00:16:06.562 --> 00:16:09.830 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:16:09.830 --> 00:16:12.270 align:middle line:84%
+BRYNMOR CHAPMAN:
+Oh, this notation?
+
+00:16:12.270 --> 00:16:13.260 align:middle line:90%
+This notation?
+
+00:16:13.260 --> 00:16:13.790 align:middle line:90%
+Both?
+
+00:16:13.790 --> 00:16:14.570 align:middle line:90%
+AUDIENCE: Both [INAUDIBLE].
+
+00:16:14.570 --> 00:16:15.570 align:middle line:90%
+BRYNMOR CHAPMAN: Oh, OK.
+
+00:16:15.570 --> 00:16:18.870 align:middle line:84%
+So this is kind of
+like the big sigma.
+
+00:16:18.870 --> 00:16:23.840 align:middle line:84%
+So just how this represents
+like an n-way addition,
+
+00:16:23.840 --> 00:16:27.410 align:middle line:84%
+this represents an n-way
+union, and this represents
+
+00:16:27.410 --> 00:16:29.090 align:middle line:90%
+an n-way intersection.
+
+00:16:29.090 --> 00:16:31.700 align:middle line:90%
+
+
+00:16:31.700 --> 00:16:36.740 align:middle line:84%
+So we've got-- this is saying
+we've got a union of n sets,
+
+00:16:36.740 --> 00:16:43.980 align:middle line:84%
+like A1 union A2
+union A3 union An.
+
+00:16:43.980 --> 00:16:48.698 align:middle line:90%
+
+
+00:16:48.698 --> 00:16:52.180 align:middle line:84%
+And this is saying we've got
+an intersection of n sets,
+
+00:16:52.180 --> 00:16:53.920 align:middle line:90%
+but n is zero.
+
+00:16:53.920 --> 00:16:57.420 align:middle line:84%
+So by convention, we just take
+that to be the entire universe.
+
+00:16:57.420 --> 00:16:59.918 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:16:59.918 --> 00:17:00.876 align:middle line:90%
+BRYNMOR CHAPMAN: Sorry?
+
+00:17:00.876 --> 00:17:03.680 align:middle line:84%
+AUDIENCE: What was the
+[INAUDIBLE] intersection
+
+00:17:03.680 --> 00:17:04.855 align:middle line:90%
+[INAUDIBLE]?
+
+00:17:04.855 --> 00:17:06.230 align:middle line:84%
+BRYNMOR CHAPMAN:
+The question is,
+
+00:17:06.230 --> 00:17:08.480 align:middle line:84%
+why are we setting both the
+union and the intersection
+
+00:17:08.480 --> 00:17:10.150 align:middle line:90%
+to be u?
+
+00:17:10.150 --> 00:17:12.020 align:middle line:84%
+This is just how
+we're defining u.
+
+00:17:12.020 --> 00:17:14.119 align:middle line:90%
+This is a convention.
+
+00:17:14.119 --> 00:17:19.990 align:middle line:84%
+So if you intersect no sets,
+you should get everything,
+
+00:17:19.990 --> 00:17:22.819 align:middle line:84%
+just like if you multiply no
+numbers, you should get 1.
+
+00:17:22.819 --> 00:17:25.760 align:middle line:90%
+It's kind of similar to that.
+
+00:17:25.760 --> 00:17:29.150 align:middle line:84%
+You start with everything, and
+then you intersect one set.
+
+00:17:29.150 --> 00:17:33.530 align:middle line:84%
+You should get the set
+that you intersected in.
+
+00:17:33.530 --> 00:17:35.260 align:middle line:90%
+So this is just a convention.
+
+00:17:35.260 --> 00:17:39.220 align:middle line:84%
+If you prefer, you can
+just write in u itself.
+
+00:17:39.220 --> 00:17:41.460 align:middle line:84%
+And what I'm about to write
+that might make it easier
+
+00:17:41.460 --> 00:17:42.310 align:middle line:90%
+to understand.
+
+00:17:42.310 --> 00:17:43.145 align:middle line:90%
+Sorry about that.
+
+00:17:43.145 --> 00:17:51.513 align:middle line:90%
+
+
+00:17:51.513 --> 00:17:59.640 align:middle line:84%
+So the theorem is
+that if you look
+
+00:17:59.640 --> 00:18:04.560 align:middle line:84%
+at all subsets of
+the numbers up to n
+
+00:18:04.560 --> 00:18:19.611 align:middle line:84%
+and you take the i-way
+intersection of these Ai's
+
+00:18:19.611 --> 00:18:24.907 align:middle line:84%
+and then multiply it by
+minus 1 to the size of i,
+
+00:18:24.907 --> 00:18:25.865 align:middle line:90%
+this should give you 0.
+
+00:18:25.865 --> 00:18:32.040 align:middle line:90%
+
+
+00:18:32.040 --> 00:18:36.020 align:middle line:84%
+So now, if you want to
+think about this in the case
+
+00:18:36.020 --> 00:18:40.030 align:middle line:84%
+of the two-way
+inclusion-exclusion here--
+
+00:18:40.030 --> 00:18:42.750 align:middle line:90%
+
+
+00:18:42.750 --> 00:18:46.160 align:middle line:90%
+so this is saying, 0 equals--
+
+00:18:46.160 --> 00:18:50.450 align:middle line:84%
+we move the union over
+to the right-hand side,
+
+00:18:50.450 --> 00:18:52.100 align:middle line:84%
+or I guess we're
+moving everything over
+
+00:18:52.100 --> 00:18:56.060 align:middle line:84%
+to the left-hand side
+based on what I've written.
+
+00:18:56.060 --> 00:18:57.200 align:middle line:90%
+Yeah.
+
+00:18:57.200 --> 00:19:02.765 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:19:02.765 --> 00:19:04.640 align:middle line:84%
+BRYNMOR CHAPMAN: So this
+formula is basically
+
+00:19:04.640 --> 00:19:05.940 align:middle line:90%
+what we were doing here.
+
+00:19:05.940 --> 00:19:10.190 align:middle line:84%
+We're taking i-way
+intersections,
+
+00:19:10.190 --> 00:19:15.360 align:middle line:84%
+and we're flipping the sign
+on successive sizes of i.
+
+00:19:15.360 --> 00:19:17.930 align:middle line:84%
+And we're just kind of
+moving this union over
+
+00:19:17.930 --> 00:19:19.945 align:middle line:84%
+to the other side,
+so we get zero.
+
+00:19:19.945 --> 00:19:33.190 align:middle line:90%
+
+
+00:19:33.190 --> 00:19:35.820 align:middle line:84%
+So if that formula
+is too much, you
+
+00:19:35.820 --> 00:19:37.370 align:middle line:84%
+can think about the
+previous formula.
+
+00:19:37.370 --> 00:19:38.600 align:middle line:90%
+But yeah.
+
+00:19:38.600 --> 00:19:43.600 align:middle line:84%
+AUDIENCE: [INAUDIBLE] i so
+big I would [INAUDIBLE].
+
+00:19:43.600 --> 00:19:47.080 align:middle line:90%
+
+
+00:19:47.080 --> 00:19:48.900 align:middle line:84%
+BRYNMOR CHAPMAN: So
+the question was,
+
+00:19:48.900 --> 00:19:50.900 align:middle line:84%
+what is the difference
+between big and little i?
+
+00:19:50.900 --> 00:19:53.750 align:middle line:90%
+So big I is a set of indices.
+
+00:19:53.750 --> 00:19:56.370 align:middle line:84%
+Little i is an individual
+index in that set.
+
+00:19:56.370 --> 00:19:59.956 align:middle line:90%
+
+
+00:19:59.956 --> 00:20:08.800 align:middle line:84%
+So we're summing over all
+subsets of the numbers up to n,
+
+00:20:08.800 --> 00:20:11.140 align:middle line:84%
+and then for each
+of those subsets,
+
+00:20:11.140 --> 00:20:16.300 align:middle line:84%
+we're taking the intersection
+of the relevant Ai's.
+
+00:20:16.300 --> 00:20:21.070 align:middle line:84%
+So over here, we've got A
+is just-- it corresponds
+
+00:20:21.070 --> 00:20:23.782 align:middle line:90%
+to the subset just 1.
+
+00:20:23.782 --> 00:20:26.680 align:middle line:90%
+B corresponds to the subset 2.
+
+00:20:26.680 --> 00:20:30.910 align:middle line:84%
+A intersect B corresponds
+to the subset 1 comma 2,
+
+00:20:30.910 --> 00:20:34.690 align:middle line:84%
+and A union B corresponds
+to the empty subset.
+
+00:20:34.690 --> 00:20:38.650 align:middle line:84%
+So these are all of the subsets
+of the integers 1 and 2.
+
+00:20:38.650 --> 00:20:40.210 align:middle line:90%
+Does that make sense?
+
+00:20:40.210 --> 00:20:41.680 align:middle line:90%
+Question?
+
+00:20:41.680 --> 00:20:45.290 align:middle line:84%
+AUDIENCE: Can you use I
+[INAUDIBLE] for negative 1?
+
+00:20:45.290 --> 00:20:47.320 align:middle line:90%
+Why is it absolute value?
+
+00:20:47.320 --> 00:20:50.530 align:middle line:84%
+BRYNMOR CHAPMAN: Size of
+I, because I is a set.
+
+00:20:50.530 --> 00:20:53.570 align:middle line:84%
+Yeah, so the question is, why
+do we have absolute value here?
+
+00:20:53.570 --> 00:20:55.250 align:middle line:90%
+That's the cardinality.
+
+00:20:55.250 --> 00:21:11.080 align:middle line:90%
+
+
+00:21:11.080 --> 00:21:12.570 align:middle line:90%
+So how could we prove this?
+
+00:21:12.570 --> 00:21:17.680 align:middle line:90%
+
+
+00:21:17.680 --> 00:21:20.600 align:middle line:90%
+Well, let's look at some x.
+
+00:21:20.600 --> 00:21:25.670 align:middle line:84%
+So say that we've got some
+element x of our universe.
+
+00:21:25.670 --> 00:21:28.410 align:middle line:90%
+
+
+00:21:28.410 --> 00:21:34.675 align:middle line:84%
+How many times do we count
+x on this left-hand side?
+
+00:21:34.675 --> 00:21:36.425 align:middle line:84%
+How many of these terms
+does it appear in?
+
+00:21:36.425 --> 00:21:44.220 align:middle line:90%
+
+
+00:21:44.220 --> 00:21:48.030 align:middle line:84%
+Well, it's going to be in all
+of the terms where x is in all
+
+00:21:48.030 --> 00:21:50.280 align:middle line:90%
+of these Ai's.
+
+00:21:50.280 --> 00:22:14.070 align:middle line:84%
+So if we say I sub x is the
+set of indices with x in Ai,
+
+00:22:14.070 --> 00:22:18.270 align:middle line:84%
+it's going to be
+in the I sub x set.
+
+00:22:18.270 --> 00:22:28.880 align:middle line:84%
+It's also going to be in
+every subset of I sub X.
+
+00:22:28.880 --> 00:22:29.910 align:middle line:90%
+Does that make sense?
+
+00:22:29.910 --> 00:22:31.970 align:middle line:90%
+Do people see why?
+
+00:22:31.970 --> 00:22:38.900 align:middle line:84%
+If x is in sets 1 and 2, it's
+going to be in the intersection
+
+00:22:38.900 --> 00:22:40.800 align:middle line:90%
+where we've got I is 1, 2.
+
+00:22:40.800 --> 00:22:43.460 align:middle line:84%
+It's also going to be in the
+intersection where I is 1
+
+00:22:43.460 --> 00:22:45.575 align:middle line:84%
+or where I is 2 or
+where I is empty.
+
+00:22:45.575 --> 00:22:52.383 align:middle line:90%
+
+
+00:22:52.383 --> 00:22:54.800 align:middle line:84%
+But now, how much does it
+contribute to the left-hand side
+
+00:22:54.800 --> 00:22:55.550 align:middle line:90%
+for each of these?
+
+00:22:55.550 --> 00:22:59.540 align:middle line:90%
+
+
+00:22:59.540 --> 00:23:03.290 align:middle line:84%
+Well, how many subsets of
+I sub x have even size,
+
+00:23:03.290 --> 00:23:04.420 align:middle line:90%
+and how many have odd size?
+
+00:23:04.420 --> 00:23:10.005 align:middle line:90%
+
+
+00:23:10.005 --> 00:23:10.505 align:middle line:90%
+Yeah.
+
+00:23:10.505 --> 00:23:11.130 align:middle line:90%
+AUDIENCE: Half.
+
+00:23:11.130 --> 00:23:14.120 align:middle line:84%
+BRYNMOR CHAPMAN:
+Yeah, it's half each.
+
+00:23:14.120 --> 00:23:17.930 align:middle line:84%
+So for the ones of odd size,
+we're contributing minus 1
+
+00:23:17.930 --> 00:23:19.170 align:middle line:90%
+to the left-hand side.
+
+00:23:19.170 --> 00:23:21.620 align:middle line:84%
+For the ones of even size,
+we're contributing positive 1
+
+00:23:21.620 --> 00:23:25.430 align:middle line:84%
+to the right-hand side--
+or to the left-hand side.
+
+00:23:25.430 --> 00:23:27.555 align:middle line:84%
+So because they're half
+and half, those all cancel.
+
+00:23:27.555 --> 00:23:33.052 align:middle line:90%
+
+
+00:23:33.052 --> 00:23:46.810 align:middle line:84%
+So x contributes plus
+1 to the left-hand side
+
+00:23:46.810 --> 00:23:52.563 align:middle line:90%
+for each even-size subset.
+
+00:23:52.563 --> 00:23:56.170 align:middle line:90%
+
+
+00:23:56.170 --> 00:24:04.360 align:middle line:84%
+I sub x, and it
+contributes minus 1
+
+00:24:04.360 --> 00:24:11.400 align:middle line:84%
+to the left-hand side
+for each odd-size subset.
+
+00:24:11.400 --> 00:24:16.495 align:middle line:90%
+
+
+00:24:16.495 --> 00:24:19.635 align:middle line:84%
+So when we add all of
+those together, we get 0.
+
+00:24:19.635 --> 00:24:25.260 align:middle line:90%
+
+
+00:24:25.260 --> 00:24:27.840 align:middle line:84%
+So every element of our
+universe contributes 0
+
+00:24:27.840 --> 00:24:29.780 align:middle line:84%
+to the left-hand
+side, so we get 0.
+
+00:24:29.780 --> 00:24:37.766 align:middle line:90%
+
+
+00:24:37.766 --> 00:24:41.460 align:middle line:90%
+Does that make sense to people?
+
+00:24:41.460 --> 00:24:42.930 align:middle line:90%
+Yeah.
+
+00:24:42.930 --> 00:24:45.180 align:middle line:84%
+AUDIENCE: Both the
+left-hand side?
+
+00:24:45.180 --> 00:24:46.530 align:middle line:90%
+BRYNMOR CHAPMAN: Yes.
+
+00:24:46.530 --> 00:24:48.750 align:middle line:90%
+We're looking at the--
+
+00:24:48.750 --> 00:24:50.340 align:middle line:84%
+sorry, question
+was, are those both
+
+00:24:50.340 --> 00:24:51.760 align:middle line:90%
+supposed to be left-hand side?
+
+00:24:51.760 --> 00:24:55.950 align:middle line:84%
+We're looking at what x
+contributes to this sum.
+
+00:24:55.950 --> 00:24:58.480 align:middle line:84%
+How many of these terms does
+it contribute positively to?
+
+00:24:58.480 --> 00:25:00.780 align:middle line:84%
+How many does it
+contribute negatively to?
+
+00:25:00.780 --> 00:25:05.100 align:middle line:84%
+So whenever the
+size of I is even,
+
+00:25:05.100 --> 00:25:07.140 align:middle line:84%
+it's going to contribute
+positively if it's
+
+00:25:07.140 --> 00:25:08.890 align:middle line:90%
+contained in that intersection.
+
+00:25:08.890 --> 00:25:11.610 align:middle line:84%
+Whenever the size of I is odd,
+it will contribute negatively
+
+00:25:11.610 --> 00:25:13.000 align:middle line:90%
+when it's in the intersection.
+
+00:25:13.000 --> 00:25:15.690 align:middle line:90%
+
+
+00:25:15.690 --> 00:25:16.190 align:middle line:90%
+Yeah.
+
+00:25:16.190 --> 00:25:19.530 align:middle line:90%
+
+
+00:25:19.530 --> 00:25:22.880 align:middle line:84%
+AUDIENCE: How did you
+get the empty set?
+
+00:25:22.880 --> 00:25:28.372 align:middle line:84%
+How do we construct the
+big I so that [INAUDIBLE]?
+
+00:25:28.372 --> 00:25:29.330 align:middle line:90%
+BRYNMOR CHAPMAN: Sorry.
+
+00:25:29.330 --> 00:25:31.520 align:middle line:84%
+The question was, how
+do we construct a big I
+
+00:25:31.520 --> 00:25:33.385 align:middle line:84%
+so that the intersection
+is the empty set?
+
+00:25:33.385 --> 00:25:35.343 align:middle line:84%
+AUDIENCE: Yeah, I may
+have understood it wrong,
+
+00:25:35.343 --> 00:25:39.140 align:middle line:84%
+but [INAUDIBLE]
+intersection big U
+
+00:25:39.140 --> 00:25:41.666 align:middle line:84%
+and then subtract it
+off to get [INAUDIBLE].
+
+00:25:41.666 --> 00:25:44.390 align:middle line:90%
+
+
+00:25:44.390 --> 00:25:47.300 align:middle line:84%
+BRYNMOR CHAPMAN: Let me
+see if I'm understanding.
+
+00:25:47.300 --> 00:25:54.860 align:middle line:84%
+You are trying to find an I
+such that this is empty or such
+
+00:25:54.860 --> 00:25:58.122 align:middle line:90%
+that this is empty.
+
+00:25:58.122 --> 00:25:59.030 align:middle line:90%
+AUDIENCE: Second one.
+
+00:25:59.030 --> 00:26:01.032 align:middle line:90%
+BRYNMOR CHAPMAN: This one.
+
+00:26:01.032 --> 00:26:03.110 align:middle line:90%
+So we don't care.
+
+00:26:03.110 --> 00:26:06.260 align:middle line:84%
+We are looking at the
+sets that contain x,
+
+00:26:06.260 --> 00:26:07.520 align:middle line:90%
+so they should never be empty.
+
+00:26:07.520 --> 00:26:13.910 align:middle line:90%
+
+
+00:26:13.910 --> 00:26:17.900 align:middle line:84%
+We're looking at
+what we had here.
+
+00:26:17.900 --> 00:26:19.600 align:middle line:84%
+How many times
+have we counted x?
+
+00:26:19.600 --> 00:26:25.780 align:middle line:90%
+
+
+00:26:25.780 --> 00:26:30.130 align:middle line:84%
+So if this is still confusing,
+please review the lecture notes.
+
+00:26:30.130 --> 00:26:35.930 align:middle line:84%
+Or it's not important that
+the proof is not important.
+
+00:26:35.930 --> 00:26:38.770 align:middle line:84%
+The most important thing
+is knowing how to use it.
+
+00:26:38.770 --> 00:26:44.210 align:middle line:84%
+So you want to add
+together the single sets,
+
+00:26:44.210 --> 00:26:46.400 align:middle line:84%
+subtract off the
+pairwise intersections,
+
+00:26:46.400 --> 00:26:50.680 align:middle line:84%
+add together the three-way
+intersections, cetera.
+
+00:26:50.680 --> 00:26:54.970 align:middle line:84%
+So let's move on to the
+second topic for today,
+
+00:26:54.970 --> 00:26:56.300 align:middle line:90%
+pidgeyhole principle.
+
+00:26:56.300 --> 00:27:05.224 align:middle line:90%
+
+
+00:27:05.224 --> 00:27:07.625 align:middle line:84%
+Has anybody heard
+of this before?
+
+00:27:07.625 --> 00:27:08.125 align:middle line:90%
+Yeah.
+
+00:27:08.125 --> 00:27:11.080 align:middle line:90%
+
+
+00:27:11.080 --> 00:27:13.630 align:middle line:84%
+So the pidgeyhole
+principle-- it gets its name
+
+00:27:13.630 --> 00:27:15.440 align:middle line:90%
+from medieval times.
+
+00:27:15.440 --> 00:27:19.110 align:middle line:84%
+You have a bunch of
+pidgeyholes that are
+
+00:27:19.110 --> 00:27:21.120 align:middle line:90%
+supposed to contain pidgeys.
+
+00:27:21.120 --> 00:27:23.500 align:middle line:84%
+But what if you have more
+pidgeys than pidgeyholes?
+
+00:27:23.500 --> 00:27:25.380 align:middle line:90%
+What happens?
+
+00:27:25.380 --> 00:27:26.950 align:middle line:90%
+Well, two of them have to share.
+
+00:27:26.950 --> 00:27:29.050 align:middle line:90%
+Two of them get squished.
+
+00:27:29.050 --> 00:27:32.850 align:middle line:84%
+So that's basically what the
+pidgeyhole principle is saying.
+
+00:27:32.850 --> 00:27:42.300 align:middle line:84%
+If we have two sets A and B
+where the size of A is greater
+
+00:27:42.300 --> 00:27:53.920 align:middle line:84%
+than the size of B and
+f from A to B is total,
+
+00:27:53.920 --> 00:27:55.466 align:middle line:90%
+then f cannot be injective.
+
+00:27:55.466 --> 00:28:13.974 align:middle line:90%
+
+
+00:28:13.974 --> 00:28:20.790 align:middle line:84%
+So if is A set of pigeons,
+B is a set of pigeonholes,
+
+00:28:20.790 --> 00:28:27.950 align:middle line:84%
+and f is saying, pigeon
+A lives in pigeonhole B,
+
+00:28:27.950 --> 00:28:29.570 align:middle line:90%
+this should be a total function.
+
+00:28:29.570 --> 00:28:31.620 align:middle line:90%
+Every pidgey should have a home.
+
+00:28:31.620 --> 00:28:33.980 align:middle line:84%
+We don't want to have
+homeless pidgeys.
+
+00:28:33.980 --> 00:28:37.490 align:middle line:84%
+So it's a total
+function, but that means
+
+00:28:37.490 --> 00:28:39.110 align:middle line:84%
+that it can't be
+injective, meaning
+
+00:28:39.110 --> 00:28:41.850 align:middle line:84%
+that there have to be two
+pigeons that share a pigeonhole.
+
+00:28:41.850 --> 00:28:47.108 align:middle line:90%
+
+
+00:28:47.108 --> 00:28:49.223 align:middle line:84%
+So let's look at a
+couple of examples.
+
+00:28:49.223 --> 00:28:55.970 align:middle line:90%
+
+
+00:28:55.970 --> 00:28:58.850 align:middle line:84%
+Do we still have 26
+students in the room?
+
+00:28:58.850 --> 00:28:59.510 align:middle line:90%
+Nice.
+
+00:28:59.510 --> 00:29:01.540 align:middle line:84%
+Not too many students
+have dropped.
+
+00:29:01.540 --> 00:29:04.650 align:middle line:84%
+So there are more than
+26 students in the room,
+
+00:29:04.650 --> 00:29:11.690 align:middle line:84%
+so at least two of you share the
+first letter of your first name.
+
+00:29:11.690 --> 00:29:18.920 align:middle line:84%
+So we've got, well,
+at least 27 students
+
+00:29:18.920 --> 00:29:21.055 align:middle line:90%
+and 26 letters of the alphabet.
+
+00:29:21.055 --> 00:29:25.340 align:middle line:90%
+
+
+00:29:25.340 --> 00:29:29.750 align:middle line:84%
+So if we map every student
+to the first letter
+
+00:29:29.750 --> 00:29:33.150 align:middle line:84%
+of their first name,
+that's a total function,
+
+00:29:33.150 --> 00:29:34.590 align:middle line:90%
+so it can't be injective.
+
+00:29:34.590 --> 00:29:50.180 align:middle line:90%
+
+
+00:29:50.180 --> 00:29:51.520 align:middle line:90%
+So two students must share.
+
+00:29:51.520 --> 00:30:00.080 align:middle line:90%
+
+
+00:30:00.080 --> 00:30:01.885 align:middle line:90%
+Does that example make sense?
+
+00:30:01.885 --> 00:30:08.120 align:middle line:90%
+
+
+00:30:08.120 --> 00:30:10.870 align:middle line:84%
+What if I've got n differently
+colored pairs of socks?
+
+00:30:10.870 --> 00:30:14.402 align:middle line:90%
+
+
+00:30:14.402 --> 00:30:16.950 align:middle line:90%
+Don't worry about it.
+
+00:30:16.950 --> 00:30:18.480 align:middle line:84%
+How many socks do
+I need to pull out
+
+00:30:18.480 --> 00:30:20.813 align:middle line:84%
+of my drawer to ensure that
+I get two of the same color?
+
+00:30:20.813 --> 00:30:23.430 align:middle line:90%
+
+
+00:30:23.430 --> 00:30:24.330 align:middle line:90%
+Sorry?
+
+00:30:24.330 --> 00:30:25.170 align:middle line:90%
+AUDIENCE: Plus 1.
+
+00:30:25.170 --> 00:30:27.430 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah,
+the answer was n plus 1.
+
+00:30:27.430 --> 00:30:31.260 align:middle line:90%
+So in my case, two.
+
+00:30:31.260 --> 00:30:34.625 align:middle line:84%
+So if I've got n socks-- or,
+sorry, n colors of socks--
+
+00:30:34.625 --> 00:30:42.510 align:middle line:90%
+
+
+00:30:42.510 --> 00:30:47.525 align:middle line:84%
+I need n plus 1 to
+guarantee a pair.
+
+00:30:47.525 --> 00:30:56.820 align:middle line:90%
+
+
+00:30:56.820 --> 00:31:01.398 align:middle line:84%
+So I've been a little bit
+hand-wavy with this one.
+
+00:31:01.398 --> 00:31:02.940 align:middle line:84%
+When you're trying
+to prove something
+
+00:31:02.940 --> 00:31:05.280 align:middle line:84%
+with the pigeonhole
+principle, you generally
+
+00:31:05.280 --> 00:31:07.500 align:middle line:84%
+need to be very careful
+about what your pigeons are,
+
+00:31:07.500 --> 00:31:10.040 align:middle line:84%
+what your pigeonholes are, and
+what the map between them is.
+
+00:31:10.040 --> 00:31:14.791 align:middle line:90%
+
+
+00:31:14.791 --> 00:31:17.125 align:middle line:84%
+So what are those three
+elements in this case?
+
+00:31:17.125 --> 00:31:29.840 align:middle line:90%
+
+
+00:31:29.840 --> 00:31:34.970 align:middle line:84%
+Maybe we could phrase it
+instead as, if I have n plus 1,
+
+00:31:34.970 --> 00:31:36.310 align:middle line:90%
+then it guarantees a pair.
+
+00:31:36.310 --> 00:31:43.790 align:middle line:90%
+
+
+00:31:43.790 --> 00:31:45.470 align:middle line:90%
+Yeah.
+
+00:31:45.470 --> 00:31:47.720 align:middle line:90%
+AUDIENCE: And the [INAUDIBLE]
+
+00:31:47.720 --> 00:31:53.231 align:middle line:90%
+
+
+00:31:53.231 --> 00:31:59.030 align:middle line:84%
+BRYNMOR CHAPMAN: So A
+is the set of socks,
+
+00:31:59.030 --> 00:32:01.403 align:middle line:90%
+and B is a set of colors.
+
+00:32:01.403 --> 00:32:05.090 align:middle line:90%
+
+
+00:32:05.090 --> 00:32:08.725 align:middle line:84%
+And the map is going to
+map the sock to its color.
+
+00:32:08.725 --> 00:32:17.610 align:middle line:90%
+
+
+00:32:17.610 --> 00:32:19.430 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:32:19.430 --> 00:32:27.957 align:middle line:90%
+
+
+00:32:27.957 --> 00:32:30.555 align:middle line:84%
+Does anybody know what the
+population of Boston is?
+
+00:32:30.555 --> 00:32:34.570 align:middle line:90%
+
+
+00:32:34.570 --> 00:32:35.820 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:32:35.820 --> 00:32:38.070 align:middle line:84%
+BRYNMOR CHAPMAN: Are you
+looking at the lecture notes?
+
+00:32:38.070 --> 00:32:39.070 align:middle line:90%
+AUDIENCE: Yeah.
+
+00:32:39.070 --> 00:32:40.720 align:middle line:90%
+BRYNMOR CHAPMAN: Oh, OK.
+
+00:32:40.720 --> 00:32:44.680 align:middle line:84%
+Yeah, about 650,000 as of
+however many decades ago these
+
+00:32:44.680 --> 00:32:46.810 align:middle line:90%
+lecture notes were written.
+
+00:32:46.810 --> 00:32:48.800 align:middle line:84%
+I don't actually know
+that was very long ago.
+
+00:32:48.800 --> 00:32:50.055 align:middle line:90%
+It could be current.
+
+00:32:50.055 --> 00:33:04.060 align:middle line:90%
+
+
+00:33:04.060 --> 00:33:07.640 align:middle line:90%
+Is anybody a human biology nerd?
+
+00:33:07.640 --> 00:33:09.575 align:middle line:84%
+Does anybody know how
+many hairs humans have?
+
+00:33:09.575 --> 00:33:18.360 align:middle line:90%
+
+
+00:33:18.360 --> 00:33:30.120 align:middle line:84%
+So it turns out humans have
+less than about 200,000 hairs.
+
+00:33:30.120 --> 00:33:32.525 align:middle line:84%
+So what does the pigeonhole
+principle tell us here?
+
+00:33:32.525 --> 00:33:38.670 align:middle line:90%
+
+
+00:33:38.670 --> 00:33:39.485 align:middle line:90%
+Any ideas?
+
+00:33:39.485 --> 00:33:48.270 align:middle line:90%
+
+
+00:33:48.270 --> 00:33:49.420 align:middle line:90%
+Getting some facepalms.
+
+00:33:49.420 --> 00:33:50.624 align:middle line:90%
+Yeah.
+
+00:33:50.624 --> 00:33:52.980 align:middle line:84%
+AUDIENCE: That at
+least three humans
+
+00:33:52.980 --> 00:33:54.480 align:middle line:90%
+have the same number of hairs.
+
+00:33:54.480 --> 00:33:55.840 align:middle line:90%
+BRYNMOR CHAPMAN: Oh, good point.
+
+00:33:55.840 --> 00:33:59.070 align:middle line:84%
+So the answer was at least
+three humans in Boston
+
+00:33:59.070 --> 00:34:00.320 align:middle line:90%
+have the same number of hairs.
+
+00:34:00.320 --> 00:34:15.489 align:middle line:90%
+
+
+00:34:15.489 --> 00:34:18.810 align:middle line:84%
+So as stated, all we know is
+that at least two Bostonians
+
+00:34:18.810 --> 00:34:21.199 align:middle line:90%
+have the same number of hairs.
+
+00:34:21.199 --> 00:34:23.699 align:middle line:84%
+So does that mean that there's
+somebody with the same number
+
+00:34:23.699 --> 00:34:24.515 align:middle line:90%
+of hairs as me?
+
+00:34:24.515 --> 00:34:28.110 align:middle line:90%
+
+
+00:34:28.110 --> 00:34:30.556 align:middle line:90%
+Not necessarily.
+
+00:34:30.556 --> 00:34:32.980 align:middle line:84%
+So we know that there
+exists two Bostonians.
+
+00:34:32.980 --> 00:34:35.266 align:middle line:90%
+We don't know who they are.
+
+00:34:35.266 --> 00:34:37.540 align:middle line:90%
+This is non-constructive.
+
+00:34:37.540 --> 00:34:40.260 align:middle line:90%
+It only tells us of existence.
+
+00:34:40.260 --> 00:34:44.639 align:middle line:84%
+But your colleague also
+brings up another good point.
+
+00:34:44.639 --> 00:34:48.880 align:middle line:84%
+Because this 650,000 is so
+much larger than the 200,000,
+
+00:34:48.880 --> 00:34:51.670 align:middle line:84%
+we can actually say
+something stronger.
+
+00:34:51.670 --> 00:34:55.510 align:middle line:90%
+All we need is 200,000 plus 1.
+
+00:34:55.510 --> 00:35:00.600 align:middle line:84%
+That'll give us a collision
+of two Bostonians.
+
+00:35:00.600 --> 00:35:04.620 align:middle line:84%
+We've actually got more than
+three times that number.
+
+00:35:04.620 --> 00:35:07.600 align:middle line:84%
+So there are more than
+three Bostonians who
+
+00:35:07.600 --> 00:35:08.850 align:middle line:90%
+have the same number of hairs.
+
+00:35:08.850 --> 00:35:10.433 align:middle line:84%
+So in fact, we can
+conclude that there
+
+00:35:10.433 --> 00:35:13.790 align:middle line:84%
+are at least four
+Bostonians who all
+
+00:35:13.790 --> 00:35:15.040 align:middle line:90%
+have the same number of hairs.
+
+00:35:15.040 --> 00:35:20.372 align:middle line:90%
+
+
+00:35:20.372 --> 00:35:22.140 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:35:22.140 --> 00:35:23.000 align:middle line:90%
+Yeah.
+
+00:35:23.000 --> 00:35:25.082 align:middle line:84%
+AUDIENCE: How did you
+get the four [INAUDIBLE]?
+
+00:35:25.082 --> 00:35:26.790 align:middle line:84%
+BRYNMOR CHAPMAN: Ah,
+so the question was,
+
+00:35:26.790 --> 00:35:28.080 align:middle line:90%
+how did we get the four?
+
+00:35:28.080 --> 00:35:30.590 align:middle line:84%
+So this is what we call
+the generalized pigeonhole
+
+00:35:30.590 --> 00:35:31.560 align:middle line:90%
+principle.
+
+00:35:31.560 --> 00:35:40.682 align:middle line:90%
+
+
+00:35:40.682 --> 00:35:47.510 align:middle line:84%
+So up here, we just said,
+if A is larger than B,
+
+00:35:47.510 --> 00:35:53.000 align:middle line:84%
+but if we have the stronger
+condition that if A is larger
+
+00:35:53.000 --> 00:36:00.710 align:middle line:84%
+than k times B, then we've
+got a k-plus-1-way collision,
+
+00:36:00.710 --> 00:36:02.340 align:middle line:90%
+not just a two-way collision.
+
+00:36:02.340 --> 00:36:25.605 align:middle line:90%
+
+
+00:36:25.605 --> 00:36:31.660 align:middle line:84%
+So because we have 650,000,
+which is more than 3 times
+
+00:36:31.660 --> 00:36:34.870 align:middle line:84%
+200,000, we've got a
+3-plus-1 way collision,
+
+00:36:34.870 --> 00:36:36.350 align:middle line:90%
+not just a three-way collision.
+
+00:36:36.350 --> 00:36:37.930 align:middle line:90%
+Does that make sense?
+
+00:36:37.930 --> 00:36:38.890 align:middle line:90%
+Yeah.
+
+00:36:38.890 --> 00:36:41.630 align:middle line:84%
+AUDIENCE: So [INAUDIBLE]
+in this example,
+
+00:36:41.630 --> 00:36:44.440 align:middle line:84%
+the number of possible hairs
+you might have [INAUDIBLE]
+
+00:36:44.440 --> 00:36:47.930 align:middle line:84%
+every integer or natural
+number from 1 to [INAUDIBLE]?
+
+00:36:47.930 --> 00:36:49.090 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:36:49.090 --> 00:36:50.650 align:middle line:84%
+I suppose we could
+include 0, but I
+
+00:36:50.650 --> 00:36:53.450 align:middle line:84%
+guess everybody knows that
+there are bald Bostonians.
+
+00:36:53.450 --> 00:36:55.930 align:middle line:90%
+So maybe we exclude that.
+
+00:36:55.930 --> 00:37:00.160 align:middle line:84%
+But yeah, every natural number
+from 1 up to 200,000 is going
+
+00:37:00.160 --> 00:37:04.600 align:middle line:84%
+to be our B, and our A is going
+to be the set of all Bostonians.
+
+00:37:04.600 --> 00:37:06.865 align:middle line:84%
+And we are mapping a person
+to the number of hairs
+
+00:37:06.865 --> 00:37:07.490 align:middle line:90%
+that they have.
+
+00:37:07.490 --> 00:37:15.280 align:middle line:90%
+
+
+00:37:15.280 --> 00:37:20.640 align:middle line:84%
+So you can basically always
+use the generalized pigeonhole
+
+00:37:20.640 --> 00:37:22.177 align:middle line:90%
+principle if you would--
+
+00:37:22.177 --> 00:37:23.760 align:middle line:84%
+just like strong
+induction will always
+
+00:37:23.760 --> 00:37:26.880 align:middle line:84%
+work whenever weak
+induction does.
+
+00:37:26.880 --> 00:37:28.545 align:middle line:90%
+You could always set k equal 1.
+
+00:37:28.545 --> 00:37:33.550 align:middle line:90%
+
+
+00:37:33.550 --> 00:37:36.480 align:middle line:84%
+But the proof is
+basically the same,
+
+00:37:36.480 --> 00:37:41.160 align:middle line:84%
+and if you use these to
+prove things about functions,
+
+00:37:41.160 --> 00:37:45.900 align:middle line:84%
+the proofs can often be
+very short, very simple.
+
+00:37:45.900 --> 00:37:50.230 align:middle line:84%
+But they can also sometimes
+require some cleverness.
+
+00:37:50.230 --> 00:37:57.050 align:middle line:84%
+So it may not always be obvious
+what A, B, and f should be.
+
+00:37:57.050 --> 00:37:59.033 align:middle line:84%
+So here's a slightly
+more involved example.
+
+00:37:59.033 --> 00:38:11.430 align:middle line:90%
+
+
+00:38:11.430 --> 00:38:22.525 align:middle line:84%
+So we have an 8 by 8
+chessboard and 33 rooks.
+
+00:38:22.525 --> 00:38:25.670 align:middle line:90%
+
+
+00:38:25.670 --> 00:38:31.080 align:middle line:84%
+Does everybody know how
+chess works, vaguely?
+
+00:38:31.080 --> 00:38:36.330 align:middle line:84%
+So rooks can move along ranks
+or files, ranks or files.
+
+00:38:36.330 --> 00:38:38.810 align:middle line:90%
+Sorry.
+
+00:38:38.810 --> 00:38:48.868 align:middle line:84%
+So we would like to place these
+rooks so that any set of five--
+
+00:38:48.868 --> 00:38:52.610 align:middle line:84%
+they don't all
+attack each other.
+
+00:38:52.610 --> 00:38:56.540 align:middle line:90%
+Or no, I phrased that wrong.
+
+00:38:56.540 --> 00:39:00.140 align:middle line:84%
+So we want to find five
+of them where none of them
+
+00:39:00.140 --> 00:39:01.700 align:middle line:90%
+attack each other.
+
+00:39:01.700 --> 00:39:03.370 align:middle line:84%
+So basically, we
+want them all to be
+
+00:39:03.370 --> 00:39:05.780 align:middle line:90%
+in distinct rows and files.
+
+00:39:05.780 --> 00:39:13.460 align:middle line:84%
+So if we've got something like
+this, if we have a rook here,
+
+00:39:13.460 --> 00:39:16.060 align:middle line:84%
+a rook here, and a
+rook here, those three
+
+00:39:16.060 --> 00:39:18.940 align:middle line:90%
+do not attack each other.
+
+00:39:18.940 --> 00:39:23.020 align:middle line:84%
+So we're trying to find
+a set of five like that.
+
+00:39:23.020 --> 00:39:26.547 align:middle line:84%
+No two of them share
+a column or a row.
+
+00:39:26.547 --> 00:39:27.630 align:middle line:90%
+Does the setup make sense?
+
+00:39:27.630 --> 00:39:31.370 align:middle line:90%
+
+
+00:39:31.370 --> 00:39:32.295 align:middle line:90%
+How could we do that?
+
+00:39:32.295 --> 00:39:36.160 align:middle line:90%
+
+
+00:39:36.160 --> 00:39:38.580 align:middle line:84%
+Rather, how could we prove
+the existence of such a set?
+
+00:39:38.580 --> 00:39:48.010 align:middle line:90%
+
+
+00:39:48.010 --> 00:39:51.520 align:middle line:84%
+Maybe it would help to
+draw out the chessboard.
+
+00:39:51.520 --> 00:39:52.350 align:middle line:90%
+Let's see.
+
+00:39:52.350 --> 00:39:55.690 align:middle line:90%
+
+
+00:39:55.690 --> 00:40:14.460 align:middle line:84%
+1, 2, 3, 4, 5, 6, 7,
+1, 2, 3, 4, 5, 6, 7.
+
+00:40:14.460 --> 00:40:16.210 align:middle line:90%
+There's our wonky chessboard.
+
+00:40:16.210 --> 00:40:40.210 align:middle line:90%
+
+
+00:40:40.210 --> 00:40:41.820 align:middle line:90%
+So how could we do this?
+
+00:40:41.820 --> 00:40:43.650 align:middle line:90%
+Any ideas?
+
+00:40:43.650 --> 00:40:44.580 align:middle line:90%
+Yeah.
+
+00:40:44.580 --> 00:40:51.670 align:middle line:84%
+AUDIENCE: Maybe [INAUDIBLE]
+the five pieces.
+
+00:40:51.670 --> 00:40:56.610 align:middle line:84%
+So that's 32 [INAUDIBLE]
+we have 33 [INAUDIBLE].
+
+00:40:56.610 --> 00:41:00.390 align:middle line:84%
+BRYNMOR CHAPMAN: So the answer
+is, if we place four rooks,
+
+00:41:00.390 --> 00:41:03.053 align:middle line:84%
+they cover at most
+2 to the 5 squares?
+
+00:41:03.053 --> 00:41:08.000 align:middle line:90%
+
+
+00:41:08.000 --> 00:41:08.733 align:middle line:90%
+Is that true?
+
+00:41:08.733 --> 00:41:11.570 align:middle line:90%
+
+
+00:41:11.570 --> 00:41:13.110 align:middle line:90%
+I don't think that's true.
+
+00:41:13.110 --> 00:41:17.160 align:middle line:84%
+If we place rooks in
+these four squares,
+
+00:41:17.160 --> 00:41:21.680 align:middle line:84%
+they're going to cover
+3/4 of the chessboard.
+
+00:41:21.680 --> 00:41:22.730 align:middle line:90%
+Yes.
+
+00:41:22.730 --> 00:41:24.170 align:middle line:90%
+AUDIENCE: I'm just curious.
+
+00:41:24.170 --> 00:41:27.060 align:middle line:84%
+Do the [INAUDIBLE] have
+to not attack each other,
+
+00:41:27.060 --> 00:41:30.430 align:middle line:84%
+but their position relevant to
+the other 28 doesn't matter?
+
+00:41:30.430 --> 00:41:31.680 align:middle line:90%
+BRYNMOR CHAPMAN: That's right.
+
+00:41:31.680 --> 00:41:32.510 align:middle line:90%
+AUDIENCE: OK.
+
+00:41:32.510 --> 00:41:34.220 align:middle line:90%
+This is a simple problem.
+
+00:41:34.220 --> 00:41:36.090 align:middle line:90%
+BRYNMOR CHAPMAN: Pardon?
+
+00:41:36.090 --> 00:41:39.140 align:middle line:84%
+AUDIENCE: If there's only
+five that need to be distinct
+
+00:41:39.140 --> 00:41:43.130 align:middle line:84%
+and we have eight rows
+and eight columns,
+
+00:41:43.130 --> 00:41:48.410 align:middle line:84%
+then it's pretty
+easy to determine.
+
+00:41:48.410 --> 00:41:50.450 align:middle line:84%
+BRYNMOR CHAPMAN: So what
+is your solution then?
+
+00:41:50.450 --> 00:41:54.600 align:middle line:84%
+AUDIENCE: You can literally just
+place five of them diagonally,
+
+00:41:54.600 --> 00:41:55.220 align:middle line:90%
+couldn't you?
+
+00:41:55.220 --> 00:41:56.595 align:middle line:84%
+BRYNMOR CHAPMAN:
+Oh, oh, sorry, I
+
+00:41:56.595 --> 00:41:58.750 align:middle line:84%
+think you may have
+misunderstood the problem.
+
+00:41:58.750 --> 00:42:01.490 align:middle line:90%
+We have 33 rocks.
+
+00:42:01.490 --> 00:42:03.250 align:middle line:84%
+We're trying to find
+a set of five that
+
+00:42:03.250 --> 00:42:04.250 align:middle line:90%
+don't attack each other.
+
+00:42:04.250 --> 00:42:05.968 align:middle line:90%
+We're given the placement.
+
+00:42:05.968 --> 00:42:07.760 align:middle line:84%
+We're not allowed to
+just place five rocks.
+
+00:42:07.760 --> 00:42:08.870 align:middle line:84%
+If we could place
+them, then yeah,
+
+00:42:08.870 --> 00:42:10.630 align:middle line:84%
+we could place them
+along a diagonal,
+
+00:42:10.630 --> 00:42:13.020 align:middle line:90%
+and then we've got eight.
+
+00:42:13.020 --> 00:42:15.430 align:middle line:90%
+So some of these have rooks.
+
+00:42:15.430 --> 00:42:16.690 align:middle line:90%
+We don't get to control where.
+
+00:42:16.690 --> 00:42:19.750 align:middle line:90%
+
+
+00:42:19.750 --> 00:42:24.250 align:middle line:84%
+And we're trying to find
+some subset of these,
+
+00:42:24.250 --> 00:42:28.450 align:middle line:84%
+some subset of five of these
+that don't attack each other.
+
+00:42:28.450 --> 00:42:31.360 align:middle line:84%
+Does the problem
+setup make sense?
+
+00:42:31.360 --> 00:42:32.200 align:middle line:90%
+Maybe?
+
+00:42:32.200 --> 00:42:32.780 align:middle line:90%
+Yes?
+
+00:42:32.780 --> 00:42:33.625 align:middle line:90%
+No?
+
+00:42:33.625 --> 00:42:34.125 align:middle line:90%
+Yeah?
+
+00:42:34.125 --> 00:42:36.647 align:middle line:90%
+
+
+00:42:36.647 --> 00:42:38.730 align:middle line:84%
+So how could we use the
+pigeonhole principle here?
+
+00:42:38.730 --> 00:42:46.120 align:middle line:90%
+
+
+00:42:46.120 --> 00:42:48.350 align:middle line:84%
+Well, perhaps let's start
+with the easiest element.
+
+00:42:48.350 --> 00:42:49.575 align:middle line:90%
+What should our pigeons be?
+
+00:42:49.575 --> 00:42:54.100 align:middle line:90%
+
+
+00:42:54.100 --> 00:42:56.070 align:middle line:84%
+What are we trying
+to make collide?
+
+00:42:56.070 --> 00:42:56.740 align:middle line:90%
+Yeah.
+
+00:42:56.740 --> 00:42:57.525 align:middle line:90%
+AUDIENCE: Rooks.
+
+00:42:57.525 --> 00:42:57.900 align:middle line:90%
+BRYNMOR CHAPMAN: Rooks.
+
+00:42:57.900 --> 00:42:58.420 align:middle line:90%
+Yeah.
+
+00:42:58.420 --> 00:43:00.610 align:middle line:84%
+So our pigeons are
+going to be the rooks.
+
+00:43:00.610 --> 00:43:01.610 align:middle line:90%
+And I've lost my eraser.
+
+00:43:01.610 --> 00:43:20.370 align:middle line:90%
+
+
+00:43:20.370 --> 00:43:24.065 align:middle line:84%
+Now, what should
+our pigeonholes be?
+
+00:43:24.065 --> 00:43:27.990 align:middle line:90%
+
+
+00:43:27.990 --> 00:43:33.720 align:middle line:84%
+We want to set it up so that
+if we get a five-way collision,
+
+00:43:33.720 --> 00:43:36.065 align:middle line:84%
+those five rooks do
+not attack each other.
+
+00:43:36.065 --> 00:43:41.550 align:middle line:90%
+
+
+00:43:41.550 --> 00:43:42.547 align:middle line:90%
+Yeah.
+
+00:43:42.547 --> 00:43:45.130 align:middle line:84%
+AUDIENCE: [INAUDIBLE] the rooks
+are being placed on the board,
+
+00:43:45.130 --> 00:43:47.880 align:middle line:84%
+and the pigeonholes
+should be the squares that
+
+00:43:47.880 --> 00:43:48.883 align:middle line:90%
+are on the chessboard.
+
+00:43:48.883 --> 00:43:49.800 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:43:49.800 --> 00:43:52.720 align:middle line:84%
+So the answer was, we're placing
+these rooks on the chessboard,
+
+00:43:52.720 --> 00:43:55.780 align:middle line:84%
+so let's make the pigeonholes
+the squares of the chessboard.
+
+00:43:55.780 --> 00:44:06.930 align:middle line:90%
+
+
+00:44:06.930 --> 00:44:09.190 align:middle line:90%
+So you are off to a good start.
+
+00:44:09.190 --> 00:44:10.680 align:middle line:90%
+That's a good idea.
+
+00:44:10.680 --> 00:44:13.800 align:middle line:84%
+The problem right now is
+that we've got fewer rooks
+
+00:44:13.800 --> 00:44:16.750 align:middle line:90%
+than squares on the chessboard.
+
+00:44:16.750 --> 00:44:21.220 align:middle line:84%
+So what we really want
+is a five-way collision,
+
+00:44:21.220 --> 00:44:26.190 align:middle line:84%
+so we want to ensure that
+we have more than four times
+
+00:44:26.190 --> 00:44:30.840 align:middle line:90%
+as many rooks as pigeonholes.
+
+00:44:30.840 --> 00:44:36.030 align:middle line:84%
+So is there a way that we
+can modify your solution
+
+00:44:36.030 --> 00:44:39.695 align:middle line:84%
+to make fewer things where
+collision is still good for us?
+
+00:44:39.695 --> 00:44:45.390 align:middle line:90%
+
+
+00:44:45.390 --> 00:44:50.102 align:middle line:84%
+So can we subdivide our
+squares so that we have-- yeah.
+
+00:44:50.102 --> 00:44:51.790 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:44:51.790 --> 00:44:53.116 align:middle line:90%
+BRYNMOR CHAPMAN: Sorry?
+
+00:44:53.116 --> 00:44:54.980 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:44:54.980 --> 00:44:58.570 align:middle line:84%
+BRYNMOR CHAPMAN: The answer was,
+squares that don't have rooks.
+
+00:44:58.570 --> 00:45:00.640 align:middle line:84%
+That's not going
+to be very helpful.
+
+00:45:00.640 --> 00:45:02.210 align:middle line:84%
+We're assigning
+rooks to pigeonholes.
+
+00:45:02.210 --> 00:45:10.900 align:middle line:84%
+So the map should map rooks to
+occupied squares of some sort.
+
+00:45:10.900 --> 00:45:13.270 align:middle line:84%
+But how could we maybe
+split up the chessboard
+
+00:45:13.270 --> 00:45:15.200 align:middle line:90%
+into eight pigeonholes?
+
+00:45:15.200 --> 00:45:17.840 align:middle line:84%
+If we have eight
+pigeonholes, 33 rooks,
+
+00:45:17.840 --> 00:45:19.640 align:middle line:84%
+that's more than
+four times as many.
+
+00:45:19.640 --> 00:45:22.600 align:middle line:90%
+So we get a five-way collision.
+
+00:45:22.600 --> 00:45:25.120 align:middle line:84%
+What could our eight
+sets of squares be?
+
+00:45:25.120 --> 00:45:25.900 align:middle line:90%
+Yeah.
+
+00:45:25.900 --> 00:45:26.650 align:middle line:90%
+AUDIENCE: Columns.
+
+00:45:26.650 --> 00:45:28.760 align:middle line:90%
+BRYNMOR CHAPMAN: Columns.
+
+00:45:28.760 --> 00:45:32.025 align:middle line:84%
+So if we have five rooks in
+a column, is that helpful?
+
+00:45:32.025 --> 00:45:37.600 align:middle line:90%
+
+
+00:45:37.600 --> 00:45:41.170 align:middle line:84%
+All of those rooks
+attack each other then.
+
+00:45:41.170 --> 00:45:42.520 align:middle line:90%
+You're getting close, though.
+
+00:45:42.520 --> 00:45:43.780 align:middle line:90%
+Yeah.
+
+00:45:43.780 --> 00:45:47.080 align:middle line:84%
+AUDIENCE: It'd be like diagonals
+[INAUDIBLE] offset by one.
+
+00:45:47.080 --> 00:45:48.190 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:45:48.190 --> 00:45:53.890 align:middle line:84%
+So the answer was diagonals
+but then offset them.
+
+00:45:53.890 --> 00:45:56.610 align:middle line:84%
+So I'm going to number
+of these squares.
+
+00:45:56.610 --> 00:45:59.160 align:middle line:84%
+So everything
+numbered 1 is going
+
+00:45:59.160 --> 00:46:00.990 align:middle line:90%
+to be our first pigeonhole.
+
+00:46:00.990 --> 00:46:05.537 align:middle line:84%
+So if we get five rooks along
+the main diagonal, all of them
+
+00:46:05.537 --> 00:46:07.870 align:middle line:84%
+are going to be in different
+rows and different columns,
+
+00:46:07.870 --> 00:46:09.220 align:middle line:90%
+so they won't attack each other.
+
+00:46:09.220 --> 00:46:11.790 align:middle line:90%
+So that's good.
+
+00:46:11.790 --> 00:46:17.190 align:middle line:84%
+Number 2 is going
+to be offset by one,
+
+00:46:17.190 --> 00:46:21.150 align:middle line:84%
+but then we're also going
+to wrap around down here.
+
+00:46:21.150 --> 00:46:24.030 align:middle line:84%
+So once again, we've
+got eight squares
+
+00:46:24.030 --> 00:46:26.970 align:middle line:84%
+that are all in different
+rows and different columns.
+
+00:46:26.970 --> 00:46:30.180 align:middle line:84%
+So if we get five
+on two squares,
+
+00:46:30.180 --> 00:46:32.220 align:middle line:84%
+they also don't
+attack each other.
+
+00:46:32.220 --> 00:46:34.440 align:middle line:90%
+And we can continue in this way.
+
+00:46:34.440 --> 00:46:40.835 align:middle line:84%
+Three goes along here and then
+these two squares, et cetera.
+
+00:46:40.835 --> 00:46:44.388 align:middle line:90%
+
+
+00:46:44.388 --> 00:46:50.180 align:middle line:84%
+So now we have eight
+pigeonholes, 33 rooks,
+
+00:46:50.180 --> 00:46:52.050 align:middle line:84%
+so that's more than
+four times as many.
+
+00:46:52.050 --> 00:46:55.100 align:middle line:90%
+We get a five-way collision.
+
+00:46:55.100 --> 00:46:59.082 align:middle line:84%
+Whichever number of square
+has that five-way collision,
+
+00:46:59.082 --> 00:47:01.165 align:middle line:84%
+those are five rooks that
+don't attack each other.
+
+00:47:01.165 --> 00:47:11.191 align:middle line:90%
+
+
+00:47:11.191 --> 00:47:14.450 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:47:14.450 --> 00:47:16.130 align:middle line:84%
+So it took a little
+bit of creativity
+
+00:47:16.130 --> 00:47:22.520 align:middle line:84%
+to come up with the pigeonholes
+here, but once we have that,
+
+00:47:22.520 --> 00:47:24.390 align:middle line:84%
+the proof is fairly
+straightforward.
+
+00:47:24.390 --> 00:47:27.020 align:middle line:90%
+
+
+00:47:27.020 --> 00:47:29.870 align:middle line:84%
+So let's change gears
+a little bit and move
+
+00:47:29.870 --> 00:47:34.550 align:middle line:84%
+on to the last
+counting technique
+
+00:47:34.550 --> 00:47:46.340 align:middle line:84%
+for today, which we call
+combinatorial proofs or double
+
+00:47:46.340 --> 00:47:47.625 align:middle line:90%
+counting.
+
+00:47:47.625 --> 00:47:48.125 align:middle line:90%
+Oops.
+
+00:47:48.125 --> 00:47:57.710 align:middle line:90%
+
+
+00:47:57.710 --> 00:48:01.520 align:middle line:84%
+So I'd like to think of this
+as somewhat similar to--
+
+00:48:01.520 --> 00:48:04.890 align:middle line:84%
+I believe you've seen the
+bijection rule earlier.
+
+00:48:04.890 --> 00:48:07.370 align:middle line:84%
+So if you have two sets
+and you can come up
+
+00:48:07.370 --> 00:48:09.680 align:middle line:84%
+with a bijection between
+them, then those two sets
+
+00:48:09.680 --> 00:48:10.465 align:middle line:90%
+are the same size.
+
+00:48:10.465 --> 00:48:13.130 align:middle line:90%
+
+
+00:48:13.130 --> 00:48:15.530 align:middle line:84%
+Well, similarly, if
+you have two sizes
+
+00:48:15.530 --> 00:48:18.750 align:middle line:84%
+in a single set that
+shares those sizes,
+
+00:48:18.750 --> 00:48:20.900 align:middle line:90%
+those sizes must be equal.
+
+00:48:20.900 --> 00:48:26.690 align:middle line:84%
+So basically, this is a proof
+technique where we take a set
+
+00:48:26.690 --> 00:48:29.330 align:middle line:84%
+and count it in
+two different ways,
+
+00:48:29.330 --> 00:48:33.980 align:middle line:84%
+and that can give us some
+nice combinatorial identities.
+
+00:48:33.980 --> 00:48:49.090 align:middle line:84%
+So for instance, we
+have this identity.
+
+00:48:49.090 --> 00:48:52.030 align:middle line:84%
+Have people seen
+this one before?
+
+00:48:52.030 --> 00:48:54.230 align:middle line:90%
+No?
+
+00:48:54.230 --> 00:48:59.030 align:middle line:84%
+So if you sum up n choose
+k over all k from 0 to n,
+
+00:48:59.030 --> 00:49:01.555 align:middle line:90%
+you just get 2 to the n.
+
+00:49:01.555 --> 00:49:02.930 align:middle line:84%
+So if you haven't
+seen it before,
+
+00:49:02.930 --> 00:49:05.830 align:middle line:84%
+it's perhaps a little
+bit counterintuitive.
+
+00:49:05.830 --> 00:49:10.670 align:middle line:84%
+We've got a summation of a bunch
+of things involving factorials,
+
+00:49:10.670 --> 00:49:15.472 align:middle line:84%
+but it turns out to be
+some nice exponential.
+
+00:49:15.472 --> 00:49:19.360 align:middle line:90%
+So how could we prove this?
+
+00:49:19.360 --> 00:49:23.500 align:middle line:84%
+How could we come up
+with a set that we
+
+00:49:23.500 --> 00:49:27.490 align:middle line:84%
+can count both as
+this expression
+
+00:49:27.490 --> 00:49:31.240 align:middle line:90%
+and as this expression?
+
+00:49:31.240 --> 00:49:33.100 align:middle line:90%
+Any ideas?
+
+00:49:33.100 --> 00:49:34.570 align:middle line:90%
+Yeah.
+
+00:49:34.570 --> 00:49:36.900 align:middle line:84%
+AUDIENCE: [INAUDIBLE] any
+length n binary sequence.
+
+00:49:36.900 --> 00:49:40.930 align:middle line:90%
+
+
+00:49:40.930 --> 00:49:43.840 align:middle line:84%
+BRYNMOR CHAPMAN: So the solution
+was count length n binary
+
+00:49:43.840 --> 00:49:44.560 align:middle line:90%
+sequences.
+
+00:49:44.560 --> 00:49:59.040 align:middle line:90%
+
+
+00:49:59.040 --> 00:50:03.390 align:middle line:84%
+So how does that give you
+each side of the equality?
+
+00:50:03.390 --> 00:50:06.300 align:middle line:84%
+AUDIENCE: On the right
+side, [INAUDIBLE]
+
+00:50:06.300 --> 00:50:08.250 align:middle line:90%
+a 1 or a 0 in each position.
+
+00:50:08.250 --> 00:50:11.290 align:middle line:84%
+[INAUDIBLE] can imagine,
+well, first of all,
+
+00:50:11.290 --> 00:50:14.040 align:middle line:84%
+how many are there that
+have 1 and 1 [INAUDIBLE]
+
+00:50:14.040 --> 00:50:16.050 align:middle line:90%
+be like, choose one.
+
+00:50:16.050 --> 00:50:18.450 align:middle line:84%
+How many others have
+[INAUDIBLE] choose two.
+
+00:50:18.450 --> 00:50:20.640 align:middle line:84%
+And you have to consider
+all sequences that
+
+00:50:20.640 --> 00:50:23.130 align:middle line:84%
+have any number of 1's
+in there [INAUDIBLE]
+
+00:50:23.130 --> 00:50:26.130 align:middle line:90%
+
+
+00:50:26.130 --> 00:50:27.690 align:middle line:90%
+BRYNMOR CHAPMAN: Exactly.
+
+00:50:27.690 --> 00:50:28.300 align:middle line:90%
+Yeah.
+
+00:50:28.300 --> 00:50:33.630 align:middle line:84%
+So the right-hand side is
+fairly straightforward.
+
+00:50:33.630 --> 00:50:35.040 align:middle line:84%
+If we're counting
+length n binary
+
+00:50:35.040 --> 00:50:39.460 align:middle line:84%
+sequences, every position,
+you can either have 0 or 1.
+
+00:50:39.460 --> 00:50:42.020 align:middle line:84%
+So product rule
+gives us 2 to the n.
+
+00:50:42.020 --> 00:50:48.960 align:middle line:90%
+
+
+00:50:48.960 --> 00:50:52.950 align:middle line:84%
+And for the
+left-hand side, we're
+
+00:50:52.950 --> 00:50:56.070 align:middle line:84%
+going to partition
+based on how many 1's
+
+00:50:56.070 --> 00:50:58.950 align:middle line:90%
+there are in our sequence.
+
+00:50:58.950 --> 00:51:02.280 align:middle line:84%
+So our sequence
+could have any number
+
+00:51:02.280 --> 00:51:05.410 align:middle line:90%
+of 1's from up to n inclusive.
+
+00:51:05.410 --> 00:51:07.920 align:middle line:90%
+
+
+00:51:07.920 --> 00:51:09.670 align:middle line:90%
+And all of these are disjoint.
+
+00:51:09.670 --> 00:51:13.230 align:middle line:84%
+If it has three 1's, it
+can't also have eight 1's.
+
+00:51:13.230 --> 00:51:16.680 align:middle line:84%
+So by our sum rule,
+we can just sum up
+
+00:51:16.680 --> 00:51:20.190 align:middle line:90%
+all of the sizes of those sets.
+
+00:51:20.190 --> 00:51:24.450 align:middle line:84%
+What is the size of the set
+of sequences that has, say,
+
+00:51:24.450 --> 00:51:25.355 align:middle line:90%
+three 1's?
+
+00:51:25.355 --> 00:51:34.740 align:middle line:90%
+
+
+00:51:34.740 --> 00:51:37.500 align:middle line:90%
+Anybody?
+
+00:51:37.500 --> 00:51:40.295 align:middle line:84%
+How many binary sequences
+of length n have three 1's?
+
+00:51:40.295 --> 00:51:50.650 align:middle line:90%
+
+
+00:51:50.650 --> 00:51:51.607 align:middle line:90%
+AUDIENCE: n choose 3.
+
+00:51:51.607 --> 00:51:52.940 align:middle line:90%
+BRYNMOR CHAPMAN: n choose three.
+
+00:51:52.940 --> 00:51:53.800 align:middle line:90%
+Yeah.
+
+00:51:53.800 --> 00:52:07.420 align:middle line:84%
+Or more generally, there are
+n choose k with k 1's, and k
+
+00:52:07.420 --> 00:52:15.600 align:middle line:84%
+from 0 to n form a
+partition of our set.
+
+00:52:15.600 --> 00:52:19.960 align:middle line:90%
+
+
+00:52:19.960 --> 00:52:24.520 align:middle line:84%
+So if we sum up all of these
+binomial coefficients from 0
+
+00:52:24.520 --> 00:52:30.130 align:middle line:84%
+to n, we're also going to get
+the number of length n binary
+
+00:52:30.130 --> 00:52:32.920 align:middle line:90%
+sequences.
+
+00:52:32.920 --> 00:52:34.700 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:52:34.700 --> 00:52:38.390 align:middle line:90%
+
+
+00:52:38.390 --> 00:52:40.600 align:middle line:84%
+Does the proof technique
+make sense to everybody?
+
+00:52:40.600 --> 00:52:43.710 align:middle line:84%
+We're taking a single
+set, and we're counting it
+
+00:52:43.710 --> 00:52:46.470 align:middle line:90%
+in two different ways.
+
+00:52:46.470 --> 00:52:50.410 align:middle line:84%
+And each way of counting gives
+us a different expression.
+
+00:52:50.410 --> 00:52:52.065 align:middle line:84%
+So those two expressions
+must be equal.
+
+00:52:52.065 --> 00:52:56.250 align:middle line:90%
+
+
+00:52:56.250 --> 00:52:59.795 align:middle line:84%
+So the key here is choosing
+the right set to count.
+
+00:52:59.795 --> 00:53:18.000 align:middle line:90%
+
+
+00:53:18.000 --> 00:53:21.150 align:middle line:84%
+So as it turns out, that's
+actually a special case
+
+00:53:21.150 --> 00:53:25.710 align:middle line:90%
+of a nice theorem.
+
+00:53:25.710 --> 00:53:28.660 align:middle line:84%
+So we've been using binomial
+coefficients quite a lot,
+
+00:53:28.660 --> 00:53:31.990 align:middle line:90%
+these n choose k terms.
+
+00:53:31.990 --> 00:53:33.395 align:middle line:90%
+Does anybody know their eponym?
+
+00:53:33.395 --> 00:53:37.530 align:middle line:90%
+
+
+00:53:37.530 --> 00:53:40.128 align:middle line:90%
+Any ideas?
+
+00:53:40.128 --> 00:53:42.295 align:middle line:84%
+Has anybody encountered the
+binomial theorem before?
+
+00:53:42.295 --> 00:53:45.170 align:middle line:90%
+
+
+00:53:45.170 --> 00:53:46.005 align:middle line:90%
+No?
+
+00:53:46.005 --> 00:53:47.005 align:middle line:90%
+Well, let's take a look.
+
+00:53:47.005 --> 00:54:10.050 align:middle line:90%
+
+
+00:54:10.050 --> 00:54:14.675 align:middle line:84%
+So this here is what
+we call a binomial,
+
+00:54:14.675 --> 00:54:19.190 align:middle line:90%
+a sum of two monomials.
+
+00:54:19.190 --> 00:54:21.950 align:middle line:84%
+And the binomial theorem says
+that if we take a binomial,
+
+00:54:21.950 --> 00:54:27.230 align:middle line:84%
+raise it to the n-th power, then
+we get basically the same thing
+
+00:54:27.230 --> 00:54:29.070 align:middle line:84%
+as we had on the
+left-hand side over there,
+
+00:54:29.070 --> 00:54:33.055 align:middle line:84%
+but we've got these
+powers of x and y.
+
+00:54:33.055 --> 00:54:37.304 align:middle line:90%
+
+
+00:54:37.304 --> 00:54:41.080 align:middle line:90%
+And by convention, 0 to the 0--
+
+00:54:41.080 --> 00:54:42.630 align:middle line:84%
+we just say that
+that's equal to 1.
+
+00:54:42.630 --> 00:54:48.130 align:middle line:90%
+
+
+00:54:48.130 --> 00:55:01.720 align:middle line:84%
+So the proof-- does anybody
+know how we might prove this?
+
+00:55:01.720 --> 00:55:03.465 align:middle line:84%
+It's fairly similar
+to what we just did.
+
+00:55:03.465 --> 00:55:14.530 align:middle line:90%
+
+
+00:55:14.530 --> 00:55:17.535 align:middle line:84%
+Well, what happens if we
+expand out the left-hand side?
+
+00:55:17.535 --> 00:55:25.090 align:middle line:90%
+
+
+00:55:25.090 --> 00:55:25.965 align:middle line:90%
+What do we get?
+
+00:55:25.965 --> 00:55:31.510 align:middle line:90%
+
+
+00:55:31.510 --> 00:55:32.740 align:middle line:90%
+Yeah.
+
+00:55:32.740 --> 00:55:36.413 align:middle line:84%
+AUDIENCE: You get coefficients
+of Pascal's triangle
+
+00:55:36.413 --> 00:55:37.315 align:middle line:90%
+[INAUDIBLE].
+
+00:55:37.315 --> 00:55:39.462 align:middle line:90%
+
+
+00:55:39.462 --> 00:55:40.920 align:middle line:84%
+BRYNMOR CHAPMAN:
+So the answer was,
+
+00:55:40.920 --> 00:55:43.830 align:middle line:84%
+we got the coefficients
+of Pascal's triangle.
+
+00:55:43.830 --> 00:55:46.290 align:middle line:84%
+You've skipped a
+couple of steps.
+
+00:55:46.290 --> 00:55:47.870 align:middle line:84%
+More immediately,
+what do we get?
+
+00:55:47.870 --> 00:55:53.550 align:middle line:90%
+
+
+00:55:53.550 --> 00:55:57.570 align:middle line:84%
+Say, if n equals
+2, what do we get?
+
+00:55:57.570 --> 00:56:01.540 align:middle line:84%
+We get xx plus xy
+plus yx plus yy.
+
+00:56:01.540 --> 00:56:05.300 align:middle line:84%
+We've basically got a bunch of
+binary sequences of x's and y's.
+
+00:56:05.300 --> 00:56:08.935 align:middle line:90%
+
+
+00:56:08.935 --> 00:56:18.663 align:middle line:84%
+So this gives us a sum of 2
+to the n terms of the form.
+
+00:56:18.663 --> 00:56:22.530 align:middle line:90%
+
+
+00:56:22.530 --> 00:56:29.160 align:middle line:84%
+And I'll call it
+b1, b2, up to bn
+
+00:56:29.160 --> 00:56:35.980 align:middle line:90%
+where each b is either x or y.
+
+00:56:35.980 --> 00:56:48.360 align:middle line:90%
+
+
+00:56:48.360 --> 00:56:52.250 align:middle line:84%
+So now how do we get
+Pascal out of that?
+
+00:56:52.250 --> 00:56:59.840 align:middle line:84%
+AUDIENCE: You write
+[INAUDIBLE] the triangle
+
+00:56:59.840 --> 00:57:03.020 align:middle line:84%
+as a different value [INAUDIBLE]
+start with the coefficient
+
+00:57:03.020 --> 00:57:07.110 align:middle line:90%
+of the first [INAUDIBLE].
+
+00:57:07.110 --> 00:57:09.360 align:middle line:84%
+BRYNMOR CHAPMAN: So you're
+talking about coefficients.
+
+00:57:09.360 --> 00:57:10.950 align:middle line:90%
+What are these coefficients?
+
+00:57:10.950 --> 00:57:12.690 align:middle line:90%
+What are the coefficients of?
+
+00:57:12.690 --> 00:57:15.590 align:middle line:84%
+Where are we getting
+the coefficients?
+
+00:57:15.590 --> 00:57:17.000 align:middle line:90%
+AUDIENCE: Of x or y.
+
+00:57:17.000 --> 00:57:18.625 align:middle line:84%
+BRYNMOR CHAPMAN: Not
+quite of x and y.
+
+00:57:18.625 --> 00:57:25.700 align:middle line:90%
+
+
+00:57:25.700 --> 00:57:29.016 align:middle line:84%
+So we're going to want
+to group like terms.
+
+00:57:29.016 --> 00:57:30.950 align:middle line:84%
+So both multiplication
+and addition
+
+00:57:30.950 --> 00:57:34.780 align:middle line:84%
+are commutative, so
+we can fiddle around
+
+00:57:34.780 --> 00:57:37.840 align:middle line:84%
+with each of those terms and
+put all the x's at the beginning
+
+00:57:37.840 --> 00:57:39.250 align:middle line:90%
+and the y's at the end.
+
+00:57:39.250 --> 00:57:41.240 align:middle line:84%
+And then we can also
+rearrange the terms
+
+00:57:41.240 --> 00:57:44.260 align:middle line:84%
+so that we put like
+terms together.
+
+00:57:44.260 --> 00:57:56.380 align:middle line:84%
+So we can group them into a
+bunch of terms of the form x
+
+00:57:56.380 --> 00:58:01.390 align:middle line:84%
+to the k times y
+to the n minus k
+
+00:58:01.390 --> 00:58:04.380 align:middle line:84%
+and then multiplied by
+some coefficient c sub k.
+
+00:58:04.380 --> 00:58:11.930 align:middle line:90%
+
+
+00:58:11.930 --> 00:58:14.830 align:middle line:84%
+So now, as your
+colleague was saying,
+
+00:58:14.830 --> 00:58:17.650 align:middle line:84%
+those c sub k are
+going to be the entries
+
+00:58:17.650 --> 00:58:18.620 align:middle line:90%
+of Pascal's triangle.
+
+00:58:18.620 --> 00:58:21.560 align:middle line:84%
+They're going to be the
+binomial coefficients.
+
+00:58:21.560 --> 00:58:22.155 align:middle line:90%
+Why is that?
+
+00:58:22.155 --> 00:58:26.200 align:middle line:90%
+
+
+00:58:26.200 --> 00:58:29.370 align:middle line:84%
+Well, how many terms
+are there of this form?
+
+00:58:29.370 --> 00:58:36.300 align:middle line:90%
+
+
+00:58:36.300 --> 00:58:42.450 align:middle line:84%
+Well, it could come from
+putting the kx's in any k places
+
+00:58:42.450 --> 00:58:46.410 align:middle line:84%
+from among the n
+possible places.
+
+00:58:46.410 --> 00:58:49.380 align:middle line:84%
+So you've got n choose k
+possible places or possible ways
+
+00:58:49.380 --> 00:58:51.030 align:middle line:90%
+to place the x's.
+
+00:58:51.030 --> 00:58:54.815 align:middle line:84%
+The y's will be the remaining
+ones, and each of those
+
+00:58:54.815 --> 00:58:55.940 align:middle line:90%
+gives you a different term.
+
+00:58:55.940 --> 00:58:59.784 align:middle line:90%
+
+
+00:58:59.784 --> 00:59:06.830 align:middle line:84%
+So c sub k is going to be n
+choose k, similar to above.
+
+00:59:06.830 --> 00:59:12.420 align:middle line:90%
+
+
+00:59:12.420 --> 00:59:14.200 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:59:14.200 --> 00:59:20.340 align:middle line:90%
+
+
+00:59:20.340 --> 00:59:23.670 align:middle line:84%
+So if we specifically put in
+x and y are both equal to 1,
+
+00:59:23.670 --> 00:59:26.500 align:middle line:84%
+then we recover what
+we had originally.
+
+00:59:26.500 --> 00:59:30.380 align:middle line:84%
+You may also have encountered
+a form of this theorem
+
+00:59:30.380 --> 00:59:32.540 align:middle line:90%
+where y equals 1.
+
+00:59:32.540 --> 00:59:36.130 align:middle line:84%
+Have people seen that before,
+like 1 plus x to the n?
+
+00:59:36.130 --> 00:59:41.000 align:middle line:90%
+
+
+00:59:41.000 --> 00:59:41.510 align:middle line:90%
+Possibly?
+
+00:59:41.510 --> 00:59:42.130 align:middle line:90%
+Maybe not?
+
+00:59:42.130 --> 00:59:46.520 align:middle line:90%
+
+
+00:59:46.520 --> 00:59:49.290 align:middle line:90%
+Well, it is a useful theorem.
+
+00:59:49.290 --> 00:59:52.820 align:middle line:84%
+The coefficients on the
+terms are the n choose k,
+
+00:59:52.820 --> 00:59:55.322 align:middle line:84%
+the binomial
+coefficients, and this
+
+00:59:55.322 --> 00:59:56.530 align:middle line:90%
+is where the name comes from.
+
+00:59:56.530 --> 00:59:59.474 align:middle line:90%
+
+
+00:59:59.474 --> 01:00:02.750 align:middle line:84%
+And more generally, you can
+also get the multinomial theorem
+
+01:00:02.750 --> 01:00:04.692 align:middle line:90%
+in the same way.
+
+01:00:04.692 --> 01:00:09.210 align:middle line:84%
+If you have x plus y
+plus z for instance,
+
+01:00:09.210 --> 01:00:10.897 align:middle line:90%
+raise that to the n-th power.
+
+01:00:10.897 --> 01:00:12.980 align:middle line:84%
+You start getting multinomial
+coefficients instead
+
+01:00:12.980 --> 01:00:14.550 align:middle line:90%
+of binomial coefficients.
+
+01:00:14.550 --> 01:00:50.040 align:middle line:90%
+
+
+01:00:50.040 --> 01:00:50.540 align:middle line:90%
+Yeah.
+
+01:00:50.540 --> 01:00:52.130 align:middle line:84%
+Sorry, I'm moving all
+the way over here.
+
+01:00:52.130 --> 01:00:53.550 align:middle line:84%
+I didn't plan this
+out very well.
+
+01:00:53.550 --> 01:01:18.460 align:middle line:90%
+
+
+01:01:18.460 --> 01:01:22.340 align:middle line:84%
+So for the multinomial theorem,
+if we have a multinomial here,
+
+01:01:22.340 --> 01:01:26.926 align:middle line:84%
+like we've got mx's
+instead of just two,
+
+01:01:26.926 --> 01:01:29.900 align:middle line:84%
+if we sum all those up and then
+raise it to the n-th power,
+
+01:01:29.900 --> 01:01:32.620 align:middle line:84%
+we can use essentially
+the same proof
+
+01:01:32.620 --> 01:01:39.430 align:middle line:84%
+to show that this is going to be
+the sum over all sequences k1,
+
+01:01:39.430 --> 01:01:46.240 align:middle line:84%
+k2, all the way up to k sub
+m, where these all sum up
+
+01:01:46.240 --> 01:01:56.260 align:middle line:84%
+to n of the multinomial
+coefficient n choose k1, k2,
+
+01:01:56.260 --> 01:02:03.790 align:middle line:84%
+up to km of similar to the
+x to the ky to the n minus k
+
+01:02:03.790 --> 01:02:06.130 align:middle line:90%
+term we had over there.
+
+01:02:06.130 --> 01:02:08.153 align:middle line:84%
+This time, we've got
+a product of m things.
+
+01:02:08.153 --> 01:02:17.110 align:middle line:90%
+
+
+01:02:17.110 --> 01:02:21.400 align:middle line:90%
+So essentially the same proof.
+
+01:02:21.400 --> 01:02:27.210 align:middle line:84%
+If we think of the
+binomial coefficients
+
+01:02:27.210 --> 01:02:32.370 align:middle line:84%
+as multinomial coefficients
+where we've only got two things,
+
+01:02:32.370 --> 01:02:33.740 align:middle line:90%
+you can see how it expands.
+
+01:02:33.740 --> 01:02:38.570 align:middle line:90%
+
+
+01:02:38.570 --> 01:02:41.460 align:middle line:84%
+We're going to look
+at all possible ways
+
+01:02:41.460 --> 01:02:47.820 align:middle line:84%
+that you could place x1's,
+x2's, x3's, et cetera
+
+01:02:47.820 --> 01:02:55.260 align:middle line:84%
+among the n different
+terms, and each of those
+
+01:02:55.260 --> 01:02:59.490 align:middle line:84%
+is going to give us a different
+term that we can then combine
+
+01:02:59.490 --> 01:03:01.270 align:middle line:90%
+when we're grouping like terms.
+
+01:03:01.270 --> 01:03:04.830 align:middle line:90%
+Does that make sense to people?
+
+01:03:04.830 --> 01:03:06.570 align:middle line:84%
+So the number of
+those, the number
+
+01:03:06.570 --> 01:03:11.430 align:middle line:84%
+of ways that you
+can permute those
+
+01:03:11.430 --> 01:03:15.735 align:middle line:84%
+n things, that's just going to
+be this multinomial coefficient
+
+01:03:15.735 --> 01:03:16.235 align:middle line:90%
+here.
+
+01:03:16.235 --> 01:03:43.880 align:middle line:90%
+
+
+01:03:43.880 --> 01:03:46.370 align:middle line:84%
+Are people happy with
+the binomial multinomial
+
+01:03:46.370 --> 01:03:49.920 align:middle line:84%
+coefficients and the binomial
+multinomial theorems?
+
+01:03:49.920 --> 01:03:50.780 align:middle line:90%
+Yeah.
+
+01:03:50.780 --> 01:03:53.580 align:middle line:84%
+AUDIENCE: So the
+coefficients, what is that?
+
+01:03:53.580 --> 01:04:01.130 align:middle line:84%
+Like n over k1 comma
+k2 comma [INAUDIBLE]?
+
+01:04:01.130 --> 01:04:02.030 align:middle line:90%
+BRYNMOR CHAPMAN: So--
+
+01:04:02.030 --> 01:04:02.960 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:04:02.960 --> 01:04:06.860 align:middle line:84%
+BRYNMOR CHAPMAN: The question
+is, what does this mean?
+
+01:04:06.860 --> 01:04:08.360 align:middle line:84%
+Is this the notation
+that you saw
+
+01:04:08.360 --> 01:04:12.080 align:middle line:90%
+in the bookkeeper recitation?
+
+01:04:12.080 --> 01:04:12.810 align:middle line:90%
+Perhaps not.
+
+01:04:12.810 --> 01:04:17.600 align:middle line:84%
+If not, this is equal
+to n factorial divided
+
+01:04:17.600 --> 01:04:25.340 align:middle line:84%
+by k1 factorial, k2 factorial,
+all the way up to km factorial.
+
+01:04:25.340 --> 01:04:28.010 align:middle line:90%
+
+
+01:04:28.010 --> 01:04:31.510 align:middle line:84%
+So it's kind of an extension
+of the binomial coefficients.
+
+01:04:31.510 --> 01:04:33.370 align:middle line:84%
+With the binomial
+coefficients, you just
+
+01:04:33.370 --> 01:04:37.510 align:middle line:90%
+have two k's that sum to n.
+
+01:04:37.510 --> 01:04:39.310 align:middle line:84%
+And we also simplify
+the notation
+
+01:04:39.310 --> 01:04:41.680 align:middle line:90%
+by just dropping one of the--
+
+01:04:41.680 --> 01:04:45.730 align:middle line:84%
+dropping one of the k's because
+it's redundant in that case.
+
+01:04:45.730 --> 01:04:47.860 align:middle line:84%
+But for the multinomial
+coefficients,
+
+01:04:47.860 --> 01:04:52.360 align:middle line:84%
+we have a bunch of k's that
+sum to n instead of just two.
+
+01:04:52.360 --> 01:04:53.800 align:middle line:84%
+We're going to
+divide n factorial
+
+01:04:53.800 --> 01:04:57.525 align:middle line:90%
+by the product of all of them.
+
+01:04:57.525 --> 01:04:58.400 align:middle line:90%
+Does that make sense?
+
+01:04:58.400 --> 01:05:01.651 align:middle line:90%
+Does that answer your question?
+
+01:05:01.651 --> 01:05:05.290 align:middle line:84%
+Any other questions about
+binomial multinomial theorems?
+
+01:05:05.290 --> 01:05:07.480 align:middle line:90%
+Yeah.
+
+01:05:07.480 --> 01:05:08.240 align:middle line:90%
+Sorry?
+
+01:05:08.240 --> 01:05:09.115 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:05:09.115 --> 01:05:11.140 align:middle line:84%
+BRYNMOR CHAPMAN: Oh,
+question-- what is the pi?
+
+01:05:11.140 --> 01:05:13.930 align:middle line:84%
+So this is an analog of
+sigma but for products
+
+01:05:13.930 --> 01:05:15.310 align:middle line:90%
+instead of sums.
+
+01:05:15.310 --> 01:05:19.920 align:middle line:84%
+So we're saying xi
+to the ki multiplied
+
+01:05:19.920 --> 01:05:27.450 align:middle line:84%
+over all possible i, so x1 to
+the k1 times x2 to the k2 times
+
+01:05:27.450 --> 01:05:29.573 align:middle line:90%
+x3 to the k3, cetera.
+
+01:05:29.573 --> 01:05:33.828 align:middle line:90%
+
+
+01:05:33.828 --> 01:05:35.690 align:middle line:90%
+So pi for product.
+
+01:05:35.690 --> 01:05:43.890 align:middle line:90%
+
+
+01:05:43.890 --> 01:05:45.116 align:middle line:90%
+Any other questions?
+
+01:05:45.116 --> 01:05:51.051 align:middle line:90%
+
+
+01:05:51.051 --> 01:05:53.460 align:middle line:84%
+So why don't we move on
+to another useful identity
+
+01:05:53.460 --> 01:05:56.120 align:middle line:84%
+that we can prove using
+a combinatorial proof?
+
+01:05:56.120 --> 01:06:00.870 align:middle line:90%
+
+
+01:06:00.870 --> 01:06:07.470 align:middle line:84%
+n choose k equals n
+minus 1 choose k minus 1
+
+01:06:07.470 --> 01:06:11.375 align:middle line:90%
+plus n minus 1 choose k.
+
+01:06:11.375 --> 01:06:16.530 align:middle line:90%
+
+
+01:06:16.530 --> 01:06:17.710 align:middle line:90%
+Who has seen this before?
+
+01:06:17.710 --> 01:06:19.210 align:middle line:84%
+I know that at least
+one of you has.
+
+01:06:19.210 --> 01:06:24.150 align:middle line:90%
+
+
+01:06:24.150 --> 01:06:24.845 align:middle line:90%
+Few hands.
+
+01:06:24.845 --> 01:06:28.590 align:middle line:90%
+
+
+01:06:28.590 --> 01:06:31.720 align:middle line:84%
+So we could prove
+it algebraically,
+
+01:06:31.720 --> 01:06:33.870 align:middle line:84%
+just writing them
+out with factorials
+
+01:06:33.870 --> 01:06:37.800 align:middle line:84%
+and doing a bunch
+of fiddly garbage,
+
+01:06:37.800 --> 01:06:40.560 align:middle line:84%
+but that seems a bit difficult.
+So let's use a double counting
+
+01:06:40.560 --> 01:06:41.265 align:middle line:90%
+proof instead.
+
+01:06:41.265 --> 01:06:44.040 align:middle line:90%
+
+
+01:06:44.040 --> 01:06:46.140 align:middle line:84%
+How might we use a
+double counting proof
+
+01:06:46.140 --> 01:06:47.830 align:middle line:90%
+to prove this identity?
+
+01:06:47.830 --> 01:06:53.730 align:middle line:90%
+
+
+01:06:53.730 --> 01:06:55.715 align:middle line:90%
+What set could we try and count?
+
+01:06:55.715 --> 01:07:01.470 align:middle line:90%
+
+
+01:07:01.470 --> 01:07:02.345 align:middle line:90%
+Any ideas?
+
+01:07:02.345 --> 01:07:08.130 align:middle line:90%
+
+
+01:07:08.130 --> 01:07:09.884 align:middle line:90%
+Yeah.
+
+01:07:09.884 --> 01:07:12.330 align:middle line:84%
+AUDIENCE: [INAUDIBLE]
+once again, consider
+
+01:07:12.330 --> 01:07:15.900 align:middle line:84%
+the binary sequence
+[INAUDIBLE] that has k1's in it
+
+01:07:15.900 --> 01:07:16.960 align:middle line:90%
+and [INAUDIBLE]?
+
+01:07:16.960 --> 01:07:20.410 align:middle line:90%
+
+
+01:07:20.410 --> 01:07:22.100 align:middle line:84%
+BRYNMOR CHAPMAN:
+Yeah, good answer.
+
+01:07:22.100 --> 01:07:26.170 align:middle line:84%
+So the answer was, once again,
+we can look at binary sequences
+
+01:07:26.170 --> 01:07:29.350 align:middle line:84%
+of length n, but this time,
+we're going to restrict it
+
+01:07:29.350 --> 01:07:33.403 align:middle line:84%
+to binary sequences of length
+n that specifically have k1's.
+
+01:07:33.403 --> 01:07:35.920 align:middle line:90%
+
+
+01:07:35.920 --> 01:07:51.563 align:middle line:84%
+So count binary sequences
+of length n with k1's.
+
+01:07:51.563 --> 01:07:58.663 align:middle line:90%
+
+
+01:07:58.663 --> 01:08:00.225 align:middle line:84%
+Now, how many of
+those are there?
+
+01:08:00.225 --> 01:08:05.140 align:middle line:90%
+
+
+01:08:05.140 --> 01:08:07.755 align:middle line:84%
+Does that give us one of
+our two expressions easily?
+
+01:08:07.755 --> 01:08:11.380 align:middle line:90%
+
+
+01:08:11.380 --> 01:08:13.960 align:middle line:90%
+If so, which?
+
+01:08:13.960 --> 01:08:14.755 align:middle line:90%
+Yeah?
+
+01:08:14.755 --> 01:08:15.630 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:08:15.630 --> 01:08:16.775 align:middle line:90%
+BRYNMOR CHAPMAN: Sorry?
+
+01:08:16.775 --> 01:08:17.040 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:08:17.040 --> 01:08:18.060 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+01:08:18.060 --> 01:08:20.729 align:middle line:84%
+So essentially by
+definition, like this
+
+01:08:20.729 --> 01:08:23.614 align:middle line:84%
+is equal to-- the size of this
+set is going to be n choose k.
+
+01:08:23.614 --> 01:08:32.080 align:middle line:90%
+
+
+01:08:32.080 --> 01:08:48.029 align:middle line:90%
+So let's call this set S.
+
+01:08:48.029 --> 01:08:51.500 align:middle line:84%
+How could we also make S
+equal to the right-hand side?
+
+01:08:51.500 --> 01:09:19.430 align:middle line:90%
+
+
+01:09:19.430 --> 01:09:20.724 align:middle line:90%
+Does this give us any ideas?
+
+01:09:20.724 --> 01:09:30.830 align:middle line:90%
+
+
+01:09:30.830 --> 01:09:32.000 align:middle line:90%
+Yeah, answer?
+
+01:09:32.000 --> 01:09:40.713 align:middle line:84%
+AUDIENCE: [INAUDIBLE]
+it can be either 0 or 1.
+
+01:09:40.713 --> 01:09:41.630 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+01:09:41.630 --> 01:09:46.069 align:middle line:84%
+AUDIENCE: [INAUDIBLE] you
+want to have k1 and then pick
+
+01:09:46.069 --> 01:09:48.560 align:middle line:84%
+an option [INAUDIBLE]
+original [INAUDIBLE].
+
+01:09:48.560 --> 01:09:51.843 align:middle line:90%
+
+
+01:09:51.843 --> 01:09:52.760 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+01:09:52.760 --> 01:09:54.650 align:middle line:84%
+So the answer was,
+essentially, we're
+
+01:09:54.650 --> 01:09:58.166 align:middle line:90%
+going to partition our set.
+
+01:09:58.166 --> 01:10:00.840 align:middle line:90%
+So what are we partitioning on?
+
+01:10:00.840 --> 01:10:03.670 align:middle line:84%
+Well, we're going to look at
+the last bit of the sequence.
+
+01:10:03.670 --> 01:10:25.160 align:middle line:90%
+
+
+01:10:25.160 --> 01:10:26.990 align:middle line:90%
+So we've got two cases.
+
+01:10:26.990 --> 01:10:29.740 align:middle line:84%
+The last bit can
+either be 0 or 1.
+
+01:10:29.740 --> 01:10:32.320 align:middle line:90%
+It can't be both.
+
+01:10:32.320 --> 01:10:37.900 align:middle line:90%
+So we've got a partition.
+
+01:10:37.900 --> 01:10:40.660 align:middle line:84%
+That means that we
+can use the sum rule.
+
+01:10:40.660 --> 01:10:45.610 align:middle line:84%
+We can count each of these
+sets individually and then
+
+01:10:45.610 --> 01:10:46.922 align:middle line:90%
+add their sizes together.
+
+01:10:46.922 --> 01:10:48.880 align:middle line:84%
+That will give us the
+size of our original set.
+
+01:10:48.880 --> 01:10:51.910 align:middle line:90%
+
+
+01:10:51.910 --> 01:10:58.410 align:middle line:84%
+So how many length n sequences
+with k1's have a 1 at the end?
+
+01:10:58.410 --> 01:11:08.860 align:middle line:90%
+
+
+01:11:08.860 --> 01:11:09.430 align:middle line:90%
+Yeah?
+
+01:11:09.430 --> 01:11:11.880 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:11:11.880 --> 01:11:13.680 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+01:11:13.680 --> 01:11:18.005 align:middle line:84%
+So the answer was n
+minus 1 choose k minus 1.
+
+01:11:18.005 --> 01:11:45.006 align:middle line:90%
+
+
+01:11:45.006 --> 01:11:52.423 align:middle line:84%
+So let's partition
+this S, S0 union S1.
+
+01:11:52.423 --> 01:11:56.910 align:middle line:90%
+
+
+01:11:56.910 --> 01:12:00.480 align:middle line:90%
+S0-- or let's call it S sub b--
+
+01:12:00.480 --> 01:12:11.570 align:middle line:84%
+is the set of binary
+sequences with n1's--
+
+01:12:11.570 --> 01:12:20.125 align:middle line:84%
+sorry-- n bits, k1's,
+and b at the end.
+
+01:12:20.125 --> 01:12:24.950 align:middle line:90%
+
+
+01:12:24.950 --> 01:12:35.300 align:middle line:84%
+So S sub 1 is going to have
+size n minus 1 choose k minus 1.
+
+01:12:35.300 --> 01:12:38.280 align:middle line:84%
+If we know that we've
+got a 1 at the end,
+
+01:12:38.280 --> 01:12:41.900 align:middle line:84%
+we've got k minus 1 additional
+1's that we need to place.
+
+01:12:41.900 --> 01:12:43.670 align:middle line:90%
+Where can they go?
+
+01:12:43.670 --> 01:12:46.846 align:middle line:84%
+Into any of the first
+n minus 1 positions.
+
+01:12:46.846 --> 01:12:50.990 align:middle line:90%
+
+
+01:12:50.990 --> 01:12:56.330 align:middle line:84%
+So there are n minus 1 choose
+k minus 1 ways to choose those.
+
+01:12:56.330 --> 01:12:57.610 align:middle line:90%
+And what about S0?
+
+01:12:57.610 --> 01:13:13.360 align:middle line:90%
+
+
+01:13:13.360 --> 01:13:14.170 align:middle line:90%
+Yeah.
+
+01:13:14.170 --> 01:13:15.580 align:middle line:90%
+AUDIENCE: n minus 1 choose k.
+
+01:13:15.580 --> 01:13:17.770 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+01:13:17.770 --> 01:13:20.230 align:middle line:84%
+This is going to be
+n minus 1 choose k.
+
+01:13:20.230 --> 01:13:22.562 align:middle line:90%
+And why is that?
+
+01:13:22.562 --> 01:13:24.473 align:middle line:84%
+AUDIENCE: Because
+there are still k1's.
+
+01:13:24.473 --> 01:13:25.390 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+01:13:25.390 --> 01:13:28.600 align:middle line:84%
+If we've got a 0 at
+the end, we still
+
+01:13:28.600 --> 01:13:31.210 align:middle line:84%
+need to place those
+k1's somewhere.
+
+01:13:31.210 --> 01:13:35.120 align:middle line:84%
+So now we've only got n minus
+1 places where we can put them,
+
+01:13:35.120 --> 01:13:37.360 align:middle line:84%
+but we still have k1's
+that we need to place.
+
+01:13:37.360 --> 01:13:40.050 align:middle line:84%
+So there are n minus 1
+choose k ways to place them.
+
+01:13:40.050 --> 01:13:48.975 align:middle line:90%
+
+
+01:13:48.975 --> 01:13:50.990 align:middle line:84%
+So these two cases
+are exhaustive.
+
+01:13:50.990 --> 01:13:54.580 align:middle line:84%
+You can't have-- you
+can't have a sequence that
+
+01:13:54.580 --> 01:13:56.240 align:middle line:90%
+ends with neither a 0 or a 1.
+
+01:13:56.240 --> 01:13:58.310 align:middle line:90%
+It's a binary sequence.
+
+01:13:58.310 --> 01:13:59.240 align:middle line:90%
+They're also disjoint.
+
+01:13:59.240 --> 01:14:01.780 align:middle line:84%
+You can't have both a
+0 and a 1 at the end.
+
+01:14:01.780 --> 01:14:04.370 align:middle line:90%
+So this forms a partition.
+
+01:14:04.370 --> 01:14:11.310 align:middle line:84%
+So by the sum rule, the size of
+S is going to be the size of S0
+
+01:14:11.310 --> 01:14:17.533 align:middle line:84%
+plus the size of S1, which,
+we just established, is--
+
+01:14:17.533 --> 01:14:18.825 align:middle line:90%
+I guess I flipped them around--
+
+01:14:18.825 --> 01:14:22.352 align:middle line:90%
+
+
+01:14:22.352 --> 01:14:26.690 align:middle line:84%
+n minus 1 choose k plus n
+minus 1 choose k minus 1.
+
+01:14:26.690 --> 01:14:31.260 align:middle line:90%
+
+
+01:14:31.260 --> 01:14:33.600 align:middle line:84%
+And as we established
+at the beginning,
+
+01:14:33.600 --> 01:14:37.145 align:middle line:84%
+this is also equal
+to n choose k.
+
+01:14:37.145 --> 01:14:40.780 align:middle line:90%
+
+
+01:14:40.780 --> 01:14:42.730 align:middle line:84%
+Does that make
+sense to everybody?
+
+01:14:42.730 --> 01:15:03.330 align:middle line:90%
+
+
+01:15:03.330 --> 01:15:06.910 align:middle line:84%
+Do people have any questions
+about either this identity
+
+01:15:06.910 --> 01:15:09.970 align:middle line:90%
+or combinatorial proofs?
+
+01:15:09.970 --> 01:15:10.608 align:middle line:90%
+Yeah.
+
+01:15:10.608 --> 01:15:13.150 align:middle line:84%
+AUDIENCE: So the reason why we
+didn't just write [INAUDIBLE]?
+
+01:15:13.150 --> 01:15:18.743 align:middle line:90%
+
+
+01:15:18.743 --> 01:15:19.660 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+01:15:19.660 --> 01:15:21.220 align:middle line:84%
+The question was,
+is there any reason
+
+01:15:21.220 --> 01:15:24.350 align:middle line:84%
+we didn't write out
+the definition of n
+
+01:15:24.350 --> 01:15:28.390 align:middle line:84%
+choose k using the
+factorial, simplify things?
+
+01:15:28.390 --> 01:15:31.962 align:middle line:84%
+Because I'm a lazy fuck,
+and I don't want to.
+
+01:15:31.962 --> 01:15:36.593 align:middle line:84%
+AUDIENCE: [INAUDIBLE] a lot
+longer than that [INAUDIBLE].
+
+01:15:36.593 --> 01:15:37.510 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+01:15:37.510 --> 01:15:41.090 align:middle line:84%
+So that kind of depends
+on-- so the concern
+
+01:15:41.090 --> 01:15:46.747 align:middle line:84%
+was that maybe this takes
+a lot longer than just
+
+01:15:46.747 --> 01:15:48.580 align:middle line:84%
+putting your head down
+and going through all
+
+01:15:48.580 --> 01:15:51.440 align:middle line:90%
+of the messy algebra.
+
+01:15:51.440 --> 01:15:51.940 align:middle line:90%
+Yeah.
+
+01:15:51.940 --> 01:15:54.772 align:middle line:84%
+At the beginning,
+it probably will.
+
+01:15:54.772 --> 01:15:58.040 align:middle line:84%
+If you are not familiar
+with this proof technique,
+
+01:15:58.040 --> 01:16:01.210 align:middle line:84%
+it may not be obvious what
+set you should be counting
+
+01:16:01.210 --> 01:16:06.410 align:middle line:84%
+or how you should be counting
+it, but as you get practice,
+
+01:16:06.410 --> 01:16:10.650 align:middle line:84%
+it could be much easier than
+just trying to brute-force it.
+
+01:16:10.650 --> 01:16:16.830 align:middle line:84%
+And I think in possibly in
+recitation, in homework,
+
+01:16:16.830 --> 01:16:20.300 align:middle line:84%
+you will see other
+identities where
+
+01:16:20.300 --> 01:16:24.127 align:middle line:84%
+it may be less
+viable to actually go
+
+01:16:24.127 --> 01:16:25.210 align:middle line:90%
+through the messy algebra.
+
+01:16:25.210 --> 01:16:29.099 align:middle line:90%
+
+
+01:16:29.099 --> 01:16:31.395 align:middle line:84%
+So yeah, this is kind
+of a silly example,
+
+01:16:31.395 --> 01:16:33.020 align:middle line:84%
+and it's one where
+you could definitely
+
+01:16:33.020 --> 01:16:35.540 align:middle line:90%
+solve it in other ways.
+
+01:16:35.540 --> 01:16:38.580 align:middle line:84%
+And in fact, those of you who
+have seen this identity before,
+
+01:16:38.580 --> 01:16:42.876 align:middle line:84%
+I imagine you probably did
+prove it in other ways.
+
+01:16:42.876 --> 01:16:44.960 align:middle line:84%
+But it's just kind
+of illustrative
+
+01:16:44.960 --> 01:16:48.080 align:middle line:84%
+of this particular
+proof technique.
+
+01:16:48.080 --> 01:16:49.470 align:middle line:90%
+Does that answer your question?
+
+01:16:49.470 --> 01:16:50.210 align:middle line:90%
+AUDIENCE: Yeah.
+
+01:16:50.210 --> 01:16:52.710 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+01:16:52.710 --> 01:16:54.540 align:middle line:84%
+Any other questions,
+comments, concerns?
+
+01:16:54.540 --> 01:17:12.080 align:middle line:90%
+
+
+01:17:12.080 --> 01:17:21.610 align:middle line:84%
+So as your colleague
+was hinting at earlier,
+
+01:17:21.610 --> 01:17:25.450 align:middle line:84%
+this kind of gives
+us the following.
+
+01:17:25.450 --> 01:17:28.930 align:middle line:84%
+So I imagine many of you have
+seen Pascal's triangle before,
+
+01:17:28.930 --> 01:17:35.710 align:middle line:84%
+but if you just write out all
+of the binomial coefficients
+
+01:17:35.710 --> 01:17:38.510 align:middle line:90%
+in rows of a triangle--
+
+01:17:38.510 --> 01:17:43.840 align:middle line:90%
+
+
+01:17:43.840 --> 01:17:52.100 align:middle line:84%
+so this is n equals 0, n equals
+1, n equals 2, n equals 3.
+
+01:17:52.100 --> 01:17:55.540 align:middle line:84%
+And then successive
+entries in a row
+
+01:17:55.540 --> 01:17:59.230 align:middle line:84%
+are going to be n choose 0, n
+choose 1, n choose 2, et cetera.
+
+01:17:59.230 --> 01:18:13.350 align:middle line:84%
+So if you write all of these
+out, what we just proved
+
+01:18:13.350 --> 01:18:16.590 align:middle line:84%
+is that every entry
+of this triangle
+
+01:18:16.590 --> 01:18:22.320 align:middle line:84%
+is the sum of the
+two entries above it.
+
+01:18:22.320 --> 01:18:28.110 align:middle line:84%
+So if we take this 4 and
+the 6 here, they sum to 10.
+
+01:18:28.110 --> 01:18:32.535 align:middle line:84%
+That is essentially what
+this identity is saying.
+
+01:18:32.535 --> 01:18:35.640 align:middle line:90%
+
+
+01:18:35.640 --> 01:18:40.500 align:middle line:84%
+So this is what we
+call Pascal's triangle.
+
+01:18:40.500 --> 01:18:43.980 align:middle line:84%
+We also showed
+that the sum of all
+
+01:18:43.980 --> 01:18:48.340 align:middle line:84%
+of the numbers in a single row
+is going to be a power of 2.
+
+01:18:48.340 --> 01:18:50.660 align:middle line:90%
+It's going to be 2 to the n.
+
+01:18:50.660 --> 01:18:55.530 align:middle line:90%
+
+
+01:18:55.530 --> 01:19:00.950 align:middle line:84%
+If we sum everything in row
+5, we get 1 plus 5 plus 10
+
+01:19:00.950 --> 01:19:04.870 align:middle line:90%
+plus 10 plus 5 plus 1 equals 32.
+
+01:19:04.870 --> 01:19:10.040 align:middle line:90%
+
+
+01:19:10.040 --> 01:19:11.730 align:middle line:90%
+I think we proved it over there.
+
+01:19:11.730 --> 01:19:14.500 align:middle line:84%
+Yeah, top of the
+rightmost board.
+
+01:19:14.500 --> 01:19:17.710 align:middle line:90%
+
+
+01:19:17.710 --> 01:19:24.710 align:middle line:84%
+And you will see, I
+believe, in homework
+
+01:19:24.710 --> 01:19:28.860 align:middle line:84%
+that if you sum the diagonals,
+you get the Fibonacci numbers.
+
+01:19:28.860 --> 01:19:30.956 align:middle line:90%
+So if you kind of--
+
+01:19:30.956 --> 01:19:32.720 align:middle line:90%
+oh, let's see.
+
+01:19:32.720 --> 01:19:35.323 align:middle line:90%
+So go like that.
+
+01:19:35.323 --> 01:19:41.141 align:middle line:90%
+
+
+01:19:41.141 --> 01:19:42.650 align:middle line:84%
+If you sum along
+these diagonals,
+
+01:19:42.650 --> 01:19:45.230 align:middle line:90%
+you get the Fibonacci numbers.
+
+01:19:45.230 --> 01:19:45.840 align:middle line:90%
+Am I correct?
+
+01:19:45.840 --> 01:19:47.215 align:middle line:84%
+Is that still a
+homework problem?
+
+01:19:47.215 --> 01:19:49.550 align:middle line:90%
+
+
+01:19:49.550 --> 01:19:50.300 align:middle line:90%
+Maybe?
+
+01:19:50.300 --> 01:19:52.430 align:middle line:84%
+Sorry, I've not actually
+looked at your homework.
+
+01:19:52.430 --> 01:19:53.370 align:middle line:90%
+Full disclosure.
+
+01:19:53.370 --> 01:19:56.510 align:middle line:90%
+
+
+01:19:56.510 --> 01:20:00.640 align:middle line:84%
+It's a fun exercise
+if you want to try it.
+
+01:20:00.640 --> 01:20:05.350 align:middle line:84%
+But I will leave you with
+one more fun exercise.
+
+01:20:05.350 --> 01:20:14.980 align:middle line:84%
+Prove that the sum from k equals
+0 to n n choose k squared is
+
+01:20:14.980 --> 01:20:17.560 align:middle line:90%
+going to be 2n choose n.
+
+01:20:17.560 --> 01:20:20.590 align:middle line:90%
+
+
+01:20:20.590 --> 01:20:24.100 align:middle line:84%
+So if you look at all
+of the entries of a row,
+
+01:20:24.100 --> 01:20:26.150 align:middle line:84%
+instead of just summing
+them up directly,
+
+01:20:26.150 --> 01:20:27.830 align:middle line:90%
+square them and sum them up.
+
+01:20:27.830 --> 01:20:34.300 align:middle line:84%
+You get the entry that's twice
+as far down in the middle.
+
+01:20:34.300 --> 01:20:39.580 align:middle line:84%
+So see if you can prove that
+using a double counting proof.
+
+01:20:39.580 --> 01:20:41.710 align:middle line:84%
+So that's all we
+have time for today.
+
+01:20:41.710 --> 01:20:44.600 align:middle line:84%
+If you have any questions,
+comments, concerns,
+
+01:20:44.600 --> 01:20:47.590 align:middle line:90%
+please feel free to come up.
+
+01:20:47.590 --> 01:20:50.350 align:middle line:84%
+Otherwise, good
+luck on the exam.
+
+01:20:50.350 --> 01:20:51.900 align:middle line:90%
+Yeah.
+
+01:20:51.900 --> 01:20:57.000 align:middle line:90%

@@ -1,0 +1,3923 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.435 align:middle line:90%
+[SQUEAKING]
+
+00:00:02.435 --> 00:00:04.383 align:middle line:90%
+[RUSTLING]
+
+00:00:04.383 --> 00:00:07.792 align:middle line:90%
+[CLICKING]
+
+00:00:07.792 --> 00:00:10.552 align:middle line:90%
+
+
+00:00:10.552 --> 00:00:11.510 align:middle line:90%
+BRYNMOR CHAPMAN: Hello?
+
+00:00:11.510 --> 00:00:13.190 align:middle line:90%
+Can people hear me?
+
+00:00:13.190 --> 00:00:15.740 align:middle line:90%
+Are we good in the back?
+
+00:00:15.740 --> 00:00:16.610 align:middle line:90%
+Are we good?
+
+00:00:16.610 --> 00:00:17.430 align:middle line:90%
+Can people hear me?
+
+00:00:17.430 --> 00:00:18.860 align:middle line:90%
+Good, good, good.
+
+00:00:18.860 --> 00:00:22.970 align:middle line:84%
+OK, so today, we are going
+to move on from counting
+
+00:00:22.970 --> 00:00:26.930 align:middle line:84%
+and start the last
+unit on probability.
+
+00:00:26.930 --> 00:00:29.278 align:middle line:90%
+Probability is very important.
+
+00:00:29.278 --> 00:00:31.070 align:middle line:84%
+It's one of the most
+important disciplines,
+
+00:00:31.070 --> 00:00:34.820 align:middle line:84%
+not just in computer science,
+but in all of the sciences.
+
+00:00:34.820 --> 00:00:36.950 align:middle line:84%
+Please don't tell your
+other science instructors
+
+00:00:36.950 --> 00:00:38.780 align:middle line:90%
+that I said this.
+
+00:00:38.780 --> 00:00:40.550 align:middle line:84%
+You use it in--
+like we've already
+
+00:00:40.550 --> 00:00:44.960 align:middle line:84%
+seen it in this class with
+the Miller-Rabin algorithm.
+
+00:00:44.960 --> 00:00:47.900 align:middle line:84%
+You also see it in other
+randomized algorithms
+
+00:00:47.900 --> 00:00:53.420 align:middle line:84%
+that you'll see later in 6 1210,
+1220, 5220 if you take that.
+
+00:00:53.420 --> 00:00:55.950 align:middle line:84%
+We see it in game theory,
+information theory,
+
+00:00:55.950 --> 00:00:59.920 align:middle line:84%
+signal processing, cryptography,
+machine learning, medicine,
+
+00:00:59.920 --> 00:01:01.570 align:middle line:90%
+stats, forensics.
+
+00:01:01.570 --> 00:01:04.260 align:middle line:90%
+The list goes on and on.
+
+00:01:04.260 --> 00:01:07.110 align:middle line:84%
+But unfortunately, it's also
+one of the least understood
+
+00:01:07.110 --> 00:01:08.760 align:middle line:90%
+disciplines.
+
+00:01:08.760 --> 00:01:11.970 align:middle line:84%
+So there's a pretty
+famous quote attributed
+
+00:01:11.970 --> 00:01:16.950 align:middle line:84%
+to Mark Twain, Benjamin
+Disraeli, several other people.
+
+00:01:16.950 --> 00:01:19.090 align:middle line:90%
+There are three kinds of lies.
+
+00:01:19.090 --> 00:01:25.020 align:middle line:84%
+There are lies, there are
+damned lies, and statistics.
+
+00:01:25.020 --> 00:01:28.920 align:middle line:84%
+So you can kind of lie with
+probability and statistics
+
+00:01:28.920 --> 00:01:34.290 align:middle line:84%
+by saying things that are true
+that are also very misleading.
+
+00:01:34.290 --> 00:01:37.530 align:middle line:84%
+Common sense is often very
+demonstrably completely
+
+00:01:37.530 --> 00:01:42.180 align:middle line:84%
+unreliable, which
+we'll see in a moment.
+
+00:01:42.180 --> 00:01:43.590 align:middle line:84%
+There are many
+graduate students,
+
+00:01:43.590 --> 00:01:45.550 align:middle line:84%
+like even in our
+department-- again,
+
+00:01:45.550 --> 00:01:47.880 align:middle line:90%
+don't tell people I said this--
+
+00:01:47.880 --> 00:01:50.362 align:middle line:84%
+they can do all sorts
+of exciting maths.
+
+00:01:50.362 --> 00:01:52.320 align:middle line:84%
+But you give them a basic
+probability question,
+
+00:01:52.320 --> 00:01:55.110 align:middle line:84%
+and they don't know
+where to start.
+
+00:01:55.110 --> 00:01:56.850 align:middle line:84%
+There are many
+garbage papers that
+
+00:01:56.850 --> 00:01:59.720 align:middle line:84%
+are based on faulty
+understanding of probability.
+
+00:01:59.720 --> 00:02:06.470 align:middle line:84%
+Even some of our colleagues
+have some, let's say, issues.
+
+00:02:06.470 --> 00:02:09.860 align:middle line:84%
+Today, we are going
+to look at an example.
+
+00:02:09.860 --> 00:02:13.130 align:middle line:84%
+Who has heard of the
+Monty Hall problem?
+
+00:02:13.130 --> 00:02:14.565 align:middle line:90%
+Oh, nice.
+
+00:02:14.565 --> 00:02:15.565 align:middle line:90%
+Decent number of people.
+
+00:02:15.565 --> 00:02:18.164 align:middle line:90%
+
+
+00:02:18.164 --> 00:02:21.230 align:middle line:84%
+So, yeah, we'll basically try
+and use the Monty Hall problem
+
+00:02:21.230 --> 00:02:24.080 align:middle line:84%
+to illustrate that
+it's really best
+
+00:02:24.080 --> 00:02:26.210 align:middle line:84%
+to just throw away
+your intuition
+
+00:02:26.210 --> 00:02:30.879 align:middle line:84%
+and just fall back on rigorous
+step-by-step analyses.
+
+00:02:30.879 --> 00:02:37.040 align:middle line:84%
+So the Monty Hall problem, it
+kind of became famous in 1990
+
+00:02:37.040 --> 00:02:40.790 align:middle line:84%
+when this magazine
+columnist named
+
+00:02:40.790 --> 00:02:47.300 align:middle line:84%
+Marilyn vos Savant received a
+letter from a Craig Whitaker,
+
+00:02:47.300 --> 00:02:49.350 align:middle line:90%
+which read as follows.
+
+00:02:49.350 --> 00:02:51.860 align:middle line:84%
+Suppose you're on a
+game show, and you're
+
+00:02:51.860 --> 00:02:53.910 align:middle line:90%
+given the choice of three doors.
+
+00:02:53.910 --> 00:02:58.300 align:middle line:84%
+Behind one door is a car and
+behind the others, goats.
+
+00:02:58.300 --> 00:02:59.500 align:middle line:90%
+You pick a door--
+
+00:02:59.500 --> 00:03:01.830 align:middle line:84%
+say, number 1--
+and the host, who
+
+00:03:01.830 --> 00:03:04.980 align:middle line:84%
+knows what's behind the doors,
+opens a different door-- say,
+
+00:03:04.980 --> 00:03:07.110 align:middle line:90%
+number 3, which has a goat.
+
+00:03:07.110 --> 00:03:10.740 align:middle line:84%
+He says to you, Do you
+want to pick door number 2?
+
+00:03:10.740 --> 00:03:13.805 align:middle line:84%
+Now, the question is, Is it
+to your advantage to switch?
+
+00:03:13.805 --> 00:03:16.686 align:middle line:90%
+
+
+00:03:16.686 --> 00:03:21.270 align:middle line:84%
+And who thinks yes, it is
+advantageous to switch?
+
+00:03:21.270 --> 00:03:21.888 align:middle line:90%
+Who thinks no?
+
+00:03:21.888 --> 00:03:23.430 align:middle line:84%
+Who thinks you're
+better off sticking
+
+00:03:23.430 --> 00:03:25.800 align:middle line:90%
+with your original choice?
+
+00:03:25.800 --> 00:03:28.620 align:middle line:90%
+Who thinks it doesn't matter?
+
+00:03:28.620 --> 00:03:32.610 align:middle line:84%
+OK, so it looks like most
+people think that it's
+
+00:03:32.610 --> 00:03:34.290 align:middle line:90%
+advantageous to switch.
+
+00:03:34.290 --> 00:03:36.540 align:middle line:90%
+We've had a few abstentions.
+
+00:03:36.540 --> 00:03:40.410 align:middle line:84%
+I'm going to count those
+as it doesn't matter.
+
+00:03:40.410 --> 00:03:44.910 align:middle line:84%
+So Marilyn replied that it's
+indeed advantageous to switch.
+
+00:03:44.910 --> 00:03:47.200 align:middle line:84%
+If the car is behind the
+originally picked door,
+
+00:03:47.200 --> 00:03:48.490 align:middle line:90%
+then you lose by switching.
+
+00:03:48.490 --> 00:03:51.040 align:middle line:84%
+But if it's not, which
+is twice as likely,
+
+00:03:51.040 --> 00:03:53.830 align:middle line:90%
+then you win by switching.
+
+00:03:53.830 --> 00:03:57.190 align:middle line:84%
+And, of course, she soon
+received a torrent of hate mail,
+
+00:03:57.190 --> 00:03:59.680 align:middle line:84%
+including from professional
+mathematicians,
+
+00:03:59.680 --> 00:04:02.800 align:middle line:84%
+adamantly asserting
+that she was wrong.
+
+00:04:02.800 --> 00:04:05.260 align:middle line:84%
+So the hypo that was
+described in this letter
+
+00:04:05.260 --> 00:04:07.900 align:middle line:84%
+became known as the
+Monty Hall problem
+
+00:04:07.900 --> 00:04:12.175 align:middle line:84%
+after the host, Monty Hall,
+of the game show which
+
+00:04:12.175 --> 00:04:16.480 align:middle line:84%
+had games like this
+where contestants
+
+00:04:16.480 --> 00:04:19.329 align:middle line:90%
+faced very similar situations.
+
+00:04:19.329 --> 00:04:21.410 align:middle line:84%
+So today, we're
+going to analyze it.
+
+00:04:21.410 --> 00:04:24.430 align:middle line:84%
+But first, can I get a
+handful of volunteers to come
+
+00:04:24.430 --> 00:04:27.370 align:middle line:90%
+play Let's Make a Deal?
+
+00:04:27.370 --> 00:04:30.760 align:middle line:84%
+OK, so empirically, at least,
+it looks like it's better
+
+00:04:30.760 --> 00:04:31.670 align:middle line:90%
+to switch, right?
+
+00:04:31.670 --> 00:04:35.320 align:middle line:84%
+Most people switched, and
+most people won the prize
+
+00:04:35.320 --> 00:04:36.940 align:middle line:90%
+when they did that.
+
+00:04:36.940 --> 00:04:39.320 align:middle line:84%
+So even though there's only
+one door with the prize,
+
+00:04:39.320 --> 00:04:41.650 align:middle line:84%
+it seems to be pretty
+promising, right?
+
+00:04:41.650 --> 00:04:46.050 align:middle line:84%
+So let's see if we can
+analyze this mathematically.
+
+00:04:46.050 --> 00:04:49.360 align:middle line:84%
+So we're going to solve the
+Monty Hall problem using
+
+00:04:49.360 --> 00:04:53.700 align:middle line:84%
+what we call the tree method,
+which is a very simple
+
+00:04:53.700 --> 00:04:58.028 align:middle line:84%
+and elementary approach that
+doesn't rely on intuition.
+
+00:04:58.028 --> 00:04:59.945 align:middle line:84%
+It's just going to rely
+on mathematical rigor.
+
+00:04:59.945 --> 00:05:02.640 align:middle line:90%
+
+
+00:05:02.640 --> 00:05:09.263 align:middle line:84%
+So the tree method
+uses four-ish steps.
+
+00:05:09.263 --> 00:05:10.930 align:middle line:84%
+We used to call it
+the four-step method.
+
+00:05:10.930 --> 00:05:12.305 align:middle line:84%
+But I couldn't
+for the life of me
+
+00:05:12.305 --> 00:05:14.280 align:middle line:84%
+tell you what the
+four steps are if they
+
+00:05:14.280 --> 00:05:15.990 align:middle line:90%
+weren't written in front of me.
+
+00:05:15.990 --> 00:05:19.380 align:middle line:84%
+So I prefer to call
+it the tree method.
+
+00:05:19.380 --> 00:05:21.070 align:middle line:90%
+Oh, I can't even count.
+
+00:05:21.070 --> 00:05:22.270 align:middle line:90%
+It kind of has five steps.
+
+00:05:22.270 --> 00:05:23.630 align:middle line:90%
+We've got a step zero.
+
+00:05:23.630 --> 00:05:26.400 align:middle line:90%
+
+
+00:05:26.400 --> 00:05:29.490 align:middle line:84%
+Before you even
+start, you really
+
+00:05:29.490 --> 00:05:31.900 align:middle line:84%
+want to make sure that
+you know what question
+
+00:05:31.900 --> 00:05:32.900 align:middle line:90%
+you're trying to answer.
+
+00:05:32.900 --> 00:05:40.098 align:middle line:90%
+
+
+00:05:40.098 --> 00:05:42.750 align:middle line:84%
+So before we can even
+think about solving
+
+00:05:42.750 --> 00:05:47.670 align:middle line:84%
+a mathematical problem, we need
+to know what the problem is.
+
+00:05:47.670 --> 00:05:50.720 align:middle line:84%
+We need to understand
+the setup, make
+
+00:05:50.720 --> 00:05:53.540 align:middle line:84%
+sure we know what we're
+trying to ask before we
+
+00:05:53.540 --> 00:05:54.870 align:middle line:90%
+can start analyzing it.
+
+00:05:54.870 --> 00:05:58.760 align:middle line:84%
+So the letter from
+this Mr. Whitaker
+
+00:05:58.760 --> 00:06:01.440 align:middle line:90%
+was not entirely precise.
+
+00:06:01.440 --> 00:06:05.910 align:middle line:84%
+So we've got to figure out
+what axioms we're working with.
+
+00:06:05.910 --> 00:06:09.540 align:middle line:84%
+So we're going to
+assume the following.
+
+00:06:09.540 --> 00:06:12.462 align:middle line:90%
+
+
+00:06:12.462 --> 00:06:23.815 align:middle line:84%
+A prize is equally
+likely to be in any box.
+
+00:06:23.815 --> 00:06:28.444 align:middle line:90%
+
+
+00:06:28.444 --> 00:06:31.730 align:middle line:84%
+So, in principle, it's
+possible that Monty Hall
+
+00:06:31.730 --> 00:06:35.180 align:middle line:84%
+tries to be tricky and tries to
+get into the contestants' minds,
+
+00:06:35.180 --> 00:06:36.930 align:middle line:84%
+figure out what box
+they're going to pick,
+
+00:06:36.930 --> 00:06:39.830 align:middle line:84%
+and put the prize somewhere
+else or, alternatively, put
+
+00:06:39.830 --> 00:06:41.663 align:middle line:84%
+the prize somewhere
+where they will pick it,
+
+00:06:41.663 --> 00:06:43.760 align:middle line:84%
+because it's an
+exciting game show.
+
+00:06:43.760 --> 00:06:46.730 align:middle line:84%
+But we're going to
+assume that Monty is just
+
+00:06:46.730 --> 00:06:48.150 align:middle line:90%
+picking the boxes randomly.
+
+00:06:48.150 --> 00:06:51.920 align:middle line:84%
+So the prize is going to go
+into a randomly selected box,
+
+00:06:51.920 --> 00:06:56.960 align:middle line:84%
+completely uniform, and then the
+other two will have the goats.
+
+00:06:56.960 --> 00:07:02.640 align:middle line:84%
+We're also going to assume that
+Marilyn or your colleagues,
+
+00:07:02.640 --> 00:07:14.060 align:middle line:84%
+whoever is doing the picking,
+is equally likely to pick
+
+00:07:14.060 --> 00:07:20.123 align:middle line:90%
+any box for the first pick.
+
+00:07:20.123 --> 00:07:22.290 align:middle line:84%
+She doesn't know anything
+about what Monty is doing.
+
+00:07:22.290 --> 00:07:24.650 align:middle line:84%
+She's just going to toss some
+random coins in her head,
+
+00:07:24.650 --> 00:07:27.750 align:middle line:84%
+and uniformly, at random, she'll
+just pick one of the boxes.
+
+00:07:27.750 --> 00:07:32.012 align:middle line:84%
+It doesn't really matter
+where the prize is.
+
+00:07:32.012 --> 00:07:37.280 align:middle line:84%
+Now, after Marilyn
+picks her box,
+
+00:07:37.280 --> 00:07:46.880 align:middle line:90%
+Monty must reveal a non-prize.
+
+00:07:46.880 --> 00:07:50.020 align:middle line:90%
+
+
+00:07:50.020 --> 00:07:53.970 align:middle line:84%
+And moreover, it cannot
+be in Marilyn's box.
+
+00:07:53.970 --> 00:08:05.032 align:middle line:90%
+
+
+00:08:05.032 --> 00:08:08.090 align:middle line:84%
+So all that Mr.
+Whitaker said was
+
+00:08:08.090 --> 00:08:10.270 align:middle line:84%
+Monty did reveal
+a non-prize that
+
+00:08:10.270 --> 00:08:13.390 align:middle line:90%
+wasn't behind the chosen door.
+
+00:08:13.390 --> 00:08:16.520 align:middle line:84%
+It's not entirely clear
+that this must happen.
+
+00:08:16.520 --> 00:08:18.400 align:middle line:84%
+And, in fact, I believe
+on the game show,
+
+00:08:18.400 --> 00:08:23.028 align:middle line:84%
+there were instances
+where he didn't.
+
+00:08:23.028 --> 00:08:26.500 align:middle line:84%
+So we're just going
+to assume that Monty
+
+00:08:26.500 --> 00:08:29.710 align:middle line:84%
+is going to reveal a prize,
+regardless of whether Marilyn
+
+00:08:29.710 --> 00:08:32.115 align:middle line:84%
+picked the correct
+box to begin with.
+
+00:08:32.115 --> 00:08:35.813 align:middle line:90%
+
+
+00:08:35.813 --> 00:08:47.620 align:middle line:84%
+And, lastly, if Monty has a
+choice, he picks randomly.
+
+00:08:47.620 --> 00:08:55.520 align:middle line:90%
+
+
+00:08:55.520 --> 00:09:00.780 align:middle line:84%
+So if Marilyn has picked
+a non-prize to begin with,
+
+00:09:00.780 --> 00:09:02.840 align:middle line:84%
+there's only one
+other non-prize.
+
+00:09:02.840 --> 00:09:04.730 align:middle line:90%
+So Monty has to reveal that one.
+
+00:09:04.730 --> 00:09:09.660 align:middle line:84%
+But if Marilyn has picked
+the prize box to begin with,
+
+00:09:09.660 --> 00:09:11.960 align:middle line:84%
+then Monty could,
+in principle, open
+
+00:09:11.960 --> 00:09:13.250 align:middle line:90%
+either of the other two boxes.
+
+00:09:13.250 --> 00:09:16.250 align:middle line:84%
+And that would still
+follow this rule.
+
+00:09:16.250 --> 00:09:18.120 align:middle line:84%
+So when Monty has
+a choice like this,
+
+00:09:18.120 --> 00:09:19.850 align:middle line:84%
+we're going to say
+that he tosses a coin,
+
+00:09:19.850 --> 00:09:22.060 align:middle line:84%
+and he's going to open
+one of them at random.
+
+00:09:22.060 --> 00:09:26.352 align:middle line:90%
+
+
+00:09:26.352 --> 00:09:30.990 align:middle line:84%
+So note that these
+are all axioms.
+
+00:09:30.990 --> 00:09:33.360 align:middle line:84%
+We are just taking
+them on faith.
+
+00:09:33.360 --> 00:09:35.760 align:middle line:90%
+They may or may not have merit.
+
+00:09:35.760 --> 00:09:38.270 align:middle line:84%
+But if you accept
+them, then you also
+
+00:09:38.270 --> 00:09:43.395 align:middle line:84%
+have to accept whatever
+conclusions we draw from them.
+
+00:09:43.395 --> 00:09:44.770 align:middle line:84%
+But I should point
+out that there
+
+00:09:44.770 --> 00:09:48.460 align:middle line:84%
+are other perfectly reasonable
+sets of axioms that would lead
+
+00:09:48.460 --> 00:09:49.810 align:middle line:90%
+us to different conclusions.
+
+00:09:49.810 --> 00:09:52.690 align:middle line:90%
+Like, maybe Monty is very rude.
+
+00:09:52.690 --> 00:09:57.560 align:middle line:84%
+And if Marilyn has
+picked the prize,
+
+00:09:57.560 --> 00:09:59.780 align:middle line:84%
+then he offers her
+the option to switch.
+
+00:09:59.780 --> 00:10:02.630 align:middle line:84%
+And if Marilyn has
+not picked the prize,
+
+00:10:02.630 --> 00:10:06.860 align:middle line:84%
+then he forces her to go
+with whatever she picked.
+
+00:10:06.860 --> 00:10:10.960 align:middle line:84%
+This is a totally
+reasonable interpretation.
+
+00:10:10.960 --> 00:10:14.290 align:middle line:84%
+And that would lead us to
+a different conclusion.
+
+00:10:14.290 --> 00:10:15.980 align:middle line:84%
+Or, conversely, maybe
+it's benevolent.
+
+00:10:15.980 --> 00:10:19.580 align:middle line:84%
+Maybe if Marilyn didn't
+pick the prize initially,
+
+00:10:19.580 --> 00:10:22.850 align:middle line:84%
+he'll always try and
+encourage her to switch.
+
+00:10:22.850 --> 00:10:25.100 align:middle line:84%
+But if she picked the prize,
+he'll just be like, nope,
+
+00:10:25.100 --> 00:10:26.225 align:middle line:90%
+you got to stick with that.
+
+00:10:26.225 --> 00:10:31.410 align:middle line:90%
+
+
+00:10:31.410 --> 00:10:34.360 align:middle line:84%
+So now that we've
+got these axioms,
+
+00:10:34.360 --> 00:10:37.420 align:middle line:84%
+we can now pose the
+mathematical question,
+
+00:10:37.420 --> 00:10:52.860 align:middle line:84%
+What is the probability that
+Marilyn wins by switching?
+
+00:10:52.860 --> 00:10:59.810 align:middle line:90%
+
+
+00:10:59.810 --> 00:11:04.560 align:middle line:84%
+So yes, this is why
+I singled you out.
+
+00:11:04.560 --> 00:11:06.890 align:middle line:84%
+I don't know where
+you have gone.
+
+00:11:06.890 --> 00:11:10.190 align:middle line:84%
+Your colleague who
+did not switch,
+
+00:11:10.190 --> 00:11:13.268 align:middle line:84%
+we're trying to analyze
+this probability, which
+
+00:11:13.268 --> 00:11:14.310 align:middle line:90%
+is why I singled you out.
+
+00:11:14.310 --> 00:11:17.480 align:middle line:84%
+So I apologize for that,
+but it's for the maths.
+
+00:11:17.480 --> 00:11:20.540 align:middle line:90%
+Don't take it personally.
+
+00:11:20.540 --> 00:11:27.380 align:middle line:84%
+OK, so now we have a
+well-defined question.
+
+00:11:27.380 --> 00:11:29.980 align:middle line:84%
+So now we can analyze it
+using the four-step method.
+
+00:11:29.980 --> 00:11:34.730 align:middle line:90%
+
+
+00:11:34.730 --> 00:11:36.770 align:middle line:90%
+The first of our four steps--
+
+00:11:36.770 --> 00:11:40.770 align:middle line:84%
+well, the tree method,
+which has four steps--
+
+00:11:40.770 --> 00:11:43.445 align:middle line:84%
+we need to figure out what
+we call the sample space.
+
+00:11:43.445 --> 00:11:57.840 align:middle line:90%
+
+
+00:11:57.840 --> 00:11:59.940 align:middle line:84%
+So whenever we're thinking
+about a probability
+
+00:11:59.940 --> 00:12:03.570 align:middle line:84%
+problem, underlying
+it is always what
+
+00:12:03.570 --> 00:12:06.610 align:middle line:90%
+we call a probability space.
+
+00:12:06.610 --> 00:12:09.095 align:middle line:84%
+And a probability space
+consists of two things.
+
+00:12:09.095 --> 00:12:27.060 align:middle line:90%
+
+
+00:12:27.060 --> 00:12:32.180 align:middle line:84%
+These two elements are a set,
+which we call the sample space.
+
+00:12:32.180 --> 00:12:44.471 align:middle line:90%
+
+
+00:12:44.471 --> 00:12:46.380 align:middle line:84%
+And for the purposes
+of this class,
+
+00:12:46.380 --> 00:12:49.620 align:middle line:84%
+we're only going to be looking
+at discrete probability spaces.
+
+00:12:49.620 --> 00:12:56.880 align:middle line:84%
+So S is going to be a non-empty
+and countable, or finite, set.
+
+00:12:56.880 --> 00:13:00.696 align:middle line:84%
+We're not going to look at sets
+like R or something like that.
+
+00:13:00.696 --> 00:13:04.770 align:middle line:84%
+So this could be a
+set of three boxes,
+
+00:13:04.770 --> 00:13:06.710 align:middle line:84%
+or it could be the
+natural numbers, something
+
+00:13:06.710 --> 00:13:11.180 align:middle line:84%
+like that, something that's
+discrete and countable.
+
+00:13:11.180 --> 00:13:15.180 align:middle line:84%
+And then we also
+have a function,
+
+00:13:15.180 --> 00:13:21.530 align:middle line:84%
+which we're going to denote by
+the letters Pr, which maps S
+
+00:13:21.530 --> 00:13:23.960 align:middle line:90%
+into the unit interval 0 to 1.
+
+00:13:23.960 --> 00:13:28.550 align:middle line:90%
+
+
+00:13:28.550 --> 00:13:37.312 align:middle line:84%
+So this is going to be
+a total function with--
+
+00:13:37.312 --> 00:13:43.500 align:middle line:90%
+
+
+00:13:43.500 --> 00:13:44.920 align:middle line:90%
+I probably shouldn't use S here.
+
+00:13:44.920 --> 00:13:45.770 align:middle line:90%
+Let's call it x.
+
+00:13:45.770 --> 00:13:53.328 align:middle line:90%
+
+
+00:13:53.328 --> 00:13:55.840 align:middle line:84%
+And, slightly oddly, when we're
+talking about probabilities,
+
+00:13:55.840 --> 00:13:59.100 align:middle line:84%
+we use square brackets
+instead of parentheses
+
+00:13:59.100 --> 00:14:02.040 align:middle line:90%
+to enclose the argument.
+
+00:14:02.040 --> 00:14:06.040 align:middle line:90%
+But this is just a function.
+
+00:14:06.040 --> 00:14:09.110 align:middle line:84%
+You can think of it
+as, like, Pr of x.
+
+00:14:09.110 --> 00:14:11.625 align:middle line:90%
+
+
+00:14:11.625 --> 00:14:13.440 align:middle line:84%
+so We're going to
+have the requirement
+
+00:14:13.440 --> 00:14:18.390 align:middle line:84%
+that if you sum up Pr of x over
+all of the x in your sample
+
+00:14:18.390 --> 00:14:21.652 align:middle line:90%
+space, you should get 1.
+
+00:14:21.652 --> 00:14:24.110 align:middle line:84%
+That's what it means for this
+to be a probability function.
+
+00:14:24.110 --> 00:14:32.400 align:middle line:90%
+
+
+00:14:32.400 --> 00:14:35.650 align:middle line:84%
+Oh, actually, why don't
+we leave both of these
+
+00:14:35.650 --> 00:14:38.700 align:middle line:90%
+up and move onto this board?
+
+00:14:38.700 --> 00:14:45.850 align:middle line:90%
+
+
+00:14:45.850 --> 00:14:49.770 align:middle line:84%
+OK, so this is called
+our probability function.
+
+00:14:49.770 --> 00:14:55.990 align:middle line:90%
+
+
+00:14:55.990 --> 00:14:59.972 align:middle line:90%
+And elements of s are what--
+
+00:14:59.972 --> 00:15:01.430 align:middle line:84%
+we're going to call
+those outcomes.
+
+00:15:01.430 --> 00:15:10.780 align:middle line:90%
+
+
+00:15:10.780 --> 00:15:16.370 align:middle line:84%
+So, we've got a sample space
+S, which is a set of outcomes.
+
+00:15:16.370 --> 00:15:18.310 align:middle line:84%
+And we've got a
+probability function,
+
+00:15:18.310 --> 00:15:23.290 align:middle line:84%
+which maps each outcome to
+a number between 0 and 1.
+
+00:15:23.290 --> 00:15:25.870 align:middle line:84%
+And it should be the case that
+all of those probabilities
+
+00:15:25.870 --> 00:15:27.850 align:middle line:90%
+should sum to 1.
+
+00:15:27.850 --> 00:15:30.760 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:15:30.760 --> 00:15:33.070 align:middle line:84%
+People reasonably
+Happy with this?
+
+00:15:33.070 --> 00:15:35.715 align:middle line:90%
+Questions, comments, concerns?
+
+00:15:35.715 --> 00:15:38.275 align:middle line:90%
+
+
+00:15:38.275 --> 00:15:38.775 align:middle line:90%
+OK.
+
+00:15:38.775 --> 00:15:42.340 align:middle line:90%
+
+
+00:15:42.340 --> 00:15:46.180 align:middle line:84%
+So our first objective is
+going to be to figure out what
+
+00:15:46.180 --> 00:15:47.515 align:middle line:90%
+our sample space should be.
+
+00:15:47.515 --> 00:15:50.360 align:middle line:90%
+
+
+00:15:50.360 --> 00:15:54.540 align:middle line:84%
+So we're going to do that using
+what we call a tree diagram.
+
+00:15:54.540 --> 00:16:01.540 align:middle line:90%
+
+
+00:16:01.540 --> 00:16:05.680 align:middle line:84%
+So, for the moment, we're going
+to disregard the probability
+
+00:16:05.680 --> 00:16:08.760 align:middle line:90%
+function and just focus on S.
+
+00:16:08.760 --> 00:16:10.510 align:middle line:84%
+And then once we've
+figured out what S is,
+
+00:16:10.510 --> 00:16:14.390 align:middle line:84%
+we can figure out how to assign
+probabilities to everything.
+
+00:16:14.390 --> 00:16:18.160 align:middle line:84%
+So the tree diagram,
+as you might expect,
+
+00:16:18.160 --> 00:16:21.700 align:middle line:84%
+it's going to be a diagram
+in the shape of a tree, where
+
+00:16:21.700 --> 00:16:24.700 align:middle line:84%
+each level of the
+tree represents
+
+00:16:24.700 --> 00:16:28.380 align:middle line:84%
+some step in the random
+process we're trying to model.
+
+00:16:28.380 --> 00:16:31.036 align:middle line:90%
+
+
+00:16:31.036 --> 00:16:34.430 align:middle line:84%
+So in the case of the
+Monty Hall problem,
+
+00:16:34.430 --> 00:16:38.200 align:middle line:90%
+what might be the first step?
+
+00:16:38.200 --> 00:16:40.240 align:middle line:84%
+What's the first
+thing that happens
+
+00:16:40.240 --> 00:16:45.850 align:middle line:84%
+in the Monty Hall problem, the
+first source of randomness?
+
+00:16:45.850 --> 00:16:47.110 align:middle line:90%
+Yeah?
+
+00:16:47.110 --> 00:16:49.915 align:middle line:90%
+AUDIENCE: You pick a first door.
+
+00:16:49.915 --> 00:16:51.790 align:middle line:84%
+BRYNMOR CHAPMAN: OK,
+there's something random
+
+00:16:51.790 --> 00:16:53.120 align:middle line:90%
+that happens even before that.
+
+00:16:53.120 --> 00:16:54.680 align:middle line:90%
+The answer was, you pick a door.
+
+00:16:54.680 --> 00:16:55.780 align:middle line:90%
+Yeah?
+
+00:16:55.780 --> 00:16:57.843 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:16:57.843 --> 00:16:58.760 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:16:58.760 --> 00:17:03.700 align:middle line:84%
+So the first random thing
+that happens is I, or Monty,
+
+00:17:03.700 --> 00:17:08.000 align:middle line:84%
+picks which door
+the prize is behind.
+
+00:17:08.000 --> 00:17:11.410 align:middle line:84%
+So that's going to be the first
+level of our tree diagram.
+
+00:17:11.410 --> 00:17:14.540 align:middle line:84%
+So let's start drawing
+out our tree diagram.
+
+00:17:14.540 --> 00:17:16.270 align:middle line:84%
+We're going to
+have our root here.
+
+00:17:16.270 --> 00:17:21.989 align:middle line:84%
+And let's label this
+with Monty hides prize.
+
+00:17:21.989 --> 00:17:29.297 align:middle line:90%
+
+
+00:17:29.297 --> 00:17:33.260 align:middle line:84%
+And we're going to
+have three edges, which
+
+00:17:33.260 --> 00:17:37.982 align:middle line:84%
+go to the three possibilities
+for what happens here.
+
+00:17:37.982 --> 00:17:41.060 align:middle line:84%
+So it could be in door
+A, door B-- actually,
+
+00:17:41.060 --> 00:17:43.640 align:middle line:84%
+why don't I call these
+purple, gold, and silver?
+
+00:17:43.640 --> 00:17:44.485 align:middle line:90%
+Where's the eraser?
+
+00:17:44.485 --> 00:17:47.930 align:middle line:90%
+
+
+00:17:47.930 --> 00:17:48.640 align:middle line:90%
+Here we go.
+
+00:17:48.640 --> 00:17:53.570 align:middle line:90%
+
+
+00:17:53.570 --> 00:17:58.240 align:middle line:84%
+So we've got our purple box, our
+gold box, and our silver box.
+
+00:17:58.240 --> 00:18:02.810 align:middle line:90%
+
+
+00:18:02.810 --> 00:18:04.720 align:middle line:84%
+What's the next random
+thing that happens?
+
+00:18:04.720 --> 00:18:10.460 align:middle line:90%
+
+
+00:18:10.460 --> 00:18:11.380 align:middle line:90%
+Yeah?
+
+00:18:11.380 --> 00:18:12.630 align:middle line:90%
+AUDIENCE: You choose the door.
+
+00:18:12.630 --> 00:18:13.130 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:18:13.130 --> 00:18:14.056 align:middle line:90%
+AUDIENCE: Same as last time.
+
+00:18:14.056 --> 00:18:14.973 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:18:14.973 --> 00:18:17.383 align:middle line:84%
+So as your colleague
+said last time,
+
+00:18:17.383 --> 00:18:18.800 align:middle line:84%
+the next random
+thing that happens
+
+00:18:18.800 --> 00:18:24.680 align:middle line:84%
+is Marilyn, or the
+contestant, picks a door.
+
+00:18:24.680 --> 00:18:28.040 align:middle line:90%
+So M-- oh, dear.
+
+00:18:28.040 --> 00:18:31.132 align:middle line:84%
+Monty and Marilyn both begin
+with the same letter, OK.
+
+00:18:31.132 --> 00:18:32.340 align:middle line:90%
+Let's just call this Student.
+
+00:18:32.340 --> 00:18:38.800 align:middle line:90%
+
+
+00:18:38.800 --> 00:18:42.700 align:middle line:84%
+So now each of these
+is going to split
+
+00:18:42.700 --> 00:18:46.214 align:middle line:90%
+into three more possibilities.
+
+00:18:46.214 --> 00:18:52.240 align:middle line:84%
+So our contestant can pick
+purple, gold, or silver
+
+00:18:52.240 --> 00:18:54.620 align:middle line:90%
+for each of these three things.
+
+00:18:54.620 --> 00:18:57.320 align:middle line:84%
+Regardless of where Monty
+has hidden the prize,
+
+00:18:57.320 --> 00:19:06.645 align:middle line:84%
+the contestant can
+pick any of the doors.
+
+00:19:06.645 --> 00:19:22.760 align:middle line:90%
+
+
+00:19:22.760 --> 00:19:26.300 align:middle line:84%
+What's the next random
+thing that could happen?
+
+00:19:26.300 --> 00:19:26.800 align:middle line:90%
+Yeah?
+
+00:19:26.800 --> 00:19:31.300 align:middle line:90%
+
+
+00:19:31.300 --> 00:19:32.735 align:middle line:90%
+Were you raising your hand?
+
+00:19:32.735 --> 00:19:33.860 align:middle line:90%
+AUDIENCE: Sorry about that.
+
+00:19:33.860 --> 00:19:34.860 align:middle line:90%
+BRYNMOR CHAPMAN: Oh, no.
+
+00:19:34.860 --> 00:19:37.640 align:middle line:84%
+AUDIENCE: If Monty has a
+choice of which door to reveal
+
+00:19:37.640 --> 00:19:41.150 align:middle line:90%
+[INAUDIBLE].
+
+00:19:41.150 --> 00:19:43.670 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah, so if
+Monty has the choice of door
+
+00:19:43.670 --> 00:19:46.490 align:middle line:84%
+to reveal, then he picks
+one of the two remaining
+
+00:19:46.490 --> 00:19:47.925 align:middle line:90%
+doors randomly.
+
+00:19:47.925 --> 00:19:50.415 align:middle line:84%
+So, so far, we've
+got three branches
+
+00:19:50.415 --> 00:19:51.415 align:middle line:90%
+where that could happen.
+
+00:19:51.415 --> 00:19:54.642 align:middle line:90%
+
+
+00:19:54.642 --> 00:20:01.350 align:middle line:84%
+We've got both Monty and Marilyn
+pick door P. So in that case,
+
+00:20:01.350 --> 00:20:11.990 align:middle line:84%
+Monty can reveal either G or S.
+So let's make a branch for that.
+
+00:20:11.990 --> 00:20:18.240 align:middle line:84%
+Similarly, if they both pick
+P, we could have either P or S.
+
+00:20:18.240 --> 00:20:21.440 align:middle line:84%
+And if they both
+pick S, then here,
+
+00:20:21.440 --> 00:20:26.085 align:middle line:90%
+we could have either P or G.
+
+00:20:26.085 --> 00:20:28.000 align:middle line:90%
+
+
+00:20:28.000 --> 00:20:33.010 align:middle line:84%
+Now, for the remaining
+ones, we could
+
+00:20:33.010 --> 00:20:36.130 align:middle line:84%
+say that there's a
+random process there,
+
+00:20:36.130 --> 00:20:39.500 align:middle line:84%
+where Monty is randomly picking
+from a single element set.
+
+00:20:39.500 --> 00:20:41.420 align:middle line:84%
+So it's always going
+to be the same thing.
+
+00:20:41.420 --> 00:20:44.050 align:middle line:84%
+We could consider it a
+random outcome, though.
+
+00:20:44.050 --> 00:20:47.385 align:middle line:84%
+So we can also draw
+these arrows here.
+
+00:20:47.385 --> 00:20:59.920 align:middle line:90%
+
+
+00:20:59.920 --> 00:21:08.320 align:middle line:84%
+Kind of running out of space
+here, so let's put this up here,
+
+00:21:08.320 --> 00:21:10.520 align:middle line:84%
+and let's label
+it on this board.
+
+00:21:10.520 --> 00:21:19.690 align:middle line:90%
+So Monty reveals a zonk.
+
+00:21:19.690 --> 00:21:23.080 align:middle line:84%
+So this is the technical
+term for a non-prize.
+
+00:21:23.080 --> 00:21:26.850 align:middle line:84%
+I think the non-prizes on
+Monty's show were called zonks.
+
+00:21:26.850 --> 00:21:28.230 align:middle line:90%
+They weren't always goats.
+
+00:21:28.230 --> 00:21:31.950 align:middle line:84%
+Sometimes it was some
+other ridiculous prize,
+
+00:21:31.950 --> 00:21:35.490 align:middle line:84%
+like a garbage can or
+a potato or something.
+
+00:21:35.490 --> 00:21:37.190 align:middle line:84%
+But, yeah, they were
+just called zonks.
+
+00:21:37.190 --> 00:21:44.886 align:middle line:90%
+
+
+00:21:44.886 --> 00:21:47.118 align:middle line:90%
+So now, are we done?
+
+00:21:47.118 --> 00:21:49.535 align:middle line:84%
+Is there any other randomness
+that we haven't modeled yet?
+
+00:21:49.535 --> 00:21:55.380 align:middle line:90%
+
+
+00:21:55.380 --> 00:21:58.650 align:middle line:90%
+Who thinks yes?
+
+00:21:58.650 --> 00:21:59.530 align:middle line:90%
+Oh, OK.
+
+00:21:59.530 --> 00:22:01.730 align:middle line:90%
+So what are we missing, then?
+
+00:22:01.730 --> 00:22:03.730 align:middle line:84%
+Everybody seems to think
+we're missing somebody.
+
+00:22:03.730 --> 00:22:05.190 align:middle line:90%
+Or are we just asleep?
+
+00:22:05.190 --> 00:22:09.780 align:middle line:84%
+It is very early in the
+morning, I understand.
+
+00:22:09.780 --> 00:22:12.330 align:middle line:90%
+Are we missing anything?
+
+00:22:12.330 --> 00:22:15.630 align:middle line:84%
+Who thinks we're not
+missing anything?
+
+00:22:15.630 --> 00:22:18.420 align:middle line:90%
+Well, a few hands, OK.
+
+00:22:18.420 --> 00:22:23.490 align:middle line:84%
+Well, yeah, it turns out that
+this is all of the randomness.
+
+00:22:23.490 --> 00:22:27.870 align:middle line:84%
+You could think about a
+different problem, where
+
+00:22:27.870 --> 00:22:30.370 align:middle line:90%
+Marilyn has a random strategy.
+
+00:22:30.370 --> 00:22:32.700 align:middle line:84%
+But for now, we're
+just-- our question
+
+00:22:32.700 --> 00:22:35.080 align:middle line:84%
+is, Marilyn is always
+going to switch.
+
+00:22:35.080 --> 00:22:37.145 align:middle line:84%
+What's the probability
+that she wins?
+
+00:22:37.145 --> 00:22:41.010 align:middle line:84%
+So this is all the
+randomness that we've got.
+
+00:22:41.010 --> 00:22:47.380 align:middle line:84%
+So now that we have
+our tree structure,
+
+00:22:47.380 --> 00:22:50.050 align:middle line:90%
+we can label our outcomes.
+
+00:22:50.050 --> 00:22:52.560 align:middle line:84%
+And that'll tell us
+what the set S is.
+
+00:22:52.560 --> 00:22:58.800 align:middle line:84%
+So the set S is just going to be
+the set of leaves of our tree.
+
+00:22:58.800 --> 00:23:04.980 align:middle line:84%
+Each path corresponds
+to some way
+
+00:23:04.980 --> 00:23:06.835 align:middle line:84%
+that the random
+process could turn out.
+
+00:23:06.835 --> 00:23:08.293 align:middle line:84%
+Those are going to
+be our outcomes.
+
+00:23:08.293 --> 00:23:10.970 align:middle line:90%
+
+
+00:23:10.970 --> 00:23:14.620 align:middle line:84%
+So formally, we could
+label these as tuples.
+
+00:23:14.620 --> 00:23:19.890 align:middle line:84%
+So let's say that
+this one is PPP.
+
+00:23:19.890 --> 00:23:24.050 align:middle line:84%
+So that represents Monty
+hides the prize behind door P,
+
+00:23:24.050 --> 00:23:26.360 align:middle line:84%
+Marilyn picks door
+P, and then Monty
+
+00:23:26.360 --> 00:23:30.980 align:middle line:90%
+reveals a zonk behind door G.
+
+00:23:30.980 --> 00:23:35.180 align:middle line:90%
+This one's going to be PPS.
+
+00:23:35.180 --> 00:23:39.260 align:middle line:90%
+This one's going to be PG.
+
+00:23:39.260 --> 00:23:42.590 align:middle line:84%
+And now, I haven't
+actually labeled this edge.
+
+00:23:42.590 --> 00:23:47.000 align:middle line:84%
+But if Monty hides the
+prize behind door P,
+
+00:23:47.000 --> 00:23:51.713 align:middle line:84%
+and then Marilyn
+picks door G, where
+
+00:23:51.713 --> 00:23:52.880 align:middle line:90%
+is Monty revealing the zonk?
+
+00:23:52.880 --> 00:23:57.530 align:middle line:90%
+
+
+00:23:57.530 --> 00:24:00.290 align:middle line:90%
+S, yeah.
+
+00:24:00.290 --> 00:24:05.900 align:middle line:84%
+So let's label that, and we
+can continue all the way down.
+
+00:24:05.900 --> 00:24:09.510 align:middle line:90%
+
+
+00:24:09.510 --> 00:24:15.770 align:middle line:84%
+So S-- oh, I've just realized
+that I've overloaded it.
+
+00:24:15.770 --> 00:24:18.700 align:middle line:84%
+It's a script S in my notes,
+and so it looks different.
+
+00:24:18.700 --> 00:24:20.110 align:middle line:90%
+I'm sorry.
+
+00:24:20.110 --> 00:24:26.190 align:middle line:84%
+[LAUGHS] OK, so our squiggly S
+is going to be the set of all
+
+00:24:26.190 --> 00:24:35.415 align:middle line:90%
+tuples, so x, y, z, in PGS--
+
+00:24:35.415 --> 00:24:38.520 align:middle line:90%
+
+
+00:24:38.520 --> 00:24:41.890 align:middle line:90%
+oops-- cubed.
+
+00:24:41.890 --> 00:24:45.900 align:middle line:84%
+So it's going to be
+triples of P, G, and S,
+
+00:24:45.900 --> 00:24:55.490 align:middle line:84%
+such that z is not equal to
+x, and z is not equal to y.
+
+00:24:55.490 --> 00:25:01.947 align:middle line:90%
+
+
+00:25:01.947 --> 00:25:04.200 align:middle line:84%
+So that's how we're
+mathematically going
+
+00:25:04.200 --> 00:25:07.150 align:middle line:90%
+to represent our sample space.
+
+00:25:07.150 --> 00:25:11.190 align:middle line:84%
+So x is the door that Monty
+hides the prize behind.
+
+00:25:11.190 --> 00:25:14.100 align:middle line:84%
+y is the door that
+Marilyn initially chooses.
+
+00:25:14.100 --> 00:25:17.020 align:middle line:84%
+And then z is going to be
+the door that Monty reveals,
+
+00:25:17.020 --> 00:25:17.990 align:middle line:90%
+which has a goat.
+
+00:25:17.990 --> 00:25:21.580 align:middle line:84%
+And by our rule, that door
+cannot be either of the first
+
+00:25:21.580 --> 00:25:25.875 align:middle line:84%
+two, but anything else
+is a valid outcome.
+
+00:25:25.875 --> 00:25:32.050 align:middle line:90%
+
+
+00:25:32.050 --> 00:25:34.510 align:middle line:84%
+OK, do we have any questions
+about the sample space
+
+00:25:34.510 --> 00:25:36.270 align:middle line:90%
+and how we compute it?
+
+00:25:36.270 --> 00:25:45.382 align:middle line:90%
+
+
+00:25:45.382 --> 00:25:53.680 align:middle line:84%
+So our next step, now that
+we've got our sample space,
+
+00:25:53.680 --> 00:25:55.680 align:middle line:84%
+we want to figure out
+our probability function.
+
+00:25:55.680 --> 00:26:10.420 align:middle line:90%
+
+
+00:26:10.420 --> 00:26:13.360 align:middle line:84%
+So we'd like to figure out
+what the probability of each
+
+00:26:13.360 --> 00:26:16.600 align:middle line:90%
+of these outcomes is.
+
+00:26:16.600 --> 00:26:20.490 align:middle line:84%
+So to do this, we're going
+to assign a probability
+
+00:26:20.490 --> 00:26:22.785 align:middle line:84%
+to every edge that we've
+got in our tree diagram.
+
+00:26:22.785 --> 00:26:25.680 align:middle line:90%
+
+
+00:26:25.680 --> 00:26:29.400 align:middle line:84%
+And so that's just going to
+be the probability that if we
+
+00:26:29.400 --> 00:26:33.300 align:middle line:84%
+get to the source of that edge,
+what's the probability that we
+
+00:26:33.300 --> 00:26:36.390 align:middle line:90%
+proceed along that edge?
+
+00:26:36.390 --> 00:26:42.900 align:middle line:84%
+So at the very beginning,
+if we're at the root,
+
+00:26:42.900 --> 00:26:45.300 align:middle line:84%
+what's the probability
+that, given
+
+00:26:45.300 --> 00:26:49.865 align:middle line:84%
+that we're at the start, Monty
+hides the prize behind door P?
+
+00:26:49.865 --> 00:26:52.480 align:middle line:90%
+
+
+00:26:52.480 --> 00:26:52.980 align:middle line:90%
+Yeah?
+
+00:26:52.980 --> 00:26:53.760 align:middle line:90%
+AUDIENCE: A third.
+
+00:26:53.760 --> 00:26:56.040 align:middle line:84%
+BRYNMOR CHAPMAN:
+One-third, yeah.
+
+00:26:56.040 --> 00:26:58.470 align:middle line:84%
+So we're going to label
+this with one-third.
+
+00:26:58.470 --> 00:27:01.050 align:middle line:90%
+
+
+00:27:01.050 --> 00:27:02.135 align:middle line:90%
+What about G?
+
+00:27:02.135 --> 00:27:03.510 align:middle line:84%
+What's the
+probability that Monty
+
+00:27:03.510 --> 00:27:05.270 align:middle line:90%
+hides the prize behind door G?
+
+00:27:05.270 --> 00:27:10.530 align:middle line:90%
+
+
+00:27:10.530 --> 00:27:11.520 align:middle line:90%
+Anybody?
+
+00:27:11.520 --> 00:27:17.010 align:middle line:90%
+
+
+00:27:17.010 --> 00:27:19.220 align:middle line:84%
+I mean, yeah, arithmetic
+is pretty difficult.
+
+00:27:19.220 --> 00:27:21.900 align:middle line:90%
+But I'll just do it for you.
+
+00:27:21.900 --> 00:27:25.028 align:middle line:90%
+It's also one-third.
+
+00:27:25.028 --> 00:27:27.830 align:middle line:84%
+And the probability that
+Monty hides it behind door
+
+00:27:27.830 --> 00:27:30.290 align:middle line:90%
+S, also a third.
+
+00:27:30.290 --> 00:27:31.285 align:middle line:90%
+Yeah, question?
+
+00:27:31.285 --> 00:27:34.127 align:middle line:84%
+AUDIENCE: So they
+have to add up to 1--
+
+00:27:34.127 --> 00:27:36.210 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah,
+that's a great observation.
+
+00:27:36.210 --> 00:27:40.100 align:middle line:84%
+So all of these
+three probabilities
+
+00:27:40.100 --> 00:27:45.470 align:middle line:84%
+should add up to 1, because
+if we're at this vertex here,
+
+00:27:45.470 --> 00:27:47.280 align:middle line:90%
+we should proceed somewhere.
+
+00:27:47.280 --> 00:27:50.633 align:middle line:90%
+
+
+00:27:50.633 --> 00:27:54.380 align:middle line:84%
+So it wouldn't make a whole lot
+of sense to have probability
+
+00:27:54.380 --> 00:27:57.620 align:middle line:84%
+1/3, probability 2/3,
+and probability 1,
+
+00:27:57.620 --> 00:28:00.895 align:middle line:84%
+because then you have to
+proceed down this path,
+
+00:28:00.895 --> 00:28:03.270 align:middle line:84%
+but then you also have to
+proceed down one of the others.
+
+00:28:03.270 --> 00:28:06.170 align:middle line:90%
+It's a bit sticky.
+
+00:28:06.170 --> 00:28:09.660 align:middle line:84%
+So given that you're
+at this vertex,
+
+00:28:09.660 --> 00:28:11.250 align:middle line:84%
+you've got to reach
+a leaf somehow.
+
+00:28:11.250 --> 00:28:13.320 align:middle line:84%
+You've got to get
+to some outcome.
+
+00:28:13.320 --> 00:28:15.790 align:middle line:90%
+So you've got to proceed.
+
+00:28:15.790 --> 00:28:21.710 align:middle line:84%
+So all of these edges
+should sum up to 1.
+
+00:28:21.710 --> 00:28:24.020 align:middle line:90%
+Great observation.
+
+00:28:24.020 --> 00:28:25.970 align:middle line:84%
+It's not quite true,
+though, that that
+
+00:28:25.970 --> 00:28:29.030 align:middle line:90%
+holds for the entire column.
+
+00:28:29.030 --> 00:28:32.510 align:middle line:84%
+So what happens if we
+look at the next column?
+
+00:28:32.510 --> 00:28:36.290 align:middle line:84%
+So given that Monty hides
+the prize behind door P,
+
+00:28:36.290 --> 00:28:39.010 align:middle line:84%
+what's the probability that
+Marilyn then picks door P?
+
+00:28:39.010 --> 00:28:43.880 align:middle line:90%
+
+
+00:28:43.880 --> 00:28:46.370 align:middle line:90%
+Any ideas?
+
+00:28:46.370 --> 00:28:47.137 align:middle line:90%
+Yeah?
+
+00:28:47.137 --> 00:28:47.970 align:middle line:90%
+AUDIENCE: One-third.
+
+00:28:47.970 --> 00:28:50.090 align:middle line:84%
+BRYNMOR CHAPMAN:
+One-third, yeah.
+
+00:28:50.090 --> 00:28:53.430 align:middle line:84%
+So Marilyn picks this with
+probability one-third.
+
+00:28:53.430 --> 00:28:55.880 align:middle line:84%
+Marilyn doesn't
+know or care what's
+
+00:28:55.880 --> 00:28:59.180 align:middle line:84%
+going on with where
+the prize actually is.
+
+00:28:59.180 --> 00:29:02.150 align:middle line:84%
+She's just picking each door
+with probability one-third,
+
+00:29:02.150 --> 00:29:04.140 align:middle line:90%
+regardless.
+
+00:29:04.140 --> 00:29:08.050 align:middle line:84%
+So we've kind of got the
+same thing going on here.
+
+00:29:08.050 --> 00:29:11.830 align:middle line:84%
+Each of these three edges
+has probability one-third.
+
+00:29:11.830 --> 00:29:16.120 align:middle line:84%
+But now the same holds true
+for this branch, right?
+
+00:29:16.120 --> 00:29:18.760 align:middle line:84%
+If Monty has hidden the door--
+or hidden the prize behind door
+
+00:29:18.760 --> 00:29:21.710 align:middle line:90%
+G, now the same logic applies.
+
+00:29:21.710 --> 00:29:25.450 align:middle line:84%
+Marilyn is still picking each
+door with probability one-third.
+
+00:29:25.450 --> 00:29:29.650 align:middle line:84%
+So we've also got one-third
+here, one-third here, one-third
+
+00:29:29.650 --> 00:29:30.690 align:middle line:90%
+here.
+
+00:29:30.690 --> 00:29:34.330 align:middle line:84%
+So it's not quite that all
+of the edges in a column
+
+00:29:34.330 --> 00:29:36.730 align:middle line:84%
+add up to 1, but all
+of the edges coming out
+
+00:29:36.730 --> 00:29:40.060 align:middle line:90%
+of a single vertex add up to 1.
+
+00:29:40.060 --> 00:29:41.700 align:middle line:84%
+And same thing for
+this bottom branch.
+
+00:29:41.700 --> 00:29:49.282 align:middle line:90%
+
+
+00:29:49.282 --> 00:29:50.745 align:middle line:90%
+Now, what about the last column?
+
+00:29:50.745 --> 00:29:53.440 align:middle line:90%
+
+
+00:29:53.440 --> 00:29:55.480 align:middle line:84%
+If Monty has hidden the
+prize behind door P,
+
+00:29:55.480 --> 00:29:58.630 align:middle line:84%
+and Marilyn has
+also picked door P,
+
+00:29:58.630 --> 00:30:01.680 align:middle line:84%
+what's the probability
+that we get to outcome PPG?
+
+00:30:01.680 --> 00:30:04.750 align:middle line:90%
+
+
+00:30:04.750 --> 00:30:05.913 align:middle line:90%
+Yeah?
+
+00:30:05.913 --> 00:30:07.030 align:middle line:90%
+AUDIENCE: One-half?
+
+00:30:07.030 --> 00:30:08.697 align:middle line:84%
+BRYNMOR CHAPMAN:
+One-half, that's right.
+
+00:30:08.697 --> 00:30:11.924 align:middle line:90%
+
+
+00:30:11.924 --> 00:30:15.450 align:middle line:84%
+And it's also one-half--
+whoops, that's not a 2.
+
+00:30:15.450 --> 00:30:16.440 align:middle line:90%
+That's a 3.
+
+00:30:16.440 --> 00:30:18.372 align:middle line:90%
+There we go, one-half.
+
+00:30:18.372 --> 00:30:21.560 align:middle line:84%
+So probability one-half
+for each of them.
+
+00:30:21.560 --> 00:30:24.507 align:middle line:84%
+We've got probability one-half
+that the zonk behind G
+
+00:30:24.507 --> 00:30:26.840 align:middle line:84%
+is revealed, probability
+one-half that the zonk behind S
+
+00:30:26.840 --> 00:30:29.210 align:middle line:90%
+is revealed.
+
+00:30:29.210 --> 00:30:33.890 align:middle line:84%
+And as we were saying before, if
+Monty hides the prize behind P,
+
+00:30:33.890 --> 00:30:38.195 align:middle line:84%
+and Marilyn picks G,
+Monty now has no choice.
+
+00:30:38.195 --> 00:30:43.865 align:middle line:84%
+So we're just going to say
+that this is probability 1.
+
+00:30:43.865 --> 00:30:47.660 align:middle line:84%
+And same with this one--
+this one also has one PSG.
+
+00:30:47.660 --> 00:30:50.690 align:middle line:90%
+
+
+00:30:50.690 --> 00:30:52.590 align:middle line:84%
+And similarly, for the
+other three branches,
+
+00:30:52.590 --> 00:31:00.990 align:middle line:84%
+we've got 1, one-half, one-half,
+1, 1, 1, one-half, and one-half.
+
+00:31:00.990 --> 00:31:11.020 align:middle line:90%
+
+
+00:31:11.020 --> 00:31:13.810 align:middle line:84%
+So do these edge probabilities
+make sense to everybody?
+
+00:31:13.810 --> 00:31:25.206 align:middle line:90%
+
+
+00:31:25.206 --> 00:31:29.640 align:middle line:84%
+So now, remember what the
+probability function was.
+
+00:31:29.640 --> 00:31:37.240 align:middle line:84%
+We have to assign a
+probability to every outcome.
+
+00:31:37.240 --> 00:31:40.925 align:middle line:84%
+The outcomes are the leaves
+of our tree, not the edges.
+
+00:31:40.925 --> 00:31:43.510 align:middle line:90%
+
+
+00:31:43.510 --> 00:31:49.890 align:middle line:84%
+So what is the probability that
+we end up with outcome PPG,
+
+00:31:49.890 --> 00:31:50.600 align:middle line:90%
+for instance?
+
+00:31:50.600 --> 00:32:00.120 align:middle line:90%
+
+
+00:32:00.120 --> 00:32:00.810 align:middle line:90%
+Yeah?
+
+00:32:00.810 --> 00:32:02.240 align:middle line:90%
+AUDIENCE: It would be 1/18.
+
+00:32:02.240 --> 00:32:03.480 align:middle line:90%
+BRYNMOR CHAPMAN: 1/18.
+
+00:32:03.480 --> 00:32:04.755 align:middle line:90%
+And how are you getting that?
+
+00:32:04.755 --> 00:32:07.130 align:middle line:84%
+AUDIENCE: It's one-third times
+one-third times one-third.
+
+00:32:07.130 --> 00:32:11.840 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah, one-third
+times one-third times one-third.
+
+00:32:11.840 --> 00:32:13.610 align:middle line:84%
+We're going to
+multiply together all
+
+00:32:13.610 --> 00:32:17.905 align:middle line:84%
+of the probabilities along the
+path from the root to that leaf.
+
+00:32:17.905 --> 00:32:21.011 align:middle line:90%
+
+
+00:32:21.011 --> 00:32:23.180 align:middle line:84%
+So Monty hides the
+prize behind door P
+
+00:32:23.180 --> 00:32:25.580 align:middle line:90%
+with probability one-third.
+
+00:32:25.580 --> 00:32:28.190 align:middle line:84%
+And then, conditioned
+on that happening,
+
+00:32:28.190 --> 00:32:31.580 align:middle line:84%
+Marilyn then picks door P
+with probability one-third.
+
+00:32:31.580 --> 00:32:33.740 align:middle line:84%
+So then there's
+probability one-ninth
+
+00:32:33.740 --> 00:32:37.100 align:middle line:84%
+that we make it to
+this vertex here.
+
+00:32:37.100 --> 00:32:43.676 align:middle line:84%
+And now that one-ninth is split
+again among these two outcomes.
+
+00:32:43.676 --> 00:32:47.090 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:32:47.090 --> 00:32:51.440 align:middle line:84%
+So if we do that for
+every outcome, we've got--
+
+00:32:51.440 --> 00:32:56.480 align:middle line:84%
+oops, 1/18, not 1/8,
+another 1/18 for PPS.
+
+00:32:56.480 --> 00:32:57.483 align:middle line:90%
+Then what about PGS?
+
+00:32:57.483 --> 00:33:01.470 align:middle line:90%
+
+
+00:33:01.470 --> 00:33:02.430 align:middle line:90%
+Yeah?
+
+00:33:02.430 --> 00:33:03.840 align:middle line:84%
+AUDIENCE: It'd
+just be one-ninth.
+
+00:33:03.840 --> 00:33:05.632 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah,
+it's just one-ninth.
+
+00:33:05.632 --> 00:33:08.580 align:middle line:90%
+
+
+00:33:08.580 --> 00:33:10.925 align:middle line:84%
+So same deal for the
+first two layers,
+
+00:33:10.925 --> 00:33:12.300 align:middle line:84%
+but then in the
+last layer, we've
+
+00:33:12.300 --> 00:33:13.540 align:middle line:90%
+just got a probability of 1.
+
+00:33:13.540 --> 00:33:16.180 align:middle line:84%
+We don't have to split again,
+so it remains at one-ninth.
+
+00:33:16.180 --> 00:33:19.140 align:middle line:90%
+
+
+00:33:19.140 --> 00:33:21.160 align:middle line:90%
+And once again, we can continue.
+
+00:33:21.160 --> 00:33:31.070 align:middle line:84%
+We've got 1/9 here, 1/18,
+1/18, 1/9, and we can continue.
+
+00:33:31.070 --> 00:33:37.578 align:middle line:90%
+
+
+00:33:37.578 --> 00:33:40.960 align:middle line:84%
+So we're going to justify
+this more formally later.
+
+00:33:40.960 --> 00:33:43.500 align:middle line:84%
+But for now, just
+take it on faith
+
+00:33:43.500 --> 00:33:46.590 align:middle line:84%
+that in order to get the
+probability of an outcome,
+
+00:33:46.590 --> 00:33:49.530 align:middle line:84%
+you multiply together the
+probabilities along the path
+
+00:33:49.530 --> 00:33:52.230 align:middle line:90%
+to that outcome.
+
+00:33:52.230 --> 00:33:54.870 align:middle line:84%
+Hopefully, it at least
+makes intuitive sense.
+
+00:33:54.870 --> 00:33:57.710 align:middle line:84%
+But we'll reason about
+it more formally later.
+
+00:33:57.710 --> 00:34:02.975 align:middle line:90%
+
+
+00:34:02.975 --> 00:34:11.940 align:middle line:84%
+So now, we have
+our sample space,
+
+00:34:11.940 --> 00:34:13.710 align:middle line:84%
+we have our
+probability function,
+
+00:34:13.710 --> 00:34:15.952 align:middle line:84%
+so we've got the entire
+probability space that we're
+
+00:34:15.952 --> 00:34:16.910 align:middle line:90%
+trying to reason about.
+
+00:34:16.910 --> 00:34:19.760 align:middle line:90%
+
+
+00:34:19.760 --> 00:34:28.460 align:middle line:84%
+The next thing that
+we want, we want
+
+00:34:28.460 --> 00:34:32.705 align:middle line:84%
+to figure out what we
+call events we care about.
+
+00:34:32.705 --> 00:34:41.120 align:middle line:90%
+
+
+00:34:41.120 --> 00:34:47.920 align:middle line:84%
+So an event is simply a
+subset of our sample space.
+
+00:34:47.920 --> 00:34:58.944 align:middle line:90%
+
+
+00:34:58.944 --> 00:35:00.333 align:middle line:90%
+So it's a set of outcomes.
+
+00:35:00.333 --> 00:35:03.570 align:middle line:90%
+
+
+00:35:03.570 --> 00:35:13.475 align:middle line:84%
+So up here, we could think about
+the event that Marilyn wins.
+
+00:35:13.475 --> 00:35:16.400 align:middle line:90%
+
+
+00:35:16.400 --> 00:35:19.835 align:middle line:84%
+So what is that
+formally as a set?
+
+00:35:19.835 --> 00:35:35.070 align:middle line:90%
+
+
+00:35:35.070 --> 00:35:35.640 align:middle line:90%
+Yeah?
+
+00:35:35.640 --> 00:35:38.850 align:middle line:90%
+AUDIENCE: Subset of [INAUDIBLE].
+
+00:35:38.850 --> 00:35:40.660 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah, exactly.
+
+00:35:40.660 --> 00:35:44.520 align:middle line:84%
+So the answer was, it's
+the subset of events
+
+00:35:44.520 --> 00:35:46.090 align:middle line:90%
+where x and y are different.
+
+00:35:46.090 --> 00:35:53.610 align:middle line:90%
+
+
+00:35:53.610 --> 00:35:59.640 align:middle line:84%
+So the notation that we usually
+use for events is the following.
+
+00:35:59.640 --> 00:36:02.313 align:middle line:84%
+We put the description of
+the event in square brackets.
+
+00:36:02.313 --> 00:36:05.300 align:middle line:90%
+
+
+00:36:05.300 --> 00:36:22.811 align:middle line:84%
+So this is just going to be the
+set P, G, S, P, S, G, G, P, S,
+
+00:36:22.811 --> 00:36:40.640 align:middle line:84%
+G, S, P, S, G, P, S,
+P, G. So the 6 outcomes
+
+00:36:40.640 --> 00:36:44.270 align:middle line:84%
+where Marilyn and
+Monty originally
+
+00:36:44.270 --> 00:36:46.430 align:middle line:84%
+picked different doors,
+and then Monty is
+
+00:36:46.430 --> 00:36:48.205 align:middle line:90%
+forced to reveal the last one.
+
+00:36:48.205 --> 00:36:53.024 align:middle line:90%
+
+
+00:36:53.024 --> 00:37:04.440 align:middle line:84%
+Similarly, we could also define
+other events like Monty opens
+
+00:37:04.440 --> 00:37:24.540 align:middle line:84%
+door P. So this is going to be
+the set G, G, P, S, S, P, G, S,
+
+00:37:24.540 --> 00:37:36.870 align:middle line:84%
+P, and S, G, P. So does this
+make sense to everybody?
+
+00:37:36.870 --> 00:37:39.510 align:middle line:90%
+Any subset of events--
+
+00:37:39.510 --> 00:37:42.900 align:middle line:84%
+or, sorry, any subset of
+outcomes is called an event.
+
+00:37:42.900 --> 00:37:45.360 align:middle line:84%
+We can take our
+English description
+
+00:37:45.360 --> 00:37:49.025 align:middle line:84%
+and then look at which actual
+outcomes this corresponds to.
+
+00:37:49.025 --> 00:37:56.180 align:middle line:90%
+
+
+00:37:56.180 --> 00:38:00.190 align:middle line:84%
+So what we want to
+do now is figure out
+
+00:38:00.190 --> 00:38:05.980 align:middle line:84%
+what event we care about,
+or possibly what events.
+
+00:38:05.980 --> 00:38:08.790 align:middle line:84%
+So what are the events that we
+care about for this problem?
+
+00:38:08.790 --> 00:38:15.160 align:middle line:90%
+
+
+00:38:15.160 --> 00:38:15.880 align:middle line:90%
+Anybody?
+
+00:38:15.880 --> 00:38:28.400 align:middle line:90%
+
+
+00:38:28.400 --> 00:38:30.650 align:middle line:84%
+What was the probability
+that we're trying to compute?
+
+00:38:30.650 --> 00:38:31.622 align:middle line:90%
+Yeah?
+
+00:38:31.622 --> 00:38:33.760 align:middle line:84%
+AUDIENCE: [INAUDIBLE]
+when Monty loses--
+
+00:38:33.760 --> 00:38:35.280 align:middle line:90%
+or Marilyn loses.
+
+00:38:35.280 --> 00:38:36.280 align:middle line:90%
+BRYNMOR CHAPMAN: Pardon?
+
+00:38:36.280 --> 00:38:37.630 align:middle line:90%
+AUDIENCE: When Marilyn loses.
+
+00:38:37.630 --> 00:38:38.547 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:38:38.547 --> 00:38:41.265 align:middle line:84%
+So the events Marilyn
+wins, and Marilyn loses.
+
+00:38:41.265 --> 00:38:44.584 align:middle line:84%
+These are the events
+we care about.
+
+00:38:44.584 --> 00:38:58.580 align:middle line:84%
+So we could say Marilyn
+loses is the complement
+
+00:38:58.580 --> 00:39:01.465 align:middle line:84%
+of Marilyn wins, which we
+denote with an overbar.
+
+00:39:01.465 --> 00:39:05.810 align:middle line:90%
+
+
+00:39:05.810 --> 00:39:07.900 align:middle line:84%
+So these are the two
+events we care about.
+
+00:39:07.900 --> 00:39:20.620 align:middle line:90%
+
+
+00:39:20.620 --> 00:39:35.730 align:middle line:84%
+So the final step is
+to compute the answer.
+
+00:39:35.730 --> 00:39:39.380 align:middle line:84%
+We've identified the
+event that we care about.
+
+00:39:39.380 --> 00:39:41.285 align:middle line:84%
+So now we want to figure
+out the probability
+
+00:39:41.285 --> 00:39:42.475 align:middle line:90%
+that that event occurs.
+
+00:39:42.475 --> 00:39:46.616 align:middle line:90%
+
+
+00:39:46.616 --> 00:39:50.223 align:middle line:84%
+So we can extend the
+probability function two events.
+
+00:39:50.223 --> 00:39:53.770 align:middle line:90%
+
+
+00:39:53.770 --> 00:39:57.495 align:middle line:84%
+So if E is an
+event, we can think
+
+00:39:57.495 --> 00:39:58.870 align:middle line:84%
+about the probability
+of an event
+
+00:39:58.870 --> 00:40:02.380 align:middle line:84%
+just as we think about the
+probability of outcomes.
+
+00:40:02.380 --> 00:40:05.890 align:middle line:84%
+And we're going to
+define this to be
+
+00:40:05.890 --> 00:40:12.850 align:middle line:84%
+the sum over all
+outcomes omega in E
+
+00:40:12.850 --> 00:40:14.535 align:middle line:90%
+of the probability of omega.
+
+00:40:14.535 --> 00:40:23.404 align:middle line:90%
+
+
+00:40:23.404 --> 00:40:26.830 align:middle line:84%
+So hopefully, intuitively,
+that makes sense.
+
+00:40:26.830 --> 00:40:32.650 align:middle line:84%
+All of these outcomes, exactly
+one outcome is going to happen.
+
+00:40:32.650 --> 00:40:35.770 align:middle line:84%
+So if we're trying to figure
+out the probability that one
+
+00:40:35.770 --> 00:40:38.380 align:middle line:84%
+of a set of outcomes
+happens, it's
+
+00:40:38.380 --> 00:40:40.630 align:middle line:84%
+just going to be the
+sum of the probabilities
+
+00:40:40.630 --> 00:40:42.420 align:middle line:90%
+that each individual one occurs.
+
+00:40:42.420 --> 00:40:45.040 align:middle line:90%
+
+
+00:40:45.040 --> 00:40:47.760 align:middle line:84%
+So we know the probabilities
+of each of the outcomes.
+
+00:40:47.760 --> 00:40:51.055 align:middle line:84%
+That's what we
+just computed here.
+
+00:40:51.055 --> 00:40:53.720 align:middle line:90%
+
+
+00:40:53.720 --> 00:40:55.640 align:middle line:84%
+So now we can use
+that to compute
+
+00:40:55.640 --> 00:41:00.380 align:middle line:84%
+the probability of the
+events we just talked about.
+
+00:41:00.380 --> 00:41:04.585 align:middle line:84%
+So what is the probability
+that Marilyn wins?
+
+00:41:04.585 --> 00:41:20.540 align:middle line:90%
+
+
+00:41:20.540 --> 00:41:24.830 align:middle line:84%
+So we have our set
+of outcomes here.
+
+00:41:24.830 --> 00:41:26.290 align:middle line:84%
+What's the probability
+of each one?
+
+00:41:26.290 --> 00:41:42.980 align:middle line:90%
+
+
+00:41:42.980 --> 00:41:46.440 align:middle line:84%
+Now, what's the
+probability of outcome PGS?
+
+00:41:46.440 --> 00:41:46.980 align:middle line:90%
+Yeah?
+
+00:41:46.980 --> 00:41:47.580 align:middle line:90%
+AUDIENCE: One-ninth.
+
+00:41:47.580 --> 00:41:48.955 align:middle line:84%
+BRYNMOR CHAPMAN:
+One-ninth, yeah.
+
+00:41:48.955 --> 00:41:50.796 align:middle line:84%
+That one's written
+up there explicitly.
+
+00:41:50.796 --> 00:41:55.860 align:middle line:90%
+
+
+00:41:55.860 --> 00:41:57.365 align:middle line:84%
+What about the
+probability of PSG?
+
+00:41:57.365 --> 00:42:01.170 align:middle line:90%
+
+
+00:42:01.170 --> 00:42:02.725 align:middle line:90%
+Same, one-ninth.
+
+00:42:02.725 --> 00:42:06.270 align:middle line:90%
+
+
+00:42:06.270 --> 00:42:08.143 align:middle line:84%
+What about the
+probability of GPS?
+
+00:42:08.143 --> 00:42:10.800 align:middle line:90%
+
+
+00:42:10.800 --> 00:42:12.562 align:middle line:90%
+Also a ninth.
+
+00:42:12.562 --> 00:42:14.320 align:middle line:90%
+All of these are symmetric.
+
+00:42:14.320 --> 00:42:23.670 align:middle line:90%
+
+
+00:42:23.670 --> 00:42:24.625 align:middle line:90%
+What's that, 2/3?
+
+00:42:24.625 --> 00:42:27.830 align:middle line:90%
+
+
+00:42:27.830 --> 00:42:31.590 align:middle line:84%
+So we've got six events-- or
+six outcomes, each of which
+
+00:42:31.590 --> 00:42:34.230 align:middle line:84%
+occurs with
+probability one-ninth.
+
+00:42:34.230 --> 00:42:38.040 align:middle line:84%
+So if you add those all
+together, you get 2/3.
+
+00:42:38.040 --> 00:42:42.660 align:middle line:84%
+So this seems to support
+what we found empirically.
+
+00:42:42.660 --> 00:42:46.490 align:middle line:84%
+Marilyn wins with better
+than probability one-half.
+
+00:42:46.490 --> 00:42:48.227 align:middle line:84%
+The probability that
+she loses is going
+
+00:42:48.227 --> 00:42:49.435 align:middle line:90%
+to be the complement of this.
+
+00:42:49.435 --> 00:43:01.298 align:middle line:90%
+
+
+00:43:01.298 --> 00:43:04.340 align:middle line:84%
+So it's going to be the sum
+of the probabilities of all
+
+00:43:04.340 --> 00:43:06.070 align:middle line:90%
+of the other outcomes.
+
+00:43:06.070 --> 00:43:09.060 align:middle line:84%
+And we said that all
+probabilities fit out to 1,
+
+00:43:09.060 --> 00:43:12.050 align:middle line:84%
+so this is going to be the
+complement with respect to 1.
+
+00:43:12.050 --> 00:43:15.020 align:middle line:90%
+
+
+00:43:15.020 --> 00:43:18.095 align:middle line:84%
+So as it turns out,
+Marilyn was correct.
+
+00:43:18.095 --> 00:43:20.150 align:middle line:84%
+We didn't have to rely
+on intuition or anything
+
+00:43:20.150 --> 00:43:23.520 align:middle line:84%
+like that, no ingenious
+analogies, et cetera.
+
+00:43:23.520 --> 00:43:27.060 align:middle line:90%
+It's just arithmetic over Q.
+
+00:43:27.060 --> 00:43:29.930 align:middle line:84%
+And I think the hardest
+part of this for many people
+
+00:43:29.930 --> 00:43:35.450 align:middle line:84%
+is resisting the temptation to
+jump to some obvious conclusion.
+
+00:43:35.450 --> 00:43:39.620 align:middle line:84%
+It might be tempting to get
+to the end of the tree diagram
+
+00:43:39.620 --> 00:43:42.210 align:middle line:84%
+and be like, oh, we've got six
+outcomes where Marilyn wins,
+
+00:43:42.210 --> 00:43:47.550 align:middle line:84%
+six where she loses, So
+probability 6/12 is 1/2.
+
+00:43:47.550 --> 00:43:50.970 align:middle line:84%
+So if we actually set
+all of that intuition
+
+00:43:50.970 --> 00:43:53.380 align:middle line:84%
+aside, go through
+everything formally,
+
+00:43:53.380 --> 00:43:58.050 align:middle line:84%
+it's all quite simple
+and straightforward.
+
+00:43:58.050 --> 00:43:59.620 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:43:59.620 --> 00:44:06.610 align:middle line:90%
+
+
+00:44:06.610 --> 00:44:09.540 align:middle line:84%
+So let's move on to
+a different example.
+
+00:44:09.540 --> 00:44:15.300 align:middle line:84%
+Suppose I have
+three strange dice.
+
+00:44:15.300 --> 00:44:17.213 align:middle line:90%
+So excuse my drawing--
+
+00:44:17.213 --> 00:44:19.830 align:middle line:90%
+
+
+00:44:19.830 --> 00:44:22.410 align:middle line:90%
+whoops-- there.
+
+00:44:22.410 --> 00:44:26.820 align:middle line:84%
+OK, so I've got one
+die that has 2 written
+
+00:44:26.820 --> 00:44:32.340 align:middle line:84%
+on two of the faces, so top and
+bottom, 6 written on these two
+
+00:44:32.340 --> 00:44:37.680 align:middle line:84%
+faces, and 7 written
+on those two faces.
+
+00:44:37.680 --> 00:44:42.770 align:middle line:84%
+Hopefully, that looks
+vaguely cubical.
+
+00:44:42.770 --> 00:44:44.715 align:middle line:84%
+I've got a second
+die, which is similar.
+
+00:44:44.715 --> 00:44:47.380 align:middle line:90%
+
+
+00:44:47.380 --> 00:44:52.540 align:middle line:84%
+But instead of 2, 6, and
+7, I've got 1, 5, and 9.
+
+00:44:52.540 --> 00:45:00.870 align:middle line:84%
+Then I've got a third one,
+which has 3, 4, and 8.
+
+00:45:00.870 --> 00:45:04.360 align:middle line:90%
+
+
+00:45:04.360 --> 00:45:09.580 align:middle line:90%
+So consider the following game.
+
+00:45:09.580 --> 00:45:12.310 align:middle line:90%
+I pick a die.
+
+00:45:12.310 --> 00:45:16.720 align:middle line:84%
+Now you pick one
+of the other dies--
+
+00:45:16.720 --> 00:45:19.420 align:middle line:84%
+or dice-- after
+seeing what I pick.
+
+00:45:19.420 --> 00:45:23.090 align:middle line:90%
+And we each roll our dice.
+
+00:45:23.090 --> 00:45:25.035 align:middle line:84%
+And whoever gets the
+higher number wins.
+
+00:45:25.035 --> 00:45:27.700 align:middle line:90%
+
+
+00:45:27.700 --> 00:45:28.832 align:middle line:90%
+Who should win?
+
+00:45:28.832 --> 00:45:30.165 align:middle line:90%
+Should I win, or should you win?
+
+00:45:30.165 --> 00:45:32.830 align:middle line:90%
+
+
+00:45:32.830 --> 00:45:33.660 align:middle line:90%
+Who thinks I win?
+
+00:45:33.660 --> 00:45:37.330 align:middle line:90%
+
+
+00:45:37.330 --> 00:45:39.110 align:middle line:90%
+OK, who thinks you win?
+
+00:45:39.110 --> 00:45:43.770 align:middle line:90%
+
+
+00:45:43.770 --> 00:45:47.850 align:middle line:84%
+Who thinks we should just do the
+tree diagram and figure it out?
+
+00:45:47.850 --> 00:45:49.180 align:middle line:90%
+Yeah, good call.
+
+00:45:49.180 --> 00:45:50.190 align:middle line:90%
+OK.
+
+00:45:50.190 --> 00:45:58.862 align:middle line:84%
+So let's call these dice
+R, G, and B. Yeah, let's
+
+00:45:58.862 --> 00:45:59.945 align:middle line:90%
+draw out our tree diagram.
+
+00:45:59.945 --> 00:46:03.920 align:middle line:90%
+
+
+00:46:03.920 --> 00:46:09.330 align:middle line:84%
+So what happens if, say, I
+pick the red die, and you
+
+00:46:09.330 --> 00:46:12.630 align:middle line:90%
+pick the green die?
+
+00:46:12.630 --> 00:46:13.420 align:middle line:90%
+Who should win?
+
+00:46:13.420 --> 00:46:15.360 align:middle line:90%
+Let's see.
+
+00:46:15.360 --> 00:46:20.650 align:middle line:84%
+So we've got--
+when I roll my die,
+
+00:46:20.650 --> 00:46:22.270 align:middle line:90%
+there are three possibilities.
+
+00:46:22.270 --> 00:46:28.920 align:middle line:84%
+I could either get
+a 2, a 6, or a 7.
+
+00:46:28.920 --> 00:46:32.700 align:middle line:84%
+And now you roll the green
+die, and you could have either
+
+00:46:32.700 --> 00:46:36.790 align:middle line:90%
+a 1, a 5, or a 9--
+
+00:46:36.790 --> 00:46:38.510 align:middle line:90%
+not minus 5, 5--
+
+00:46:38.510 --> 00:46:46.174 align:middle line:90%
+1, 5, 9, 1, 5, 9.
+
+00:46:46.174 --> 00:46:50.704 align:middle line:90%
+
+
+00:46:50.704 --> 00:46:53.230 align:middle line:84%
+And now what is
+the probability--
+
+00:46:53.230 --> 00:46:57.490 align:middle line:84%
+or, sorry, what
+are the outcomes?
+
+00:46:57.490 --> 00:47:00.942 align:middle line:90%
+We have 9 leaves, so 9 outcomes.
+
+00:47:00.942 --> 00:47:02.400 align:middle line:84%
+How are we going
+to represent them?
+
+00:47:02.400 --> 00:47:15.670 align:middle line:90%
+
+
+00:47:15.670 --> 00:47:18.610 align:middle line:84%
+Well, we can do it basically the
+same as how we represented them
+
+00:47:18.610 --> 00:47:20.120 align:middle line:90%
+up here.
+
+00:47:20.120 --> 00:47:26.060 align:middle line:84%
+We can just look at a
+tuple of edge labels.
+
+00:47:26.060 --> 00:47:29.440 align:middle line:84%
+So our sample space
+is going to be
+
+00:47:29.440 --> 00:47:39.755 align:middle line:84%
+the set 2, 6, 7, a Cartesian
+product with 1, 5, 9.
+
+00:47:39.755 --> 00:47:42.551 align:middle line:90%
+
+
+00:47:42.551 --> 00:47:44.402 align:middle line:84%
+So this is going
+to be ordered pairs
+
+00:47:44.402 --> 00:47:46.610 align:middle line:84%
+where the first element is
+one of these three things,
+
+00:47:46.610 --> 00:47:49.410 align:middle line:84%
+and the second is one
+of these three things.
+
+00:47:49.410 --> 00:47:53.040 align:middle line:84%
+So this one, for
+instance, is 2, comma 1.
+
+00:47:53.040 --> 00:47:55.350 align:middle line:84%
+This one is 2,
+comma, 5, et cetera.
+
+00:47:55.350 --> 00:48:00.650 align:middle line:90%
+
+
+00:48:00.650 --> 00:48:02.575 align:middle line:84%
+Now what are the
+probabilities on each edge?
+
+00:48:02.575 --> 00:48:07.520 align:middle line:90%
+
+
+00:48:07.520 --> 00:48:08.900 align:middle line:90%
+Yeah?
+
+00:48:08.900 --> 00:48:11.720 align:middle line:90%
+One-ninth.
+
+00:48:11.720 --> 00:48:14.937 align:middle line:84%
+So those are the
+probabilities on the outcomes.
+
+00:48:14.937 --> 00:48:16.895 align:middle line:90%
+Yeah, one-third on each edge.
+
+00:48:16.895 --> 00:48:23.636 align:middle line:90%
+
+
+00:48:23.636 --> 00:48:26.420 align:middle line:84%
+So when I roll my die, I've
+got a one-third chance each
+
+00:48:26.420 --> 00:48:28.040 align:middle line:90%
+of getting 2, 6, or 7.
+
+00:48:28.040 --> 00:48:30.350 align:middle line:84%
+When you roll yours, you've
+got a one-third chance each
+
+00:48:30.350 --> 00:48:32.400 align:middle line:90%
+of getting 1, 5, or 9.
+
+00:48:32.400 --> 00:48:36.220 align:middle line:90%
+
+
+00:48:36.220 --> 00:48:39.010 align:middle line:84%
+And it's going to be the same
+for the other two branches.
+
+00:48:39.010 --> 00:48:41.710 align:middle line:84%
+So when we multiply
+together the probabilities
+
+00:48:41.710 --> 00:48:47.730 align:middle line:84%
+along paths to leaves, we get
+one-ninth for every outcome.
+
+00:48:47.730 --> 00:48:52.354 align:middle line:90%
+
+
+00:48:52.354 --> 00:48:54.400 align:middle line:84%
+So when you have a
+probability space
+
+00:48:54.400 --> 00:48:57.580 align:middle line:84%
+like this that's
+particularly nice,
+
+00:48:57.580 --> 00:48:59.940 align:middle line:84%
+this is what we call a
+uniform probability space.
+
+00:48:59.940 --> 00:49:04.460 align:middle line:90%
+
+
+00:49:04.460 --> 00:49:08.740 align:middle line:90%
+So let's say S, comma, Pr--
+
+00:49:08.740 --> 00:49:11.770 align:middle line:84%
+so this is our
+probability space--
+
+00:49:11.770 --> 00:49:19.905 align:middle line:90%
+is uniform if Pr is constant.
+
+00:49:19.905 --> 00:49:26.270 align:middle line:90%
+
+
+00:49:26.270 --> 00:49:28.060 align:middle line:84%
+So in this case, it's
+a constant function
+
+00:49:28.060 --> 00:49:31.190 align:middle line:84%
+that maps every outcome to
+a probability of one-ninth.
+
+00:49:31.190 --> 00:49:32.975 align:middle line:84%
+So it's a uniform
+probability space.
+
+00:49:32.975 --> 00:49:35.810 align:middle line:90%
+
+
+00:49:35.810 --> 00:49:38.812 align:middle line:84%
+And uniform spaces
+are particularly
+
+00:49:38.812 --> 00:49:41.270 align:middle line:84%
+nice because we don't even have
+to worry about the addition
+
+00:49:41.270 --> 00:49:42.950 align:middle line:90%
+that we were doing before.
+
+00:49:42.950 --> 00:49:46.250 align:middle line:84%
+In order to figure out
+probabilities of events,
+
+00:49:46.250 --> 00:49:48.830 align:middle line:84%
+you just count up how many
+outcomes are in the event
+
+00:49:48.830 --> 00:49:52.740 align:middle line:84%
+and then divide by the
+total number of outcomes.
+
+00:49:52.740 --> 00:49:54.880 align:middle line:84%
+So it just becomes
+a counting problem.
+
+00:49:54.880 --> 00:50:00.270 align:middle line:90%
+
+
+00:50:00.270 --> 00:50:03.925 align:middle line:84%
+So using that, what's the
+probability that red wins?
+
+00:50:03.925 --> 00:50:11.540 align:middle line:90%
+
+
+00:50:11.540 --> 00:50:12.170 align:middle line:90%
+Yeah?
+
+00:50:12.170 --> 00:50:13.340 align:middle line:90%
+AUDIENCE: 5/9.
+
+00:50:13.340 --> 00:50:15.155 align:middle line:90%
+BRYNMOR CHAPMAN: 5/9, yeah.
+
+00:50:15.155 --> 00:50:23.570 align:middle line:90%
+
+
+00:50:23.570 --> 00:50:25.700 align:middle line:90%
+So let's break this down a bit.
+
+00:50:25.700 --> 00:50:30.580 align:middle line:84%
+So we're looking at the
+probability of the set,
+
+00:50:30.580 --> 00:50:35.080 align:middle line:84%
+2, comma, 1, red wins;
+6, 1, 6, 5, red wins;
+
+00:50:35.080 --> 00:50:37.950 align:middle line:90%
+and 7, 1, 7, 5, red wins.
+
+00:50:37.950 --> 00:50:41.950 align:middle line:90%
+
+
+00:50:41.950 --> 00:50:56.440 align:middle line:90%
+So 2, 1, 6, 1, 6, 5, 7, 1, 7, 5.
+
+00:50:56.440 --> 00:50:58.780 align:middle line:90%
+We have five of these.
+
+00:50:58.780 --> 00:51:00.985 align:middle line:90%
+So that's 5/9.
+
+00:51:00.985 --> 00:51:17.991 align:middle line:90%
+
+
+00:51:17.991 --> 00:51:21.550 align:middle line:84%
+Now, what if instead
+we had red versus blue
+
+00:51:21.550 --> 00:51:22.785 align:middle line:90%
+instead of red versus green?
+
+00:51:22.785 --> 00:51:31.040 align:middle line:90%
+
+
+00:51:31.040 --> 00:51:34.140 align:middle line:84%
+So if instead of red versus
+green, we have red versus blue,
+
+00:51:34.140 --> 00:51:40.380 align:middle line:84%
+this column now gets replaced
+with 3, 4, 8 instead of 1, 5, 9.
+
+00:51:40.380 --> 00:51:45.428 align:middle line:90%
+
+
+00:51:45.428 --> 00:51:49.490 align:middle line:84%
+So our tree diagram is going
+to look like the following.
+
+00:51:49.490 --> 00:51:53.690 align:middle line:90%
+So we've still got 2, 6, 7 here.
+
+00:51:53.690 --> 00:51:57.840 align:middle line:84%
+But this time, this is
+going to be 3, 4, 8--
+
+00:51:57.840 --> 00:52:01.460 align:middle line:90%
+
+
+00:52:01.460 --> 00:52:06.590 align:middle line:90%
+3, 4, 8, 3, 4, 8.
+
+00:52:06.590 --> 00:52:10.310 align:middle line:90%
+
+
+00:52:10.310 --> 00:52:13.190 align:middle line:84%
+And I'm going to omit the
+probabilities because, as we
+
+00:52:13.190 --> 00:52:14.670 align:middle line:90%
+just established, it's uniform.
+
+00:52:14.670 --> 00:52:16.003 align:middle line:90%
+So it's just a counting problem.
+
+00:52:16.003 --> 00:52:24.446 align:middle line:90%
+
+
+00:52:24.446 --> 00:52:25.863 align:middle line:84%
+But let's write
+down the outcomes.
+
+00:52:25.863 --> 00:52:41.994 align:middle line:90%
+
+
+00:52:41.994 --> 00:52:44.525 align:middle line:84%
+So in how many of these
+outcomes does red win?
+
+00:52:44.525 --> 00:52:48.600 align:middle line:90%
+
+
+00:52:48.600 --> 00:52:54.930 align:middle line:84%
+Well, not this one, not
+this one, not this one.
+
+00:52:54.930 --> 00:53:01.990 align:middle line:84%
+So if red rolls 2, all of blue's
+numbers are going to be higher,
+
+00:53:01.990 --> 00:53:04.290 align:middle line:90%
+so blue is always going to win.
+
+00:53:04.290 --> 00:53:09.810 align:middle line:84%
+If red rolls 6, red wins
+if blue rolls 3 or 4;
+
+00:53:09.810 --> 00:53:13.925 align:middle line:84%
+loses if blue rolls
+8, and same for 7.
+
+00:53:13.925 --> 00:53:19.662 align:middle line:90%
+
+
+00:53:19.662 --> 00:53:26.820 align:middle line:84%
+So we have four
+outcomes where red wins.
+
+00:53:26.820 --> 00:53:28.353 align:middle line:84%
+So red wins with
+probability 4/9.
+
+00:53:28.353 --> 00:53:35.012 align:middle line:90%
+
+
+00:53:35.012 --> 00:53:45.967 align:middle line:84%
+So we just saw that red beats
+green but loses to blue.
+
+00:53:45.967 --> 00:53:47.800 align:middle line:84%
+What does that tell us
+about blue and green?
+
+00:53:47.800 --> 00:53:50.630 align:middle line:90%
+
+
+00:53:50.630 --> 00:53:52.720 align:middle line:84%
+If I pick blue, and you
+pick green, what happens?
+
+00:53:52.720 --> 00:53:55.460 align:middle line:90%
+
+
+00:53:55.460 --> 00:53:56.200 align:middle line:90%
+Who wins?
+
+00:53:56.200 --> 00:54:00.080 align:middle line:90%
+
+
+00:54:00.080 --> 00:54:00.770 align:middle line:90%
+Yeah?
+
+00:54:00.770 --> 00:54:01.850 align:middle line:90%
+AUDIENCE: Green.
+
+00:54:01.850 --> 00:54:02.820 align:middle line:90%
+BRYNMOR CHAPMAN: Green.
+
+00:54:02.820 --> 00:54:04.180 align:middle line:90%
+Why?
+
+00:54:04.180 --> 00:54:06.680 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:54:06.680 --> 00:54:08.575 align:middle line:84%
+BRYNMOR CHAPMAN: OK,
+so green beats red.
+
+00:54:08.575 --> 00:54:11.660 align:middle line:90%
+
+
+00:54:11.660 --> 00:54:15.025 align:middle line:84%
+So I think we just established
+that red beats green, right?
+
+00:54:15.025 --> 00:54:20.720 align:middle line:90%
+
+
+00:54:20.720 --> 00:54:26.580 align:middle line:84%
+So here, we've got
+red beats green.
+
+00:54:26.580 --> 00:54:29.585 align:middle line:84%
+Here, we've got
+red loses to blue.
+
+00:54:29.585 --> 00:54:33.570 align:middle line:90%
+
+
+00:54:33.570 --> 00:54:38.460 align:middle line:84%
+So if we have
+green and blue, who
+
+00:54:38.460 --> 00:54:41.910 align:middle line:90%
+thinks that green should win?
+
+00:54:41.910 --> 00:54:44.040 align:middle line:90%
+Who thinks that blue should win?
+
+00:54:44.040 --> 00:54:46.320 align:middle line:90%
+Who has absolutely no idea?
+
+00:54:46.320 --> 00:54:49.710 align:middle line:84%
+Who wants to do
+the tree diagram?
+
+00:54:49.710 --> 00:54:51.448 align:middle line:84%
+Oh, still pretty
+enthusiastic about that,
+
+00:54:51.448 --> 00:54:52.990 align:middle line:84%
+even though we've
+got some intuition.
+
+00:54:52.990 --> 00:54:54.660 align:middle line:90%
+That's great.
+
+00:54:54.660 --> 00:54:56.170 align:middle line:90%
+Intuition is bad.
+
+00:54:56.170 --> 00:54:57.580 align:middle line:90%
+Discard the intuition.
+
+00:54:57.580 --> 00:55:00.570 align:middle line:90%
+
+
+00:55:00.570 --> 00:55:05.910 align:middle line:84%
+OK, so if we've got
+green versus blue,
+
+00:55:05.910 --> 00:55:08.590 align:middle line:84%
+so this can be the
+green roll here.
+
+00:55:08.590 --> 00:55:12.150 align:middle line:90%
+We've got 1, 5, 9.
+
+00:55:12.150 --> 00:55:23.320 align:middle line:84%
+Blue roll can be 3, 4,
+8, 3, 4, 8, 3, 4, 8.
+
+00:55:23.320 --> 00:55:26.920 align:middle line:90%
+
+
+00:55:26.920 --> 00:55:29.650 align:middle line:84%
+So in which of these
+does green win?
+
+00:55:29.650 --> 00:55:33.520 align:middle line:84%
+Well, if green rolls 1,
+then green is screwed.
+
+00:55:33.520 --> 00:55:37.990 align:middle line:84%
+So all of these
+are bad for green.
+
+00:55:37.990 --> 00:55:43.210 align:middle line:84%
+If green rolls 5, well, 5
+will beat 3 and 4, but not 8.
+
+00:55:43.210 --> 00:55:47.740 align:middle line:90%
+So green wins these two.
+
+00:55:47.740 --> 00:55:51.855 align:middle line:84%
+And if green rolls 9, then
+green beats whatever blue rolls.
+
+00:55:51.855 --> 00:55:56.870 align:middle line:90%
+
+
+00:55:56.870 --> 00:55:59.025 align:middle line:84%
+So it looks like green is
+winning in five of these.
+
+00:55:59.025 --> 00:56:14.435 align:middle line:90%
+
+
+00:56:14.435 --> 00:56:18.090 align:middle line:90%
+So this should be like that.
+
+00:56:18.090 --> 00:56:25.050 align:middle line:90%
+
+
+00:56:25.050 --> 00:56:31.050 align:middle line:84%
+So red beats green, green
+beats blue, and blue beats red.
+
+00:56:31.050 --> 00:56:32.000 align:middle line:90%
+What's gone wrong?
+
+00:56:32.000 --> 00:56:40.800 align:middle line:90%
+
+
+00:56:40.800 --> 00:56:41.696 align:middle line:90%
+Yeah?
+
+00:56:41.696 --> 00:56:44.480 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:56:44.480 --> 00:56:45.480 align:middle line:90%
+BRYNMOR CHAPMAN: Pardon?
+
+00:56:45.480 --> 00:56:48.570 align:middle line:84%
+AUDIENCE: There is only
+a hierarchy [INAUDIBLE].
+
+00:56:48.570 --> 00:56:49.650 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+00:56:49.650 --> 00:56:51.520 align:middle line:90%
+So nothing's gone wrong.
+
+00:56:51.520 --> 00:56:54.420 align:middle line:84%
+All that's gone wrong
+is I kind of expected
+
+00:56:54.420 --> 00:56:57.570 align:middle line:84%
+that there would be a
+linear order on them.
+
+00:56:57.570 --> 00:56:59.920 align:middle line:84%
+If red beats green
+and green beats blue,
+
+00:56:59.920 --> 00:57:01.440 align:middle line:84%
+it kind of intuitively
+makes sense
+
+00:57:01.440 --> 00:57:02.980 align:middle line:84%
+that red should
+beat blue, right?
+
+00:57:02.980 --> 00:57:05.550 align:middle line:90%
+No.
+
+00:57:05.550 --> 00:57:07.210 align:middle line:90%
+No, no intuition.
+
+00:57:07.210 --> 00:57:09.510 align:middle line:90%
+Just do the tree diagram.
+
+00:57:09.510 --> 00:57:12.520 align:middle line:84%
+So yeah, this is
+perfectly fine, right?
+
+00:57:12.520 --> 00:57:14.150 align:middle line:84%
+And, in fact, it
+gets even weirder.
+
+00:57:14.150 --> 00:57:17.488 align:middle line:90%
+
+
+00:57:17.488 --> 00:57:21.110 align:middle line:84%
+What do you think happens
+if we each choose two dice--
+
+00:57:21.110 --> 00:57:22.360 align:middle line:90%
+or, sorry, we each roll twice?
+
+00:57:22.360 --> 00:57:27.250 align:middle line:90%
+
+
+00:57:27.250 --> 00:57:33.200 align:middle line:84%
+So what if I pick the
+red die; I roll it twice;
+
+00:57:33.200 --> 00:57:37.090 align:middle line:84%
+you pick the green
+die; you roll it twice?
+
+00:57:37.090 --> 00:57:39.250 align:middle line:84%
+Red probably beats
+green, so is it true
+
+00:57:39.250 --> 00:57:41.770 align:middle line:84%
+that two red rolls probably
+beat two green rolls
+
+00:57:41.770 --> 00:57:42.600 align:middle line:90%
+if we sum them up?
+
+00:57:42.600 --> 00:57:48.280 align:middle line:90%
+
+
+00:57:48.280 --> 00:57:51.130 align:middle line:90%
+Who thinks yes?
+
+00:57:51.130 --> 00:57:53.290 align:middle line:90%
+Who thinks no?
+
+00:57:53.290 --> 00:57:55.600 align:middle line:84%
+Who wants to draw
+the tree diagram?
+
+00:57:55.600 --> 00:57:57.560 align:middle line:90%
+Oh, wow, so eager.
+
+00:57:57.560 --> 00:57:58.550 align:middle line:90%
+I don't.
+
+00:57:58.550 --> 00:58:02.941 align:middle line:90%
+[LAUGHS]
+
+00:58:02.941 --> 00:58:06.730 align:middle line:84%
+What is the tree diagram going
+to look like if we do that?
+
+00:58:06.730 --> 00:58:08.420 align:middle line:90%
+I'm rolling twice.
+
+00:58:08.420 --> 00:58:09.890 align:middle line:90%
+You're rolling twice.
+
+00:58:09.890 --> 00:58:15.240 align:middle line:84%
+Each roll can have
+three possibilities.
+
+00:58:15.240 --> 00:58:20.240 align:middle line:84%
+So we're going to end up
+with a pretty massive tree.
+
+00:58:20.240 --> 00:58:23.750 align:middle line:84%
+I don't want to draw that,
+at least not on the board.
+
+00:58:23.750 --> 00:58:26.600 align:middle line:84%
+Does somebody else want
+to come up and do it?
+
+00:58:26.600 --> 00:58:28.010 align:middle line:90%
+Please?
+
+00:58:28.010 --> 00:58:29.450 align:middle line:90%
+No, nobody?
+
+00:58:29.450 --> 00:58:33.750 align:middle line:84%
+OK, well, instead of drawing
+out the entire tree diagram,
+
+00:58:33.750 --> 00:58:36.775 align:middle line:84%
+let's start drawing it and
+see if we can find a pattern.
+
+00:58:36.775 --> 00:58:41.795 align:middle line:90%
+
+
+00:58:41.795 --> 00:58:47.233 align:middle line:90%
+So this is R2 versus G2.
+
+00:58:47.233 --> 00:58:51.746 align:middle line:90%
+
+
+00:58:51.746 --> 00:58:58.950 align:middle line:84%
+So let's start by
+drawing as we did before.
+
+00:58:58.950 --> 00:59:02.780 align:middle line:90%
+So my first roll, that was red.
+
+00:59:02.780 --> 00:59:05.960 align:middle line:90%
+It could be 2, 6, or 7.
+
+00:59:05.960 --> 00:59:08.790 align:middle line:84%
+Second roll could
+also be 2, 6, or 7.
+
+00:59:08.790 --> 00:59:21.406 align:middle line:90%
+
+
+00:59:21.406 --> 00:59:28.510 align:middle line:84%
+Now, for green, we're
+basically just going
+
+00:59:28.510 --> 00:59:32.980 align:middle line:84%
+to be drawing the same tree
+nine times, so let's not.
+
+00:59:32.980 --> 00:59:40.900 align:middle line:84%
+So green could roll 1, 5,
+9, and then can also roll
+
+00:59:40.900 --> 00:59:43.965 align:middle line:90%
+1, 5, 9 for the second roll.
+
+00:59:43.965 --> 00:59:52.132 align:middle line:90%
+
+
+00:59:52.132 --> 00:59:55.120 align:middle line:84%
+And rather than duplicating
+this tree nine times,
+
+00:59:55.120 --> 00:59:57.860 align:middle line:84%
+I'm just going to
+leave this as it is.
+
+00:59:57.860 --> 00:59:59.850 align:middle line:84%
+And we can see if we
+can find a pattern.
+
+00:59:59.850 --> 01:00:04.012 align:middle line:90%
+
+
+01:00:04.012 --> 01:00:05.990 align:middle line:84%
+Does that make
+sense to everybody?
+
+01:00:05.990 --> 01:00:12.710 align:middle line:90%
+
+
+01:00:12.710 --> 01:00:19.490 align:middle line:84%
+So an outcome now is going to
+be a 4-tuple, instead of a pair.
+
+01:00:19.490 --> 01:00:23.240 align:middle line:84%
+And in some sense,
+we can think of it
+
+01:00:23.240 --> 01:00:29.960 align:middle line:84%
+as combining a leaf of this
+tree with a leaf of this tree.
+
+01:00:29.960 --> 01:00:32.300 align:middle line:84%
+We're going to take a red
+leaf and a green leaf.
+
+01:00:32.300 --> 01:00:32.810 align:middle line:90%
+Question?
+
+01:00:32.810 --> 01:00:34.790 align:middle line:90%
+Or no?
+
+01:00:34.790 --> 01:00:35.960 align:middle line:90%
+No, OK.
+
+01:00:35.960 --> 01:00:42.230 align:middle line:90%
+
+
+01:00:42.230 --> 01:00:49.391 align:middle line:84%
+So we can then abbreviate
+it even further.
+
+01:00:49.391 --> 01:00:52.920 align:middle line:84%
+Instead of looking at the pair
+of numbers that we've rolled,
+
+01:00:52.920 --> 01:00:57.020 align:middle line:84%
+let's instead look
+at just the sum.
+
+01:00:57.020 --> 01:01:02.420 align:middle line:84%
+So if red rolls two
+2's, we've got 4 here.
+
+01:01:02.420 --> 01:01:04.220 align:middle line:90%
+2 and 6 is 8.
+
+01:01:04.220 --> 01:01:06.830 align:middle line:90%
+2 and 7 is 9.
+
+01:01:06.830 --> 01:01:09.855 align:middle line:90%
+6, 2 is 8.
+
+01:01:09.855 --> 01:01:10.990 align:middle line:90%
+6, 6 is not 9.
+
+01:01:10.990 --> 01:01:12.480 align:middle line:90%
+That's 12.
+
+01:01:12.480 --> 01:01:14.550 align:middle line:90%
+Never trust me to do arithmetic.
+
+01:01:14.550 --> 01:01:16.170 align:middle line:90%
+6, 7 is 13.
+
+01:01:16.170 --> 01:01:17.880 align:middle line:90%
+7 and 2 is 9.
+
+01:01:17.880 --> 01:01:19.470 align:middle line:90%
+7 and 6 is 13.
+
+01:01:19.470 --> 01:01:20.630 align:middle line:90%
+7 and 7 is 14.
+
+01:01:20.630 --> 01:01:25.278 align:middle line:90%
+
+
+01:01:25.278 --> 01:01:27.850 align:middle line:84%
+And if we do the
+same thing for green,
+
+01:01:27.850 --> 01:01:38.005 align:middle line:84%
+we have 2, 6, 10, 6,
+10, 14, 10, 14, 18.
+
+01:01:38.005 --> 01:01:45.438 align:middle line:90%
+
+
+01:01:45.438 --> 01:01:50.130 align:middle line:84%
+So now we can start
+counting outcomes.
+
+01:01:50.130 --> 01:01:52.780 align:middle line:84%
+If we take this leaf
+of the red tree,
+
+01:01:52.780 --> 01:01:56.040 align:middle line:84%
+how many outcomes are
+there where red wins?
+
+01:01:56.040 --> 01:01:59.520 align:middle line:84%
+If red rolls four in
+total, the only way
+
+01:01:59.520 --> 01:02:03.970 align:middle line:84%
+that red wins is if
+green gets snake eyes.
+
+01:02:03.970 --> 01:02:05.015 align:middle line:90%
+So we've just got one.
+
+01:02:05.015 --> 01:02:09.770 align:middle line:90%
+
+
+01:02:09.770 --> 01:02:14.270 align:middle line:84%
+If red rolls 8, which could
+be either of these two,
+
+01:02:14.270 --> 01:02:17.990 align:middle line:84%
+how many outcomes are
+there where red wins?
+
+01:02:17.990 --> 01:02:21.890 align:middle line:84%
+Well, we've got the 2 here,
+a 6 here, and a 6 here.
+
+01:02:21.890 --> 01:02:22.780 align:middle line:90%
+So we've got three.
+
+01:02:22.780 --> 01:02:25.880 align:middle line:90%
+
+
+01:02:25.880 --> 01:02:30.500 align:middle line:84%
+And we've got two red
+leaves that have 8.
+
+01:02:30.500 --> 01:02:31.320 align:middle line:90%
+What about 9?
+
+01:02:31.320 --> 01:02:34.520 align:middle line:84%
+It looks like we've got
+two more that have 9.
+
+01:02:34.520 --> 01:02:38.140 align:middle line:84%
+Same deal-- we don't have any
+8's or 9's over on this side.
+
+01:02:38.140 --> 01:02:43.940 align:middle line:90%
+
+
+01:02:43.940 --> 01:02:45.330 align:middle line:90%
+What else do we have?
+
+01:02:45.330 --> 01:02:47.540 align:middle line:90%
+12.
+
+01:02:47.540 --> 01:02:51.830 align:middle line:84%
+OK, well, if red
+rolls 12, then red
+
+01:02:51.830 --> 01:02:55.620 align:middle line:84%
+is good if blue rolls 2,
+6, 10, but not 14 or 18.
+
+01:02:55.620 --> 01:02:59.143 align:middle line:84%
+So we've got 1, 2,
+3, 4, 5, 6 outcomes.
+
+01:02:59.143 --> 01:03:01.880 align:middle line:90%
+
+
+01:03:01.880 --> 01:03:05.800 align:middle line:84%
+And we have one red
+leaf where red has 12.
+
+01:03:05.800 --> 01:03:08.481 align:middle line:90%
+
+
+01:03:08.481 --> 01:03:09.880 align:middle line:90%
+And then same thing for 13--
+
+01:03:09.880 --> 01:03:14.220 align:middle line:84%
+there are no 12's or 13's over
+here, and we have two 13's.
+
+01:03:14.220 --> 01:03:19.560 align:middle line:90%
+
+
+01:03:19.560 --> 01:03:23.100 align:middle line:90%
+Now, what about 14?
+
+01:03:23.100 --> 01:03:28.170 align:middle line:84%
+Well, if red rolls
+14, then same deal.
+
+01:03:28.170 --> 01:03:29.915 align:middle line:84%
+But we've got these
+two ties here.
+
+01:03:29.915 --> 01:03:35.490 align:middle line:90%
+
+
+01:03:35.490 --> 01:03:36.943 align:middle line:90%
+So red wins.
+
+01:03:36.943 --> 01:03:40.500 align:middle line:90%
+
+
+01:03:40.500 --> 01:03:43.050 align:middle line:90%
+Draw, we've just got two.
+
+01:03:43.050 --> 01:03:45.790 align:middle line:84%
+And then red loses is
+going to be the complement.
+
+01:03:45.790 --> 01:03:59.800 align:middle line:90%
+
+
+01:03:59.800 --> 01:04:02.640 align:middle line:84%
+So has anybody added
+all of these up yet?
+
+01:04:02.640 --> 01:04:03.485 align:middle line:90%
+I haven't.
+
+01:04:03.485 --> 01:04:07.012 align:middle line:90%
+
+
+01:04:07.012 --> 01:04:11.965 align:middle line:90%
+5, 30, 42, 43, is that right?
+
+01:04:11.965 --> 01:04:15.277 align:middle line:90%
+
+
+01:04:15.277 --> 01:04:15.860 align:middle line:90%
+AUDIENCE: Yes.
+
+01:04:15.860 --> 01:04:22.850 align:middle line:90%
+
+
+01:04:22.850 --> 01:04:26.845 align:middle line:84%
+BRYNMOR CHAPMAN: OK, so
+43 outcomes for red wins.
+
+01:04:26.845 --> 01:04:39.500 align:middle line:90%
+
+
+01:04:39.500 --> 01:04:40.768 align:middle line:90%
+Is something wrong?
+
+01:04:40.768 --> 01:04:41.935 align:middle line:90%
+This doesn't match my notes.
+
+01:04:41.935 --> 01:04:46.130 align:middle line:90%
+
+
+01:04:46.130 --> 01:04:47.840 align:middle line:90%
+Let's see.
+
+01:04:47.840 --> 01:04:52.070 align:middle line:90%
+So we've got 1 for this subtree.
+
+01:04:52.070 --> 01:04:55.700 align:middle line:90%
+For each of these, we have 3.
+
+01:04:55.700 --> 01:04:59.200 align:middle line:84%
+For each of the
+9's, we also have 3,
+
+01:04:59.200 --> 01:05:03.453 align:middle line:90%
+so that's those, 12, 13, and 13.
+
+01:05:03.453 --> 01:05:07.200 align:middle line:90%
+
+
+01:05:07.200 --> 01:05:08.900 align:middle line:84%
+Oh, do I just have
+too many terms?
+
+01:05:08.900 --> 01:05:10.025 align:middle line:90%
+I just have too many terms.
+
+01:05:10.025 --> 01:05:13.200 align:middle line:90%
+
+
+01:05:13.200 --> 01:05:14.256 align:middle line:90%
+OK, not 43.
+
+01:05:14.256 --> 01:05:14.923 align:middle line:90%
+It should be 37.
+
+01:05:14.923 --> 01:05:17.730 align:middle line:90%
+
+
+01:05:17.730 --> 01:05:19.740 align:middle line:90%
+Is that right?
+
+01:05:19.740 --> 01:05:25.470 align:middle line:84%
+Yeah, or 12, 13, 13,
+and 14 each have 6.
+
+01:05:25.470 --> 01:05:26.460 align:middle line:90%
+AUDIENCE: Yes.
+
+01:05:26.460 --> 01:05:28.020 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+01:05:28.020 --> 01:05:31.090 align:middle line:84%
+OK, yeah, never trust
+me to do arithmetic.
+
+01:05:31.090 --> 01:05:32.790 align:middle line:90%
+It's always a bad plan.
+
+01:05:32.790 --> 01:05:36.850 align:middle line:84%
+OK, so red wins in
+37 of the outcomes.
+
+01:05:36.850 --> 01:05:38.620 align:middle line:90%
+There's a draw in 2 of them.
+
+01:05:38.620 --> 01:05:40.430 align:middle line:84%
+And how many outcomes
+are there in total?
+
+01:05:40.430 --> 01:05:46.770 align:middle line:90%
+
+
+01:05:46.770 --> 01:05:47.880 align:middle line:90%
+Yeah?
+
+01:05:47.880 --> 01:05:48.910 align:middle line:90%
+AUDIENCE: Is that 81?
+
+01:05:48.910 --> 01:05:50.230 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah, 81.
+
+01:05:50.230 --> 01:05:59.130 align:middle line:84%
+So red loses in 81 minus 37
+minus 2, which is that 42?
+
+01:05:59.130 --> 01:06:00.020 align:middle line:90%
+I think that's 42.
+
+01:06:00.020 --> 01:06:03.742 align:middle line:90%
+
+
+01:06:03.742 --> 01:06:12.830 align:middle line:84%
+So because this is a uniform
+space, we have 37/81, 42/81,
+
+01:06:12.830 --> 01:06:15.770 align:middle line:84%
+which is going to be-- well,
+actually, let's not reduce it.
+
+01:06:15.770 --> 01:06:18.190 align:middle line:90%
+It's easier to see like that.
+
+01:06:18.190 --> 01:06:19.845 align:middle line:90%
+And 2 out of 81 for a draw.
+
+01:06:19.845 --> 01:06:22.630 align:middle line:90%
+
+
+01:06:22.630 --> 01:06:27.500 align:middle line:84%
+So if we only had one roll,
+red had the advantage.
+
+01:06:27.500 --> 01:06:29.680 align:middle line:84%
+Red wins with
+probability of 5/9.
+
+01:06:29.680 --> 01:06:33.850 align:middle line:84%
+If we have two rolls, the
+probability that red wins
+
+01:06:33.850 --> 01:06:36.728 align:middle line:84%
+is smaller than the
+probability that red loses.
+
+01:06:36.728 --> 01:06:38.770 align:middle line:84%
+So now suddenly, green
+has the advantage instead.
+
+01:06:38.770 --> 01:06:41.800 align:middle line:90%
+
+
+01:06:41.800 --> 01:06:47.080 align:middle line:84%
+And as it turns
+out, the same thing
+
+01:06:47.080 --> 01:06:50.650 align:middle line:84%
+happens with all
+three pairs of dice.
+
+01:06:50.650 --> 01:06:55.430 align:middle line:84%
+So red beats green
+with one roll.
+
+01:06:55.430 --> 01:06:57.530 align:middle line:90%
+Green beats blue with one roll.
+
+01:06:57.530 --> 01:07:01.140 align:middle line:84%
+But blue beats green
+with two rolls.
+
+01:07:01.140 --> 01:07:04.320 align:middle line:84%
+And blue beats red
+with one roll, but red
+
+01:07:04.320 --> 01:07:07.410 align:middle line:90%
+beats blue with two rolls.
+
+01:07:07.410 --> 01:07:13.320 align:middle line:84%
+And yeah, so the dice
+continue to not have
+
+01:07:13.320 --> 01:07:15.130 align:middle line:90%
+this transitivity property.
+
+01:07:15.130 --> 01:07:19.554 align:middle line:90%
+But every time, it switched.
+
+01:07:19.554 --> 01:07:26.290 align:middle line:84%
+And as it turns out, you
+can even extend this.
+
+01:07:26.290 --> 01:07:29.440 align:middle line:84%
+Like if you have more dice
+with different numbers,
+
+01:07:29.440 --> 01:07:35.070 align:middle line:84%
+you can get all sorts of weird
+things that could happen.
+
+01:07:35.070 --> 01:07:38.880 align:middle line:84%
+So there's a link to a
+rather interesting paper
+
+01:07:38.880 --> 01:07:43.980 align:middle line:84%
+on arXiv if you want to see
+it in the lecture notes.
+
+01:07:43.980 --> 01:07:47.200 align:middle line:84%
+But yeah, for now, I think
+that's all we have time for.
+
+01:07:47.200 --> 01:07:49.660 align:middle line:84%
+Feel free to come up
+if you have questions.
+
+01:07:49.660 --> 01:07:52.850 align:middle line:84%
+And otherwise, we will
+see you on Thursday.
+
+01:07:52.850 --> 01:07:59.000 align:middle line:90%

@@ -1,0 +1,4972 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.485 align:middle line:90%
+[SQUEAKING]
+
+00:00:02.485 --> 00:00:03.976 align:middle line:90%
+[RUSTLING]
+
+00:00:03.976 --> 00:00:05.467 align:middle line:90%
+[CLICKING]
+
+00:00:05.467 --> 00:00:10.940 align:middle line:90%
+
+
+00:00:10.940 --> 00:00:13.260 align:middle line:84%
+ERIK DEMAINE: All right,
+welcome back to 6.1200.
+
+00:00:13.260 --> 00:00:14.870 align:middle line:90%
+We continue probability.
+
+00:00:14.870 --> 00:00:17.630 align:middle line:84%
+And not only that, we
+continue on expectation today.
+
+00:00:17.630 --> 00:00:22.200 align:middle line:84%
+And we will also get to a second
+measure of random variables,
+
+00:00:22.200 --> 00:00:23.250 align:middle line:90%
+which is variance.
+
+00:00:23.250 --> 00:00:27.060 align:middle line:84%
+But first, most of today
+will be expectation.
+
+00:00:27.060 --> 00:00:29.430 align:middle line:90%
+Remember what we did last class?
+
+00:00:29.430 --> 00:00:33.380 align:middle line:84%
+So for random variable
+x over a sample space
+
+00:00:33.380 --> 00:00:38.930 align:middle line:84%
+s, so it's just a function
+from s to real numbers,
+
+00:00:38.930 --> 00:00:44.570 align:middle line:84%
+we had three different formulas,
+at least, for expectation
+
+00:00:44.570 --> 00:00:45.835 align:middle line:90%
+in different scenarios.
+
+00:00:45.835 --> 00:00:47.210 align:middle line:84%
+The first one was
+the definition,
+
+00:00:47.210 --> 00:00:51.350 align:middle line:84%
+sum over all outcomes,
+omega probability
+
+00:00:51.350 --> 00:00:56.640 align:middle line:84%
+of the outcome times x
+evaluated at that outcome.
+
+00:00:56.640 --> 00:00:58.600 align:middle line:90%
+Sorry, this is a omega.
+
+00:00:58.600 --> 00:01:01.220 align:middle line:90%
+
+
+00:01:01.220 --> 00:01:05.360 align:middle line:84%
+Or we could rewrite that sum
+according to the distinct values
+
+00:01:05.360 --> 00:01:09.200 align:middle line:84%
+of capital X. And so
+sum over the range of x,
+
+00:01:09.200 --> 00:01:13.940 align:middle line:84%
+and take the probability that
+big X equals little x multiplied
+
+00:01:13.940 --> 00:01:15.000 align:middle line:90%
+by little x.
+
+00:01:15.000 --> 00:01:16.580 align:middle line:90%
+That's equivalent.
+
+00:01:16.580 --> 00:01:19.070 align:middle line:84%
+And in the special
+case where x is
+
+00:01:19.070 --> 00:01:22.400 align:middle line:84%
+a function to natural
+numbers, then we
+
+00:01:22.400 --> 00:01:24.230 align:middle line:84%
+could write this as
+an infinite series.
+
+00:01:24.230 --> 00:01:27.140 align:middle line:84%
+Sum i equals 1 to
+infinity, probability of x
+
+00:01:27.140 --> 00:01:28.590 align:middle line:90%
+greater than or equal to i.
+
+00:01:28.590 --> 00:01:31.820 align:middle line:84%
+And that turned out to be
+equivalent to this thing
+
+00:01:31.820 --> 00:01:33.390 align:middle line:90%
+by expanding it out.
+
+00:01:33.390 --> 00:01:37.020 align:middle line:84%
+So if the CDF is nice,
+that's a nice formula,
+
+00:01:37.020 --> 00:01:40.580 align:middle line:84%
+if it's in the special
+case over natural numbers.
+
+00:01:40.580 --> 00:01:43.860 align:middle line:84%
+For indicator random
+variables where x is 0 or 1,
+
+00:01:43.860 --> 00:01:45.920 align:middle line:84%
+another special case,
+then the expectation
+
+00:01:45.920 --> 00:01:48.860 align:middle line:84%
+is just equal to the
+probability equaling
+
+00:01:48.860 --> 00:01:50.840 align:middle line:84%
+1, which is like
+probability of the event
+
+00:01:50.840 --> 00:01:52.620 align:middle line:90%
+that this is an indicator for.
+
+00:01:52.620 --> 00:01:55.410 align:middle line:84%
+And the big thing was
+linearity of expectation,
+
+00:01:55.410 --> 00:01:58.500 align:middle line:84%
+which told us, if we
+summed and also multiply it
+
+00:01:58.500 --> 00:02:01.930 align:middle line:84%
+by a constant inside
+the expectation,
+
+00:02:01.930 --> 00:02:04.500 align:middle line:84%
+we could push the
+expectation inside
+
+00:02:04.500 --> 00:02:07.360 align:middle line:84%
+and/or pull the sum and
+the multiplication out.
+
+00:02:07.360 --> 00:02:09.600 align:middle line:84%
+So we're going to use
+all of these things
+
+00:02:09.600 --> 00:02:15.150 align:middle line:84%
+today and see how they contrast
+with other fun properties.
+
+00:02:15.150 --> 00:02:19.290 align:middle line:84%
+But I'm going to start out
+with some motivating examples
+
+00:02:19.290 --> 00:02:23.880 align:middle line:84%
+to give us some interesting
+problems to think about.
+
+00:02:23.880 --> 00:02:28.333 align:middle line:84%
+So let's talk about
+a bunch of events.
+
+00:02:28.333 --> 00:02:34.320 align:middle line:90%
+
+
+00:02:34.320 --> 00:02:42.490 align:middle line:84%
+E 1 up to E n, so these are
+subsets of our sample space.
+
+00:02:42.490 --> 00:02:47.760 align:middle line:84%
+And we can think of those events
+being good things or bad things.
+
+00:02:47.760 --> 00:02:50.550 align:middle line:84%
+Maybe these are
+different ways in which
+
+00:02:50.550 --> 00:02:54.070 align:middle line:84%
+your computer could fail or
+your algorithm could fail.
+
+00:02:54.070 --> 00:02:55.420 align:middle line:90%
+Or maybe they're good things.
+
+00:02:55.420 --> 00:02:58.300 align:middle line:84%
+Maybe these are you'd like at
+least one of these to happen,
+
+00:02:58.300 --> 00:03:01.470 align:middle line:84%
+or you'd like at least half
+of them to happen or whatever.
+
+00:03:01.470 --> 00:03:07.440 align:middle line:84%
+So we're going to think about,
+in particular, the number
+
+00:03:07.440 --> 00:03:08.680 align:middle line:90%
+of events that happen.
+
+00:03:08.680 --> 00:03:10.560 align:middle line:84%
+So let's define
+a random variable
+
+00:03:10.560 --> 00:03:20.705 align:middle line:84%
+N to be the number of
+E i events that happen.
+
+00:03:20.705 --> 00:03:25.080 align:middle line:90%
+
+
+00:03:25.080 --> 00:03:30.960 align:middle line:84%
+And first problem is, what is
+the expected value of N. So
+
+00:03:30.960 --> 00:03:36.215 align:middle line:84%
+what is the expected number
+of events in general?
+
+00:03:36.215 --> 00:03:41.070 align:middle line:90%
+
+
+00:03:41.070 --> 00:03:43.290 align:middle line:84%
+There's a nice formula
+for this, which
+
+00:03:43.290 --> 00:03:50.790 align:middle line:84%
+is sum i equals 1 to N of
+the probability of event i.
+
+00:03:50.790 --> 00:03:52.540 align:middle line:84%
+OK, this is pretty
+much a warm-up.
+
+00:03:52.540 --> 00:03:55.000 align:middle line:84%
+It's very similar to things
+that we did last time.
+
+00:03:55.000 --> 00:03:57.580 align:middle line:84%
+In fact, we did a special
+case of this last time.
+
+00:03:57.580 --> 00:04:00.970 align:middle line:84%
+But let me remind you
+of those techniques.
+
+00:04:00.970 --> 00:04:03.140 align:middle line:84%
+And let's actually do
+it for this example.
+
+00:04:03.140 --> 00:04:08.230 align:middle line:84%
+So remember the technique was,
+if I have some random variable
+
+00:04:08.230 --> 00:04:10.120 align:middle line:84%
+that is tricky to
+analyze and I want
+
+00:04:10.120 --> 00:04:13.340 align:middle line:84%
+to compute its
+expectation, right,
+
+00:04:13.340 --> 00:04:17.029 align:middle line:84%
+split it up into a sum of
+different random variables.
+
+00:04:17.029 --> 00:04:20.260 align:middle line:84%
+So here, there's a pretty
+obvious way to split it up.
+
+00:04:20.260 --> 00:04:22.490 align:middle line:84%
+N is supposed to count
+the number of E i's.
+
+00:04:22.490 --> 00:04:28.070 align:middle line:84%
+And so each of these suggests we
+should count them individually.
+
+00:04:28.070 --> 00:04:30.670 align:middle line:84%
+Let's define an
+indicator, random variable
+
+00:04:30.670 --> 00:04:33.810 align:middle line:90%
+I sub i for each event.
+
+00:04:33.810 --> 00:04:38.950 align:middle line:90%
+
+
+00:04:38.950 --> 00:04:42.970 align:middle line:84%
+And that is counting,
+among all the events
+
+00:04:42.970 --> 00:04:45.250 align:middle line:84%
+that are known as E i--
+there's only one of them-- how
+
+00:04:45.250 --> 00:04:46.280 align:middle line:90%
+many of them occurred?
+
+00:04:46.280 --> 00:04:47.440 align:middle line:90%
+0 or 1.
+
+00:04:47.440 --> 00:04:48.860 align:middle line:90%
+Did it occur or not?
+
+00:04:48.860 --> 00:04:56.380 align:middle line:84%
+So then N is going to be just
+the sum, I equals 1 to n of I i.
+
+00:04:56.380 --> 00:04:57.970 align:middle line:90%
+Aye aye, Captain.
+
+00:04:57.970 --> 00:05:01.770 align:middle line:84%
+Then we can compute the
+expectation using all these fun
+
+00:05:01.770 --> 00:05:02.270 align:middle line:90%
+things.
+
+00:05:02.270 --> 00:05:08.780 align:middle line:84%
+So we've got, the expected
+value of N is, by linearity,
+
+00:05:08.780 --> 00:05:11.766 align:middle line:84%
+the sum of the expected
+values of the I i's.
+
+00:05:11.766 --> 00:05:15.760 align:middle line:90%
+
+
+00:05:15.760 --> 00:05:19.700 align:middle line:84%
+And because the I i's are
+indicator random variables,
+
+00:05:19.700 --> 00:05:21.610 align:middle line:84%
+their expectation is
+exactly the probability
+
+00:05:21.610 --> 00:05:22.910 align:middle line:90%
+that they're equal to 1.
+
+00:05:22.910 --> 00:05:28.070 align:middle line:84%
+So this is sum I equals
+1 to n probability.
+
+00:05:28.070 --> 00:05:31.600 align:middle line:84%
+I keep forgetting my
+x's next to my E's.
+
+00:05:31.600 --> 00:05:35.380 align:middle line:90%
+I i equals 1.
+
+00:05:35.380 --> 00:05:38.330 align:middle line:84%
+And that's just by,
+definition of the I i's,
+
+00:05:38.330 --> 00:05:43.540 align:middle line:90%
+that is the probability of E i.
+
+00:05:43.540 --> 00:05:49.390 align:middle line:84%
+OK, so very easy proof,
+but refreshing how
+
+00:05:49.390 --> 00:05:50.960 align:middle line:90%
+we use all these fun facts.
+
+00:05:50.960 --> 00:05:55.490 align:middle line:84%
+We did a special case of
+this last time, which was we
+
+00:05:55.490 --> 00:05:58.940 align:middle line:84%
+were counting, if I
+flip a coin n times
+
+00:05:58.940 --> 00:06:07.940 align:middle line:84%
+and the probability of heads
+is p, so this is biased coins
+
+00:06:07.940 --> 00:06:10.735 align:middle line:90%
+are heads probability p.
+
+00:06:10.735 --> 00:06:13.790 align:middle line:90%
+
+
+00:06:13.790 --> 00:06:24.350 align:middle line:84%
+Then the expected number of
+heads was equal to p times n.
+
+00:06:24.350 --> 00:06:26.210 align:middle line:84%
+That's something we
+computed last time
+
+00:06:26.210 --> 00:06:27.600 align:middle line:90%
+in exactly the same way.
+
+00:06:27.600 --> 00:06:29.030 align:middle line:90%
+So this isn't terribly new.
+
+00:06:29.030 --> 00:06:31.310 align:middle line:90%
+But this is a more general form.
+
+00:06:31.310 --> 00:06:33.360 align:middle line:84%
+Here, all the events were
+the same probability.
+
+00:06:33.360 --> 00:06:35.580 align:middle line:84%
+Now they could have
+different probabilities.
+
+00:06:35.580 --> 00:06:38.480 align:middle line:90%
+Still, you sum them.
+
+00:06:38.480 --> 00:06:42.830 align:middle line:84%
+Cool, we will use
+this again as well.
+
+00:06:42.830 --> 00:06:46.525 align:middle line:84%
+All right, so that's simple
+warm-up problem, just counting
+
+00:06:46.525 --> 00:06:47.400 align:middle line:90%
+the number of events.
+
+00:06:47.400 --> 00:06:51.560 align:middle line:84%
+Now we'd like to understand a
+little deeper how many events
+
+00:06:51.560 --> 00:06:53.880 align:middle line:84%
+are going to occur
+in particular?
+
+00:06:53.880 --> 00:06:59.300 align:middle line:84%
+A really interesting
+question is, when
+
+00:06:59.300 --> 00:07:01.500 align:middle line:90%
+does at least one event occur.
+
+00:07:01.500 --> 00:07:03.180 align:middle line:84%
+So if you think of
+these, for example,
+
+00:07:03.180 --> 00:07:06.322 align:middle line:84%
+as being different failure
+modes for your system,
+
+00:07:06.322 --> 00:07:08.780 align:middle line:84%
+you want to know, what's the
+chance of anything failing out
+
+00:07:08.780 --> 00:07:11.040 align:middle line:84%
+of all the different ways
+that things could fail.
+
+00:07:11.040 --> 00:07:13.230 align:middle line:84%
+And those events may
+not be independent.
+
+00:07:13.230 --> 00:07:16.400 align:middle line:84%
+So all of this works,
+even if the E i's
+
+00:07:16.400 --> 00:07:18.060 align:middle line:90%
+are dependent on each other.
+
+00:07:18.060 --> 00:07:20.070 align:middle line:84%
+Maybe they're all
+the same, who knows?
+
+00:07:20.070 --> 00:07:24.380 align:middle line:84%
+But this summation is exactly
+the right answer for expectation
+
+00:07:24.380 --> 00:07:25.386 align:middle line:90%
+by linearity.
+
+00:07:25.386 --> 00:07:28.520 align:middle line:90%
+
+
+00:07:28.520 --> 00:07:34.100 align:middle line:84%
+So let's start with a very
+simple upper bound, called
+
+00:07:34.100 --> 00:07:39.570 align:middle line:84%
+the Union bound, on the
+chance of something happening.
+
+00:07:39.570 --> 00:07:44.780 align:middle line:84%
+So this is the
+probability of the union,
+
+00:07:44.780 --> 00:07:48.320 align:middle line:84%
+hence the name Union
+bound, is at most
+
+00:07:48.320 --> 00:07:55.338 align:middle line:84%
+the sum of the
+probabilities of the events.
+
+00:07:55.338 --> 00:07:56.880 align:middle line:84%
+In other words,
+using the terminology
+
+00:07:56.880 --> 00:08:01.840 align:middle line:84%
+from over here, the probability
+that at least one event occurs,
+
+00:08:01.840 --> 00:08:04.320 align:middle line:84%
+that's the probability
+that N is at least 1,
+
+00:08:04.320 --> 00:08:09.010 align:middle line:84%
+is at most the expectation
+of the number of events,
+
+00:08:09.010 --> 00:08:12.120 align:middle line:84%
+because these two things are
+equal by this previous theorem
+
+00:08:12.120 --> 00:08:13.500 align:middle line:90%
+here.
+
+00:08:13.500 --> 00:08:18.000 align:middle line:84%
+So these two statements are
+equivalent because the number
+
+00:08:18.000 --> 00:08:20.820 align:middle line:84%
+being at least 1, that's
+at least one event
+
+00:08:20.820 --> 00:08:25.470 align:middle line:84%
+occurring, that's the same
+as the union of these events.
+
+00:08:25.470 --> 00:08:26.950 align:middle line:90%
+OK, cool.
+
+00:08:26.950 --> 00:08:30.190 align:middle line:90%
+So this is like the Sum rule.
+
+00:08:30.190 --> 00:08:34.770 align:middle line:84%
+But Sum rule had an
+equality and was only
+
+00:08:34.770 --> 00:08:36.130 align:middle line:90%
+when the events were disjoined.
+
+00:08:36.130 --> 00:08:38.039 align:middle line:84%
+This works all the
+time, but it can
+
+00:08:38.039 --> 00:08:39.760 align:middle line:90%
+give a very weak upper bound.
+
+00:08:39.760 --> 00:08:43.360 align:middle line:84%
+Depending on your events,
+this sum may be larger than 1.
+
+00:08:43.360 --> 00:08:45.020 align:middle line:84%
+So that doesn't
+tell you very much.
+
+00:08:45.020 --> 00:08:47.020 align:middle line:84%
+To say a probability is
+less than or equal to 1,
+
+00:08:47.020 --> 00:08:48.630 align:middle line:90%
+it's like, yeah, I knew that.
+
+00:08:48.630 --> 00:08:50.710 align:middle line:90%
+You didn't have to do any work.
+
+00:08:50.710 --> 00:08:55.170 align:middle line:84%
+Let me, in parallel,
+write some examples here.
+
+00:08:55.170 --> 00:09:04.500 align:middle line:84%
+So let's do our
+same example of n
+
+00:09:04.500 --> 00:09:16.290 align:middle line:84%
+independent coin flips,
+probability of heads is p.
+
+00:09:16.290 --> 00:09:26.580 align:middle line:84%
+Then the Union bound
+says that the probability
+
+00:09:26.580 --> 00:09:32.830 align:middle line:84%
+of at least one head is
+at most p times n, right?
+
+00:09:32.830 --> 00:09:35.370 align:middle line:84%
+That's this expectation that
+I just wrote down over here.
+
+00:09:35.370 --> 00:09:39.820 align:middle line:84%
+p times n was the expected
+value for the number of heads.
+
+00:09:39.820 --> 00:09:41.310 align:middle line:84%
+So in particular,
+the probability
+
+00:09:41.310 --> 00:09:43.300 align:middle line:84%
+that at least one head
+is at most p times n.
+
+00:09:43.300 --> 00:09:46.180 align:middle line:84%
+So as soon as p is
+bigger than 1 over n,
+
+00:09:46.180 --> 00:09:49.030 align:middle line:84%
+this is not a useful
+upper bound, right?
+
+00:09:49.030 --> 00:09:57.570 align:middle line:84%
+The true answer,
+actual probability
+
+00:09:57.570 --> 00:10:07.050 align:middle line:84%
+there's at least one head, this
+is 1 minus 1 minus p to the n.
+
+00:10:07.050 --> 00:10:09.210 align:middle line:84%
+Easier to compute
+the probability
+
+00:10:09.210 --> 00:10:11.550 align:middle line:84%
+that there are 0 heads,
+that's the same as saying
+
+00:10:11.550 --> 00:10:13.270 align:middle line:90%
+that there are n tails.
+
+00:10:13.270 --> 00:10:17.287 align:middle line:84%
+So this is the probability
+of a tails, 1 minus p.
+
+00:10:17.287 --> 00:10:19.870 align:middle line:84%
+Raise it to the n-th power, we
+get the probability of n tails.
+
+00:10:19.870 --> 00:10:21.620 align:middle line:84%
+We take 1 minus it,
+we get the probability
+
+00:10:21.620 --> 00:10:23.100 align:middle line:90%
+that there are not n tails.
+
+00:10:23.100 --> 00:10:24.850 align:middle line:84%
+In other words, there's
+at least one head.
+
+00:10:24.850 --> 00:10:32.910 align:middle line:84%
+So these are close for very
+small p, but not so great for--
+
+00:10:32.910 --> 00:10:35.280 align:middle line:84%
+even for small p,
+maybe not so great.
+
+00:10:35.280 --> 00:10:37.290 align:middle line:90%
+I don't know.
+
+00:10:37.290 --> 00:10:41.340 align:middle line:84%
+All right, so this is an example
+where the Union bound is not
+
+00:10:41.340 --> 00:10:42.153 align:middle line:90%
+so helpful.
+
+00:10:42.153 --> 00:10:46.383 align:middle line:90%
+
+
+00:10:46.383 --> 00:10:48.050 align:middle line:84%
+I'll come to other
+examples in a moment.
+
+00:10:48.050 --> 00:10:53.020 align:middle line:84%
+Let me tell you a nice property
+on the other side, which
+
+00:10:53.020 --> 00:10:55.420 align:middle line:90%
+I'll call Murphy's law.
+
+00:10:55.420 --> 00:10:59.290 align:middle line:84%
+It's not the official
+name, but you've probably
+
+00:10:59.290 --> 00:11:02.080 align:middle line:84%
+heard of some form of
+Murphy's law in the past.
+
+00:11:02.080 --> 00:11:04.550 align:middle line:84%
+Whatever can go
+wrong will go wrong.
+
+00:11:04.550 --> 00:11:06.760 align:middle line:90%
+This is a formalization of that.
+
+00:11:06.760 --> 00:11:13.318 align:middle line:84%
+So if the n events we have
+are mutually independent--
+
+00:11:13.318 --> 00:11:15.610 align:middle line:84%
+this is the first time I'm
+making this assumption other
+
+00:11:15.610 --> 00:11:16.980 align:middle line:90%
+than that example--
+
+00:11:16.980 --> 00:11:23.740 align:middle line:90%
+
+
+00:11:23.740 --> 00:11:40.480 align:middle line:84%
+then the probability of the
+union is at least 1 minus 1
+
+00:11:40.480 --> 00:11:47.895 align:middle line:84%
+over e to the sum of the
+probabilities of the events.
+
+00:11:47.895 --> 00:11:52.510 align:middle line:90%
+
+
+00:11:52.510 --> 00:11:58.040 align:middle line:84%
+OK, this is without
+any n terminology,
+
+00:11:58.040 --> 00:12:01.720 align:middle line:84%
+but maybe a nicer
+way is to write it
+
+00:12:01.720 --> 00:12:07.420 align:middle line:84%
+in terms of n probability that
+at least one event occurs is
+
+00:12:07.420 --> 00:12:16.810 align:middle line:84%
+at least 1 minus 1 over e
+to the expectation of n.
+
+00:12:16.810 --> 00:12:21.850 align:middle line:84%
+Again, by this theorem,
+relating the expectation of n
+
+00:12:21.850 --> 00:12:25.150 align:middle line:84%
+to the sum of the-- it is just
+the sum of those probabilities.
+
+00:12:25.150 --> 00:12:28.677 align:middle line:84%
+So the Union bound
+gives an upper bound.
+
+00:12:28.677 --> 00:12:30.760 align:middle line:84%
+We want to know the chance
+of some event occurring
+
+00:12:30.760 --> 00:12:32.620 align:middle line:90%
+or some failure happening.
+
+00:12:32.620 --> 00:12:35.930 align:middle line:84%
+This tells us it's
+at most something.
+
+00:12:35.930 --> 00:12:37.700 align:middle line:84%
+And this tells us it's
+at least something.
+
+00:12:37.700 --> 00:12:40.190 align:middle line:84%
+But this theorem assumes
+mutual independence,
+
+00:12:40.190 --> 00:12:41.960 align:middle line:90%
+so doesn't always apply.
+
+00:12:41.960 --> 00:12:44.010 align:middle line:84%
+But in this example,
+it does apply.
+
+00:12:44.010 --> 00:12:47.890 align:middle line:84%
+So we can apply
+Murphy's law here.
+
+00:12:47.890 --> 00:12:52.970 align:middle line:90%
+
+
+00:12:52.970 --> 00:13:00.260 align:middle line:84%
+And it gives us the probability
+of at least one head is--
+
+00:13:00.260 --> 00:13:00.880 align:middle line:90%
+wrong page.
+
+00:13:00.880 --> 00:13:06.110 align:middle line:90%
+
+
+00:13:06.110 --> 00:13:11.708 align:middle line:84%
+At least 1 minus 1
+over e to the p n.
+
+00:13:11.708 --> 00:13:15.110 align:middle line:84%
+All right, again, the
+expectation is p n.
+
+00:13:15.110 --> 00:13:17.220 align:middle line:90%
+So 1 minus 1 over e to the n.
+
+00:13:17.220 --> 00:13:19.460 align:middle line:84%
+So the bounds tell
+us it's somewhere
+
+00:13:19.460 --> 00:13:24.300 align:middle line:84%
+between this thing that's
+kind of close to 1,
+
+00:13:24.300 --> 00:13:26.550 align:middle line:84%
+especially if this
+exponent is large.
+
+00:13:26.550 --> 00:13:32.000 align:middle line:84%
+So the point is here,
+this denominator
+
+00:13:32.000 --> 00:13:35.540 align:middle line:84%
+increases exponentially
+with expectation.
+
+00:13:35.540 --> 00:13:45.110 align:middle line:84%
+So that means this is going to
+be very small if expectation
+
+00:13:45.110 --> 00:13:47.210 align:middle line:90%
+of n is large.
+
+00:13:47.210 --> 00:13:50.120 align:middle line:84%
+And so that means this
+is very close to 1.
+
+00:13:50.120 --> 00:13:52.550 align:middle line:84%
+And so when the
+expectation is large,
+
+00:13:52.550 --> 00:13:55.620 align:middle line:84%
+the Union bound doesn't
+tell us anything useful.
+
+00:13:55.620 --> 00:13:57.360 align:middle line:84%
+It says it's at
+most 1 or whatever.
+
+00:13:57.360 --> 00:14:00.300 align:middle line:84%
+But also, Murphy's law says
+it's actually pretty close to 1.
+
+00:14:00.300 --> 00:14:03.140 align:middle line:84%
+So maybe the Union bound
+wasn't so bad after all.
+
+00:14:03.140 --> 00:14:04.715 align:middle line:90%
+That's the idea.
+
+00:14:04.715 --> 00:14:06.590 align:middle line:84%
+I mean, in particular,
+we also know that it's
+
+00:14:06.590 --> 00:14:07.710 align:middle line:90%
+less than or equal to 1.
+
+00:14:07.710 --> 00:14:10.610 align:middle line:84%
+So those two facts
+combined are maybe
+
+00:14:10.610 --> 00:14:13.170 align:middle line:84%
+OK when the
+expectation is large.
+
+00:14:13.170 --> 00:14:18.410 align:middle line:84%
+So what can go wrong will go
+wrong with high probability,
+
+00:14:18.410 --> 00:14:22.320 align:middle line:84%
+assuming mutual independence and
+assuming expectation is large.
+
+00:14:22.320 --> 00:14:26.120 align:middle line:84%
+I guess that's the formal
+version of Murphy's law.
+
+00:14:26.120 --> 00:14:28.620 align:middle line:90%
+OK, cool.
+
+00:14:28.620 --> 00:14:35.000 align:middle line:84%
+Let's do a particular
+example of this
+
+00:14:35.000 --> 00:14:37.580 align:middle line:84%
+that I think is
+instructive, which is,
+
+00:14:37.580 --> 00:14:45.037 align:middle line:84%
+suppose that each event occurs
+with probability 1 over n.
+
+00:14:45.037 --> 00:14:46.120 align:middle line:90%
+So this is the same thing.
+
+00:14:46.120 --> 00:14:48.570 align:middle line:84%
+But I'm just plugging
+in p equals 1 over n.
+
+00:14:48.570 --> 00:14:56.080 align:middle line:84%
+Then with the Union bound, I get
+the probability of the union--
+
+00:14:56.080 --> 00:14:58.350 align:middle line:90%
+I'll write it one more time--
+
+00:14:58.350 --> 00:15:00.780 align:middle line:90%
+is at most 1, exactly.
+
+00:15:00.780 --> 00:15:04.200 align:middle line:90%
+So it's useless.
+
+00:15:04.200 --> 00:15:11.580 align:middle line:84%
+Murphy's law tells me the
+probability is at least 1
+
+00:15:11.580 --> 00:15:22.620 align:middle line:84%
+minus 1 over e to the
+1, which is about 0.63.
+
+00:15:22.620 --> 00:15:24.180 align:middle line:90%
+So they're pretty close.
+
+00:15:24.180 --> 00:15:29.040 align:middle line:84%
+They're within a factor of
+2 of each other, 1 and 0.63.
+
+00:15:29.040 --> 00:15:30.380 align:middle line:90%
+And the right answer--
+
+00:15:30.380 --> 00:15:33.180 align:middle line:90%
+
+
+00:15:33.180 --> 00:15:36.220 align:middle line:84%
+well, I guess is this thing,
+1 minus 1 over n to the n.
+
+00:15:36.220 --> 00:15:38.830 align:middle line:84%
+I'm not sure it
+has a nice formula.
+
+00:15:38.830 --> 00:15:41.030 align:middle line:84%
+It depends on n, which
+one is more correct.
+
+00:15:41.030 --> 00:15:42.350 align:middle line:90%
+But they're pretty close.
+
+00:15:42.350 --> 00:15:45.550 align:middle line:90%
+So they're both pretty correct.
+
+00:15:45.550 --> 00:15:51.370 align:middle line:90%
+Here is maybe another example.
+
+00:15:51.370 --> 00:15:54.010 align:middle line:84%
+So we did two examples
+at the end of last class
+
+00:15:54.010 --> 00:16:05.800 align:middle line:84%
+with randomized phone returning
+at some terrible school
+
+00:16:05.800 --> 00:16:09.400 align:middle line:84%
+where you get a randomly
+selected phone when you go home.
+
+00:16:09.400 --> 00:16:12.550 align:middle line:84%
+And then we talked
+about a version
+
+00:16:12.550 --> 00:16:17.380 align:middle line:84%
+with a turntable
+or a lazy Susan,
+
+00:16:17.380 --> 00:16:20.690 align:middle line:84%
+where either everyone gets
+their phone back or no one does.
+
+00:16:20.690 --> 00:16:23.167 align:middle line:84%
+And it was kind of weird,
+because in expectation, these
+
+00:16:23.167 --> 00:16:23.750 align:middle line:90%
+were the same.
+
+00:16:23.750 --> 00:16:25.583 align:middle line:84%
+The expected number of
+phones that went back
+
+00:16:25.583 --> 00:16:29.530 align:middle line:84%
+to the correct person was 1
+independent of how many people
+
+00:16:29.530 --> 00:16:31.780 align:middle line:84%
+and phones there were, as
+long as the number of phones
+
+00:16:31.780 --> 00:16:34.600 align:middle line:84%
+equals the number of people,
+which is kind of funny.
+
+00:16:34.600 --> 00:16:38.190 align:middle line:90%
+Expectation was always 1.
+
+00:16:38.190 --> 00:16:47.550 align:middle line:84%
+So yeah, this is an example,
+if you recall, we wrote down,
+
+00:16:47.550 --> 00:16:49.360 align:middle line:84%
+there was an indicator
+random variable--
+
+00:16:49.360 --> 00:16:50.485 align:middle line:90%
+I forget what we called it.
+
+00:16:50.485 --> 00:16:51.900 align:middle line:90%
+Let's say I sub i--
+
+00:16:51.900 --> 00:16:55.410 align:middle line:84%
+which was, does the i-th
+person get back their phone.
+
+00:16:55.410 --> 00:16:59.460 align:middle line:84%
+And we computed the
+probability of that equaling 1
+
+00:16:59.460 --> 00:17:01.390 align:middle line:90%
+here and here.
+
+00:17:01.390 --> 00:17:04.030 align:middle line:84%
+And in both cases,
+it was 1 over n.
+
+00:17:04.030 --> 00:17:08.970 align:middle line:84%
+So these are actually both
+examples of this picture.
+
+00:17:08.970 --> 00:17:13.830 align:middle line:84%
+OK, I should say, if
+mutually independent.
+
+00:17:13.830 --> 00:17:17.790 align:middle line:90%
+
+
+00:17:17.790 --> 00:17:20.730 align:middle line:84%
+In this example, I didn't want
+to assume mutual independence.
+
+00:17:20.730 --> 00:17:24.869 align:middle line:84%
+In all cases, this holds if the
+events are mutually independent,
+
+00:17:24.869 --> 00:17:27.450 align:middle line:84%
+because here, the events
+are not necessarily mutually
+
+00:17:27.450 --> 00:17:29.185 align:middle line:90%
+independent, right?
+
+00:17:29.185 --> 00:17:30.060 align:middle line:90%
+In fact, they're not.
+
+00:17:30.060 --> 00:17:32.850 align:middle line:84%
+In both of these examples,
+they're different levels
+
+00:17:32.850 --> 00:17:35.760 align:middle line:90%
+of independence, I would say.
+
+00:17:35.760 --> 00:17:40.240 align:middle line:84%
+But they're both special
+cases of this property.
+
+00:17:40.240 --> 00:17:42.347 align:middle line:84%
+The probability of each
+event is exactly 1 over n.
+
+00:17:42.347 --> 00:17:44.930 align:middle line:84%
+The probability each person gets
+their phone back is 1 over n,
+
+00:17:44.930 --> 00:17:47.710 align:middle line:84%
+both with random
+permutation of the phones
+
+00:17:47.710 --> 00:17:51.760 align:middle line:84%
+and with random
+rotation of the phones.
+
+00:17:51.760 --> 00:17:57.490 align:middle line:84%
+And here, I will give you the
+actual answers, the probability
+
+00:17:57.490 --> 00:18:01.750 align:middle line:84%
+that any phone is
+returned correctly,
+
+00:18:01.750 --> 00:18:07.253 align:middle line:84%
+that's this probability of the
+union of the different events.
+
+00:18:07.253 --> 00:18:10.270 align:middle line:90%
+
+
+00:18:10.270 --> 00:18:14.230 align:middle line:84%
+In this case-- well, it's easier
+to compute the probability
+
+00:18:14.230 --> 00:18:15.650 align:middle line:90%
+that no one gets it correctly.
+
+00:18:15.650 --> 00:18:18.820 align:middle line:84%
+This is like the no
+repeated serial numbers
+
+00:18:18.820 --> 00:18:21.590 align:middle line:90%
+in the dollar bill, kind of.
+
+00:18:21.590 --> 00:18:26.180 align:middle line:84%
+So for the first person, there
+are n minus 1 choices out of n,
+
+00:18:26.180 --> 00:18:27.980 align:middle line:84%
+where they get the
+wrong phone back.
+
+00:18:27.980 --> 00:18:29.650 align:middle line:84%
+And then the second
+person, there's
+
+00:18:29.650 --> 00:18:33.190 align:middle line:84%
+n minus 2 choices
+out of n minus 1
+
+00:18:33.190 --> 00:18:38.770 align:middle line:84%
+for them to not get their
+correct phone back, and so on.
+
+00:18:38.770 --> 00:18:41.670 align:middle line:90%
+And get my cancellation chalk.
+
+00:18:41.670 --> 00:18:47.020 align:middle line:90%
+
+
+00:18:47.020 --> 00:18:49.880 align:middle line:84%
+n minus 1's cancel,
+n minus 2's cancel.
+
+00:18:49.880 --> 00:18:51.710 align:middle line:90%
+n minus 3's cancel, and so on.
+
+00:18:51.710 --> 00:18:56.062 align:middle line:84%
+We're left with
+1 minus 1 over n,
+
+00:18:56.062 --> 00:18:59.840 align:middle line:84%
+OK, which is in between
+these two values.
+
+00:18:59.840 --> 00:19:01.810 align:middle line:90%
+So that's good.
+
+00:19:01.810 --> 00:19:07.240 align:middle line:84%
+And it's actually very
+close to the Union bound,
+
+00:19:07.240 --> 00:19:09.500 align:middle line:84%
+closer to the Union
+bound than the other one.
+
+00:19:09.500 --> 00:19:13.670 align:middle line:84%
+So I would say,
+yeah, I don't know.
+
+00:19:13.670 --> 00:19:19.130 align:middle line:84%
+These are pretty independent
+is my fancy analysis.
+
+00:19:19.130 --> 00:19:24.743 align:middle line:90%
+
+
+00:19:24.743 --> 00:19:27.410 align:middle line:84%
+Yeah, maybe they're independent
+if you look at it the right way.
+
+00:19:27.410 --> 00:19:31.300 align:middle line:84%
+It depends how you define
+the problem exactly.
+
+00:19:31.300 --> 00:19:38.660 align:middle line:84%
+Over here, what's the
+probability that any phone gets
+
+00:19:38.660 --> 00:19:39.690 align:middle line:90%
+returned correctly?
+
+00:19:39.690 --> 00:19:41.220 align:middle line:84%
+This is actually
+a really easy one.
+
+00:19:41.220 --> 00:19:43.820 align:middle line:90%
+I rotate the phones on a table.
+
+00:19:43.820 --> 00:19:49.056 align:middle line:84%
+What's the chance that anyone
+gets their phone back correctly?
+
+00:19:49.056 --> 00:19:51.710 align:middle line:90%
+
+
+00:19:51.710 --> 00:19:52.478 align:middle line:90%
+Yeah?
+
+00:19:52.478 --> 00:19:53.270 align:middle line:90%
+AUDIENCE: 1 over n.
+
+00:19:53.270 --> 00:19:54.770 align:middle line:90%
+ERIK DEMAINE: 1 over n.
+
+00:19:54.770 --> 00:19:56.460 align:middle line:84%
+There are just n
+possible outcomes here.
+
+00:19:56.460 --> 00:19:58.460 align:middle line:84%
+And one of them, everyone
+gets their phone back.
+
+00:19:58.460 --> 00:20:01.620 align:middle line:90%
+So capital N equals little n.
+
+00:20:01.620 --> 00:20:05.900 align:middle line:84%
+And in the other situation, zero
+people get their phone back.
+
+00:20:05.900 --> 00:20:10.770 align:middle line:84%
+So this seems to violate
+this lower bound, right?
+
+00:20:10.770 --> 00:20:13.470 align:middle line:84%
+We said it should
+be at least 0.63.
+
+00:20:13.470 --> 00:20:19.040 align:middle line:84%
+So in order to do that, it means
+that they're very dependent.
+
+00:20:19.040 --> 00:20:20.930 align:middle line:84%
+I mean, it's very
+hard for events
+
+00:20:20.930 --> 00:20:23.217 align:middle line:84%
+to be more dependent than
+them being equal, in fact.
+
+00:20:23.217 --> 00:20:24.800 align:middle line:84%
+The first person
+gets their phone back
+
+00:20:24.800 --> 00:20:27.092 align:middle line:84%
+if and only if the second
+person gets their phone back,
+
+00:20:27.092 --> 00:20:29.690 align:middle line:84%
+if and only if the third
+person gets their phone back.
+
+00:20:29.690 --> 00:20:33.470 align:middle line:84%
+So indeed, the events are
+equal to each other here,
+
+00:20:33.470 --> 00:20:37.070 align:middle line:90%
+the same single outcome.
+
+00:20:37.070 --> 00:20:41.630 align:middle line:84%
+And so that's why
+this is breaking.
+
+00:20:41.630 --> 00:20:48.620 align:middle line:84%
+OK, I wanted to
+prove Murphy's law.
+
+00:20:48.620 --> 00:20:50.713 align:middle line:84%
+And then we'll come back
+to one more example.
+
+00:20:50.713 --> 00:20:54.584 align:middle line:90%
+
+
+00:20:54.584 --> 00:20:55.640 align:middle line:90%
+We are we at?
+
+00:20:55.640 --> 00:20:56.155 align:middle line:90%
+Over here.
+
+00:20:56.155 --> 00:21:00.230 align:middle line:90%
+
+
+00:21:00.230 --> 00:21:02.070 align:middle line:84%
+Like, where does this
+exponential come from?
+
+00:21:02.070 --> 00:21:03.540 align:middle line:90%
+It's an approximation.
+
+00:21:03.540 --> 00:21:08.720 align:middle line:84%
+So it comes from one
+of these fun facts
+
+00:21:08.720 --> 00:21:10.230 align:middle line:90%
+that we've used before.
+
+00:21:10.230 --> 00:21:14.960 align:middle line:84%
+So just like in
+this last example,
+
+00:21:14.960 --> 00:21:17.420 align:middle line:84%
+instead of computing
+the probability
+
+00:21:17.420 --> 00:21:21.020 align:middle line:84%
+that at least one thing happens,
+let's compute the probability
+
+00:21:21.020 --> 00:21:24.800 align:middle line:84%
+that zero of the events
+happen, and then do 1 minus it.
+
+00:21:24.800 --> 00:21:29.360 align:middle line:84%
+So I'm going to
+compute the probability
+
+00:21:29.360 --> 00:21:34.652 align:middle line:84%
+complement of this event is that
+n equals 0, so no events occur.
+
+00:21:34.652 --> 00:21:39.300 align:middle line:84%
+OK, in other words, the
+probability that E 1
+
+00:21:39.300 --> 00:21:45.620 align:middle line:84%
+does not occur and E 2 does not
+occur and E n does not occur.
+
+00:21:45.620 --> 00:21:53.760 align:middle line:90%
+
+
+00:21:53.760 --> 00:21:58.420 align:middle line:84%
+Well, the E i's are independent,
+are mutually independent.
+
+00:21:58.420 --> 00:22:02.040 align:middle line:84%
+And one of the things we
+mentioned and maybe proved
+
+00:22:02.040 --> 00:22:03.690 align:middle line:84%
+in recitation, I
+forget, back when
+
+00:22:03.690 --> 00:22:05.560 align:middle line:84%
+we were doing the
+independence lecture,
+
+00:22:05.560 --> 00:22:08.590 align:middle line:84%
+is that if events
+are independent,
+
+00:22:08.590 --> 00:22:11.460 align:middle line:84%
+then also their complements
+are independent.
+
+00:22:11.460 --> 00:22:14.020 align:middle line:84%
+If E 1 and E 2 are
+independent from each other,
+
+00:22:14.020 --> 00:22:18.750 align:middle line:84%
+then E 1 complement is
+independent from E 2 complement.
+
+00:22:18.750 --> 00:22:25.110 align:middle line:84%
+And so from the product
+rule, this probability
+
+00:22:25.110 --> 00:22:29.190 align:middle line:84%
+of intersections for n
+mutually independent events
+
+00:22:29.190 --> 00:22:31.406 align:middle line:84%
+is just the product
+of the probabilities.
+
+00:22:31.406 --> 00:22:40.290 align:middle line:90%
+
+
+00:22:40.290 --> 00:22:41.460 align:middle line:90%
+What else?
+
+00:22:41.460 --> 00:22:43.260 align:middle line:84%
+So this probability
+is, of course,
+
+00:22:43.260 --> 00:22:48.810 align:middle line:90%
+1 minus the probability of E i.
+
+00:22:48.810 --> 00:22:52.535 align:middle line:84%
+And now we're going to
+use this fun fact, which
+
+00:22:52.535 --> 00:22:57.120 align:middle line:84%
+is, this is at most E to
+the minus probability of E
+
+00:22:57.120 --> 00:23:03.840 align:middle line:84%
+i by this fact that 1
+minus x is less than
+
+00:23:03.840 --> 00:23:09.810 align:middle line:84%
+or equal to E to the minus
+x for x non-negative.
+
+00:23:09.810 --> 00:23:13.290 align:middle line:84%
+We used this a few
+lectures ago, I think.
+
+00:23:13.290 --> 00:23:16.150 align:middle line:84%
+This was the Taylor series
+expansion of E to the minus x.
+
+00:23:16.150 --> 00:23:17.410 align:middle line:90%
+You take the first two terms.
+
+00:23:17.410 --> 00:23:19.900 align:middle line:84%
+It's a very good
+approximation when x is small,
+
+00:23:19.900 --> 00:23:21.442 align:middle line:84%
+which is kind of an
+interesting case.
+
+00:23:21.442 --> 00:23:22.983 align:middle line:84%
+We're thinking of
+these probabilities
+
+00:23:22.983 --> 00:23:25.750 align:middle line:84%
+individually as being small, but
+there might be lots of events.
+
+00:23:25.750 --> 00:23:27.960 align:middle line:84%
+Then this would be a
+good approximation.
+
+00:23:27.960 --> 00:23:31.450 align:middle line:84%
+But it's always true that it's
+at less than or equal to in all
+
+00:23:31.450 --> 00:23:32.030 align:middle line:90%
+cases.
+
+00:23:32.030 --> 00:23:35.170 align:middle line:90%
+So this is fine.
+
+00:23:35.170 --> 00:23:39.380 align:middle line:84%
+And so now we have a
+product of exponentials.
+
+00:23:39.380 --> 00:23:43.420 align:middle line:84%
+And by properties of exponents,
+we can pull the exponential out.
+
+00:23:43.420 --> 00:23:50.950 align:middle line:84%
+This is less than or equal
+to e to this sum minus sum
+
+00:23:50.950 --> 00:23:55.095 align:middle line:84%
+i equals 1 to n of
+probability of E i.
+
+00:23:55.095 --> 00:23:57.700 align:middle line:90%
+
+
+00:23:57.700 --> 00:24:00.250 align:middle line:84%
+OK, which if you stare
+at it long enough, that's
+
+00:24:00.250 --> 00:24:03.370 align:middle line:84%
+exactly what we got here. e
+to the minus is the same as 1
+
+00:24:03.370 --> 00:24:06.580 align:middle line:90%
+over e to the thing in this sum.
+
+00:24:06.580 --> 00:24:09.050 align:middle line:84%
+And because we are computing
+the complement event,
+
+00:24:09.050 --> 00:24:10.940 align:middle line:84%
+we have to do a 1
+minus out front.
+
+00:24:10.940 --> 00:24:12.910 align:middle line:84%
+And instead of an
+upper bound, this
+
+00:24:12.910 --> 00:24:14.920 align:middle line:84%
+is an upper bound
+on the failure,
+
+00:24:14.920 --> 00:24:17.530 align:middle line:84%
+this is a lower bound
+on success if success
+
+00:24:17.530 --> 00:24:21.620 align:middle line:90%
+is one of the events occurring.
+
+00:24:21.620 --> 00:24:22.120 align:middle line:90%
+OK?
+
+00:24:22.120 --> 00:24:24.550 align:middle line:90%
+Cool.
+
+00:24:24.550 --> 00:24:26.900 align:middle line:84%
+So that's where the
+exponentials come from.
+
+00:24:26.900 --> 00:24:27.970 align:middle line:90%
+It's a way to--
+
+00:24:27.970 --> 00:24:30.530 align:middle line:84%
+products of 1 minus
+something is ugly.
+
+00:24:30.530 --> 00:24:32.210 align:middle line:84%
+There's no nice way
+to simplify that.
+
+00:24:32.210 --> 00:24:33.800 align:middle line:84%
+But if we use this
+approximation,
+
+00:24:33.800 --> 00:24:36.970 align:middle line:84%
+then we get a product of
+exponentials and life is good.
+
+00:24:36.970 --> 00:24:42.610 align:middle line:84%
+So for fun, as we're
+winding down the class,
+
+00:24:42.610 --> 00:24:45.230 align:middle line:84%
+I think it's time to
+enjoy a music video.
+
+00:24:45.230 --> 00:24:48.460 align:middle line:84%
+So the application
+is we're going
+
+00:24:48.460 --> 00:24:53.060 align:middle line:84%
+to think about, we have some
+probabilities of failures.
+
+00:24:53.060 --> 00:24:55.900 align:middle line:84%
+And here, this is a really
+cool Rube Goldberg machine
+
+00:24:55.900 --> 00:24:59.260 align:middle line:90%
+made by the rock band, OK Go.
+
+00:24:59.260 --> 00:25:04.960 align:middle line:84%
+And there are about over a
+hundred different components
+
+00:25:04.960 --> 00:25:06.380 align:middle line:90%
+in this Rube Goldberg machine.
+
+00:25:06.380 --> 00:25:09.430 align:middle line:84%
+So what you want to
+think about is what's
+
+00:25:09.430 --> 00:25:12.370 align:middle line:84%
+the probability of at least
+one of those components failing
+
+00:25:12.370 --> 00:25:15.560 align:middle line:90%
+in a single uncut video?
+
+00:25:15.560 --> 00:25:16.548 align:middle line:90%
+[VIDEO PLAYBACK]
+
+00:25:16.548 --> 00:25:38.284 align:middle line:90%
+
+
+00:25:38.284 --> 00:25:55.950 align:middle line:90%
+[OK GO, "THIS TOO SHALL PASS"]
+
+00:25:55.950 --> 00:25:58.940 align:middle line:84%
+- You can't keep
+letting it get you down
+
+00:25:58.940 --> 00:26:07.589 align:middle line:84%
+And you can't keep
+dragging dead weight around
+
+00:26:07.589 --> 00:26:10.940 align:middle line:84%
+If there ain't that
+much to lug around
+
+00:26:10.940 --> 00:26:18.970 align:middle line:84%
+You better run like hell
+when you hit the ground
+
+00:26:18.970 --> 00:26:24.940 align:middle line:90%
+When the morning comes
+
+00:26:24.940 --> 00:26:31.160 align:middle line:90%
+When the morning comes
+
+00:26:31.160 --> 00:26:33.860 align:middle line:84%
+You can't stop these
+kids from dancing
+
+00:26:33.860 --> 00:26:35.400 align:middle line:90%
+Why would you want to
+
+00:26:35.400 --> 00:26:42.476 align:middle line:84%
+Especially when you are
+already getting yours
+
+00:26:42.476 --> 00:26:46.370 align:middle line:84%
+'Cause if your mind don't
+move and your knees don't bend
+
+00:26:46.370 --> 00:26:54.110 align:middle line:84%
+Well don't go blaming
+the kids again
+
+00:26:54.110 --> 00:27:00.050 align:middle line:90%
+When the morning comes
+
+00:27:00.050 --> 00:27:06.050 align:middle line:90%
+When the morning comes
+
+00:27:06.050 --> 00:27:12.050 align:middle line:90%
+When the morning comes
+
+00:27:12.050 --> 00:27:15.110 align:middle line:90%
+When the morning comes
+
+00:27:15.110 --> 00:27:18.050 align:middle line:90%
+When the morning comes
+
+00:27:18.050 --> 00:27:28.550 align:middle line:90%
+When the morning comes
+
+00:27:28.550 --> 00:27:40.460 align:middle line:90%
+Let it go, this too shall pass
+
+00:27:40.460 --> 00:27:51.546 align:middle line:90%
+Let it go, this too shall pass
+
+00:27:51.546 --> 00:27:54.780 align:middle line:84%
+You know you can't keep
+letting it get you down
+
+00:27:54.780 --> 00:27:57.703 align:middle line:84%
+You can't keep letting
+it get you down
+
+00:27:57.703 --> 00:28:03.844 align:middle line:90%
+This too shall pass
+
+00:28:03.844 --> 00:28:06.844 align:middle line:84%
+You know you can't keep
+letting it get you down
+
+00:28:06.844 --> 00:28:10.113 align:middle line:84%
+You know you can't keep
+letting it get you down
+
+00:28:10.113 --> 00:28:15.050 align:middle line:90%
+This too shall pass
+
+00:28:15.050 --> 00:28:16.850 align:middle line:90%
+When the morning comes
+
+00:28:16.850 --> 00:28:20.610 align:middle line:84%
+You can't keep letting
+it get you down
+
+00:28:20.610 --> 00:28:22.320 align:middle line:90%
+When the morning comes
+
+00:28:22.320 --> 00:28:24.675 align:middle line:84%
+You can't keep letting
+it get you down
+
+00:28:24.675 --> 00:28:28.186 align:middle line:84%
+You can't keep letting
+it get you down
+
+00:28:28.186 --> 00:28:31.078 align:middle line:84%
+You can't keep letting
+it get you down
+
+00:28:31.078 --> 00:28:34.452 align:middle line:84%
+You can't keep letting
+it get you down
+
+00:28:34.452 --> 00:28:36.380 align:middle line:90%
+[CLATTERING]
+
+00:28:36.380 --> 00:28:39.120 align:middle line:90%
+
+
+00:28:39.120 --> 00:28:41.559 align:middle line:90%
+When the morning comes.
+
+00:28:41.559 --> 00:28:44.433 align:middle line:90%
+[CLATTERING]
+
+00:28:44.433 --> 00:28:47.310 align:middle line:90%
+
+
+00:28:47.310 --> 00:28:49.608 align:middle line:90%
+[CHEERING]
+
+00:28:49.608 --> 00:28:53.550 align:middle line:90%
+
+
+00:28:53.550 --> 00:28:55.226 align:middle line:90%
+ERIK DEMAINE: So good.
+
+00:28:55.226 --> 00:28:57.706 align:middle line:90%
+[CHEERING]
+
+00:28:57.706 --> 00:29:01.674 align:middle line:90%
+
+
+00:29:01.674 --> 00:29:02.670 align:middle line:90%
+[END PLAYBACK]
+
+00:29:02.670 --> 00:29:06.270 align:middle line:84%
+ERIK DEMAINE: So if you haven't
+watched all of OK Go's music
+
+00:29:06.270 --> 00:29:08.010 align:middle line:84%
+videos, I highly
+recommend, instead
+
+00:29:08.010 --> 00:29:11.670 align:middle line:84%
+of studying for the final,
+you should watch them.
+
+00:29:11.670 --> 00:29:13.110 align:middle line:90%
+Amazing stuff.
+
+00:29:13.110 --> 00:29:15.480 align:middle line:84%
+Actually, I've watched
+this video like 10 times
+
+00:29:15.480 --> 00:29:17.610 align:middle line:84%
+in the last day,
+and I only just now
+
+00:29:17.610 --> 00:29:20.330 align:middle line:84%
+realized how many references
+there are to other OK Go music
+
+00:29:20.330 --> 00:29:20.830 align:middle line:90%
+videos.
+
+00:29:20.830 --> 00:29:23.650 align:middle line:84%
+So if you watch them all,
+you'll get extra appreciation.
+
+00:29:23.650 --> 00:29:27.420 align:middle line:84%
+Then watch this one again,
+and you'll see them all.
+
+00:29:27.420 --> 00:29:31.920 align:middle line:84%
+Cool, so I happen to be friends
+in particular with Damian, who's
+
+00:29:31.920 --> 00:29:33.040 align:middle line:90%
+the lead singer.
+
+00:29:33.040 --> 00:29:36.765 align:middle line:84%
+And I was chatting
+with him, like,
+
+00:29:36.765 --> 00:29:38.530 align:middle line:90%
+how did you make this work?
+
+00:29:38.530 --> 00:29:41.610 align:middle line:84%
+Because in many
+talks that he gives,
+
+00:29:41.610 --> 00:29:44.560 align:middle line:84%
+like he has a Ted Talk that's
+linked in the lecture notes.
+
+00:29:44.560 --> 00:29:52.980 align:middle line:84%
+He said, OK, there are about
+130 components in the setup.
+
+00:29:52.980 --> 00:30:01.410 align:middle line:84%
+So if you imagine each
+fails with probability,
+
+00:30:01.410 --> 00:30:04.763 align:middle line:90%
+say, 10%, reasonable.
+
+00:30:04.763 --> 00:30:06.180 align:middle line:84%
+If you engineer
+something well, it
+
+00:30:06.180 --> 00:30:07.570 align:middle line:84%
+should work like
+90% of the time.
+
+00:30:07.570 --> 00:30:09.987 align:middle line:84%
+I don't know if you've ever
+built a Rube Goldberg machine.
+
+00:30:09.987 --> 00:30:12.220 align:middle line:84%
+Even that's difficult
+to engineer.
+
+00:30:12.220 --> 00:30:16.530 align:middle line:84%
+It's very easy to get more
+like 50%, 70% success rate.
+
+00:30:16.530 --> 00:30:19.360 align:middle line:84%
+But let's say you can
+get 90% success rate.
+
+00:30:19.360 --> 00:30:25.670 align:middle line:84%
+Then what's the probability
+that there is a failure?
+
+00:30:25.670 --> 00:30:30.160 align:middle line:90%
+Number of fails is at least 1.
+
+00:30:30.160 --> 00:30:32.910 align:middle line:84%
+Well, it's the same
+thing we had before.
+
+00:30:32.910 --> 00:30:35.920 align:middle line:90%
+
+
+00:30:35.920 --> 00:30:37.970 align:middle line:90%
+1 minus 1 minus p to the n.
+
+00:30:37.970 --> 00:30:39.170 align:middle line:90%
+This is the actual.
+
+00:30:39.170 --> 00:30:41.590 align:middle line:84%
+We won't use any
+approximation here.
+
+00:30:41.590 --> 00:30:54.490 align:middle line:84%
+It turns out to be 99.99989%,
+which is exactly 1 in 1,000,000
+
+00:30:54.490 --> 00:30:58.570 align:middle line:84%
+chance that this video
+will come out good.
+
+00:30:58.570 --> 00:31:02.770 align:middle line:90%
+So that's terrible.
+
+00:31:02.770 --> 00:31:04.880 align:middle line:84%
+And then, in his
+talks, he goes on,
+
+00:31:04.880 --> 00:31:10.210 align:middle line:84%
+it's like, yeah, so, we've
+got to take chances and just
+
+00:31:10.210 --> 00:31:13.910 align:middle line:84%
+explore and not
+worry about failing,
+
+00:31:13.910 --> 00:31:15.282 align:middle line:90%
+is the main point of his talk.
+
+00:31:15.282 --> 00:31:17.990 align:middle line:84%
+But then, he never explains like
+well how did you make the video?
+
+00:31:17.990 --> 00:31:20.448 align:middle line:84%
+If there's a 1 in 1,000,000
+chance that it comes out right.
+
+00:31:20.448 --> 00:31:22.570 align:middle line:90%
+Did you do a million takes?
+
+00:31:22.570 --> 00:31:25.160 align:middle line:84%
+And I don't know how
+many takes they did.
+
+00:31:25.160 --> 00:31:28.390 align:middle line:90%
+They didn't remember.
+
+00:31:28.390 --> 00:31:31.360 align:middle line:84%
+But he said, the
+secret for it working
+
+00:31:31.360 --> 00:31:34.420 align:middle line:84%
+was to do the math after
+you've made the video instead
+
+00:31:34.420 --> 00:31:37.060 align:middle line:90%
+of before.
+
+00:31:37.060 --> 00:31:38.890 align:middle line:90%
+Maybe a little unsatisfying.
+
+00:31:38.890 --> 00:31:41.617 align:middle line:84%
+But on reflection, I
+mean, you could work out
+
+00:31:41.617 --> 00:31:42.950 align:middle line:90%
+some other probabilities, right?
+
+00:31:42.950 --> 00:31:48.340 align:middle line:84%
+If you say, OK, there's only
+1% of chance of failure,
+
+00:31:48.340 --> 00:31:52.300 align:middle line:84%
+then the probability that
+the whole thing succeeds is--
+
+00:31:52.300 --> 00:31:56.920 align:middle line:84%
+or the probability of
+failure overall is 73%.
+
+00:31:56.920 --> 00:31:59.510 align:middle line:90%
+Still not very good, but doable.
+
+00:31:59.510 --> 00:32:02.260 align:middle line:84%
+Like, you could do four
+takes, and then one of them
+
+00:32:02.260 --> 00:32:04.810 align:middle line:90%
+will be good in expectation.
+
+00:32:04.810 --> 00:32:08.180 align:middle line:84%
+But 99% reliability
+is challenging.
+
+00:32:08.180 --> 00:32:10.220 align:middle line:90%
+It's only when you get to--
+
+00:32:10.220 --> 00:32:14.540 align:middle line:84%
+if you get to
+99.9% success rate,
+
+00:32:14.540 --> 00:32:16.120 align:middle line:84%
+then this starts
+to get impressive,
+
+00:32:16.120 --> 00:32:19.430 align:middle line:84%
+only a 12% chance
+that something fails.
+
+00:32:19.430 --> 00:32:22.040 align:middle line:84%
+But apparently,
+in hindsight, what
+
+00:32:22.040 --> 00:32:25.980 align:middle line:84%
+worked well for this video
+is because the effects,
+
+00:32:25.980 --> 00:32:28.557 align:middle line:84%
+the interactions get bigger
+and bigger towards the end
+
+00:32:28.557 --> 00:32:30.140 align:middle line:84%
+of the video, because
+they just wanted
+
+00:32:30.140 --> 00:32:32.223 align:middle line:84%
+to make them more and more
+impressive with bowling
+
+00:32:32.223 --> 00:32:35.130 align:middle line:84%
+balls and giant things
+and huge interactions,
+
+00:32:35.130 --> 00:32:37.850 align:middle line:84%
+huge interactions
+actually fail less often,
+
+00:32:37.850 --> 00:32:39.440 align:middle line:84%
+because something
+like a bowling ball
+
+00:32:39.440 --> 00:32:43.020 align:middle line:84%
+is less affected by air currents
+in the room and stuff like that.
+
+00:32:43.020 --> 00:32:44.940 align:middle line:84%
+So the bowling balls
+were super reliable.
+
+00:32:44.940 --> 00:32:48.110 align:middle line:84%
+They were probably down here
+in the very, very, maybe
+
+00:32:48.110 --> 00:32:50.910 align:middle line:90%
+several 9's effectiveness.
+
+00:32:50.910 --> 00:32:53.010 align:middle line:84%
+Whereas, some of the
+very early effects,
+
+00:32:53.010 --> 00:32:55.790 align:middle line:84%
+in particular, the dominoes
+which opened the video--
+
+00:32:55.790 --> 00:32:57.320 align:middle line:84%
+I'll just play that
+again because I
+
+00:32:57.320 --> 00:32:59.570 align:middle line:90%
+love watching this video.
+
+00:32:59.570 --> 00:33:02.250 align:middle line:84%
+They failed almost
+every single time.
+
+00:33:02.250 --> 00:33:07.430 align:middle line:84%
+So this very first move,
+apparently dominoes
+
+00:33:07.430 --> 00:33:10.050 align:middle line:90%
+are extremely unpredictable.
+
+00:33:10.050 --> 00:33:12.530 align:middle line:84%
+So doing this in
+a way-- they said
+
+00:33:12.530 --> 00:33:15.930 align:middle line:84%
+they set up the dominoes
+roughly 6 billion times.
+
+00:33:15.930 --> 00:33:18.120 align:middle line:84%
+I think that's an
+exaggeration, but that's
+
+00:33:18.120 --> 00:33:22.050 align:middle line:84%
+I guess the other answer
+is to do 6 billion takes,
+
+00:33:22.050 --> 00:33:23.230 align:middle line:90%
+and then you'll be set.
+
+00:33:23.230 --> 00:33:24.990 align:middle line:84%
+And they got one
+take with everything
+
+00:33:24.990 --> 00:33:28.770 align:middle line:84%
+in it, which is pretty
+amazing, despite the odds.
+
+00:33:28.770 --> 00:33:31.830 align:middle line:84%
+All right, so that was
+just a fun diversion.
+
+00:33:31.830 --> 00:33:34.080 align:middle line:84%
+But I love the opportunity
+to talk about Rube Goldberg
+
+00:33:34.080 --> 00:33:37.530 align:middle line:90%
+machines and stare at them.
+
+00:33:37.530 --> 00:33:41.340 align:middle line:84%
+All right, let's do
+some more fun things
+
+00:33:41.340 --> 00:33:47.920 align:middle line:90%
+about expectation products.
+
+00:33:47.920 --> 00:33:53.520 align:middle line:90%
+
+
+00:33:53.520 --> 00:33:55.950 align:middle line:84%
+So it turns out
+there's a product rule,
+
+00:33:55.950 --> 00:33:59.040 align:middle line:84%
+just like for probability,
+but for expectation.
+
+00:33:59.040 --> 00:34:02.336 align:middle line:84%
+It relies on the random
+variables being independent.
+
+00:34:02.336 --> 00:34:10.440 align:middle line:90%
+
+
+00:34:10.440 --> 00:34:12.570 align:middle line:84%
+And then it's exactly
+what you'd expect.
+
+00:34:12.570 --> 00:34:16.370 align:middle line:84%
+The expectation
+of the product is
+
+00:34:16.370 --> 00:34:20.840 align:middle line:84%
+equal to product of
+the expectations,
+
+00:34:20.840 --> 00:34:23.360 align:middle line:90%
+so similar to probability.
+
+00:34:23.360 --> 00:34:25.699 align:middle line:84%
+In fact, this is really
+just a generalized version
+
+00:34:25.699 --> 00:34:28.170 align:middle line:84%
+of the product rule
+for probability.
+
+00:34:28.170 --> 00:34:32.510 align:middle line:84%
+Maybe I'll give a quick
+sketch of the proof.
+
+00:34:32.510 --> 00:34:33.650 align:middle line:90%
+What's my time?
+
+00:34:33.650 --> 00:34:37.040 align:middle line:90%
+Yeah, let's do it.
+
+00:34:37.040 --> 00:34:41.570 align:middle line:84%
+So this expectation
+of x product y,
+
+00:34:41.570 --> 00:34:55.370 align:middle line:84%
+if I just write
+out the definition,
+
+00:34:55.370 --> 00:34:57.773 align:middle line:84%
+we just take all the
+possible outcomes.
+
+00:34:57.773 --> 00:34:59.190 align:middle line:84%
+We don't know
+anything about them.
+
+00:34:59.190 --> 00:35:01.350 align:middle line:90%
+But x times y is a function.
+
+00:35:01.350 --> 00:35:02.970 align:middle line:90%
+We evaluate it at that outcome.
+
+00:35:02.970 --> 00:35:06.440 align:middle line:84%
+This is the same thing as
+taking x of the outcome
+
+00:35:06.440 --> 00:35:08.130 align:middle line:84%
+and multiplying by
+y of the outcome.
+
+00:35:08.130 --> 00:35:10.882 align:middle line:84%
+That's the definition of
+this product function.
+
+00:35:10.882 --> 00:35:13.340 align:middle line:84%
+And then we multiply-- yeah,
+we multiply by the probability
+
+00:35:13.340 --> 00:35:14.690 align:middle line:90%
+of outcome, sum them up.
+
+00:35:14.690 --> 00:35:15.700 align:middle line:90%
+That's the deal.
+
+00:35:15.700 --> 00:35:20.770 align:middle line:84%
+Just like with this
+formula, we can
+
+00:35:20.770 --> 00:35:24.370 align:middle line:84%
+rearrange the terms in
+that sum to where, here it
+
+00:35:24.370 --> 00:35:28.490 align:middle line:84%
+was by x value, but we could
+do it by x and y value.
+
+00:35:28.490 --> 00:35:33.730 align:middle line:84%
+So we can rewrite this
+as a sum over x and a sum
+
+00:35:33.730 --> 00:35:36.370 align:middle line:84%
+over y, in other
+words, a sum over pairs
+
+00:35:36.370 --> 00:35:40.320 align:middle line:90%
+x comma y, of this thing.
+
+00:35:40.320 --> 00:35:42.910 align:middle line:90%
+
+
+00:35:42.910 --> 00:35:45.370 align:middle line:84%
+But now there are a bunch
+of probabilities of outcomes
+
+00:35:45.370 --> 00:35:46.730 align:middle line:90%
+that have the same x and y.
+
+00:35:46.730 --> 00:35:49.420 align:middle line:84%
+So we're just going to write
+the probability that X equals
+
+00:35:49.420 --> 00:35:52.810 align:middle line:84%
+little x and big
+Y equals little y,
+
+00:35:52.810 --> 00:35:55.815 align:middle line:90%
+and multiply that by x times y.
+
+00:35:55.815 --> 00:35:58.780 align:middle line:90%
+
+
+00:35:58.780 --> 00:36:04.360 align:middle line:84%
+OK, that's rearranging terms
+with the same x and y value
+
+00:36:04.360 --> 00:36:06.500 align:middle line:90%
+like we did last class.
+
+00:36:06.500 --> 00:36:11.170 align:middle line:84%
+And then this
+probability is a product.
+
+00:36:11.170 --> 00:36:14.580 align:middle line:84%
+By the product rule
+for probabilities,
+
+00:36:14.580 --> 00:36:17.370 align:middle line:84%
+x and y are independent means
+that these two events are
+
+00:36:17.370 --> 00:36:18.900 align:middle line:90%
+independent for all x and y.
+
+00:36:18.900 --> 00:36:22.620 align:middle line:84%
+And so we can rewrite
+this as probability of X
+
+00:36:22.620 --> 00:36:27.000 align:middle line:84%
+equaling little x
+times probability of Y
+
+00:36:27.000 --> 00:36:29.670 align:middle line:90%
+equaling little y.
+
+00:36:29.670 --> 00:36:34.110 align:middle line:84%
+And now we have a double sum
+over some things involving
+
+00:36:34.110 --> 00:36:37.660 align:middle line:90%
+x and some things involving y.
+
+00:36:37.660 --> 00:36:38.680 align:middle line:90%
+Sorry for the pun.
+
+00:36:38.680 --> 00:36:40.980 align:middle line:84%
+I didn't mean to say
+"sum" all the time there.
+
+00:36:40.980 --> 00:36:43.720 align:middle line:84%
+Things involving x and
+things involving y.
+
+00:36:43.720 --> 00:36:46.960 align:middle line:84%
+And we know from way back
+in our summation formulas,
+
+00:36:46.960 --> 00:36:49.140 align:middle line:84%
+we can separate out
+the summation over x
+
+00:36:49.140 --> 00:36:51.700 align:middle line:84%
+from the summation over
+y, take their product,
+
+00:36:51.700 --> 00:36:56.640 align:middle line:84%
+and if you do that, you get
+exactly this formula with x
+
+00:36:56.640 --> 00:36:58.230 align:middle line:90%
+and with y.
+
+00:36:58.230 --> 00:37:02.050 align:middle line:84%
+And so I didn't write it here,
+but this is x in the range of x.
+
+00:37:02.050 --> 00:37:03.640 align:middle line:90%
+This is y in the range of y.
+
+00:37:03.640 --> 00:37:06.490 align:middle line:90%
+And so that's why this works.
+
+00:37:06.490 --> 00:37:10.050 align:middle line:84%
+So it's really just using
+product rule for probabilities.
+
+00:37:10.050 --> 00:37:13.800 align:middle line:84%
+Cool, let's do an
+example with that.
+
+00:37:13.800 --> 00:37:21.130 align:middle line:90%
+
+
+00:37:21.130 --> 00:37:24.880 align:middle line:84%
+Suppose we've invented a
+new game, which is we roll
+
+00:37:24.880 --> 00:37:29.325 align:middle line:90%
+two independent six-sided dice.
+
+00:37:29.325 --> 00:37:32.740 align:middle line:90%
+
+
+00:37:32.740 --> 00:37:38.140 align:middle line:84%
+And then the score is the
+product of those two dice.
+
+00:37:38.140 --> 00:37:40.460 align:middle line:84%
+Not a typical
+game, usually some.
+
+00:37:40.460 --> 00:37:42.980 align:middle line:84%
+But let's say we
+take the product.
+
+00:37:42.980 --> 00:37:45.760 align:middle line:84%
+What is the expectation
+of that product?
+
+00:37:45.760 --> 00:37:48.190 align:middle line:84%
+Well, if they're
+independent, we know
+
+00:37:48.190 --> 00:37:51.760 align:middle line:84%
+it's the product of
+the expectations.
+
+00:37:51.760 --> 00:37:56.960 align:middle line:84%
+And expectation of a die
+roll, we covered last time.
+
+00:37:56.960 --> 00:37:59.470 align:middle line:90%
+It's 3.5.
+
+00:37:59.470 --> 00:38:12.160 align:middle line:84%
+So this is 3.5 squared,
+which is 12.25.
+
+00:38:12.160 --> 00:38:14.205 align:middle line:84%
+OK, weird number,
+but there it is.
+
+00:38:14.205 --> 00:38:25.480 align:middle line:90%
+
+
+00:38:25.480 --> 00:38:36.020 align:middle line:84%
+Whereas, if I take the
+expectation of D 1 times D 1,
+
+00:38:36.020 --> 00:38:40.610 align:middle line:84%
+also known as D 1 squared, D
+1 is not independent from D 1.
+
+00:38:40.610 --> 00:38:42.670 align:middle line:84%
+In fact, it's the most
+dependent it could be.
+
+00:38:42.670 --> 00:38:45.490 align:middle line:84%
+They're the same
+random variable.
+
+00:38:45.490 --> 00:38:50.170 align:middle line:84%
+I claim I do not get 12.25,
+even though each of these
+
+00:38:50.170 --> 00:38:53.530 align:middle line:84%
+individually has an
+expectation of 3.5.
+
+00:38:53.530 --> 00:38:58.190 align:middle line:84%
+Let's just compute that or get
+an idea how we would compute it.
+
+00:38:58.190 --> 00:39:01.340 align:middle line:84%
+I think I just used
+the definition we have,
+
+00:39:01.340 --> 00:39:05.450 align:middle line:84%
+or really the summing
+over x in range of x.
+
+00:39:05.450 --> 00:39:09.350 align:middle line:84%
+So we have six possible
+outcomes for D 1,
+
+00:39:09.350 --> 00:39:13.430 align:middle line:84%
+and we want the
+probability that D 1
+
+00:39:13.430 --> 00:39:18.230 align:middle line:90%
+equals little d times little d.
+
+00:39:18.230 --> 00:39:24.110 align:middle line:84%
+And that's the second
+formula for expectation.
+
+00:39:24.110 --> 00:39:29.420 align:middle line:84%
+This is just 1/6
+for pair of dice.
+
+00:39:29.420 --> 00:39:33.385 align:middle line:84%
+I guess I didn't mention fair,
+but I meant to say, fair dice.
+
+00:39:33.385 --> 00:39:36.920 align:middle line:90%
+
+
+00:39:36.920 --> 00:39:38.850 align:middle line:90%
+Sorry, I didn't get this right.
+
+00:39:38.850 --> 00:39:40.020 align:middle line:90%
+I'm missing a product.
+
+00:39:40.020 --> 00:39:42.060 align:middle line:90%
+This is this thing.
+
+00:39:42.060 --> 00:39:44.010 align:middle line:84%
+So sum over the
+different die rolls.
+
+00:39:44.010 --> 00:39:48.050 align:middle line:84%
+But now we have d squared
+here And I can never remember
+
+00:39:48.050 --> 00:39:51.060 align:middle line:90%
+the formula for sum of squares.
+
+00:39:51.060 --> 00:39:55.280 align:middle line:84%
+But we get 1/6 times
+that sum of squares.
+
+00:39:55.280 --> 00:39:59.300 align:middle line:84%
+1 squared plus 2 squared
+plus 3 squared up
+
+00:39:59.300 --> 00:40:13.730 align:middle line:84%
+to 6 squared, which turns
+out to be 15.1666, so bigger.
+
+00:40:13.730 --> 00:40:16.730 align:middle line:90%
+Kind of weird, but there you go.
+
+00:40:16.730 --> 00:40:21.297 align:middle line:84%
+All right, so this was product
+rule for two random variables.
+
+00:40:21.297 --> 00:40:23.630 align:middle line:84%
+Of course, if you take the
+product of n random variables
+
+00:40:23.630 --> 00:40:25.580 align:middle line:90%
+you can do the same thing.
+
+00:40:25.580 --> 00:40:27.380 align:middle line:84%
+If there's product
+of n X i's here,
+
+00:40:27.380 --> 00:40:32.900 align:middle line:84%
+you just get a product of n
+expectations of X i's So when
+
+00:40:32.900 --> 00:40:35.210 align:middle line:84%
+things are independent,
+life is good.
+
+00:40:35.210 --> 00:40:36.890 align:middle line:90%
+What about division?
+
+00:40:36.890 --> 00:40:39.380 align:middle line:84%
+We spend all this time
+adding and multiplying
+
+00:40:39.380 --> 00:40:45.380 align:middle line:84%
+probabilities and expectations,
+can we divide them?
+
+00:40:45.380 --> 00:40:47.250 align:middle line:90%
+The short answer is no.
+
+00:40:47.250 --> 00:40:50.930 align:middle line:84%
+Never divide random
+variables, ever.
+
+00:40:50.930 --> 00:40:53.750 align:middle line:90%
+I'll show you why.
+
+00:40:53.750 --> 00:40:58.760 align:middle line:90%
+Don't divide.
+
+00:40:58.760 --> 00:41:04.895 align:middle line:84%
+OK, one reason is
+expectation of 1 over x.
+
+00:41:04.895 --> 00:41:08.030 align:middle line:84%
+If we could do this, we could
+multiply it with something
+
+00:41:08.030 --> 00:41:09.980 align:middle line:90%
+and end up dividing.
+
+00:41:09.980 --> 00:41:12.200 align:middle line:84%
+Does not equal 1
+over expectation
+
+00:41:12.200 --> 00:41:15.773 align:middle line:84%
+of x, in general,
+or probably usually.
+
+00:41:15.773 --> 00:41:18.410 align:middle line:90%
+
+
+00:41:18.410 --> 00:41:25.440 align:middle line:84%
+And here's one example where
+this is particularly striking.
+
+00:41:25.440 --> 00:41:27.380 align:middle line:90%
+They're very different.
+
+00:41:27.380 --> 00:41:29.870 align:middle line:90%
+Suppose you have x.
+
+00:41:29.870 --> 00:41:33.410 align:middle line:84%
+This is almost an
+indicator random variable.
+
+00:41:33.410 --> 00:41:36.960 align:middle line:84%
+But instead of 1 or 0, it's
+going to be 1 or minus 1.
+
+00:41:36.960 --> 00:41:41.720 align:middle line:84%
+So let's say it's 1
+with probability 1/2.
+
+00:41:41.720 --> 00:41:43.840 align:middle line:84%
+And it's minus 1
+with probability 1/2.
+
+00:41:43.840 --> 00:41:48.170 align:middle line:90%
+
+
+00:41:48.170 --> 00:41:52.430 align:middle line:90%
+OK, what's the expectation?
+
+00:41:52.430 --> 00:41:52.930 align:middle line:90%
+0.
+
+00:41:52.930 --> 00:41:55.940 align:middle line:90%
+
+
+00:41:55.940 --> 00:42:00.740 align:middle line:84%
+It's just the average, because
+they're equally likely.
+
+00:42:00.740 --> 00:42:05.950 align:middle line:84%
+So 1 over the expectation
+is not a very good number.
+
+00:42:05.950 --> 00:42:08.160 align:middle line:90%
+It's like infinity or something.
+
+00:42:08.160 --> 00:42:10.740 align:middle line:90%
+That's bad, 1 over 0.
+
+00:42:10.740 --> 00:42:21.750 align:middle line:84%
+Whereas, if I take expectation
+of 1 over x, well, 1 over 1
+
+00:42:21.750 --> 00:42:22.510 align:middle line:90%
+is just 1.
+
+00:42:22.510 --> 00:42:24.970 align:middle line:90%
+1 over minus 1 is also minus 1.
+
+00:42:24.970 --> 00:42:27.450 align:middle line:84%
+Like, 1 over doesn't
+do anything to x.
+
+00:42:27.450 --> 00:42:33.360 align:middle line:84%
+This expectation of 1 over x is
+expectation of x, which is 0.
+
+00:42:33.360 --> 00:42:36.460 align:middle line:84%
+So this thing is like
+infinity or just undefined.
+
+00:42:36.460 --> 00:42:37.570 align:middle line:90%
+And this thing is 0.
+
+00:42:37.570 --> 00:42:39.930 align:middle line:84%
+So they're very different
+from each other.
+
+00:42:39.930 --> 00:42:44.440 align:middle line:84%
+And in some sense, you
+should just never do this.
+
+00:42:44.440 --> 00:42:46.600 align:middle line:84%
+This is a reasonable
+quantity to think about.
+
+00:42:46.600 --> 00:42:48.970 align:middle line:90%
+Don't think about this one.
+
+00:42:48.970 --> 00:42:51.740 align:middle line:84%
+Although that seems backwards,
+given what we showed here.
+
+00:42:51.740 --> 00:42:54.480 align:middle line:90%
+
+
+00:42:54.480 --> 00:42:56.350 align:middle line:90%
+Here's a real-world example.
+
+00:42:56.350 --> 00:43:01.350 align:middle line:84%
+This is based on a paper in
+computer architecture, where
+
+00:43:01.350 --> 00:43:04.740 align:middle line:84%
+they're trying to argue
+that one architecture--
+
+00:43:04.740 --> 00:43:06.400 align:middle line:84%
+I don't know if
+it was P 1 or P 2.
+
+00:43:06.400 --> 00:43:07.920 align:middle line:84%
+I think this is
+a little divorced
+
+00:43:07.920 --> 00:43:11.760 align:middle line:90%
+from the original example.
+
+00:43:11.760 --> 00:43:16.080 align:middle line:84%
+So there were two different
+processor architectures
+
+00:43:16.080 --> 00:43:19.000 align:middle line:84%
+for solving three different
+possible workloads.
+
+00:43:19.000 --> 00:43:21.550 align:middle line:84%
+These were benchmarks that
+they could evaluate them on.
+
+00:43:21.550 --> 00:43:26.980 align:middle line:84%
+And processor 1 on workload 1
+took 10 seconds to complete,
+
+00:43:26.980 --> 00:43:30.730 align:middle line:84%
+processor 2 took 16
+seconds, and so on.
+
+00:43:30.730 --> 00:43:32.670 align:middle line:90%
+There's a table here.
+
+00:43:32.670 --> 00:43:36.900 align:middle line:84%
+You run each of these processors
+for each of these workloads,
+
+00:43:36.900 --> 00:43:38.230 align:middle line:90%
+and you see what you get.
+
+00:43:38.230 --> 00:43:41.490 align:middle line:84%
+Let's say these are
+each equally likely,
+
+00:43:41.490 --> 00:43:45.360 align:middle line:90%
+1/3 probability of occurring.
+
+00:43:45.360 --> 00:43:48.200 align:middle line:84%
+And you want to know
+which one is better.
+
+00:43:48.200 --> 00:43:50.200 align:middle line:84%
+And this is one of those
+things where you think,
+
+00:43:50.200 --> 00:43:52.980 align:middle line:84%
+well, either I should take
+the expectation of the ratios
+
+00:43:52.980 --> 00:43:55.024 align:middle line:84%
+or I should take the
+ratio of the expectations.
+
+00:43:55.024 --> 00:43:58.110 align:middle line:90%
+
+
+00:43:58.110 --> 00:44:01.810 align:middle line:84%
+Let's compute the expectations
+individually first.
+
+00:44:01.810 --> 00:44:05.463 align:middle line:90%
+So if I add these up, I get 30.
+
+00:44:05.463 --> 00:44:06.380 align:middle line:90%
+There's three of them.
+
+00:44:06.380 --> 00:44:10.780 align:middle line:90%
+So the expectation is 10.
+
+00:44:10.780 --> 00:44:15.730 align:middle line:90%
+And here, it's also 10.
+
+00:44:15.730 --> 00:44:19.570 align:middle line:84%
+OK, so in fact, the ratio of
+the expectations, which I think
+
+00:44:19.570 --> 00:44:22.430 align:middle line:90%
+is a reasonable thing to do--
+
+00:44:22.430 --> 00:44:25.990 align:middle line:84%
+so let's just call this P 1
+performance over expectation
+
+00:44:25.990 --> 00:44:29.150 align:middle line:90%
+of P 2 performance is 1.
+
+00:44:29.150 --> 00:44:34.120 align:middle line:84%
+So in fact, these are
+equally good in expectation.
+
+00:44:34.120 --> 00:44:37.840 align:middle line:84%
+OK, the intuition why
+you should do this
+
+00:44:37.840 --> 00:44:41.590 align:middle line:84%
+is, if you assume that
+these workloads are equally
+
+00:44:41.590 --> 00:44:48.610 align:middle line:84%
+likely, then yeah, you should
+be computing how long will
+
+00:44:48.610 --> 00:44:51.880 align:middle line:84%
+your process take given a
+randomly chosen workload
+
+00:44:51.880 --> 00:44:53.770 align:middle line:90%
+according to that distribution.
+
+00:44:53.770 --> 00:44:55.360 align:middle line:84%
+So you should be
+summing all these up
+
+00:44:55.360 --> 00:44:57.460 align:middle line:90%
+before you do any kind of ratio.
+
+00:44:57.460 --> 00:45:04.780 align:middle line:84%
+But what the paper did was take
+the expectation of the ratio.
+
+00:45:04.780 --> 00:45:08.270 align:middle line:84%
+And with these particular
+carefully chosen numbers,
+
+00:45:08.270 --> 00:45:16.810 align:middle line:84%
+but they roughly match those of
+the paper, you get a funny fact,
+
+00:45:16.810 --> 00:45:22.520 align:middle line:84%
+which is if you take the
+expectation of P 1 over P 2--
+
+00:45:22.520 --> 00:45:25.690 align:middle line:84%
+this is a ton of arithmetic,
+so I will not do it--
+
+00:45:25.690 --> 00:45:29.980 align:middle line:90%
+we get 10 over 9.
+
+00:45:29.980 --> 00:45:34.430 align:middle line:84%
+So it looks like these
+are running times,
+
+00:45:34.430 --> 00:45:35.750 align:middle line:90%
+so smaller is better.
+
+00:45:35.750 --> 00:45:39.310 align:middle line:84%
+That looks like P 2
+is better than P 1.
+
+00:45:39.310 --> 00:45:44.140 align:middle line:84%
+But if you take the expected
+ratio of P 2 over P 1,
+
+00:45:44.140 --> 00:45:46.930 align:middle line:90%
+it's also 10 over 9.
+
+00:45:46.930 --> 00:45:51.370 align:middle line:84%
+So clearly, P 1 is
+better than P 2.
+
+00:45:51.370 --> 00:45:52.610 align:middle line:90%
+Why is this happening?
+
+00:45:52.610 --> 00:45:55.210 align:middle line:84%
+Because expectation of
+ratios is just something
+
+00:45:55.210 --> 00:45:57.456 align:middle line:84%
+you should never do
+and is meaningless.
+
+00:45:57.456 --> 00:46:00.080 align:middle line:84%
+Or taken a different
+way, if you want
+
+00:46:00.080 --> 00:46:03.180 align:middle line:84%
+to lie with statistics, here
+is a great way to do it.
+
+00:46:03.180 --> 00:46:06.050 align:middle line:84%
+Take expectation of
+ratios, you could
+
+00:46:06.050 --> 00:46:08.270 align:middle line:90%
+support any story you like.
+
+00:46:08.270 --> 00:46:11.040 align:middle line:84%
+At least with these, if you're
+lucky and the numbers are close,
+
+00:46:11.040 --> 00:46:14.160 align:middle line:84%
+then you get this
+funny behavior.
+
+00:46:14.160 --> 00:46:16.670 align:middle line:84%
+This is what you should do
+if you don't want to lie
+
+00:46:16.670 --> 00:46:19.800 align:middle line:84%
+and you want to
+compare performance.
+
+00:46:19.800 --> 00:46:21.830 align:middle line:84%
+Don't divide random
+variables, I think,
+
+00:46:21.830 --> 00:46:26.690 align:middle line:84%
+is all you'll have to do with
+the dividing random variables.
+
+00:46:26.690 --> 00:46:29.060 align:middle line:84%
+Cool, but multiplying
+is good as long
+
+00:46:29.060 --> 00:46:33.680 align:middle line:90%
+as they're mutually independent.
+
+00:46:33.680 --> 00:46:36.770 align:middle line:90%
+Any questions?
+
+00:46:36.770 --> 00:46:38.480 align:middle line:90%
+Cool.
+
+00:46:38.480 --> 00:46:42.983 align:middle line:84%
+So the last topic for
+today is variance.
+
+00:46:42.983 --> 00:46:46.880 align:middle line:90%
+
+
+00:46:46.880 --> 00:46:50.340 align:middle line:84%
+So expectation was a way
+to take a whole function,
+
+00:46:50.340 --> 00:46:53.103 align:middle line:84%
+a random variable, and
+reduce it down to one number.
+
+00:46:53.103 --> 00:46:55.520 align:middle line:84%
+Now we're going to talk about
+how to take a whole function
+
+00:46:55.520 --> 00:46:58.430 align:middle line:84%
+and reduce it down to
+two numbers, expectation
+
+00:46:58.430 --> 00:46:59.190 align:middle line:90%
+and variance.
+
+00:46:59.190 --> 00:47:01.820 align:middle line:84%
+And I'll say a little bit why
+these are maybe the first two
+
+00:47:01.820 --> 00:47:03.150 align:middle line:90%
+numbers you might care about.
+
+00:47:03.150 --> 00:47:04.858 align:middle line:84%
+There are more, of
+course, you might care
+
+00:47:04.858 --> 00:47:06.090 align:middle line:90%
+about the whole distribution.
+
+00:47:06.090 --> 00:47:07.610 align:middle line:84%
+And in some sense,
+what we've been
+
+00:47:07.610 --> 00:47:10.880 align:middle line:84%
+doing, what we did with
+these guys, the union bound
+
+00:47:10.880 --> 00:47:13.220 align:middle line:84%
+of the Murphy's law, was
+trying to capture a little more
+
+00:47:13.220 --> 00:47:15.380 align:middle line:84%
+than just the
+expectation, but just
+
+00:47:15.380 --> 00:47:17.420 align:middle line:84%
+trying to understand
+how much is at the zero
+
+00:47:17.420 --> 00:47:19.140 align:middle line:90%
+spot versus everything else.
+
+00:47:19.140 --> 00:47:21.590 align:middle line:84%
+And next class,
+on Tuesday, we'll
+
+00:47:21.590 --> 00:47:24.410 align:middle line:84%
+talk about a more generalized
+form of that, where there's
+
+00:47:24.410 --> 00:47:28.160 align:middle line:84%
+some cutoff, and we want to
+know how much probability is out
+
+00:47:28.160 --> 00:47:29.010 align:middle line:90%
+beyond the cutoff.
+
+00:47:29.010 --> 00:47:31.590 align:middle line:84%
+Those are called tails
+of a distribution.
+
+00:47:31.590 --> 00:47:34.430 align:middle line:84%
+But in the rest of
+today, we're just
+
+00:47:34.430 --> 00:47:36.920 align:middle line:84%
+going to look at
+one more number that
+
+00:47:36.920 --> 00:47:40.360 align:middle line:90%
+measures some kind of variance.
+
+00:47:40.360 --> 00:47:43.415 align:middle line:90%
+
+
+00:47:43.415 --> 00:47:46.333 align:middle line:84%
+It tries to measure how
+good of an approximation
+
+00:47:46.333 --> 00:47:47.125 align:middle line:90%
+is the expectation.
+
+00:47:47.125 --> 00:47:50.900 align:middle line:84%
+That's I think a good
+way to think about it.
+
+00:47:50.900 --> 00:47:53.990 align:middle line:84%
+And I'm sure you've seen
+variance of some form before.
+
+00:47:53.990 --> 00:48:06.463 align:middle line:84%
+But maybe motivating example
+is investment, a.k.a.
+
+00:48:06.463 --> 00:48:06.963 align:middle line:90%
+gambling.
+
+00:48:06.963 --> 00:48:10.100 align:middle line:90%
+
+
+00:48:10.100 --> 00:48:11.990 align:middle line:90%
+Sorry for the dig.
+
+00:48:11.990 --> 00:48:17.090 align:middle line:84%
+But let's consider an
+investment process X i,
+
+00:48:17.090 --> 00:48:22.160 align:middle line:84%
+which is plus i with
+probability 1/2.
+
+00:48:22.160 --> 00:48:25.160 align:middle line:84%
+Going to be a generalized
+version of the one I just did.
+
+00:48:25.160 --> 00:48:28.980 align:middle line:90%
+And minus i with probability--
+
+00:48:28.980 --> 00:48:32.300 align:middle line:90%
+sorry, not i, 1/2.
+
+00:48:32.300 --> 00:48:35.480 align:middle line:90%
+With probability 1/2.
+
+00:48:35.480 --> 00:48:42.320 align:middle line:84%
+OK, so X 1 is like
+I invest $1 and 50%
+
+00:48:42.320 --> 00:48:46.340 align:middle line:84%
+chance I double my money,
+50% chance I lose my money.
+
+00:48:46.340 --> 00:48:50.670 align:middle line:84%
+X 100 is I put in $100, and
+50% chance I double my money,
+
+00:48:50.670 --> 00:48:52.970 align:middle line:90%
+50% chance I lose all my money.
+
+00:48:52.970 --> 00:48:55.680 align:middle line:84%
+Or I could put in
+a billions dollars.
+
+00:48:55.680 --> 00:48:58.420 align:middle line:84%
+Are these exactly the same
+investment strategies?
+
+00:48:58.420 --> 00:49:01.240 align:middle line:84%
+I mean, you would probably
+say, when i is larger,
+
+00:49:01.240 --> 00:49:03.250 align:middle line:84%
+this is a higher
+risk investment.
+
+00:49:03.250 --> 00:49:05.508 align:middle line:84%
+If I put in a billion
+dollars, that's very scary.
+
+00:49:05.508 --> 00:49:07.300 align:middle line:84%
+I could potentially
+lose a billion dollars.
+
+00:49:07.300 --> 00:49:09.217 align:middle line:84%
+Of course, I could also
+win a billion dollars,
+
+00:49:09.217 --> 00:49:10.870 align:middle line:84%
+so that's like high
+risk, high reward.
+
+00:49:10.870 --> 00:49:13.240 align:middle line:84%
+But I invest $1, yeah,
+I'd play that game.
+
+00:49:13.240 --> 00:49:14.110 align:middle line:90%
+Why not?
+
+00:49:14.110 --> 00:49:16.440 align:middle line:90%
+It's just for fun.
+
+00:49:16.440 --> 00:49:22.510 align:middle line:84%
+OK, so if we look at the
+expectation, we learn nothing.
+
+00:49:22.510 --> 00:49:25.890 align:middle line:84%
+Expectation of all of these is
+0, just like it was in the i
+
+00:49:25.890 --> 00:49:27.510 align:middle line:90%
+equals 1 case.
+
+00:49:27.510 --> 00:49:33.420 align:middle line:84%
+Variance is going to try to
+capture something involving i.
+
+00:49:33.420 --> 00:49:34.943 align:middle line:90%
+OK, let me define variance.
+
+00:49:34.943 --> 00:49:43.950 align:middle line:90%
+
+
+00:49:43.950 --> 00:49:47.670 align:middle line:84%
+It's kind of a big
+formula, but not
+
+00:49:47.670 --> 00:49:52.590 align:middle line:84%
+too big as you stare
+at it long enough.
+
+00:49:52.590 --> 00:49:56.860 align:middle line:84%
+So many brackets though,
+alternating square and round.
+
+00:49:56.860 --> 00:50:00.060 align:middle line:84%
+All right, so what
+we're going to do
+
+00:50:00.060 --> 00:50:04.740 align:middle line:84%
+is take the deviation
+from the mean,
+
+00:50:04.740 --> 00:50:10.420 align:middle line:84%
+X minus the expectation of X.
+So this is a random variable.
+
+00:50:10.420 --> 00:50:15.190 align:middle line:84%
+It's just like X. But we
+subtract the expectation of X.
+
+00:50:15.190 --> 00:50:17.550 align:middle line:84%
+And by linearity of
+expectation, that means--
+
+00:50:17.550 --> 00:50:21.930 align:middle line:84%
+this may be worth writing down--
+the expectation of X minus--
+
+00:50:21.930 --> 00:50:27.030 align:middle line:84%
+the expectation of this
+braced quantity here is
+
+00:50:27.030 --> 00:50:34.980 align:middle line:84%
+0, because linearity says,
+well, this is expectation of X
+
+00:50:34.980 --> 00:50:40.080 align:middle line:84%
+minus the expectation
+of the expectation of X.
+
+00:50:40.080 --> 00:50:43.140 align:middle line:84%
+But the expectation of
+the expectation of X
+
+00:50:43.140 --> 00:50:48.630 align:middle line:84%
+is just the expectation
+of X, because while X
+
+00:50:48.630 --> 00:50:51.120 align:middle line:84%
+is a random variable, I
+mean, expectation of X
+
+00:50:51.120 --> 00:50:55.250 align:middle line:84%
+is also a random variable,
+but it doesn't change, right?
+
+00:50:55.250 --> 00:50:58.180 align:middle line:84%
+Expectation of X
+is a single number.
+
+00:50:58.180 --> 00:51:01.120 align:middle line:84%
+You reroll your dice, the
+expectation doesn't change.
+
+00:51:01.120 --> 00:51:05.540 align:middle line:84%
+Only the value of X can change
+because it's a function.
+
+00:51:05.540 --> 00:51:07.460 align:middle line:84%
+But expectation of X
+is a constant thing,
+
+00:51:07.460 --> 00:51:09.350 align:middle line:90%
+so its expectation is itself.
+
+00:51:09.350 --> 00:51:13.120 align:middle line:90%
+OK, so these cancel.
+
+00:51:13.120 --> 00:51:14.830 align:middle line:84%
+OK, so in other
+words, I'm taking
+
+00:51:14.830 --> 00:51:16.130 align:middle line:90%
+X, which has some expectation.
+
+00:51:16.130 --> 00:51:17.510 align:middle line:90%
+But then I'm shifting it over.
+
+00:51:17.510 --> 00:51:20.150 align:middle line:84%
+So it's now its
+expectation is 0.
+
+00:51:20.150 --> 00:51:24.080 align:middle line:84%
+I'd like to center
+things on 0 additively.
+
+00:51:24.080 --> 00:51:27.530 align:middle line:84%
+Then I'm going to square it,
+which is maybe a little weird.
+
+00:51:27.530 --> 00:51:29.950 align:middle line:84%
+We'll talk about
+why in a second.
+
+00:51:29.950 --> 00:51:33.280 align:middle line:84%
+And then I take the
+expectation of that,
+
+00:51:33.280 --> 00:51:36.050 align:middle line:84%
+because while this thing is
+constant, this thing is not.
+
+00:51:36.050 --> 00:51:38.210 align:middle line:84%
+So if your expectation
+happens to be 0,
+
+00:51:38.210 --> 00:51:40.383 align:middle line:84%
+this is just the
+expectation of X squared.
+
+00:51:40.383 --> 00:51:42.550 align:middle line:84%
+Whereas, before we were
+taking the expectation of X,
+
+00:51:42.550 --> 00:51:44.660 align:middle line:84%
+now we're taking
+expectation of X squared.
+
+00:51:44.660 --> 00:51:46.840 align:middle line:84%
+And for X squared
+to be nice, we're
+
+00:51:46.840 --> 00:51:49.570 align:middle line:84%
+going to first shift it
+so that its mean is 0.
+
+00:51:49.570 --> 00:51:51.190 align:middle line:90%
+OK, that was a lot of words.
+
+00:51:51.190 --> 00:51:54.290 align:middle line:84%
+In this example, the
+expectation was already 0,
+
+00:51:54.290 --> 00:51:58.480 align:middle line:84%
+and so the variance of X
+i is just the expectation
+
+00:51:58.480 --> 00:52:02.070 align:middle line:90%
+of X i squared, which is--
+
+00:52:02.070 --> 00:52:08.360 align:middle line:90%
+
+
+00:52:08.360 --> 00:52:08.985 align:middle line:90%
+get this right.
+
+00:52:08.985 --> 00:52:12.790 align:middle line:90%
+
+
+00:52:12.790 --> 00:52:17.590 align:middle line:84%
+Oh, yeah, fun thing
+about square is
+
+00:52:17.590 --> 00:52:20.030 align:middle line:84%
+it treats positive and
+negative numbers the same.
+
+00:52:20.030 --> 00:52:24.430 align:middle line:90%
+So what is X i squared?
+
+00:52:24.430 --> 00:52:30.140 align:middle line:84%
+It's always i squared, no matter
+how the coin flip occurred.
+
+00:52:30.140 --> 00:52:32.810 align:middle line:84%
+If it was plus i, the
+square of that is i squared.
+
+00:52:32.810 --> 00:52:35.320 align:middle line:84%
+If it was minus i, the
+square of that is i squared.
+
+00:52:35.320 --> 00:52:38.560 align:middle line:84%
+So this is part of
+the magic of variance
+
+00:52:38.560 --> 00:52:41.990 align:middle line:84%
+that we treat negative and
+positive numbers the same.
+
+00:52:41.990 --> 00:52:45.398 align:middle line:84%
+And so the expectation
+of i squared,
+
+00:52:45.398 --> 00:52:46.940 align:middle line:84%
+i squared doesn't
+depend on anything.
+
+00:52:46.940 --> 00:52:48.760 align:middle line:90%
+So it's just i squared.
+
+00:52:48.760 --> 00:52:53.210 align:middle line:84%
+And for this reason, we also
+often define the square root
+
+00:52:53.210 --> 00:53:01.640 align:middle line:84%
+of variance to be the standard
+deviation, which we usually
+
+00:53:01.640 --> 00:53:04.910 align:middle line:84%
+write sigma sub x
+here is going to be
+
+00:53:04.910 --> 00:53:08.408 align:middle line:84%
+square root of
+the variance of x.
+
+00:53:08.408 --> 00:53:10.200 align:middle line:84%
+So you can use whichever
+of these you want.
+
+00:53:10.200 --> 00:53:13.250 align:middle line:84%
+I mean, they're the same up
+to a square root or a square.
+
+00:53:13.250 --> 00:53:17.390 align:middle line:84%
+But it's the second
+number, sigma sub X i here,
+
+00:53:17.390 --> 00:53:20.540 align:middle line:90%
+is equal to i.
+
+00:53:20.540 --> 00:53:22.520 align:middle line:84%
+So while expectation
+told us nothing
+
+00:53:22.520 --> 00:53:24.420 align:middle line:84%
+about the risk of
+our investment,
+
+00:53:24.420 --> 00:53:26.270 align:middle line:84%
+sigma told us
+exactly what the risk
+
+00:53:26.270 --> 00:53:29.720 align:middle line:90%
+is in this very simple setup.
+
+00:53:29.720 --> 00:53:37.110 align:middle line:84%
+OK, let's go on to the next
+topic, which is why squared.
+
+00:53:37.110 --> 00:53:38.780 align:middle line:84%
+I'll try to give
+you some intuition.
+
+00:53:38.780 --> 00:54:05.384 align:middle line:90%
+
+
+00:54:05.384 --> 00:54:08.305 align:middle line:90%
+OK, why squared?
+
+00:54:08.305 --> 00:54:15.830 align:middle line:90%
+
+
+00:54:15.830 --> 00:54:17.860 align:middle line:84%
+There are many possible
+answers to this.
+
+00:54:17.860 --> 00:54:21.320 align:middle line:90%
+
+
+00:54:21.320 --> 00:54:23.150 align:middle line:84%
+But probably the
+simplest thing is
+
+00:54:23.150 --> 00:54:25.700 align:middle line:84%
+to try what if I didn't
+put this square here
+
+00:54:25.700 --> 00:54:27.870 align:middle line:84%
+and I left the formula
+otherwise the same?
+
+00:54:27.870 --> 00:54:33.672 align:middle line:84%
+What if I did expectation
+of X minus expectation of X?
+
+00:54:33.672 --> 00:54:34.630 align:middle line:90%
+What would happen then?
+
+00:54:34.630 --> 00:54:44.510 align:middle line:90%
+
+
+00:54:44.510 --> 00:54:45.080 align:middle line:90%
+Yeah?
+
+00:54:45.080 --> 00:54:45.770 align:middle line:90%
+AUDIENCE: 0.
+
+00:54:45.770 --> 00:54:46.800 align:middle line:90%
+ERIK DEMAINE: 0.
+
+00:54:46.800 --> 00:54:48.480 align:middle line:90%
+I wrote it right here.
+
+00:54:48.480 --> 00:54:51.940 align:middle line:84%
+Expectation-- I was saying,
+oh, this shifted things over.
+
+00:54:51.940 --> 00:54:53.350 align:middle line:90%
+So the expectation was 0.
+
+00:54:53.350 --> 00:54:55.960 align:middle line:84%
+So if you remove the square,
+you just are going to get 0.
+
+00:54:55.960 --> 00:54:57.270 align:middle line:90%
+This would be a useless number.
+
+00:54:57.270 --> 00:54:58.220 align:middle line:90%
+AUDIENCE: Right.
+
+00:54:58.220 --> 00:55:01.980 align:middle line:84%
+ERIK DEMAINE: And so we
+want to put something here,
+
+00:55:01.980 --> 00:55:03.370 align:middle line:90%
+one possible answer.
+
+00:55:03.370 --> 00:55:07.770 align:middle line:84%
+Now, there are different
+things you might try to do.
+
+00:55:07.770 --> 00:55:16.530 align:middle line:84%
+One would be expectation
+of X minus expectation of X
+
+00:55:16.530 --> 00:55:22.510 align:middle line:90%
+to the p for some number p.
+
+00:55:22.510 --> 00:55:24.840 align:middle line:90%
+What we just did was 2.
+
+00:55:24.840 --> 00:55:28.250 align:middle line:84%
+Another thing you might try to
+do to fix it is absolute value.
+
+00:55:28.250 --> 00:55:32.400 align:middle line:90%
+
+
+00:55:32.400 --> 00:55:37.410 align:middle line:84%
+And just for fun we could also
+raise that to the p-th power.
+
+00:55:37.410 --> 00:55:40.900 align:middle line:84%
+And so these are
+natural things to try,
+
+00:55:40.900 --> 00:55:43.800 align:middle line:84%
+I would argue, especially if
+you know anything about norms
+
+00:55:43.800 --> 00:55:46.470 align:middle line:90%
+or geometry and stuff.
+
+00:55:46.470 --> 00:55:49.410 align:middle line:84%
+And it turns out, all of
+these are interesting.
+
+00:55:49.410 --> 00:55:50.370 align:middle line:90%
+Question?
+
+00:55:50.370 --> 00:55:51.450 align:middle line:84%
+AUDIENCE: I have a
+question about your formula
+
+00:55:51.450 --> 00:55:53.148 align:middle line:84%
+in the example for
+various [INAUDIBLE].
+
+00:55:53.148 --> 00:55:53.940 align:middle line:90%
+ERIK DEMAINE: Yeah.
+
+00:55:53.940 --> 00:55:56.550 align:middle line:84%
+AUDIENCE: Are you setting
+X i squared equal to i
+
+00:55:56.550 --> 00:55:59.865 align:middle line:84%
+squared or are you setting the
+expectation of [INAUDIBLE].
+
+00:55:59.865 --> 00:56:01.630 align:middle line:84%
+ERIK DEMAINE: I wasn't
+setting anything.
+
+00:56:01.630 --> 00:56:06.240 align:middle line:84%
+I was claiming that X i squared
+as a random variable is always
+
+00:56:06.240 --> 00:56:11.230 align:middle line:84%
+i squared, because X i is
+either plus i or minus i.
+
+00:56:11.230 --> 00:56:13.570 align:middle line:84%
+And in both cases, the
+square of that is i squared.
+
+00:56:13.570 --> 00:56:16.650 align:middle line:84%
+So this is inside the
+expectation, yeah.
+
+00:56:16.650 --> 00:56:21.000 align:middle line:84%
+And therefore, the expectation
+doesn't have anything to do.
+
+00:56:21.000 --> 00:56:25.200 align:middle line:84%
+It's a constant, not much
+of a random variable.
+
+00:56:25.200 --> 00:56:26.920 align:middle line:90%
+OK, back to these guys.
+
+00:56:26.920 --> 00:56:28.060 align:middle line:90%
+These have names.
+
+00:56:28.060 --> 00:56:36.047 align:middle line:84%
+This is for p greater than 1,
+this is the p-th central moment.
+
+00:56:36.047 --> 00:56:39.750 align:middle line:90%
+
+
+00:56:39.750 --> 00:56:42.660 align:middle line:84%
+And this one, for p
+greater than or equal to 1,
+
+00:56:42.660 --> 00:56:46.870 align:middle line:90%
+is the p-th probably central.
+
+00:56:46.870 --> 00:56:49.680 align:middle line:84%
+This one's not talked
+about nearly as much,
+
+00:56:49.680 --> 00:56:51.860 align:middle line:84%
+but I would call it
+the absolute moment.
+
+00:56:51.860 --> 00:56:58.860 align:middle line:90%
+
+
+00:56:58.860 --> 00:57:02.100 align:middle line:90%
+And they're all interesting.
+
+00:57:02.100 --> 00:57:06.420 align:middle line:84%
+For this one, p equals
+2 is called variance.
+
+00:57:06.420 --> 00:57:07.890 align:middle line:84%
+That's the one
+we're talking about.
+
+00:57:07.890 --> 00:57:11.010 align:middle line:84%
+p equals 3, with some
+normalization, which
+
+00:57:11.010 --> 00:57:12.630 align:middle line:84%
+I'm not going to
+do here, is called
+
+00:57:12.630 --> 00:57:17.230 align:middle line:84%
+the skew of the
+distribution. p equals 4,
+
+00:57:17.230 --> 00:57:20.958 align:middle line:84%
+it's got a really fancy
+name that's just showing off
+
+00:57:20.958 --> 00:57:22.720 align:middle line:90%
+my English knowledge.
+
+00:57:22.720 --> 00:57:24.480 align:middle line:90%
+It's called kurtosis.
+
+00:57:24.480 --> 00:57:27.513 align:middle line:84%
+I assume people looked
+at other moments too.
+
+00:57:27.513 --> 00:57:29.680 align:middle line:84%
+Although, usually, they're
+just called first moment,
+
+00:57:29.680 --> 00:57:31.450 align:middle line:84%
+second moment, third
+moment, whatever.
+
+00:57:31.450 --> 00:57:33.472 align:middle line:84%
+These are all very
+interesting quantities.
+
+00:57:33.472 --> 00:57:35.680 align:middle line:84%
+They capture different things
+about the distribution.
+
+00:57:35.680 --> 00:57:38.010 align:middle line:84%
+Variance is how far from
+the mean are you on average,
+
+00:57:38.010 --> 00:57:38.950 align:middle line:90%
+in some sense.
+
+00:57:38.950 --> 00:57:42.640 align:middle line:84%
+Skew is how to the left or to
+the right is your distribution.
+
+00:57:42.640 --> 00:57:44.440 align:middle line:90%
+Kurtosis, I have no idea.
+
+00:57:44.440 --> 00:57:46.818 align:middle line:90%
+I'm not a statistician.
+
+00:57:46.818 --> 00:57:48.110 align:middle line:90%
+But they all have some meaning.
+
+00:57:48.110 --> 00:57:50.750 align:middle line:84%
+And you can do the same
+thing with absolute moment.
+
+00:57:50.750 --> 00:57:53.810 align:middle line:84%
+You can also do it without
+this normalization term.
+
+00:57:53.810 --> 00:57:55.690 align:middle line:84%
+Then you'd remove
+the word "central."
+
+00:57:55.690 --> 00:57:58.490 align:middle line:84%
+These are all interesting,
+cool quantities.
+
+00:57:58.490 --> 00:58:01.460 align:middle line:84%
+So there's no particular
+reason 2 is special.
+
+00:58:01.460 --> 00:58:03.200 align:middle line:84%
+And in fact, if you
+use absolute values,
+
+00:58:03.200 --> 00:58:05.783 align:middle line:84%
+you can even go down to 1 and
+you get a reasonably interesting
+
+00:58:05.783 --> 00:58:06.580 align:middle line:90%
+thing.
+
+00:58:06.580 --> 00:58:11.260 align:middle line:84%
+But often, we really like the
+version without absolute value
+
+00:58:11.260 --> 00:58:14.300 align:middle line:84%
+because it's smooth, because
+it's infinitely differentiable,
+
+00:58:14.300 --> 00:58:16.610 align:middle line:84%
+whereas, absolute value
+is not differentiable.
+
+00:58:16.610 --> 00:58:19.270 align:middle line:84%
+So it's just uglier to
+work with analytically.
+
+00:58:19.270 --> 00:58:21.540 align:middle line:84%
+So historically, this
+is why we go here.
+
+00:58:21.540 --> 00:58:23.540 align:middle line:84%
+I think this is also a
+very interesting measure.
+
+00:58:23.540 --> 00:58:25.210 align:middle line:84%
+And you could use
+it, just we're not
+
+00:58:25.210 --> 00:58:27.940 align:middle line:90%
+going to use it in this class.
+
+00:58:27.940 --> 00:58:32.410 align:middle line:84%
+OK, they give you
+different things,
+
+00:58:32.410 --> 00:58:36.080 align:middle line:84%
+because the square is
+exaggerating larger differences.
+
+00:58:36.080 --> 00:58:38.360 align:middle line:84%
+If you square
+something that's big,
+
+00:58:38.360 --> 00:58:39.970 align:middle line:84%
+it has a bigger
+impact than if you
+
+00:58:39.970 --> 00:58:42.130 align:middle line:90%
+square something that's small.
+
+00:58:42.130 --> 00:58:46.750 align:middle line:84%
+So if you care about deviation
+from the mean and you
+
+00:58:46.750 --> 00:58:49.240 align:middle line:84%
+really you care a little
+more about big deviations
+
+00:58:49.240 --> 00:58:51.670 align:middle line:84%
+than small deviations, then
+raising this to some power
+
+00:58:51.670 --> 00:58:53.000 align:middle line:90%
+is a meaningful thing.
+
+00:58:53.000 --> 00:58:56.530 align:middle line:90%
+And that's why we do it.
+
+00:58:56.530 --> 00:58:59.680 align:middle line:90%
+There's some other reasons.
+
+00:58:59.680 --> 00:59:04.010 align:middle line:84%
+In statistics world, if you know
+that X is normally distributed,
+
+00:59:04.010 --> 00:59:06.740 align:middle line:84%
+which actually is kind of
+common, even in our world.
+
+00:59:06.740 --> 00:59:10.820 align:middle line:84%
+If you take a sum of a
+bunch of Bernoulli trials--
+
+00:59:10.820 --> 00:59:14.980 align:middle line:90%
+this has some name, right?
+
+00:59:14.980 --> 00:59:16.550 align:middle line:90%
+Now the Bernoulli distribution.
+
+00:59:16.550 --> 00:59:18.680 align:middle line:84%
+So Bernoulli trials
+are coin flips.
+
+00:59:18.680 --> 00:59:23.600 align:middle line:84%
+You take a sum of them, you
+get a binomial distribution.
+
+00:59:23.600 --> 00:59:25.690 align:middle line:90%
+I should know that.
+
+00:59:25.690 --> 00:59:27.670 align:middle line:84%
+Then there's something
+called the central limit
+
+00:59:27.670 --> 00:59:30.212 align:middle line:84%
+theorem that says that's very
+close to a normal distribution.
+
+00:59:30.212 --> 00:59:33.280 align:middle line:84%
+Normal distribution is
+Gaussian bell curve.
+
+00:59:33.280 --> 00:59:36.700 align:middle line:84%
+And it turns out, if the
+expectation and the variance
+
+00:59:36.700 --> 00:59:38.330 align:middle line:84%
+of your distribution
+and it's normal,
+
+00:59:38.330 --> 00:59:40.372 align:middle line:84%
+then you know everything
+about that distribution.
+
+00:59:40.372 --> 00:59:42.560 align:middle line:84%
+So because normal
+distributions are frequently
+
+00:59:42.560 --> 00:59:44.960 align:middle line:84%
+occurring in nature,
+both in real life
+
+00:59:44.960 --> 00:59:48.050 align:middle line:84%
+and in mathematical
+life, like when
+
+00:59:48.050 --> 00:59:53.382 align:middle line:84%
+we sum a bunch of coin flips,
+this expectation and variance
+
+00:59:53.382 --> 00:59:55.590 align:middle line:84%
+are often the first two
+things you should care about,
+
+00:59:55.590 --> 00:59:56.965 align:middle line:84%
+maybe they're the
+only things you
+
+00:59:56.965 --> 00:59:59.870 align:middle line:84%
+need to know if you want to
+understand your distribution.
+
+00:59:59.870 --> 01:00:02.100 align:middle line:84%
+And then, because
+I'm a geometer,
+
+01:00:02.100 --> 01:00:04.400 align:middle line:84%
+I have to say because
+we live in a--
+
+01:00:04.400 --> 01:00:09.560 align:middle line:84%
+(SINGING) Because we're
+living in a Euclidian world--
+
+01:00:09.560 --> 01:00:13.550 align:middle line:84%
+In Euclidean world,
+you square things.
+
+01:00:13.550 --> 01:00:15.530 align:middle line:84%
+And then you take the
+square root at the end.
+
+01:00:15.530 --> 01:00:16.890 align:middle line:90%
+This is the norm.
+
+01:00:16.890 --> 01:00:19.730 align:middle line:84%
+This is actually the
+distance between two points
+
+01:00:19.730 --> 01:00:24.560 align:middle line:90%
+in size of S dimensions.
+
+01:00:24.560 --> 01:00:28.640 align:middle line:84%
+OK, I'm usually a
+two-dimensional geometer, maybe
+
+01:00:28.640 --> 01:00:29.460 align:middle line:90%
+three dimensions.
+
+01:00:29.460 --> 01:00:31.820 align:middle line:84%
+But if you're crazy, you
+can live all the way up
+
+01:00:31.820 --> 01:00:35.210 align:middle line:84%
+in size of S
+dimensions, where you
+
+01:00:35.210 --> 01:00:38.120 align:middle line:84%
+can represent a function as just
+like a big vector, very popular
+
+01:00:38.120 --> 01:00:40.460 align:middle line:90%
+these days.
+
+01:00:40.460 --> 01:00:43.760 align:middle line:84%
+Just you write down all the
+possible-- for every outcome,
+
+01:00:43.760 --> 01:00:45.870 align:middle line:90%
+you write what X is.
+
+01:00:45.870 --> 01:00:48.960 align:middle line:90%
+That's a vector in S dimensions.
+
+01:00:48.960 --> 01:00:52.400 align:middle line:84%
+And if you also write down for
+every possible outcome what
+
+01:00:52.400 --> 01:00:55.830 align:middle line:84%
+expected value of X is,
+it's the same every time.
+
+01:00:55.830 --> 01:01:00.413 align:middle line:84%
+It's mean, mean, mean, mean,
+mean, mean, mean, very mean.
+
+01:01:00.413 --> 01:01:02.580 align:middle line:84%
+And you take the distance
+between those two vectors,
+
+01:01:02.580 --> 01:01:04.040 align:middle line:90%
+that's exactly variance.
+
+01:01:04.040 --> 01:01:06.740 align:middle line:90%
+Or sorry, standard deviation.
+
+01:01:06.740 --> 01:01:10.148 align:middle line:84%
+So if you live in Euclidean
+world, that's why 2 is natural.
+
+01:01:10.148 --> 01:01:11.690 align:middle line:84%
+Of course, you can
+live in any p-norm
+
+01:01:11.690 --> 01:01:14.360 align:middle line:84%
+and then you get all
+these other things.
+
+01:01:14.360 --> 01:01:18.770 align:middle line:84%
+All right, let me tell you some
+cool properties of invariance.
+
+01:01:18.770 --> 01:01:19.270 align:middle line:90%
+Up here.
+
+01:01:19.270 --> 01:01:26.570 align:middle line:90%
+
+
+01:01:26.570 --> 01:01:27.950 align:middle line:90%
+Some of these I'll prove.
+
+01:01:27.950 --> 01:01:30.500 align:middle line:84%
+Some of these I'll just
+state, and you'll prove them
+
+01:01:30.500 --> 01:01:32.240 align:middle line:90%
+in recitation tomorrow.
+
+01:01:32.240 --> 01:01:34.340 align:middle line:90%
+But we'll see some.
+
+01:01:34.340 --> 01:01:36.553 align:middle line:84%
+We'll use them to
+analyze some examples.
+
+01:01:36.553 --> 01:01:44.820 align:middle line:90%
+
+
+01:01:44.820 --> 01:01:48.993 align:middle line:84%
+OK, so the first one is
+translation in variance.
+
+01:01:48.993 --> 01:01:57.660 align:middle line:90%
+
+
+01:01:57.660 --> 01:02:03.270 align:middle line:84%
+So what I'd like to do is
+take some random variable X
+
+01:02:03.270 --> 01:02:05.550 align:middle line:90%
+and add a constant to it.
+
+01:02:05.550 --> 01:02:10.780 align:middle line:84%
+Now, when I add a constant to X,
+I change the expectation, right?
+
+01:02:10.780 --> 01:02:13.320 align:middle line:84%
+It also shifts
+over by linearity.
+
+01:02:13.320 --> 01:02:16.180 align:middle line:84%
+With variance, it
+actually doesn't change.
+
+01:02:16.180 --> 01:02:20.400 align:middle line:84%
+The variance of X plus c
+equals the variance of X.
+
+01:02:20.400 --> 01:02:21.790 align:middle line:90%
+That's a nice property.
+
+01:02:21.790 --> 01:02:27.073 align:middle line:84%
+Probably true of all of these
+definitions, all of the moments.
+
+01:02:27.073 --> 01:02:28.490 align:middle line:84%
+But we'll just do
+it for variance.
+
+01:02:28.490 --> 01:02:32.160 align:middle line:90%
+
+
+01:02:32.160 --> 01:02:33.960 align:middle line:90%
+So let's prove it.
+
+01:02:33.960 --> 01:02:37.320 align:middle line:84%
+So as I said, the expectation,
+we need that in order
+
+01:02:37.320 --> 01:02:39.062 align:middle line:90%
+to compute variance.
+
+01:02:39.062 --> 01:02:41.020 align:middle line:84%
+Expectation is always
+what you should do first.
+
+01:02:41.020 --> 01:02:44.670 align:middle line:84%
+By linearity, this
+is expectation of X
+
+01:02:44.670 --> 01:02:47.580 align:middle line:84%
+plus expectation of c,
+but expectation of c
+
+01:02:47.580 --> 01:02:51.600 align:middle line:84%
+is just c, because
+it doesn't change
+
+01:02:51.600 --> 01:02:54.780 align:middle line:90%
+depending on the random event.
+
+01:02:54.780 --> 01:03:05.250 align:middle line:84%
+So variance of X plus c, we just
+plug in the definition here.
+
+01:03:05.250 --> 01:03:10.750 align:middle line:84%
+So we want expectation of X
+minus the expectation of X.
+
+01:03:10.750 --> 01:03:12.280 align:middle line:90%
+But now X is X plus c.
+
+01:03:12.280 --> 01:03:17.560 align:middle line:84%
+So we want expectation
+of first term X is--
+
+01:03:17.560 --> 01:03:19.810 align:middle line:84%
+so I guess this is going
+to be for the square.
+
+01:03:19.810 --> 01:03:24.120 align:middle line:84%
+Then the first X is
+actually X plus c.
+
+01:03:24.120 --> 01:03:31.650 align:middle line:84%
+And then we have minus the
+expectation of X plus c,
+
+01:03:31.650 --> 01:03:32.830 align:middle line:90%
+and then that squared.
+
+01:03:32.830 --> 01:03:34.270 align:middle line:84%
+And then we close
+the expectation.
+
+01:03:34.270 --> 01:03:37.570 align:middle line:84%
+And this thing is what
+we just computed here.
+
+01:03:37.570 --> 01:03:41.310 align:middle line:84%
+So we have inside
+the parens here,
+
+01:03:41.310 --> 01:03:49.830 align:middle line:84%
+we have X plus c
+minus expectation of X
+
+01:03:49.830 --> 01:03:53.280 align:middle line:90%
+plus c in parentheses.
+
+01:03:53.280 --> 01:03:57.540 align:middle line:90%
+And get my red chalk.
+
+01:03:57.540 --> 01:03:58.610 align:middle line:90%
+The c's cancel.
+
+01:03:58.610 --> 01:04:07.200 align:middle line:90%
+
+
+01:04:07.200 --> 01:04:10.020 align:middle line:84%
+So we end up with
+X minus expectation
+
+01:04:10.020 --> 01:04:13.680 align:middle line:90%
+of X squared and expected.
+
+01:04:13.680 --> 01:04:16.710 align:middle line:84%
+And that's exactly the
+definition of variation of X,
+
+01:04:16.710 --> 01:04:23.390 align:middle line:84%
+variance of X. So
+that's kind of nice.
+
+01:04:23.390 --> 01:04:29.700 align:middle line:90%
+
+
+01:04:29.700 --> 01:04:33.390 align:middle line:90%
+OK, a couple more.
+
+01:04:33.390 --> 01:04:39.233 align:middle line:84%
+One is, here is another
+way to compute variance.
+
+01:04:39.233 --> 01:05:07.405 align:middle line:90%
+
+
+01:05:07.405 --> 01:05:09.530 align:middle line:84%
+I can't say I have a lot
+of intuition for this one,
+
+01:05:09.530 --> 01:05:11.200 align:middle line:84%
+but it works out
+nicely mathematically.
+
+01:05:11.200 --> 01:05:15.850 align:middle line:84%
+Variance of X is the difference
+between the squared value
+
+01:05:15.850 --> 01:05:20.230 align:middle line:84%
+expected and the
+expected squared.
+
+01:05:20.230 --> 01:05:22.900 align:middle line:84%
+The square of the expectation
+versus the expectation
+
+01:05:22.900 --> 01:05:29.170 align:middle line:84%
+of the square with this sign,
+it turns out to be right.
+
+01:05:29.170 --> 01:05:31.963 align:middle line:84%
+I guess this is related
+to whether you do things
+
+01:05:31.963 --> 01:05:33.380 align:middle line:84%
+inside or outside
+the expectation.
+
+01:05:33.380 --> 01:05:36.540 align:middle line:84%
+This is going to exaggerate
+larger values of X more.
+
+01:05:36.540 --> 01:05:42.030 align:middle line:84%
+And this adds them all up
+first, and then squares.
+
+01:05:42.030 --> 01:05:43.260 align:middle line:90%
+So it's less dramatic.
+
+01:05:43.260 --> 01:05:45.020 align:middle line:84%
+And the difference
+in those dramas
+
+01:05:45.020 --> 01:05:47.045 align:middle line:84%
+are exactly the
+variance, turns out.
+
+01:05:47.045 --> 01:05:48.420 align:middle line:84%
+So we're not going
+to prove that.
+
+01:05:48.420 --> 01:05:51.020 align:middle line:84%
+You'll prove that in
+recitation tomorrow.
+
+01:05:51.020 --> 01:05:53.520 align:middle line:84%
+But let's do a
+simple example of it.
+
+01:05:53.520 --> 01:06:01.160 align:middle line:84%
+So suppose we have a
+biased coin flip where
+
+01:06:01.160 --> 01:06:02.980 align:middle line:90%
+the probability of heads is p.
+
+01:06:02.980 --> 01:06:05.780 align:middle line:90%
+
+
+01:06:05.780 --> 01:06:11.850 align:middle line:84%
+And take an indicator random
+variable H. Or equivalently,
+
+01:06:11.850 --> 01:06:21.050 align:middle line:84%
+this holds for every indicator
+random variable H. We know
+
+01:06:21.050 --> 01:06:26.190 align:middle line:84%
+the expectation of H is just the
+probability of it equaling 1,
+
+01:06:26.190 --> 01:06:28.370 align:middle line:90%
+which is p.
+
+01:06:28.370 --> 01:06:33.500 align:middle line:84%
+The variance, it's quite nice
+to compute with this formula,
+
+01:06:33.500 --> 01:06:37.310 align:middle line:84%
+because again, with
+indicator random variables,
+
+01:06:37.310 --> 01:06:38.940 align:middle line:90%
+they're always 0 or 1.
+
+01:06:38.940 --> 01:06:41.443 align:middle line:84%
+And so when you square
+them, nothing happens.
+
+01:06:41.443 --> 01:06:44.100 align:middle line:90%
+
+
+01:06:44.100 --> 01:06:48.860 align:middle line:84%
+So this is, according
+to this formula,
+
+01:06:48.860 --> 01:06:58.310 align:middle line:84%
+it's expectation of X squared of
+H squared minus expectation of H
+
+01:06:58.310 --> 01:07:00.440 align:middle line:90%
+outside squared.
+
+01:07:00.440 --> 01:07:05.048 align:middle line:84%
+And H squared is equal to
+H, because if you take 0,
+
+01:07:05.048 --> 01:07:06.090 align:middle line:90%
+you square it, you get 0.
+
+01:07:06.090 --> 01:07:08.090 align:middle line:84%
+If you take 1, you
+square it, you get 1.
+
+01:07:08.090 --> 01:07:12.880 align:middle line:84%
+So this thing is just
+expectation of H, which is p.
+
+01:07:12.880 --> 01:07:15.590 align:middle line:90%
+
+
+01:07:15.590 --> 01:07:19.050 align:middle line:84%
+And then we have minus
+expectation of H squared.
+
+01:07:19.050 --> 01:07:21.210 align:middle line:84%
+Well, expectation of
+H, again, this is p.
+
+01:07:21.210 --> 01:07:23.270 align:middle line:90%
+So this is p squared.
+
+01:07:23.270 --> 01:07:28.670 align:middle line:84%
+So p minus p squared, also
+known as p times 1 minus p,
+
+01:07:28.670 --> 01:07:31.640 align:middle line:90%
+looks a little bit more natural.
+
+01:07:31.640 --> 01:07:34.220 align:middle line:84%
+Its probability of heads times
+the probability of tails,
+
+01:07:34.220 --> 01:07:38.243 align:middle line:84%
+turns out to be the
+variance in this case.
+
+01:07:38.243 --> 01:07:39.660 align:middle line:84%
+If you look at
+standard deviation,
+
+01:07:39.660 --> 01:07:41.780 align:middle line:84%
+it's the geometric
+mean between p and 1
+
+01:07:41.780 --> 01:07:44.800 align:middle line:84%
+minus p, which is
+kind of a nice number.
+
+01:07:44.800 --> 01:07:47.690 align:middle line:90%
+
+
+01:07:47.690 --> 01:07:51.680 align:middle line:90%
+OK, next one.
+
+01:07:51.680 --> 01:07:54.182 align:middle line:90%
+Do I want this example?
+
+01:07:54.182 --> 01:07:55.195 align:middle line:90%
+And I might.
+
+01:07:55.195 --> 01:08:00.380 align:middle line:90%
+
+
+01:08:00.380 --> 01:08:01.750 align:middle line:90%
+Let's go over here.
+
+01:08:01.750 --> 01:08:07.190 align:middle line:90%
+
+
+01:08:07.190 --> 01:08:09.990 align:middle line:84%
+So expectation had this
+nice linearity property.
+
+01:08:09.990 --> 01:08:11.220 align:middle line:90%
+How about variance?
+
+01:08:11.220 --> 01:08:16.687 align:middle line:84%
+Well, it has this nice
+non linearity property.
+
+01:08:16.687 --> 01:08:18.770 align:middle line:84%
+It's not usually called
+non linearity of variance,
+
+01:08:18.770 --> 01:08:22.460 align:middle line:90%
+but it's kind of linear-ish.
+
+01:08:22.460 --> 01:08:26.680 align:middle line:90%
+So the nice part--
+
+01:08:26.680 --> 01:08:29.700 align:middle line:90%
+
+
+01:08:29.700 --> 01:08:30.670 align:middle line:90%
+yeah, all right.
+
+01:08:30.670 --> 01:08:33.479 align:middle line:84%
+Let's start with this part,
+the less nice part, the less
+
+01:08:33.479 --> 01:08:34.145 align:middle line:90%
+linear part.
+
+01:08:34.145 --> 01:08:39.330 align:middle line:90%
+
+
+01:08:39.330 --> 01:08:43.098 align:middle line:84%
+So while variance was
+translation invariant--
+
+01:08:43.098 --> 01:08:44.140 align:middle line:90%
+is that what I called it?
+
+01:08:44.140 --> 01:08:44.640 align:middle line:90%
+Yeah.
+
+01:08:44.640 --> 01:08:47.200 align:middle line:84%
+If I add something to X, it
+doesn't change the variance.
+
+01:08:47.200 --> 01:08:50.830 align:middle line:84%
+If I multiply by something,
+it better change the variance.
+
+01:08:50.830 --> 01:08:53.649 align:middle line:84%
+I mean, that's the whole
+point of the investment.
+
+01:08:53.649 --> 01:08:58.330 align:middle line:84%
+Say, if I multiply X i by a
+billion, that has higher risk.
+
+01:08:58.330 --> 01:09:00.990 align:middle line:90%
+So variance should go up.
+
+01:09:00.990 --> 01:09:04.240 align:middle line:84%
+And it's a little funny,
+because everything's squared.
+
+01:09:04.240 --> 01:09:05.859 align:middle line:90%
+So it doesn't go up linearly.
+
+01:09:05.859 --> 01:09:08.090 align:middle line:84%
+It goes up by c
+squared instead of c.
+
+01:09:08.090 --> 01:09:09.840 align:middle line:84%
+Of course, if you take
+standard deviation,
+
+01:09:09.840 --> 01:09:12.510 align:middle line:84%
+it is linear in
+this special case.
+
+01:09:12.510 --> 01:09:16.500 align:middle line:84%
+If you take a standard
+deviation of c times X,
+
+01:09:16.500 --> 01:09:23.189 align:middle line:84%
+it's going to be c times
+standard deviation of X.
+
+01:09:23.189 --> 01:09:25.200 align:middle line:90%
+OK, cool.
+
+01:09:25.200 --> 01:09:30.000 align:middle line:84%
+But what if we add
+two random variables.
+
+01:09:30.000 --> 01:09:32.500 align:middle line:84%
+Here, unfortunately,
+we need independence.
+
+01:09:32.500 --> 01:09:40.710 align:middle line:84%
+So if X and Y are
+independent random variables,
+
+01:09:40.710 --> 01:09:49.439 align:middle line:84%
+then the variance of the
+sum is equal to the sum
+
+01:09:49.439 --> 01:09:50.376 align:middle line:90%
+of the variations.
+
+01:09:50.376 --> 01:09:55.110 align:middle line:90%
+
+
+01:09:55.110 --> 01:09:58.410 align:middle line:84%
+OK, so it's not as nice as
+we had with expectation,
+
+01:09:58.410 --> 01:10:03.600 align:middle line:84%
+where it just always holds,
+but still pretty good.
+
+01:10:03.600 --> 01:10:06.192 align:middle line:84%
+So if you sum things and
+multiply them by things,
+
+01:10:06.192 --> 01:10:07.150 align:middle line:90%
+it gets a little weird.
+
+01:10:07.150 --> 01:10:10.800 align:middle line:84%
+You've got to square all
+of these coefficients.
+
+01:10:10.800 --> 01:10:14.500 align:middle line:84%
+But these are the analogs of the
+things we have in expectation.
+
+01:10:14.500 --> 01:10:17.963 align:middle line:84%
+This is, again, something
+you will do in lecture.
+
+01:10:17.963 --> 01:10:20.850 align:middle line:90%
+
+
+01:10:20.850 --> 01:10:23.533 align:middle line:84%
+So I'm going to
+just do an example--
+
+01:10:23.533 --> 01:10:30.160 align:middle line:90%
+
+
+01:10:30.160 --> 01:10:32.923 align:middle line:90%
+two related examples.
+
+01:10:32.923 --> 01:10:35.620 align:middle line:90%
+
+
+01:10:35.620 --> 01:10:43.990 align:middle line:84%
+OK, so let's say we have n
+mutually independent coin flips.
+
+01:10:43.990 --> 01:10:49.150 align:middle line:84%
+And I want H to be
+the number of heads.
+
+01:10:49.150 --> 01:10:52.270 align:middle line:84%
+This is what we were calling n
+before, and maybe on this board,
+
+01:10:52.270 --> 01:10:53.110 align:middle line:90%
+H.
+
+01:10:53.110 --> 01:10:55.610 align:middle line:84%
+We've often called this H.
+We've counted this before.
+
+01:10:55.610 --> 01:10:58.098 align:middle line:84%
+We've done the
+expectation twice now.
+
+01:10:58.098 --> 01:10:59.890 align:middle line:84%
+We did it in the last
+lecture and we did it
+
+01:10:59.890 --> 01:11:01.600 align:middle line:84%
+at the beginning
+of this lecture.
+
+01:11:01.600 --> 01:11:09.010 align:middle line:84%
+The expectation of H is p times
+n if the probability of heads
+
+01:11:09.010 --> 01:11:09.840 align:middle line:90%
+is p.
+
+01:11:09.840 --> 01:11:13.480 align:middle line:90%
+
+
+01:11:13.480 --> 01:11:15.300 align:middle line:90%
+OK, what about the variance?
+
+01:11:15.300 --> 01:11:26.320 align:middle line:90%
+
+
+01:11:26.320 --> 01:11:29.090 align:middle line:84%
+And the idea, just like when
+we computed expectation,
+
+01:11:29.090 --> 01:11:32.690 align:middle line:84%
+we split up H as
+a sum of n H i's,
+
+01:11:32.690 --> 01:11:36.310 align:middle line:84%
+where H i was an
+indicator random variable
+
+01:11:36.310 --> 01:11:39.280 align:middle line:84%
+for whether the i-th
+flip was a heads.
+
+01:11:39.280 --> 01:11:48.213 align:middle line:84%
+H i is indicator random variable
+for i-th flip being heads.
+
+01:11:48.213 --> 01:11:52.720 align:middle line:90%
+
+
+01:11:52.720 --> 01:11:55.490 align:middle line:84%
+And so, then we just
+took the sum here.
+
+01:11:55.490 --> 01:11:57.940 align:middle line:84%
+And so each of them had a
+probability p of occurring.
+
+01:11:57.940 --> 01:12:00.158 align:middle line:84%
+So we got n of
+them got p times n.
+
+01:12:00.158 --> 01:12:01.700 align:middle line:84%
+Let's do the same
+thing with variance
+
+01:12:01.700 --> 01:12:04.240 align:middle line:84%
+because we're assuming these
+coin flips are independent.
+
+01:12:04.240 --> 01:12:06.050 align:middle line:84%
+With the expectation,
+we didn't have to.
+
+01:12:06.050 --> 01:12:07.490 align:middle line:90%
+But with variance, we have to.
+
+01:12:07.490 --> 01:12:10.150 align:middle line:90%
+So we can use this property.
+
+01:12:10.150 --> 01:12:14.500 align:middle line:84%
+This is going to be equal
+to, by this kind of linearity
+
+01:12:14.500 --> 01:12:21.630 align:middle line:84%
+of variance, sum of variance
+of H i, for i equals 1 to n.
+
+01:12:21.630 --> 01:12:24.640 align:middle line:90%
+
+
+01:12:24.640 --> 01:12:28.420 align:middle line:84%
+Cool, so then we just need the
+variance of each individual coin
+
+01:12:28.420 --> 01:12:30.380 align:middle line:90%
+flip, which we just did, right.
+
+01:12:30.380 --> 01:12:36.100 align:middle line:84%
+Bias coin flip, probability p
+of heads, variance was p times 1
+
+01:12:36.100 --> 01:12:36.720 align:middle line:90%
+minus p.
+
+01:12:36.720 --> 01:12:40.750 align:middle line:90%
+
+
+01:12:40.750 --> 01:12:45.985 align:middle line:84%
+So we get n times
+p times 1 minus p.
+
+01:12:45.985 --> 01:12:50.650 align:middle line:90%
+
+
+01:12:50.650 --> 01:12:53.270 align:middle line:84%
+I find it a little hard to
+have intuition for this,
+
+01:12:53.270 --> 01:12:55.870 align:middle line:90%
+but it's a number.
+
+01:12:55.870 --> 01:12:57.230 align:middle line:90%
+Here's another example.
+
+01:12:57.230 --> 01:12:59.710 align:middle line:84%
+Last example will give
+you some intuition
+
+01:12:59.710 --> 01:13:03.160 align:middle line:90%
+for why this is interesting.
+
+01:13:03.160 --> 01:13:06.940 align:middle line:84%
+Back to gambling,
+I mean, investment.
+
+01:13:06.940 --> 01:13:14.720 align:middle line:84%
+Let's say you have n
+dollars you want to invest.
+
+01:13:14.720 --> 01:13:18.540 align:middle line:84%
+Back to my great
+investment strategy here.
+
+01:13:18.540 --> 01:13:21.970 align:middle line:90%
+Let's X n, now.
+
+01:13:21.970 --> 01:13:26.570 align:middle line:84%
+I could invest n dollars in this
+thing, and I get a variance of n
+
+01:13:26.570 --> 01:13:27.800 align:middle line:90%
+squared.
+
+01:13:27.800 --> 01:13:29.673 align:middle line:84%
+I could win n dollars,
+lose n dollars.
+
+01:13:29.673 --> 01:13:32.240 align:middle line:90%
+
+
+01:13:32.240 --> 01:13:35.280 align:middle line:84%
+But now suppose there's not
+just one investment like this.
+
+01:13:35.280 --> 01:13:40.580 align:middle line:84%
+Suppose there are a whole
+bunch of investments, like X i.
+
+01:13:40.580 --> 01:13:42.930 align:middle line:90%
+Let's call them stocks, right?
+
+01:13:42.930 --> 01:13:45.650 align:middle line:90%
+You have k different stocks.
+
+01:13:45.650 --> 01:13:48.420 align:middle line:84%
+And I can choose, I'll invest
+so many dollars in this stock,
+
+01:13:48.420 --> 01:13:50.962 align:middle line:84%
+so many dollars in this stock,
+so many dollars in this stock.
+
+01:13:50.962 --> 01:13:54.432 align:middle line:84%
+And let's just assume, like
+this great investment, set up,
+
+01:13:54.432 --> 01:13:56.390 align:middle line:84%
+that each of them will
+either double your money
+
+01:13:56.390 --> 01:13:59.570 align:middle line:90%
+or you lose all your money.
+
+01:13:59.570 --> 01:14:01.200 align:middle line:90%
+Does this make a difference?
+
+01:14:01.200 --> 01:14:03.860 align:middle line:84%
+Is it any different to
+invest in k different stocks
+
+01:14:03.860 --> 01:14:08.930 align:middle line:84%
+equally versus investing
+in one stock, everything.
+
+01:14:08.930 --> 01:14:13.670 align:middle line:90%
+OK, I claim they're different.
+
+01:14:13.670 --> 01:14:15.090 align:middle line:90%
+So let's do it in general.
+
+01:14:15.090 --> 01:14:17.420 align:middle line:84%
+And then we can plug in
+different values of k.
+
+01:14:17.420 --> 01:14:20.040 align:middle line:84%
+So let's say we have
+k different stocks.
+
+01:14:20.040 --> 01:14:23.030 align:middle line:84%
+And we're going to equally
+split our investment of n
+
+01:14:23.030 --> 01:14:25.940 align:middle line:90%
+dollars across those stocks.
+
+01:14:25.940 --> 01:14:33.140 align:middle line:84%
+And let's say that
+each stock S i is,
+
+01:14:33.140 --> 01:14:36.210 align:middle line:84%
+let's just do plus 1
+and minus 1, simple.
+
+01:14:36.210 --> 01:14:39.800 align:middle line:90%
+Of course, you could generalize.
+
+01:14:39.800 --> 01:14:44.420 align:middle line:84%
+Each of these occurs
+with probability 1/2,
+
+01:14:44.420 --> 01:14:46.200 align:middle line:84%
+just like our
+previous investments.
+
+01:14:46.200 --> 01:14:54.230 align:middle line:84%
+But now each stock is, let's say
+they're independent, mutually
+
+01:14:54.230 --> 01:14:55.410 align:middle line:90%
+independent.
+
+01:14:55.410 --> 01:14:58.950 align:middle line:84%
+This is probably not a
+reasonable assumption.
+
+01:14:58.950 --> 01:15:01.710 align:middle line:84%
+Do not invest in the stock
+market with this advice.
+
+01:15:01.710 --> 01:15:10.640 align:middle line:84%
+But if we assume that they're
+mutually independent, then what
+
+01:15:10.640 --> 01:15:14.660 align:middle line:84%
+we get, if we want the variance
+of our overall outcome, which
+
+01:15:14.660 --> 01:15:25.390 align:middle line:84%
+is sum i equals 1 to n
+of n over k times S i,
+
+01:15:25.390 --> 01:15:27.700 align:middle line:90%
+this is how many dollars--
+
+01:15:27.700 --> 01:15:29.500 align:middle line:84%
+I assume the basics
+of investment.
+
+01:15:29.500 --> 01:15:31.260 align:middle line:84%
+If you invest more
+dollars, then you're
+
+01:15:31.260 --> 01:15:35.910 align:middle line:84%
+going to either get more back or
+lose more, just like this X i.
+
+01:15:35.910 --> 01:15:38.550 align:middle line:90%
+But I pulled it outside.
+
+01:15:38.550 --> 01:15:41.070 align:middle line:84%
+So if we invest n over
+k dollars in this stock,
+
+01:15:41.070 --> 01:15:43.540 align:middle line:84%
+then we end up with this
+many dollars in the end.
+
+01:15:43.540 --> 01:15:45.768 align:middle line:84%
+We add it up over
+all stocks, OK,
+
+01:15:45.768 --> 01:15:48.310 align:middle line:84%
+now we want to know the variance
+of this investment strategy,
+
+01:15:48.310 --> 01:15:49.810 align:middle line:90%
+which I'm going to call risk.
+
+01:15:49.810 --> 01:15:53.830 align:middle line:84%
+So probably risk is
+standard deviation.
+
+01:15:53.830 --> 01:15:57.930 align:middle line:84%
+But if variance is lower, so
+will the standard deviation.
+
+01:15:57.930 --> 01:16:02.580 align:middle line:84%
+So the variation of some, if
+they're mutually independent,
+
+01:16:02.580 --> 01:16:10.770 align:middle line:84%
+is exactly the sum of the
+variations of the insides, which
+
+01:16:10.770 --> 01:16:13.620 align:middle line:90%
+is n over k times S i.
+
+01:16:13.620 --> 01:16:18.480 align:middle line:90%
+That was the first property.
+
+01:16:18.480 --> 01:16:21.280 align:middle line:84%
+And then, the second one, if
+we want to pull this outside,
+
+01:16:21.280 --> 01:16:22.740 align:middle line:90%
+it gets squared.
+
+01:16:22.740 --> 01:16:27.060 align:middle line:84%
+So we get sum i
+equals 1 to n of n
+
+01:16:27.060 --> 01:16:33.540 align:middle line:84%
+over k squared times
+variance of S i.
+
+01:16:33.540 --> 01:16:37.170 align:middle line:90%
+Variance of S i is 1.
+
+01:16:37.170 --> 01:16:39.840 align:middle line:84%
+I think this was an
+early example we did.
+
+01:16:39.840 --> 01:16:43.890 align:middle line:84%
+In general, the
+variance of this X i,
+
+01:16:43.890 --> 01:16:46.980 align:middle line:84%
+we're interested in the
+case i equals 1 over here.
+
+01:16:46.980 --> 01:16:48.670 align:middle line:90%
+The variance was i squared.
+
+01:16:48.670 --> 01:16:49.535 align:middle line:90%
+So that's just 1.
+
+01:16:49.535 --> 01:16:52.110 align:middle line:90%
+
+
+01:16:52.110 --> 01:16:55.720 align:middle line:84%
+So we get the sum of something
+that doesn't depend on i.
+
+01:16:55.720 --> 01:16:58.810 align:middle line:84%
+So we just get n
+of these things.
+
+01:16:58.810 --> 01:17:02.880 align:middle line:90%
+We get n cubed over k squared.
+
+01:17:02.880 --> 01:17:03.820 align:middle line:90%
+This is our variance.
+
+01:17:03.820 --> 01:17:07.660 align:middle line:84%
+And if you take the square root,
+you get the standard deviation.
+
+01:17:07.660 --> 01:17:09.487 align:middle line:90%
+And if you hold n fixed--
+
+01:17:09.487 --> 01:17:11.320 align:middle line:84%
+of course, the more
+dollars you put in here,
+
+01:17:11.320 --> 01:17:13.080 align:middle line:90%
+the more risk you expect.
+
+01:17:13.080 --> 01:17:17.690 align:middle line:84%
+So it turns out to grow, if
+you're doing standard deviation,
+
+01:17:17.690 --> 01:17:21.570 align:middle line:90%
+you get n to the 1.5 risk.
+
+01:17:21.570 --> 01:17:24.620 align:middle line:84%
+So don't invest a
+lot of money maybe.
+
+01:17:24.620 --> 01:17:26.930 align:middle line:90%
+And we get divided by k.
+
+01:17:26.930 --> 01:17:31.730 align:middle line:84%
+The cool thing is, the bigger
+k is, the smaller your risk.
+
+01:17:31.730 --> 01:17:36.620 align:middle line:84%
+So I conjecture this is
+why financial people say,
+
+01:17:36.620 --> 01:17:40.070 align:middle line:84%
+diversify your portfolio,
+because the more things you
+
+01:17:40.070 --> 01:17:42.680 align:middle line:84%
+invest in, if they're
+mutually independent,
+
+01:17:42.680 --> 01:17:46.190 align:middle line:90%
+it reduces your risk.
+
+01:17:46.190 --> 01:17:49.740 align:middle line:84%
+That's kind of a fun
+conclusion to variance.
+
+01:17:49.740 --> 01:17:51.840 align:middle line:84%
+Of course, if they're
+mutually dependent,
+
+01:17:51.840 --> 01:17:54.150 align:middle line:84%
+which stock market
+tends to be somewhat,
+
+01:17:54.150 --> 01:17:56.460 align:middle line:84%
+then you don't get
+as much of a benefit.
+
+01:17:56.460 --> 01:17:58.620 align:middle line:84%
+But you probably get some
+benefit by diversifying.
+
+01:17:58.620 --> 01:18:00.440 align:middle line:84%
+So it's a good thing
+to do when you grow up
+
+01:18:00.440 --> 01:18:02.490 align:middle line:90%
+and invest your money.
+
+01:18:02.490 --> 01:18:04.280 align:middle line:90%
+All right, that's it for today.
+
+01:18:04.280 --> 01:18:07.400 align:middle line:84%
+One more lecture on
+probability, Tuesday
+
+01:18:07.400 --> 01:18:17.000 align:middle line:90%

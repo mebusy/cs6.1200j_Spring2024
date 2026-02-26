@@ -1,0 +1,5347 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.932 align:middle line:90%
+[SQUEAKING]
+
+00:00:01.932 --> 00:00:03.381 align:middle line:90%
+[RUSTLING]
+
+00:00:03.381 --> 00:00:04.830 align:middle line:90%
+[CLICKING]
+
+00:00:04.830 --> 00:00:11.120 align:middle line:90%
+
+
+00:00:11.120 --> 00:00:12.540 align:middle line:90%
+ZACHARY ABEL: Good morning.
+
+00:00:12.540 --> 00:00:13.320 align:middle line:90%
+Good morning.
+
+00:00:13.320 --> 00:00:14.820 align:middle line:90%
+Welcome.
+
+00:00:14.820 --> 00:00:18.755 align:middle line:84%
+Welcome to lecture
+11 of 6 120, 6 1,200.
+
+00:00:18.755 --> 00:00:20.130 align:middle line:84%
+I never know how
+to pronounce it.
+
+00:00:20.130 --> 00:00:22.400 align:middle line:90%
+It's one of them, probably.
+
+00:00:22.400 --> 00:00:25.320 align:middle line:84%
+We have finished our
+number theory unit,
+
+00:00:25.320 --> 00:00:29.510 align:middle line:84%
+and we're now starting a new
+unit on graphs, graph theory.
+
+00:00:29.510 --> 00:00:34.790 align:middle line:84%
+This is a new topic, a new kind
+of mathematical abstraction
+
+00:00:34.790 --> 00:00:37.640 align:middle line:84%
+that we'll see really
+interesting uses
+
+00:00:37.640 --> 00:00:40.500 align:middle line:84%
+for across this class,
+across algorithms,
+
+00:00:40.500 --> 00:00:42.860 align:middle line:90%
+across other contexts as well.
+
+00:00:42.860 --> 00:00:45.420 align:middle line:84%
+Before we dig into
+what they're good at,
+
+00:00:45.420 --> 00:00:48.780 align:middle line:84%
+let's talk a bit about what
+they are, how they're defined.
+
+00:00:48.780 --> 00:00:51.840 align:middle line:84%
+So I've written an example
+of a graph up here.
+
+00:00:51.840 --> 00:00:53.030 align:middle line:90%
+Totally clear, right?
+
+00:00:53.030 --> 00:00:57.050 align:middle line:84%
+It's easy to read and
+comprehend, but let me define it
+
+00:00:57.050 --> 00:00:57.840 align:middle line:90%
+for you.
+
+00:00:57.840 --> 00:01:02.450 align:middle line:90%
+So a simple graph.
+
+00:01:02.450 --> 00:01:09.205 align:middle line:84%
+Here, let's say a simple
+undirected graph, which
+
+00:01:09.205 --> 00:01:10.580 align:middle line:84%
+are the only kind
+of graphs we'll
+
+00:01:10.580 --> 00:01:13.760 align:middle line:84%
+be talking about for the
+next couple of lectures,
+
+00:01:13.760 --> 00:01:16.090 align:middle line:90%
+is defined as a pair.
+
+00:01:16.090 --> 00:01:18.620 align:middle line:90%
+
+
+00:01:18.620 --> 00:01:25.280 align:middle line:84%
+So the graph G is a
+pair of V, E, where
+
+00:01:25.280 --> 00:01:38.900 align:middle line:84%
+V is a nonempty set of what
+we call nodes, also known
+
+00:01:38.900 --> 00:01:39.483 align:middle line:90%
+as vertices.
+
+00:01:39.483 --> 00:01:46.670 align:middle line:90%
+
+
+00:01:46.670 --> 00:01:59.390 align:middle line:84%
+And E is a set of two element
+subsets of V, not all of them,
+
+00:01:59.390 --> 00:02:01.480 align:middle line:84%
+but some of them,
+possibly none of them.
+
+00:02:01.480 --> 00:02:04.910 align:middle line:84%
+Could be all of them as well,
+any amount that you want.
+
+00:02:04.910 --> 00:02:10.000 align:middle line:84%
+So a graph is just a
+set V, where we call
+
+00:02:10.000 --> 00:02:12.850 align:middle line:90%
+the objects vertices or nodes.
+
+00:02:12.850 --> 00:02:13.635 align:middle line:90%
+I'm sorry.
+
+00:02:13.635 --> 00:02:17.380 align:middle line:90%
+
+
+00:02:17.380 --> 00:02:19.493 align:middle line:90%
+These are edges.
+
+00:02:19.493 --> 00:02:22.180 align:middle line:90%
+
+
+00:02:22.180 --> 00:02:26.150 align:middle line:84%
+So it's a set V of nodes and
+a set E of pairs of nodes.
+
+00:02:26.150 --> 00:02:28.700 align:middle line:84%
+And those pairs
+are called edges.
+
+00:02:28.700 --> 00:02:33.350 align:middle line:84%
+So in its purest set theoretic
+form, here is a graph.
+
+00:02:33.350 --> 00:02:34.520 align:middle line:90%
+Here's a set of vertices.
+
+00:02:34.520 --> 00:02:39.320 align:middle line:84%
+Here's a set of some of the
+two element subsets of V.
+
+00:02:39.320 --> 00:02:45.550 align:middle line:84%
+Of course, I don't really think
+about the graph in this form.
+
+00:02:45.550 --> 00:02:47.470 align:middle line:84%
+Let me give you
+an alternative way
+
+00:02:47.470 --> 00:02:51.676 align:middle line:90%
+to express this graph up here.
+
+00:02:51.676 --> 00:02:55.660 align:middle line:90%
+1, 2, 3, 4, 5, 6, 7.
+
+00:02:55.660 --> 00:02:56.960 align:middle line:90%
+These are going to be my nodes.
+
+00:02:56.960 --> 00:02:58.000 align:middle line:90%
+This is a.
+
+00:02:58.000 --> 00:03:04.330 align:middle line:90%
+This is b, c, d, e, f, and g.
+
+00:03:04.330 --> 00:03:07.240 align:middle line:84%
+And anytime we have an
+edge, let's connect them
+
+00:03:07.240 --> 00:03:09.500 align:middle line:90%
+by drawing an arc between them.
+
+00:03:09.500 --> 00:03:12.460 align:middle line:90%
+So we have ab, ac, and bc.
+
+00:03:12.460 --> 00:03:16.930 align:middle line:84%
+We have these, these,
+these, this, this, and this.
+
+00:03:16.930 --> 00:03:20.150 align:middle line:84%
+This is a visual
+representation of this graph,
+
+00:03:20.150 --> 00:03:22.610 align:middle line:84%
+but it's conveying
+the same information.
+
+00:03:22.610 --> 00:03:25.380 align:middle line:84%
+This is a lot easier to
+look at, in my opinion,
+
+00:03:25.380 --> 00:03:27.380 align:middle line:84%
+but they're both conveying
+the same information.
+
+00:03:27.380 --> 00:03:29.570 align:middle line:84%
+This is the general
+idea of a graph.
+
+00:03:29.570 --> 00:03:31.570 align:middle line:84%
+It's a set of vertices,
+which are the dots,
+
+00:03:31.570 --> 00:03:34.540 align:middle line:84%
+and edges, which are the
+segments connecting them.
+
+00:03:34.540 --> 00:03:36.880 align:middle line:90%
+Does that make sense?
+
+00:03:36.880 --> 00:03:39.880 align:middle line:90%
+Wonderful.
+
+00:03:39.880 --> 00:03:43.660 align:middle line:84%
+I want to mention that there
+are some subtle differences
+
+00:03:43.660 --> 00:03:45.780 align:middle line:84%
+in the definitions
+in other sources.
+
+00:03:45.780 --> 00:03:52.942 align:middle line:90%
+
+
+00:03:52.942 --> 00:04:00.880 align:middle line:84%
+Sometimes when people are
+talking about undirected graphs,
+
+00:04:00.880 --> 00:04:09.970 align:middle line:84%
+some people will allow what are
+called parallel edges, which
+
+00:04:09.970 --> 00:04:13.210 align:middle line:84%
+is when you have two
+different edges connecting
+
+00:04:13.210 --> 00:04:23.290 align:middle line:84%
+the same pair of vertices,
+or self-loops, which
+
+00:04:23.290 --> 00:04:26.830 align:middle line:84%
+is when you have a single
+edge connecting a vertex back
+
+00:04:26.830 --> 00:04:28.540 align:middle line:90%
+to itself.
+
+00:04:28.540 --> 00:04:31.005 align:middle line:84%
+And we are disallowing
+both of those.
+
+00:04:31.005 --> 00:04:36.850 align:middle line:90%
+
+
+00:04:36.850 --> 00:04:39.400 align:middle line:84%
+So we will never be working
+with graphs like this
+
+00:04:39.400 --> 00:04:42.730 align:middle line:84%
+that have parallel edges
+or that have self-loops.
+
+00:04:42.730 --> 00:04:46.900 align:middle line:84%
+So that is what people
+usually mean by simple.
+
+00:04:46.900 --> 00:04:48.400 align:middle line:84%
+And it's why all
+of the undirected
+
+00:04:48.400 --> 00:04:51.540 align:middle line:84%
+graphs we work with
+are going to be simple.
+
+00:04:51.540 --> 00:05:01.380 align:middle line:84%
+Likewise, some sources allow
+the vertex set to be empty.
+
+00:05:01.380 --> 00:05:04.760 align:middle line:84%
+I stipulated up there that
+v should be a nonempty set.
+
+00:05:04.760 --> 00:05:10.320 align:middle line:90%
+
+
+00:05:10.320 --> 00:05:13.020 align:middle line:84%
+So we're just disagreeing
+on a single graph that
+
+00:05:13.020 --> 00:05:15.810 align:middle line:84%
+has zero vertices and then
+necessarily zero edges
+
+00:05:15.810 --> 00:05:17.910 align:middle line:84%
+because there's
+nothing to connect.
+
+00:05:17.910 --> 00:05:21.840 align:middle line:84%
+The reason we are not
+allowing that for our purposes
+
+00:05:21.840 --> 00:05:23.940 align:middle line:84%
+is that often it's going
+to be a counterexample
+
+00:05:23.940 --> 00:05:25.780 align:middle line:84%
+to a lot of the theorems
+we want to state.
+
+00:05:25.780 --> 00:05:28.930 align:middle line:84%
+We would always have to say
+for every nonempty graph,
+
+00:05:28.930 --> 00:05:31.620 align:middle line:84%
+for every graph with a positive
+number of vertices, something
+
+00:05:31.620 --> 00:05:33.870 align:middle line:84%
+like that, and it
+just gets cumbersome.
+
+00:05:33.870 --> 00:05:35.790 align:middle line:84%
+So we chose this
+definition because it
+
+00:05:35.790 --> 00:05:37.330 align:middle line:90%
+makes that more convenient.
+
+00:05:37.330 --> 00:05:39.240 align:middle line:84%
+Not really a big deal,
+not really something
+
+00:05:39.240 --> 00:05:40.750 align:middle line:90%
+we'll need to think about much.
+
+00:05:40.750 --> 00:05:42.870 align:middle line:84%
+It's just a part
+of the definition
+
+00:05:42.870 --> 00:05:45.305 align:middle line:84%
+to be vaguely aware of
+in the back of your mind.
+
+00:05:45.305 --> 00:05:48.240 align:middle line:90%
+
+
+00:05:48.240 --> 00:05:56.370 align:middle line:84%
+We do allow the set
+of edges to be empty.
+
+00:05:56.370 --> 00:06:02.310 align:middle line:84%
+For example, here is a graph
+with five vertices and zero
+
+00:06:02.310 --> 00:06:03.130 align:middle line:90%
+edges.
+
+00:06:03.130 --> 00:06:06.930 align:middle line:84%
+Let's call them vertices
+1, 2, 3, 4, and 5.
+
+00:06:06.930 --> 00:06:09.700 align:middle line:84%
+Five vertices, zero edges,
+that's totally fine.
+
+00:06:09.700 --> 00:06:11.880 align:middle line:90%
+That's a valid graph.
+
+00:06:11.880 --> 00:06:15.870 align:middle line:84%
+So this has an empty set for
+the set of edges, which is fine.
+
+00:06:15.870 --> 00:06:17.490 align:middle line:90%
+All right?
+
+00:06:17.490 --> 00:06:19.770 align:middle line:90%
+So what are graphs good at?
+
+00:06:19.770 --> 00:06:24.030 align:middle line:84%
+Graphs are great at representing
+two-way relationships
+
+00:06:24.030 --> 00:06:26.070 align:middle line:90%
+between pairs of objects.
+
+00:06:26.070 --> 00:06:30.510 align:middle line:84%
+Let me give some real-world
+examples, like friendship.
+
+00:06:30.510 --> 00:06:36.300 align:middle line:84%
+You can imagine the graph of
+all the friends in the world.
+
+00:06:36.300 --> 00:06:41.160 align:middle line:84%
+Here, let's see,
+the friend graph.
+
+00:06:41.160 --> 00:06:45.000 align:middle line:84%
+The vertices are going
+to be the set of people.
+
+00:06:45.000 --> 00:06:46.870 align:middle line:90%
+Each person is a vertex.
+
+00:06:46.870 --> 00:06:50.790 align:middle line:84%
+The set of edges is
+pairs of friends.
+
+00:06:50.790 --> 00:06:53.585 align:middle line:90%
+
+
+00:06:53.585 --> 00:06:55.960 align:middle line:84%
+Now, I'm making an assumption
+here that friendship always
+
+00:06:55.960 --> 00:06:57.062 align:middle line:90%
+goes both ways.
+
+00:06:57.062 --> 00:06:59.270 align:middle line:84%
+If I'm friends with you,
+then you're friends with me.
+
+00:06:59.270 --> 00:07:03.160 align:middle line:90%
+No unrequited friendships here.
+
+00:07:03.160 --> 00:07:07.310 align:middle line:84%
+For example, Facebook
+friendships always go both ways.
+
+00:07:07.310 --> 00:07:09.760 align:middle line:84%
+You're either friends on
+Facebook, or you're not.
+
+00:07:09.760 --> 00:07:14.140 align:middle line:84%
+So the graph of Facebook friends
+is a concrete representation
+
+00:07:14.140 --> 00:07:17.356 align:middle line:84%
+of this kind of thing,
+which can be interesting.
+
+00:07:17.356 --> 00:07:20.920 align:middle line:90%
+
+
+00:07:20.920 --> 00:07:21.500 align:middle line:90%
+Let's see.
+
+00:07:21.500 --> 00:07:24.130 align:middle line:90%
+Another example is the brain.
+
+00:07:24.130 --> 00:07:26.690 align:middle line:84%
+The brain is just a
+network of neurons.
+
+00:07:26.690 --> 00:07:34.300 align:middle line:84%
+The neurons are the vertices,
+neurons and connections.
+
+00:07:34.300 --> 00:07:37.400 align:middle line:84%
+Some neurons connect
+to neighboring neurons,
+
+00:07:37.400 --> 00:07:39.850 align:middle line:84%
+and it's those neurons
+and their connections
+
+00:07:39.850 --> 00:07:44.240 align:middle line:84%
+that somehow creates cognition
+and memory and intelligence.
+
+00:07:44.240 --> 00:07:46.160 align:middle line:90%
+And I wish we understood how.
+
+00:07:46.160 --> 00:07:47.635 align:middle line:90%
+But at least it's a graph.
+
+00:07:47.635 --> 00:07:50.210 align:middle line:90%
+
+
+00:07:50.210 --> 00:07:51.985 align:middle line:90%
+Also, we have the internet.
+
+00:07:51.985 --> 00:07:55.520 align:middle line:90%
+
+
+00:07:55.520 --> 00:08:00.590 align:middle line:84%
+Most network connections on
+the internet go both ways.
+
+00:08:00.590 --> 00:08:04.340 align:middle line:90%
+Network connections.
+
+00:08:04.340 --> 00:08:06.170 align:middle line:90%
+So the servers are the vertices.
+
+00:08:06.170 --> 00:08:08.600 align:middle line:84%
+And which servers
+can talk to which
+
+00:08:08.600 --> 00:08:11.210 align:middle line:90%
+other servers are the edges.
+
+00:08:11.210 --> 00:08:13.400 align:middle line:84%
+And most communications
+have to go both ways
+
+00:08:13.400 --> 00:08:15.968 align:middle line:84%
+because you have to
+communicate back and forth
+
+00:08:15.968 --> 00:08:17.510 align:middle line:84%
+and make sure that
+each of you trusts
+
+00:08:17.510 --> 00:08:19.700 align:middle line:84%
+the other party
+before you actually
+
+00:08:19.700 --> 00:08:21.150 align:middle line:90%
+send any information over.
+
+00:08:21.150 --> 00:08:25.430 align:middle line:84%
+So you have to go both ways
+to make that connection first,
+
+00:08:25.430 --> 00:08:26.870 align:middle line:84%
+and then you can
+send information
+
+00:08:26.870 --> 00:08:29.900 align:middle line:90%
+in whatever direction you want.
+
+00:08:29.900 --> 00:08:38.840 align:middle line:84%
+A non-example is
+hyperlinks on websites.
+
+00:08:38.840 --> 00:08:41.760 align:middle line:84%
+If site A has a link
+that takes you to site B,
+
+00:08:41.760 --> 00:08:44.750 align:middle line:84%
+there isn't necessarily
+a link back.
+
+00:08:44.750 --> 00:08:48.830 align:middle line:84%
+So this would not be an
+example of an undirected graph.
+
+00:08:48.830 --> 00:08:50.970 align:middle line:84%
+That would be a
+directed relationship,
+
+00:08:50.970 --> 00:08:54.200 align:middle line:84%
+which we're going to talk
+about later after break.
+
+00:08:54.200 --> 00:08:56.480 align:middle line:84%
+But that's not an
+example for today.
+
+00:08:56.480 --> 00:09:00.630 align:middle line:84%
+Similarly, Twitter followers
+is a directed relationship.
+
+00:09:00.630 --> 00:09:03.060 align:middle line:84%
+If I follow you, you don't
+necessarily follow me.
+
+00:09:03.060 --> 00:09:04.640 align:middle line:84%
+So that would be
+a directed graph,
+
+00:09:04.640 --> 00:09:11.390 align:middle line:84%
+which will fit into lectures
+after break, not this one.
+
+00:09:11.390 --> 00:09:14.060 align:middle line:90%
+All right.
+
+00:09:14.060 --> 00:09:17.690 align:middle line:84%
+And graphs-- I said
+earlier, graphs
+
+00:09:17.690 --> 00:09:19.920 align:middle line:90%
+are a really useful abstraction.
+
+00:09:19.920 --> 00:09:23.210 align:middle line:84%
+And I claim that they're
+useful because they
+
+00:09:23.210 --> 00:09:26.246 align:middle line:84%
+strike a nice balance between
+simplicity and complexity.
+
+00:09:26.246 --> 00:09:32.030 align:middle line:90%
+
+
+00:09:32.030 --> 00:09:36.120 align:middle line:84%
+On one hand, graphs are
+simple to define and describe.
+
+00:09:36.120 --> 00:09:37.350 align:middle line:90%
+They're simple conceptually.
+
+00:09:37.350 --> 00:09:43.130 align:middle line:84%
+It's just a set of objects and
+a set of pairwise relationships.
+
+00:09:43.130 --> 00:09:46.100 align:middle line:90%
+Easy to define.
+
+00:09:46.100 --> 00:09:50.480 align:middle line:84%
+So as we just saw, there are
+lots and lots of real scenarios
+
+00:09:50.480 --> 00:09:53.540 align:middle line:84%
+that can be modeled
+faithfully as a graph.
+
+00:09:53.540 --> 00:09:56.720 align:middle line:84%
+On the other hand, they're
+complex in that there's
+
+00:09:56.720 --> 00:09:59.693 align:middle line:84%
+a rich mathematical
+theory of graphs.
+
+00:09:59.693 --> 00:10:07.460 align:middle line:90%
+
+
+00:10:07.460 --> 00:10:10.520 align:middle line:84%
+There are lots of powerful
+tools and definitions
+
+00:10:10.520 --> 00:10:13.160 align:middle line:84%
+and theorems that we can
+bring to bear anytime we're
+
+00:10:13.160 --> 00:10:14.970 align:middle line:90%
+trying to analyze a graph.
+
+00:10:14.970 --> 00:10:17.090 align:middle line:84%
+And therefore, we
+can apply all of that
+
+00:10:17.090 --> 00:10:19.370 align:middle line:84%
+to all the real-world
+scenarios that we have
+
+00:10:19.370 --> 00:10:21.390 align:middle line:90%
+been able to model as a graph.
+
+00:10:21.390 --> 00:10:25.400 align:middle line:84%
+So it's a really nice
+balance between the two.
+
+00:10:25.400 --> 00:10:28.700 align:middle line:84%
+So let's dig into this
+rich mathematical theory
+
+00:10:28.700 --> 00:10:31.210 align:middle line:84%
+and see what tools and
+theorems we can develop.
+
+00:10:31.210 --> 00:10:35.960 align:middle line:90%
+
+
+00:10:35.960 --> 00:10:38.575 align:middle line:84%
+So the next definition
+is vertex degree.
+
+00:10:38.575 --> 00:10:42.440 align:middle line:90%
+
+
+00:10:42.440 --> 00:10:42.940 align:middle line:90%
+Sorry.
+
+00:10:42.940 --> 00:10:46.450 align:middle line:84%
+The next definition
+is adjacency.
+
+00:10:46.450 --> 00:10:46.950 align:middle line:90%
+Let's see.
+
+00:10:46.950 --> 00:10:50.800 align:middle line:90%
+
+
+00:10:50.800 --> 00:11:01.120 align:middle line:84%
+Two vertices, u
+and v, are adjacent
+
+00:11:01.120 --> 00:11:16.060 align:middle line:84%
+if and only if they're
+connected by an edge, i.e.
+
+00:11:16.060 --> 00:11:19.360 align:middle line:90%
+u, v is one of our edges.
+
+00:11:19.360 --> 00:11:24.550 align:middle line:84%
+So their vertices are adjacent
+if they're connected by an edge.
+
+00:11:24.550 --> 00:11:31.120 align:middle line:90%
+We'll say that-- let's see--
+
+00:11:31.120 --> 00:11:43.390 align:middle line:84%
+an edge u, v has endpoints u
+and v, just the two endpoints
+
+00:11:43.390 --> 00:11:44.540 align:middle line:90%
+of the edge.
+
+00:11:44.540 --> 00:11:57.220 align:middle line:84%
+And we'll say that edge
+u, v is incident to u
+
+00:11:57.220 --> 00:12:00.490 align:middle line:84%
+and v. So a vertex
+and an edge are
+
+00:12:00.490 --> 00:12:05.890 align:middle line:84%
+incident if that edge has that
+vertex as one of its endpoints.
+
+00:12:05.890 --> 00:12:07.640 align:middle line:84%
+These words sound
+a little alike.
+
+00:12:07.640 --> 00:12:09.460 align:middle line:84%
+Adjacent is used
+for two vertices
+
+00:12:09.460 --> 00:12:10.820 align:middle line:90%
+that have an edge between them.
+
+00:12:10.820 --> 00:12:13.720 align:middle line:84%
+Incident is used for
+an edge and a vertex,
+
+00:12:13.720 --> 00:12:17.770 align:middle line:84%
+where the vertex is an
+endpoint of the edge.
+
+00:12:17.770 --> 00:12:20.050 align:middle line:90%
+But useful terminology.
+
+00:12:20.050 --> 00:12:27.940 align:middle line:84%
+And that lets us define the next
+thing, which is for a vertex v,
+
+00:12:27.940 --> 00:12:43.690 align:middle line:84%
+the degree of v is the number
+of edges incident to v.
+
+00:12:43.690 --> 00:12:47.120 align:middle line:84%
+So the degree of a vertex is
+the number of edges it has.
+
+00:12:47.120 --> 00:12:49.690 align:middle line:90%
+So what's the degree of e?
+
+00:12:49.690 --> 00:12:51.700 align:middle line:90%
+Just yell it out.
+
+00:12:51.700 --> 00:12:52.520 align:middle line:90%
+3. yeah.
+
+00:12:52.520 --> 00:12:53.480 align:middle line:90%
+1, 2, 3.
+
+00:12:53.480 --> 00:12:55.690 align:middle line:90%
+What's the degree of c?
+
+00:12:55.690 --> 00:12:56.530 align:middle line:90%
+4.
+
+00:12:56.530 --> 00:12:58.050 align:middle line:90%
+Degree of f?
+
+00:12:58.050 --> 00:12:59.000 align:middle line:90%
+2.
+
+00:12:59.000 --> 00:13:01.870 align:middle line:84%
+What's the degree
+of this vertex 2?
+
+00:13:01.870 --> 00:13:02.440 align:middle line:90%
+0.
+
+00:13:02.440 --> 00:13:03.530 align:middle line:90%
+It doesn't have any edges.
+
+00:13:03.530 --> 00:13:04.270 align:middle line:90%
+Excellent.
+
+00:13:04.270 --> 00:13:07.840 align:middle line:84%
+Degree is just the
+number of incident edges.
+
+00:13:07.840 --> 00:13:10.480 align:middle line:90%
+Wonderful.
+
+00:13:10.480 --> 00:13:13.190 align:middle line:84%
+You can understand
+some, not everything,
+
+00:13:13.190 --> 00:13:16.000 align:middle line:84%
+but some things about a
+graph just from the degrees
+
+00:13:16.000 --> 00:13:17.740 align:middle line:90%
+of its vertices.
+
+00:13:17.740 --> 00:13:20.860 align:middle line:84%
+For example, that
+graph way over there
+
+00:13:20.860 --> 00:13:23.650 align:middle line:84%
+on the left, the
+degrees of its vertices
+
+00:13:23.650 --> 00:13:25.010 align:middle line:90%
+are-- let's go through them all.
+
+00:13:25.010 --> 00:13:28.030 align:middle line:90%
+We've got 2, 2, 4.
+
+00:13:28.030 --> 00:13:31.130 align:middle line:90%
+3, 3, 2, 2, in that order.
+
+00:13:31.130 --> 00:13:32.670 align:middle line:90%
+I think I got that right.
+
+00:13:32.670 --> 00:13:36.870 align:middle line:84%
+Sometimes this is called
+the degree sequence.
+
+00:13:36.870 --> 00:13:42.640 align:middle line:84%
+That's less important than
+the concept of degree itself.
+
+00:13:42.640 --> 00:13:45.310 align:middle line:84%
+But we can play with this
+concept a little bit.
+
+00:13:45.310 --> 00:13:47.640 align:middle line:84%
+For example, does
+there exist a graph
+
+00:13:47.640 --> 00:13:55.345 align:middle line:90%
+with degree sequence 2, 2, 1?
+
+00:13:55.345 --> 00:13:57.220 align:middle line:84%
+Sorry, that's supposed
+to be a question mark.
+
+00:13:57.220 --> 00:13:57.850 align:middle line:90%
+There we go.
+
+00:13:57.850 --> 00:14:00.640 align:middle line:84%
+Does there exist a graph
+with degree sequence 2, 2, 1?
+
+00:14:00.640 --> 00:14:03.280 align:middle line:84%
+So three vertices,
+two have degree 2.
+
+00:14:03.280 --> 00:14:04.250 align:middle line:90%
+One has degree 1.
+
+00:14:04.250 --> 00:14:07.290 align:middle line:90%
+
+
+00:14:07.290 --> 00:14:09.980 align:middle line:84%
+Think about that for a second,
+and then we'll try it together.
+
+00:14:09.980 --> 00:14:12.750 align:middle line:90%
+
+
+00:14:12.750 --> 00:14:15.220 align:middle line:84%
+OK, I see someone violently
+shaking their head.
+
+00:14:15.220 --> 00:14:18.840 align:middle line:84%
+I think they're
+cracking their neck.
+
+00:14:18.840 --> 00:14:20.250 align:middle line:90%
+Let's try it.
+
+00:14:20.250 --> 00:14:22.950 align:middle line:84%
+So 2, 2, 1 means we
+need three vertices--
+
+00:14:22.950 --> 00:14:25.290 align:middle line:90%
+1, 2, 3.
+
+00:14:25.290 --> 00:14:27.610 align:middle line:90%
+The first vertex has degree 2.
+
+00:14:27.610 --> 00:14:29.500 align:middle line:84%
+Well, there's really
+only one way to do that.
+
+00:14:29.500 --> 00:14:31.270 align:middle line:90%
+It has to connect here and here.
+
+00:14:31.270 --> 00:14:33.803 align:middle line:84%
+The next vertex also
+has to have degree 2.
+
+00:14:33.803 --> 00:14:35.720 align:middle line:84%
+Well, that means it also
+has to connect there.
+
+00:14:35.720 --> 00:14:37.580 align:middle line:84%
+The only way for it
+to get a second edge.
+
+00:14:37.580 --> 00:14:40.520 align:middle line:84%
+Then the third vertex is
+supposed to have degree 1,
+
+00:14:40.520 --> 00:14:41.570 align:middle line:90%
+which it doesn't.
+
+00:14:41.570 --> 00:14:44.800 align:middle line:90%
+So we're sad it didn't work.
+
+00:14:44.800 --> 00:14:46.220 align:middle line:84%
+You can think of
+this, by the way,
+
+00:14:46.220 --> 00:14:48.280 align:middle line:90%
+as a proof by contradiction.
+
+00:14:48.280 --> 00:14:51.140 align:middle line:84%
+If there were a graph
+that satisfied this,
+
+00:14:51.140 --> 00:14:53.060 align:middle line:84%
+then it would have
+to look like this.
+
+00:14:53.060 --> 00:14:56.140 align:middle line:84%
+But this graph doesn't
+work, so nothing works.
+
+00:14:56.140 --> 00:14:57.670 align:middle line:90%
+Sound good?
+
+00:14:57.670 --> 00:15:00.490 align:middle line:84%
+OK, but what if we asked
+a more complicated version
+
+00:15:00.490 --> 00:15:01.430 align:middle line:90%
+of the question?
+
+00:15:01.430 --> 00:15:06.170 align:middle line:84%
+Does there exist a graph with
+degree sequence 2, 2, 2, 2,
+
+00:15:06.170 --> 00:15:09.100 align:middle line:90%
+2, 1?
+
+00:15:09.100 --> 00:15:11.297 align:middle line:84%
+This time there would
+need to be six vertices.
+
+00:15:11.297 --> 00:15:12.880 align:middle line:84%
+And now there are
+lots of ways that we
+
+00:15:12.880 --> 00:15:16.060 align:middle line:84%
+could choose two edges for
+each of those vertices.
+
+00:15:16.060 --> 00:15:18.760 align:middle line:84%
+So there are lots of cases
+that we would need to try out
+
+00:15:18.760 --> 00:15:21.640 align:middle line:90%
+in our proof by contradiction.
+
+00:15:21.640 --> 00:15:24.470 align:middle line:84%
+So maybe a different
+strategy would work better.
+
+00:15:24.470 --> 00:15:27.350 align:middle line:84%
+Does there exist a graph
+with this degree sequence?
+
+00:15:27.350 --> 00:15:28.535 align:middle line:90%
+Yes.
+
+00:15:28.535 --> 00:15:30.410 align:middle line:84%
+AUDIENCE: Does the sum
+always has to be even?
+
+00:15:30.410 --> 00:15:32.743 align:middle line:84%
+ZACHARY ABEL: No, because the
+sum always has to be even.
+
+00:15:32.743 --> 00:15:33.400 align:middle line:90%
+Interesting.
+
+00:15:33.400 --> 00:15:36.060 align:middle line:84%
+Why does the sum
+have to be even?
+
+00:15:36.060 --> 00:15:38.915 align:middle line:84%
+AUDIENCE: If it's an edge of
+[INAUDIBLE] another vertex
+
+00:15:38.915 --> 00:15:41.160 align:middle line:90%
+[INAUDIBLE].
+
+00:15:41.160 --> 00:15:44.020 align:middle line:84%
+ZACHARY ABEL: All right, so if
+an edge connects to one vertex,
+
+00:15:44.020 --> 00:15:46.660 align:middle line:84%
+then it also connects
+to another vertex.
+
+00:15:46.660 --> 00:15:49.510 align:middle line:84%
+So each edge is
+somehow counted twice.
+
+00:15:49.510 --> 00:15:51.750 align:middle line:84%
+Yeah, that's exactly
+the right intuition
+
+00:15:51.750 --> 00:15:53.380 align:middle line:90%
+for the following theorem.
+
+00:15:53.380 --> 00:15:56.970 align:middle line:84%
+In fact, that's the correct
+proof for the following theorem.
+
+00:15:56.970 --> 00:16:02.840 align:middle line:90%
+We've got the handshake lemma.
+
+00:16:02.840 --> 00:16:06.300 align:middle line:90%
+
+
+00:16:06.300 --> 00:16:06.980 align:middle line:90%
+Let's see.
+
+00:16:06.980 --> 00:16:11.190 align:middle line:90%
+
+
+00:16:11.190 --> 00:16:15.340 align:middle line:84%
+For a graph G, which
+is vertices and edges,
+
+00:16:15.340 --> 00:16:21.480 align:middle line:84%
+we have the sum of vertices
+in the set of vertices
+
+00:16:21.480 --> 00:16:25.120 align:middle line:84%
+of the degree of
+that vertex equals.
+
+00:16:25.120 --> 00:16:28.305 align:middle line:84%
+So if you take all the
+degrees and add them all up,
+
+00:16:28.305 --> 00:16:30.680 align:middle line:84%
+your colleague here claimed
+that what you're going to get
+
+00:16:30.680 --> 00:16:35.960 align:middle line:84%
+is two times the
+number of edges.
+
+00:16:35.960 --> 00:16:39.140 align:middle line:84%
+And we can see that for this
+example, if we add this up 4,
+
+00:16:39.140 --> 00:16:44.230 align:middle line:84%
+8, 14, 16, 18, and there are
+9 edges, that checks out.
+
+00:16:44.230 --> 00:16:47.180 align:middle line:90%
+
+
+00:16:47.180 --> 00:16:49.850 align:middle line:84%
+And the reason this is
+true is also exactly what
+
+00:16:49.850 --> 00:16:51.230 align:middle line:90%
+your colleague said earlier.
+
+00:16:51.230 --> 00:16:53.060 align:middle line:84%
+Over here, we're
+adding the degree
+
+00:16:53.060 --> 00:16:57.650 align:middle line:84%
+of every vertex, which
+means we're basically
+
+00:16:57.650 --> 00:17:01.340 align:middle line:84%
+counting every endpoint
+of all the edges.
+
+00:17:01.340 --> 00:17:03.210 align:middle line:84%
+And every edge
+has two endpoints.
+
+00:17:03.210 --> 00:17:07.819 align:middle line:84%
+So every edge was counted twice
+in this count on the left.
+
+00:17:07.819 --> 00:17:09.619 align:middle line:90%
+So that's the handshake lemma.
+
+00:17:09.619 --> 00:17:11.900 align:middle line:84%
+It's called handshake lemma
+because if you imagine
+
+00:17:11.900 --> 00:17:15.030 align:middle line:84%
+a room full of people and some
+pairs of them shake hands,
+
+00:17:15.030 --> 00:17:18.555 align:middle line:84%
+then if each person counts the
+number of handshakes they had,
+
+00:17:18.555 --> 00:17:20.930 align:middle line:84%
+and you add that all up, that
+equals two times the number
+
+00:17:20.930 --> 00:17:23.329 align:middle line:84%
+of handshakes, because
+each handshake had
+
+00:17:23.329 --> 00:17:25.430 align:middle line:90%
+two hands involved.
+
+00:17:25.430 --> 00:17:27.780 align:middle line:84%
+It's exactly the same
+explanation and proof.
+
+00:17:27.780 --> 00:17:32.270 align:middle line:84%
+It's just with hands
+instead of pairs--
+
+00:17:32.270 --> 00:17:35.450 align:middle line:90%
+instead of half edges.
+
+00:17:35.450 --> 00:17:38.455 align:middle line:84%
+All right, so does
+this help us with that?
+
+00:17:38.455 --> 00:17:45.590 align:middle line:90%
+
+
+00:17:45.590 --> 00:17:47.830 align:middle line:84%
+Can someone tell me why
+there doesn't exist a graph
+
+00:17:47.830 --> 00:17:48.913 align:middle line:90%
+with this degree sequence?
+
+00:17:48.913 --> 00:17:51.740 align:middle line:90%
+
+
+00:17:51.740 --> 00:17:52.430 align:middle line:90%
+Yes?
+
+00:17:52.430 --> 00:17:53.810 align:middle line:84%
+AUDIENCE: Because
+the sum is odd.
+
+00:17:53.810 --> 00:17:55.940 align:middle line:84%
+ZACHARY ABEL: Yeah,
+because the sum is odd.
+
+00:17:55.940 --> 00:17:58.940 align:middle line:84%
+This would have to
+have, what, 11 divided
+
+00:17:58.940 --> 00:18:04.970 align:middle line:90%
+by 2 edges, which isn't great.
+
+00:18:04.970 --> 00:18:08.160 align:middle line:84%
+I don't know how to draw a
+half edge in these graphs,
+
+00:18:08.160 --> 00:18:10.380 align:middle line:90%
+so there is no such graph.
+
+00:18:10.380 --> 00:18:11.510 align:middle line:90%
+Awesome.
+
+00:18:11.510 --> 00:18:15.350 align:middle line:84%
+Here's one more application
+of the handshake lemma.
+
+00:18:15.350 --> 00:18:17.540 align:middle line:90%
+Let's see.
+
+00:18:17.540 --> 00:18:28.463 align:middle line:84%
+What is the maximum number of
+edges in an n vertex graph?
+
+00:18:28.463 --> 00:18:33.260 align:middle line:90%
+
+
+00:18:33.260 --> 00:18:38.360 align:middle line:84%
+What is the maximum number of
+edges in an n vertex graph?
+
+00:18:38.360 --> 00:18:47.670 align:middle line:84%
+Well, each vertex has
+degree at most n minus 1,
+
+00:18:47.670 --> 00:18:51.000 align:middle line:84%
+because at most, it connects
+to all the other vertices.
+
+00:18:51.000 --> 00:18:52.770 align:middle line:84%
+There are no other
+vertices to connect to.
+
+00:18:52.770 --> 00:18:54.150 align:middle line:90%
+You can't connect to yourself.
+
+00:18:54.150 --> 00:18:56.540 align:middle line:84%
+You can't repeat
+any connections.
+
+00:18:56.540 --> 00:18:58.650 align:middle line:84%
+Once again, that's what
+we meant by simple graph,
+
+00:18:58.650 --> 00:19:01.070 align:middle line:90%
+and all our graphs are simple.
+
+00:19:01.070 --> 00:19:05.660 align:middle line:84%
+So every vertex has
+degree at most n minus 1.
+
+00:19:05.660 --> 00:19:17.150 align:middle line:84%
+So the sum of the degrees is
+at most n times n minus 1.
+
+00:19:17.150 --> 00:19:20.180 align:middle line:84%
+But the sum of the degrees is
+equal to 2 times the number
+
+00:19:20.180 --> 00:19:22.540 align:middle line:90%
+of edges.
+
+00:19:22.540 --> 00:19:25.540 align:middle line:84%
+So the number of edges
+is at most n times n
+
+00:19:25.540 --> 00:19:28.660 align:middle line:90%
+minus 1 divided by 2.
+
+00:19:28.660 --> 00:19:30.860 align:middle line:84%
+Didn't have to do
+any fancy induction.
+
+00:19:30.860 --> 00:19:33.530 align:middle line:90%
+Didn't have to compute some sum.
+
+00:19:33.530 --> 00:19:36.105 align:middle line:84%
+I wonder if this equals a
+sum that we've seen before.
+
+00:19:36.105 --> 00:19:39.520 align:middle line:90%
+
+
+00:19:39.520 --> 00:19:41.030 align:middle line:90%
+So we have an upper bound.
+
+00:19:41.030 --> 00:19:43.010 align:middle line:84%
+The number of edges
+is at most that.
+
+00:19:43.010 --> 00:19:45.036 align:middle line:84%
+And it turns out
+this is achievable.
+
+00:19:45.036 --> 00:19:50.710 align:middle line:90%
+
+
+00:19:50.710 --> 00:20:00.160 align:middle line:84%
+Achieved by the
+complete graph Kn,
+
+00:20:00.160 --> 00:20:03.495 align:middle line:84%
+which is the graph with n
+vertices and all possible edges.
+
+00:20:03.495 --> 00:20:06.760 align:middle line:90%
+
+
+00:20:06.760 --> 00:20:09.710 align:middle line:84%
+So this vertex
+connects to everyone.
+
+00:20:09.710 --> 00:20:12.140 align:middle line:84%
+This vertex connects
+to everyone.
+
+00:20:12.140 --> 00:20:15.500 align:middle line:84%
+This connects to everyone,
+connects to everyone.
+
+00:20:15.500 --> 00:20:16.700 align:middle line:90%
+I think I got them all.
+
+00:20:16.700 --> 00:20:20.500 align:middle line:90%
+So this is a drawing of K6.
+
+00:20:20.500 --> 00:20:23.390 align:middle line:84%
+There are six vertices, and
+everyone connects to everyone.
+
+00:20:23.390 --> 00:20:27.740 align:middle line:84%
+This graph indeed has every
+vertex with degree n minus 1,
+
+00:20:27.740 --> 00:20:32.110 align:middle line:84%
+so it has exactly
+this many edges.
+
+00:20:32.110 --> 00:20:34.220 align:middle line:90%
+The K for Kn, this is standard.
+
+00:20:34.220 --> 00:20:36.260 align:middle line:90%
+You'll see Kn everywhere.
+
+00:20:36.260 --> 00:20:38.470 align:middle line:90%
+I think it comes from German.
+
+00:20:38.470 --> 00:20:42.460 align:middle line:84%
+It kind of sounds like
+complete graph, right?
+
+00:20:42.460 --> 00:20:46.000 align:middle line:84%
+But we'll be using
+this notation a lot.
+
+00:20:46.000 --> 00:20:46.560 align:middle line:90%
+All right.
+
+00:20:46.560 --> 00:20:50.080 align:middle line:90%
+
+
+00:20:50.080 --> 00:20:53.440 align:middle line:90%
+Let me ask another question.
+
+00:20:53.440 --> 00:20:56.620 align:middle line:84%
+So most of us here
+are MIT students.
+
+00:20:56.620 --> 00:20:58.550 align:middle line:84%
+I know we have some
+cross-registered students.
+
+00:20:58.550 --> 00:20:59.360 align:middle line:90%
+Welcome.
+
+00:20:59.360 --> 00:21:00.940 align:middle line:90%
+I'm glad you're here.
+
+00:21:00.940 --> 00:21:03.080 align:middle line:84%
+For the MIT students
+in the room,
+
+00:21:03.080 --> 00:21:05.950 align:middle line:84%
+do you have any
+friends at Harvard?
+
+00:21:05.950 --> 00:21:06.880 align:middle line:90%
+Yeah?
+
+00:21:06.880 --> 00:21:08.890 align:middle line:90%
+Awesome.
+
+00:21:08.890 --> 00:21:11.300 align:middle line:90%
+OK, so I got at least one hand.
+
+00:21:11.300 --> 00:21:13.160 align:middle line:90%
+I got more than one hand.
+
+00:21:13.160 --> 00:21:16.660 align:middle line:84%
+But let me ask, how many
+Harvard friends do you think
+
+00:21:16.660 --> 00:21:18.860 align:middle line:90%
+the typical MIT student has?
+
+00:21:18.860 --> 00:21:19.700 align:middle line:90%
+Don't answer that.
+
+00:21:19.700 --> 00:21:20.977 align:middle line:90%
+It's rhetorical.
+
+00:21:20.977 --> 00:21:22.310 align:middle line:90%
+What about the reverse question?
+
+00:21:22.310 --> 00:21:26.590 align:middle line:84%
+How many MIT friends does the
+typical Harvard student have?
+
+00:21:26.590 --> 00:21:30.130 align:middle line:90%
+Which one's bigger?
+
+00:21:30.130 --> 00:21:30.710 align:middle line:90%
+Let's see.
+
+00:21:30.710 --> 00:21:33.850 align:middle line:84%
+So on one hand, we've
+got the average number
+
+00:21:33.850 --> 00:21:41.740 align:middle line:84%
+of Harvard friends for
+the typical MIT student,
+
+00:21:41.740 --> 00:21:47.740 align:middle line:84%
+or the average
+number of MIT friends
+
+00:21:47.740 --> 00:21:49.215 align:middle line:90%
+for the typical Harvard student.
+
+00:21:49.215 --> 00:21:51.850 align:middle line:90%
+
+
+00:21:51.850 --> 00:21:53.270 align:middle line:90%
+Which one's bigger?
+
+00:21:53.270 --> 00:21:54.680 align:middle line:90%
+And how could we know?
+
+00:21:54.680 --> 00:21:57.580 align:middle line:90%
+How can we decide this?
+
+00:21:57.580 --> 00:22:00.110 align:middle line:90%
+Maybe I could do a big survey.
+
+00:22:00.110 --> 00:22:02.150 align:middle line:84%
+I could sample a
+bunch of MIT students,
+
+00:22:02.150 --> 00:22:04.450 align:middle line:84%
+sample a bunch of
+Harvard students.
+
+00:22:04.450 --> 00:22:06.740 align:middle line:84%
+Take the average of
+whatever is reported,
+
+00:22:06.740 --> 00:22:09.460 align:middle line:90%
+and take that as ground truth.
+
+00:22:09.460 --> 00:22:13.485 align:middle line:84%
+That is how a lot of empirical
+statistics ends up working.
+
+00:22:13.485 --> 00:22:17.010 align:middle line:90%
+
+
+00:22:17.010 --> 00:22:19.210 align:middle line:90%
+Can anyone suggest a better way?
+
+00:22:19.210 --> 00:22:20.010 align:middle line:90%
+Yes?
+
+00:22:20.010 --> 00:22:22.260 align:middle line:84%
+AUDIENCE: So we know that
+every friendship is two-way,
+
+00:22:22.260 --> 00:22:25.270 align:middle line:84%
+and every [INAUDIBLE] has a
+bigger undergrad population
+
+00:22:25.270 --> 00:22:26.400 align:middle line:90%
+at MIT.
+
+00:22:26.400 --> 00:22:31.650 align:middle line:84%
+So you divide it all by a
+big number, so [INAUDIBLE].
+
+00:22:31.650 --> 00:22:32.650 align:middle line:90%
+ZACHARY ABEL: All right.
+
+00:22:32.650 --> 00:22:34.690 align:middle line:90%
+So let me rephrase that.
+
+00:22:34.690 --> 00:22:36.970 align:middle line:84%
+So we know that every
+friendship goes both ways.
+
+00:22:36.970 --> 00:22:39.190 align:middle line:84%
+There's one MIT student
+and one Harvard student.
+
+00:22:39.190 --> 00:22:41.430 align:middle line:84%
+Again, we're assuming
+friendship is
+
+00:22:41.430 --> 00:22:44.070 align:middle line:84%
+two-way, no unrequited
+friendships.
+
+00:22:44.070 --> 00:22:47.190 align:middle line:84%
+Can't the two schools
+just get along?
+
+00:22:47.190 --> 00:22:49.290 align:middle line:84%
+But because they're the
+same number of friendships
+
+00:22:49.290 --> 00:22:52.360 align:middle line:84%
+on both sides, when
+we're taking the average,
+
+00:22:52.360 --> 00:22:54.360 align:middle line:84%
+we're dividing by the
+number of Harvard students
+
+00:22:54.360 --> 00:22:56.860 align:middle line:84%
+and dividing by the
+number of MIT students.
+
+00:22:56.860 --> 00:22:59.080 align:middle line:84%
+But Harvard has more
+undergrads than MIT,
+
+00:22:59.080 --> 00:23:01.090 align:middle line:84%
+so we've divided
+by a bigger number.
+
+00:23:01.090 --> 00:23:03.750 align:middle line:84%
+So the MIT average
+should be bigger.
+
+00:23:03.750 --> 00:23:05.880 align:middle line:90%
+Whew, that was a lot.
+
+00:23:05.880 --> 00:23:07.300 align:middle line:90%
+Thank you for saying all that.
+
+00:23:07.300 --> 00:23:09.750 align:middle line:84%
+Let's unpack it a
+little more slowly.
+
+00:23:09.750 --> 00:23:14.880 align:middle line:84%
+But you are absolutely correct
+in every step of your reasoning.
+
+00:23:14.880 --> 00:23:22.620 align:middle line:84%
+So what I'm going to do
+is let's draw a graph
+
+00:23:22.620 --> 00:23:28.530 align:middle line:84%
+where the vertices are going to
+equal the set of MIT undergrads
+
+00:23:28.530 --> 00:23:32.430 align:middle line:84%
+and the set of
+Harvard undergrads.
+
+00:23:32.430 --> 00:23:35.200 align:middle line:84%
+And I want to emphasize that
+these are two disjoint sets.
+
+00:23:35.200 --> 00:23:37.770 align:middle line:84%
+No student is enrolled
+in both schools.
+
+00:23:37.770 --> 00:23:39.430 align:middle line:84%
+We're not counting
+cross-registration.
+
+00:23:39.430 --> 00:23:41.340 align:middle line:84%
+That's why I mentioned
+that earlier.
+
+00:23:41.340 --> 00:23:45.700 align:middle line:84%
+And sometimes to emphasize that
+these two sets are disjoint,
+
+00:23:45.700 --> 00:23:48.970 align:middle line:84%
+sometimes you put a little
+dot inside the union sign.
+
+00:23:48.970 --> 00:23:51.600 align:middle line:84%
+So our set of vertices
+is the disjoint union
+
+00:23:51.600 --> 00:23:54.420 align:middle line:84%
+of MIT students and
+Harvard students.
+
+00:23:54.420 --> 00:23:59.040 align:middle line:84%
+And our edge set is
+going to be the set of--
+
+00:23:59.040 --> 00:24:03.700 align:middle line:84%
+let's see-- m, h, where
+m is an MIT student,
+
+00:24:03.700 --> 00:24:07.085 align:middle line:84%
+h is a Harvard student,
+and m and h are friends.
+
+00:24:07.085 --> 00:24:09.660 align:middle line:90%
+
+
+00:24:09.660 --> 00:24:12.190 align:middle line:84%
+And we can draw an example
+of what this might look like.
+
+00:24:12.190 --> 00:24:15.490 align:middle line:84%
+So here's all of my Harvard
+vertices on the left.
+
+00:24:15.490 --> 00:24:18.180 align:middle line:84%
+Here's all of my MIT
+students on the right.
+
+00:24:18.180 --> 00:24:21.720 align:middle line:84%
+Here, we have, I don't
+know, Bill and Helen
+
+00:24:21.720 --> 00:24:28.080 align:middle line:90%
+and Natalie and Neil and TS.
+
+00:24:28.080 --> 00:24:36.060 align:middle line:84%
+On the right, maybe we have
+Buzz and Kenji and Lisa,
+
+00:24:36.060 --> 00:24:38.850 align:middle line:90%
+and these lists go on.
+
+00:24:38.850 --> 00:24:40.120 align:middle line:90%
+This is just an example.
+
+00:24:40.120 --> 00:24:41.537 align:middle line:84%
+I don't know if
+there are actually
+
+00:24:41.537 --> 00:24:43.080 align:middle line:90%
+students with these names.
+
+00:24:43.080 --> 00:24:44.740 align:middle line:84%
+And some pairs of
+them are friends.
+
+00:24:44.740 --> 00:24:47.980 align:middle line:84%
+Maybe these are friends and
+these and these are friends.
+
+00:24:47.980 --> 00:24:51.400 align:middle line:84%
+And Buzz is just friends
+with most people.
+
+00:24:51.400 --> 00:24:54.338 align:middle line:84%
+And TS only likes
+Lisa among this graph.
+
+00:24:54.338 --> 00:24:55.630 align:middle line:90%
+Some pairs of them are friends.
+
+00:24:55.630 --> 00:24:56.880 align:middle line:90%
+Here's our graph.
+
+00:24:56.880 --> 00:24:57.460 align:middle line:90%
+Again.
+
+00:24:57.460 --> 00:24:58.960 align:middle line:84%
+there are more
+vertices, more edges,
+
+00:24:58.960 --> 00:25:01.390 align:middle line:84%
+but here's an
+example of our graph.
+
+00:25:01.390 --> 00:25:04.900 align:middle line:84%
+And this graph has a special
+property called bipartite.
+
+00:25:04.900 --> 00:25:08.000 align:middle line:90%
+This is a bipartite graph.
+
+00:25:08.000 --> 00:25:08.500 align:middle line:90%
+Let's see.
+
+00:25:08.500 --> 00:25:10.970 align:middle line:90%
+Definition.
+
+00:25:10.970 --> 00:25:26.840 align:middle line:84%
+G is bipartite when it's
+possible to partition V
+
+00:25:26.840 --> 00:25:31.117 align:middle line:84%
+as the disjoint
+union of two sets.
+
+00:25:31.117 --> 00:25:32.700 align:middle line:84%
+I'm going to call
+them left and right.
+
+00:25:32.700 --> 00:25:36.650 align:middle line:84%
+That's common notation
+for bipartite graphs,
+
+00:25:36.650 --> 00:25:46.610 align:middle line:84%
+such that every edge
+has one endpoint in L
+
+00:25:46.610 --> 00:25:50.450 align:middle line:90%
+and one endpoint in R.
+
+00:25:50.450 --> 00:25:52.215 align:middle line:84%
+So you have some
+vertices on the left,
+
+00:25:52.215 --> 00:25:53.340 align:middle line:90%
+some vertices on the right.
+
+00:25:53.340 --> 00:25:55.463 align:middle line:84%
+And every edge
+crosses between them.
+
+00:25:55.463 --> 00:25:57.630 align:middle line:84%
+One endpoint on the left,
+one endpoint on the right.
+
+00:25:57.630 --> 00:25:59.220 align:middle line:84%
+These graphs are
+called bipartite.
+
+00:25:59.220 --> 00:26:03.260 align:middle line:84%
+And the one we just drew
+certainly has that property.
+
+00:26:03.260 --> 00:26:03.770 align:middle line:90%
+Sound good?
+
+00:26:03.770 --> 00:26:05.510 align:middle line:90%
+With me so far?
+
+00:26:05.510 --> 00:26:06.710 align:middle line:90%
+Awesome.
+
+00:26:06.710 --> 00:26:13.640 align:middle line:84%
+And now, we have a bipartite
+version of the handshake lemma.
+
+00:26:13.640 --> 00:26:14.230 align:middle line:90%
+Let's see.
+
+00:26:14.230 --> 00:26:17.630 align:middle line:90%
+
+
+00:26:17.630 --> 00:26:25.760 align:middle line:84%
+Handshake lemma
+bipartite, which says
+
+00:26:25.760 --> 00:26:27.890 align:middle line:84%
+that if you add up
+all the degrees just
+
+00:26:27.890 --> 00:26:37.590 align:middle line:84%
+on the left, the vertices in
+the left side degree of V, well,
+
+00:26:37.590 --> 00:26:39.560 align:middle line:84%
+every edge has one
+endpoint on the left
+
+00:26:39.560 --> 00:26:40.890 align:middle line:90%
+and one endpoint on the right.
+
+00:26:40.890 --> 00:26:44.390 align:middle line:84%
+So this is just equal
+to the number of edges.
+
+00:26:44.390 --> 00:26:47.035 align:middle line:84%
+And likewise, you can do
+the same thing on the right.
+
+00:26:47.035 --> 00:26:51.470 align:middle line:90%
+
+
+00:26:51.470 --> 00:26:54.930 align:middle line:84%
+So all the degrees on the left
+add to the number of edges.
+
+00:26:54.930 --> 00:26:58.670 align:middle line:84%
+All the degrees on the right
+add to the number of edges.
+
+00:26:58.670 --> 00:27:01.800 align:middle line:84%
+But remember, we are
+interested in the averages.
+
+00:27:01.800 --> 00:27:04.880 align:middle line:84%
+The average degree on the
+left versus the average degree
+
+00:27:04.880 --> 00:27:07.640 align:middle line:90%
+on the right.
+
+00:27:07.640 --> 00:27:09.380 align:middle line:90%
+All right?
+
+00:27:09.380 --> 00:27:16.850 align:middle line:84%
+So we've got, let's say,
+average degree on the MIT side
+
+00:27:16.850 --> 00:27:23.300 align:middle line:84%
+divided by the average
+degree on the Harvard side.
+
+00:27:23.300 --> 00:27:28.770 align:middle line:84%
+Well, this is equal to the
+total degree on the MIT side.
+
+00:27:28.770 --> 00:27:33.710 align:middle line:84%
+So just adding up all the
+degrees of the MIT students
+
+00:27:33.710 --> 00:27:38.930 align:middle line:84%
+divided by the number
+of MIT students.
+
+00:27:38.930 --> 00:27:44.780 align:middle line:84%
+And this denominator
+is the total degree
+
+00:27:44.780 --> 00:27:49.730 align:middle line:84%
+on the Harvard side divided by
+the number of Harvard students.
+
+00:27:49.730 --> 00:27:51.653 align:middle line:90%
+That's what we mean by average.
+
+00:27:51.653 --> 00:27:53.070 align:middle line:84%
+Add them up, divide
+by the number.
+
+00:27:53.070 --> 00:27:55.280 align:middle line:84%
+Add them up, divide
+by the number.
+
+00:27:55.280 --> 00:27:58.160 align:middle line:84%
+But we just said that the
+total degree on the M side
+
+00:27:58.160 --> 00:28:01.340 align:middle line:84%
+and the total degree on
+the H side, both of those
+
+00:28:01.340 --> 00:28:03.970 align:middle line:84%
+are equal to just
+the number of edges.
+
+00:28:03.970 --> 00:28:06.700 align:middle line:84%
+So this is the number
+of edges divided
+
+00:28:06.700 --> 00:28:11.860 align:middle line:84%
+by the size of M divided by
+the number of edges divided
+
+00:28:11.860 --> 00:28:17.330 align:middle line:84%
+by the size of H.
+The E's cancel.
+
+00:28:17.330 --> 00:28:23.200 align:middle line:84%
+This just becomes the size of
+H divided by the size of M.
+
+00:28:23.200 --> 00:28:25.400 align:middle line:84%
+All right, we've now
+caught up to your comment.
+
+00:28:25.400 --> 00:28:27.520 align:middle line:90%
+Thank you so much.
+
+00:28:27.520 --> 00:28:30.400 align:middle line:84%
+And now, we can just
+ask how many students
+
+00:28:30.400 --> 00:28:31.960 align:middle line:90%
+there are in each school?
+
+00:28:31.960 --> 00:28:34.810 align:middle line:84%
+This is about-- let's see,
+I wrote something down--
+
+00:28:34.810 --> 00:28:40.420 align:middle line:90%
+about 7,200 divided by 4,600.
+
+00:28:40.420 --> 00:28:41.690 align:middle line:90%
+Those are close anyway.
+
+00:28:41.690 --> 00:28:43.510 align:middle line:90%
+They might be a bit out of date.
+
+00:28:43.510 --> 00:28:48.520 align:middle line:90%
+But this is about 1.6.
+
+00:28:48.520 --> 00:28:54.790 align:middle line:84%
+So the average MIT student has
+about 1.6 times more Harvard
+
+00:28:54.790 --> 00:28:57.820 align:middle line:84%
+friends than the
+number of MIT friends
+
+00:28:57.820 --> 00:28:59.720 align:middle line:90%
+the average Harvard student has.
+
+00:28:59.720 --> 00:29:06.340 align:middle line:84%
+And that's not any judgment
+about behavior on the two
+
+00:29:06.340 --> 00:29:07.580 align:middle line:90%
+sides of the schools.
+
+00:29:07.580 --> 00:29:11.380 align:middle line:84%
+It's just a fact about
+averages after knowing
+
+00:29:11.380 --> 00:29:13.930 align:middle line:90%
+a little bit of graph theory.
+
+00:29:13.930 --> 00:29:15.900 align:middle line:84%
+But our number is
+bigger, so we're better.
+
+00:29:15.900 --> 00:29:20.470 align:middle line:90%
+
+
+00:29:20.470 --> 00:29:26.180 align:middle line:84%
+But, so already, we've just
+defined a couple of things.
+
+00:29:26.180 --> 00:29:29.950 align:middle line:84%
+And we've already been able to
+prove some non-obvious theorems
+
+00:29:29.950 --> 00:29:31.910 align:middle line:90%
+and facts again.
+
+00:29:31.910 --> 00:29:33.380 align:middle line:84%
+They still look
+like toy examples.
+
+00:29:33.380 --> 00:29:36.220 align:middle line:84%
+But there are real
+scientific studies
+
+00:29:36.220 --> 00:29:39.010 align:middle line:84%
+that have studied
+questions like that
+
+00:29:39.010 --> 00:29:42.550 align:middle line:84%
+and not known the graph
+theory, and then came up
+
+00:29:42.550 --> 00:29:46.030 align:middle line:84%
+with conclusions that were
+very obviously wrong to anyone
+
+00:29:46.030 --> 00:29:47.980 align:middle line:90%
+who did know the graph theory.
+
+00:29:47.980 --> 00:29:52.690 align:middle line:84%
+For example, there's a very
+famous study out of UChicago
+
+00:29:52.690 --> 00:29:56.980 align:middle line:84%
+from 1994 called "The Social
+Organization of Sexuality,
+
+00:29:56.980 --> 00:29:59.200 align:middle line:90%
+Sexual Practices in the US."
+
+00:29:59.200 --> 00:30:04.150 align:middle line:84%
+So it was a big sweeping
+study about sexual practices
+
+00:30:04.150 --> 00:30:07.390 align:middle line:84%
+and behavior and health
+across the country.
+
+00:30:07.390 --> 00:30:09.860 align:middle line:84%
+They had thousands
+of participants.
+
+00:30:09.860 --> 00:30:13.150 align:middle line:84%
+They asked lots and lots of
+questions and came up with lots
+
+00:30:13.150 --> 00:30:16.160 align:middle line:84%
+of statistics and
+measurements and trends,
+
+00:30:16.160 --> 00:30:19.880 align:middle line:84%
+and published all their results
+in a big 700-page write-up,
+
+00:30:19.880 --> 00:30:22.150 align:middle line:90%
+a very famous study.
+
+00:30:22.150 --> 00:30:24.050 align:middle line:84%
+And out of all the
+questions they asked,
+
+00:30:24.050 --> 00:30:28.510 align:middle line:84%
+I'm going to single out one
+of them for the single purpose
+
+00:30:28.510 --> 00:30:33.190 align:middle line:84%
+that their results are obviously
+wrong because of exactly
+
+00:30:33.190 --> 00:30:34.220 align:middle line:90%
+this argument.
+
+00:30:34.220 --> 00:30:36.970 align:middle line:84%
+So one question they
+asked specifically
+
+00:30:36.970 --> 00:30:39.820 align:middle line:84%
+to their male and
+female participants.
+
+00:30:39.820 --> 00:30:43.820 align:middle line:84%
+They asked the men how many
+female partners they've had.
+
+00:30:43.820 --> 00:30:47.050 align:middle line:84%
+They asked the women how many
+male partners they've had.
+
+00:30:47.050 --> 00:30:47.750 align:middle line:90%
+Don't worry.
+
+00:30:47.750 --> 00:30:49.990 align:middle line:84%
+They had lots of other
+questions about other kinds
+
+00:30:49.990 --> 00:30:51.490 align:middle line:90%
+of relationships.
+
+00:30:51.490 --> 00:30:53.950 align:middle line:84%
+They had lots of other
+questions for their non-binary
+
+00:30:53.950 --> 00:30:55.250 align:middle line:90%
+participants as well.
+
+00:30:55.250 --> 00:30:59.910 align:middle line:84%
+Like I said, I'm just singling
+out this one of many questions.
+
+00:30:59.910 --> 00:31:03.760 align:middle line:84%
+So what's the average number of
+female partners a man has had?
+
+00:31:03.760 --> 00:31:08.010 align:middle line:84%
+What's the average number of
+male partners a woman has had?
+
+00:31:08.010 --> 00:31:12.120 align:middle line:84%
+And according to their
+reports and surveys,
+
+00:31:12.120 --> 00:31:16.350 align:middle line:84%
+the men reported about
+1.74 times as many partners
+
+00:31:16.350 --> 00:31:17.330 align:middle line:90%
+as the women.
+
+00:31:17.330 --> 00:31:29.220 align:middle line:90%
+
+
+00:31:29.220 --> 00:31:30.600 align:middle line:90%
+Let's see.
+
+00:31:30.600 --> 00:31:37.560 align:middle line:84%
+So the average
+degree of the men was
+
+00:31:37.560 --> 00:31:46.140 align:middle line:84%
+equal to about 1.74 times the
+average degree of the women.
+
+00:31:46.140 --> 00:31:51.990 align:middle line:84%
+A different study, this
+time from ABC News in 2004,
+
+00:31:51.990 --> 00:31:55.690 align:middle line:84%
+got a similar result,
+but instead of 1.74--
+
+00:31:55.690 --> 00:31:56.440 align:middle line:90%
+so sorry.
+
+00:31:56.440 --> 00:31:58.066 align:middle line:90%
+This was from UChicago.
+
+00:31:58.066 --> 00:32:02.400 align:middle line:90%
+
+
+00:32:02.400 --> 00:32:11.070 align:middle line:84%
+ABC News approximated this
+number to be about 3.3.
+
+00:32:11.070 --> 00:32:19.470 align:middle line:84%
+Yet another study from the
+National Center of Health,
+
+00:32:19.470 --> 00:32:26.910 align:middle line:84%
+this time from 2007, got
+this number to be about 1.75.
+
+00:32:26.910 --> 00:32:29.760 align:middle line:84%
+When, of course, we
+know the exact answer.
+
+00:32:29.760 --> 00:32:31.770 align:middle line:84%
+This ratio should be the
+number of women divided
+
+00:32:31.770 --> 00:32:34.920 align:middle line:84%
+by the number of men because
+of the specific question
+
+00:32:34.920 --> 00:32:38.040 align:middle line:84%
+they were asking about this
+subset of relationships
+
+00:32:38.040 --> 00:32:40.510 align:middle line:84%
+among this subset
+of the population,
+
+00:32:40.510 --> 00:32:43.260 align:middle line:84%
+they put themselves in
+a bipartite scenario
+
+00:32:43.260 --> 00:32:44.732 align:middle line:90%
+where this theorem applies.
+
+00:32:44.732 --> 00:32:46.440 align:middle line:84%
+And the correct answer
+is just the number
+
+00:32:46.440 --> 00:32:48.095 align:middle line:84%
+of women divided by
+the number of men.
+
+00:32:48.095 --> 00:32:53.020 align:middle line:90%
+
+
+00:32:53.020 --> 00:32:53.520 align:middle line:90%
+Let's see.
+
+00:32:53.520 --> 00:32:57.930 align:middle line:84%
+The number of women divided
+by the number of men, which--
+
+00:32:57.930 --> 00:33:00.490 align:middle line:90%
+according to the 2010 census--
+
+00:33:00.490 --> 00:33:10.560 align:middle line:84%
+was about 157 million over 152
+million, which is about 1.03.
+
+00:33:10.560 --> 00:33:14.070 align:middle line:90%
+The correct answer is 1.03.
+
+00:33:14.070 --> 00:33:17.350 align:middle line:84%
+And it's not a
+question of behavior.
+
+00:33:17.350 --> 00:33:20.100 align:middle line:84%
+It's a question
+of just averages.
+
+00:33:20.100 --> 00:33:22.870 align:middle line:84%
+There is nothing to
+learn from this ratio,
+
+00:33:22.870 --> 00:33:25.650 align:middle line:84%
+except this is how many men
+and women are in the country.
+
+00:33:25.650 --> 00:33:28.930 align:middle line:84%
+Not a very interesting example
+for a behavioral study,
+
+00:33:28.930 --> 00:33:31.320 align:middle line:90%
+if you ask me.
+
+00:33:31.320 --> 00:33:35.130 align:middle line:84%
+I'm not going to speculate
+on why these numbers don't
+
+00:33:35.130 --> 00:33:38.250 align:middle line:90%
+match reality.
+
+00:33:38.250 --> 00:33:38.860 align:middle line:90%
+I don't know.
+
+00:33:38.860 --> 00:33:42.075 align:middle line:84%
+Think about it
+yourselves if you want.
+
+00:33:42.075 --> 00:33:43.700 align:middle line:84%
+Are there questions
+about this example?
+
+00:33:43.700 --> 00:33:47.730 align:middle line:90%
+
+
+00:33:47.730 --> 00:33:49.655 align:middle line:84%
+Or anything else we've
+talked about so far?
+
+00:33:49.655 --> 00:33:53.900 align:middle line:90%
+
+
+00:33:53.900 --> 00:33:58.050 align:middle line:84%
+All right, let's move on to
+another topic in graph theory,
+
+00:33:58.050 --> 00:33:59.606 align:middle line:90%
+another common application.
+
+00:33:59.606 --> 00:34:04.220 align:middle line:90%
+
+
+00:34:04.220 --> 00:34:07.820 align:middle line:84%
+So instead of measuring
+affinities or friendships
+
+00:34:07.820 --> 00:34:12.099 align:middle line:84%
+among pairs of objects, let's
+measure conflicts between them.
+
+00:34:12.099 --> 00:34:17.600 align:middle line:90%
+
+
+00:34:17.600 --> 00:34:19.304 align:middle line:90%
+So here's an example graph.
+
+00:34:19.304 --> 00:34:27.739 align:middle line:90%
+
+
+00:34:27.739 --> 00:34:30.980 align:middle line:84%
+Let's define the
+vertex set of our graph
+
+00:34:30.980 --> 00:34:41.300 align:middle line:84%
+to be the set of all MIT
+classes with a final exam.
+
+00:34:41.300 --> 00:34:57.920 align:middle line:84%
+And E is going to be pairs
+of classes, C1, C2, that
+
+00:34:57.920 --> 00:35:03.100 align:middle line:90%
+have someone enrolled in both.
+
+00:35:03.100 --> 00:35:06.080 align:middle line:90%
+
+
+00:35:06.080 --> 00:35:07.770 align:middle line:90%
+So you're the registrar.
+
+00:35:07.770 --> 00:35:11.000 align:middle line:84%
+Your goal is to assign a
+time for the final exam
+
+00:35:11.000 --> 00:35:12.890 align:middle line:90%
+for every class.
+
+00:35:12.890 --> 00:35:16.610 align:middle line:84%
+And if some student is
+taking two different classes
+
+00:35:16.610 --> 00:35:19.040 align:middle line:84%
+and those classes are
+scheduled for the same time
+
+00:35:19.040 --> 00:35:23.630 align:middle line:84%
+slot or overlapping time
+slots, then that student
+
+00:35:23.630 --> 00:35:26.130 align:middle line:84%
+can't be in two different
+places at the same time,
+
+00:35:26.130 --> 00:35:27.920 align:middle line:90%
+so you have a conflict.
+
+00:35:27.920 --> 00:35:32.030 align:middle line:84%
+So this graph here is
+measuring all of the conflicts
+
+00:35:32.030 --> 00:35:34.710 align:middle line:90%
+among final exam times.
+
+00:35:34.710 --> 00:35:36.980 align:middle line:84%
+There's an edge
+precisely when the two
+
+00:35:36.980 --> 00:35:41.330 align:middle line:84%
+classes can't be scheduled
+for overlapping times.
+
+00:35:41.330 --> 00:35:43.340 align:middle line:90%
+Does that make sense so far?
+
+00:35:43.340 --> 00:35:43.880 align:middle line:90%
+Cool.
+
+00:35:43.880 --> 00:35:53.580 align:middle line:84%
+So edges are conflicts
+in exam scheduling.
+
+00:35:53.580 --> 00:36:00.560 align:middle line:90%
+
+
+00:36:00.560 --> 00:36:03.053 align:middle line:90%
+And let me draw an example.
+
+00:36:03.053 --> 00:36:09.140 align:middle line:90%
+
+
+00:36:09.140 --> 00:36:10.790 align:middle line:90%
+Let's see.
+
+00:36:10.790 --> 00:36:15.620 align:middle line:84%
+So in this example, MIT
+only has five courses--
+
+00:36:15.620 --> 00:36:30.360 align:middle line:84%
+6,3700, 6.2000, 6.1200,
+6.3000, and 6.4100.
+
+00:36:30.360 --> 00:36:32.750 align:middle line:84%
+So this is some
+fake approximation
+
+00:36:32.750 --> 00:36:35.010 align:middle line:84%
+of what this graph
+might look like.
+
+00:36:35.010 --> 00:36:37.880 align:middle line:84%
+So this says that there's
+someone taking our class
+
+00:36:37.880 --> 00:36:41.940 align:middle line:90%
+and 6.2000.
+
+00:36:41.940 --> 00:36:44.550 align:middle line:84%
+There's at least one student
+taking both of these classes.
+
+00:36:44.550 --> 00:36:49.780 align:middle line:84%
+There's no one taking
+6.3700 and 6.3000.
+
+00:36:49.780 --> 00:36:51.970 align:middle line:84%
+So for example,
+these two are allowed
+
+00:36:51.970 --> 00:36:55.120 align:middle line:84%
+to be scheduled
+at the same time.
+
+00:36:55.120 --> 00:36:58.810 align:middle line:84%
+So this is listing
+all of our conflicts.
+
+00:36:58.810 --> 00:37:01.743 align:middle line:84%
+And this brings us to the
+graph coloring problem.
+
+00:37:01.743 --> 00:37:30.100 align:middle line:90%
+
+
+00:37:30.100 --> 00:37:45.940 align:middle line:84%
+So we say that a proper
+K coloring of a graph G
+
+00:37:45.940 --> 00:37:49.390 align:middle line:90%
+is defined to be--
+
+00:37:49.390 --> 00:37:51.040 align:middle line:84%
+I'll write it down
+mathematically first
+
+00:37:51.040 --> 00:37:52.870 align:middle line:90%
+and then explain it in words--
+
+00:37:52.870 --> 00:37:55.900 align:middle line:84%
+a function f from
+the set of vertices
+
+00:37:55.900 --> 00:38:04.273 align:middle line:84%
+to a set C of colors, where
+there are at most K colors.
+
+00:38:04.273 --> 00:38:08.020 align:middle line:90%
+
+
+00:38:08.020 --> 00:38:18.430 align:middle line:84%
+And for all edges, u,
+v, fu does not equal fv.
+
+00:38:18.430 --> 00:38:21.740 align:middle line:84%
+So in other words, we have
+some set of colors available.
+
+00:38:21.740 --> 00:38:26.620 align:middle line:84%
+And we want to assign a
+color to every vertex.
+
+00:38:26.620 --> 00:38:29.450 align:middle line:84%
+And we want to assign
+a color to every vertex
+
+00:38:29.450 --> 00:38:31.720 align:middle line:84%
+so that no two adjacent
+vertices are ever
+
+00:38:31.720 --> 00:38:34.300 align:middle line:90%
+assigned to the same color.
+
+00:38:34.300 --> 00:38:36.370 align:middle line:84%
+In this example, you
+can think of colors
+
+00:38:36.370 --> 00:38:40.180 align:middle line:90%
+as time slots for final exams.
+
+00:38:40.180 --> 00:38:42.270 align:middle line:84%
+If two vertices are
+given the same color,
+
+00:38:42.270 --> 00:38:45.150 align:middle line:84%
+that means that they'll be
+administered at the same time.
+
+00:38:45.150 --> 00:38:46.880 align:middle line:84%
+And this condition
+that edges have
+
+00:38:46.880 --> 00:38:49.160 align:middle line:84%
+to have two different
+colors on their endpoints
+
+00:38:49.160 --> 00:38:52.050 align:middle line:84%
+means that any time there's
+a scheduling conflict,
+
+00:38:52.050 --> 00:38:54.570 align:middle line:84%
+they will always be
+given different colors,
+
+00:38:54.570 --> 00:38:58.070 align:middle line:84%
+which means they'll be
+given different time slots.
+
+00:38:58.070 --> 00:39:00.900 align:middle line:84%
+So this is what we mean
+by a proper K coloring.
+
+00:39:00.900 --> 00:39:04.970 align:middle line:84%
+It's an assignment of
+a color to every vertex
+
+00:39:04.970 --> 00:39:07.680 align:middle line:84%
+from a possible choice
+of K different colors,
+
+00:39:07.680 --> 00:39:09.800 align:middle line:84%
+where the two
+endpoints of every edge
+
+00:39:09.800 --> 00:39:11.305 align:middle line:90%
+are assigned different colors.
+
+00:39:11.305 --> 00:39:14.930 align:middle line:90%
+
+
+00:39:14.930 --> 00:39:19.280 align:middle line:84%
+And as an example, so let's
+try to color this graph.
+
+00:39:19.280 --> 00:39:23.450 align:middle line:90%
+
+
+00:39:23.450 --> 00:39:25.820 align:middle line:84%
+Let's say I'm going
+to color this red
+
+00:39:25.820 --> 00:39:32.120 align:middle line:84%
+and this green and this blue
+and this yellow and this purple.
+
+00:39:32.120 --> 00:39:33.775 align:middle line:90%
+Is that a proper coloring?
+
+00:39:33.775 --> 00:39:37.970 align:middle line:90%
+
+
+00:39:37.970 --> 00:39:38.560 align:middle line:90%
+Yeah.
+
+00:39:38.560 --> 00:39:39.060 align:middle line:90%
+Yeah.
+
+00:39:39.060 --> 00:39:41.227 align:middle line:84%
+Every edge has two different
+colors on its endpoints
+
+00:39:41.227 --> 00:39:42.970 align:middle line:84%
+because all the
+colors are distinct.
+
+00:39:42.970 --> 00:39:45.960 align:middle line:90%
+This is a proper five coloring.
+
+00:39:45.960 --> 00:39:48.005 align:middle line:90%
+Can be five-colored.
+
+00:39:48.005 --> 00:39:51.870 align:middle line:90%
+
+
+00:39:51.870 --> 00:39:53.160 align:middle line:90%
+All right?
+
+00:39:53.160 --> 00:39:55.470 align:middle line:84%
+But that means we would
+need five different time
+
+00:39:55.470 --> 00:39:57.280 align:middle line:90%
+slots for the final exams.
+
+00:39:57.280 --> 00:39:59.940 align:middle line:84%
+And we'd like to be a
+little more efficient.
+
+00:39:59.940 --> 00:40:01.783 align:middle line:84%
+Can we color this
+with just four colors?
+
+00:40:01.783 --> 00:40:04.860 align:middle line:90%
+
+
+00:40:04.860 --> 00:40:06.400 align:middle line:90%
+Yes, I claim we can.
+
+00:40:06.400 --> 00:40:09.000 align:middle line:84%
+Let's make that red
+instead of purple.
+
+00:40:09.000 --> 00:40:12.870 align:middle line:84%
+Now, this class and
+this class are both red,
+
+00:40:12.870 --> 00:40:16.990 align:middle line:84%
+but because there's no edge
+between them, that's fine.
+
+00:40:16.990 --> 00:40:19.438 align:middle line:84%
+All of the edges have
+two different colors
+
+00:40:19.438 --> 00:40:20.230 align:middle line:90%
+on their endpoints.
+
+00:40:20.230 --> 00:40:22.110 align:middle line:90%
+And that's all we need.
+
+00:40:22.110 --> 00:40:22.960 align:middle line:90%
+All right?
+
+00:40:22.960 --> 00:40:27.450 align:middle line:90%
+So this can be four-colored.
+
+00:40:27.450 --> 00:40:30.690 align:middle line:90%
+Can we do better?
+
+00:40:30.690 --> 00:40:32.563 align:middle line:84%
+Can we get away with
+just three colors?
+
+00:40:32.563 --> 00:40:35.132 align:middle line:90%
+
+
+00:40:35.132 --> 00:40:36.090 align:middle line:90%
+All right, interesting.
+
+00:40:36.090 --> 00:40:40.080 align:middle line:84%
+I'm seeing one head
+shake and one head nod.
+
+00:40:40.080 --> 00:40:41.760 align:middle line:90%
+So yes, please.
+
+00:40:41.760 --> 00:40:44.970 align:middle line:84%
+AUDIENCE: How about
+making the yellow red.
+
+00:40:44.970 --> 00:40:46.770 align:middle line:90%
+ZACHARY ABEL: Make yellow red.
+
+00:40:46.770 --> 00:40:49.730 align:middle line:84%
+AUDIENCE: And then making that
+bright red like a blue or green?
+
+00:40:49.730 --> 00:40:51.730 align:middle line:84%
+ZACHARY ABEL: OK, we'll
+make this blue or green.
+
+00:40:51.730 --> 00:40:52.440 align:middle line:90%
+Yeah.
+
+00:40:52.440 --> 00:40:56.140 align:middle line:84%
+All right, so we've got
+red, green, blue, red, blue.
+
+00:40:56.140 --> 00:40:59.200 align:middle line:84%
+So we've got two reds, but
+there's no edge between them,
+
+00:40:59.200 --> 00:41:00.190 align:middle line:90%
+so we're fine.
+
+00:41:00.190 --> 00:41:03.100 align:middle line:84%
+And we've got two blues, but
+there's no edge between them,
+
+00:41:03.100 --> 00:41:04.290 align:middle line:90%
+so we're fine.
+
+00:41:04.290 --> 00:41:09.150 align:middle line:84%
+This is absolutely a
+valid three-coloring.
+
+00:41:09.150 --> 00:41:11.020 align:middle line:90%
+Can be three-colored.
+
+00:41:11.020 --> 00:41:14.850 align:middle line:90%
+
+
+00:41:14.850 --> 00:41:17.970 align:middle line:90%
+Can this be 17-colored?
+
+00:41:17.970 --> 00:41:21.780 align:middle line:84%
+Is there a proper 17
+coloring for this graph?
+
+00:41:21.780 --> 00:41:23.530 align:middle line:84%
+This is a bit of
+a weird edge case,
+
+00:41:23.530 --> 00:41:29.430 align:middle line:84%
+but yes, this set C says
+that there have to be
+
+00:41:29.430 --> 00:41:32.940 align:middle line:90%
+at most 17 colors available.
+
+00:41:32.940 --> 00:41:36.810 align:middle line:84%
+Now, we don't have to
+use all of those colors.
+
+00:41:36.810 --> 00:41:41.670 align:middle line:84%
+So if we had a 17-color palette
+and we found this proper
+
+00:41:41.670 --> 00:41:45.400 align:middle line:84%
+coloring, that would be
+considered a valid 17-coloring.
+
+00:41:45.400 --> 00:41:51.210 align:middle line:84%
+So this is a proper
+17-coloring of the graph.
+
+00:41:51.210 --> 00:41:53.610 align:middle line:84%
+But more directly, it's
+a proper three-coloring
+
+00:41:53.610 --> 00:41:57.270 align:middle line:84%
+because usually we're trying to
+minimize the number of colors.
+
+00:41:57.270 --> 00:41:57.910 align:middle line:90%
+All right?
+
+00:41:57.910 --> 00:42:04.350 align:middle line:84%
+And we can make that notion
+a concrete definition.
+
+00:42:04.350 --> 00:42:14.610 align:middle line:84%
+The chromatic
+number of a graph G,
+
+00:42:14.610 --> 00:42:19.330 align:middle line:84%
+the chromatic number
+is denoted chi of G--
+
+00:42:19.330 --> 00:42:20.963 align:middle line:90%
+that's a lowercase Greek chi--
+
+00:42:20.963 --> 00:42:25.470 align:middle line:90%
+
+
+00:42:25.470 --> 00:42:43.520 align:middle line:84%
+is the smallest number of colors
+needed for a proper coloring
+
+00:42:43.520 --> 00:42:47.900 align:middle line:90%
+of G. All right?
+
+00:42:47.900 --> 00:42:49.730 align:middle line:84%
+So the chromatic
+number asks what's
+
+00:42:49.730 --> 00:42:53.005 align:middle line:84%
+the fewest colors you
+can get away with.
+
+00:42:53.005 --> 00:42:54.380 align:middle line:84%
+In our scheduling
+problem, what's
+
+00:42:54.380 --> 00:42:57.260 align:middle line:84%
+the fewest number of time
+slots that we need to cover
+
+00:42:57.260 --> 00:42:59.720 align:middle line:90%
+all of the final exams?
+
+00:42:59.720 --> 00:43:02.570 align:middle line:84%
+For this graph, what is
+its chromatic number?
+
+00:43:02.570 --> 00:43:04.945 align:middle line:90%
+Have we shown that it's three?
+
+00:43:04.945 --> 00:43:08.090 align:middle line:90%
+
+
+00:43:08.090 --> 00:43:11.660 align:middle line:90%
+First of all, is it five?
+
+00:43:11.660 --> 00:43:13.950 align:middle line:84%
+Is the chromatic number
+of this graph five?
+
+00:43:13.950 --> 00:43:14.620 align:middle line:90%
+Why not?
+
+00:43:14.620 --> 00:43:19.030 align:middle line:90%
+
+
+00:43:19.030 --> 00:43:20.280 align:middle line:90%
+AUDIENCE: [INAUDIBLE] smaller.
+
+00:43:20.280 --> 00:43:22.613 align:middle line:84%
+ZACHARY ABEL: Because we can
+get away with fewer colors.
+
+00:43:22.613 --> 00:43:23.400 align:middle line:90%
+That's right.
+
+00:43:23.400 --> 00:43:26.030 align:middle line:84%
+It's not five because
+we can do fewer.
+
+00:43:26.030 --> 00:43:27.750 align:middle line:84%
+It's not four because
+we can do fewer.
+
+00:43:27.750 --> 00:43:28.360 align:middle line:90%
+Is it three?
+
+00:43:28.360 --> 00:43:31.340 align:middle line:90%
+
+
+00:43:31.340 --> 00:43:32.280 align:middle line:90%
+I don't know yet.
+
+00:43:32.280 --> 00:43:35.540 align:middle line:84%
+Can we get away
+with fewer colors?
+
+00:43:35.540 --> 00:43:38.030 align:middle line:90%
+Well, let's see.
+
+00:43:38.030 --> 00:43:39.900 align:middle line:90%
+Can it be two-colored?
+
+00:43:39.900 --> 00:43:42.970 align:middle line:84%
+Is there a proper coloring with
+just two colors for this graph?
+
+00:43:42.970 --> 00:43:45.980 align:middle line:90%
+
+
+00:43:45.980 --> 00:43:50.420 align:middle line:84%
+And in this case, there isn't,
+because this triangle right here
+
+00:43:50.420 --> 00:43:56.120 align:middle line:84%
+shows us that all three of these
+vertices need different colors.
+
+00:43:56.120 --> 00:43:58.710 align:middle line:84%
+You can think of this as a
+proof by contradiction as well.
+
+00:43:58.710 --> 00:44:02.010 align:middle line:84%
+Assume it's possible to
+color with just two colors.
+
+00:44:02.010 --> 00:44:05.390 align:middle line:84%
+Well, then, well,
+these three vertices
+
+00:44:05.390 --> 00:44:08.100 align:middle line:84%
+would have a conflict
+among them somehow,
+
+00:44:08.100 --> 00:44:10.430 align:middle line:90%
+which is a contradiction.
+
+00:44:10.430 --> 00:44:16.530 align:middle line:90%
+So cannot be two-colored.
+
+00:44:16.530 --> 00:44:19.160 align:middle line:90%
+
+
+00:44:19.160 --> 00:44:21.230 align:middle line:84%
+And these two
+statements together
+
+00:44:21.230 --> 00:44:22.920 align:middle line:84%
+can be colored
+with three colors.
+
+00:44:22.920 --> 00:44:25.220 align:middle line:84%
+Cannot be colored
+with two colors.
+
+00:44:25.220 --> 00:44:28.100 align:middle line:84%
+This is what we need to confirm
+that the chromatic number is
+
+00:44:28.100 --> 00:44:29.330 align:middle line:90%
+three.
+
+00:44:29.330 --> 00:44:32.060 align:middle line:84%
+Three is the smallest because
+three works and fewer doesn't
+
+00:44:32.060 --> 00:44:34.220 align:middle line:90%
+work.
+
+00:44:34.220 --> 00:44:42.050 align:middle line:84%
+And I want to emphasize
+that, in general, to show
+
+00:44:42.050 --> 00:44:46.310 align:middle line:84%
+that the chromatic number
+of G is some value K,
+
+00:44:46.310 --> 00:44:49.495 align:middle line:84%
+usually we need both an upper
+bound and a lower bound.
+
+00:44:49.495 --> 00:44:52.340 align:middle line:90%
+
+
+00:44:52.340 --> 00:44:59.820 align:middle line:84%
+We need an upper bound, which
+is that chi of G is less than
+
+00:44:59.820 --> 00:45:03.590 align:middle line:84%
+or equal K. And how
+do we prove that?
+
+00:45:03.590 --> 00:45:06.560 align:middle line:90%
+Usually by giving a K coloring.
+
+00:45:06.560 --> 00:45:09.360 align:middle line:84%
+If you know it's possible
+to color in K colors,
+
+00:45:09.360 --> 00:45:11.830 align:middle line:84%
+then the chromatic number
+has to be K or smaller.
+
+00:45:11.830 --> 00:45:14.630 align:middle line:90%
+
+
+00:45:14.630 --> 00:45:16.083 align:middle line:90%
+Give a K coloring.
+
+00:45:16.083 --> 00:45:18.980 align:middle line:90%
+
+
+00:45:18.980 --> 00:45:26.510 align:middle line:84%
+But you also need a
+lower bound that chi of G
+
+00:45:26.510 --> 00:45:30.400 align:middle line:84%
+has to be greater
+than K minus 1.
+
+00:45:30.400 --> 00:45:32.890 align:middle line:90%
+And how do you prove that?
+
+00:45:32.890 --> 00:45:40.450 align:middle line:84%
+Well, you have to prove that
+it can't be K minus 1 colored,
+
+00:45:40.450 --> 00:45:42.380 align:middle line:90%
+usually by contradiction.
+
+00:45:42.380 --> 00:45:50.110 align:middle line:90%
+
+
+00:45:50.110 --> 00:45:52.480 align:middle line:84%
+So I just wanted to
+emphasize that the definition
+
+00:45:52.480 --> 00:45:55.810 align:middle line:84%
+of chromatic number as the
+smallest thing that works, there
+
+00:45:55.810 --> 00:45:57.080 align:middle line:90%
+are two parts to that.
+
+00:45:57.080 --> 00:46:00.220 align:middle line:84%
+It works, and nothing
+smaller works.
+
+00:46:00.220 --> 00:46:02.590 align:middle line:90%
+Make sense?
+
+00:46:02.590 --> 00:46:05.200 align:middle line:90%
+Cool.
+
+00:46:05.200 --> 00:46:06.000 align:middle line:90%
+All right.
+
+00:46:06.000 --> 00:46:11.080 align:middle line:90%
+
+
+00:46:11.080 --> 00:46:13.930 align:middle line:90%
+Yes.
+
+00:46:13.930 --> 00:46:15.020 align:middle line:90%
+So graph coloring.
+
+00:46:15.020 --> 00:46:17.140 align:middle line:84%
+We've seen one
+application, which
+
+00:46:17.140 --> 00:46:20.300 align:middle line:84%
+is the registrar
+scheduling final exams.
+
+00:46:20.300 --> 00:46:24.260 align:middle line:84%
+They actually do something
+exactly like this, by the way.
+
+00:46:24.260 --> 00:46:26.680 align:middle line:84%
+This is why final exam
+schedules don't come out
+
+00:46:26.680 --> 00:46:28.960 align:middle line:84%
+until a couple of
+weeks into the semester
+
+00:46:28.960 --> 00:46:30.640 align:middle line:84%
+because they need to
+see who's enrolled
+
+00:46:30.640 --> 00:46:35.140 align:middle line:84%
+in which pairs of classes, so we
+can try to schedule those apart
+
+00:46:35.140 --> 00:46:35.810 align:middle line:90%
+from each other.
+
+00:46:35.810 --> 00:46:39.790 align:middle line:84%
+They're trying to find a
+coloring with few colors.
+
+00:46:39.790 --> 00:46:41.560 align:middle line:84%
+In practice, if
+they were looking
+
+00:46:41.560 --> 00:46:45.370 align:middle line:84%
+for an actual proper coloring
+with no conflicts whatsoever,
+
+00:46:45.370 --> 00:46:47.720 align:middle line:84%
+it probably wouldn't
+fit into exam week.
+
+00:46:47.720 --> 00:46:49.360 align:middle line:84%
+So instead, they're
+looking to minimize
+
+00:46:49.360 --> 00:46:52.640 align:middle line:84%
+the number of conflicts, which
+is a slightly different problem,
+
+00:46:52.640 --> 00:46:55.240 align:middle line:90%
+but still an interesting one.
+
+00:46:55.240 --> 00:46:58.870 align:middle line:84%
+But there are lots of
+scenarios where you're
+
+00:46:58.870 --> 00:47:03.550 align:middle line:84%
+trying to avoid conflicts, just
+like the registrar is trying
+
+00:47:03.550 --> 00:47:11.706 align:middle line:84%
+to avoid conflicts, so
+other coloring applications.
+
+00:47:11.706 --> 00:47:16.690 align:middle line:90%
+
+
+00:47:16.690 --> 00:47:18.400 align:middle line:84%
+A really common
+one, and one that's
+
+00:47:18.400 --> 00:47:20.800 align:middle line:84%
+appropriate for this
+computer science class,
+
+00:47:20.800 --> 00:47:22.476 align:middle line:90%
+is register allocation.
+
+00:47:22.476 --> 00:47:27.520 align:middle line:90%
+
+
+00:47:27.520 --> 00:47:31.360 align:middle line:84%
+When designing
+compilers, you have
+
+00:47:31.360 --> 00:47:33.890 align:middle line:84%
+multiple values that
+you're trying to compute,
+
+00:47:33.890 --> 00:47:36.070 align:middle line:84%
+different operations you
+need to do with them.
+
+00:47:36.070 --> 00:47:36.570 align:middle line:90%
+Yes?
+
+00:47:36.570 --> 00:47:39.280 align:middle line:90%
+
+
+00:47:39.280 --> 00:47:42.260 align:middle line:84%
+AUDIENCE: Does the elements of
+C matter or just absolute size?
+
+00:47:42.260 --> 00:47:44.133 align:middle line:84%
+Because you can put
+green in the left corner
+
+00:47:44.133 --> 00:47:45.550 align:middle line:84%
+like there's a
+bunch of different.
+
+00:47:45.550 --> 00:47:47.133 align:middle line:84%
+ZACHARY ABEL: That's
+a great question.
+
+00:47:47.133 --> 00:47:48.760 align:middle line:90%
+Thank you for asking.
+
+00:47:48.760 --> 00:47:52.490 align:middle line:84%
+Do the elements of C matter
+or just the size of C?
+
+00:47:52.490 --> 00:47:55.720 align:middle line:84%
+C is the set of
+colors available.
+
+00:47:55.720 --> 00:47:58.142 align:middle line:84%
+So if you change the
+set C, then you're
+
+00:47:58.142 --> 00:48:00.100 align:middle line:84%
+giving a different coloring
+because your colors
+
+00:48:00.100 --> 00:48:02.530 align:middle line:90%
+mean different things.
+
+00:48:02.530 --> 00:48:05.718 align:middle line:84%
+But you're not going to change
+how many colors are needed.
+
+00:48:05.718 --> 00:48:08.260 align:middle line:84%
+You're not going to change the
+chromatic number if you change
+
+00:48:08.260 --> 00:48:11.800 align:middle line:90%
+the set of colors available.
+
+00:48:11.800 --> 00:48:16.635 align:middle line:84%
+And you said we could have put
+green here instead of here?
+
+00:48:16.635 --> 00:48:17.260 align:middle line:90%
+AUDIENCE: Yeah.
+
+00:48:17.260 --> 00:48:19.150 align:middle line:84%
+ZACHARY ABEL: Yeah, like
+we could have made--
+
+00:48:19.150 --> 00:48:22.090 align:middle line:90%
+the reds could instead be green.
+
+00:48:22.090 --> 00:48:26.190 align:middle line:84%
+And this green could be red,
+or this green could be yellow.
+
+00:48:26.190 --> 00:48:28.720 align:middle line:84%
+Now, we've got some green,
+some blues, and a yellow.
+
+00:48:28.720 --> 00:48:31.110 align:middle line:84%
+Still three colors,
+different coloring
+
+00:48:31.110 --> 00:48:33.310 align:middle line:84%
+because we're assigning
+different colors to them,
+
+00:48:33.310 --> 00:48:36.130 align:middle line:84%
+but still the same
+number of colors.
+
+00:48:36.130 --> 00:48:38.650 align:middle line:84%
+And often, for the applications
+we're about to talk about,
+
+00:48:38.650 --> 00:48:42.420 align:middle line:84%
+the number of colors is all that
+matters, because the colors just
+
+00:48:42.420 --> 00:48:44.370 align:middle line:84%
+mean these are the
+different classes that you
+
+00:48:44.370 --> 00:48:46.560 align:middle line:84%
+need to put them in, and
+then you do something
+
+00:48:46.560 --> 00:48:49.770 align:middle line:90%
+with each class.
+
+00:48:49.770 --> 00:48:52.300 align:middle line:84%
+So this application,
+register allocation.
+
+00:48:52.300 --> 00:48:55.260 align:middle line:84%
+When you're computing
+multiple values,
+
+00:48:55.260 --> 00:49:00.210 align:middle line:84%
+your processor has a small
+number, like 16 or 32,
+
+00:49:00.210 --> 00:49:04.380 align:middle line:84%
+registers, which are really,
+really fast memory that it
+
+00:49:04.380 --> 00:49:05.470 align:middle line:90%
+can do operations on.
+
+00:49:05.470 --> 00:49:08.520 align:middle line:84%
+And in fact, it has to
+bring data into a register
+
+00:49:08.520 --> 00:49:11.760 align:middle line:84%
+before it can compute
+on them usually.
+
+00:49:11.760 --> 00:49:15.900 align:middle line:84%
+And some values you're
+computing and you
+
+00:49:15.900 --> 00:49:18.365 align:middle line:84%
+need lots of different pieces
+to go into that computation.
+
+00:49:18.365 --> 00:49:19.990 align:middle line:84%
+Some values, well,
+you're done with it.
+
+00:49:19.990 --> 00:49:21.790 align:middle line:84%
+You don't need to
+remember it anymore.
+
+00:49:21.790 --> 00:49:24.780 align:middle line:84%
+So let's evict that and put
+something else in that register.
+
+00:49:24.780 --> 00:49:27.660 align:middle line:84%
+And ideally, you
+can figure out a way
+
+00:49:27.660 --> 00:49:30.720 align:middle line:84%
+to schedule all of your values
+in the different registers
+
+00:49:30.720 --> 00:49:33.390 align:middle line:84%
+so that everything fits in
+the registers and everything's
+
+00:49:33.390 --> 00:49:36.840 align:middle line:84%
+fast, instead of having to
+spill them out into RAM.
+
+00:49:36.840 --> 00:49:40.020 align:middle line:84%
+You don't need to
+understand compilers
+
+00:49:40.020 --> 00:49:41.710 align:middle line:90%
+or exactly what I'm saying here.
+
+00:49:41.710 --> 00:49:45.600 align:middle line:84%
+The point is, your variables,
+the values you're computing,
+
+00:49:45.600 --> 00:49:48.970 align:middle line:84%
+have different lifetimes, times
+when they need to still exist,
+
+00:49:48.970 --> 00:49:52.110 align:middle line:84%
+and other times when you're
+allowed to forget them.
+
+00:49:52.110 --> 00:49:59.160 align:middle line:84%
+And compiler writers often
+draw exactly the conflict graph
+
+00:49:59.160 --> 00:50:00.730 align:middle line:90%
+between these lifetimes.
+
+00:50:00.730 --> 00:50:02.820 align:middle line:84%
+This value has to
+exist at the same time
+
+00:50:02.820 --> 00:50:04.870 align:middle line:84%
+that this value
+also has to exist,
+
+00:50:04.870 --> 00:50:08.070 align:middle line:84%
+so they can't be in
+the same register,
+
+00:50:08.070 --> 00:50:10.570 align:middle line:84%
+because then one would
+overwrite the other.
+
+00:50:10.570 --> 00:50:12.900 align:middle line:84%
+And if you can write
+down your conflict graph
+
+00:50:12.900 --> 00:50:16.230 align:middle line:84%
+and find a coloring with
+a small number of colors,
+
+00:50:16.230 --> 00:50:19.032 align:middle line:84%
+ideally smaller than the
+number of registers available,
+
+00:50:19.032 --> 00:50:20.490 align:middle line:84%
+then everything
+works in registers,
+
+00:50:20.490 --> 00:50:23.580 align:middle line:90%
+and you're really fast.
+
+00:50:23.580 --> 00:50:29.090 align:middle line:84%
+Another one is radio
+tower frequencies.
+
+00:50:29.090 --> 00:50:33.690 align:middle line:90%
+
+
+00:50:33.690 --> 00:50:35.670 align:middle line:84%
+If each tower in a
+radio network needs
+
+00:50:35.670 --> 00:50:38.110 align:middle line:84%
+to broadcast with
+some frequencies,
+
+00:50:38.110 --> 00:50:40.830 align:middle line:84%
+well, if two towers use
+the same frequency that
+
+00:50:40.830 --> 00:50:43.673 align:middle line:84%
+can reach the same places,
+then they're going to conflict.
+
+00:50:43.673 --> 00:50:45.340 align:middle line:84%
+You're going to get
+static in the noise.
+
+00:50:45.340 --> 00:50:48.960 align:middle line:84%
+You're getting noise from
+two different places at once.
+
+00:50:48.960 --> 00:50:53.740 align:middle line:84%
+So any conflicting towers need
+to use different frequencies.
+
+00:50:53.740 --> 00:50:57.060 align:middle line:84%
+And this is, again, a
+graph coloring problem.
+
+00:50:57.060 --> 00:50:59.020 align:middle line:90%
+Draw your conflict graph.
+
+00:50:59.020 --> 00:51:00.790 align:middle line:84%
+Color it with a small
+number of colors.
+
+00:51:00.790 --> 00:51:03.310 align:middle line:84%
+Each color is a
+different frequency.
+
+00:51:03.310 --> 00:51:06.330 align:middle line:84%
+And since different towers that
+are assigned the same color
+
+00:51:06.330 --> 00:51:08.127 align:middle line:84%
+don't have an edge in
+the conflict graph,
+
+00:51:08.127 --> 00:51:09.960 align:middle line:84%
+it means they don't
+conflict, and so they're
+
+00:51:09.960 --> 00:51:12.485 align:middle line:84%
+allowed to use the same
+frequency just fine.
+
+00:51:12.485 --> 00:51:15.180 align:middle line:90%
+
+
+00:51:15.180 --> 00:51:18.860 align:middle line:84%
+In general, where
+did I put this list?
+
+00:51:18.860 --> 00:51:19.710 align:middle line:90%
+Way over here.
+
+00:51:19.710 --> 00:51:20.575 align:middle line:90%
+No, come back.
+
+00:51:20.575 --> 00:51:23.505 align:middle line:90%
+
+
+00:51:23.505 --> 00:51:24.505 align:middle line:90%
+Let's see, map coloring.
+
+00:51:24.505 --> 00:51:29.150 align:middle line:90%
+
+
+00:51:29.150 --> 00:51:32.250 align:middle line:84%
+A while ago, Eric told us
+about the four-color theorem.
+
+00:51:32.250 --> 00:51:38.490 align:middle line:84%
+That every map that you
+draw on a sheet of paper,
+
+00:51:38.490 --> 00:51:41.210 align:middle line:84%
+you can color all the
+regions in different colors
+
+00:51:41.210 --> 00:51:44.840 align:middle line:84%
+so that two neighboring regions
+never have the same color.
+
+00:51:44.840 --> 00:51:49.190 align:middle line:84%
+And four colors
+is always enough.
+
+00:51:49.190 --> 00:51:51.920 align:middle line:84%
+This is just saying that
+certain kinds of graphs
+
+00:51:51.920 --> 00:51:53.880 align:middle line:90%
+can always be four-colored.
+
+00:51:53.880 --> 00:51:55.640 align:middle line:84%
+Not every graph,
+but certain kinds
+
+00:51:55.640 --> 00:51:58.250 align:middle line:84%
+of graphs, the
+so-called planar graphs
+
+00:51:58.250 --> 00:51:59.850 align:middle line:90%
+can always be four-colored.
+
+00:51:59.850 --> 00:52:03.220 align:middle line:90%
+
+
+00:52:03.220 --> 00:52:05.370 align:middle line:84%
+This is the language that
+that proof is written in.
+
+00:52:05.370 --> 00:52:07.230 align:middle line:84%
+It's a theorem
+about graph theory.
+
+00:52:07.230 --> 00:52:10.640 align:middle line:90%
+It uses graph theory.
+
+00:52:10.640 --> 00:52:14.280 align:middle line:84%
+But it's an example, we've
+already seen, which is nice.
+
+00:52:14.280 --> 00:52:16.020 align:middle line:84%
+In general, any
+time you're trying
+
+00:52:16.020 --> 00:52:25.020 align:middle line:84%
+to avoid pairwise
+conflicts, graph coloring
+
+00:52:25.020 --> 00:52:28.260 align:middle line:90%
+is a great tool to reach for.
+
+00:52:28.260 --> 00:52:32.020 align:middle line:84%
+Because it's such a great tool
+to reach for in many contexts,
+
+00:52:32.020 --> 00:52:34.440 align:middle line:84%
+wouldn't it be
+great if there was
+
+00:52:34.440 --> 00:52:38.860 align:middle line:84%
+a really fast, simple algorithm
+that says, here's a graph.
+
+00:52:38.860 --> 00:52:40.570 align:middle line:84%
+Here's a target
+number of colors,
+
+00:52:40.570 --> 00:52:45.600 align:middle line:84%
+please give me a proper coloring
+that uses this number of colors.
+
+00:52:45.600 --> 00:53:00.870 align:middle line:84%
+So an algorithm to K color any
+input graph, or decide it's
+
+00:53:00.870 --> 00:53:01.445 align:middle line:90%
+not possible.
+
+00:53:01.445 --> 00:53:04.680 align:middle line:90%
+
+
+00:53:04.680 --> 00:53:06.600 align:middle line:84%
+If I'm the registrar,
+and I know I
+
+00:53:06.600 --> 00:53:09.790 align:middle line:84%
+have-- what is it-- five days
+of exams, two sessions each.
+
+00:53:09.790 --> 00:53:11.890 align:middle line:84%
+So I have 10 different
+exam sessions.
+
+00:53:11.890 --> 00:53:14.215 align:middle line:84%
+I really want a
+10-coloring of my graph.
+
+00:53:14.215 --> 00:53:16.880 align:middle line:90%
+
+
+00:53:16.880 --> 00:53:19.970 align:middle line:84%
+And so I want to ask, please
+give me a 10-coloring of this
+
+00:53:19.970 --> 00:53:20.790 align:middle line:90%
+conflict graph.
+
+00:53:20.790 --> 00:53:22.370 align:middle line:90%
+And then, that's my schedule.
+
+00:53:22.370 --> 00:53:25.190 align:middle line:84%
+Is there an
+algorithm to do that?
+
+00:53:25.190 --> 00:53:30.830 align:middle line:84%
+Likewise, instead of
+asking give me 10 colors,
+
+00:53:30.830 --> 00:53:37.430 align:middle line:84%
+you can ask the algorithm
+to compute chi of G.
+
+00:53:37.430 --> 00:53:40.020 align:middle line:84%
+I don't know in advance how
+many colors I'm expecting.
+
+00:53:40.020 --> 00:53:41.430 align:middle line:90%
+Just give me the best coloring.
+
+00:53:41.430 --> 00:53:44.040 align:middle line:84%
+Give me a coloring that uses
+the fewest number of colors.
+
+00:53:44.040 --> 00:53:45.900 align:middle line:84%
+Is there an
+algorithm to do that?
+
+00:53:45.900 --> 00:53:49.220 align:middle line:84%
+That would be really great
+in lots of applications.
+
+00:53:49.220 --> 00:53:51.260 align:middle line:84%
+Unfortunately, I'm
+talking in hypotheticals
+
+00:53:51.260 --> 00:53:56.240 align:middle line:84%
+here because these algorithms
+very, very likely don't exist.
+
+00:53:56.240 --> 00:54:05.060 align:middle line:84%
+These problems are
+what we call NP--
+
+00:54:05.060 --> 00:54:06.990 align:middle line:84%
+well, this problem
+is NP-complete.
+
+00:54:06.990 --> 00:54:08.410 align:middle line:84%
+This one is possibly
+even harder.
+
+00:54:08.410 --> 00:54:14.620 align:middle line:90%
+
+
+00:54:14.620 --> 00:54:16.460 align:middle line:84%
+At least, this problem
+is NP-complete.
+
+00:54:16.460 --> 00:54:20.050 align:middle line:84%
+Like I said, this one might
+be even harder than NP.
+
+00:54:20.050 --> 00:54:21.410 align:middle line:90%
+What does this mean?
+
+00:54:21.410 --> 00:54:22.700 align:middle line:90%
+I don't care so much.
+
+00:54:22.700 --> 00:54:24.520 align:middle line:84%
+I don't really want
+to dig into what
+
+00:54:24.520 --> 00:54:28.730 align:middle line:84%
+NP-complete means right now, or
+NP-hard, or any of those things.
+
+00:54:28.730 --> 00:54:32.830 align:middle line:84%
+What I will say is that there
+are thousands upon thousands
+
+00:54:32.830 --> 00:54:38.230 align:middle line:84%
+of computational problems,
+like graph coloring,
+
+00:54:38.230 --> 00:54:40.340 align:middle line:84%
+like the traveling
+salesman problem,
+
+00:54:40.340 --> 00:54:42.640 align:middle line:84%
+if you've heard of that
+one, it's pretty famous.
+
+00:54:42.640 --> 00:54:48.040 align:middle line:84%
+Like Sudoku on n squared by n
+squared boards instead of just 9
+
+00:54:48.040 --> 00:54:49.360 align:middle line:90%
+by 9.
+
+00:54:49.360 --> 00:54:52.090 align:middle line:84%
+There are thousands upon
+thousands of these problems
+
+00:54:52.090 --> 00:54:55.270 align:middle line:84%
+that computer
+scientists have decided
+
+00:54:55.270 --> 00:54:57.910 align:middle line:90%
+are all equally difficult.
+
+00:54:57.910 --> 00:55:02.080 align:middle line:84%
+So if we were able to find an
+efficient algorithm to solve
+
+00:55:02.080 --> 00:55:05.478 align:middle line:84%
+any one of them, like to solve
+the K coloring problem, then
+
+00:55:05.478 --> 00:55:07.270 align:middle line:84%
+that would immediately
+give us an algorithm
+
+00:55:07.270 --> 00:55:10.910 align:middle line:84%
+to solve all the other
+ones efficiently as well.
+
+00:55:10.910 --> 00:55:14.900 align:middle line:84%
+And all the problems that
+are easier than those.
+
+00:55:14.900 --> 00:55:18.170 align:middle line:84%
+A notable problem that
+we've already talked about
+
+00:55:18.170 --> 00:55:25.820 align:middle line:90%
+is factoring large numbers.
+
+00:55:25.820 --> 00:55:28.370 align:middle line:90%
+This is known to be in NP--
+
+00:55:28.370 --> 00:55:30.900 align:middle line:84%
+it's not known whether
+it's NP-complete.
+
+00:55:30.900 --> 00:55:34.230 align:middle line:84%
+It's in fact thought to be
+even easier than most of these.
+
+00:55:34.230 --> 00:55:39.530 align:middle line:84%
+So it's thought that factoring
+numbers is somehow easier than K
+
+00:55:39.530 --> 00:55:40.890 align:middle line:90%
+coloring your graph.
+
+00:55:40.890 --> 00:55:45.570 align:middle line:84%
+Also, by the way, even if we're
+just asking for three colors,
+
+00:55:45.570 --> 00:55:48.320 align:middle line:84%
+does this graph have a coloring
+with just three colors.
+
+00:55:48.320 --> 00:55:49.950 align:middle line:90%
+That's already NP-complete.
+
+00:55:49.950 --> 00:55:52.730 align:middle line:84%
+That's already too
+hard, and we don't
+
+00:55:52.730 --> 00:55:55.940 align:middle line:84%
+believe there's going to be
+an efficient algorithm for it.
+
+00:55:55.940 --> 00:55:59.330 align:middle line:84%
+So if you solve this
+easier problem, factoring
+
+00:55:59.330 --> 00:56:02.640 align:middle line:84%
+large numbers, if you find an
+efficient algorithm for that,
+
+00:56:02.640 --> 00:56:06.080 align:middle line:84%
+well, you'll be able to break
+all the public RSA keys.
+
+00:56:06.080 --> 00:56:08.060 align:middle line:84%
+Read everyone's
+encrypted messages.
+
+00:56:08.060 --> 00:56:12.410 align:middle line:84%
+Steal all the electronic money,
+including the real currency,
+
+00:56:12.410 --> 00:56:14.770 align:middle line:90%
+from electronic banks.
+
+00:56:14.770 --> 00:56:17.530 align:middle line:84%
+Run from all of the world
+governments that are trying
+
+00:56:17.530 --> 00:56:19.230 align:middle line:90%
+to hire and/or silence you.
+
+00:56:19.230 --> 00:56:22.390 align:middle line:90%
+
+
+00:56:22.390 --> 00:56:25.390 align:middle line:84%
+But if you solve the even
+harder problem of three-coloring
+
+00:56:25.390 --> 00:56:29.380 align:middle line:84%
+a graph, you get all
+that plus $1 million
+
+00:56:29.380 --> 00:56:32.090 align:middle line:84%
+prize for solving a
+famous millennium problem.
+
+00:56:32.090 --> 00:56:35.740 align:middle line:90%
+So you've got choices.
+
+00:56:35.740 --> 00:56:41.510 align:middle line:84%
+Point is-- graph coloring is
+a hard computational problem.
+
+00:56:41.510 --> 00:56:44.920 align:middle line:84%
+And most computer
+scientists strongly
+
+00:56:44.920 --> 00:56:47.860 align:middle line:84%
+believe that there is
+no efficient algorithm
+
+00:56:47.860 --> 00:56:49.750 align:middle line:90%
+for graph coloring.
+
+00:56:49.750 --> 00:56:54.080 align:middle line:84%
+And so, at least for
+very large graphs,
+
+00:56:54.080 --> 00:56:58.180 align:middle line:84%
+it's not realistic
+to ask for a coloring
+
+00:56:58.180 --> 00:57:03.690 align:middle line:84%
+with a specific number of colors
+or the best possible coloring,
+
+00:57:03.690 --> 00:57:05.520 align:middle line:84%
+which means that
+our applications are
+
+00:57:05.520 --> 00:57:08.670 align:middle line:84%
+a little bit sad because
+sometimes we really want
+
+00:57:08.670 --> 00:57:09.970 align:middle line:90%
+optimal colorings.
+
+00:57:09.970 --> 00:57:13.590 align:middle line:84%
+Thankfully, in practice,
+optimal colorings
+
+00:57:13.590 --> 00:57:15.250 align:middle line:90%
+aren't really necessary.
+
+00:57:15.250 --> 00:57:19.590 align:middle line:84%
+Sometimes we can get
+away with good enough.
+
+00:57:19.590 --> 00:57:24.580 align:middle line:84%
+And so for all of these
+NP-complete or NP-hard problems,
+
+00:57:24.580 --> 00:57:28.290 align:middle line:84%
+the best you can hope for is an
+algorithm that's good enough.
+
+00:57:28.290 --> 00:57:31.120 align:middle line:84%
+Usually, the answer it
+gives us a little worse,
+
+00:57:31.120 --> 00:57:33.360 align:middle line:90%
+but it runs faster.
+
+00:57:33.360 --> 00:57:35.940 align:middle line:84%
+And let's see an
+algorithm for that
+
+00:57:35.940 --> 00:57:38.890 align:middle line:84%
+to give us some
+colorings of graphs,
+
+00:57:38.890 --> 00:57:41.566 align:middle line:84%
+even if they're not
+always optimal colorings.
+
+00:57:41.566 --> 00:57:45.360 align:middle line:90%
+
+
+00:57:45.360 --> 00:57:46.085 align:middle line:90%
+All right.
+
+00:57:46.085 --> 00:57:57.630 align:middle line:90%
+
+
+00:57:57.630 --> 00:58:07.590 align:middle line:84%
+So we have a greedy
+coloring algorithm.
+
+00:58:07.590 --> 00:58:10.300 align:middle line:84%
+And here is the idea
+of the algorithm.
+
+00:58:10.300 --> 00:58:17.220 align:middle line:84%
+So first of all, we're going
+to order the vertices--
+
+00:58:17.220 --> 00:58:20.650 align:middle line:90%
+V1, V2, Vn.
+
+00:58:20.650 --> 00:58:24.790 align:middle line:84%
+So we're going to pick some
+ordering of the vertices.
+
+00:58:24.790 --> 00:58:26.123 align:middle line:90%
+We're going to order the colors.
+
+00:58:26.123 --> 00:58:29.310 align:middle line:90%
+
+
+00:58:29.310 --> 00:58:31.770 align:middle line:84%
+I'm going to use my
+favorite color palette--
+
+00:58:31.770 --> 00:58:34.210 align:middle line:90%
+1, 2, 3, and so on.
+
+00:58:34.210 --> 00:58:37.170 align:middle line:90%
+Those are my colors.
+
+00:58:37.170 --> 00:58:44.460 align:middle line:90%
+And then, for each Vi in order--
+
+00:58:44.460 --> 00:58:47.740 align:middle line:84%
+so we'll look at V1, then
+V2, then V3 and so on,
+
+00:58:47.740 --> 00:58:50.180 align:middle line:84%
+and we'll assign each of
+them a color one at a time.
+
+00:58:50.180 --> 00:58:54.180 align:middle line:90%
+
+
+00:58:54.180 --> 00:59:08.430 align:middle line:84%
+Assign Vi the
+smallest color that
+
+00:59:08.430 --> 00:59:09.916 align:middle line:90%
+doesn't introduce conflicts.
+
+00:59:09.916 --> 00:59:13.020 align:middle line:90%
+
+
+00:59:13.020 --> 00:59:16.210 align:middle line:84%
+So when we get to vertex
+i, we're going to ask,
+
+00:59:16.210 --> 00:59:17.650 align:middle line:90%
+does color one work?
+
+00:59:17.650 --> 00:59:18.760 align:middle line:90%
+Does color two work?
+
+00:59:18.760 --> 00:59:20.170 align:middle line:90%
+Does color three work?
+
+00:59:20.170 --> 00:59:24.460 align:middle line:84%
+And the first time we get
+to a color that is valid,
+
+00:59:24.460 --> 00:59:26.848 align:middle line:84%
+that it doesn't have a
+neighbor of that same color,
+
+00:59:26.848 --> 00:59:28.890 align:middle line:84%
+we're going to assign it
+that color and then move
+
+00:59:28.890 --> 00:59:29.810 align:middle line:90%
+on to the next vertex.
+
+00:59:29.810 --> 00:59:33.213 align:middle line:90%
+
+
+00:59:33.213 --> 00:59:35.130 align:middle line:84%
+Yeah, it's called greedy
+because you're always
+
+00:59:35.130 --> 00:59:38.250 align:middle line:84%
+picking the smallest color
+you can at any one time.
+
+00:59:38.250 --> 00:59:40.440 align:middle line:84%
+It doesn't necessarily
+mean that you're going
+
+00:59:40.440 --> 00:59:42.250 align:middle line:90%
+to get an optimal coloring.
+
+00:59:42.250 --> 00:59:45.900 align:middle line:84%
+In fact, usually you won't,
+at least for big graphs
+
+00:59:45.900 --> 00:59:49.170 align:middle line:84%
+where it's hard to
+find optimal colorings.
+
+00:59:49.170 --> 00:59:51.100 align:middle line:84%
+Let's run through
+this algorithm.
+
+00:59:51.100 --> 00:59:54.120 align:middle line:84%
+Let's see it happening just
+to get a more concrete feel
+
+00:59:54.120 --> 00:59:55.745 align:middle line:90%
+for what we mean.
+
+00:59:55.745 --> 00:59:58.730 align:middle line:90%
+
+
+00:59:58.730 --> 01:00:00.050 align:middle line:90%
+Here we go.
+
+01:00:00.050 --> 01:00:01.290 align:middle line:90%
+So here's my graph.
+
+01:00:01.290 --> 01:00:02.010 align:middle line:90%
+No, pause.
+
+01:00:02.010 --> 01:00:03.000 align:middle line:90%
+Thank you.
+
+01:00:03.000 --> 01:00:07.100 align:middle line:84%
+Six vertices-- 1,
+2, 3, 4, 5, 7 edges.
+
+01:00:07.100 --> 01:00:09.690 align:middle line:84%
+And this is the vertex
+order we're going to use.
+
+01:00:09.690 --> 01:00:12.290 align:middle line:84%
+We could choose any
+vertex order we want.
+
+01:00:12.290 --> 01:00:15.050 align:middle line:84%
+But we're going to look at
+the vertices in this order
+
+01:00:15.050 --> 01:00:17.850 align:middle line:84%
+and always choose the
+smallest color that's valid.
+
+01:00:17.850 --> 01:00:20.750 align:middle line:84%
+So the first color
+is fine because there
+
+01:00:20.750 --> 01:00:21.960 align:middle line:90%
+are no possible conflicts.
+
+01:00:21.960 --> 01:00:23.930 align:middle line:90%
+No one else has colors yet.
+
+01:00:23.930 --> 01:00:27.110 align:middle line:84%
+Second vertex, the
+first color is no good
+
+01:00:27.110 --> 01:00:30.350 align:middle line:84%
+because it already
+has a neighbor that's
+
+01:00:30.350 --> 01:00:31.920 align:middle line:90%
+been assigned that color.
+
+01:00:31.920 --> 01:00:34.980 align:middle line:84%
+So instead of the
+color triangle,
+
+01:00:34.980 --> 01:00:38.540 align:middle line:84%
+we have to go up
+to color square.
+
+01:00:38.540 --> 01:00:40.340 align:middle line:90%
+All right?
+
+01:00:40.340 --> 01:00:42.470 align:middle line:90%
+Now, let's go to vertex three.
+
+01:00:42.470 --> 01:00:47.450 align:middle line:84%
+Our first color is valid this
+time, so it gets color one.
+
+01:00:47.450 --> 01:00:49.010 align:middle line:90%
+Still with me?
+
+01:00:49.010 --> 01:00:54.290 align:middle line:84%
+All right, vertex four can't use
+color one but can use color two.
+
+01:00:54.290 --> 01:00:56.520 align:middle line:90%
+Vertex five, let's take a look.
+
+01:00:56.520 --> 01:00:59.550 align:middle line:84%
+Vertex five can't
+use the first color.
+
+01:00:59.550 --> 01:01:02.930 align:middle line:84%
+Can't use the second color,
+but can use the third color,
+
+01:01:02.930 --> 01:01:05.210 align:middle line:84%
+so it gets assigned
+to the third color.
+
+01:01:05.210 --> 01:01:08.580 align:middle line:84%
+And finally, vertex six gets
+assigned the first color.
+
+01:01:08.580 --> 01:01:12.260 align:middle line:84%
+And we have our valid
+coloring or proper coloring.
+
+01:01:12.260 --> 01:01:14.870 align:middle line:90%
+Does that algorithm make sense?
+
+01:01:14.870 --> 01:01:16.880 align:middle line:90%
+Awesome.
+
+01:01:16.880 --> 01:01:26.300 align:middle line:84%
+One thing I want to mention is
+that different vertex orderings
+
+01:01:26.300 --> 01:01:34.730 align:middle line:84%
+will often lead to
+different colorings
+
+01:01:34.730 --> 01:01:47.303 align:middle line:84%
+and often lead to colorings with
+a different number of colors.
+
+01:01:47.303 --> 01:01:50.420 align:middle line:90%
+
+
+01:01:50.420 --> 01:01:52.820 align:middle line:84%
+So here with this
+ordering, we got a coloring
+
+01:01:52.820 --> 01:01:53.670 align:middle line:90%
+with three colors.
+
+01:01:53.670 --> 01:01:55.430 align:middle line:90%
+We got a proper three-coloring.
+
+01:01:55.430 --> 01:02:00.260 align:middle line:84%
+But if instead we use this
+ordering, where all I've done
+
+01:02:00.260 --> 01:02:03.170 align:middle line:84%
+is changed the order of
+vertices one, five, and six,
+
+01:02:03.170 --> 01:02:07.160 align:middle line:84%
+this is a different vertex
+order on the same graph,
+
+01:02:07.160 --> 01:02:10.010 align:middle line:84%
+so let's run the algorithm
+again in this ordering.
+
+01:02:10.010 --> 01:02:12.150 align:middle line:84%
+And let's see what
+coloring it gives us.
+
+01:02:12.150 --> 01:02:13.920 align:middle line:90%
+So first color is fine here.
+
+01:02:13.920 --> 01:02:15.720 align:middle line:90%
+First color is fine here.
+
+01:02:15.720 --> 01:02:17.840 align:middle line:84%
+This one needs the second
+color because it already
+
+01:02:17.840 --> 01:02:20.240 align:middle line:84%
+has a neighbor with
+the first color.
+
+01:02:20.240 --> 01:02:23.180 align:middle line:84%
+Stop me if I'm
+going too quickly.
+
+01:02:23.180 --> 01:02:26.280 align:middle line:84%
+The next one has neighbors
+with colors one and two,
+
+01:02:26.280 --> 01:02:29.900 align:middle line:90%
+so it needs the third color.
+
+01:02:29.900 --> 01:02:33.210 align:middle line:84%
+The fifth vertex has a
+neighbor with color one,
+
+01:02:33.210 --> 01:02:35.840 align:middle line:90%
+so it needs the second color.
+
+01:02:35.840 --> 01:02:40.670 align:middle line:84%
+And then, finally, vertex six
+has a neighbor with color one
+
+01:02:40.670 --> 01:02:44.910 align:middle line:84%
+and a neighbor with color two
+and a neighbor with color three,
+
+01:02:44.910 --> 01:02:48.170 align:middle line:84%
+so it in fact needs
+a fourth color.
+
+01:02:48.170 --> 01:02:51.660 align:middle line:84%
+So with this different vertex
+ordering on the same graph,
+
+01:02:51.660 --> 01:02:55.750 align:middle line:84%
+it gave us a four-coloring
+instead of a three-coloring.
+
+01:02:55.750 --> 01:02:56.390 align:middle line:90%
+All right?
+
+01:02:56.390 --> 01:02:59.163 align:middle line:84%
+So some orderings are
+better than others.
+
+01:02:59.163 --> 01:03:10.360 align:middle line:90%
+
+
+01:03:10.360 --> 01:03:12.970 align:middle line:90%
+Yeah?
+
+01:03:12.970 --> 01:03:15.460 align:middle line:90%
+All right.
+
+01:03:15.460 --> 01:03:17.180 align:middle line:84%
+Does this algorithm
+actually work?
+
+01:03:17.180 --> 01:03:19.110 align:middle line:84%
+Does it always give
+a proper coloring?
+
+01:03:19.110 --> 01:03:21.940 align:middle line:90%
+
+
+01:03:21.940 --> 01:03:24.230 align:middle line:90%
+So yes, in this case, it does.
+
+01:03:24.230 --> 01:03:28.480 align:middle line:84%
+And an easy way to see that
+is that the way the algorithm
+
+01:03:28.480 --> 01:03:32.320 align:middle line:84%
+is designed, it never
+introduces conflicts.
+
+01:03:32.320 --> 01:03:35.480 align:middle line:84%
+Always after we've
+assigned the next vertex,
+
+01:03:35.480 --> 01:03:38.900 align:middle line:84%
+we never have an edge that has
+two endpoints of the same color
+
+01:03:38.900 --> 01:03:41.690 align:middle line:84%
+because that's kind of the
+point of the algorithm.
+
+01:03:41.690 --> 01:03:45.560 align:middle line:84%
+So we never introduce
+a conflict on any edge.
+
+01:03:45.560 --> 01:03:47.950 align:middle line:84%
+So when we get to
+the end, we haven't
+
+01:03:47.950 --> 01:03:49.040 align:middle line:90%
+introduced any conflicts.
+
+01:03:49.040 --> 01:03:50.710 align:middle line:90%
+So there aren't any conflicts.
+
+01:03:50.710 --> 01:03:55.390 align:middle line:84%
+That's kind of a state machine
+style proof of that algorithm.
+
+01:03:55.390 --> 01:03:56.140 align:middle line:90%
+Yes?
+
+01:03:56.140 --> 01:03:58.688 align:middle line:84%
+AUDIENCE: Could you try
+ordering like the middle one
+
+01:03:58.688 --> 01:04:00.230 align:middle line:84%
+once you get the
+optimal [INAUDIBLE]?
+
+01:04:00.230 --> 01:04:01.397 align:middle line:90%
+ZACHARY ABEL: Good question.
+
+01:04:01.397 --> 01:04:04.690 align:middle line:84%
+If you try all the orderings
+and then take the best coloring
+
+01:04:04.690 --> 01:04:07.810 align:middle line:90%
+you get, will that be optimal?
+
+01:04:07.810 --> 01:04:11.950 align:middle line:84%
+So there are two
+questions in there.
+
+01:04:11.950 --> 01:04:16.150 align:middle line:84%
+Can you get all colorings
+from this algorithm?
+
+01:04:16.150 --> 01:04:17.180 align:middle line:90%
+And the answer is no.
+
+01:04:17.180 --> 01:04:19.490 align:middle line:84%
+You can't get all colorings
+from this algorithm.
+
+01:04:19.490 --> 01:04:22.480 align:middle line:84%
+For example, colorings that
+never use color one you
+
+01:04:22.480 --> 01:04:24.670 align:middle line:84%
+can't get from this algorithm
+because you're always
+
+01:04:24.670 --> 01:04:28.300 align:middle line:84%
+going to use color one
+on the first vertex.
+
+01:04:28.300 --> 01:04:31.270 align:middle line:84%
+But the other question,
+can you always get
+
+01:04:31.270 --> 01:04:35.020 align:middle line:84%
+some coloring that uses the
+minimal number of colors?
+
+01:04:35.020 --> 01:04:38.210 align:middle line:84%
+Even if you can't get
+all different colorings,
+
+01:04:38.210 --> 01:04:40.580 align:middle line:84%
+can you at least get all
+different numbers of colors?
+
+01:04:40.580 --> 01:04:43.150 align:middle line:90%
+And that answer is yes.
+
+01:04:43.150 --> 01:04:46.460 align:middle line:84%
+It takes a little bit of thought
+to prove, but the answer is yes.
+
+01:04:46.460 --> 01:04:51.040 align:middle line:84%
+So if you do try all n
+factorial vertex orderings
+
+01:04:51.040 --> 01:04:55.280 align:middle line:84%
+and take the minimal
+coloring, you will, in fact,
+
+01:04:55.280 --> 01:04:56.540 align:middle line:90%
+get the chromatic number.
+
+01:04:56.540 --> 01:04:58.900 align:middle line:84%
+But n factorial
+is a runtime that
+
+01:04:58.900 --> 01:05:05.140 align:middle line:84%
+is not considered efficient for
+things like NP and NP hardness.
+
+01:05:05.140 --> 01:05:07.150 align:middle line:84%
+So that is absolutely
+an algorithm
+
+01:05:07.150 --> 01:05:12.580 align:middle line:84%
+to compute chromatic number,
+just not an efficient one.
+
+01:05:12.580 --> 01:05:13.740 align:middle line:90%
+Yeah, great question.
+
+01:05:13.740 --> 01:05:16.480 align:middle line:90%
+
+
+01:05:16.480 --> 01:05:21.460 align:middle line:84%
+Let me prove one thing
+about this greedy algorithm.
+
+01:05:21.460 --> 01:05:22.900 align:middle line:84%
+As we said, it's
+not always going
+
+01:05:22.900 --> 01:05:25.510 align:middle line:84%
+to give the smallest
+coloring depending
+
+01:05:25.510 --> 01:05:28.480 align:middle line:90%
+on what order you pick.
+
+01:05:28.480 --> 01:05:34.000 align:middle line:84%
+But we can prove something about
+the quality of colorings we get.
+
+01:05:34.000 --> 01:05:36.405 align:middle line:90%
+And here is that theorem.
+
+01:05:36.405 --> 01:05:44.410 align:middle line:90%
+
+
+01:05:44.410 --> 01:05:54.090 align:middle line:84%
+So for all graphs
+G, for all vertex
+
+01:05:54.090 --> 01:06:09.240 align:middle line:84%
+orderings, if the max
+degree of our graph
+
+01:06:09.240 --> 01:06:11.580 align:middle line:90%
+is less than or equal d--
+
+01:06:11.580 --> 01:06:13.620 align:middle line:84%
+by max degree here, I
+mean, look at the degrees
+
+01:06:13.620 --> 01:06:16.080 align:middle line:84%
+of all the vertices and
+take the largest one.
+
+01:06:16.080 --> 01:06:20.610 align:middle line:84%
+So the maximum of the
+degrees of the vertices.
+
+01:06:20.610 --> 01:06:23.010 align:middle line:84%
+So if the max
+degree is at most d.
+
+01:06:23.010 --> 01:06:25.800 align:middle line:84%
+Said differently, if all
+vertices in the graph
+
+01:06:25.800 --> 01:06:37.830 align:middle line:84%
+have degree at most d,
+then the greedy algorithm
+
+01:06:37.830 --> 01:06:51.020 align:middle line:84%
+returns a proper coloring
+with at most d plus 1 colors.
+
+01:06:51.020 --> 01:06:54.330 align:middle line:90%
+
+
+01:06:54.330 --> 01:06:58.875 align:middle line:84%
+So if all the vertices of the
+graph have degree at most d,
+
+01:06:58.875 --> 01:07:02.195 align:middle line:84%
+then the greedy algorithm will
+use at most d plus 1 colors.
+
+01:07:02.195 --> 01:07:04.920 align:middle line:90%
+
+
+01:07:04.920 --> 01:07:07.710 align:middle line:90%
+Does this statement make sense?
+
+01:07:07.710 --> 01:07:13.080 align:middle line:84%
+So in this example, all the
+degrees are three or less.
+
+01:07:13.080 --> 01:07:15.300 align:middle line:84%
+So we're guaranteed to
+produce a coloring that
+
+01:07:15.300 --> 01:07:18.300 align:middle line:90%
+uses at most four colors.
+
+01:07:18.300 --> 01:07:19.800 align:middle line:84%
+And I want to
+emphasize this depends
+
+01:07:19.800 --> 01:07:23.080 align:middle line:84%
+on the degrees of the vertices,
+not the number of vertices.
+
+01:07:23.080 --> 01:07:26.530 align:middle line:84%
+If this graph had thousands
+and thousands of vertices,
+
+01:07:26.530 --> 01:07:28.810 align:middle line:84%
+but all the degrees
+were three or less,
+
+01:07:28.810 --> 01:07:32.730 align:middle line:84%
+we would still get a coloring
+with at most four colors.
+
+01:07:32.730 --> 01:07:33.900 align:middle line:90%
+All right?
+
+01:07:33.900 --> 01:07:35.880 align:middle line:90%
+It's not necessarily optimal.
+
+01:07:35.880 --> 01:07:38.400 align:middle line:84%
+In this graph, it
+wasn't optimal.
+
+01:07:38.400 --> 01:07:40.560 align:middle line:84%
+We found a three-coloring,
+whereas this only
+
+01:07:40.560 --> 01:07:44.040 align:middle line:84%
+promises a four-coloring,
+but at least it's
+
+01:07:44.040 --> 01:07:46.590 align:middle line:84%
+some measure of
+quality of the results
+
+01:07:46.590 --> 01:07:50.040 align:middle line:84%
+we get out of this
+greedy algorithm.
+
+01:07:50.040 --> 01:07:51.840 align:middle line:90%
+Does the claim make sense?
+
+01:07:51.840 --> 01:07:52.680 align:middle line:90%
+Wonderful.
+
+01:07:52.680 --> 01:07:55.620 align:middle line:90%
+Let's prove it.
+
+01:07:55.620 --> 01:07:56.740 align:middle line:90%
+All right.
+
+01:07:56.740 --> 01:08:04.350 align:middle line:84%
+We're going to prove
+this by induction.
+
+01:08:04.350 --> 01:08:07.530 align:middle line:90%
+But induction on what?
+
+01:08:07.530 --> 01:08:10.770 align:middle line:84%
+We might think,
+OK, well, there's
+
+01:08:10.770 --> 01:08:15.870 align:middle line:84%
+a d in the theorem statement,
+so what if we induct on d?
+
+01:08:15.870 --> 01:08:19.560 align:middle line:84%
+Well, that means at some
+point we know something
+
+01:08:19.560 --> 01:08:22.810 align:middle line:84%
+about all graphs whose
+degrees are at most eight.
+
+01:08:22.810 --> 01:08:25.080 align:middle line:84%
+And we need to prove
+something about all graphs
+
+01:08:25.080 --> 01:08:28.649 align:middle line:90%
+whose degrees are at most nine.
+
+01:08:28.649 --> 01:08:31.420 align:middle line:84%
+I don't really see how to
+get from one to the next.
+
+01:08:31.420 --> 01:08:35.310 align:middle line:84%
+That doesn't seem
+easy to me, right?
+
+01:08:35.310 --> 01:08:38.729 align:middle line:84%
+Graphs with max degree
+nine look very different
+
+01:08:38.729 --> 01:08:41.120 align:middle line:84%
+from graphs with
+max degree eight.
+
+01:08:41.120 --> 01:08:42.960 align:middle line:84%
+If you have a graph
+with max degree nine,
+
+01:08:42.960 --> 01:08:46.580 align:middle line:84%
+there might be many, many,
+many vertices with degree nine.
+
+01:08:46.580 --> 01:08:49.319 align:middle line:84%
+But to get anything useful out
+of our inductive hypothesis,
+
+01:08:49.319 --> 01:08:52.340 align:middle line:84%
+we would need all degrees
+to be eight or less.
+
+01:08:52.340 --> 01:08:53.880 align:middle line:90%
+There is a disconnect there.
+
+01:08:53.880 --> 01:08:57.410 align:middle line:84%
+I don't know how to
+make that proof work.
+
+01:08:57.410 --> 01:09:02.130 align:middle line:90%
+So let's see induction on what?
+
+01:09:02.130 --> 01:09:04.819 align:middle line:90%
+
+
+01:09:04.819 --> 01:09:09.590 align:middle line:84%
+We just said induction on d
+may be not such a good idea.
+
+01:09:09.590 --> 01:09:15.439 align:middle line:84%
+Often when proving a statement
+about graphs by induction,
+
+01:09:15.439 --> 01:09:18.390 align:middle line:84%
+there are two common
+strategies to try.
+
+01:09:18.390 --> 01:09:21.770 align:middle line:84%
+You can try inducting on
+the number of vertices
+
+01:09:21.770 --> 01:09:24.359 align:middle line:84%
+or inducting on the
+number of edges.
+
+01:09:24.359 --> 01:09:27.020 align:middle line:84%
+I'll explain what that
+means in just a second.
+
+01:09:27.020 --> 01:09:29.000 align:middle line:84%
+But these are going to
+be your best friends.
+
+01:09:29.000 --> 01:09:32.390 align:middle line:84%
+If you're trying to prove a
+thing about graphs by induction,
+
+01:09:32.390 --> 01:09:34.220 align:middle line:84%
+first, try proving
+it by induction
+
+01:09:34.220 --> 01:09:35.640 align:middle line:90%
+on the number of vertices.
+
+01:09:35.640 --> 01:09:38.580 align:middle line:84%
+Then try proving it by induction
+on the number of edges.
+
+01:09:38.580 --> 01:09:41.729 align:middle line:84%
+If both of those don't
+work, I don't know.
+
+01:09:41.729 --> 01:09:44.399 align:middle line:90%
+Cry.
+
+01:09:44.399 --> 01:09:46.760 align:middle line:90%
+That's what I would do.
+
+01:09:46.760 --> 01:09:49.229 align:middle line:90%
+But let's try this strategy.
+
+01:09:49.229 --> 01:09:52.140 align:middle line:84%
+Let's induct on the number
+of vertices in our graph.
+
+01:09:52.140 --> 01:09:55.010 align:middle line:90%
+And here's what that means.
+
+01:09:55.010 --> 01:10:02.570 align:middle line:84%
+So we're going to let p of
+n be the statement that all
+
+01:10:02.570 --> 01:10:09.860 align:middle line:90%
+graphs with n vertices--
+
+01:10:09.860 --> 01:10:12.626 align:middle line:84%
+so all graphs with
+exactly n vertices--
+
+01:10:12.626 --> 01:10:15.140 align:middle line:90%
+
+
+01:10:15.140 --> 01:10:28.970 align:middle line:84%
+and max degree at most
+d result in at most d
+
+01:10:28.970 --> 01:10:32.820 align:middle line:84%
+plus 1 colors from
+the greedy algorithm.
+
+01:10:32.820 --> 01:10:40.040 align:middle line:90%
+
+
+01:10:40.040 --> 01:10:41.930 align:middle line:84%
+So this is what we
+mean by we're inducting
+
+01:10:41.930 --> 01:10:43.170 align:middle line:90%
+on the number of vertices.
+
+01:10:43.170 --> 01:10:45.890 align:middle line:84%
+Because n, the variable we're
+going to be inducting on,
+
+01:10:45.890 --> 01:10:49.820 align:middle line:84%
+is measuring the number
+of vertices of our graph.
+
+01:10:49.820 --> 01:10:53.630 align:middle line:84%
+So if we think about
+induction as proving things
+
+01:10:53.630 --> 01:10:56.990 align:middle line:84%
+one step at a time, we're
+going to first prove something
+
+01:10:56.990 --> 01:10:59.250 align:middle line:84%
+about all graphs
+with one vertex,
+
+01:10:59.250 --> 01:11:01.290 align:middle line:84%
+then all graphs
+with two vertices,
+
+01:11:01.290 --> 01:11:03.210 align:middle line:84%
+then all graphs
+with three vertices,
+
+01:11:03.210 --> 01:11:05.130 align:middle line:84%
+then all graphs
+with four vertices.
+
+01:11:05.130 --> 01:11:06.240 align:middle line:90%
+This is fun.
+
+01:11:06.240 --> 01:11:07.920 align:middle line:90%
+It's 5, 6, 7.
+
+01:11:07.920 --> 01:11:11.090 align:middle line:84%
+We're going to build
+up one size at a time.
+
+01:11:11.090 --> 01:11:14.600 align:middle line:84%
+And that's how our
+induction is going to go.
+
+01:11:14.600 --> 01:11:18.440 align:middle line:84%
+All graphs with n vertices
+is the key phrase here
+
+01:11:18.440 --> 01:11:21.970 align:middle line:84%
+that makes this inducting
+on the number of vertices.
+
+01:11:21.970 --> 01:11:23.970 align:middle line:84%
+If you want to do induct
+on the number of edges,
+
+01:11:23.970 --> 01:11:28.340 align:middle line:84%
+you would say all graphs with
+n edges or something like that.
+
+01:11:28.340 --> 01:11:29.010 align:middle line:90%
+All right?
+
+01:11:29.010 --> 01:11:30.450 align:middle line:90%
+Does this setup make sense?
+
+01:11:30.450 --> 01:11:33.680 align:middle line:90%
+So we've defined Pn here.
+
+01:11:33.680 --> 01:11:53.020 align:middle line:84%
+Our goal-- we want to prove for
+all n greater or equal 1 P of n
+
+01:11:53.020 --> 01:11:54.970 align:middle line:90%
+is true.
+
+01:11:54.970 --> 01:11:56.950 align:middle line:90%
+Yeah?
+
+01:11:56.950 --> 01:12:02.290 align:middle line:84%
+So for any number of
+vertices, all graphs
+
+01:12:02.290 --> 01:12:06.460 align:middle line:84%
+with that many
+vertices do the thing.
+
+01:12:06.460 --> 01:12:11.050 align:middle line:84%
+So together, all of these Pn's,
+starting at P1 and going upward,
+
+01:12:11.050 --> 01:12:15.640 align:middle line:90%
+include all finite graphs.
+
+01:12:15.640 --> 01:12:18.220 align:middle line:90%
+Does that make sense?
+
+01:12:18.220 --> 01:12:20.072 align:middle line:84%
+I failed to mention
+earlier, but most
+
+01:12:20.072 --> 01:12:22.030 align:middle line:84%
+of the graphs we're
+talking about in this class
+
+01:12:22.030 --> 01:12:23.330 align:middle line:90%
+are going to be finite.
+
+01:12:23.330 --> 01:12:27.550 align:middle line:84%
+So if I don't specify, go
+ahead and assume it's finite.
+
+01:12:27.550 --> 01:12:29.657 align:middle line:84%
+So this will cover all
+of the finite graphs.
+
+01:12:29.657 --> 01:12:31.490 align:middle line:84%
+So it'll cover all the
+graphs we care about.
+
+01:12:31.490 --> 01:12:33.460 align:middle line:84%
+And we'll end up
+proving our theorem.
+
+01:12:33.460 --> 01:12:37.960 align:middle line:84%
+All right, so let's
+actually prove our theorem.
+
+01:12:37.960 --> 01:12:42.190 align:middle line:90%
+Base case P of 1.
+
+01:12:42.190 --> 01:12:44.080 align:middle line:84%
+Well, if there's
+only one vertex,
+
+01:12:44.080 --> 01:12:46.095 align:middle line:84%
+we know what the greedy
+coloring is going to do.
+
+01:12:46.095 --> 01:12:48.820 align:middle line:90%
+
+
+01:12:48.820 --> 01:12:53.080 align:middle line:84%
+Well, let's see,
+max degree is zero
+
+01:12:53.080 --> 01:12:55.900 align:middle line:84%
+because there are no edges
+if there's only one vertex.
+
+01:12:55.900 --> 01:13:04.360 align:middle line:90%
+Greedy coloring uses one color.
+
+01:13:04.360 --> 01:13:09.370 align:middle line:84%
+One is 0 plus 1, which
+is what was promised.
+
+01:13:09.370 --> 01:13:11.560 align:middle line:90%
+So P of 1 is fine.
+
+01:13:11.560 --> 01:13:21.430 align:middle line:84%
+Let's do the inductive step, P
+of n-- so here, assume P of n.
+
+01:13:21.430 --> 01:13:24.340 align:middle line:90%
+We want to show P of n plus 1.
+
+01:13:24.340 --> 01:13:29.260 align:middle line:84%
+And I really want to emphasize
+one point right here.
+
+01:13:29.260 --> 01:13:31.390 align:middle line:84%
+Very often in this
+class, students
+
+01:13:31.390 --> 01:13:36.220 align:middle line:84%
+come away from the next couple
+of lectures with the belief
+
+01:13:36.220 --> 01:13:39.680 align:middle line:84%
+that induction on
+graphs is different.
+
+01:13:39.680 --> 01:13:41.120 align:middle line:90%
+It follows different rules.
+
+01:13:41.120 --> 01:13:42.200 align:middle line:90%
+It's backwards.
+
+01:13:42.200 --> 01:13:45.940 align:middle line:84%
+We're going from n plus 1
+to n or something like that.
+
+01:13:45.940 --> 01:13:48.370 align:middle line:84%
+And I really want to
+emphasize induction
+
+01:13:48.370 --> 01:13:51.100 align:middle line:84%
+on graphs is using regular
+induction in the way we're
+
+01:13:51.100 --> 01:13:52.150 align:middle line:90%
+used to.
+
+01:13:52.150 --> 01:13:54.790 align:middle line:84%
+We're not changing
+the rules here.
+
+01:13:54.790 --> 01:14:00.160 align:middle line:84%
+What changes is that what
+it means to prove P of n
+
+01:14:00.160 --> 01:14:02.680 align:middle line:84%
+implies P of n plus 1
+is a little different
+
+01:14:02.680 --> 01:14:03.950 align:middle line:90%
+from what we're used to.
+
+01:14:03.950 --> 01:14:06.860 align:middle line:84%
+We're still proving that P
+of n implies P of n plus 1,
+
+01:14:06.860 --> 01:14:09.340 align:middle line:84%
+because that's what
+induction tells us to do.
+
+01:14:09.340 --> 01:14:13.150 align:middle line:84%
+But if we use our proof
+outlining techniques
+
+01:14:13.150 --> 01:14:15.100 align:middle line:84%
+from the first couple
+lectures, and really
+
+01:14:15.100 --> 01:14:17.350 align:middle line:84%
+unpack what it means to
+prove that this implies
+
+01:14:17.350 --> 01:14:20.740 align:middle line:84%
+that, what it tells you
+to do is often a little
+
+01:14:20.740 --> 01:14:24.010 align:middle line:84%
+bit different from what your
+intuition might tell you
+
+01:14:24.010 --> 01:14:25.720 align:middle line:90%
+you're supposed to do.
+
+01:14:25.720 --> 01:14:30.990 align:middle line:84%
+So it's doubly important
+when inducting on graphs
+
+01:14:30.990 --> 01:14:34.270 align:middle line:84%
+to lean heavily on our
+proof outlining skills.
+
+01:14:34.270 --> 01:14:36.870 align:middle line:84%
+Make sure that we're setting
+up our proof correctly
+
+01:14:36.870 --> 01:14:40.260 align:middle line:84%
+to prove Pn implies Pn
+plus 1, and not something
+
+01:14:40.260 --> 01:14:44.340 align:middle line:84%
+that we just think means
+Pn implies Pn plus 1.
+
+01:14:44.340 --> 01:14:45.850 align:middle line:90%
+So let's do that now.
+
+01:14:45.850 --> 01:14:46.960 align:middle line:90%
+We're assuming P of n.
+
+01:14:46.960 --> 01:14:55.110 align:middle line:84%
+In other words, we're
+assuming all n vertex
+
+01:14:55.110 --> 01:15:05.600 align:middle line:84%
+graphs with min degree at most d
+produce at most d plus 1 colors.
+
+01:15:05.600 --> 01:15:08.670 align:middle line:90%
+
+
+01:15:08.670 --> 01:15:09.580 align:middle line:90%
+That's P of n.
+
+01:15:09.580 --> 01:15:11.460 align:middle line:90%
+We're assuming P of n.
+
+01:15:11.460 --> 01:15:20.130 align:middle line:84%
+And we want to show
+that all n plus 1 vertex
+
+01:15:20.130 --> 01:15:32.640 align:middle line:84%
+graphs with min degree at most d
+produce at most d plus 1 colors.
+
+01:15:32.640 --> 01:15:34.950 align:middle line:84%
+All I've done is write
+out what Pn and Pn plus 1
+
+01:15:34.950 --> 01:15:36.330 align:middle line:90%
+mean in context.
+
+01:15:36.330 --> 01:15:38.340 align:middle line:90%
+With me so far?
+
+01:15:38.340 --> 01:15:41.280 align:middle line:84%
+All right, and here's
+where the confusing bit
+
+01:15:41.280 --> 01:15:44.910 align:middle line:84%
+happens, or at least
+the non-intuitive bit.
+
+01:15:44.910 --> 01:15:49.710 align:middle line:84%
+Our task is we want to prove
+that all n plus 1 vertex graphs
+
+01:15:49.710 --> 01:15:51.750 align:middle line:90%
+do some stuff.
+
+01:15:51.750 --> 01:15:55.635 align:middle line:84%
+So the theorem we're trying
+to prove is a for all.
+
+01:15:55.635 --> 01:15:58.920 align:middle line:84%
+All n plus 1 vertex
+graphs do something.
+
+01:15:58.920 --> 01:16:01.290 align:middle line:84%
+But we know how to
+prove a for all.
+
+01:16:01.290 --> 01:16:04.260 align:middle line:84%
+We start with a generic
+thing in that set,
+
+01:16:04.260 --> 01:16:07.770 align:middle line:84%
+and we prove the
+conclusion for that thing.
+
+01:16:07.770 --> 01:16:10.372 align:middle line:84%
+So this for all
+immediately tells us
+
+01:16:10.372 --> 01:16:12.330 align:middle line:84%
+that the next line of
+our proof should probably
+
+01:16:12.330 --> 01:16:13.445 align:middle line:90%
+look something like this.
+
+01:16:13.445 --> 01:16:16.200 align:middle line:90%
+
+
+01:16:16.200 --> 01:16:29.675 align:middle line:84%
+Suppose G is an arbitrary
+n plus 1 vertex graph.
+
+01:16:29.675 --> 01:16:33.990 align:middle line:90%
+
+
+01:16:33.990 --> 01:16:35.610 align:middle line:90%
+Yes?
+
+01:16:35.610 --> 01:16:38.310 align:middle line:84%
+AUDIENCE: For writing out
+the meanings of P of n
+
+01:16:38.310 --> 01:16:41.460 align:middle line:84%
+and P of n plus 1, did you
+mean to say max degree instead
+
+01:16:41.460 --> 01:16:42.278 align:middle line:90%
+of min degree?
+
+01:16:42.278 --> 01:16:43.320 align:middle line:90%
+ZACHARY ABEL: Absolutely.
+
+01:16:43.320 --> 01:16:45.610 align:middle line:84%
+I meant to say max degree
+instead of min degree.
+
+01:16:45.610 --> 01:16:46.600 align:middle line:90%
+That is a typo.
+
+01:16:46.600 --> 01:16:48.420 align:middle line:90%
+Thank you so much.
+
+01:16:48.420 --> 01:16:51.238 align:middle line:84%
+I guess it's a write-o
+because I'm not typing.
+
+01:16:51.238 --> 01:16:52.030 align:middle line:90%
+AUDIENCE: For both?
+
+01:16:52.030 --> 01:16:52.380 align:middle line:90%
+ZACHARY ABEL: For both, yes.
+
+01:16:52.380 --> 01:16:53.090 align:middle line:90%
+Thank you.
+
+01:16:53.090 --> 01:16:57.570 align:middle line:90%
+
+
+01:16:57.570 --> 01:16:59.310 align:middle line:90%
+Thank you for catching that.
+
+01:16:59.310 --> 01:17:01.470 align:middle line:84%
+All right, is everyone
+OK with the fact
+
+01:17:01.470 --> 01:17:04.590 align:middle line:84%
+that this for all, all
+n plus 1 vertex graphs
+
+01:17:04.590 --> 01:17:08.220 align:middle line:84%
+tells us that this next line
+should start with suppose G is
+
+01:17:08.220 --> 01:17:10.860 align:middle line:90%
+an n plus 1 vertex graph?
+
+01:17:10.860 --> 01:17:14.910 align:middle line:84%
+Because this is the part
+that many students get wrong.
+
+01:17:14.910 --> 01:17:19.540 align:middle line:84%
+They will often say suppose G
+is an arbitrary n vertex graph.
+
+01:17:19.540 --> 01:17:21.690 align:middle line:84%
+And then they go on
+to try to prove stuff
+
+01:17:21.690 --> 01:17:23.107 align:middle line:84%
+about some n plus
+1 vertex graphs,
+
+01:17:23.107 --> 01:17:24.857 align:middle line:84%
+but they haven't shown
+that they're really
+
+01:17:24.857 --> 01:17:26.010 align:middle line:90%
+getting all of them.
+
+01:17:26.010 --> 01:17:27.770 align:middle line:84%
+It's this for all
+that tells us we
+
+01:17:27.770 --> 01:17:31.100 align:middle line:84%
+should start like
+this and no other way.
+
+01:17:31.100 --> 01:17:34.400 align:middle line:84%
+All right, so what
+do we do next?
+
+01:17:34.400 --> 01:17:44.210 align:middle line:84%
+So vertices V1, Vn, Vn plus 1,
+so we have whatever vertex order
+
+01:17:44.210 --> 01:17:45.360 align:middle line:90%
+we're using.
+
+01:17:45.360 --> 01:17:59.360 align:middle line:84%
+Now, the greedy algorithm will
+color V1 through Vn as if Vn
+
+01:17:59.360 --> 01:18:07.840 align:middle line:84%
+plus 1 and its
+edges didn't exist.
+
+01:18:07.840 --> 01:18:10.400 align:middle line:90%
+
+
+01:18:10.400 --> 01:18:12.500 align:middle line:84%
+The algorithm never
+looks at edges
+
+01:18:12.500 --> 01:18:16.400 align:middle line:84%
+that connect to vertices that
+haven't been colored yet.
+
+01:18:16.400 --> 01:18:18.930 align:middle line:84%
+So as far as the greedy
+algorithm is concerned,
+
+01:18:18.930 --> 01:18:22.670 align:middle line:84%
+coloring vertices V1
+through Vn, so all but one
+
+01:18:22.670 --> 01:18:25.370 align:middle line:84%
+of the vertices in
+our graph, is going
+
+01:18:25.370 --> 01:18:29.450 align:middle line:84%
+to look just like coloring
+an n vertex graph.
+
+01:18:29.450 --> 01:18:30.140 align:middle line:90%
+Yeah?
+
+01:18:30.140 --> 01:18:41.450 align:middle line:84%
+So this, what's called
+a sub-graph on V1
+
+01:18:41.450 --> 01:18:44.150 align:middle line:84%
+through Vn, if we take
+just the first n vertices,
+
+01:18:44.150 --> 01:18:49.460 align:middle line:84%
+make a sub-graph of just its
+vertices as our vertex set
+
+01:18:49.460 --> 01:18:51.710 align:middle line:84%
+and the edges between
+them as our edge
+
+01:18:51.710 --> 01:19:04.435 align:middle line:84%
+set with all their edges, this
+sub-graph also has max degree d.
+
+01:19:04.435 --> 01:19:07.700 align:middle line:90%
+
+
+01:19:07.700 --> 01:19:08.295 align:middle line:90%
+Oh, sorry.
+
+01:19:08.295 --> 01:19:13.835 align:middle line:90%
+
+
+01:19:13.835 --> 01:19:15.710 align:middle line:84%
+We're supposed to prove
+something about all n
+
+01:19:15.710 --> 01:19:18.260 align:middle line:84%
+plus 1 vertex graphs
+with max degree d.
+
+01:19:18.260 --> 01:19:22.862 align:middle line:84%
+So assume G is some n plus 1
+vertex graph with max degree d.
+
+01:19:22.862 --> 01:19:25.070 align:middle line:84%
+Then, when we look at the
+sub-graph, where we're only
+
+01:19:25.070 --> 01:19:27.840 align:middle line:84%
+taking some of the vertices
+and some of the edges,
+
+01:19:27.840 --> 01:19:31.130 align:middle line:84%
+well, degree can't go
+up when you do that.
+
+01:19:31.130 --> 01:19:37.030 align:middle line:84%
+So this sub-graph also
+has max degree at most d.
+
+01:19:37.030 --> 01:19:40.608 align:middle line:90%
+
+
+01:19:40.608 --> 01:19:41.108 align:middle line:90%
+OK.
+
+01:19:41.108 --> 01:19:44.852 align:middle line:90%
+
+
+01:19:44.852 --> 01:19:51.320 align:middle line:84%
+By P of n, because
+we assumed P of n,
+
+01:19:51.320 --> 01:19:57.325 align:middle line:84%
+these n vertices will use
+at most d plus 1 colors.
+
+01:19:57.325 --> 01:20:01.676 align:middle line:90%
+
+
+01:20:01.676 --> 01:20:04.950 align:middle line:84%
+We have an n vertex graph
+that we're talking about.
+
+01:20:04.950 --> 01:20:06.690 align:middle line:84%
+We know it satisfies
+the property,
+
+01:20:06.690 --> 01:20:09.120 align:middle line:84%
+so we get the conclusion
+because of our assumption.
+
+01:20:09.120 --> 01:20:11.840 align:middle line:84%
+So it uses at most
+d plus 1 colors.
+
+01:20:11.840 --> 01:20:13.520 align:middle line:84%
+So now, all we
+need to talk about
+
+01:20:13.520 --> 01:20:15.596 align:middle line:84%
+is the last step of
+the greedy algorithm.
+
+01:20:15.596 --> 01:20:18.130 align:middle line:90%
+
+
+01:20:18.130 --> 01:20:22.930 align:middle line:90%
+Last step for Vn plus 1.
+
+01:20:22.930 --> 01:20:26.230 align:middle line:84%
+Well Vn plus 1 has
+degree at most d.
+
+01:20:26.230 --> 01:20:29.890 align:middle line:84%
+So it has at most d
+colors that conflict.
+
+01:20:29.890 --> 01:20:36.550 align:middle line:84%
+So one of the first d plus
+1 colors will be sufficient.
+
+01:20:36.550 --> 01:20:43.150 align:middle line:84%
+Uses 1 through d plus 1
+uses one of these colors
+
+01:20:43.150 --> 01:20:46.030 align:middle line:84%
+because you can only have
+d conflicts because this
+
+01:20:46.030 --> 01:20:48.250 align:middle line:90%
+has degree at most d.
+
+01:20:48.250 --> 01:20:52.780 align:middle line:84%
+Therefore, the last color also
+uses one of the first d plus 1
+
+01:20:52.780 --> 01:20:53.330 align:middle line:90%
+colors.
+
+01:20:53.330 --> 01:20:55.490 align:middle line:84%
+So the whole coloring
+uses that many colors.
+
+01:20:55.490 --> 01:20:58.810 align:middle line:90%
+And we're done with the proof.
+
+01:20:58.810 --> 01:21:01.510 align:middle line:90%
+Did that make sense?
+
+01:21:01.510 --> 01:21:03.375 align:middle line:84%
+If it didn't, come up,
+talk to me afterward.
+
+01:21:03.375 --> 01:21:05.000 align:middle line:84%
+I'm happy to stay
+and answer questions.
+
+01:21:05.000 --> 01:21:05.870 align:middle line:90%
+Thank you so much.
+
+01:21:05.870 --> 01:21:07.740 align:middle line:90%
+We'll see you on Thursday.
+
+01:21:07.740 --> 01:21:15.000 align:middle line:90%

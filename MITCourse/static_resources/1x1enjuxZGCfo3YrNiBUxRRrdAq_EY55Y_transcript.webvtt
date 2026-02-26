@@ -1,0 +1,5777 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.440 align:middle line:90%
+[SQUEAKING]
+
+00:00:01.440 --> 00:00:04.800 align:middle line:90%
+[RUSTLING]
+
+00:00:04.800 --> 00:00:08.160 align:middle line:90%
+[CLICKING]
+
+00:00:08.160 --> 00:00:11.678 align:middle line:90%
+
+
+00:00:11.678 --> 00:00:13.470 align:middle line:84%
+ERIK DEMAINE: All right,
+let's get started.
+
+00:00:13.470 --> 00:00:17.790 align:middle line:84%
+Today we continue probability,
+the last theme of the class.
+
+00:00:17.790 --> 00:00:20.900 align:middle line:84%
+So we have three more
+lectures about probability.
+
+00:00:20.900 --> 00:00:23.370 align:middle line:84%
+Today's lecture is
+about expectation,
+
+00:00:23.370 --> 00:00:26.340 align:middle line:90%
+which is a nice summary.
+
+00:00:26.340 --> 00:00:29.580 align:middle line:84%
+It's a one-number summary
+of a random variable.
+
+00:00:29.580 --> 00:00:31.580 align:middle line:84%
+Remember from last
+time, a random variable
+
+00:00:31.580 --> 00:00:33.540 align:middle line:90%
+is neither random nor variable.
+
+00:00:33.540 --> 00:00:38.550 align:middle line:84%
+It's really a function from
+your sample space to something,
+
+00:00:38.550 --> 00:00:41.210 align:middle line:90%
+usually real numbers.
+
+00:00:41.210 --> 00:00:46.830 align:middle line:84%
+So we use this to represent some
+computation about an experiment.
+
+00:00:46.830 --> 00:00:50.700 align:middle line:84%
+We had a similar setup
+with derived variables,
+
+00:00:50.700 --> 00:00:55.178 align:middle line:84%
+if you remember back to state
+machines, which were also not
+
+00:00:55.178 --> 00:00:56.720 align:middle line:84%
+variables, they were
+really functions
+
+00:00:56.720 --> 00:00:59.010 align:middle line:84%
+from the state of the
+machine to numbers.
+
+00:00:59.010 --> 00:01:01.070 align:middle line:84%
+So random variable
+is the same idea.
+
+00:01:01.070 --> 00:01:03.490 align:middle line:84%
+If I give you-- if I
+tell you what sample--
+
+00:01:03.490 --> 00:01:05.120 align:middle line:84%
+like, what random
+events happened,
+
+00:01:05.120 --> 00:01:08.690 align:middle line:84%
+you can compute a single
+value for this variable.
+
+00:01:08.690 --> 00:01:10.070 align:middle line:90%
+That's the meaning.
+
+00:01:10.070 --> 00:01:12.190 align:middle line:84%
+And we had a particular
+type of random variable
+
+00:01:12.190 --> 00:01:13.815 align:middle line:84%
+that's going to be
+really useful today,
+
+00:01:13.815 --> 00:01:16.630 align:middle line:84%
+which is an indicator random
+variable where the output is
+
+00:01:16.630 --> 00:01:18.610 align:middle line:84%
+always 0 or 1,
+indicating something
+
+00:01:18.610 --> 00:01:22.060 align:middle line:84%
+happened-- that's the
+1-- or it didn't happen.
+
+00:01:22.060 --> 00:01:24.710 align:middle line:90%
+So functions are complicated.
+
+00:01:24.710 --> 00:01:26.397 align:middle line:84%
+If I want to write
+down a function,
+
+00:01:26.397 --> 00:01:27.980 align:middle line:84%
+I got to write down
+a lot of numbers--
+
+00:01:27.980 --> 00:01:31.340 align:middle line:90%
+one for every possible sample.
+
+00:01:31.340 --> 00:01:35.395 align:middle line:84%
+So expectation is a way to
+take that complicated function
+
+00:01:35.395 --> 00:01:36.770 align:middle line:84%
+and reduce it down
+to one number.
+
+00:01:36.770 --> 00:01:37.720 align:middle line:84%
+Obviously, it's not
+going to tell you
+
+00:01:37.720 --> 00:01:40.210 align:middle line:84%
+everything about the
+function, but it tells you
+
+00:01:40.210 --> 00:01:42.620 align:middle line:84%
+what you expect to
+happen on average.
+
+00:01:42.620 --> 00:01:44.640 align:middle line:84%
+What is the-- it's not
+the most likely thing.
+
+00:01:44.640 --> 00:01:46.640 align:middle line:84%
+But if you take all the
+things that could happen
+
+00:01:46.640 --> 00:01:48.860 align:middle line:84%
+and you average them,
+that's expectation.
+
+00:01:48.860 --> 00:01:53.110 align:middle line:90%
+So let's define that precisely.
+
+00:01:53.110 --> 00:01:54.740 align:middle line:90%
+Match my notation here.
+
+00:01:54.740 --> 00:02:10.199 align:middle line:84%
+So let's call random variable
+X over a sample space S. Then
+
+00:02:10.199 --> 00:02:17.010 align:middle line:84%
+the expectation of X,
+which we write Ex of X.
+
+00:02:17.010 --> 00:02:19.870 align:middle line:84%
+Although, often it's
+written just E of x.
+
+00:02:19.870 --> 00:02:21.730 align:middle line:84%
+So if you look at other
+probability sources,
+
+00:02:21.730 --> 00:02:22.900 align:middle line:90%
+you might see that as well.
+
+00:02:22.900 --> 00:02:24.690 align:middle line:84%
+Both of these mean
+the same thing.
+
+00:02:24.690 --> 00:02:27.150 align:middle line:84%
+It's going to be a
+weighted average-- weighted
+
+00:02:27.150 --> 00:02:28.330 align:middle line:90%
+by probabilities.
+
+00:02:28.330 --> 00:02:33.330 align:middle line:84%
+So we're going to sum over
+all possible samples, which
+
+00:02:33.330 --> 00:02:38.700 align:middle line:84%
+we call omega and S
+of the probability
+
+00:02:38.700 --> 00:02:44.460 align:middle line:90%
+of that outcome times X--
+
+00:02:44.460 --> 00:02:47.400 align:middle line:84%
+the function X evaluated
+at that income--
+
+00:02:47.400 --> 00:02:52.080 align:middle line:90%
+outcome-- omega for outcome.
+
+00:02:52.080 --> 00:02:57.380 align:middle line:84%
+So if I-- so this is a
+particular type of average
+
+00:02:57.380 --> 00:03:00.010 align:middle line:84%
+because the
+probabilities sum to 1.
+
+00:03:00.010 --> 00:03:02.230 align:middle line:84%
+And in particular if the
+probabilities are all equal,
+
+00:03:02.230 --> 00:03:05.590 align:middle line:84%
+this is literally the
+average value of X.
+
+00:03:05.590 --> 00:03:07.540 align:middle line:84%
+But, of course, we
+would like-- what
+
+00:03:07.540 --> 00:03:09.698 align:middle line:84%
+we care about is the
+weighted by the probability.
+
+00:03:09.698 --> 00:03:11.740 align:middle line:84%
+If there's something that's
+more likely to occur,
+
+00:03:11.740 --> 00:03:15.320 align:middle line:84%
+that should get a bigger
+multiplier in front.
+
+00:03:15.320 --> 00:03:21.190 align:middle line:84%
+So this is going to
+be some average of X.
+
+00:03:21.190 --> 00:03:24.700 align:middle line:84%
+Sometimes the expectation
+is also called the average.
+
+00:03:24.700 --> 00:03:30.250 align:middle line:84%
+Let's do a very simple
+example, which is
+
+00:03:30.250 --> 00:03:35.250 align:middle line:90%
+we roll a fair six-sided die.
+
+00:03:35.250 --> 00:03:38.710 align:middle line:90%
+
+
+00:03:38.710 --> 00:03:41.390 align:middle line:84%
+I happen to have such
+a die right here.
+
+00:03:41.390 --> 00:03:42.380 align:middle line:90%
+So we roll it.
+
+00:03:42.380 --> 00:03:45.260 align:middle line:84%
+It has values 1 to 6,
+each equally likely.
+
+00:03:45.260 --> 00:03:46.080 align:middle line:90%
+Here, I got a 1.
+
+00:03:46.080 --> 00:03:48.850 align:middle line:90%
+
+
+00:03:48.850 --> 00:03:52.540 align:middle line:90%
+What is the expected value?
+
+00:03:52.540 --> 00:03:57.050 align:middle line:84%
+So the sample space
+here is 1 up to 6.
+
+00:03:57.050 --> 00:03:59.730 align:middle line:90%
+All the probabilities are 1, 6.
+
+00:03:59.730 --> 00:04:04.590 align:middle line:84%
+Probability of I
+occurring is 1 over 6.
+
+00:04:04.590 --> 00:04:08.510 align:middle line:90%
+And so the expected value--
+
+00:04:08.510 --> 00:04:10.580 align:middle line:84%
+I should probably
+give this a name.
+
+00:04:10.580 --> 00:04:15.230 align:middle line:84%
+Let's call it D.
+Probability that D equals I
+
+00:04:15.230 --> 00:04:18.990 align:middle line:84%
+for any particular I
+between 1 and 6 is 1 over 6.
+
+00:04:18.990 --> 00:04:23.420 align:middle line:84%
+And so the expected
+value of D, the die roll
+
+00:04:23.420 --> 00:04:25.020 align:middle line:90%
+is from that formula.
+
+00:04:25.020 --> 00:04:32.780 align:middle line:84%
+Well, it's just the probability
+that we get a 1 times 1
+
+00:04:32.780 --> 00:04:39.595 align:middle line:84%
+plus the probability that we
+get a 2 times 2 plus and so on.
+
+00:04:39.595 --> 00:04:41.220 align:middle line:84%
+I'm going to rewrite
+that a little bit.
+
+00:04:41.220 --> 00:04:43.290 align:middle line:84%
+So these probabilities
+are all 1/6.
+
+00:04:43.290 --> 00:04:50.660 align:middle line:84%
+So we've got 1/6 times 1 plus
+1/6 times 2 plus up to 1/6 times
+
+00:04:50.660 --> 00:04:52.410 align:middle line:90%
+6.
+
+00:04:52.410 --> 00:04:58.290 align:middle line:84%
+These numbers is our favorite
+summation-- the triangular
+
+00:04:58.290 --> 00:04:59.610 align:middle line:90%
+number.
+
+00:04:59.610 --> 00:05:03.670 align:middle line:90%
+This is Gauss, right?
+
+00:05:03.670 --> 00:05:06.340 align:middle line:84%
+So if I factor out
+the 1/6 in front,
+
+00:05:06.340 --> 00:05:09.460 align:middle line:84%
+then we have that times
+the sum 1 through 6,
+
+00:05:09.460 --> 00:05:15.500 align:middle line:84%
+which you should remember
+is 6 times 7 over 2.
+
+00:05:15.500 --> 00:05:16.750 align:middle line:90%
+It's getting a little crowded.
+
+00:05:16.750 --> 00:05:20.700 align:middle line:84%
+This is 1 over 6 times
+6 times 7 over 2.
+
+00:05:20.700 --> 00:05:23.420 align:middle line:90%
+Let me get a color chalk.
+
+00:05:23.420 --> 00:05:25.980 align:middle line:90%
+
+
+00:05:25.980 --> 00:05:31.570 align:middle line:84%
+It's time for the exciting
+cancellation moment.
+
+00:05:31.570 --> 00:05:32.970 align:middle line:90%
+The 6's cancel.
+
+00:05:32.970 --> 00:05:37.290 align:middle line:84%
+And so we're left with
+7 over 2, also known
+
+00:05:37.290 --> 00:05:40.810 align:middle line:84%
+as 3.5, which is,
+as you would expect,
+
+00:05:40.810 --> 00:05:43.320 align:middle line:84%
+the average of
+numbers 1 through 6.
+
+00:05:43.320 --> 00:05:46.110 align:middle line:84%
+But notably, a point
+of this example
+
+00:05:46.110 --> 00:05:51.280 align:middle line:84%
+is that the expectation is
+not actually a valid outcome.
+
+00:05:51.280 --> 00:05:53.820 align:middle line:90%
+You never get a 3.5 on a die.
+
+00:05:53.820 --> 00:05:56.250 align:middle line:84%
+But you get 1, 2,
+3, 4, 5, and 6,
+
+00:05:56.250 --> 00:05:59.220 align:middle line:84%
+and the average of
+those is 3 and 1/2.
+
+00:05:59.220 --> 00:06:05.160 align:middle line:84%
+So don't expect the expectation
+to be an actual point in your--
+
+00:06:05.160 --> 00:06:08.610 align:middle line:84%
+an actual value that
+X could take on.
+
+00:06:08.610 --> 00:06:09.370 align:middle line:90%
+All right.
+
+00:06:09.370 --> 00:06:11.913 align:middle line:84%
+Let's do a more
+interesting example,
+
+00:06:11.913 --> 00:06:13.205 align:middle line:90%
+which we're going to use a lot.
+
+00:06:13.205 --> 00:06:15.960 align:middle line:90%
+
+
+00:06:15.960 --> 00:06:20.370 align:middle line:84%
+What if I have an indicator
+random variable, also X--
+
+00:06:20.370 --> 00:06:22.770 align:middle line:90%
+no, call it I--
+
+00:06:22.770 --> 00:06:27.840 align:middle line:84%
+for event A. So
+remember this means
+
+00:06:27.840 --> 00:06:32.700 align:middle line:90%
+I is 1 if event A occurred.
+
+00:06:32.700 --> 00:06:35.850 align:middle line:84%
+If the sample that
+happened is in A,
+
+00:06:35.850 --> 00:06:38.730 align:middle line:84%
+and it's zero if
+A did not occur.
+
+00:06:38.730 --> 00:06:48.480 align:middle line:84%
+So let's try to compute
+the expected value of I.
+
+00:06:48.480 --> 00:06:51.940 align:middle line:84%
+So this is a little
+tricky with this formula
+
+00:06:51.940 --> 00:06:56.410 align:middle line:84%
+because S-- even though I only
+takes on two values, S can be
+
+00:06:56.410 --> 00:06:57.090 align:middle line:90%
+size a million.
+
+00:06:57.090 --> 00:06:57.590 align:middle line:90%
+Who knows?
+
+00:06:57.590 --> 00:06:59.320 align:middle line:84%
+There's a lot of
+different random outcomes
+
+00:06:59.320 --> 00:07:00.080 align:middle line:90%
+that could happen.
+
+00:07:00.080 --> 00:07:03.760 align:middle line:84%
+And then I kind of projects them
+all down to this very simple 0,1
+
+00:07:03.760 --> 00:07:04.610 align:middle line:90%
+space.
+
+00:07:04.610 --> 00:07:08.410 align:middle line:84%
+So I'm just going to write
+the definition first.
+
+00:07:08.410 --> 00:07:16.270 align:middle line:84%
+Omega in S-- probability
+of omega times I of omega.
+
+00:07:16.270 --> 00:07:19.810 align:middle line:90%
+But this thing is either 0 or 1.
+
+00:07:19.810 --> 00:07:21.260 align:middle line:90%
+So this is a summation.
+
+00:07:21.260 --> 00:07:22.972 align:middle line:84%
+And remember, one
+of the techniques
+
+00:07:22.972 --> 00:07:25.180 align:middle line:84%
+for dealing with summations
+is to rearrange the terms
+
+00:07:25.180 --> 00:07:26.480 align:middle line:90%
+in some useful way.
+
+00:07:26.480 --> 00:07:28.360 align:middle line:84%
+And given that every
+term here is either
+
+00:07:28.360 --> 00:07:30.820 align:middle line:84%
+multiplied by 0, in
+which case it disappears,
+
+00:07:30.820 --> 00:07:36.140 align:middle line:84%
+or multiplied by 1, let's
+maybe collect like terms.
+
+00:07:36.140 --> 00:07:39.380 align:middle line:84%
+So we can split this
+summation into two parts.
+
+00:07:39.380 --> 00:07:47.660 align:middle line:84%
+There's the sum where W is in a
+complement probability of omega
+
+00:07:47.660 --> 00:07:54.680 align:middle line:84%
+times 0, because I of something
+in a complement here is 0.
+
+00:07:54.680 --> 00:08:00.060 align:middle line:84%
+Or it could be omega inside
+A without the complement.
+
+00:08:00.060 --> 00:08:03.920 align:middle line:84%
+And then we get probability
+of omega times 1.
+
+00:08:03.920 --> 00:08:08.400 align:middle line:84%
+So these disappear, and
+we're just left with--
+
+00:08:08.400 --> 00:08:12.360 align:middle line:84%
+and the 1 cancels, or
+it doesn't do anything.
+
+00:08:12.360 --> 00:08:19.460 align:middle line:84%
+So we get the sum of omega and
+A times probability of omega.
+
+00:08:19.460 --> 00:08:25.010 align:middle line:84%
+And this is our definition
+of probability of A.
+
+00:08:25.010 --> 00:08:26.880 align:middle line:90%
+So that's nice and simple.
+
+00:08:26.880 --> 00:08:30.200 align:middle line:84%
+Another way to write this that's
+more directly about I is this
+
+00:08:30.200 --> 00:08:33.440 align:middle line:84%
+is the probability
+that I equals 1.
+
+00:08:33.440 --> 00:08:36.559 align:middle line:84%
+So the expected value of an
+indicator random variable
+
+00:08:36.559 --> 00:08:40.130 align:middle line:84%
+is always the probability that
+that indicator random variable
+
+00:08:40.130 --> 00:08:40.860 align:middle line:90%
+equals 1.
+
+00:08:40.860 --> 00:08:44.640 align:middle line:84%
+This is just a fun fact because
+I only takes on 0 and 1.
+
+00:08:44.640 --> 00:08:47.670 align:middle line:84%
+The zeros don't show up-- they
+disappear from the expectation
+
+00:08:47.670 --> 00:08:51.960 align:middle line:84%
+formula, and the 1's basically
+add up just the probabilities
+
+00:08:51.960 --> 00:08:54.960 align:middle line:90%
+of the event occurring.
+
+00:08:54.960 --> 00:08:57.430 align:middle line:84%
+We're going to use this
+fact, several times today.
+
+00:08:57.430 --> 00:09:00.343 align:middle line:84%
+So it's an example
+and a useful lemma.
+
+00:09:00.343 --> 00:09:04.120 align:middle line:90%
+
+
+00:09:04.120 --> 00:09:07.590 align:middle line:84%
+Probability, I'm
+told, was originally
+
+00:09:07.590 --> 00:09:09.730 align:middle line:90%
+invented to analyze gambling.
+
+00:09:09.730 --> 00:09:13.360 align:middle line:84%
+So let's put that to good
+use and do some gambling.
+
+00:09:13.360 --> 00:09:14.620 align:middle line:90%
+So let me define a game.
+
+00:09:14.620 --> 00:09:16.770 align:middle line:84%
+And then I'm going
+to need a volunteer--
+
+00:09:16.770 --> 00:09:22.155 align:middle line:84%
+a couple of volunteers--
+to play this game with me.
+
+00:09:22.155 --> 00:09:23.530 align:middle line:84%
+And it doesn't
+have a fancy name.
+
+00:09:23.530 --> 00:09:27.120 align:middle line:84%
+We're just going to call
+it the gambling game.
+
+00:09:27.120 --> 00:09:29.703 align:middle line:84%
+So we're going to
+have three players.
+
+00:09:29.703 --> 00:09:34.980 align:middle line:90%
+
+
+00:09:34.980 --> 00:09:37.370 align:middle line:84%
+And we're going to follow
+these sequence of steps.
+
+00:09:37.370 --> 00:09:40.770 align:middle line:90%
+
+
+00:09:40.770 --> 00:09:42.700 align:middle line:84%
+Everybody has some
+pile of money,
+
+00:09:42.700 --> 00:09:46.530 align:middle line:84%
+which we're going to
+represent by candy,
+
+00:09:46.530 --> 00:09:48.643 align:middle line:90%
+but I'll write it as dollars.
+
+00:09:48.643 --> 00:09:51.930 align:middle line:90%
+
+
+00:09:51.930 --> 00:09:56.970 align:middle line:84%
+So every round, every player
+puts $2 into a shared pot.
+
+00:09:56.970 --> 00:10:09.922 align:middle line:84%
+Then each player
+picks heads or tails.
+
+00:10:09.922 --> 00:10:12.630 align:middle line:84%
+You may have played this game in
+the single-player version, where
+
+00:10:12.630 --> 00:10:14.590 align:middle line:84%
+you just try to guess
+the outcome of a coin.
+
+00:10:14.590 --> 00:10:16.790 align:middle line:84%
+Then we're going to
+flip a fair coin.
+
+00:10:16.790 --> 00:10:21.940 align:middle line:90%
+
+
+00:10:21.940 --> 00:10:24.720 align:middle line:84%
+With multiplayer, it's just
+more interesting, let's say.
+
+00:10:24.720 --> 00:10:27.640 align:middle line:84%
+Now we could have
+multiple winners.
+
+00:10:27.640 --> 00:10:30.420 align:middle line:84%
+Maybe two people guessed heads,
+and the outcome of the coin
+
+00:10:30.420 --> 00:10:31.510 align:middle line:90%
+was heads.
+
+00:10:31.510 --> 00:10:33.870 align:middle line:84%
+Then what we're going to
+do is take the pot of money
+
+00:10:33.870 --> 00:10:37.200 align:middle line:84%
+that everyone added to
+and evenly distribute it
+
+00:10:37.200 --> 00:10:39.900 align:middle line:84%
+among the winners, among the
+people that guessed the coin
+
+00:10:39.900 --> 00:10:42.230 align:middle line:90%
+outcome correctly.
+
+00:10:42.230 --> 00:10:53.003 align:middle line:84%
+So we split pot
+equally among winners.
+
+00:10:53.003 --> 00:10:55.880 align:middle line:90%
+
+
+00:10:55.880 --> 00:10:58.820 align:middle line:84%
+There's one special case,
+which is maybe no one guesses
+
+00:10:58.820 --> 00:10:59.900 align:middle line:90%
+the correct value.
+
+00:10:59.900 --> 00:11:01.762 align:middle line:84%
+In that case, we'll
+also equally split
+
+00:11:01.762 --> 00:11:04.220 align:middle line:84%
+the pot, which is equivalent
+to just giving your money back
+
+00:11:04.220 --> 00:11:04.928 align:middle line:90%
+and trying again.
+
+00:11:04.928 --> 00:11:08.340 align:middle line:84%
+So we're going to play
+this game many rounds.
+
+00:11:08.340 --> 00:11:11.420 align:middle line:84%
+And your goal is to, of course,
+maximize the amount of money you
+
+00:11:11.420 --> 00:11:12.120 align:middle line:90%
+get.
+
+00:11:12.120 --> 00:11:13.940 align:middle line:84%
+Who would like to
+play this game.
+
+00:11:13.940 --> 00:11:15.770 align:middle line:90%
+Oh, so many people.
+
+00:11:15.770 --> 00:11:16.700 align:middle line:90%
+All right.
+
+00:11:16.700 --> 00:11:18.840 align:middle line:84%
+I'm afraid it's only
+a three-player game.
+
+00:11:18.840 --> 00:11:22.310 align:middle line:84%
+So I'm going to pick
+Jenny, my accomplice.
+
+00:11:22.310 --> 00:11:26.918 align:middle line:90%
+And how about you?
+
+00:11:26.918 --> 00:11:28.710 align:middle line:84%
+AUDIENCE: Don't tell
+them where I got this.
+
+00:11:28.710 --> 00:11:31.030 align:middle line:90%
+ERIK DEMAINE: [LAUGHS] Yeah.
+
+00:11:31.030 --> 00:11:31.530 align:middle line:90%
+No.
+
+00:11:31.530 --> 00:11:32.370 align:middle line:90%
+Totally fair game.
+
+00:11:32.370 --> 00:11:33.650 align:middle line:90%
+Don't worry.
+
+00:11:33.650 --> 00:11:34.375 align:middle line:90%
+What's your name?
+
+00:11:34.375 --> 00:11:35.000 align:middle line:90%
+AUDIENCE: Cleo.
+
+00:11:35.000 --> 00:11:35.670 align:middle line:90%
+ERIK DEMAINE: Cleo.
+
+00:11:35.670 --> 00:11:36.230 align:middle line:90%
+All right.
+
+00:11:36.230 --> 00:11:40.440 align:middle line:84%
+So everyone welcome Cleo
+and Jenny to the stage.
+
+00:11:40.440 --> 00:11:40.940 align:middle line:90%
+Yeah.
+
+00:11:40.940 --> 00:11:43.820 align:middle line:90%
+[APPLAUSE]
+
+00:11:43.820 --> 00:11:49.503 align:middle line:84%
+I want you to be in like
+equally hard and good position.
+
+00:11:49.503 --> 00:11:51.170 align:middle line:84%
+So we're going to put
+you in the middle.
+
+00:11:51.170 --> 00:11:52.430 align:middle line:90%
+C-L-E-O?
+
+00:11:52.430 --> 00:11:53.150 align:middle line:90%
+AUDIENCE: Yeah.
+
+00:11:53.150 --> 00:11:54.150 align:middle line:90%
+ERIK DEMAINE: All right.
+
+00:11:54.150 --> 00:11:58.730 align:middle line:90%
+
+
+00:11:58.730 --> 00:12:00.440 align:middle line:90%
+Try to keep track here.
+
+00:12:00.440 --> 00:12:03.140 align:middle line:90%
+We've got a coin.
+
+00:12:03.140 --> 00:12:04.410 align:middle line:90%
+Except I don't have a coin.
+
+00:12:04.410 --> 00:12:05.490 align:middle line:90%
+I have a giant die.
+
+00:12:05.490 --> 00:12:08.960 align:middle line:84%
+So we're going to
+say was it heads, H?
+
+00:12:08.960 --> 00:12:11.923 align:middle line:90%
+H is huge.
+
+00:12:11.923 --> 00:12:14.090 align:middle line:84%
+I've got to write this down,
+or I'm going to forget.
+
+00:12:14.090 --> 00:12:19.940 align:middle line:90%
+H is huge, and T is tiny.
+
+00:12:19.940 --> 00:12:20.460 align:middle line:90%
+OK.
+
+00:12:20.460 --> 00:12:22.800 align:middle line:90%
+So 1, 2, 3 is a tails.
+
+00:12:22.800 --> 00:12:27.440 align:middle line:90%
+4, 5, 6 is an H. All right.
+
+00:12:27.440 --> 00:12:30.540 align:middle line:90%
+So I'm going to guess first.
+
+00:12:30.540 --> 00:12:33.620 align:middle line:84%
+Then why don't you stand in the
+middle so we're like in order
+
+00:12:33.620 --> 00:12:34.380 align:middle line:90%
+here.
+
+00:12:34.380 --> 00:12:37.590 align:middle line:90%
+So I'll guess tails, my usual.
+
+00:12:37.590 --> 00:12:38.610 align:middle line:90%
+AUDIENCE: Heads.
+
+00:12:38.610 --> 00:12:39.510 align:middle line:90%
+AUDIENCE: Tails.
+
+00:12:39.510 --> 00:12:40.770 align:middle line:90%
+ERIK DEMAINE: Tails.
+
+00:12:40.770 --> 00:12:41.880 align:middle line:90%
+OK.
+
+00:12:41.880 --> 00:12:44.840 align:middle line:90%
+Let's roll this dies.
+
+00:12:44.840 --> 00:12:47.080 align:middle line:84%
+That F doesn't feel
+very fair, but OK.
+
+00:12:47.080 --> 00:12:49.120 align:middle line:84%
+Well, I'll do different
+types of rolls.
+
+00:12:49.120 --> 00:12:52.420 align:middle line:84%
+So we got a 4,
+which is H. Ah-ha.
+
+00:12:52.420 --> 00:12:52.930 align:middle line:90%
+Cleo wins.
+
+00:12:52.930 --> 00:12:54.610 align:middle line:84%
+Oh, I forgot to
+distribute the money.
+
+00:12:54.610 --> 00:12:56.560 align:middle line:90%
+OK, these are all equal.
+
+00:12:56.560 --> 00:13:05.800 align:middle line:84%
+So pick your pile of cash,
+which are poker chips.
+
+00:13:05.800 --> 00:13:10.360 align:middle line:84%
+And so it's, I think, more fun
+if everyone can see the pile.
+
+00:13:10.360 --> 00:13:12.040 align:middle line:90%
+So let me--
+
+00:13:12.040 --> 00:13:17.080 align:middle line:84%
+So we were supposed to start out
+by putting two in to the pot.
+
+00:13:17.080 --> 00:13:19.660 align:middle line:84%
+And then you are the
+only winner for the pot.
+
+00:13:19.660 --> 00:13:21.390 align:middle line:90%
+So you get all this money.
+
+00:13:21.390 --> 00:13:22.750 align:middle line:90%
+That's already looking good.
+
+00:13:22.750 --> 00:13:23.380 align:middle line:90%
+All right.
+
+00:13:23.380 --> 00:13:25.680 align:middle line:90%
+So I'm going to flip the--
+
+00:13:25.680 --> 00:13:28.628 align:middle line:90%
+I should flip after guessing.
+
+00:13:28.628 --> 00:13:29.920 align:middle line:90%
+A little too forced, otherwise.
+
+00:13:29.920 --> 00:13:30.420 align:middle line:90%
+All right.
+
+00:13:30.420 --> 00:13:31.793 align:middle line:90%
+I'll try heads this time.
+
+00:13:31.793 --> 00:13:32.460 align:middle line:90%
+AUDIENCE: Tails.
+
+00:13:32.460 --> 00:13:33.293 align:middle line:90%
+ERIK DEMAINE: Tails.
+
+00:13:33.293 --> 00:13:34.050 align:middle line:90%
+AUDIENCE: Heads.
+
+00:13:34.050 --> 00:13:35.580 align:middle line:90%
+ERIK DEMAINE: Heads.
+
+00:13:35.580 --> 00:13:36.480 align:middle line:90%
+OK.
+
+00:13:36.480 --> 00:13:37.265 align:middle line:90%
+Now we flip.
+
+00:13:37.265 --> 00:13:39.820 align:middle line:90%
+
+
+00:13:39.820 --> 00:13:40.320 align:middle line:90%
+OK.
+
+00:13:40.320 --> 00:13:41.890 align:middle line:90%
+6 is high.
+
+00:13:41.890 --> 00:13:44.110 align:middle line:90%
+Oh, I forgot to do our thing.
+
+00:13:44.110 --> 00:13:47.830 align:middle line:84%
+Two in, and then we
+evenly split the pot.
+
+00:13:47.830 --> 00:13:49.360 align:middle line:90%
+All right.
+
+00:13:49.360 --> 00:13:49.860 align:middle line:90%
+Great.
+
+00:13:49.860 --> 00:13:51.450 align:middle line:90%
+AUDIENCE: Again.
+
+00:13:51.450 --> 00:13:54.112 align:middle line:84%
+ERIK DEMAINE: Very
+consistent coin.
+
+00:13:54.112 --> 00:13:55.433 align:middle line:90%
+Play this game properly.
+
+00:13:55.433 --> 00:13:56.850 align:middle line:84%
+Supposed to put
+the money-- you're
+
+00:13:56.850 --> 00:13:58.767 align:middle line:84%
+supposed to put your
+money where your mouth is
+
+00:13:58.767 --> 00:14:00.780 align:middle line:90%
+before you play the game.
+
+00:14:00.780 --> 00:14:02.283 align:middle line:90%
+I'll try heads.
+
+00:14:02.283 --> 00:14:02.950 align:middle line:90%
+AUDIENCE: Heads.
+
+00:14:02.950 --> 00:14:04.060 align:middle line:90%
+ERIK DEMAINE: Heads.
+
+00:14:04.060 --> 00:14:05.430 align:middle line:84%
+AUDIENCE: There's no way
+it's three heads in a row.
+
+00:14:05.430 --> 00:14:05.930 align:middle line:90%
+Tails.
+
+00:14:05.930 --> 00:14:08.790 align:middle line:84%
+ERIK DEMAINE: [LAUGHS]
+Yeah, three heads in a row
+
+00:14:08.790 --> 00:14:10.980 align:middle line:90%
+is never useful.
+
+00:14:10.980 --> 00:14:13.480 align:middle line:84%
+Because whatever happens, we
+will just take our money back.
+
+00:14:13.480 --> 00:14:13.980 align:middle line:90%
+All right.
+
+00:14:13.980 --> 00:14:16.260 align:middle line:90%
+So we flip.
+
+00:14:16.260 --> 00:14:17.380 align:middle line:90%
+This is quite fun.
+
+00:14:17.380 --> 00:14:18.220 align:middle line:90%
+Another heads.
+
+00:14:18.220 --> 00:14:22.080 align:middle line:84%
+Wow, it's a very
+consistent coin here.
+
+00:14:22.080 --> 00:14:22.660 align:middle line:90%
+All right.
+
+00:14:22.660 --> 00:14:24.340 align:middle line:90%
+So here is the distribution.
+
+00:14:24.340 --> 00:14:26.460 align:middle line:90%
+We put our money back in--
+
+00:14:26.460 --> 00:14:29.130 align:middle line:90%
+two each.
+
+00:14:29.130 --> 00:14:30.563 align:middle line:90%
+I'll do tails.
+
+00:14:30.563 --> 00:14:31.230 align:middle line:90%
+AUDIENCE: Heads.
+
+00:14:31.230 --> 00:14:32.373 align:middle line:90%
+ERIK DEMAINE: Heads.
+
+00:14:32.373 --> 00:14:33.040 align:middle line:90%
+AUDIENCE: Tails.
+
+00:14:33.040 --> 00:14:34.960 align:middle line:90%
+ERIK DEMAINE: Tails.
+
+00:14:34.960 --> 00:14:35.810 align:middle line:90%
+I'm very efficient.
+
+00:14:35.810 --> 00:14:36.820 align:middle line:90%
+This is great.
+
+00:14:36.820 --> 00:14:40.040 align:middle line:84%
+I'm the slow part
+here, rolling Oh, yeah.
+
+00:14:40.040 --> 00:14:40.705 align:middle line:90%
+Another heads.
+
+00:14:40.705 --> 00:14:41.205 align:middle line:90%
+Great.
+
+00:14:41.205 --> 00:14:43.360 align:middle line:90%
+[LAUGHS]
+
+00:14:43.360 --> 00:14:43.967 align:middle line:90%
+I love this.
+
+00:14:43.967 --> 00:14:45.800 align:middle line:84%
+There's another problem
+we'll be working on,
+
+00:14:45.800 --> 00:14:46.930 align:middle line:84%
+which is how many times
+do you have to flip
+
+00:14:46.930 --> 00:14:48.530 align:middle line:90%
+a coin until you get tails?
+
+00:14:48.530 --> 00:14:49.560 align:middle line:90%
+The answer is two.
+
+00:14:49.560 --> 00:14:51.580 align:middle line:90%
+[LAUGHS]
+
+00:14:51.580 --> 00:14:52.190 align:middle line:90%
+All right.
+
+00:14:52.190 --> 00:14:57.682 align:middle line:84%
+So money back in,
+and I'll do tails.
+
+00:14:57.682 --> 00:14:58.640 align:middle line:90%
+AUDIENCE: Sorry, heads.
+
+00:14:58.640 --> 00:14:59.865 align:middle line:90%
+ERIK DEMAINE: Heads.
+
+00:14:59.865 --> 00:15:00.532 align:middle line:90%
+AUDIENCE: Tails.
+
+00:15:00.532 --> 00:15:01.600 align:middle line:90%
+ERIK DEMAINE: Tails.
+
+00:15:01.600 --> 00:15:02.280 align:middle line:90%
+All right.
+
+00:15:02.280 --> 00:15:05.980 align:middle line:90%
+
+
+00:15:05.980 --> 00:15:11.500 align:middle line:84%
+Based on how this has
+been going, good guess.
+
+00:15:11.500 --> 00:15:12.440 align:middle line:90%
+All right.
+
+00:15:12.440 --> 00:15:13.490 align:middle line:90%
+Have we played enough?
+
+00:15:13.490 --> 00:15:14.155 align:middle line:90%
+Do you get the idea?
+
+00:15:14.155 --> 00:15:14.650 align:middle line:90%
+AUDIENCE: Not yet.
+
+00:15:14.650 --> 00:15:15.733 align:middle line:90%
+ERIK DEMAINE: Oh, not yet.
+
+00:15:15.733 --> 00:15:17.720 align:middle line:84%
+You're almost
+depleted there, Jenny.
+
+00:15:17.720 --> 00:15:18.580 align:middle line:90%
+All right.
+
+00:15:18.580 --> 00:15:20.350 align:middle line:90%
+Let's see.
+
+00:15:20.350 --> 00:15:21.048 align:middle line:90%
+One more.
+
+00:15:21.048 --> 00:15:23.090 align:middle line:84%
+We should keep going until
+we get a tails, right.
+
+00:15:23.090 --> 00:15:25.420 align:middle line:90%
+That can't take forever.
+
+00:15:25.420 --> 00:15:27.370 align:middle line:90%
+Famous last words.
+
+00:15:27.370 --> 00:15:28.380 align:middle line:90%
+I've done this before.
+
+00:15:28.380 --> 00:15:28.880 align:middle line:90%
+All right.
+
+00:15:28.880 --> 00:15:29.383 align:middle line:90%
+Heads.
+
+00:15:29.383 --> 00:15:30.050 align:middle line:90%
+AUDIENCE: Tails.
+
+00:15:30.050 --> 00:15:30.923 align:middle line:90%
+ERIK DEMAINE: Tails.
+
+00:15:30.923 --> 00:15:31.590 align:middle line:90%
+AUDIENCE: Heads.
+
+00:15:31.590 --> 00:15:32.930 align:middle line:90%
+ERIK DEMAINE: Heads.
+
+00:15:32.930 --> 00:15:36.750 align:middle line:84%
+Now, the gambler's ruin would
+say we're due for a tails now.
+
+00:15:36.750 --> 00:15:40.730 align:middle line:90%
+It's more likely than 50%.
+
+00:15:40.730 --> 00:15:44.600 align:middle line:90%
+Oh, gambler is wrong.
+
+00:15:44.600 --> 00:15:47.240 align:middle line:90%
+It's 50/50 every time.
+
+00:15:47.240 --> 00:15:47.860 align:middle line:90%
+All right.
+
+00:15:47.860 --> 00:15:51.530 align:middle line:90%
+
+
+00:15:51.530 --> 00:15:52.370 align:middle line:90%
+Heads.
+
+00:15:52.370 --> 00:15:53.113 align:middle line:90%
+AUDIENCE: Tails.
+
+00:15:53.113 --> 00:15:53.780 align:middle line:90%
+AUDIENCE: Heads.
+
+00:15:53.780 --> 00:16:01.130 align:middle line:90%
+
+
+00:16:01.130 --> 00:16:02.250 align:middle line:90%
+ERIK DEMAINE: Yes.
+
+00:16:02.250 --> 00:16:03.190 align:middle line:90%
+Finally, a tails.
+
+00:16:03.190 --> 00:16:06.440 align:middle line:90%
+
+
+00:16:06.440 --> 00:16:07.730 align:middle line:90%
+All right.
+
+00:16:07.730 --> 00:16:10.862 align:middle line:84%
+Cleo here has won
+basically all the candy.
+
+00:16:10.862 --> 00:16:13.070 align:middle line:84%
+You can take as many as you
+like because I'm actually
+
+00:16:13.070 --> 00:16:15.620 align:middle line:84%
+lactose intolerant,
+so I can't eat these.
+
+00:16:15.620 --> 00:16:19.760 align:middle line:84%
+So both of you are welcome
+to take as many as you like.
+
+00:16:19.760 --> 00:16:21.590 align:middle line:90%
+So that's the gambling game.
+
+00:16:21.590 --> 00:16:25.950 align:middle line:84%
+Now, is it coincidence
+that Cleo won and I lost?
+
+00:16:25.950 --> 00:16:28.160 align:middle line:90%
+No.
+
+00:16:28.160 --> 00:16:30.000 align:middle line:84%
+AUDIENCE: Jenny was
+picking the other one.
+
+00:16:30.000 --> 00:16:31.810 align:middle line:90%
+The other from you, indeed.
+
+00:16:31.810 --> 00:16:33.200 align:middle line:90%
+Very observant.
+
+00:16:33.200 --> 00:16:35.240 align:middle line:84%
+This is why Jenny was
+so fast at guessing.
+
+00:16:35.240 --> 00:16:36.740 align:middle line:84%
+Jenny is one of our
+TAs, by the way.
+
+00:16:36.740 --> 00:16:40.210 align:middle line:84%
+That's how I convinced
+her to cheat.
+
+00:16:40.210 --> 00:16:42.800 align:middle line:84%
+But she cheated in
+order to destroy me.
+
+00:16:42.800 --> 00:16:44.560 align:middle line:84%
+So there's this
+fun strategy, which
+
+00:16:44.560 --> 00:16:49.010 align:middle line:84%
+is if you guess the opposite
+of one of the previous players,
+
+00:16:49.010 --> 00:16:51.920 align:middle line:84%
+which, if you guess in sequence
+like this, is easy to do.
+
+00:16:51.920 --> 00:16:53.030 align:middle line:90%
+Cleo could have done it.
+
+00:16:53.030 --> 00:16:54.770 align:middle line:84%
+Cleo actually did
+it most of the time.
+
+00:16:54.770 --> 00:16:57.050 align:middle line:84%
+I think there were
+only a couple times--
+
+00:16:57.050 --> 00:16:59.410 align:middle line:90%
+one time when we matched.
+
+00:16:59.410 --> 00:17:01.840 align:middle line:90%
+And that's a good strategy.
+
+00:17:01.840 --> 00:17:06.910 align:middle line:84%
+In particular-- well,
+let's analyze. shall we?
+
+00:17:06.910 --> 00:17:09.680 align:middle line:84%
+How do we analyze
+a game like this.
+
+00:17:09.680 --> 00:17:13.450 align:middle line:84%
+So small-- we just draw the
+decision tree or the probability
+
+00:17:13.450 --> 00:17:14.490 align:middle line:90%
+tree.
+
+00:17:14.490 --> 00:17:14.990 align:middle line:90%
+All right.
+
+00:17:14.990 --> 00:17:17.780 align:middle line:84%
+Now, it's a little bigger than
+some of the ones we've done.
+
+00:17:17.780 --> 00:17:21.849 align:middle line:84%
+Luckily, the whole
+thing is symmetric.
+
+00:17:21.849 --> 00:17:24.042 align:middle line:84%
+It doesn't really matter
+which one you do first.
+
+00:17:24.042 --> 00:17:25.250 align:middle line:90%
+The whole thing is symmetric.
+
+00:17:25.250 --> 00:17:27.333 align:middle line:84%
+So I'm going to do it in
+the order of let's branch
+
+00:17:27.333 --> 00:17:29.830 align:middle line:84%
+on what player one does,
+player two, player three.
+
+00:17:29.830 --> 00:17:31.510 align:middle line:90%
+And then what the coin does.
+
+00:17:31.510 --> 00:17:33.930 align:middle line:84%
+And then we're going to
+get some outcome, which
+
+00:17:33.930 --> 00:17:36.030 align:middle line:90%
+I'll define in a second.
+
+00:17:36.030 --> 00:17:38.970 align:middle line:84%
+So it turns out whether
+the first player guesses
+
+00:17:38.970 --> 00:17:41.860 align:middle line:84%
+heads or tails because
+the coin is random,
+
+00:17:41.860 --> 00:17:43.000 align:middle line:90%
+it's going to be symmetric.
+
+00:17:43.000 --> 00:17:45.510 align:middle line:84%
+So let's just ignore the
+whole right half of the space
+
+00:17:45.510 --> 00:17:47.680 align:middle line:84%
+and pretend we're
+in this left half.
+
+00:17:47.680 --> 00:17:51.420 align:middle line:84%
+So suppose I always
+guessed heads,
+
+00:17:51.420 --> 00:17:53.470 align:middle line:84%
+or somebody always
+guesses heads.
+
+00:17:53.470 --> 00:17:55.770 align:middle line:84%
+I think it's probably going
+to be me that I care about.
+
+00:17:55.770 --> 00:17:57.300 align:middle line:90%
+Yeah.
+
+00:17:57.300 --> 00:18:01.420 align:middle line:84%
+Then player two
+guesses heads or tails.
+
+00:18:01.420 --> 00:18:05.520 align:middle line:84%
+Now, we haven't said what
+the probabilities are here.
+
+00:18:05.520 --> 00:18:07.870 align:middle line:84%
+I was trying to
+be roughly 50/50.
+
+00:18:07.870 --> 00:18:10.080 align:middle line:84%
+But I wasn't flipping
+a coin each time
+
+00:18:10.080 --> 00:18:12.360 align:middle line:84%
+to decide how I
+should guess the coin.
+
+00:18:12.360 --> 00:18:14.867 align:middle line:84%
+I was just making
+some arbitrary choice.
+
+00:18:14.867 --> 00:18:16.450 align:middle line:84%
+Cleo was making some
+arbitrary choice.
+
+00:18:16.450 --> 00:18:18.430 align:middle line:84%
+Jenny was making some
+less arbitrary choice.
+
+00:18:18.430 --> 00:18:20.230 align:middle line:84%
+And then the coin--
+this part is random.
+
+00:18:20.230 --> 00:18:25.470 align:middle line:84%
+So this one is one
+half either way.
+
+00:18:25.470 --> 00:18:28.690 align:middle line:90%
+So that's helpful.
+
+00:18:28.690 --> 00:18:31.060 align:middle line:84%
+And then we get
+some outcome, which
+
+00:18:31.060 --> 00:18:38.260 align:middle line:84%
+I'm going to measure
+the net for player one.
+
+00:18:38.260 --> 00:18:39.970 align:middle line:90%
+That's this number.
+
+00:18:39.970 --> 00:18:41.770 align:middle line:84%
+And I wrote it down
+here because it's
+
+00:18:41.770 --> 00:18:43.420 align:middle line:90%
+very easy to get these wrong.
+
+00:18:43.420 --> 00:18:46.257 align:middle line:84%
+So the first case is that
+we all guessed heads.
+
+00:18:46.257 --> 00:18:47.840 align:middle line:84%
+And then it doesn't
+matter what we do.
+
+00:18:47.840 --> 00:18:49.510 align:middle line:84%
+Just our money is
+going to go back--
+
+00:18:49.510 --> 00:18:51.890 align:middle line:84%
+or the pot is going to go
+back to even distribution.
+
+00:18:51.890 --> 00:18:54.460 align:middle line:84%
+Whether we win or
+lose, the money
+
+00:18:54.460 --> 00:18:56.270 align:middle line:90%
+goes back to where it started.
+
+00:18:56.270 --> 00:18:58.670 align:middle line:84%
+So the net for player one,
+in particular, is zero.
+
+00:18:58.670 --> 00:19:01.270 align:middle line:90%
+So these are boring.
+
+00:19:01.270 --> 00:19:05.720 align:middle line:84%
+Then we have heads, heads,
+tails for the three players.
+
+00:19:05.720 --> 00:19:09.770 align:middle line:84%
+And so then if it's heads,
+these two players won.
+
+00:19:09.770 --> 00:19:11.360 align:middle line:90%
+And so they evenly distribute.
+
+00:19:11.360 --> 00:19:13.730 align:middle line:84%
+So we're always
+putting 6 in each time.
+
+00:19:13.730 --> 00:19:16.870 align:middle line:90%
+So they each get 3.
+
+00:19:16.870 --> 00:19:19.160 align:middle line:84%
+But they started
+by putting in 2.
+
+00:19:19.160 --> 00:19:20.780 align:middle line:90%
+And so the net gain is only 1.
+
+00:19:20.780 --> 00:19:23.380 align:middle line:90%
+This is 3 minus 2.
+
+00:19:23.380 --> 00:19:26.390 align:middle line:84%
+We gain 3, but we had
+to pay 2 to get there.
+
+00:19:26.390 --> 00:19:27.950 align:middle line:90%
+Or we lose.
+
+00:19:27.950 --> 00:19:31.017 align:middle line:84%
+Whenever we lose-- and all of
+these tails branches player 1
+
+00:19:31.017 --> 00:19:32.850 align:middle line:84%
+is going to lose because
+they guessed heads.
+
+00:19:32.850 --> 00:19:34.340 align:middle line:84%
+And, in that case,
+you get minus 2
+
+00:19:34.340 --> 00:19:36.290 align:middle line:90%
+because you had to put in the 2.
+
+00:19:36.290 --> 00:19:38.070 align:middle line:90%
+So in this case is the same.
+
+00:19:38.070 --> 00:19:39.060 align:middle line:90%
+There's 2 heads.
+
+00:19:39.060 --> 00:19:40.710 align:middle line:90%
+And so you each get 3.
+
+00:19:40.710 --> 00:19:42.030 align:middle line:90%
+And so it's a net of 1.
+
+00:19:42.030 --> 00:19:43.680 align:middle line:90%
+And then there's this case.
+
+00:19:43.680 --> 00:19:46.350 align:middle line:84%
+This is the case you're
+really aiming for.
+
+00:19:46.350 --> 00:19:52.070 align:middle line:90%
+This is the best for player one.
+
+00:19:52.070 --> 00:19:55.470 align:middle line:84%
+Because in this case, player
+one is the unique winner.
+
+00:19:55.470 --> 00:19:58.430 align:middle line:90%
+So here, there was heads.
+
+00:19:58.430 --> 00:20:02.503 align:middle line:84%
+And the other two guessed tails,
+and the coin came up heads.
+
+00:20:02.503 --> 00:20:03.920 align:middle line:84%
+And so that's
+what-- you're really
+
+00:20:03.920 --> 00:20:08.180 align:middle line:84%
+trying to be the unique
+winner in this game, the less
+
+00:20:08.180 --> 00:20:09.710 align:middle line:90%
+common winner.
+
+00:20:09.710 --> 00:20:12.840 align:middle line:84%
+That's when you
+get lots of points.
+
+00:20:12.840 --> 00:20:18.320 align:middle line:84%
+So let's compute
+the expectation.
+
+00:20:18.320 --> 00:20:20.030 align:middle line:84%
+To compute the
+expectation, we need
+
+00:20:20.030 --> 00:20:22.250 align:middle line:84%
+to know what the probabilities
+are in these branches
+
+00:20:22.250 --> 00:20:24.300 align:middle line:90%
+or something about them.
+
+00:20:24.300 --> 00:20:26.830 align:middle line:84%
+And I'm going to
+start by saying,
+
+00:20:26.830 --> 00:20:40.170 align:middle line:84%
+let's suppose that all players
+are uniform and independent.
+
+00:20:40.170 --> 00:20:46.770 align:middle line:90%
+So 50-50 on every branch.
+
+00:20:46.770 --> 00:20:50.730 align:middle line:84%
+Then the probabilities down
+here-- let me use color--
+
+00:20:50.730 --> 00:20:56.040 align:middle line:84%
+are going to be 1/16 in the
+whole tree or 1/8 in this
+
+00:20:56.040 --> 00:20:56.620 align:middle line:90%
+subtree.
+
+00:20:56.620 --> 00:20:59.950 align:middle line:84%
+So I'm going to just condition
+on the H in the beginning.
+
+00:20:59.950 --> 00:21:02.375 align:middle line:90%
+And so I'll write 1/8 down here.
+
+00:21:02.375 --> 00:21:04.000 align:middle line:84%
+But if you were
+drawing the whole tree,
+
+00:21:04.000 --> 00:21:07.590 align:middle line:90%
+you'd have to write 1/16.
+
+00:21:07.590 --> 00:21:10.246 align:middle line:84%
+Each of these things occurs
+with 1/8 probability.
+
+00:21:10.246 --> 00:21:13.200 align:middle line:90%
+
+
+00:21:13.200 --> 00:21:14.020 align:middle line:90%
+You get the idea.
+
+00:21:14.020 --> 00:21:15.190 align:middle line:90%
+Each of these 1/8.
+
+00:21:15.190 --> 00:21:23.440 align:middle line:84%
+And so we get the expected value
+is 1/8 times the sum of these
+
+00:21:23.440 --> 00:21:23.940 align:middle line:90%
+values--
+
+00:21:23.940 --> 00:21:32.430 align:middle line:84%
+0 plus 0, plus 1, minus 2, plus
+1, minus 2, plus 4, minus 2,
+
+00:21:32.430 --> 00:21:34.830 align:middle line:90%
+which I hope is equal to 0.
+
+00:21:34.830 --> 00:21:39.340 align:middle line:84%
+Because the negative is 6,
+and the positive is also 6.
+
+00:21:39.340 --> 00:21:42.790 align:middle line:84%
+So this is what you
+might call a fair game.
+
+00:21:42.790 --> 00:21:44.980 align:middle line:90%
+Your expected winnings are 0.
+
+00:21:44.980 --> 00:21:46.063 align:middle line:90%
+So you're just as likely--
+
+00:21:46.063 --> 00:21:47.563 align:middle line:84%
+well, it doesn't
+mean you're just as
+
+00:21:47.563 --> 00:21:49.000 align:middle line:90%
+likely to go above or go below.
+
+00:21:49.000 --> 00:21:51.065 align:middle line:84%
+But, on average,
+you will break even.
+
+00:21:51.065 --> 00:21:54.330 align:middle line:90%
+
+
+00:21:54.330 --> 00:21:57.540 align:middle line:90%
+But that's not what we did.
+
+00:21:57.540 --> 00:22:04.020 align:middle line:84%
+We considered the case where,
+let's say, player two does not
+
+00:22:04.020 --> 00:22:07.740 align:middle line:84%
+equal player three, which
+is something that player
+
+00:22:07.740 --> 00:22:08.740 align:middle line:90%
+three could enforce.
+
+00:22:08.740 --> 00:22:11.940 align:middle line:84%
+And that's what Jenny was doing,
+always choosing opposite of Cleo
+
+00:22:11.940 --> 00:22:13.560 align:middle line:90%
+here.
+
+00:22:13.560 --> 00:22:20.472 align:middle line:84%
+In that case, it's
+really bad for me.
+
+00:22:20.472 --> 00:22:22.930 align:middle line:84%
+Because whatever I guess out
+here-- if there's both a heads
+
+00:22:22.930 --> 00:22:25.377 align:middle line:84%
+and tails out here, if they're
+always guessing opposite,
+
+00:22:25.377 --> 00:22:26.210 align:middle line:90%
+one of them's heads.
+
+00:22:26.210 --> 00:22:27.080 align:middle line:90%
+One of them's tails.
+
+00:22:27.080 --> 00:22:31.490 align:middle line:84%
+So that means I always match
+one of them guaranteed.
+
+00:22:31.490 --> 00:22:35.510 align:middle line:84%
+And the other of them
+is in the unique pile.
+
+00:22:35.510 --> 00:22:37.580 align:middle line:90%
+And so they have a 50% chance.
+
+00:22:37.580 --> 00:22:39.790 align:middle line:84%
+Like in this situation,
+Cleo has a 50% chance
+
+00:22:39.790 --> 00:22:42.520 align:middle line:90%
+of getting that plus 4.
+
+00:22:42.520 --> 00:22:47.300 align:middle line:84%
+There's still a 50% chance
+that it came up tails.
+
+00:22:47.300 --> 00:22:48.560 align:middle line:90%
+Of course, not with this die.
+
+00:22:48.560 --> 00:22:53.270 align:middle line:84%
+But, in principle, there's a 50%
+chance that it comes up tails.
+
+00:22:53.270 --> 00:22:54.920 align:middle line:84%
+But then we each
+only get 1 point.
+
+00:22:54.920 --> 00:22:57.140 align:middle line:84%
+So if you're focusing
+on my winnings,
+
+00:22:57.140 --> 00:23:04.330 align:middle line:84%
+I will never get $4 in a
+round with Jenny's strategy.
+
+00:23:04.330 --> 00:23:08.230 align:middle line:84%
+I will always get
+either 1 or minus 2.
+
+00:23:08.230 --> 00:23:10.370 align:middle line:84%
+That doesn't sound like
+a very good game for me.
+
+00:23:10.370 --> 00:23:13.990 align:middle line:84%
+If I randomly get-- a 50%
+chance I get a 1, 50% chance
+
+00:23:13.990 --> 00:23:17.510 align:middle line:90%
+I get a minus 2.
+
+00:23:17.510 --> 00:23:24.155 align:middle line:84%
+So this was, I guess,
+expected net for player 1.
+
+00:23:24.155 --> 00:23:25.530 align:middle line:84%
+That's what we've
+been computing.
+
+00:23:25.530 --> 00:23:31.280 align:middle line:84%
+So in this situation the
+expected net for player 1,
+
+00:23:31.280 --> 00:23:39.440 align:middle line:84%
+If we want to be precise, you
+can say it's this subtree here.
+
+00:23:39.440 --> 00:23:42.200 align:middle line:84%
+This is when the
+last two guesses
+
+00:23:42.200 --> 00:23:45.650 align:middle line:84%
+are heads tails or tails
+heads is the middle part
+
+00:23:45.650 --> 00:23:46.770 align:middle line:90%
+of this subtree.
+
+00:23:46.770 --> 00:23:49.760 align:middle line:84%
+And you can see my
+possible outcomes
+
+00:23:49.760 --> 00:23:52.370 align:middle line:90%
+are limited to these guys.
+
+00:23:52.370 --> 00:23:57.480 align:middle line:84%
+And it turns out
+they're equally likely.
+
+00:23:57.480 --> 00:24:00.030 align:middle line:84%
+In fact, independent of
+what player two does.
+
+00:24:00.030 --> 00:24:01.530 align:middle line:90%
+I won't try to prove that here.
+
+00:24:01.530 --> 00:24:06.890 align:middle line:84%
+But because all that matters
+is this last coin flip, if it's
+
+00:24:06.890 --> 00:24:08.730 align:middle line:90%
+heads, then I get a plus 1.
+
+00:24:08.730 --> 00:24:10.850 align:middle line:84%
+If it's tails, I get
+a minus 2 every time
+
+00:24:10.850 --> 00:24:12.360 align:middle line:90%
+in this half of the tree.
+
+00:24:12.360 --> 00:24:15.420 align:middle line:90%
+And so it ends up being half--
+
+00:24:15.420 --> 00:24:19.080 align:middle line:84%
+in other words, the
+average of 1 minus 2, also
+
+00:24:19.080 --> 00:24:22.350 align:middle line:90%
+known as minus a half.
+
+00:24:22.350 --> 00:24:27.490 align:middle line:84%
+So, given how Jenny played,
+in fact, I expect to lose.
+
+00:24:27.490 --> 00:24:28.990 align:middle line:90%
+And you saw that happening.
+
+00:24:28.990 --> 00:24:30.610 align:middle line:90%
+Jenny also happened to lose.
+
+00:24:30.610 --> 00:24:32.760 align:middle line:84%
+The way this is practical,
+if you're a gambler,
+
+00:24:32.760 --> 00:24:36.340 align:middle line:84%
+is if you have two
+players that collude,
+
+00:24:36.340 --> 00:24:38.880 align:middle line:84%
+they decide whatever
+happens, we're
+
+00:24:38.880 --> 00:24:42.240 align:middle line:84%
+going to take our total winnings
+and split it evenly between us
+
+00:24:42.240 --> 00:24:44.710 align:middle line:84%
+at the end of the game after
+all the rounds are done.
+
+00:24:44.710 --> 00:24:46.930 align:middle line:84%
+Then this is not
+quite a guarantee,
+
+00:24:46.930 --> 00:24:52.380 align:middle line:84%
+but it's a pretty good bet that
+together, Cleo and Jenny would
+
+00:24:52.380 --> 00:24:57.090 align:middle line:84%
+get most of the coins,
+most of the money,
+
+00:24:57.090 --> 00:25:03.090 align:middle line:84%
+because their expected outcome
+is plus a half, I believe,
+
+00:25:03.090 --> 00:25:05.250 align:middle line:90%
+should be the complement.
+
+00:25:05.250 --> 00:25:06.390 align:middle line:90%
+Plus-- yeah.
+
+00:25:06.390 --> 00:25:07.920 align:middle line:90%
+Anyway, it's positive.
+
+00:25:07.920 --> 00:25:11.470 align:middle line:90%
+And my expectation is negative.
+
+00:25:11.470 --> 00:25:15.720 align:middle line:84%
+So yeah, don't play this game
+if you don't trust players two
+
+00:25:15.720 --> 00:25:17.910 align:middle line:90%
+and three not to collude.
+
+00:25:17.910 --> 00:25:19.950 align:middle line:90%
+All right.
+
+00:25:19.950 --> 00:25:20.790 align:middle line:90%
+Cool.
+
+00:25:20.790 --> 00:25:23.230 align:middle line:84%
+You might think this
+is a silly game.
+
+00:25:23.230 --> 00:25:24.520 align:middle line:90%
+Who would ever play this game?
+
+00:25:24.520 --> 00:25:28.710 align:middle line:84%
+Well, the Massachusetts
+lottery played this game.
+
+00:25:28.710 --> 00:25:30.570 align:middle line:90%
+It's a little more complicated.
+
+00:25:30.570 --> 00:25:32.620 align:middle line:84%
+I think you had
+up to four digits,
+
+00:25:32.620 --> 00:25:35.550 align:middle line:84%
+and you tried to guess a
+sequence of four digits that
+
+00:25:35.550 --> 00:25:36.790 align:middle line:90%
+would come up randomly.
+
+00:25:36.790 --> 00:25:38.748 align:middle line:84%
+I mean, it's pretty
+similar to lotteries today.
+
+00:25:38.748 --> 00:25:40.200 align:middle line:90%
+They just have more numbers.
+
+00:25:40.200 --> 00:25:43.240 align:middle line:84%
+And there's this great MIT
+professor, Herman Chernoff,
+
+00:25:43.240 --> 00:25:45.540 align:middle line:84%
+who we'll talk about some
+of his probability results
+
+00:25:45.540 --> 00:25:47.385 align:middle line:90%
+later in the class.
+
+00:25:47.385 --> 00:25:50.010 align:middle line:84%
+And he wrote this paper, "How to
+Beat the Massachusetts Numbers
+
+00:25:50.010 --> 00:25:52.890 align:middle line:84%
+Game," which is what the
+lottery was called originally.
+
+00:25:52.890 --> 00:25:54.550 align:middle line:90%
+And he just looked at some data.
+
+00:25:54.550 --> 00:25:56.403 align:middle line:90%
+And it's a similar situation.
+
+00:25:56.403 --> 00:25:57.820 align:middle line:84%
+If there are many
+lottery winners,
+
+00:25:57.820 --> 00:25:59.380 align:middle line:90%
+they evenly split the pot.
+
+00:25:59.380 --> 00:26:02.380 align:middle line:84%
+Also, the state takes
+like 40% or 60% cut.
+
+00:26:02.380 --> 00:26:04.110 align:middle line:90%
+I forget which way it goes.
+
+00:26:04.110 --> 00:26:07.763 align:middle line:84%
+But even then, he made
+money off of the lottery.
+
+00:26:07.763 --> 00:26:09.930 align:middle line:84%
+And there have been more
+recent versions of this run
+
+00:26:09.930 --> 00:26:13.630 align:middle line:84%
+by MIT students, I hear,
+to make a lot of money
+
+00:26:13.630 --> 00:26:15.202 align:middle line:90%
+off the Massachusetts lottery.
+
+00:26:15.202 --> 00:26:16.660 align:middle line:84%
+And they've since
+changed the rules
+
+00:26:16.660 --> 00:26:19.180 align:middle line:84%
+to make those
+strategies hard to run.
+
+00:26:19.180 --> 00:26:22.850 align:middle line:84%
+But, in particular, he executed
+this, made a lot of money.
+
+00:26:22.850 --> 00:26:25.060 align:middle line:84%
+The whole-- the
+idea is if you can
+
+00:26:25.060 --> 00:26:28.060 align:middle line:84%
+guess numbers that are
+less likely to be guessed
+
+00:26:28.060 --> 00:26:31.370 align:middle line:84%
+by other people, and all
+numbers are equally likely,
+
+00:26:31.370 --> 00:26:33.170 align:middle line:90%
+then you expect to win.
+
+00:26:33.170 --> 00:26:36.280 align:middle line:84%
+And it turns out people
+are so predictable.
+
+00:26:36.280 --> 00:26:39.130 align:middle line:84%
+Let's just say zeros
+and 9's were unpopular.
+
+00:26:39.130 --> 00:26:41.980 align:middle line:84%
+Smaller digits were popular,
+and so he ended up just
+
+00:26:41.980 --> 00:26:49.270 align:middle line:84%
+going with random numbers from 5
+to 8, I think and 0 to 9 maybe.
+
+00:26:49.270 --> 00:26:53.943 align:middle line:84%
+And he won not a lot of
+money, but he won some money.
+
+00:26:53.943 --> 00:26:55.610 align:middle line:84%
+You can read the paper
+for more details.
+
+00:26:55.610 --> 00:26:56.860 align:middle line:90%
+It's a pretty fun read.
+
+00:26:56.860 --> 00:26:59.620 align:middle line:84%
+It goes through all the
+probability and stuff.
+
+00:26:59.620 --> 00:27:01.760 align:middle line:84%
+This is like a
+simplified version.
+
+00:27:01.760 --> 00:27:04.030 align:middle line:90%
+So cool, practical.
+
+00:27:04.030 --> 00:27:07.300 align:middle line:90%
+Now you know how to make money.
+
+00:27:07.300 --> 00:27:11.930 align:middle line:84%
+Let's go on to some
+other ways to compute
+
+00:27:11.930 --> 00:27:14.245 align:middle line:84%
+expectation and some
+more examples and so on.
+
+00:27:14.245 --> 00:27:16.755 align:middle line:90%
+
+
+00:27:16.755 --> 00:27:17.255 align:middle line:90%
+Cool.
+
+00:27:17.255 --> 00:27:19.880 align:middle line:90%
+
+
+00:27:19.880 --> 00:27:20.780 align:middle line:90%
+All right.
+
+00:27:20.780 --> 00:27:24.680 align:middle line:84%
+We talked about--
+so here, we computed
+
+00:27:24.680 --> 00:27:27.420 align:middle line:84%
+if we roll a single
+six-sided die,
+
+00:27:27.420 --> 00:27:30.540 align:middle line:84%
+the expected value of
+that single die is 3.5.
+
+00:27:30.540 --> 00:27:34.010 align:middle line:84%
+What if I rolled
+two dice, A and B,
+
+00:27:34.010 --> 00:27:36.560 align:middle line:84%
+and I want to know the
+expectation of dice A,
+
+00:27:36.560 --> 00:27:40.350 align:middle line:84%
+die A. Should also
+be 3.5, right?
+
+00:27:40.350 --> 00:27:42.540 align:middle line:84%
+If I roll two dice, it
+shouldn't change anything.
+
+00:27:42.540 --> 00:27:45.060 align:middle line:84%
+But if I computed it
+explicitly in this way,
+
+00:27:45.060 --> 00:27:47.210 align:middle line:84%
+it would be really
+tedious because the sample
+
+00:27:47.210 --> 00:27:50.940 align:middle line:84%
+space would go from 1 through
+6 to 1 through 6 squared.
+
+00:27:50.940 --> 00:27:54.900 align:middle line:84%
+So now there's 36 different
+possible outcomes.
+
+00:27:54.900 --> 00:27:57.230 align:middle line:84%
+And for each of them, I
+need to write down a term
+
+00:27:57.230 --> 00:27:58.500 align:middle line:90%
+and add it all up.
+
+00:27:58.500 --> 00:28:01.380 align:middle line:84%
+It will come out to 3.5, but
+that's super annoying to do.
+
+00:28:01.380 --> 00:28:03.350 align:middle line:84%
+So here's a nice
+theorem that makes
+
+00:28:03.350 --> 00:28:09.300 align:middle line:84%
+it easy to do this with six
+terms instead of 36 terms.
+
+00:28:09.300 --> 00:28:13.360 align:middle line:84%
+If I have a random variable
+x, and I want its expectation,
+
+00:28:13.360 --> 00:28:22.800 align:middle line:84%
+this is equal to the sum where
+x is in the range of big X
+
+00:28:22.800 --> 00:28:30.840 align:middle line:84%
+of probability X equals
+X times little x.
+
+00:28:30.840 --> 00:28:31.760 align:middle line:90%
+Let me erase this--
+
+00:28:31.760 --> 00:28:37.020 align:middle line:90%
+
+
+00:28:37.020 --> 00:28:39.840 align:middle line:90%
+my terrible losing game.
+
+00:28:39.840 --> 00:28:41.430 align:middle line:90%
+How many coin flips till tails?
+
+00:28:41.430 --> 00:28:43.870 align:middle line:90%
+1, 2, 3, 4, 5, 6, 7.
+
+00:28:43.870 --> 00:28:49.560 align:middle line:84%
+All right, Keep that in mind--
+seven coin flips to get a tails.
+
+00:28:49.560 --> 00:28:50.260 align:middle line:90%
+All right.
+
+00:28:50.260 --> 00:28:52.230 align:middle line:90%
+So here's a formula.
+
+00:28:52.230 --> 00:28:55.980 align:middle line:84%
+It's really exactly
+what we did here.
+
+00:28:55.980 --> 00:28:59.410 align:middle line:84%
+So we wrote down, here are
+all the possible outcomes,
+
+00:28:59.410 --> 00:29:02.890 align:middle line:84%
+and we multiply them by what
+the random variable could be.
+
+00:29:02.890 --> 00:29:04.890 align:middle line:84%
+And when there was an
+indicator, random variable
+
+00:29:04.890 --> 00:29:05.800 align:middle line:90%
+is either 0 or 1.
+
+00:29:05.800 --> 00:29:07.030 align:middle line:90%
+So there were two groups.
+
+00:29:07.030 --> 00:29:12.750 align:middle line:84%
+In general, there's whatever
+the range of x groups.
+
+00:29:12.750 --> 00:29:17.190 align:middle line:90%
+So if I-- yeah.
+
+00:29:17.190 --> 00:29:19.500 align:middle line:84%
+So this is exactly this
+kind of clustering where
+
+00:29:19.500 --> 00:29:20.920 align:middle line:90%
+we split it into two sums.
+
+00:29:20.920 --> 00:29:22.680 align:middle line:84%
+Each of them was the
+probability of being
+
+00:29:22.680 --> 00:29:25.360 align:middle line:84%
+in that group times the
+outcome of that group.
+
+00:29:25.360 --> 00:29:30.330 align:middle line:84%
+This sum is exactly
+probability of not naught A.
+
+00:29:30.330 --> 00:29:37.950 align:middle line:84%
+And this sum is
+probability of A.
+
+00:29:37.950 --> 00:29:41.020 align:middle line:84%
+And in general, if we
+split into not two groups,
+
+00:29:41.020 --> 00:29:43.500 align:middle line:84%
+but all the different
+possible values of big X--
+
+00:29:43.500 --> 00:29:47.070 align:middle line:84%
+it can be little x for every
+little x in the range of big X,
+
+00:29:47.070 --> 00:29:52.180 align:middle line:84%
+then this is-- we get a sum
+of probability of outcomes,
+
+00:29:52.180 --> 00:29:54.653 align:middle line:84%
+which is exactly the probability
+that big X equals small x.
+
+00:29:54.653 --> 00:29:56.070 align:middle line:84%
+And then we multiply
+that by small
+
+00:29:56.070 --> 00:30:01.810 align:middle line:84%
+x because that's what we have in
+the definition of expectation.
+
+00:30:01.810 --> 00:30:03.370 align:middle line:90%
+So this is an easy theorem.
+
+00:30:03.370 --> 00:30:05.110 align:middle line:84%
+I won't write down
+a proof because it's
+
+00:30:05.110 --> 00:30:06.870 align:middle line:84%
+this thing generalized
+a little bit.
+
+00:30:06.870 --> 00:30:09.880 align:middle line:90%
+
+
+00:30:09.880 --> 00:30:14.835 align:middle line:84%
+And let's do an example
+maybe on a different board.
+
+00:30:14.835 --> 00:30:25.900 align:middle line:90%
+
+
+00:30:25.900 --> 00:30:32.693 align:middle line:84%
+Suppose I want to know the
+number of hearts in a 3-card
+
+00:30:32.693 --> 00:30:33.193 align:middle line:90%
+hand.
+
+00:30:33.193 --> 00:30:36.670 align:middle line:90%
+
+
+00:30:36.670 --> 00:30:40.160 align:middle line:84%
+So what that means is I
+have 52 cards in a deck.
+
+00:30:40.160 --> 00:30:43.100 align:middle line:84%
+I randomly choose 3 cards
+without replacement.
+
+00:30:43.100 --> 00:30:44.770 align:middle line:84%
+So just like you're
+drawing from the top
+
+00:30:44.770 --> 00:30:46.130 align:middle line:90%
+of a randomly shuffled deck.
+
+00:30:46.130 --> 00:30:49.420 align:middle line:84%
+I want to know how many hearts
+do I get in expectation?
+
+00:30:49.420 --> 00:30:54.760 align:middle line:90%
+Let's call this-- yeah--
+
+00:30:54.760 --> 00:31:04.970 align:middle line:84%
+expected number of hearts is,
+if we just use the definition,
+
+00:31:04.970 --> 00:31:11.930 align:middle line:84%
+probability of w times the
+number of hearts in omega.
+
+00:31:11.930 --> 00:31:13.280 align:middle line:90%
+This would be the definition.
+
+00:31:13.280 --> 00:31:19.920 align:middle line:90%
+And S, here, is size 52 cubed.
+
+00:31:19.920 --> 00:31:20.870 align:middle line:90%
+Not quite.
+
+00:31:20.870 --> 00:31:23.460 align:middle line:90%
+52 times 51 times 50.
+
+00:31:23.460 --> 00:31:26.675 align:middle line:90%
+It's really big.
+
+00:31:26.675 --> 00:31:28.800 align:middle line:84%
+So I don't want to have to
+compute this explicitly.
+
+00:31:28.800 --> 00:31:31.320 align:middle line:84%
+Instead, I'm going to use this
+formula and say, well look,
+
+00:31:31.320 --> 00:31:34.500 align:middle line:84%
+the number of hearts in a
+3-card hand is 0, 1, 2, or 3.
+
+00:31:34.500 --> 00:31:38.750 align:middle line:84%
+So I can write this
+as the probability
+
+00:31:38.750 --> 00:31:44.010 align:middle line:84%
+that number of hearts
+equals 0 times 0.
+
+00:31:44.010 --> 00:31:45.740 align:middle line:90%
+OK, that's not very interesting.
+
+00:31:45.740 --> 00:31:51.800 align:middle line:84%
+We can take the probability
+number of hearts equals 1
+
+00:31:51.800 --> 00:31:56.180 align:middle line:84%
+and multiply that by 1, plus the
+probability the number of hearts
+
+00:31:56.180 --> 00:32:01.470 align:middle line:84%
+equals 2 times 2, plus
+probability number of hearts
+
+00:32:01.470 --> 00:32:05.280 align:middle line:90%
+equals 3 times 3.
+
+00:32:05.280 --> 00:32:08.070 align:middle line:90%
+And so now I have three terms--
+
+00:32:08.070 --> 00:32:09.250 align:middle line:90%
+relatively easy.
+
+00:32:09.250 --> 00:32:12.750 align:middle line:84%
+And these are, hopefully,
+things you know how to compute.
+
+00:32:12.750 --> 00:32:16.380 align:middle line:84%
+For example, probability
+I get three hearts--
+
+00:32:16.380 --> 00:32:18.750 align:middle line:90%
+I'm going to cheat.
+
+00:32:18.750 --> 00:32:27.553 align:middle line:84%
+This is like 13 choose 3
+divided by 52 choose 3.
+
+00:32:27.553 --> 00:32:31.500 align:middle line:90%
+
+
+00:32:31.500 --> 00:32:34.420 align:middle line:84%
+Because there are 13
+different heart cards.
+
+00:32:34.420 --> 00:32:37.710 align:middle line:84%
+So the number of ways to choose
+three hearts out of those 13
+
+00:32:37.710 --> 00:32:38.883 align:middle line:90%
+heart cards is 13 choose 3.
+
+00:32:38.883 --> 00:32:40.800 align:middle line:84%
+The total number of ways
+to choose three cards
+
+00:32:40.800 --> 00:32:42.040 align:middle line:90%
+is 52 choose 3.
+
+00:32:42.040 --> 00:32:43.420 align:middle line:90%
+And so that's a probability.
+
+00:32:43.420 --> 00:32:47.260 align:middle line:84%
+And you need to multiply it
+by 3 to get this formula.
+
+00:32:47.260 --> 00:32:49.620 align:middle line:84%
+And there's some similar
+things for these terms.
+
+00:32:49.620 --> 00:32:51.875 align:middle line:84%
+I think I maybe won't
+write them down.
+
+00:32:51.875 --> 00:32:54.480 align:middle line:90%
+
+
+00:32:54.480 --> 00:32:57.130 align:middle line:84%
+Maybe I'll write down the
+middle one just for kicks.
+
+00:32:57.130 --> 00:33:01.080 align:middle line:84%
+I went through the effort
+of figuring things out.
+
+00:33:01.080 --> 00:33:03.660 align:middle line:84%
+This point should be
+something that you could do
+
+00:33:03.660 --> 00:33:05.075 align:middle line:90%
+just like on your problem set.
+
+00:33:05.075 --> 00:33:07.980 align:middle line:90%
+
+
+00:33:07.980 --> 00:33:11.730 align:middle line:84%
+These are combinatorics
+problems you know how to solve.
+
+00:33:11.730 --> 00:33:14.350 align:middle line:84%
+So you get some sum
+of binomial terms.
+
+00:33:14.350 --> 00:33:17.230 align:middle line:84%
+But hey, it has some
+reasonably small size.
+
+00:33:17.230 --> 00:33:20.220 align:middle line:84%
+Of course, these have
+huge factorials in them.
+
+00:33:20.220 --> 00:33:22.600 align:middle line:90%
+But it's only choose 1, 2, or 3.
+
+00:33:22.600 --> 00:33:23.710 align:middle line:90%
+So they're not too big.
+
+00:33:23.710 --> 00:33:28.770 align:middle line:84%
+You plug this into Wolfram
+Alpha, say, and you get 3/4--
+
+00:33:28.770 --> 00:33:31.595 align:middle line:90%
+very nice number.
+
+00:33:31.595 --> 00:33:32.720 align:middle line:90%
+We might come back to this.
+
+00:33:32.720 --> 00:33:37.980 align:middle line:90%
+
+
+00:33:37.980 --> 00:33:41.440 align:middle line:84%
+A lot of the time,
+because this is 6 1,200,
+
+00:33:41.440 --> 00:33:45.060 align:middle line:84%
+we're working with
+integers, natural numbers.
+
+00:33:45.060 --> 00:33:49.620 align:middle line:84%
+All of the random variables
+I've defined so far, I believe,
+
+00:33:49.620 --> 00:33:52.350 align:middle line:90%
+are integers.
+
+00:33:52.350 --> 00:33:55.390 align:middle line:84%
+We happen to get an expectation
+that was not an integer.
+
+00:33:55.390 --> 00:33:58.660 align:middle line:84%
+But all of the values
+that D could take on
+
+00:33:58.660 --> 00:34:01.910 align:middle line:84%
+or hearts could take
+on was an integer.
+
+00:34:01.910 --> 00:34:10.330 align:middle line:84%
+So let's consider the case
+where I'll say the codomain of X
+
+00:34:10.330 --> 00:34:12.040 align:middle line:90%
+is the natural number--
+
+00:34:12.040 --> 00:34:14.560 align:middle line:90%
+0, 1, 2, 3.
+
+00:34:14.560 --> 00:34:19.150 align:middle line:84%
+Remember, codomain is just what
+you declare this function could
+
+00:34:19.150 --> 00:34:20.003 align:middle line:90%
+take on for values.
+
+00:34:20.003 --> 00:34:21.670 align:middle line:84%
+It doesn't have to
+take on those values.
+
+00:34:21.670 --> 00:34:24.550 align:middle line:84%
+Range here-- the intent is
+these are just the values that
+
+00:34:24.550 --> 00:34:26.360 align:middle line:90%
+are taken on by this function.
+
+00:34:26.360 --> 00:34:28.292 align:middle line:90%
+And so I didn't have to write--
+
+00:34:28.292 --> 00:34:30.500 align:middle line:84%
+even though the number of
+hearts could, I don't know,
+
+00:34:30.500 --> 00:34:34.370 align:middle line:84%
+be 100 in some other card,
+in this sample space,
+
+00:34:34.370 --> 00:34:35.870 align:middle line:90%
+we know it's just 0, 1, 2, or 3.
+
+00:34:35.870 --> 00:34:39.350 align:middle line:90%
+And so we just need four terms.
+
+00:34:39.350 --> 00:34:41.800 align:middle line:84%
+But let's suppose potentially
+all the natural numbers
+
+00:34:41.800 --> 00:34:44.500 align:middle line:84%
+are there, but not
+necessarily all of them.
+
+00:34:44.500 --> 00:34:49.360 align:middle line:84%
+Then expected value
+of X has a nice form.
+
+00:34:49.360 --> 00:34:52.656 align:middle line:84%
+And this is a formula I
+encourage you not to memorize.
+
+00:34:52.656 --> 00:34:54.489 align:middle line:84%
+You should write it
+down on your cheat sheet
+
+00:34:54.489 --> 00:34:58.580 align:middle line:84%
+and always look it up from there
+because it's easy to get wrong,
+
+00:34:58.580 --> 00:34:59.665 align:middle line:90%
+especially the next one.
+
+00:34:59.665 --> 00:35:03.410 align:middle line:90%
+
+
+00:35:03.410 --> 00:35:09.800 align:middle line:84%
+1 to infinity,
+probability x equals I
+
+00:35:09.800 --> 00:35:14.670 align:middle line:84%
+times I. This is just
+exactly this theorem.
+
+00:35:14.670 --> 00:35:15.590 align:middle line:90%
+Nothing exciting.
+
+00:35:15.590 --> 00:35:17.700 align:middle line:84%
+Here, I wrote a
+sum over a range.
+
+00:35:17.700 --> 00:35:19.860 align:middle line:84%
+Now I'm writing a sum
+over an explicit range.
+
+00:35:19.860 --> 00:35:23.690 align:middle line:84%
+The one clever idea I
+had is skip 0 because 0
+
+00:35:23.690 --> 00:35:26.310 align:middle line:84%
+is going to get-- the 0 case is
+going to get multiplied by 0,
+
+00:35:26.310 --> 00:35:27.720 align:middle line:90%
+so that never matters.
+
+00:35:27.720 --> 00:35:29.070 align:middle line:90%
+So we get to start at 1.
+
+00:35:29.070 --> 00:35:31.550 align:middle line:84%
+Wow, I saved this one
+step for evermore.
+
+00:35:31.550 --> 00:35:33.560 align:middle line:84%
+And then sum up
+to infinity if we
+
+00:35:33.560 --> 00:35:39.230 align:middle line:84%
+might have to go that
+high So that is true.
+
+00:35:39.230 --> 00:35:42.260 align:middle line:84%
+But there's an even
+cooler form, which
+
+00:35:42.260 --> 00:35:50.600 align:middle line:84%
+is sum I equals 1 to infinity
+of probability of X greater than
+
+00:35:50.600 --> 00:35:57.570 align:middle line:84%
+or equal to I. Or
+there's no I here--
+
+00:35:57.570 --> 00:36:06.690 align:middle line:84%
+I equals 0 to infinity
+probability X greater than I.
+
+00:36:06.690 --> 00:36:11.010 align:middle line:84%
+So this part is
+just this theorem.
+
+00:36:11.010 --> 00:36:14.640 align:middle line:84%
+This step is I just changed
+greater than or equal to greater
+
+00:36:14.640 --> 00:36:20.020 align:middle line:84%
+than and changed where I started
+I. So here, it started at I,1.
+
+00:36:20.020 --> 00:36:22.060 align:middle line:90%
+And here, it started at I, 0.
+
+00:36:22.060 --> 00:36:25.120 align:middle line:84%
+And so here, I'm
+effectively adding 1 to I.
+
+00:36:25.120 --> 00:36:26.250 align:middle line:90%
+And so I get to do--
+
+00:36:26.250 --> 00:36:28.240 align:middle line:84%
+or subtracting 1 from
+I. So I do greater than
+
+00:36:28.240 --> 00:36:29.740 align:middle line:84%
+instead of greater
+than or equal to.
+
+00:36:29.740 --> 00:36:32.890 align:middle line:84%
+So these two arrow
+equalities should be obvious.
+
+00:36:32.890 --> 00:36:35.320 align:middle line:84%
+And this one is the
+interesting one.
+
+00:36:35.320 --> 00:36:37.925 align:middle line:90%
+So let's prove that.
+
+00:36:37.925 --> 00:36:46.050 align:middle line:90%
+
+
+00:36:46.050 --> 00:36:47.433 align:middle line:90%
+OK, proof.
+
+00:36:47.433 --> 00:37:04.440 align:middle line:90%
+
+
+00:37:04.440 --> 00:37:05.200 align:middle line:90%
+OK.
+
+00:37:05.200 --> 00:37:09.150 align:middle line:84%
+I want to compute this sum and
+claim that it equals this one.
+
+00:37:09.150 --> 00:37:13.350 align:middle line:84%
+And I'm going to do it by
+writing it in an obvious way.
+
+00:37:13.350 --> 00:37:15.600 align:middle line:84%
+First, I'm just going to
+write out the infinite series
+
+00:37:15.600 --> 00:37:16.630 align:middle line:90%
+with dot, dot, dot.
+
+00:37:16.630 --> 00:37:26.100 align:middle line:84%
+So we've got X equal to 1 plus
+X gradient equal to 2 plus X
+
+00:37:26.100 --> 00:37:27.147 align:middle line:90%
+gradient equal to 3.
+
+00:37:27.147 --> 00:37:29.730 align:middle line:84%
+Just give me a moment, and I'll
+write all the remaining terms.
+
+00:37:29.730 --> 00:37:32.040 align:middle line:90%
+Might take a while.
+
+00:37:32.040 --> 00:37:39.330 align:middle line:84%
+And now I want to expand
+these out into separate pieces
+
+00:37:39.330 --> 00:37:46.407 align:middle line:84%
+in terms of X equal I. So this
+is, what is the probability
+
+00:37:46.407 --> 00:37:47.740 align:middle line:90%
+that X is greater or equal to 1.
+
+00:37:47.740 --> 00:37:52.120 align:middle line:84%
+Given that, again, that
+they're all natural numbers,
+
+00:37:52.120 --> 00:37:56.320 align:middle line:84%
+we know this is probability
+X equals 1 plus probability X
+
+00:37:56.320 --> 00:38:01.360 align:middle line:84%
+equals 2 plus probability
+X equals 3 plus and so
+
+00:38:01.360 --> 00:38:05.770 align:middle line:90%
+on up to infinity.
+
+00:38:05.770 --> 00:38:08.590 align:middle line:90%
+What's this one?
+
+00:38:08.590 --> 00:38:10.760 align:middle line:84%
+Well, same thing,
+but starting here.
+
+00:38:10.760 --> 00:38:15.070 align:middle line:84%
+Probability X equals
+2 plus probability
+
+00:38:15.070 --> 00:38:19.270 align:middle line:90%
+X equals 3 plus and so on.
+
+00:38:19.270 --> 00:38:23.360 align:middle line:90%
+This one starts over here.
+
+00:38:23.360 --> 00:38:27.670 align:middle line:90%
+Probability X equals 3.
+
+00:38:27.670 --> 00:38:34.600 align:middle line:84%
+So if I now sum this
+way down the columns,
+
+00:38:34.600 --> 00:38:41.110 align:middle line:84%
+I get 1 times probability
+X equals 1 plus 2 times
+
+00:38:41.110 --> 00:38:44.050 align:middle line:90%
+probability X equals 2.
+
+00:38:44.050 --> 00:38:46.520 align:middle line:84%
+Because there are
+two values here--
+
+00:38:46.520 --> 00:38:49.620 align:middle line:84%
+there are two ranges here for
+X that include X equals 2--
+
+00:38:49.620 --> 00:38:50.870 align:middle line:90%
+these two.
+
+00:38:50.870 --> 00:38:53.550 align:middle line:84%
+2 is not greater than or
+equal to 3, 4, 5, and so on.
+
+00:38:53.550 --> 00:38:55.220 align:middle line:90%
+So I get exactly two of them.
+
+00:38:55.220 --> 00:39:01.440 align:middle line:84%
+I get exactly three probability
+X equals 3, and so on.
+
+00:39:01.440 --> 00:39:03.740 align:middle line:84%
+And if you work out the
+dot, dot, dots via proof
+
+00:39:03.740 --> 00:39:07.640 align:middle line:84%
+by induction, you get some
+I probability X equals I.
+
+00:39:07.640 --> 00:39:11.120 align:middle line:90%
+And that's what we wanted.
+
+00:39:11.120 --> 00:39:13.550 align:middle line:90%
+1 to infinity.
+
+00:39:13.550 --> 00:39:18.350 align:middle line:84%
+So that's why these
+two sums are the same.
+
+00:39:18.350 --> 00:39:20.270 align:middle line:84%
+So the point is to
+do this work once,
+
+00:39:20.270 --> 00:39:23.090 align:middle line:84%
+so that in the future
+if you have a problem,
+
+00:39:23.090 --> 00:39:25.650 align:middle line:84%
+you can use any of
+these formulas you want.
+
+00:39:25.650 --> 00:39:27.870 align:middle line:84%
+You could use the
+definition of expectation,
+
+00:39:27.870 --> 00:39:31.560 align:middle line:84%
+which is a sum over outcomes
+in the sample space.
+
+00:39:31.560 --> 00:39:33.770 align:middle line:84%
+Or you could use
+this formula-- sum
+
+00:39:33.770 --> 00:39:38.070 align:middle line:84%
+over all the things in the
+range with equality here.
+
+00:39:38.070 --> 00:39:39.900 align:middle line:90%
+And then you multiply it by x.
+
+00:39:39.900 --> 00:39:43.203 align:middle line:84%
+Or if in the special case
+where your function only takes
+
+00:39:43.203 --> 00:39:45.620 align:middle line:84%
+on integer values-- so this
+doesn't work if you have other
+
+00:39:45.620 --> 00:39:47.400 align:middle line:90%
+real numbers--
+
+00:39:47.400 --> 00:39:50.082 align:middle line:84%
+then you can use one of
+these three formulas.
+
+00:39:50.082 --> 00:39:52.540 align:middle line:84%
+Probably the last one or the
+first one are the useful ones.
+
+00:39:52.540 --> 00:39:55.540 align:middle line:84%
+If it's easy to compute the
+probability X equals something,
+
+00:39:55.540 --> 00:39:57.450 align:middle line:90%
+then maybe use this formula.
+
+00:39:57.450 --> 00:40:00.570 align:middle line:84%
+If it's easy to compute the
+probability that X is bigger
+
+00:40:00.570 --> 00:40:03.630 align:middle line:84%
+than something-- this was CDF
+and this was PMF, remember,
+
+00:40:03.630 --> 00:40:04.560 align:middle line:90%
+from last time.
+
+00:40:04.560 --> 00:40:07.900 align:middle line:84%
+It's easy, if you have a nice
+form for PMF, then use that.
+
+00:40:07.900 --> 00:40:11.100 align:middle line:84%
+If you have a nice
+form for CDF, use that,
+
+00:40:11.100 --> 00:40:13.300 align:middle line:90%
+provided you work with integers.
+
+00:40:13.300 --> 00:40:16.120 align:middle line:84%
+Do not try to mix these
+formulas together.
+
+00:40:16.120 --> 00:40:19.920 align:middle line:84%
+Don't compute the
+sum of I equals 1
+
+00:40:19.920 --> 00:40:22.140 align:middle line:84%
+to infinity, probability X
+greater than or equal to I
+
+00:40:22.140 --> 00:40:24.000 align:middle line:84%
+times I. That would
+give you something
+
+00:40:24.000 --> 00:40:25.290 align:middle line:90%
+that is not expectation.
+
+00:40:25.290 --> 00:40:28.060 align:middle line:90%
+But surprisingly, students try.
+
+00:40:28.060 --> 00:40:29.530 align:middle line:90%
+So don't do that.
+
+00:40:29.530 --> 00:40:34.480 align:middle line:84%
+Use this one, or this one, or
+this one, or the definition.
+
+00:40:34.480 --> 00:40:39.390 align:middle line:90%
+
+
+00:40:39.390 --> 00:40:40.630 align:middle line:90%
+Cool.
+
+00:40:40.630 --> 00:40:42.370 align:middle line:84%
+Let's do some more
+interesting examples.
+
+00:40:42.370 --> 00:40:50.918 align:middle line:90%
+
+
+00:40:50.918 --> 00:40:51.854 align:middle line:90%
+Lonely brace.
+
+00:40:51.854 --> 00:41:01.620 align:middle line:90%
+
+
+00:41:01.620 --> 00:41:03.600 align:middle line:90%
+Is there questions?
+
+00:41:03.600 --> 00:41:04.120 align:middle line:90%
+All right.
+
+00:41:04.120 --> 00:41:13.650 align:middle line:90%
+
+
+00:41:13.650 --> 00:41:16.890 align:middle line:84%
+Next problem is called
+mean time to failure.
+
+00:41:16.890 --> 00:41:18.040 align:middle line:90%
+It's a little negative.
+
+00:41:18.040 --> 00:41:21.840 align:middle line:84%
+You can use it to compute
+successful things as well.
+
+00:41:21.840 --> 00:41:23.982 align:middle line:84%
+It's related to this
+problem of how many times--
+
+00:41:23.982 --> 00:41:26.190 align:middle line:84%
+it is essentially this
+problem of how many times do I
+
+00:41:26.190 --> 00:41:29.650 align:middle line:84%
+have to flip a coin until I get
+tails, or until I get heads?
+
+00:41:29.650 --> 00:41:32.387 align:middle line:90%
+Either way.
+
+00:41:32.387 --> 00:41:34.720 align:middle line:84%
+I'll write it as heads because
+that's what my notes say.
+
+00:41:34.720 --> 00:41:42.070 align:middle line:90%
+
+
+00:41:42.070 --> 00:41:43.870 align:middle line:84%
+It's less
+interesting-- it's more
+
+00:41:43.870 --> 00:41:45.350 align:middle line:90%
+interesting for a biased coin.
+
+00:41:45.350 --> 00:41:54.550 align:middle line:84%
+So, let's say, the probability
+of getting heads is p.
+
+00:41:54.550 --> 00:42:05.530 align:middle line:84%
+I want to know what is the
+expected number of flips
+
+00:42:05.530 --> 00:42:10.270 align:middle line:90%
+until I get heads.
+
+00:42:10.270 --> 00:42:13.030 align:middle line:84%
+So you could use this if
+you're analyzing coin flipping.
+
+00:42:13.030 --> 00:42:16.690 align:middle line:84%
+But you could also use it
+for things like my laptop,
+
+00:42:16.690 --> 00:42:20.650 align:middle line:84%
+every day there's a 1 in
+1,000,000 chance that the hard
+
+00:42:20.650 --> 00:42:22.160 align:middle line:90%
+drive dies or something.
+
+00:42:22.160 --> 00:42:27.430 align:middle line:84%
+So how many days do I expect
+until the hard drive dies?
+
+00:42:27.430 --> 00:42:30.010 align:middle line:84%
+Hard drives are usually
+designed-- engineered to last,
+
+00:42:30.010 --> 00:42:31.580 align:middle line:90%
+I don't know, five years or so.
+
+00:42:31.580 --> 00:42:34.150 align:middle line:84%
+And then all your hard drives--
+that's for spinning disks.
+
+00:42:34.150 --> 00:42:36.710 align:middle line:90%
+SSDs are probably different.
+
+00:42:36.710 --> 00:42:39.070 align:middle line:90%
+They depend on usage.
+
+00:42:39.070 --> 00:42:43.165 align:middle line:84%
+So that's something
+you might care about.
+
+00:42:43.165 --> 00:42:45.290 align:middle line:84%
+And that's why this is
+called mean time to failure.
+
+00:42:45.290 --> 00:42:47.240 align:middle line:84%
+It could be something
+more positive,
+
+00:42:47.240 --> 00:42:49.290 align:middle line:84%
+like maybe you
+have an algorithm.
+
+00:42:49.290 --> 00:42:51.390 align:middle line:84%
+You're doing randomized
+algorithms in the future,
+
+00:42:51.390 --> 00:42:54.470 align:middle line:84%
+and you have an algorithm that
+either solves your problem
+
+00:42:54.470 --> 00:42:59.700 align:middle line:84%
+with some probability 1
+minus P. With probability P,
+
+00:42:59.700 --> 00:43:00.780 align:middle line:90%
+it solves your problem.
+
+00:43:00.780 --> 00:43:03.920 align:middle line:84%
+And with probability 1 minus
+P it says, I don't know.
+
+00:43:03.920 --> 00:43:07.190 align:middle line:84%
+There are lots of algorithms
+like this out there.
+
+00:43:07.190 --> 00:43:10.190 align:middle line:84%
+How many times do I have to run
+this algorithm until it actually
+
+00:43:10.190 --> 00:43:11.192 align:middle line:90%
+gives me an answer?
+
+00:43:11.192 --> 00:43:13.650 align:middle line:84%
+So I can run it, and it gives--
+it might say, I don't know.
+
+00:43:13.650 --> 00:43:15.150 align:middle line:84%
+But if I run it
+again, it might then
+
+00:43:15.150 --> 00:43:17.570 align:middle line:84%
+solve the problem,
+depending on the random coin
+
+00:43:17.570 --> 00:43:18.720 align:middle line:90%
+flips that it does.
+
+00:43:18.720 --> 00:43:21.360 align:middle line:84%
+So then it's mean
+time to success.
+
+00:43:21.360 --> 00:43:23.360 align:middle line:84%
+How many times do I have
+to flip this coin, do I
+
+00:43:23.360 --> 00:43:25.970 align:middle line:84%
+have to run this algorithm,
+given some probability of it
+
+00:43:25.970 --> 00:43:28.430 align:middle line:84%
+succeeding-- that's
+P. How many times do
+
+00:43:28.430 --> 00:43:31.200 align:middle line:84%
+I have to keep going until
+I get a successful answer?
+
+00:43:31.200 --> 00:43:33.300 align:middle line:90%
+Lots of other examples.
+
+00:43:33.300 --> 00:43:37.490 align:middle line:90%
+We will get to them in a moment.
+
+00:43:37.490 --> 00:43:40.710 align:middle line:84%
+Now, our traditional approach to
+solving tough problems like this
+
+00:43:40.710 --> 00:43:41.980 align:middle line:90%
+is to draw a tree.
+
+00:43:41.980 --> 00:43:43.960 align:middle line:84%
+In this case, the
+tree is infinite.
+
+00:43:43.960 --> 00:43:46.500 align:middle line:84%
+So that's going to be a
+little harder to draw.
+
+00:43:46.500 --> 00:43:52.260 align:middle line:84%
+We have P versus 1 minus
+P. Whenever we get a heads,
+
+00:43:52.260 --> 00:43:53.440 align:middle line:90%
+we stop.
+
+00:43:53.440 --> 00:43:57.540 align:middle line:84%
+But this tree keeps
+going off to the right.
+
+00:43:57.540 --> 00:44:00.900 align:middle line:84%
+So that's-- maybe let's not
+look at the infinite tree.
+
+00:44:00.900 --> 00:44:03.570 align:middle line:90%
+Let's use some formulas.
+
+00:44:03.570 --> 00:44:09.090 align:middle line:84%
+So I'm going to
+call this number--
+
+00:44:09.090 --> 00:44:11.830 align:middle line:84%
+the number of flips
+I'm going to call F.
+
+00:44:11.830 --> 00:44:14.920 align:middle line:84%
+And then we want to compute--
+remember, F is a function.
+
+00:44:14.920 --> 00:44:17.500 align:middle line:84%
+So there are various
+outcomes here
+
+00:44:17.500 --> 00:44:21.280 align:middle line:84%
+which correspond
+to the executions--
+
+00:44:21.280 --> 00:44:23.110 align:middle line:90%
+the various numbers of flips.
+
+00:44:23.110 --> 00:44:26.130 align:middle line:84%
+It's going to be tails, tails,
+tails, tails, tails, tails I
+
+00:44:26.130 --> 00:44:27.552 align:middle line:90%
+times and then heads.
+
+00:44:27.552 --> 00:44:29.010 align:middle line:84%
+Those are the
+various outcomes that
+
+00:44:29.010 --> 00:44:31.218 align:middle line:84%
+could happen because we stop
+whenever we get a heads.
+
+00:44:31.218 --> 00:44:33.040 align:middle line:84%
+So it could be 0
+tails and then heads,
+
+00:44:33.040 --> 00:44:35.880 align:middle line:90%
+1 tails then heads, and so on.
+
+00:44:35.880 --> 00:44:37.810 align:middle line:90%
+So that's our sample space.
+
+00:44:37.810 --> 00:44:39.510 align:middle line:84%
+And then F is a
+function that maps
+
+00:44:39.510 --> 00:44:42.850 align:middle line:84%
+that sample space to count how
+many total flips were there--
+
+00:44:42.850 --> 00:44:44.170 align:middle line:90%
+heads and tails?
+
+00:44:44.170 --> 00:44:45.840 align:middle line:84%
+So it's always going
+to be at least one.
+
+00:44:45.840 --> 00:44:48.900 align:middle line:84%
+And then expect--
+so F is a function--
+
+00:44:48.900 --> 00:44:53.770 align:middle line:84%
+can take on some integer value
+between 0 and 1, I guess,
+
+00:44:53.770 --> 00:44:55.343 align:middle line:90%
+and infinity.
+
+00:44:55.343 --> 00:44:56.760 align:middle line:84%
+And now we're going
+to reduce this
+
+00:44:56.760 --> 00:44:58.390 align:middle line:84%
+to a single number
+via expectation.
+
+00:44:58.390 --> 00:45:01.780 align:middle line:84%
+What is the average number of
+flips that we expect to take?
+
+00:45:01.780 --> 00:45:04.900 align:middle line:90%
+So that's expectation of F.
+
+00:45:04.900 --> 00:45:09.540 align:middle line:84%
+Now, we will use our latest
+and greatest formula--
+
+00:45:09.540 --> 00:45:11.640 align:middle line:90%
+this one.
+
+00:45:11.640 --> 00:45:13.560 align:middle line:90%
+Let me memorize it for a second.
+
+00:45:13.560 --> 00:45:21.520 align:middle line:84%
+It's just sum X greater than
+I. Already forgotten it.
+
+00:45:21.520 --> 00:45:24.510 align:middle line:84%
+It's too far from over
+there to over here.
+
+00:45:24.510 --> 00:45:30.015 align:middle line:84%
+Was it probability F is
+greater than I, I hope.
+
+00:45:30.015 --> 00:45:30.515 align:middle line:90%
+Yes.
+
+00:45:30.515 --> 00:45:33.190 align:middle line:90%
+
+
+00:45:33.190 --> 00:45:35.590 align:middle line:90%
+So this is that CDF.
+
+00:45:35.590 --> 00:45:40.330 align:middle line:84%
+And I claim this is not
+too hard to figure out
+
+00:45:40.330 --> 00:45:41.960 align:middle line:90%
+using what we know.
+
+00:45:41.960 --> 00:45:44.740 align:middle line:84%
+Because we're
+assuming each flip is
+
+00:45:44.740 --> 00:45:46.520 align:middle line:84%
+independent from
+subsequent flips,
+
+00:45:46.520 --> 00:45:48.925 align:middle line:84%
+like the flips of this coin
+are mutually independent.
+
+00:45:48.925 --> 00:45:51.550 align:middle line:84%
+It's not some magical coin that
+always comes up heads or always
+
+00:45:51.550 --> 00:45:52.610 align:middle line:90%
+comes up tails or something.
+
+00:45:52.610 --> 00:45:54.318 align:middle line:84%
+Well, that would be
+represented by the P.
+
+00:45:54.318 --> 00:45:58.850 align:middle line:84%
+But there's no correlation
+between the different flips.
+
+00:45:58.850 --> 00:46:07.480 align:middle line:84%
+So for there to be at
+least greater than I flips
+
+00:46:07.480 --> 00:46:10.240 align:middle line:84%
+before I get a heads, that
+means that the first I
+
+00:46:10.240 --> 00:46:11.780 align:middle line:90%
+flips are tails.
+
+00:46:11.780 --> 00:46:14.680 align:middle line:90%
+These are equivalent events.
+
+00:46:14.680 --> 00:46:25.933 align:middle line:84%
+This F greater than I is the
+same as first I flips are tails.
+
+00:46:25.933 --> 00:46:28.413 align:middle line:90%
+
+
+00:46:28.413 --> 00:46:29.830 align:middle line:84%
+And then after
+that, I don't know,
+
+00:46:29.830 --> 00:46:31.122 align:middle line:90%
+I might get a heads right away.
+
+00:46:31.122 --> 00:46:32.630 align:middle line:90%
+Then F is I plus 1.
+
+00:46:32.630 --> 00:46:34.080 align:middle line:90%
+Or it might take longer.
+
+00:46:34.080 --> 00:46:37.530 align:middle line:84%
+But F being greater than I
+is exactly this situation.
+
+00:46:37.530 --> 00:46:40.660 align:middle line:84%
+So what is the probability that
+the first I flips are tails?
+
+00:46:40.660 --> 00:46:45.140 align:middle line:90%
+
+
+00:46:45.140 --> 00:46:47.665 align:middle line:84%
+1 minus P to the I. I
+saw you whispering it.
+
+00:46:47.665 --> 00:46:51.140 align:middle line:90%
+
+
+00:46:51.140 --> 00:46:53.880 align:middle line:90%
+I feel like-- yeah, cool.
+
+00:46:53.880 --> 00:46:56.480 align:middle line:84%
+Now, the hard part is
+working out this sum,
+
+00:46:56.480 --> 00:46:58.110 align:middle line:90%
+or remembering what this sum is.
+
+00:46:58.110 --> 00:47:00.290 align:middle line:90%
+This is a geometric sum.
+
+00:47:00.290 --> 00:47:02.150 align:middle line:84%
+So 1 minus P to the
+I because this is
+
+00:47:02.150 --> 00:47:03.450 align:middle line:90%
+the chance of getting a tails.
+
+00:47:03.450 --> 00:47:04.530 align:middle line:84%
+And then they're
+each independent,
+
+00:47:04.530 --> 00:47:05.738 align:middle line:90%
+so we just take the product--
+
+00:47:05.738 --> 00:47:08.210 align:middle line:90%
+via product rule.
+
+00:47:08.210 --> 00:47:10.020 align:middle line:90%
+This is a geometric thing.
+
+00:47:10.020 --> 00:47:14.990 align:middle line:84%
+Sum of X to the I from I equals
+0 to infinity is 1 over 1
+
+00:47:14.990 --> 00:47:21.830 align:middle line:84%
+minus X. So this is 1 over
+1 minus X here is 1 minus p.
+
+00:47:21.830 --> 00:47:25.310 align:middle line:84%
+So 1 minus 1 minus p,
+that's also known as p.
+
+00:47:25.310 --> 00:47:27.450 align:middle line:90%
+So this whole thing is 1 over p.
+
+00:47:27.450 --> 00:47:31.555 align:middle line:84%
+Amazingly simple formula for
+the mean time to failure.
+
+00:47:31.555 --> 00:47:33.930 align:middle line:84%
+This is why mean time to
+failure is such a famous example
+
+00:47:33.930 --> 00:47:36.490 align:middle line:84%
+because it has such
+a beautiful solution.
+
+00:47:36.490 --> 00:47:40.686 align:middle line:84%
+So if I'm flipping
+a fair coin, 50/50.
+
+00:47:40.686 --> 00:47:42.160 align:middle line:90%
+P is a half.
+
+00:47:42.160 --> 00:47:46.180 align:middle line:84%
+I expect to have to flip it
+twice to get a heads or a tails.
+
+00:47:46.180 --> 00:47:50.440 align:middle line:84%
+Now, reality is not
+equal to the average,
+
+00:47:50.440 --> 00:47:54.660 align:middle line:84%
+sadly, so I had to flip seven
+times to get a heads or tails.
+
+00:47:54.660 --> 00:47:57.960 align:middle line:84%
+But if I was gaming for
+heads, it would be very fast.
+
+00:47:57.960 --> 00:48:00.060 align:middle line:84%
+It happened in the
+very first step.
+
+00:48:00.060 --> 00:48:03.940 align:middle line:90%
+So that's the expectation.
+
+00:48:03.940 --> 00:48:06.190 align:middle line:84%
+It doesn't tell you everything
+about the distribution.
+
+00:48:06.190 --> 00:48:13.560 align:middle line:84%
+This distribution
+has a name Alluded to
+
+00:48:13.560 --> 00:48:16.120 align:middle line:90%
+by this geometric series.
+
+00:48:16.120 --> 00:48:18.720 align:middle line:90%
+This was the CDF.
+
+00:48:18.720 --> 00:48:21.426 align:middle line:84%
+We call this the
+geometric distribution.
+
+00:48:21.426 --> 00:48:32.190 align:middle line:90%
+
+
+00:48:32.190 --> 00:48:37.830 align:middle line:84%
+It comes up somewhat frequently
+in real life distributions.
+
+00:48:37.830 --> 00:48:44.700 align:middle line:84%
+If I were to write down the PMF,
+it's 1 minus p to the I times p.
+
+00:48:44.700 --> 00:48:47.940 align:middle line:84%
+This is the chance that I
+get I tails and then a heads.
+
+00:48:47.940 --> 00:48:50.400 align:middle line:90%
+That's-- well, OK.
+
+00:48:50.400 --> 00:48:53.070 align:middle line:84%
+It's either that or
+probability-- the way
+
+00:48:53.070 --> 00:48:57.150 align:middle line:84%
+I defined it before, it
+was F equals I plus 1.
+
+00:48:57.150 --> 00:48:58.900 align:middle line:90%
+So one of these is true.
+
+00:48:58.900 --> 00:48:59.400 align:middle line:90%
+Pick one.
+
+00:48:59.400 --> 00:49:01.442 align:middle line:84%
+These are both called the
+geometric distribution.
+
+00:49:01.442 --> 00:49:03.120 align:middle line:84%
+If you look at the
+Wikipedia definition
+
+00:49:03.120 --> 00:49:04.380 align:middle line:84%
+of geometric
+distribution, it says
+
+00:49:04.380 --> 00:49:06.838 align:middle line:84%
+there are two distributions
+called geometric distribution--
+
+00:49:06.838 --> 00:49:08.080 align:middle line:90%
+this one and this one.
+
+00:49:08.080 --> 00:49:11.130 align:middle line:90%
+So pick your poison.
+
+00:49:11.130 --> 00:49:13.530 align:middle line:90%
+Both are called that.
+
+00:49:13.530 --> 00:49:18.060 align:middle line:84%
+So here is an application,
+another application
+
+00:49:18.060 --> 00:49:20.490 align:middle line:90%
+of mean time to failure.
+
+00:49:20.490 --> 00:49:24.450 align:middle line:84%
+I don't know about you, but
+I like collecting things.
+
+00:49:24.450 --> 00:49:26.760 align:middle line:84%
+Everyone likes
+collecting something.
+
+00:49:26.760 --> 00:49:30.675 align:middle line:84%
+To me, the epitome of
+collecting things is gacha.
+
+00:49:30.675 --> 00:49:32.050 align:middle line:84%
+Oh, that's the
+video game version
+
+00:49:32.050 --> 00:49:33.425 align:middle line:84%
+of Gacha, where
+you're collecting
+
+00:49:33.425 --> 00:49:35.560 align:middle line:90%
+characters in a video game.
+
+00:49:35.560 --> 00:49:38.060 align:middle line:90%
+Please do not play these games.
+
+00:49:38.060 --> 00:49:39.910 align:middle line:90%
+They're annoyingly addictive--
+
+00:49:39.910 --> 00:49:41.950 align:middle line:84%
+I spend most of my
+nights these days.
+
+00:49:41.950 --> 00:49:45.940 align:middle line:84%
+But gacha is named
+after this notion of--
+
+00:49:45.940 --> 00:49:50.140 align:middle line:84%
+you can see it in the top
+right there-- is a gashapon,
+
+00:49:50.140 --> 00:49:54.070 align:middle line:90%
+which is like these little--
+
+00:49:54.070 --> 00:49:57.310 align:middle line:84%
+if you grew up in the US,
+you have vending machines
+
+00:49:57.310 --> 00:49:58.520 align:middle line:90%
+that give you candy.
+
+00:49:58.520 --> 00:50:02.420 align:middle line:84%
+Well, these are like the really
+cool vending machines in Japan.
+
+00:50:02.420 --> 00:50:05.000 align:middle line:90%
+This was a Gachapon festival.
+
+00:50:05.000 --> 00:50:08.470 align:middle line:84%
+And you pick your
+favorite weird thing
+
+00:50:08.470 --> 00:50:11.420 align:middle line:84%
+that you can get in a little
+ball out of this machine.
+
+00:50:11.420 --> 00:50:15.310 align:middle line:84%
+You put in your 200 yen, and
+you get a randomly selected ball
+
+00:50:15.310 --> 00:50:18.380 align:middle line:90%
+from those sets of weird toys.
+
+00:50:18.380 --> 00:50:21.980 align:middle line:84%
+So this is like a toy delivery--
+or not delivery service.
+
+00:50:21.980 --> 00:50:25.250 align:middle line:84%
+It's a toy random
+selection service.
+
+00:50:25.250 --> 00:50:27.800 align:middle line:84%
+And if you want to collect
+all the different things
+
+00:50:27.800 --> 00:50:31.130 align:middle line:84%
+on this list, how many
+times do you have to do it?
+
+00:50:31.130 --> 00:50:33.530 align:middle line:84%
+This is a problem called
+coupon collectors,
+
+00:50:33.530 --> 00:50:36.200 align:middle line:84%
+or the Gotcha
+problem, I would say.
+
+00:50:36.200 --> 00:50:41.600 align:middle line:84%
+But we'll solve it in general
+in recitation tomorrow.
+
+00:50:41.600 --> 00:50:44.360 align:middle line:84%
+But I'll solve a very
+simple version here,
+
+00:50:44.360 --> 00:50:47.485 align:middle line:84%
+which is a nice
+application of this--
+
+00:50:47.485 --> 00:50:51.800 align:middle line:90%
+
+
+00:50:51.800 --> 00:50:53.080 align:middle line:90%
+of mean time to failure.
+
+00:50:53.080 --> 00:50:57.800 align:middle line:90%
+
+
+00:50:57.800 --> 00:51:01.093 align:middle line:84%
+Let's solve the special case
+where there are only two toys.
+
+00:51:01.093 --> 00:51:07.460 align:middle line:90%
+
+
+00:51:07.460 --> 00:51:10.410 align:middle line:84%
+gacha-- gacha is the sound
+that when you crank the thing,
+
+00:51:10.410 --> 00:51:12.260 align:middle line:84%
+it's like, gacha,
+gacha, gacha, puh,
+
+00:51:12.260 --> 00:51:15.890 align:middle line:90%
+is when the ball drops down--
+
+00:51:15.890 --> 00:51:20.960 align:middle line:84%
+gacha with two
+toys or characters
+
+00:51:20.960 --> 00:51:22.880 align:middle line:90%
+or whatever you're collecting.
+
+00:51:22.880 --> 00:51:25.030 align:middle line:90%
+And so you get a random choice.
+
+00:51:25.030 --> 00:51:26.930 align:middle line:84%
+Let's say it's 50/50
+between the two.
+
+00:51:26.930 --> 00:51:31.090 align:middle line:84%
+So in your first pull is what
+we usually call these, at least
+
+00:51:31.090 --> 00:51:33.590 align:middle line:84%
+in the video game
+context, our first crank
+
+00:51:33.590 --> 00:51:38.710 align:middle line:84%
+in the physical context,
+you get one of the toys.
+
+00:51:38.710 --> 00:51:41.470 align:middle line:84%
+So now it's really
+just, how many steps
+
+00:51:41.470 --> 00:51:44.620 align:middle line:84%
+do I need until I
+get the second toy?
+
+00:51:44.620 --> 00:51:45.460 align:middle line:90%
+Two.
+
+00:51:45.460 --> 00:51:47.300 align:middle line:84%
+This is the
+coin-flipping problem.
+
+00:51:47.300 --> 00:52:00.640 align:middle line:84%
+So how many more pulls until
+you get a distinct toy?
+
+00:52:00.640 --> 00:52:05.090 align:middle line:84%
+And in this case, it's
+going to be 50/50 each pull.
+
+00:52:05.090 --> 00:52:14.530 align:middle line:84%
+And so you expect two more,
+which is a total of three.
+
+00:52:14.530 --> 00:52:17.400 align:middle line:84%
+Now, when you have k toys you
+want to collect, it's annoying.
+
+00:52:17.400 --> 00:52:19.150 align:middle line:84%
+Because in the beginning,
+it's really easy
+
+00:52:19.150 --> 00:52:22.412 align:middle line:84%
+to get lots of distinct toys
+because you're very likely.
+
+00:52:22.412 --> 00:52:24.370 align:middle line:84%
+But when you're trying
+to collect the last toy,
+
+00:52:24.370 --> 00:52:26.333 align:middle line:84%
+it's very unlikely that
+you pull the last toy
+
+00:52:26.333 --> 00:52:28.750 align:middle line:84%
+because there's only like a 1
+in k chance that you get it.
+
+00:52:28.750 --> 00:52:30.660 align:middle line:84%
+So you end up with
+some harmonic series,
+
+00:52:30.660 --> 00:52:32.080 align:middle line:90%
+and you get a log factor.
+
+00:52:32.080 --> 00:52:34.230 align:middle line:90%
+You'll see that tomorrow.
+
+00:52:34.230 --> 00:52:36.270 align:middle line:90%
+OK.
+
+00:52:36.270 --> 00:52:39.660 align:middle line:84%
+Let's do a little more theory
+and then some more examples.
+
+00:52:39.660 --> 00:52:41.520 align:middle line:90%
+Where should I go?
+
+00:52:41.520 --> 00:52:42.395 align:middle line:90%
+Let's erase gambling.
+
+00:52:42.395 --> 00:52:47.435 align:middle line:90%
+
+
+00:52:47.435 --> 00:52:49.060 align:middle line:84%
+I feel like I should
+have a disclaimer.
+
+00:52:49.060 --> 00:52:51.810 align:middle line:90%
+Please don't gamble.
+
+00:52:51.810 --> 00:52:52.910 align:middle line:90%
+It's not good for you.
+
+00:52:52.910 --> 00:52:59.760 align:middle line:90%
+
+
+00:52:59.760 --> 00:53:02.122 align:middle line:90%
+Please just simulate gambling.
+
+00:53:02.122 --> 00:53:02.705 align:middle line:90%
+That's better.
+
+00:53:02.705 --> 00:53:06.570 align:middle line:90%
+
+
+00:53:06.570 --> 00:53:09.870 align:middle line:84%
+I was writing a
+simulation of this game
+
+00:53:09.870 --> 00:53:12.720 align:middle line:84%
+this morning to see what
+were my chances of actually
+
+00:53:12.720 --> 00:53:15.730 align:middle line:84%
+winning despite the odds
+being against my favor?
+
+00:53:15.730 --> 00:53:20.170 align:middle line:84%
+And with 10 rounds, I had
+a 20% chance of winning.
+
+00:53:20.170 --> 00:53:22.190 align:middle line:84%
+So luckily, the demo
+went in my favor.
+
+00:53:22.190 --> 00:53:24.250 align:middle line:84%
+But there was a
+decent chance that I
+
+00:53:24.250 --> 00:53:29.620 align:middle line:84%
+could have won even though the
+expectation was against me.
+
+00:53:29.620 --> 00:53:30.570 align:middle line:90%
+So I guess.
+
+00:53:30.570 --> 00:53:44.920 align:middle line:90%
+
+
+00:53:44.920 --> 00:53:48.520 align:middle line:84%
+If there is one
+thing in this class
+
+00:53:48.520 --> 00:53:50.480 align:middle line:84%
+that you remember
+about probability,
+
+00:53:50.480 --> 00:53:53.570 align:middle line:84%
+I suggest linearity
+of expectation.
+
+00:53:53.570 --> 00:53:56.330 align:middle line:84%
+It is simultaneously the
+coolest thing, in my opinion,
+
+00:53:56.330 --> 00:53:58.510 align:middle line:84%
+about probability and
+the most useful thing
+
+00:53:58.510 --> 00:53:59.840 align:middle line:90%
+for solving problems.
+
+00:53:59.840 --> 00:54:03.400 align:middle line:90%
+So what is it?
+
+00:54:03.400 --> 00:54:05.690 align:middle line:84%
+The expectation
+function is linear.
+
+00:54:05.690 --> 00:54:08.380 align:middle line:90%
+Let me formalize.
+
+00:54:08.380 --> 00:54:11.050 align:middle line:84%
+Suppose you have two
+random variables, X and Y.
+
+00:54:11.050 --> 00:54:14.890 align:middle line:84%
+And you take their sum, and
+then you take their expectation.
+
+00:54:14.890 --> 00:54:18.426 align:middle line:84%
+It turns out that equals
+the sum of the expectations.
+
+00:54:18.426 --> 00:54:25.040 align:middle line:90%
+
+
+00:54:25.040 --> 00:54:27.950 align:middle line:84%
+Or if you take a random
+variable and you multiply it
+
+00:54:27.950 --> 00:54:33.830 align:middle line:84%
+by a constant, you can
+pull that constant out.
+
+00:54:33.830 --> 00:54:37.950 align:middle line:84%
+And so, more generally, this
+is the full linearity form.
+
+00:54:37.950 --> 00:54:41.120 align:middle line:90%
+If I have a--
+
+00:54:41.120 --> 00:54:42.210 align:middle line:90%
+where am I here--
+
+00:54:42.210 --> 00:54:48.050 align:middle line:84%
+sum I equals 1 to
+n of Ci times Xi,
+
+00:54:48.050 --> 00:54:55.370 align:middle line:84%
+this is the sum I
+equals 1 to n of Ci
+
+00:54:55.370 --> 00:54:57.610 align:middle line:90%
+times the expected value of Xi.
+
+00:54:57.610 --> 00:55:01.100 align:middle line:90%
+
+
+00:55:01.100 --> 00:55:03.930 align:middle line:84%
+It takes almost longer to
+write it down than to prove it.
+
+00:55:03.930 --> 00:55:08.150 align:middle line:84%
+I mean, it's actually not
+hard to prove if you stare
+
+00:55:08.150 --> 00:55:10.370 align:middle line:90%
+at this definition enough.
+
+00:55:10.370 --> 00:55:13.230 align:middle line:84%
+It's because this is
+a linear function.
+
+00:55:13.230 --> 00:55:16.070 align:middle line:84%
+If you look at how it
+depends on the X's, it's
+
+00:55:16.070 --> 00:55:17.770 align:middle line:90%
+a linear function in X.
+
+00:55:17.770 --> 00:55:19.990 align:middle line:84%
+You've got some
+constant weights.
+
+00:55:19.990 --> 00:55:23.680 align:middle line:84%
+I mean, they depend on
+your probability setup.
+
+00:55:23.680 --> 00:55:26.340 align:middle line:84%
+But if you mess around with
+X and don't mess around
+
+00:55:26.340 --> 00:55:28.510 align:middle line:84%
+with your sample space
+or its probabilities,
+
+00:55:28.510 --> 00:55:31.320 align:middle line:84%
+then this is just
+a sum of constants
+
+00:55:31.320 --> 00:55:34.240 align:middle line:90%
+times X applied to things.
+
+00:55:34.240 --> 00:55:37.890 align:middle line:84%
+So, in particular, if I
+replace X here with X plus Y,
+
+00:55:37.890 --> 00:55:39.760 align:middle line:84%
+and I just jam
+that into the sum,
+
+00:55:39.760 --> 00:55:41.370 align:middle line:90%
+I can split this into two sums.
+
+00:55:41.370 --> 00:55:43.410 align:middle line:84%
+And lo and behold, I
+get expectation of X
+
+00:55:43.410 --> 00:55:45.330 align:middle line:84%
+plus expectation of Y.
+And these other things
+
+00:55:45.330 --> 00:55:46.450 align:middle line:90%
+follow in the same way.
+
+00:55:46.450 --> 00:55:47.700 align:middle line:90%
+So I won't write down a proof.
+
+00:55:47.700 --> 00:55:50.520 align:middle line:84%
+There's one in the notes
+if you want to look.
+
+00:55:50.520 --> 00:55:54.630 align:middle line:84%
+So it's almost an obvious
+thing once I tell it to you.
+
+00:55:54.630 --> 00:55:57.930 align:middle line:84%
+But it's extremely
+powerful, mainly
+
+00:55:57.930 --> 00:56:00.930 align:middle line:90%
+because it has no conditions.
+
+00:56:00.930 --> 00:56:07.530 align:middle line:84%
+You don't need that the
+Xi's are independent.
+
+00:56:07.530 --> 00:56:09.670 align:middle line:84%
+You don't need that
+they're disjoint.
+
+00:56:09.670 --> 00:56:13.170 align:middle line:84%
+You don't need anything
+except that they are functions
+
+00:56:13.170 --> 00:56:15.250 align:middle line:90%
+over the same sample space.
+
+00:56:15.250 --> 00:56:17.910 align:middle line:84%
+I guess that's the one
+assumption you need.
+
+00:56:17.910 --> 00:56:22.280 align:middle line:84%
+Compare this with-- remember,
+there's the product rule.
+
+00:56:22.280 --> 00:56:28.740 align:middle line:90%
+
+
+00:56:28.740 --> 00:56:33.780 align:middle line:84%
+This only works if A
+and B are independent.
+
+00:56:33.780 --> 00:56:35.600 align:middle line:90%
+Or there's the sum rule.
+
+00:56:35.600 --> 00:56:39.750 align:middle line:90%
+
+
+00:56:39.750 --> 00:56:41.410 align:middle line:90%
+We use these all the time.
+
+00:56:41.410 --> 00:56:43.600 align:middle line:84%
+But you have to be very
+careful when you use them.
+
+00:56:43.600 --> 00:56:44.350 align:middle line:90%
+You have to check.
+
+00:56:44.350 --> 00:56:46.050 align:middle line:90%
+Are those really independent?
+
+00:56:46.050 --> 00:56:49.393 align:middle line:84%
+For the sum rule it only
+works if A and B are disjoint.
+
+00:56:49.393 --> 00:56:52.110 align:middle line:90%
+
+
+00:56:52.110 --> 00:56:54.240 align:middle line:84%
+So when we do law of
+total probability,
+
+00:56:54.240 --> 00:56:56.080 align:middle line:90%
+we're using this all the time.
+
+00:56:56.080 --> 00:56:59.590 align:middle line:84%
+But you have to be very careful
+that you use it correctly.
+
+00:56:59.590 --> 00:57:01.110 align:middle line:84%
+Whereas, linearity
+of expectation,
+
+00:57:01.110 --> 00:57:04.170 align:middle line:84%
+you don't need to be careful
+other than making sure you
+
+00:57:04.170 --> 00:57:07.770 align:middle line:84%
+define your random
+variables well.
+
+00:57:07.770 --> 00:57:10.520 align:middle line:90%
+Let's do an example--
+
+00:57:10.520 --> 00:57:15.130 align:middle line:90%
+
+
+00:57:15.130 --> 00:57:18.410 align:middle line:84%
+common one in games,
+gambling games
+
+00:57:18.410 --> 00:57:20.390 align:middle line:90%
+and other games, dice games.
+
+00:57:20.390 --> 00:57:27.370 align:middle line:84%
+Let's say we roll 2 fair
+two-side-- or sorry--
+
+00:57:27.370 --> 00:57:29.363 align:middle line:90%
+six-sided dice.
+
+00:57:29.363 --> 00:57:33.370 align:middle line:90%
+
+
+00:57:33.370 --> 00:57:38.295 align:middle line:84%
+What is the expected
+value of the sum?
+
+00:57:38.295 --> 00:57:42.760 align:middle line:90%
+
+
+00:57:42.760 --> 00:57:45.910 align:middle line:84%
+Well, the expected
+value of the sum
+
+00:57:45.910 --> 00:57:49.430 align:middle line:84%
+is the expected value
+of the individual parts.
+
+00:57:49.430 --> 00:57:52.270 align:middle line:90%
+Let me rewrite this as a--
+
+00:57:52.270 --> 00:57:54.680 align:middle line:84%
+instead of words, let's
+use some notation.
+
+00:57:54.680 --> 00:57:57.310 align:middle line:84%
+Let's say D1 is the random
+variable that just gives me what
+
+00:57:57.310 --> 00:57:59.180 align:middle line:90%
+is the value of the first die.
+
+00:57:59.180 --> 00:58:01.510 align:middle line:84%
+And D2 is the random
+variable that gives
+
+00:58:01.510 --> 00:58:02.948 align:middle line:90%
+me what's the second value.
+
+00:58:02.948 --> 00:58:04.990 align:middle line:84%
+The sample space here is
+a pair, an ordered pair,
+
+00:58:04.990 --> 00:58:06.740 align:middle line:84%
+of the first die,
+the second die.
+
+00:58:06.740 --> 00:58:08.680 align:middle line:84%
+So this extracts the
+first part, and this
+
+00:58:08.680 --> 00:58:10.180 align:middle line:90%
+extracts the second part.
+
+00:58:10.180 --> 00:58:14.320 align:middle line:84%
+The expected value of this sum
+by linearity of expectation
+
+00:58:14.320 --> 00:58:16.086 align:middle line:90%
+is the sum of the expectations.
+
+00:58:16.086 --> 00:58:18.780 align:middle line:90%
+
+
+00:58:18.780 --> 00:58:20.620 align:middle line:90%
+And we already did this example.
+
+00:58:20.620 --> 00:58:26.040 align:middle line:90%
+This was 3.5, 3.5.
+
+00:58:26.040 --> 00:58:29.970 align:middle line:90%
+So two total is 7.
+
+00:58:29.970 --> 00:58:31.260 align:middle line:90%
+Easy.
+
+00:58:31.260 --> 00:58:33.960 align:middle line:84%
+And what's cool is
+this didn't even need
+
+00:58:33.960 --> 00:58:35.620 align:middle line:90%
+that the dice were independent.
+
+00:58:35.620 --> 00:58:37.380 align:middle line:84%
+You could glue the
+dice together so
+
+00:58:37.380 --> 00:58:38.980 align:middle line:90%
+that they always roll together.
+
+00:58:38.980 --> 00:58:40.980 align:middle line:84%
+As long as that doesn't
+change the probabilities
+
+00:58:40.980 --> 00:58:44.260 align:middle line:84%
+of the outcomes, which may be a
+little questionable with gluing.
+
+00:58:44.260 --> 00:58:45.690 align:middle line:84%
+But imagine, I
+don't know, they're
+
+00:58:45.690 --> 00:58:47.270 align:middle line:90%
+there quantumly entangled.
+
+00:58:47.270 --> 00:58:49.020 align:middle line:84%
+And however I roll
+this die, the other one
+
+00:58:49.020 --> 00:58:52.800 align:middle line:84%
+comes out the same way,
+this will still be true.
+
+00:58:52.800 --> 00:58:55.050 align:middle line:84%
+It changes the distribution,
+but it does not change
+
+00:58:55.050 --> 00:58:57.575 align:middle line:90%
+the expectation, which is cool.
+
+00:58:57.575 --> 00:59:01.810 align:middle line:90%
+
+
+00:59:01.810 --> 00:59:04.080 align:middle line:84%
+So we just needed the
+probabilities of each outcome
+
+00:59:04.080 --> 00:59:06.420 align:middle line:90%
+were equal to get the 3.5.
+
+00:59:06.420 --> 00:59:07.330 align:middle line:90%
+Question?
+
+00:59:07.330 --> 00:59:10.830 align:middle line:90%
+AUDIENCE: [INAUDIBLE].
+
+00:59:10.830 --> 00:59:13.470 align:middle line:84%
+ERIK DEMAINE: Gluing
+dice together.
+
+00:59:13.470 --> 00:59:16.840 align:middle line:84%
+I'm imagining-- like
+if I take two dice.
+
+00:59:16.840 --> 00:59:18.220 align:middle line:90%
+I glue them together.
+
+00:59:18.220 --> 00:59:24.730 align:middle line:84%
+Then when I roll that unit,
+however the first die comes up,
+
+00:59:24.730 --> 00:59:27.760 align:middle line:84%
+it forces the other one to come
+up in a particular orientation.
+
+00:59:27.760 --> 00:59:32.040 align:middle line:84%
+So they're literally tied
+together so that the--
+
+00:59:32.040 --> 00:59:35.610 align:middle line:84%
+D1 determines D2 if
+they're glued together.
+
+00:59:35.610 --> 00:59:38.050 align:middle line:84%
+But this formula applies
+in that situation,
+
+00:59:38.050 --> 00:59:39.480 align:middle line:84%
+provided it's still
+equally likely
+
+00:59:39.480 --> 00:59:43.570 align:middle line:84%
+that you get 1, 2, 3, 4, 5, or
+6 for each die individually.
+
+00:59:43.570 --> 00:59:47.660 align:middle line:90%
+
+
+00:59:47.660 --> 00:59:49.510 align:middle line:84%
+It's maybe a little
+clearer with coins.
+
+00:59:49.510 --> 00:59:51.510 align:middle line:84%
+If I glue two coins
+together, then whichever
+
+00:59:51.510 --> 00:59:52.950 align:middle line:84%
+one comes up heads,
+the other one
+
+00:59:52.950 --> 00:59:56.760 align:middle line:84%
+also comes up heads
+or comes up tails,
+
+00:59:56.760 --> 00:59:58.935 align:middle line:84%
+depending if I glue the
+head sides together or heads
+
+00:59:58.935 --> 00:59:59.435 align:middle line:90%
+to tails.
+
+00:59:59.435 --> 01:00:04.050 align:middle line:90%
+
+
+01:00:04.050 --> 01:00:08.003 align:middle line:84%
+So I want to do
+more cool examples.
+
+01:00:08.003 --> 01:00:10.840 align:middle line:90%
+
+
+01:00:10.840 --> 01:00:18.000 align:middle line:84%
+And they illustrate how to
+use linearity of expectation
+
+01:00:18.000 --> 01:00:20.620 align:middle line:90%
+with a--
+
+01:00:20.620 --> 01:00:25.990 align:middle line:84%
+the key to using linearity of
+expectation is this technique.
+
+01:00:25.990 --> 01:00:28.360 align:middle line:84%
+If you want to compute
+the expectation
+
+01:00:28.360 --> 01:00:32.830 align:middle line:84%
+of some random variable,
+decompose that random variable
+
+01:00:32.830 --> 01:00:46.780 align:middle line:84%
+into a sum of other
+random variables, possibly
+
+01:00:46.780 --> 01:00:50.570 align:middle line:90%
+indicator random variables.
+
+01:00:50.570 --> 01:00:51.860 align:middle line:90%
+You see it here already.
+
+01:00:51.860 --> 01:00:53.990 align:middle line:84%
+I mean, we said, what's
+the expectation of the sum?
+
+01:00:53.990 --> 01:00:55.510 align:middle line:84%
+Well, let's decompose
+that into the first die
+
+01:00:55.510 --> 01:00:56.400 align:middle line:90%
+and the second die.
+
+01:00:56.400 --> 01:00:59.120 align:middle line:84%
+And then the sum is the first
+one plus the second one.
+
+01:00:59.120 --> 01:01:01.965 align:middle line:84%
+And then we could split it up
+using linearity of expectation.
+
+01:01:01.965 --> 01:01:04.090 align:middle line:84%
+And then compute each of
+these individually instead
+
+01:01:04.090 --> 01:01:06.173 align:middle line:84%
+of having to look at the
+giant sample space, which
+
+01:01:06.173 --> 01:01:07.410 align:middle line:90%
+is the pairs of die rolls.
+
+01:01:07.410 --> 01:01:10.393 align:middle line:90%
+
+
+01:01:10.393 --> 01:01:16.390 align:middle line:84%
+So this is the
+technique we're going
+
+01:01:16.390 --> 01:01:20.510 align:middle line:84%
+to use now several times,
+whatever remains of our time.
+
+01:01:20.510 --> 01:01:21.525 align:middle line:90%
+So first example.
+
+01:01:21.525 --> 01:01:55.420 align:middle line:90%
+
+
+01:01:55.420 --> 01:01:58.240 align:middle line:84%
+So previously, we analyzed
+how many times do I
+
+01:01:58.240 --> 01:02:03.040 align:middle line:84%
+flip a biased coin
+until I get a heads?
+
+01:02:03.040 --> 01:02:07.130 align:middle line:84%
+Now, let's suppose
+I want two heads--
+
+01:02:07.130 --> 01:02:09.200 align:middle line:90%
+natural generalization.
+
+01:02:09.200 --> 01:02:13.820 align:middle line:84%
+This seems quite a bit harder
+because you keep flipping.
+
+01:02:13.820 --> 01:02:15.840 align:middle line:84%
+And then at some point,
+you get the first heads.
+
+01:02:15.840 --> 01:02:16.590 align:middle line:90%
+You keep flipping.
+
+01:02:16.590 --> 01:02:19.440 align:middle line:84%
+At some point, you
+get the second heads.
+
+01:02:19.440 --> 01:02:22.380 align:middle line:84%
+Well, that sounds kind
+of like two steps.
+
+01:02:22.380 --> 01:02:25.460 align:middle line:84%
+There's how many times do I
+flip until I get the first head?
+
+01:02:25.460 --> 01:02:26.960 align:middle line:84%
+And then there's
+how many more times
+
+01:02:26.960 --> 01:02:29.120 align:middle line:84%
+I have to flip until I
+get the second heads?
+
+01:02:29.120 --> 01:02:32.510 align:middle line:84%
+Both of those problems sound
+like mean time to failure.
+
+01:02:32.510 --> 01:02:36.950 align:middle line:84%
+So let's write that out
+carefully with random variables.
+
+01:02:36.950 --> 01:02:43.100 align:middle line:84%
+So let's call this
+number of flips F.
+
+01:02:43.100 --> 01:02:54.920 align:middle line:84%
+Then F equals F1
+plus F2, where F1
+
+01:02:54.920 --> 01:03:00.170 align:middle line:84%
+is the number of flips
+from the beginning
+
+01:03:00.170 --> 01:03:06.150 align:middle line:90%
+until we get the first head.
+
+01:03:06.150 --> 01:03:18.240 align:middle line:84%
+And F2 is the number of flips
+starting after the first head
+
+01:03:18.240 --> 01:03:22.010 align:middle line:90%
+until the second head.
+
+01:03:22.010 --> 01:03:24.700 align:middle line:90%
+
+
+01:03:24.700 --> 01:03:26.910 align:middle line:84%
+So to be precise,
+the sample space
+
+01:03:26.910 --> 01:03:32.280 align:middle line:84%
+here is strings of
+H's and T's, where
+
+01:03:32.280 --> 01:03:36.270 align:middle line:84%
+there's exactly two H's,
+and the last character is
+
+01:03:36.270 --> 01:03:39.180 align:middle line:84%
+an H. Because I keep flipping
+heads, tails, heads, tails,
+
+01:03:39.180 --> 01:03:42.130 align:middle line:84%
+heads, tails until I get
+the second H, then I stop.
+
+01:03:42.130 --> 01:03:44.140 align:middle line:90%
+So that's my sample space.
+
+01:03:44.140 --> 01:03:47.370 align:middle line:84%
+And F1 is just counting
+how many flips are there up
+
+01:03:47.370 --> 01:03:49.030 align:middle line:90%
+to including the first head?
+
+01:03:49.030 --> 01:03:52.980 align:middle line:84%
+And F2 is counting how many
+flips are there starting right
+
+01:03:52.980 --> 01:03:54.780 align:middle line:84%
+after the first head
+and counting up to
+
+01:03:54.780 --> 01:03:57.370 align:middle line:84%
+and including the second head,
+which is the end of the string?
+
+01:03:57.370 --> 01:04:02.430 align:middle line:84%
+So together, F1 and F2 count
+the total number of flips.
+
+01:04:02.430 --> 01:04:06.520 align:middle line:84%
+But crucially, F1 and F2,
+if you think about it,
+
+01:04:06.520 --> 01:04:10.093 align:middle line:84%
+are exactly the mean
+time to failure problems
+
+01:04:10.093 --> 01:04:11.260 align:middle line:90%
+because they were counting--
+
+01:04:11.260 --> 01:04:12.910 align:middle line:90%
+I mean, F1 is most obvious.
+
+01:04:12.910 --> 01:04:16.240 align:middle line:84%
+It's how many flips do I
+do until the first head?
+
+01:04:16.240 --> 01:04:29.280 align:middle line:84%
+So we know here the
+expected value of F
+
+01:04:29.280 --> 01:04:31.176 align:middle line:90%
+Is the sum of the expectations.
+
+01:04:31.176 --> 01:04:37.230 align:middle line:90%
+
+
+01:04:37.230 --> 01:04:40.860 align:middle line:84%
+F1 is almost literally the
+definition of mean time
+
+01:04:40.860 --> 01:04:41.620 align:middle line:90%
+to failure.
+
+01:04:41.620 --> 01:04:45.990 align:middle line:90%
+So it's 1 over P in expectation.
+
+01:04:45.990 --> 01:04:48.420 align:middle line:84%
+F2, if you think
+about it a little bit,
+
+01:04:48.420 --> 01:04:51.460 align:middle line:84%
+this is the same experiment, but
+starting after the first heads.
+
+01:04:51.460 --> 01:04:53.290 align:middle line:84%
+And because all the
+flips are independent,
+
+01:04:53.290 --> 01:04:55.120 align:middle line:84%
+it doesn't matter what
+happened before now.
+
+01:04:55.120 --> 01:04:59.740 align:middle line:84%
+It's still going to be
+the same situation for F2.
+
+01:04:59.740 --> 01:05:05.210 align:middle line:84%
+And so the expectation is
+2 over P. Almost as simple.
+
+01:05:05.210 --> 01:05:09.460 align:middle line:84%
+And, in general,
+if I want K heads,
+
+01:05:09.460 --> 01:05:12.910 align:middle line:84%
+then the expected number
+of flips I need to do
+
+01:05:12.910 --> 01:05:16.700 align:middle line:84%
+is K over P by linearity
+of expectation.
+
+01:05:16.700 --> 01:05:17.290 align:middle line:90%
+Beautiful.
+
+01:05:17.290 --> 01:05:18.030 align:middle line:90%
+So simple.
+
+01:05:18.030 --> 01:05:23.860 align:middle line:90%
+
+
+01:05:23.860 --> 01:05:25.770 align:middle line:84%
+Let's do another
+coin-flipping example.
+
+01:05:25.770 --> 01:05:33.310 align:middle line:90%
+
+
+01:05:33.310 --> 01:05:35.020 align:middle line:84%
+So here, I stopped
+the experiment
+
+01:05:35.020 --> 01:05:36.650 align:middle line:84%
+when I got a desired
+number of heads.
+
+01:05:36.650 --> 01:05:39.200 align:middle line:84%
+What if I just flip
+a coin n times?
+
+01:05:39.200 --> 01:05:41.510 align:middle line:84%
+No matter what, I
+always flip n times.
+
+01:05:41.510 --> 01:05:45.280 align:middle line:84%
+How many heads do
+I expect to get?
+
+01:05:45.280 --> 01:05:48.210 align:middle line:90%
+That's kind of the dual problem.
+
+01:05:48.210 --> 01:05:57.800 align:middle line:90%
+
+
+01:05:57.800 --> 01:06:00.470 align:middle line:90%
+What do se want to do?
+
+01:06:00.470 --> 01:06:01.970 align:middle line:90%
+Let's do biased again.
+
+01:06:01.970 --> 01:06:06.110 align:middle line:84%
+n biased coins--
+again, independent.
+
+01:06:06.110 --> 01:06:18.290 align:middle line:90%
+
+
+01:06:18.290 --> 01:06:21.440 align:middle line:84%
+Let H be the number of
+heads in those n coin flips.
+
+01:06:21.440 --> 01:06:29.060 align:middle line:84%
+We can rewrite this as a sum of
+n indicator random variables,
+
+01:06:29.060 --> 01:06:40.310 align:middle line:84%
+where Hi is indicator random
+variable for the ith coin coming
+
+01:06:40.310 --> 01:06:40.930 align:middle line:90%
+up heads.
+
+01:06:40.930 --> 01:06:50.978 align:middle line:90%
+
+
+01:06:50.978 --> 01:06:56.320 align:middle line:84%
+So expected value of H
+by linearity is the sum
+
+01:06:56.320 --> 01:06:58.313 align:middle line:84%
+of the expected
+values of the Hi's.
+
+01:06:58.313 --> 01:07:04.450 align:middle line:90%
+
+
+01:07:04.450 --> 01:07:07.360 align:middle line:84%
+But the coins are all identical
+because they're independent,
+
+01:07:07.360 --> 01:07:08.570 align:middle line:90%
+and they have the same bias.
+
+01:07:08.570 --> 01:07:10.900 align:middle line:84%
+I didn't mention it, but
+we're supposing, again,
+
+01:07:10.900 --> 01:07:12.285 align:middle line:90%
+probability of heads is p.
+
+01:07:12.285 --> 01:07:15.970 align:middle line:90%
+
+
+01:07:15.970 --> 01:07:18.970 align:middle line:84%
+So what's the-- so
+this is just going
+
+01:07:18.970 --> 01:07:22.420 align:middle line:84%
+to be n times the
+expectation of Hi,
+
+01:07:22.420 --> 01:07:24.670 align:middle line:84%
+because they all
+behave the same.
+
+01:07:24.670 --> 01:07:27.392 align:middle line:84%
+And what's the
+expectation of Hi?
+
+01:07:27.392 --> 01:07:28.850 align:middle line:84%
+Well, we worked
+that out over here.
+
+01:07:28.850 --> 01:07:31.750 align:middle line:84%
+If you have an indicator random
+variable, the expectation of Hi
+
+01:07:31.750 --> 01:07:34.510 align:middle line:84%
+is the probability
+that it equals 1.
+
+01:07:34.510 --> 01:07:36.520 align:middle line:84%
+So the probability of
+the event, which here
+
+01:07:36.520 --> 01:07:37.940 align:middle line:90%
+was the probability of heads.
+
+01:07:37.940 --> 01:07:40.570 align:middle line:90%
+So that's just p.
+
+01:07:40.570 --> 01:07:48.670 align:middle line:84%
+So this is n times probability
+Hi equals 1, which is n times p.
+
+01:07:48.670 --> 01:07:51.613 align:middle line:90%
+OK, maybe obvious, but--
+
+01:07:51.613 --> 01:07:55.100 align:middle line:90%
+
+
+01:07:55.100 --> 01:07:55.600 align:middle line:90%
+Yeah.
+
+01:07:55.600 --> 01:07:57.600 align:middle line:84%
+We didn't even need that
+these were independent.
+
+01:07:57.600 --> 01:08:00.220 align:middle line:90%
+That's where it's less obvious.
+
+01:08:00.220 --> 01:08:02.980 align:middle line:84%
+It just-- all we need
+is that for each coin,
+
+01:08:02.980 --> 01:08:07.860 align:middle line:84%
+the probability of it
+coming up heads is p.
+
+01:08:07.860 --> 01:08:10.450 align:middle line:84%
+But it could be all the
+coins always flip the same.
+
+01:08:10.450 --> 01:08:12.340 align:middle line:84%
+They're always all
+heads or all tails,
+
+01:08:12.340 --> 01:08:14.440 align:middle line:90%
+but heads with probability p.
+
+01:08:14.440 --> 01:08:16.479 align:middle line:84%
+Or it could be
+either independent.
+
+01:08:16.479 --> 01:08:18.220 align:middle line:90%
+These are different setups.
+
+01:08:18.220 --> 01:08:20.910 align:middle line:84%
+But the expected number
+of heads in all cases
+
+01:08:20.910 --> 01:08:24.630 align:middle line:84%
+will be n times p by
+linearity of expectation.
+
+01:08:24.630 --> 01:08:25.834 align:middle line:90%
+So that's pretty cool.
+
+01:08:25.834 --> 01:08:31.439 align:middle line:90%
+
+
+01:08:31.439 --> 01:08:35.340 align:middle line:90%
+You can do a similar trick for--
+
+01:08:35.340 --> 01:08:36.660 align:middle line:90%
+did I erase it--
+
+01:08:36.660 --> 01:08:38.760 align:middle line:90%
+the hearts problem.
+
+01:08:38.760 --> 01:08:39.680 align:middle line:90%
+I think I erased it.
+
+01:08:39.680 --> 01:08:43.374 align:middle line:90%
+
+
+01:08:43.374 --> 01:08:43.874 align:middle line:90%
+Yeah.
+
+01:08:43.874 --> 01:08:46.439 align:middle line:90%
+
+
+01:08:46.439 --> 01:08:48.450 align:middle line:90%
+I'll just tell you briefly.
+
+01:08:48.450 --> 01:08:53.740 align:middle line:84%
+So with the hearts, you can
+say the number of hearts
+
+01:08:53.740 --> 01:09:02.420 align:middle line:84%
+is a sum of 13 different
+indicator random variables.
+
+01:09:02.420 --> 01:09:10.142 align:middle line:84%
+Part i is the ith
+heart card chosen.
+
+01:09:10.142 --> 01:09:13.330 align:middle line:90%
+
+
+01:09:13.330 --> 01:09:15.770 align:middle line:84%
+Again, this is a setup
+where we have 52 cards.
+
+01:09:15.770 --> 01:09:17.615 align:middle line:84%
+We choose three
+without replacement,
+
+01:09:17.615 --> 01:09:19.490 align:middle line:84%
+and I want to know how
+many hearts there are.
+
+01:09:19.490 --> 01:09:21.340 align:middle line:90%
+So this is number of hearts.
+
+01:09:21.340 --> 01:09:24.220 align:middle line:84%
+And this is just did
+I choose the ith heart
+
+01:09:24.220 --> 01:09:26.361 align:middle line:90%
+card in this setup?
+
+01:09:26.361 --> 01:09:27.819 align:middle line:84%
+So, of course, the
+number of hearts
+
+01:09:27.819 --> 01:09:33.370 align:middle line:84%
+is exactly the sum of 1 for
+every heart card that I chose.
+
+01:09:33.370 --> 01:09:36.220 align:middle line:84%
+So one-- this is like
+Ace, and this is King.
+
+01:09:36.220 --> 01:09:37.790 align:middle line:84%
+And I've got all
+the 1's in between.
+
+01:09:37.790 --> 01:09:41.060 align:middle line:84%
+So this is-- whereas, here was
+the ith coin flip or whatever.
+
+01:09:41.060 --> 01:09:44.140 align:middle line:84%
+Here's the ith heart that
+we potentially choose.
+
+01:09:44.140 --> 01:09:49.979 align:middle line:84%
+And the probability of
+choosing a given heart is easy.
+
+01:09:49.979 --> 01:09:53.899 align:middle line:90%
+It's-- it's not so easy.
+
+01:09:53.899 --> 01:09:56.990 align:middle line:90%
+It's some small expression.
+
+01:09:56.990 --> 01:09:59.760 align:middle line:84%
+It could be you choose
+it in the first step.
+
+01:09:59.760 --> 01:10:02.840 align:middle line:84%
+Or you don't choose
+it in the first step,
+
+01:10:02.840 --> 01:10:07.640 align:middle line:84%
+but then you choose
+it in the second step.
+
+01:10:07.640 --> 01:10:11.330 align:middle line:84%
+Or you don't choose
+it in the second step,
+
+01:10:11.330 --> 01:10:15.180 align:middle line:84%
+and then you'd have to
+choose it in the third step.
+
+01:10:15.180 --> 01:10:17.690 align:middle line:84%
+Those are the three
+ways you can get it.
+
+01:10:17.690 --> 01:10:23.315 align:middle line:84%
+And conveniently, all the
+hard numbers here cancel.
+
+01:10:23.315 --> 01:10:24.565 align:middle line:90%
+That's exciting.
+
+01:10:24.565 --> 01:10:27.440 align:middle line:90%
+
+
+01:10:27.440 --> 01:10:32.450 align:middle line:90%
+And you get 2 over 52?
+
+01:10:32.450 --> 01:10:33.620 align:middle line:90%
+3 over 52.
+
+01:10:33.620 --> 01:10:34.300 align:middle line:90%
+I can count.
+
+01:10:34.300 --> 01:10:38.450 align:middle line:90%
+
+
+01:10:38.450 --> 01:10:41.810 align:middle line:90%
+So you add them up, 13 of them.
+
+01:10:41.810 --> 01:10:45.623 align:middle line:84%
+So you get 13 times 3
+over 52, and that's 3/4.
+
+01:10:45.623 --> 01:10:49.260 align:middle line:90%
+
+
+01:10:49.260 --> 01:10:52.470 align:middle line:90%
+So kind of nice.
+
+01:10:52.470 --> 01:10:56.460 align:middle line:84%
+No binomial
+coefficients required.
+
+01:10:56.460 --> 01:10:58.713 align:middle line:90%
+One more pair of examples.
+
+01:10:58.713 --> 01:11:07.450 align:middle line:90%
+
+
+01:11:07.450 --> 01:11:07.950 align:middle line:90%
+Yeah.
+
+01:11:07.950 --> 01:11:16.320 align:middle line:90%
+
+
+01:11:16.320 --> 01:11:19.080 align:middle line:84%
+I have in my notes that
+this is a situation that
+
+01:11:19.080 --> 01:11:20.910 align:middle line:84%
+happens in All of
+Us are Dead, which
+
+01:11:20.910 --> 01:11:27.210 align:middle line:84%
+is a great zombie
+high school TV show.
+
+01:11:27.210 --> 01:11:29.380 align:middle line:84%
+I imagine it just happens
+in lots of schools.
+
+01:11:29.380 --> 01:11:31.332 align:middle line:84%
+But I never went to
+school, so I don't know.
+
+01:11:31.332 --> 01:11:33.040 align:middle line:84%
+You can tell me whether
+this is the case.
+
+01:11:33.040 --> 01:11:34.280 align:middle line:90%
+Probably less so in the US.
+
+01:11:34.280 --> 01:11:45.390 align:middle line:90%
+
+
+01:11:45.390 --> 01:11:47.560 align:middle line:90%
+Maybe less so when you're older.
+
+01:11:47.560 --> 01:11:49.757 align:middle line:84%
+Maybe when you're young
+and you have a phone,
+
+01:11:49.757 --> 01:11:52.090 align:middle line:84%
+you have to submit your phone
+when you arrive at school.
+
+01:11:52.090 --> 01:11:53.320 align:middle line:90%
+And here's the weird part.
+
+01:11:53.320 --> 01:11:55.710 align:middle line:84%
+And this is maybe only
+in a zombie scenario.
+
+01:11:55.710 --> 01:11:57.450 align:middle line:84%
+At the end of the
+day, phones are
+
+01:11:57.450 --> 01:11:59.320 align:middle line:90%
+returned uniformly at random.
+
+01:11:59.320 --> 01:12:03.020 align:middle line:84%
+[LAUGHS] I hope this
+didn't happen to you.
+
+01:12:03.020 --> 01:12:06.300 align:middle line:90%
+
+
+01:12:06.300 --> 01:12:10.290 align:middle line:84%
+How many people get
+the right phone?
+
+01:12:10.290 --> 01:12:11.075 align:middle line:90%
+Natural question.
+
+01:12:11.075 --> 01:12:15.330 align:middle line:90%
+
+
+01:12:15.330 --> 01:12:17.538 align:middle line:84%
+AUDIENCE: The natural question
+is, do I get my phone?
+
+01:12:17.538 --> 01:12:19.872 align:middle line:84%
+ERIK DEMAINE: You care about
+whether you get your phone?
+
+01:12:19.872 --> 01:12:20.590 align:middle line:90%
+That's also true.
+
+01:12:20.590 --> 01:12:22.780 align:middle line:84%
+That's a closely-- we're going
+to have to solve that problem,
+
+01:12:22.780 --> 01:12:23.280 align:middle line:90%
+in fact.
+
+01:12:23.280 --> 01:12:28.650 align:middle line:90%
+
+
+01:12:28.650 --> 01:12:30.552 align:middle line:90%
+So we're assuming here each--
+
+01:12:30.552 --> 01:12:32.010 align:middle line:84%
+there's a one-to-one
+correspondence
+
+01:12:32.010 --> 01:12:34.000 align:middle line:90%
+between phones and people.
+
+01:12:34.000 --> 01:12:36.570 align:middle line:90%
+No co-ownership.
+
+01:12:36.570 --> 01:12:41.220 align:middle line:84%
+So the number of kids that
+get their own phone we
+
+01:12:41.220 --> 01:12:42.540 align:middle line:90%
+can write it as a sum.
+
+01:12:42.540 --> 01:12:45.560 align:middle line:90%
+Over all kids, we had n kids.
+
+01:12:45.560 --> 01:12:47.170 align:middle line:90%
+So k for kids.
+
+01:12:47.170 --> 01:12:55.065 align:middle line:84%
+1 up to n of the probability
+that kid k gets their phone.
+
+01:12:55.065 --> 01:12:58.590 align:middle line:90%
+
+
+01:12:58.590 --> 01:12:59.090 align:middle line:90%
+OK.
+
+01:12:59.090 --> 01:13:00.940 align:middle line:84%
+I'm just writing
+this because I've
+
+01:13:00.940 --> 01:13:02.148 align:middle line:90%
+preworked out these examples.
+
+01:13:02.148 --> 01:13:03.648 align:middle line:84%
+Of course, when
+you're solving them,
+
+01:13:03.648 --> 01:13:05.650 align:middle line:84%
+you'll probably know in
+this part of the class
+
+01:13:05.650 --> 01:13:07.390 align:middle line:84%
+that you should
+use this technique.
+
+01:13:07.390 --> 01:13:10.070 align:middle line:84%
+Always-- if you're asked
+for an expectation,
+
+01:13:10.070 --> 01:13:13.060 align:middle line:84%
+probably you might need to
+decompose the random variable
+
+01:13:13.060 --> 01:13:14.843 align:middle line:84%
+into sums of other
+random variables.
+
+01:13:14.843 --> 01:13:15.760 align:middle line:90%
+You might not have to.
+
+01:13:15.760 --> 01:13:18.050 align:middle line:84%
+This hard problem, we solved
+in two different ways.
+
+01:13:18.050 --> 01:13:20.210 align:middle line:84%
+But if you can, it's
+going to be easier.
+
+01:13:20.210 --> 01:13:21.770 align:middle line:84%
+So I encourage you
+to try to do this.
+
+01:13:21.770 --> 01:13:24.560 align:middle line:84%
+But how do you decompose
+into sum of random variables?
+
+01:13:24.560 --> 01:13:26.090 align:middle line:84%
+I mean, that's
+divine inspiration.
+
+01:13:26.090 --> 01:13:27.632 align:middle line:84%
+You just got to try
+a bunch of things
+
+01:13:27.632 --> 01:13:30.190 align:middle line:84%
+until you find something
+that works, that gives you--
+
+01:13:30.190 --> 01:13:32.890 align:middle line:84%
+think about what you know
+how to compute, and then
+
+01:13:32.890 --> 01:13:33.730 align:middle line:90%
+try to build it up.
+
+01:13:33.730 --> 01:13:37.150 align:middle line:84%
+Or think about how to
+decompose, top down, whatever.
+
+01:13:37.150 --> 01:13:39.460 align:middle line:84%
+But as Brinmore said,
+what I care about
+
+01:13:39.460 --> 01:13:42.600 align:middle line:84%
+is whether I get my
+phone, and I'm kid seven.
+
+01:13:42.600 --> 01:13:43.580 align:middle line:90%
+I don't know.
+
+01:13:43.580 --> 01:13:46.970 align:middle line:84%
+What's the probability that kid
+seven gets their phone, or kid
+
+01:13:46.970 --> 01:13:48.650 align:middle line:90%
+one or whatever.
+
+01:13:48.650 --> 01:13:53.030 align:middle line:84%
+It turns out they're
+all the same because--
+
+01:13:53.030 --> 01:13:54.620 align:middle line:90%
+oh.
+
+01:13:54.620 --> 01:13:55.460 align:middle line:90%
+Yeah.
+
+01:13:55.460 --> 01:13:57.720 align:middle line:90%
+I did two steps here.
+
+01:13:57.720 --> 01:13:59.700 align:middle line:84%
+This is how many
+kids get their phone.
+
+01:13:59.700 --> 01:14:06.170 align:middle line:84%
+We can call this X. And this
+is going to be the sum--
+
+01:14:06.170 --> 01:14:06.810 align:middle line:90%
+sorry.
+
+01:14:06.810 --> 01:14:08.790 align:middle line:84%
+I skipped way too
+many steps here.
+
+01:14:08.790 --> 01:14:12.310 align:middle line:84%
+The expectation of x
+is going to be this.
+
+01:14:12.310 --> 01:14:14.990 align:middle line:90%
+
+
+01:14:14.990 --> 01:14:17.480 align:middle line:84%
+But the number of kids
+that get their phone
+
+01:14:17.480 --> 01:14:20.840 align:middle line:84%
+is going to be equal
+to the sum of Xk.
+
+01:14:20.840 --> 01:14:27.290 align:middle line:84%
+That equals 1 to n, where Xk
+is an indicator random variable
+
+01:14:27.290 --> 01:14:34.375 align:middle line:84%
+for whether kid k
+got their phone.
+
+01:14:34.375 --> 01:14:39.930 align:middle line:90%
+
+
+01:14:39.930 --> 01:14:40.430 align:middle line:90%
+OK.
+
+01:14:40.430 --> 01:14:43.120 align:middle line:84%
+This is important because
+this was a random variable.
+
+01:14:43.120 --> 01:14:44.700 align:middle line:84%
+So if I'm going
+to write equals, I
+
+01:14:44.700 --> 01:14:47.400 align:middle line:84%
+should have some random
+variables over there.
+
+01:14:47.400 --> 01:14:50.590 align:middle line:84%
+When I wrote a probability, that
+means I'm working with a number.
+
+01:14:50.590 --> 01:14:53.470 align:middle line:84%
+And so that means the best I'm
+hoping for is the expectation.
+
+01:14:53.470 --> 01:14:55.840 align:middle line:84%
+So this first equation
+I wrote is wrong.
+
+01:14:55.840 --> 01:14:57.730 align:middle line:84%
+Please do not do that
+in your homework.
+
+01:14:57.730 --> 01:14:59.140 align:middle line:90%
+It's easy to do, as you can see.
+
+01:14:59.140 --> 01:15:01.750 align:middle line:84%
+But you should first set
+up the random variables,
+
+01:15:01.750 --> 01:15:02.830 align:middle line:90%
+which are functions.
+
+01:15:02.830 --> 01:15:04.950 align:middle line:84%
+Decompose them into
+sums of other functions.
+
+01:15:04.950 --> 01:15:07.420 align:middle line:84%
+And then say, OK, let's
+compute the expectation.
+
+01:15:07.420 --> 01:15:08.980 align:middle line:90%
+Use linearity of expectation.
+
+01:15:08.980 --> 01:15:13.410 align:middle line:84%
+This is equal to by linearity,
+the sum of the expectations
+
+01:15:13.410 --> 01:15:15.150 align:middle line:90%
+of the Xi's.
+
+01:15:15.150 --> 01:15:18.347 align:middle line:84%
+And then by the properties of
+indicator random variables,
+
+01:15:18.347 --> 01:15:20.430 align:middle line:84%
+the expected value of an
+indicator random variable
+
+01:15:20.430 --> 01:15:22.400 align:middle line:84%
+is the probability
+of that event.
+
+01:15:22.400 --> 01:15:25.122 align:middle line:90%
+
+
+01:15:25.122 --> 01:15:31.020 align:middle line:84%
+So then, what's the probability
+that kid k gets their phone?
+
+01:15:31.020 --> 01:15:33.420 align:middle line:84%
+Well, how many
+different distributions
+
+01:15:33.420 --> 01:15:35.760 align:middle line:90%
+are there of the n phones?
+
+01:15:35.760 --> 01:15:36.335 align:middle line:90%
+Help me out.
+
+01:15:36.335 --> 01:15:41.820 align:middle line:90%
+
+
+01:15:41.820 --> 01:15:42.453 align:middle line:90%
+AUDIENCE: n.
+
+01:15:42.453 --> 01:15:43.120 align:middle line:90%
+ERIK DEMAINE: n.
+
+01:15:43.120 --> 01:15:43.710 align:middle line:90%
+Great answer.
+
+01:15:43.710 --> 01:15:50.710 align:middle line:90%
+[LAUGHS] n different ways--
+
+01:15:50.710 --> 01:15:53.400 align:middle line:84%
+there's n different
+possibilities for the first kid
+
+01:15:53.400 --> 01:15:56.850 align:middle line:90%
+to get their phone back.
+
+01:15:56.850 --> 01:16:00.034 align:middle line:90%
+And then--
+
+01:16:00.034 --> 01:16:00.976 align:middle line:90%
+AUDIENCE: [INAUDIBLE].
+
+01:16:00.976 --> 01:16:01.447 align:middle line:90%
+ERIK DEMAINE: Hmm?
+
+01:16:01.447 --> 01:16:01.920 align:middle line:90%
+STUDENT: A factorial.
+
+01:16:01.920 --> 01:16:02.830 align:middle line:90%
+ERIK DEMAINE: A factorial.
+
+01:16:02.830 --> 01:16:03.330 align:middle line:90%
+Yeah.
+
+01:16:03.330 --> 01:16:06.112 align:middle line:84%
+There's n factorial different
+distributions of the phones.
+
+01:16:06.112 --> 01:16:07.320 align:middle line:90%
+AUDIENCE: That's what I said.
+
+01:16:07.320 --> 01:16:08.028 align:middle line:90%
+ERIK DEMAINE: Oh.
+
+01:16:08.028 --> 01:16:10.630 align:middle line:84%
+Oh, you said n really
+loud, which is n factorial.
+
+01:16:10.630 --> 01:16:12.120 align:middle line:90%
+Thank you.
+
+01:16:12.120 --> 01:16:14.070 align:middle line:90%
+Bad pun.
+
+01:16:14.070 --> 01:16:15.600 align:middle line:90%
+So that's the denominator.
+
+01:16:15.600 --> 01:16:22.050 align:middle line:84%
+Those are all the
+possible rearrangements
+
+01:16:22.050 --> 01:16:23.640 align:middle line:90%
+of the phones to the kids.
+
+01:16:23.640 --> 01:16:26.550 align:middle line:90%
+n, very emphatically.
+
+01:16:26.550 --> 01:16:29.680 align:middle line:84%
+And then how many are there
+where kid k gets their phone?
+
+01:16:29.680 --> 01:16:30.827 align:middle line:90%
+Well this is easy, right?
+
+01:16:30.827 --> 01:16:32.910 align:middle line:84%
+This is just saying, well,
+kid k gets their phone.
+
+01:16:32.910 --> 01:16:36.130 align:middle line:84%
+And then among all the
+other n minus 1 phones,
+
+01:16:36.130 --> 01:16:37.700 align:middle line:90%
+they're whatever they are.
+
+01:16:37.700 --> 01:16:39.075 align:middle line:84%
+How many different
+ways are there
+
+01:16:39.075 --> 01:16:40.930 align:middle line:90%
+to distribute those phones?
+
+01:16:40.930 --> 01:16:42.225 align:middle line:90%
+n minus 1.
+
+01:16:42.225 --> 01:16:45.610 align:middle line:90%
+[LAUGHTER]
+
+01:16:45.610 --> 01:16:48.850 align:middle line:84%
+Hopefully, I didn't
+max out the mic.
+
+01:16:48.850 --> 01:16:49.540 align:middle line:90%
+OK.
+
+01:16:49.540 --> 01:16:52.370 align:middle line:84%
+N minus 1 factorial
+over n factorial.
+
+01:16:52.370 --> 01:16:53.180 align:middle line:90%
+Oh, my gosh.
+
+01:16:53.180 --> 01:16:54.410 align:middle line:90%
+Such big factorials.
+
+01:16:54.410 --> 01:16:56.080 align:middle line:84%
+But basically,
+everything cancels.
+
+01:16:56.080 --> 01:16:57.390 align:middle line:90%
+And this is 1 over n.
+
+01:16:57.390 --> 01:17:00.980 align:middle line:90%
+
+
+01:17:00.980 --> 01:17:04.630 align:middle line:90%
+1 over n summed n times--
+
+01:17:04.630 --> 01:17:07.420 align:middle line:90%
+that's 1.
+
+01:17:07.420 --> 01:17:08.620 align:middle line:90%
+Ha, ha, ha.
+
+01:17:08.620 --> 01:17:11.505 align:middle line:84%
+One kid expects to
+get their phone back.
+
+01:17:11.505 --> 01:17:15.008 align:middle line:90%
+
+
+01:17:15.008 --> 01:17:16.050 align:middle line:90%
+Hopefully, it's Brinmore.
+
+01:17:16.050 --> 01:17:19.355 align:middle line:90%
+[LAUGHS] Who is the--
+
+01:17:19.355 --> 01:17:20.980 align:middle line:84%
+I mean, it doesn't
+mean that one person
+
+01:17:20.980 --> 01:17:22.790 align:middle line:90%
+will get their phone back.
+
+01:17:22.790 --> 01:17:24.020 align:middle line:90%
+Maybe none of them do.
+
+01:17:24.020 --> 01:17:25.610 align:middle line:90%
+Here's a related game.
+
+01:17:25.610 --> 01:17:34.420 align:middle line:84%
+Suppose n diners
+put their phones--
+
+01:17:34.420 --> 01:17:43.040 align:middle line:84%
+put their phone singular on
+a turntable, sometimes called
+
+01:17:43.040 --> 01:17:46.790 align:middle line:84%
+a Lazy Susan, for
+distributing food,
+
+01:17:46.790 --> 01:17:48.620 align:middle line:90%
+if you're eating family style.
+
+01:17:48.620 --> 01:17:55.075 align:middle line:84%
+And then you spin the table,
+spin uniformly at random.
+
+01:17:55.075 --> 01:18:04.640 align:middle line:90%
+
+
+01:18:04.640 --> 01:18:06.625 align:middle line:84%
+And then you take the
+phone in front of you.
+
+01:18:06.625 --> 01:18:10.010 align:middle line:90%
+
+
+01:18:10.010 --> 01:18:12.930 align:middle line:84%
+Let's assume that this
+is a discrete table.
+
+01:18:12.930 --> 01:18:15.530 align:middle line:84%
+So when you spin it, there's
+only n different rotations
+
+01:18:15.530 --> 01:18:16.650 align:middle line:90%
+that could come out.
+
+01:18:16.650 --> 01:18:19.410 align:middle line:84%
+And so there's always a phone
+immediately in front of you.
+
+01:18:19.410 --> 01:18:23.180 align:middle line:84%
+This is a different way to
+be terrible with phones.
+
+01:18:23.180 --> 01:18:25.142 align:middle line:84%
+In this one, anything
+could happen.
+
+01:18:25.142 --> 01:18:26.850 align:middle line:84%
+It could be no one
+gets their phone back.
+
+01:18:26.850 --> 01:18:28.863 align:middle line:84%
+That's maybe-- it's not
+quite what you expect.
+
+01:18:28.863 --> 01:18:30.780 align:middle line:84%
+You expect one person
+to get their phone back.
+
+01:18:30.780 --> 01:18:33.030 align:middle line:84%
+Or it could be everyone gets
+exactly their phone back.
+
+01:18:33.030 --> 01:18:35.020 align:middle line:84%
+If you do it randomly,
+anything's possible.
+
+01:18:35.020 --> 01:18:36.600 align:middle line:84%
+It's just a 1 over
+n factorial chance
+
+01:18:36.600 --> 01:18:39.210 align:middle line:84%
+that any particular
+outcome happens.
+
+01:18:39.210 --> 01:18:41.400 align:middle line:90%
+Here, it's actually guaranteed.
+
+01:18:41.400 --> 01:18:45.367 align:middle line:84%
+Either everyone gets their
+phone back or no one does.
+
+01:18:45.367 --> 01:18:47.950 align:middle line:84%
+Because if I rotate by 0, then
+everyone gets their phone back.
+
+01:18:47.950 --> 01:18:50.490 align:middle line:84%
+If I rotate by any other
+amount, then everyone
+
+01:18:50.490 --> 01:18:51.820 align:middle line:90%
+gets a different phone.
+
+01:18:51.820 --> 01:18:53.770 align:middle line:84%
+So it's a different
+distribution.
+
+01:18:53.770 --> 01:18:56.830 align:middle line:84%
+It's a different
+probability setup.
+
+01:18:56.830 --> 01:19:00.540 align:middle line:90%
+But the expectation is the same.
+
+01:19:00.540 --> 01:19:07.380 align:middle line:84%
+Expected number of
+matching people phones,
+
+01:19:07.380 --> 01:19:09.185 align:middle line:90%
+whatever-- matching phones.
+
+01:19:09.185 --> 01:19:12.390 align:middle line:90%
+
+
+01:19:12.390 --> 01:19:14.227 align:middle line:90%
+It's still 1.
+
+01:19:14.227 --> 01:19:16.560 align:middle line:84%
+Here, it's really easy to
+compute because there are only
+
+01:19:16.560 --> 01:19:18.040 align:middle line:90%
+n different outcomes.
+
+01:19:18.040 --> 01:19:22.980 align:middle line:84%
+And in one of those
+scenarios, you get--
+
+01:19:22.980 --> 01:19:27.540 align:middle line:84%
+so 1 over n chance everyone
+gets their phone back.
+
+01:19:27.540 --> 01:19:31.930 align:middle line:84%
+And in all other scenarios,
+no one gets their phone back.
+
+01:19:31.930 --> 01:19:33.728 align:middle line:90%
+So that disappears.
+
+01:19:33.728 --> 01:19:34.770 align:middle line:90%
+You get 1 over n times n.
+
+01:19:34.770 --> 01:19:36.180 align:middle line:90%
+You get 1.
+
+01:19:36.180 --> 01:19:39.880 align:middle line:84%
+That's by the definition
+of expectation,
+
+01:19:39.880 --> 01:19:40.930 align:middle line:90%
+how to compute this.
+
+01:19:40.930 --> 01:19:43.060 align:middle line:84%
+But you can also set it up
+in exactly the same way.
+
+01:19:43.060 --> 01:19:45.330 align:middle line:84%
+You can say, well, you could
+sum over all the diners
+
+01:19:45.330 --> 01:19:48.000 align:middle line:84%
+and check what's the probability
+that a particular diner gets
+
+01:19:48.000 --> 01:19:48.880 align:middle line:90%
+their phone back.
+
+01:19:48.880 --> 01:19:51.810 align:middle line:84%
+But now you don't have to do
+this n minus 1 factorial over n
+
+01:19:51.810 --> 01:19:52.720 align:middle line:90%
+factorial.
+
+01:19:52.720 --> 01:19:54.570 align:middle line:90%
+It's just 1 over n by the setup.
+
+01:19:54.570 --> 01:19:56.880 align:middle line:90%
+That was this term here.
+
+01:19:56.880 --> 01:20:03.600 align:middle line:84%
+So this is also the
+probability of Xi.
+
+01:20:03.600 --> 01:20:06.100 align:middle line:84%
+And so you can also do it
+with linearity of expectation.
+
+01:20:06.100 --> 01:20:07.530 align:middle line:84%
+So this is a funny
+scenario where
+
+01:20:07.530 --> 01:20:09.210 align:middle line:84%
+I have two rather
+different setups
+
+01:20:09.210 --> 01:20:11.190 align:middle line:90%
+for redistributing phones.
+
+01:20:11.190 --> 01:20:12.850 align:middle line:84%
+They have very
+different behaviors.
+
+01:20:12.850 --> 01:20:14.800 align:middle line:84%
+But in expectation,
+they're the same.
+
+01:20:14.800 --> 01:20:16.680 align:middle line:84%
+So expectation doesn't
+tell you everything
+
+01:20:16.680 --> 01:20:17.710 align:middle line:90%
+about the distribution.
+
+01:20:17.710 --> 01:20:19.420 align:middle line:84%
+And in the next
+couple of lectures,
+
+01:20:19.420 --> 01:20:21.060 align:middle line:84%
+we'll talk more
+about understanding
+
+01:20:21.060 --> 01:20:24.570 align:middle line:84%
+the rest of the distribution
+beyond just the mean.
+
+01:20:24.570 --> 01:20:26.240 align:middle line:90%
+All right.
+
+01:20:26.240 --> 01:20:31.000 align:middle line:90%

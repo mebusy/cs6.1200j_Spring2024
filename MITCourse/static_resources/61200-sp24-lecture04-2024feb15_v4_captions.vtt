@@ -1,0 +1,5020 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:01.915 align:middle line:90%
+[SQUEAKING]
+
+00:00:01.915 --> 00:00:02.415 align:middle line:90%
+
+
+00:00:02.415 --> 00:00:03.847 align:middle line:90%
+[RUSTLING]
+
+00:00:03.847 --> 00:00:04.347 align:middle line:90%
+
+
+00:00:04.347 --> 00:00:05.796 align:middle line:90%
+[CLICKING]
+
+00:00:05.796 --> 00:00:10.268 align:middle line:90%
+
+
+00:00:10.268 --> 00:00:12.060 align:middle line:84%
+ERIK DEMAINE: All right,
+let's get started.
+
+00:00:12.060 --> 00:00:14.840 align:middle line:90%
+Welcome back to 6.1200.
+
+00:00:14.840 --> 00:00:18.110 align:middle line:84%
+Today we're going to talk
+about state machines, which
+
+00:00:18.110 --> 00:00:23.820 align:middle line:84%
+is a very cool tool for thinking
+about processes over time.
+
+00:00:23.820 --> 00:00:26.962 align:middle line:84%
+And because this is math for
+computer science, in particular
+
+00:00:26.962 --> 00:00:28.670 align:middle line:84%
+we're thinking about
+analyzing algorithms
+
+00:00:28.670 --> 00:00:30.330 align:middle line:90%
+that do a bunch of steps.
+
+00:00:30.330 --> 00:00:34.260 align:middle line:84%
+And the state of the
+machine changes over time,
+
+00:00:34.260 --> 00:00:36.240 align:middle line:84%
+like the state of
+your memory changes.
+
+00:00:36.240 --> 00:00:37.670 align:middle line:84%
+And state machines
+are a nice way
+
+00:00:37.670 --> 00:00:40.050 align:middle line:84%
+to reason about
+how it's changing.
+
+00:00:40.050 --> 00:00:43.190 align:middle line:84%
+In particular, we'll talk about
+an idea called invariance,
+
+00:00:43.190 --> 00:00:48.290 align:middle line:84%
+which you use to prove
+algorithms and programs correct,
+
+00:00:48.290 --> 00:00:49.890 align:middle line:90%
+or you will in the future.
+
+00:00:49.890 --> 00:00:52.100 align:middle line:84%
+And so today we're
+going to formalize that
+
+00:00:52.100 --> 00:00:56.180 align:middle line:84%
+into a kind of
+induction, actually.
+
+00:00:56.180 --> 00:00:59.060 align:middle line:84%
+You haven't seen the
+end of induction yet.
+
+00:00:59.060 --> 00:01:02.640 align:middle line:84%
+So let me tell you a little bit
+about what state machines are.
+
+00:01:02.640 --> 00:01:05.630 align:middle line:84%
+And then we'll prove some
+things and apply them
+
+00:01:05.630 --> 00:01:08.680 align:middle line:84%
+to analyzing puzzles
+and other fun stuff.
+
+00:01:08.680 --> 00:01:13.040 align:middle line:90%
+
+
+00:01:13.040 --> 00:01:19.130 align:middle line:84%
+So a state machine is going
+to consist of two things--
+
+00:01:19.130 --> 00:01:22.623 align:middle line:90%
+three things-- a set of states.
+
+00:01:22.623 --> 00:01:25.760 align:middle line:90%
+
+
+00:01:25.760 --> 00:01:28.920 align:middle line:84%
+And the idea-- this is
+just an arbitrary set.
+
+00:01:28.920 --> 00:01:30.980 align:middle line:84%
+But the idea is that the
+state of your machine
+
+00:01:30.980 --> 00:01:33.620 align:middle line:84%
+represents everything
+that could possibly
+
+00:01:33.620 --> 00:01:37.700 align:middle line:84%
+be in the machine, all
+the information that's
+
+00:01:37.700 --> 00:01:40.970 align:middle line:90%
+inside the machine.
+
+00:01:40.970 --> 00:01:46.123 align:middle line:84%
+We're going to start in some
+state, which we call q0.
+
+00:01:46.123 --> 00:01:51.350 align:middle line:90%
+
+
+00:01:51.350 --> 00:01:52.980 align:middle line:84%
+That's going to be
+an element of Q.
+
+00:01:52.980 --> 00:01:56.226 align:middle line:84%
+And then we are allowed
+some transitions.
+
+00:01:56.226 --> 00:02:09.389 align:middle line:90%
+
+
+00:02:09.389 --> 00:02:17.910 align:middle line:84%
+And we're going to
+write a transition
+
+00:02:17.910 --> 00:02:27.005 align:middle line:84%
+as q arrow r for some q
+and r that are states.
+
+00:02:27.005 --> 00:02:31.320 align:middle line:90%
+
+
+00:02:31.320 --> 00:02:36.510 align:middle line:84%
+OK, let me draw you an example,
+very simple example of a state
+
+00:02:36.510 --> 00:02:39.700 align:middle line:84%
+machine so we have some idea
+of what we're talking about.
+
+00:02:39.700 --> 00:02:41.703 align:middle line:84%
+This is going to be
+an infinite counter.
+
+00:02:41.703 --> 00:02:45.450 align:middle line:90%
+
+
+00:02:45.450 --> 00:02:48.120 align:middle line:84%
+I'm going to draw
+it visually first.
+
+00:02:48.120 --> 00:02:50.585 align:middle line:84%
+And then we can say what it
+means with all these sets.
+
+00:02:50.585 --> 00:02:54.510 align:middle line:90%
+
+
+00:02:54.510 --> 00:02:55.627 align:middle line:90%
+Just dot, dot, dot.
+
+00:02:55.627 --> 00:02:56.585 align:middle line:90%
+Maybe I'll do one more.
+
+00:02:56.585 --> 00:03:01.800 align:middle line:90%
+
+
+00:03:01.800 --> 00:03:04.030 align:middle line:90%
+OK, so this is a machine.
+
+00:03:04.030 --> 00:03:07.510 align:middle line:84%
+You can think of it as a single
+register on your machine,
+
+00:03:07.510 --> 00:03:08.680 align:middle line:90%
+single variable.
+
+00:03:08.680 --> 00:03:10.030 align:middle line:90%
+It starts at 0.
+
+00:03:10.030 --> 00:03:12.290 align:middle line:84%
+This little notation
+here means start state.
+
+00:03:12.290 --> 00:03:14.940 align:middle line:90%
+
+
+00:03:14.940 --> 00:03:17.017 align:middle line:84%
+There's an arrow
+coming from nowhere.
+
+00:03:17.017 --> 00:03:18.100 align:middle line:90%
+So that's where you start.
+
+00:03:18.100 --> 00:03:19.990 align:middle line:90%
+You start in state called 0.
+
+00:03:19.990 --> 00:03:26.740 align:middle line:84%
+So the set of states here
+is 0, 1, 2, 3, and so on,
+
+00:03:26.740 --> 00:03:30.730 align:middle line:84%
+in other words, the
+natural numbers.
+
+00:03:30.730 --> 00:03:33.520 align:middle line:84%
+And then when you're in state 0,
+the only transition you can do,
+
+00:03:33.520 --> 00:03:35.982 align:middle line:84%
+the only arrow that goes out
+from there is from 0 to 1.
+
+00:03:35.982 --> 00:03:38.190 align:middle line:84%
+And once you're in state 1,
+the only thing you can do
+
+00:03:38.190 --> 00:03:39.185 align:middle line:90%
+is go from 1 to 2.
+
+00:03:39.185 --> 00:03:40.810 align:middle line:84%
+At some point, you
+decide to increment.
+
+00:03:40.810 --> 00:03:41.950 align:middle line:90%
+Then you go from 2 to 3.
+
+00:03:41.950 --> 00:03:43.533 align:middle line:84%
+At some point you
+decide to increment,
+
+00:03:43.533 --> 00:03:45.335 align:middle line:84%
+and you go from 3
+to 4, and so on.
+
+00:03:45.335 --> 00:03:46.960 align:middle line:84%
+So this is a very
+simple state machine.
+
+00:03:46.960 --> 00:03:50.710 align:middle line:84%
+It turns out it will be
+interesting for certain reasons.
+
+00:03:50.710 --> 00:03:53.220 align:middle line:84%
+But in general,
+you could imagine
+
+00:03:53.220 --> 00:03:54.430 align:middle line:90%
+having all sorts of arrows.
+
+00:03:54.430 --> 00:03:58.450 align:middle line:84%
+Maybe one has a transition
+to 3, for example.
+
+00:03:58.450 --> 00:04:00.430 align:middle line:84%
+Or maybe 3 has a
+transition to 1.
+
+00:04:00.430 --> 00:04:01.720 align:middle line:90%
+All of these are possible.
+
+00:04:01.720 --> 00:04:04.480 align:middle line:84%
+You can have one state that
+has many transitions out of it.
+
+00:04:04.480 --> 00:04:05.650 align:middle line:90%
+You can go in loops.
+
+00:04:05.650 --> 00:04:08.250 align:middle line:84%
+You can do all sorts
+of crazy things.
+
+00:04:08.250 --> 00:04:11.890 align:middle line:84%
+But let me finish precisely
+specifying the counter.
+
+00:04:11.890 --> 00:04:17.640 align:middle line:84%
+So we said here q0
+equals the state 0.
+
+00:04:17.640 --> 00:04:20.730 align:middle line:90%
+And what are the transitions?
+
+00:04:20.730 --> 00:04:26.400 align:middle line:84%
+Transitions are
+all of the i to i
+
+00:04:26.400 --> 00:04:30.615 align:middle line:84%
+plus 1 transitions where
+i is a natural number.
+
+00:04:30.615 --> 00:04:34.920 align:middle line:84%
+You may recall this set-builder
+notation from lecture 1,
+
+00:04:34.920 --> 00:04:38.670 align:middle line:84%
+I think, where we write
+an element on the left,
+
+00:04:38.670 --> 00:04:40.900 align:middle line:84%
+and we write some
+condition on the right.
+
+00:04:40.900 --> 00:04:43.140 align:middle line:84%
+And so the idea is
+T is the set of all
+
+00:04:43.140 --> 00:04:47.500 align:middle line:84%
+of these transitions i
+to i plus 1 for every i
+
+00:04:47.500 --> 00:04:50.746 align:middle line:90%
+that's a natural number.
+
+00:04:50.746 --> 00:04:51.933 align:middle line:90%
+So that's an example.
+
+00:04:51.933 --> 00:04:54.100 align:middle line:84%
+But in general, we can have
+all sorts of transitions
+
+00:04:54.100 --> 00:04:56.200 align:middle line:90%
+from any state to any state.
+
+00:04:56.200 --> 00:05:00.070 align:middle line:84%
+But you're only allowed to make
+the transitions that are in T.
+
+00:05:00.070 --> 00:05:10.806 align:middle line:84%
+So let's formalize that
+with the idea of execution.
+
+00:05:10.806 --> 00:05:28.990 align:middle line:90%
+
+
+00:05:28.990 --> 00:05:30.550 align:middle line:84%
+It's going to be a
+sequence of states
+
+00:05:30.550 --> 00:05:35.380 align:middle line:84%
+that you can reach by a
+sequence of transitions.
+
+00:05:35.380 --> 00:05:45.060 align:middle line:84%
+So let's write it as q0, arrow,
+q1, arrow, q2, and so on.
+
+00:05:45.060 --> 00:05:49.090 align:middle line:90%
+
+
+00:05:49.090 --> 00:05:50.310 align:middle line:90%
+Maybe up to qn.
+
+00:05:50.310 --> 00:06:02.380 align:middle line:90%
+
+
+00:06:02.380 --> 00:06:06.190 align:middle line:84%
+And importantly, every
+transition we make for all i,
+
+00:06:06.190 --> 00:06:11.640 align:middle line:84%
+the qi to qi plus 1, should be
+in T, not just any set of states
+
+00:06:11.640 --> 00:06:12.140 align:middle line:90%
+here.
+
+00:06:12.140 --> 00:06:14.330 align:middle line:84%
+We want to start in
+q0, our start state.
+
+00:06:14.330 --> 00:06:17.980 align:middle line:84%
+We want to then make a valid
+transition from q0 to q1, then
+
+00:06:17.980 --> 00:06:21.280 align:middle line:84%
+a valid transition from
+q1 to q2, and so on.
+
+00:06:21.280 --> 00:06:24.560 align:middle line:84%
+So in this example, the
+executions are very simple.
+
+00:06:24.560 --> 00:06:26.900 align:middle line:84%
+In the regular counter
+without the red lines,
+
+00:06:26.900 --> 00:06:29.360 align:middle line:84%
+the executions are
+just 0, 1, 2, 3.
+
+00:06:29.360 --> 00:06:30.250 align:middle line:90%
+That's one execution.
+
+00:06:30.250 --> 00:06:32.780 align:middle line:84%
+0, 1, 2, 3, 4, 5, that's
+another execution.
+
+00:06:32.780 --> 00:06:36.130 align:middle line:84%
+There's an infinite execution,
+which is 0 all the way out
+
+00:06:36.130 --> 00:06:38.560 align:middle line:90%
+to infinity.
+
+00:06:38.560 --> 00:06:40.580 align:middle line:84%
+That's why I put
+this in parentheses.
+
+00:06:40.580 --> 00:06:43.870 align:middle line:84%
+Either it stops at some qn, or
+it just-- or the dot, dot, dot
+
+00:06:43.870 --> 00:06:45.290 align:middle line:90%
+continues off to infinity.
+
+00:06:45.290 --> 00:06:47.300 align:middle line:84%
+So we're trying to
+simultaneously define
+
+00:06:47.300 --> 00:06:49.680 align:middle line:84%
+finite executions,
+where you stop at qn,
+
+00:06:49.680 --> 00:06:53.780 align:middle line:84%
+and infinite executions,
+where you go forever.
+
+00:06:53.780 --> 00:06:56.700 align:middle line:84%
+When you write an algorithm
+or a piece of code,
+
+00:06:56.700 --> 00:06:59.010 align:middle line:84%
+you usually don't want
+your program to go forever.
+
+00:06:59.010 --> 00:07:02.780 align:middle line:84%
+And so distinguishing between
+infinite and finite executions
+
+00:07:02.780 --> 00:07:04.280 align:middle line:84%
+is one of the goals
+of this lecture.
+
+00:07:04.280 --> 00:07:05.990 align:middle line:90%
+That will come at the end.
+
+00:07:05.990 --> 00:07:09.020 align:middle line:84%
+The other goal is to
+show that your program is
+
+00:07:09.020 --> 00:07:12.510 align:middle line:84%
+correct in a certain sense,
+that in any execution,
+
+00:07:12.510 --> 00:07:14.870 align:middle line:84%
+it does the things
+that you want it to do.
+
+00:07:14.870 --> 00:07:19.160 align:middle line:84%
+So that's what we're going
+to formalize in a moment.
+
+00:07:19.160 --> 00:07:23.000 align:middle line:84%
+But let me first talk
+about reachable states,
+
+00:07:23.000 --> 00:07:24.196 align:middle line:90%
+the idea of reachability.
+
+00:07:24.196 --> 00:07:42.590 align:middle line:90%
+
+
+00:07:42.590 --> 00:07:44.600 align:middle line:84%
+I'm going to call
+a state r reachable
+
+00:07:44.600 --> 00:07:50.480 align:middle line:84%
+if there is an execution that
+starts at the start state q0
+
+00:07:50.480 --> 00:07:52.933 align:middle line:90%
+and ends at r.
+
+00:07:52.933 --> 00:07:55.530 align:middle line:90%
+
+
+00:07:55.530 --> 00:07:59.070 align:middle line:84%
+So in the counter example,
+every state can be reached.
+
+00:07:59.070 --> 00:08:03.410 align:middle line:84%
+If I pick a state i, I can
+go 0, 1, 2, 3, up to i.
+
+00:08:03.410 --> 00:08:08.540 align:middle line:84%
+But if I drew some other
+circle over here, like "bad,"
+
+00:08:08.540 --> 00:08:12.440 align:middle line:84%
+with no arrows coming into
+it, you can't reach "bad."
+
+00:08:12.440 --> 00:08:19.160 align:middle line:84%
+So usually we're only interested
+in the reachable states
+
+00:08:19.160 --> 00:08:20.800 align:middle line:84%
+because you can't
+get anywhere else.
+
+00:08:20.800 --> 00:08:25.100 align:middle line:90%
+
+
+00:08:25.100 --> 00:08:26.910 align:middle line:84%
+I feel like I should
+make a Reacher joke,
+
+00:08:26.910 --> 00:08:28.570 align:middle line:90%
+but I can't think of one.
+
+00:08:28.570 --> 00:08:36.110 align:middle line:90%
+
+
+00:08:36.110 --> 00:08:40.970 align:middle line:84%
+I think, at this point, I want
+to talk about a more interesting
+
+00:08:40.970 --> 00:08:41.940 align:middle line:90%
+example.
+
+00:08:41.940 --> 00:08:49.855 align:middle line:84%
+And then we will come
+back to the theory.
+
+00:08:49.855 --> 00:08:59.840 align:middle line:90%
+
+
+00:08:59.840 --> 00:09:04.010 align:middle line:84%
+So the interesting
+example is this.
+
+00:09:04.010 --> 00:09:05.430 align:middle line:90%
+It's called the 8 puzzle.
+
+00:09:05.430 --> 00:09:11.130 align:middle line:84%
+You have a 3-by-3 grid with one
+hole and 1-by-1 pieces in it.
+
+00:09:11.130 --> 00:09:13.700 align:middle line:90%
+And you can slide them around.
+
+00:09:13.700 --> 00:09:15.600 align:middle line:90%
+And so this is the solved state.
+
+00:09:15.600 --> 00:09:17.310 align:middle line:90%
+Your goal is to get here.
+
+00:09:17.310 --> 00:09:21.050 align:middle line:84%
+But you start in
+some random state.
+
+00:09:21.050 --> 00:09:27.530 align:middle line:84%
+And you want to move the
+pieces around to get there.
+
+00:09:27.530 --> 00:09:32.820 align:middle line:84%
+So what we'd like to do is
+capture how to solve this puzzle
+
+00:09:32.820 --> 00:09:35.310 align:middle line:84%
+or actually, maybe
+more interestingly,
+
+00:09:35.310 --> 00:09:36.810 align:middle line:90%
+is when it's solvable.
+
+00:09:36.810 --> 00:09:42.660 align:middle line:84%
+So here, for example, I'm almost
+solved 1, 2, 3, 4, 6, 5, 7, 8.
+
+00:09:42.660 --> 00:09:45.740 align:middle line:84%
+I wanted to get it to
+1, 2, 3, 4, 5, 6, 7, 8.
+
+00:09:45.740 --> 00:09:48.810 align:middle line:84%
+It turns out that
+puzzle is not solvable.
+
+00:09:48.810 --> 00:09:53.000 align:middle line:84%
+I claim it's impossible to
+get from here to the goal.
+
+00:09:53.000 --> 00:09:56.155 align:middle line:84%
+So let's talk
+about the 8 puzzle.
+
+00:09:56.155 --> 00:10:04.940 align:middle line:90%
+
+
+00:10:04.940 --> 00:10:07.140 align:middle line:90%
+So I have some examples here.
+
+00:10:07.140 --> 00:10:13.580 align:middle line:90%
+1, 3, 4, 2, 5, 7, 8, 6.
+
+00:10:13.580 --> 00:10:17.270 align:middle line:90%
+
+
+00:10:17.270 --> 00:10:21.816 align:middle line:90%
+Going to 1, 2, 3, 4, 5, 6, 7, 8.
+
+00:10:21.816 --> 00:10:25.730 align:middle line:90%
+
+
+00:10:25.730 --> 00:10:35.080 align:middle line:84%
+Or this one-- 1, 2,
+3, 4, 6, 5, 7, 8.
+
+00:10:35.080 --> 00:10:39.800 align:middle line:90%
+
+
+00:10:39.800 --> 00:10:41.050 align:middle line:90%
+Hopefully the rules are clear.
+
+00:10:41.050 --> 00:10:44.220 align:middle line:84%
+We'll formalize
+them in a second.
+
+00:10:44.220 --> 00:10:47.280 align:middle line:84%
+I claim it is possible to
+go from this arrangement
+
+00:10:47.280 --> 00:10:48.990 align:middle line:90%
+to this arrangement.
+
+00:10:48.990 --> 00:10:50.230 align:middle line:90%
+It's actually quite easy.
+
+00:10:50.230 --> 00:10:51.400 align:middle line:90%
+You move the 3 over.
+
+00:10:51.400 --> 00:10:52.450 align:middle line:90%
+You move the 2 up.
+
+00:10:52.450 --> 00:10:53.470 align:middle line:90%
+You move the 5 over.
+
+00:10:53.470 --> 00:10:55.390 align:middle line:90%
+You move the 6 up.
+
+00:10:55.390 --> 00:10:57.510 align:middle line:90%
+So this is possible.
+
+00:10:57.510 --> 00:11:01.920 align:middle line:90%
+I claim this one is impossible.
+
+00:11:01.920 --> 00:11:06.700 align:middle line:84%
+And one of the goals-- our first
+goal really is to prove that,
+
+00:11:06.700 --> 00:11:11.370 align:middle line:84%
+that you cannot swap the
+5 and the 6 by themselves.
+
+00:11:11.370 --> 00:11:13.820 align:middle line:84%
+We're going to build
+up tools to do that.
+
+00:11:13.820 --> 00:11:20.170 align:middle line:90%
+
+
+00:11:20.170 --> 00:11:22.270 align:middle line:84%
+So the counter was a very
+simple state machine.
+
+00:11:22.270 --> 00:11:24.020 align:middle line:84%
+Let me now define a
+more interesting state
+
+00:11:24.020 --> 00:11:25.670 align:middle line:90%
+machine, which is the 8 puzzle.
+
+00:11:25.670 --> 00:11:39.390 align:middle line:90%
+
+
+00:11:39.390 --> 00:11:42.720 align:middle line:84%
+Remember, the set of
+states q is supposed
+
+00:11:42.720 --> 00:11:47.490 align:middle line:84%
+to encapsulate everything
+about the puzzle or your system
+
+00:11:47.490 --> 00:11:48.990 align:middle line:90%
+or whatever.
+
+00:11:48.990 --> 00:11:51.990 align:middle line:84%
+So this is going to be all
+the different arrangements
+
+00:11:51.990 --> 00:11:57.870 align:middle line:84%
+of the eight pieces, plus
+a blank, in a 3-by-3 grid.
+
+00:11:57.870 --> 00:12:00.760 align:middle line:84%
+So I'm just going to
+write that in words.
+
+00:12:00.760 --> 00:12:12.840 align:middle line:84%
+All possible
+arrangements of eight--
+
+00:12:12.840 --> 00:12:22.770 align:middle line:84%
+I'm going to call them of 1,
+2, 3, up to 8, and the blank,
+
+00:12:22.770 --> 00:12:25.590 align:middle line:90%
+in a 3-by-3.
+
+00:12:25.590 --> 00:12:27.240 align:middle line:84%
+In later parts of
+the class, we'll
+
+00:12:27.240 --> 00:12:29.680 align:middle line:84%
+be able to count how many
+of these things there are.
+
+00:12:29.680 --> 00:12:30.670 align:middle line:90%
+It's nine factorial.
+
+00:12:30.670 --> 00:12:33.190 align:middle line:84%
+But we don't really care how
+many there are right now.
+
+00:12:33.190 --> 00:12:35.190 align:middle line:84%
+We just want to think
+about this as a set of all
+
+00:12:35.190 --> 00:12:39.150 align:middle line:84%
+the possible states
+of this board.
+
+00:12:39.150 --> 00:12:44.230 align:middle line:84%
+Our start state, well, that's
+either this one or this one,
+
+00:12:44.230 --> 00:12:47.070 align:middle line:84%
+depending on where
+we want to start.
+
+00:12:47.070 --> 00:12:52.200 align:middle line:84%
+We're also going to define
+a final state, q sub f.
+
+00:12:52.200 --> 00:12:58.220 align:middle line:84%
+And that is sorted
+by reading order.
+
+00:12:58.220 --> 00:13:03.180 align:middle line:90%
+
+
+00:13:03.180 --> 00:13:05.490 align:middle line:90%
+So this is q sub f.
+
+00:13:05.490 --> 00:13:07.140 align:middle line:90%
+Reading order-- like in English.
+
+00:13:07.140 --> 00:13:09.210 align:middle line:84%
+You read the top row,
+second row, third row,
+
+00:13:09.210 --> 00:13:10.980 align:middle line:90%
+with the x at the end.
+
+00:13:10.980 --> 00:13:13.410 align:middle line:84%
+That's always our
+goal in this puzzle.
+
+00:13:13.410 --> 00:13:15.450 align:middle line:90%
+That's our definition.
+
+00:13:15.450 --> 00:13:19.726 align:middle line:84%
+And then, what about
+the transitions?
+
+00:13:19.726 --> 00:13:23.280 align:middle line:90%
+
+
+00:13:23.280 --> 00:13:26.520 align:middle line:84%
+Transitions are going
+to look like some q
+
+00:13:26.520 --> 00:13:29.590 align:middle line:90%
+to r for two states q and r.
+
+00:13:29.590 --> 00:13:35.440 align:middle line:84%
+And it's when you can get from
+q to r by making one slide.
+
+00:13:35.440 --> 00:13:37.660 align:middle line:84%
+I'm just going to
+write that in words--
+
+00:13:37.660 --> 00:13:42.940 align:middle line:84%
+can get from state
+q, that 3-by-3 grid,
+
+00:13:42.940 --> 00:13:47.096 align:middle line:84%
+to state r in one
+slide, meaning--
+
+00:13:47.096 --> 00:13:49.630 align:middle line:90%
+
+
+00:13:49.630 --> 00:13:52.750 align:middle line:84%
+meaning you exchange
+the blank, the x,
+
+00:13:52.750 --> 00:13:54.950 align:middle line:84%
+with one of its
+neighboring cells.
+
+00:13:54.950 --> 00:14:02.200 align:middle line:84%
+So in particular, there is at
+most four different transitions
+
+00:14:02.200 --> 00:14:03.390 align:middle line:90%
+from any state.
+
+00:14:03.390 --> 00:14:06.910 align:middle line:90%
+
+
+00:14:06.910 --> 00:14:10.100 align:middle line:84%
+You could move the thing above
+the blank into the blank.
+
+00:14:10.100 --> 00:14:13.190 align:middle line:84%
+You can move the left, right, or
+below the blank into the blank.
+
+00:14:13.190 --> 00:14:16.510 align:middle line:84%
+But if it's on the boundary,
+you have fewer than four moves.
+
+00:14:16.510 --> 00:14:18.260 align:middle line:84%
+So hopefully now I've
+said it enough times
+
+00:14:18.260 --> 00:14:20.718 align:middle line:84%
+the rules are clear if you
+haven't played this game before.
+
+00:14:20.718 --> 00:14:24.700 align:middle line:84%
+15 puzzle is much more common,
+but 8 puzzle is a little easier
+
+00:14:24.700 --> 00:14:25.700 align:middle line:90%
+to think about--
+
+00:14:25.700 --> 00:14:27.860 align:middle line:84%
+smaller pictures,
+easier to draw,
+
+00:14:27.860 --> 00:14:31.870 align:middle line:84%
+and I can actually solve it in
+a reasonable amount of time.
+
+00:14:31.870 --> 00:14:41.140 align:middle line:84%
+OK, so this is a claim
+that we want to prove.
+
+00:14:41.140 --> 00:14:45.040 align:middle line:84%
+You cannot get from this
+state, with 5 and 6 flipped,
+
+00:14:45.040 --> 00:14:46.250 align:middle line:90%
+into this state.
+
+00:14:46.250 --> 00:14:50.240 align:middle line:84%
+And so now we're going to build
+some technology to do that.
+
+00:14:50.240 --> 00:14:52.180 align:middle line:90%
+And that technology is a--
+
+00:14:52.180 --> 00:14:55.990 align:middle line:84%
+first part of it is
+called a state predicate.
+
+00:14:55.990 --> 00:14:59.713 align:middle line:90%
+So we've seen predicates before.
+
+00:14:59.713 --> 00:15:04.840 align:middle line:90%
+
+
+00:15:04.840 --> 00:15:06.765 align:middle line:90%
+Predicate is just a--
+
+00:15:06.765 --> 00:15:13.300 align:middle line:90%
+
+
+00:15:13.300 --> 00:15:19.450 align:middle line:84%
+a proposition that
+depends on some variable.
+
+00:15:19.450 --> 00:15:22.720 align:middle line:84%
+And here, the
+variable is a state.
+
+00:15:22.720 --> 00:15:25.180 align:middle line:84%
+So P of q is either
+true or false
+
+00:15:25.180 --> 00:15:28.160 align:middle line:84%
+depending on which state
+you are looking at.
+
+00:15:28.160 --> 00:15:30.918 align:middle line:84%
+You can also think of this,
+if you're comfortable with
+
+00:15:30.918 --> 00:15:32.960 align:middle line:84%
+functions-- we'll talk
+more about functions later
+
+00:15:32.960 --> 00:15:33.870 align:middle line:90%
+in the class--
+
+00:15:33.870 --> 00:15:41.930 align:middle line:84%
+this is a function from q to
+the Booleans true or false.
+
+00:15:41.930 --> 00:15:44.592 align:middle line:84%
+It's an equivalent way to
+think about it, whatever
+
+00:15:44.592 --> 00:15:45.800 align:middle line:90%
+you're more comfortable with.
+
+00:15:45.800 --> 00:15:50.480 align:middle line:84%
+For every state, this predicate
+assigns true or false.
+
+00:15:50.480 --> 00:15:56.000 align:middle line:84%
+Now we're going to define
+two types of predicates that
+
+00:15:56.000 --> 00:15:59.390 align:middle line:90%
+are particularly interesting.
+
+00:15:59.390 --> 00:16:03.440 align:middle line:84%
+A predicate is
+preserved if whenever
+
+00:16:03.440 --> 00:16:11.620 align:middle line:84%
+there's a transition from q
+to r, P of q implies P of r.
+
+00:16:11.620 --> 00:16:14.180 align:middle line:90%
+
+
+00:16:14.180 --> 00:16:15.420 align:middle line:90%
+What does that mean?
+
+00:16:15.420 --> 00:16:19.550 align:middle line:84%
+It means that if I start in
+some state where P is true
+
+00:16:19.550 --> 00:16:23.510 align:middle line:84%
+and I do a transition,
+then P remains true.
+
+00:16:23.510 --> 00:16:29.450 align:middle line:84%
+So the truth of p is
+preserved along transitions.
+
+00:16:29.450 --> 00:16:31.230 align:middle line:84%
+We'll make this
+concrete in a second.
+
+00:16:31.230 --> 00:16:35.690 align:middle line:84%
+Second important notion
+is called an invariant,
+
+00:16:35.690 --> 00:16:42.470 align:middle line:84%
+or invariant state
+predicate, if P of q
+
+00:16:42.470 --> 00:16:47.575 align:middle line:84%
+is true for all
+reachable states q.
+
+00:16:47.575 --> 00:16:53.690 align:middle line:90%
+
+
+00:16:53.690 --> 00:16:56.060 align:middle line:84%
+Crucially, in this
+definition, we're
+
+00:16:56.060 --> 00:17:00.050 align:middle line:84%
+only interested in
+the reachable states.
+
+00:17:00.050 --> 00:17:02.040 align:middle line:84%
+That's kind of important
+for the 8 puzzle
+
+00:17:02.040 --> 00:17:04.582 align:middle line:84%
+because we claim some
+states are unreachable.
+
+00:17:04.582 --> 00:17:07.290 align:middle line:84%
+Like, if I start here, the claim
+is that this one is unreachable.
+
+00:17:07.290 --> 00:17:11.060 align:middle line:84%
+That's what we'd like
+to prove actually.
+
+00:17:11.060 --> 00:17:12.463 align:middle line:90%
+So this seems useful.
+
+00:17:12.463 --> 00:17:15.050 align:middle line:90%
+
+
+00:17:15.050 --> 00:17:24.630 align:middle line:84%
+In particular-- let's
+write this fun fact--
+
+00:17:24.630 --> 00:17:28.970 align:middle line:84%
+if P of q is
+invariant, meaning it's
+
+00:17:28.970 --> 00:17:42.440 align:middle line:84%
+true in all reachable states,
+and P of q is false for,
+
+00:17:42.440 --> 00:17:48.766 align:middle line:84%
+maybe I'll write P of r
+here, then r is unreachable.
+
+00:17:48.766 --> 00:17:54.090 align:middle line:90%
+
+
+00:17:54.090 --> 00:17:57.120 align:middle line:84%
+That's pretty much by definition
+and maybe the contrapositive.
+
+00:17:57.120 --> 00:17:59.810 align:middle line:84%
+This is saying invariant means
+that for all reachable states,
+
+00:17:59.810 --> 00:18:01.320 align:middle line:90%
+P of q must be true.
+
+00:18:01.320 --> 00:18:04.890 align:middle line:84%
+So if I can find a particular
+state r where P is false,
+
+00:18:04.890 --> 00:18:06.740 align:middle line:90%
+that means you cannot reach it.
+
+00:18:06.740 --> 00:18:08.250 align:middle line:84%
+And that's what
+we'd like to show.
+
+00:18:08.250 --> 00:18:12.290 align:middle line:84%
+We'd like to show this state
+is unreachable from this one.
+
+00:18:12.290 --> 00:18:16.020 align:middle line:84%
+So maybe we can use these
+state predicates to do that,
+
+00:18:16.020 --> 00:18:17.080 align:middle line:90%
+and indeed we can.
+
+00:18:17.080 --> 00:18:22.580 align:middle line:90%
+
+
+00:18:22.580 --> 00:18:24.520 align:middle line:90%
+Let me tell you another tool.
+
+00:18:24.520 --> 00:18:27.680 align:middle line:90%
+
+
+00:18:27.680 --> 00:18:33.410 align:middle line:84%
+How do we prove that a state
+predicate is invariant?
+
+00:18:33.410 --> 00:18:35.720 align:middle line:84%
+This seems a little bit
+tricky because this is talking
+
+00:18:35.720 --> 00:18:36.930 align:middle line:90%
+about all reachable states.
+
+00:18:36.930 --> 00:18:38.700 align:middle line:90%
+Reachable states is huge.
+
+00:18:38.700 --> 00:18:40.220 align:middle line:90%
+I don't know.
+
+00:18:40.220 --> 00:18:42.570 align:middle line:84%
+Preserved seems
+relatively easy to prove.
+
+00:18:42.570 --> 00:18:44.690 align:middle line:84%
+This is just saying,
+for each transition,
+
+00:18:44.690 --> 00:18:46.440 align:middle line:90%
+something implies something.
+
+00:18:46.440 --> 00:18:49.670 align:middle line:84%
+So I'd like to
+prove preservedness.
+
+00:18:49.670 --> 00:18:52.580 align:middle line:84%
+And I'd like to use
+that to get invariant.
+
+00:18:52.580 --> 00:18:55.500 align:middle line:84%
+And we're going to do
+that using induction,
+
+00:18:55.500 --> 00:18:57.680 align:middle line:84%
+but a particular
+form of induction
+
+00:18:57.680 --> 00:18:59.416 align:middle line:90%
+called the invariant principle.
+
+00:18:59.416 --> 00:19:09.740 align:middle line:90%
+
+
+00:19:09.740 --> 00:19:28.890 align:middle line:84%
+So this is for a state predicate
+P of q, if P of q0 is true
+
+00:19:28.890 --> 00:19:36.476 align:middle line:90%
+and P of q is invariant--
+
+00:19:36.476 --> 00:19:39.720 align:middle line:90%
+
+
+00:19:39.720 --> 00:19:42.836 align:middle line:90%
+get it right; preserved--
+
+00:19:42.836 --> 00:19:46.890 align:middle line:90%
+
+
+00:19:46.890 --> 00:19:52.736 align:middle line:90%
+then P of q is invariant.
+
+00:19:52.736 --> 00:19:57.360 align:middle line:90%
+
+
+00:19:57.360 --> 00:19:59.620 align:middle line:90%
+This is what I said I wanted.
+
+00:19:59.620 --> 00:20:03.070 align:middle line:84%
+On the one hand, invariance
+seemed hard to argue.
+
+00:20:03.070 --> 00:20:04.800 align:middle line:90%
+Preserved seemed easy to argue.
+
+00:20:04.800 --> 00:20:07.238 align:middle line:84%
+And this is the theorem that
+connects them in the way
+
+00:20:07.238 --> 00:20:07.780 align:middle line:90%
+that we want.
+
+00:20:07.780 --> 00:20:09.510 align:middle line:84%
+It says, if you
+can prove preserved
+
+00:20:09.510 --> 00:20:12.760 align:middle line:84%
+and you can prove that P is
+true in the very initial state,
+
+00:20:12.760 --> 00:20:14.805 align:middle line:90%
+then it must be invariant.
+
+00:20:14.805 --> 00:20:16.180 align:middle line:84%
+I think this is
+intuitive, right?
+
+00:20:16.180 --> 00:20:18.450 align:middle line:84%
+If you start true
+and preserve says,
+
+00:20:18.450 --> 00:20:20.572 align:middle line:84%
+every time you do a
+transition, you stay true,
+
+00:20:20.572 --> 00:20:23.030 align:middle line:84%
+then you're always going to be
+true in any reachable state,
+
+00:20:23.030 --> 00:20:23.910 align:middle line:90%
+anywhere you can get.
+
+00:20:23.910 --> 00:20:27.950 align:middle line:90%
+
+
+00:20:27.950 --> 00:20:32.360 align:middle line:84%
+In fact, this is
+induction in another form.
+
+00:20:32.360 --> 00:20:36.850 align:middle line:84%
+So if you recall
+in the past, which
+
+00:20:36.850 --> 00:20:41.050 align:middle line:84%
+I happen to have right
+here, induction, we have--
+
+00:20:41.050 --> 00:20:44.890 align:middle line:84%
+regular induction
+says for predicate P
+
+00:20:44.890 --> 00:20:49.570 align:middle line:84%
+of n over natural numbers
+instead of states, if P of 0
+
+00:20:49.570 --> 00:20:51.760 align:middle line:84%
+is true, and for every
+natural number P of n
+
+00:20:51.760 --> 00:20:54.910 align:middle line:84%
+implies P of n plus
+1 is true, then
+
+00:20:54.910 --> 00:20:58.060 align:middle line:84%
+for every natural
+number P of n is true.
+
+00:20:58.060 --> 00:21:00.560 align:middle line:90%
+This is saying the same thing.
+
+00:21:00.560 --> 00:21:02.380 align:middle line:84%
+Actually, it's
+exactly the same thing
+
+00:21:02.380 --> 00:21:06.963 align:middle line:84%
+if you apply this invariant
+principle to this counter.
+
+00:21:06.963 --> 00:21:10.870 align:middle line:90%
+
+
+00:21:10.870 --> 00:21:14.210 align:middle line:84%
+In the counter, the states
+are the natural numbers.
+
+00:21:14.210 --> 00:21:18.630 align:middle line:84%
+And the transitions are exactly
+going from i to i plus 1.
+
+00:21:18.630 --> 00:21:21.630 align:middle line:84%
+So the invariant principle
+is actually a generalization
+
+00:21:21.630 --> 00:21:24.150 align:middle line:90%
+of the induction axiom.
+
+00:21:24.150 --> 00:21:26.400 align:middle line:84%
+The special case
+here, where we plug
+
+00:21:26.400 --> 00:21:28.210 align:middle line:84%
+in the counter as
+the state machine,
+
+00:21:28.210 --> 00:21:30.190 align:middle line:84%
+this is true for
+all state machines.
+
+00:21:30.190 --> 00:21:32.530 align:middle line:84%
+And if we plug in the counter
+for our state machine,
+
+00:21:32.530 --> 00:21:36.930 align:middle line:84%
+we get exactly the
+induction axiom.
+
+00:21:36.930 --> 00:21:39.490 align:middle line:84%
+This is our base
+case in some sense.
+
+00:21:39.490 --> 00:21:42.670 align:middle line:84%
+We prove that P is true
+in the initial state.
+
+00:21:42.670 --> 00:21:44.080 align:middle line:90%
+This is our induction step.
+
+00:21:44.080 --> 00:21:46.590 align:middle line:84%
+It says that if we start
+at q and we transition
+
+00:21:46.590 --> 00:21:50.910 align:middle line:84%
+to some other r that's
+reachable via transition,
+
+00:21:50.910 --> 00:21:54.390 align:middle line:84%
+and in the particular
+case of a counter that
+
+00:21:54.390 --> 00:21:58.830 align:middle line:84%
+is going from q to q plus
+1, then we get that P of q
+
+00:21:58.830 --> 00:22:00.250 align:middle line:84%
+is true for all
+reachable states.
+
+00:22:00.250 --> 00:22:03.060 align:middle line:84%
+And in the counter,
+everything is reachable.
+
+00:22:03.060 --> 00:22:08.970 align:middle line:84%
+So invariant principle
+implies induction axiom.
+
+00:22:08.970 --> 00:22:12.780 align:middle line:84%
+Conversely, we can prove
+the invariant principle
+
+00:22:12.780 --> 00:22:14.080 align:middle line:90%
+using induction.
+
+00:22:14.080 --> 00:22:17.490 align:middle line:84%
+Maybe it's useful
+to see that proof.
+
+00:22:17.490 --> 00:22:23.380 align:middle line:90%
+
+
+00:22:23.380 --> 00:22:30.336 align:middle line:84%
+So let's prove the invariant
+principle by induction.
+
+00:22:30.336 --> 00:22:34.090 align:middle line:90%
+
+
+00:22:34.090 --> 00:22:36.710 align:middle line:84%
+So it's not so
+obvious how exactly.
+
+00:22:36.710 --> 00:22:39.670 align:middle line:84%
+But the idea is to specify
+a particular induction
+
+00:22:39.670 --> 00:23:03.970 align:middle line:84%
+hypothesis, which is, for all
+length n executions, P of qn
+
+00:23:03.970 --> 00:23:06.470 align:middle line:90%
+is true.
+
+00:23:06.470 --> 00:23:07.845 align:middle line:84%
+There should be
+a colon out here.
+
+00:23:07.845 --> 00:23:10.840 align:middle line:90%
+
+
+00:23:10.840 --> 00:23:12.758 align:middle line:84%
+I think it's intuitive
+that this is enough.
+
+00:23:12.758 --> 00:23:14.300 align:middle line:84%
+But we'll justify
+why this is enough.
+
+00:23:14.300 --> 00:23:17.060 align:middle line:84%
+The idea is if you have
+some state that's reachable,
+
+00:23:17.060 --> 00:23:20.900 align:middle line:84%
+it's reachable by some finite
+execution of some length.
+
+00:23:20.900 --> 00:23:23.740 align:middle line:84%
+And we're going
+to prove for all n
+
+00:23:23.740 --> 00:23:27.770 align:middle line:84%
+that all length n
+executions P of qn is true.
+
+00:23:27.770 --> 00:23:31.660 align:middle line:84%
+And by inducting over
+length, we essentially
+
+00:23:31.660 --> 00:23:35.840 align:middle line:84%
+start with short executions and
+then make them gradually longer.
+
+00:23:35.840 --> 00:23:37.430 align:middle line:84%
+And that makes
+this easy to prove.
+
+00:23:37.430 --> 00:23:45.730 align:middle line:84%
+So let's do a base
+case, IH of 0.
+
+00:23:45.730 --> 00:23:48.410 align:middle line:84%
+Well, that's all
+length 0 executions.
+
+00:23:48.410 --> 00:23:50.526 align:middle line:84%
+There's only one
+length 0 execution.
+
+00:23:50.526 --> 00:23:56.590 align:middle line:90%
+
+
+00:23:56.590 --> 00:23:58.700 align:middle line:90%
+That is just q0.
+
+00:23:58.700 --> 00:24:00.470 align:middle line:84%
+You start at q0,
+and you stay there.
+
+00:24:00.470 --> 00:24:02.710 align:middle line:90%
+That's length 0.
+
+00:24:02.710 --> 00:24:08.750 align:middle line:84%
+And we claim that P of q0-- q0
+is clearly a reachable state.
+
+00:24:08.750 --> 00:24:10.820 align:middle line:84%
+You get there via
+length 0 execution.
+
+00:24:10.820 --> 00:24:13.720 align:middle line:90%
+Why is it true?
+
+00:24:13.720 --> 00:24:15.160 align:middle line:90%
+This.
+
+00:24:15.160 --> 00:24:16.320 align:middle line:90%
+It's what we assumed.
+
+00:24:16.320 --> 00:24:19.720 align:middle line:90%
+
+
+00:24:19.720 --> 00:24:23.470 align:middle line:90%
+OK, so by 1.
+
+00:24:23.470 --> 00:24:26.470 align:middle line:90%
+So that's the base case.
+
+00:24:26.470 --> 00:24:29.200 align:middle line:84%
+Of course, the more interesting
+one is the induction step.
+
+00:24:29.200 --> 00:24:32.560 align:middle line:90%
+I'm going to assume--
+
+00:24:32.560 --> 00:24:33.860 align:middle line:90%
+we get to choose.
+
+00:24:33.860 --> 00:24:35.830 align:middle line:84%
+We could follow this
+plan, assume P of n
+
+00:24:35.830 --> 00:24:37.520 align:middle line:90%
+And prove P of n plus 1.
+
+00:24:37.520 --> 00:24:42.010 align:middle line:84%
+I find it slightly more
+intuitive to assume P of n--
+
+00:24:42.010 --> 00:24:46.450 align:middle line:84%
+or sorry, instead of P, it's IH
+here for induction hypothesis--
+
+00:24:46.450 --> 00:24:49.360 align:middle line:90%
+IH of n minus 1.
+
+00:24:49.360 --> 00:24:53.310 align:middle line:84%
+And we're going
+to prove IH of n.
+
+00:24:53.310 --> 00:24:55.870 align:middle line:90%
+
+
+00:24:55.870 --> 00:24:58.220 align:middle line:84%
+What does it mean
+to prove IH of n?
+
+00:24:58.220 --> 00:25:02.350 align:middle line:84%
+It says, well, for all length
+n executions, P of qn is true.
+
+00:25:02.350 --> 00:25:04.520 align:middle line:90%
+So how do we prove it for all?
+
+00:25:04.520 --> 00:25:09.050 align:middle line:84%
+We just take an arbitrary
+thing in the quantifier.
+
+00:25:09.050 --> 00:25:17.876 align:middle line:84%
+So take any-- consider
+any length and execution.
+
+00:25:17.876 --> 00:25:21.650 align:middle line:90%
+
+
+00:25:21.650 --> 00:25:24.360 align:middle line:84%
+And then we need to prove
+the property we want,
+
+00:25:24.360 --> 00:25:26.280 align:middle line:90%
+which is P of qn.
+
+00:25:26.280 --> 00:25:31.910 align:middle line:84%
+So let me give some
+notation for that execution.
+
+00:25:31.910 --> 00:25:44.930 align:middle line:84%
+Any length n execution
+q0, q1, qn minus 1, qn.
+
+00:25:44.930 --> 00:25:51.140 align:middle line:84%
+And what we want to
+show is that P of qn.
+
+00:25:51.140 --> 00:25:52.170 align:middle line:90%
+That's our goal right.
+
+00:25:52.170 --> 00:25:55.770 align:middle line:84%
+It says, for all length n
+executions, P of qn is true.
+
+00:25:55.770 --> 00:25:57.390 align:middle line:84%
+So we take an
+arbitrary execution.
+
+00:25:57.390 --> 00:26:01.940 align:middle line:84%
+If we can prove P of qn
+is true, then we're done.
+
+00:26:01.940 --> 00:26:04.440 align:middle line:84%
+Well, somehow we want
+to use induction here.
+
+00:26:04.440 --> 00:26:08.010 align:middle line:84%
+We've assumed the induction
+hypothesis for size n minus 1.
+
+00:26:08.010 --> 00:26:11.790 align:middle line:84%
+Can you see a length
+n-minus-1 execution here
+
+00:26:11.790 --> 00:26:13.110 align:middle line:90%
+that might be interesting?
+
+00:26:13.110 --> 00:26:18.600 align:middle line:90%
+
+
+00:26:18.600 --> 00:26:19.100 align:middle line:90%
+Yeah?
+
+00:26:19.100 --> 00:26:20.400 align:middle line:90%
+AUDIENCE: q1 to qn.
+
+00:26:20.400 --> 00:26:22.350 align:middle line:90%
+ERIK DEMAINE: q1 to qn.
+
+00:26:22.350 --> 00:26:23.960 align:middle line:90%
+That's a good idea.
+
+00:26:23.960 --> 00:26:26.900 align:middle line:90%
+Does that work?
+
+00:26:26.900 --> 00:26:29.510 align:middle line:90%
+Is that an execution?
+
+00:26:29.510 --> 00:26:32.570 align:middle line:90%
+Let's go back and check.
+
+00:26:32.570 --> 00:26:37.760 align:middle line:84%
+Execution of a state
+machine is an infinite
+
+00:26:37.760 --> 00:26:42.860 align:middle line:84%
+or a finite sequence starting
+with q0 and maybe ending.
+
+00:26:42.860 --> 00:26:45.020 align:middle line:90%
+But it needs to start with q0.
+
+00:26:45.020 --> 00:26:47.400 align:middle line:84%
+So there's two
+natural choices here.
+
+00:26:47.400 --> 00:26:49.830 align:middle line:84%
+One would be starting
+at q1 and going to qn.
+
+00:26:49.830 --> 00:26:51.840 align:middle line:90%
+But q1 might not equal q0.
+
+00:26:51.840 --> 00:26:53.490 align:middle line:84%
+So that might not be
+a valid execution.
+
+00:26:53.490 --> 00:26:55.640 align:middle line:84%
+So we wouldn't be able to
+apply induction to that.
+
+00:26:55.640 --> 00:27:00.660 align:middle line:84%
+The other obvious choice
+is q0 to qn minus 1.
+
+00:27:00.660 --> 00:27:03.140 align:middle line:84%
+That is a valid
+execution of length 1
+
+00:27:03.140 --> 00:27:07.370 align:middle line:84%
+smaller, length n minus 1,
+because it starts with q0.
+
+00:27:07.370 --> 00:27:08.790 align:middle line:90%
+A lot of terms here.
+
+00:27:08.790 --> 00:27:10.680 align:middle line:90%
+So it's easy to lose track.
+
+00:27:10.680 --> 00:27:14.960 align:middle line:84%
+But eventually, they
+will become comfortable.
+
+00:27:14.960 --> 00:27:22.670 align:middle line:84%
+So by induction
+hypothesis of n minus 1,
+
+00:27:22.670 --> 00:27:26.520 align:middle line:84%
+if we apply it to this
+execution of length n minus 1,
+
+00:27:26.520 --> 00:27:30.880 align:middle line:84%
+we learn that P of
+q n minus 1 is true.
+
+00:27:30.880 --> 00:27:34.040 align:middle line:90%
+
+
+00:27:34.040 --> 00:27:36.270 align:middle line:84%
+That's what the induction
+hypothesis says.
+
+00:27:36.270 --> 00:27:39.920 align:middle line:84%
+The last state in your
+execution is true.
+
+00:27:39.920 --> 00:27:41.970 align:middle line:84%
+So now we know P
+of this is true.
+
+00:27:41.970 --> 00:27:44.010 align:middle line:84%
+We just need to prove
+P of this is true.
+
+00:27:44.010 --> 00:27:45.000 align:middle line:90%
+Why is that?
+
+00:27:45.000 --> 00:27:49.772 align:middle line:90%
+Because property 2--
+
+00:27:49.772 --> 00:27:53.600 align:middle line:84%
+P of q is preserved, which
+we can unroll over here.
+
+00:27:53.600 --> 00:27:56.090 align:middle line:84%
+Says, for every transition,
+in particular the one
+
+00:27:56.090 --> 00:28:01.130 align:middle line:84%
+from qn minus 1 to qn, P of
+q minus 1 implies P of qn.
+
+00:28:01.130 --> 00:28:04.440 align:middle line:90%
+
+
+00:28:04.440 --> 00:28:17.010 align:middle line:84%
+So by 2, P of q n
+minus 1 implies P of qn
+
+00:28:17.010 --> 00:28:25.830 align:middle line:84%
+because this is a
+transition in T. So P of qn.
+
+00:28:25.830 --> 00:28:29.160 align:middle line:84%
+So that's the end of
+the induction step.
+
+00:28:29.160 --> 00:28:42.810 align:middle line:84%
+So by induction, we get, for all
+n, induction hypothesis of n.
+
+00:28:42.810 --> 00:28:46.380 align:middle line:84%
+And the idea is
+that this implies
+
+00:28:46.380 --> 00:28:56.880 align:middle line:84%
+P of q for all
+reachable states q
+
+00:28:56.880 --> 00:28:59.400 align:middle line:84%
+because if you have
+a reachable state q,
+
+00:28:59.400 --> 00:29:03.030 align:middle line:84%
+there's, by definition, a
+reachable way over on the left.
+
+00:29:03.030 --> 00:29:06.910 align:middle line:84%
+There's some execution that gets
+there, and it has some length.
+
+00:29:06.910 --> 00:29:10.980 align:middle line:84%
+And so IH of that length
+gives you what you want.
+
+00:29:10.980 --> 00:29:13.330 align:middle line:84%
+So that's how we prove
+the invariant principle.
+
+00:29:13.330 --> 00:29:14.920 align:middle line:90%
+It's a pretty intuitive notion.
+
+00:29:14.920 --> 00:29:18.780 align:middle line:84%
+But may be nice to see yet
+another example of an induction
+
+00:29:18.780 --> 00:29:21.180 align:middle line:90%
+proof.
+
+00:29:21.180 --> 00:29:23.010 align:middle line:90%
+Great.
+
+00:29:23.010 --> 00:29:26.970 align:middle line:90%
+So how do we use this?
+
+00:29:26.970 --> 00:29:29.960 align:middle line:90%
+Let's go over here.
+
+00:29:29.960 --> 00:29:33.360 align:middle line:90%
+
+
+00:29:33.360 --> 00:29:41.160 align:middle line:84%
+Here is a template for
+proving a theorem, which
+
+00:29:41.160 --> 00:29:46.780 align:middle line:90%
+is P of q is invariant.
+
+00:29:46.780 --> 00:29:49.440 align:middle line:84%
+This is the thing I keep
+saying is hard to prove.
+
+00:29:49.440 --> 00:29:52.842 align:middle line:84%
+Or by the definition,
+it seems hard to prove.
+
+00:29:52.842 --> 00:29:54.300 align:middle line:84%
+But using this
+invariant principle,
+
+00:29:54.300 --> 00:29:55.390 align:middle line:90%
+it's going to be easy.
+
+00:29:55.390 --> 00:29:59.250 align:middle line:84%
+Here's what a general
+proof will look like.
+
+00:29:59.250 --> 00:30:03.450 align:middle line:84%
+We can say, proof by
+invariant principle.
+
+00:30:03.450 --> 00:30:05.410 align:middle line:84%
+For the invariant
+principle to apply,
+
+00:30:05.410 --> 00:30:08.580 align:middle line:90%
+we need to prove two things--
+
+00:30:08.580 --> 00:30:11.910 align:middle line:90%
+number 1 and number 2.
+
+00:30:11.910 --> 00:30:19.350 align:middle line:84%
+So number one is prove
+that P of q0 is true.
+
+00:30:19.350 --> 00:30:23.370 align:middle line:84%
+And in a template, we just say
+because reasons which we don't
+
+00:30:23.370 --> 00:30:26.040 align:middle line:90%
+know, or we have to fill in.
+
+00:30:26.040 --> 00:30:34.593 align:middle line:84%
+And the second thing is
+that P of q is preserved.
+
+00:30:34.593 --> 00:30:36.010 align:middle line:84%
+That's the more
+interesting thing.
+
+00:30:36.010 --> 00:30:39.450 align:middle line:84%
+And for this, we need to unroll
+the definition of "preserved."
+
+00:30:39.450 --> 00:30:45.570 align:middle line:84%
+Says for all q, all transitions
+q to r, P of q implies q of r.
+
+00:30:45.570 --> 00:30:49.150 align:middle line:90%
+So how do we prove that?
+
+00:30:49.150 --> 00:31:01.840 align:middle line:84%
+We just take any
+transition in t, q to r.
+
+00:31:01.840 --> 00:31:06.992 align:middle line:84%
+And because it's an implication,
+we can assume the left-hand--
+
+00:31:06.992 --> 00:31:08.450 align:middle line:84%
+if we want to prove
+an implication,
+
+00:31:08.450 --> 00:31:09.740 align:middle line:90%
+we can assume the left part--
+
+00:31:09.740 --> 00:31:12.550 align:middle line:84%
+this is the direct proof--
+and prove the right part.
+
+00:31:12.550 --> 00:31:19.090 align:middle line:90%
+So we can assume P of q is true.
+
+00:31:19.090 --> 00:31:24.820 align:middle line:84%
+And then what we need to do
+is show that P of r is true.
+
+00:31:24.820 --> 00:31:30.550 align:middle line:84%
+That's the interesting step,
+which we need to fill in.
+
+00:31:30.550 --> 00:31:33.670 align:middle line:84%
+But this is the template
+we're going to now use
+
+00:31:33.670 --> 00:31:36.520 align:middle line:90%
+to analyze the 8 puzzle.
+
+00:31:36.520 --> 00:31:39.290 align:middle line:84%
+Of course, I haven't defined
+what predicate we're analyzing.
+
+00:31:39.290 --> 00:31:41.470 align:middle line:90%
+That's the next step.
+
+00:31:41.470 --> 00:31:43.780 align:middle line:84%
+But once we have
+a predicate, we'll
+
+00:31:43.780 --> 00:31:45.280 align:middle line:84%
+be able to prove
+that it's invariant
+
+00:31:45.280 --> 00:31:47.800 align:middle line:90%
+using this simple structure.
+
+00:31:47.800 --> 00:31:48.790 align:middle line:90%
+Just check it.
+
+00:31:48.790 --> 00:31:50.240 align:middle line:90%
+Check that it's initially true.
+
+00:31:50.240 --> 00:31:52.120 align:middle line:84%
+And check that if you start
+from something that's true
+
+00:31:52.120 --> 00:31:54.328 align:middle line:84%
+and you take a transition
+out of it, it's still true.
+
+00:31:54.328 --> 00:31:56.855 align:middle line:90%
+
+
+00:31:56.855 --> 00:31:57.355 align:middle line:90%
+Great.
+
+00:31:57.355 --> 00:32:10.150 align:middle line:90%
+
+
+00:32:10.150 --> 00:32:16.840 align:middle line:84%
+So let me define a
+predicate for the 8 puzzle.
+
+00:32:16.840 --> 00:32:19.205 align:middle line:84%
+Maybe I want it closer to
+these examples, actually.
+
+00:32:19.205 --> 00:32:22.210 align:middle line:90%
+
+
+00:32:22.210 --> 00:32:27.665 align:middle line:90%
+Yeah, let's go here.
+
+00:32:27.665 --> 00:32:29.790 align:middle line:84%
+I think you know the
+definition of a state machine.
+
+00:32:29.790 --> 00:32:48.130 align:middle line:90%
+
+
+00:32:48.130 --> 00:32:51.830 align:middle line:84%
+OK, so for this
+8-puzzle state machine,
+
+00:32:51.830 --> 00:32:56.780 align:middle line:84%
+I'd like to define a bit
+of a bizarre predicate.
+
+00:32:56.780 --> 00:33:20.320 align:middle line:90%
+
+
+00:33:20.320 --> 00:33:28.813 align:middle line:84%
+So first, I'm going to define
+the notion of an inverted pair.
+
+00:33:28.813 --> 00:34:09.710 align:middle line:90%
+
+
+00:34:09.710 --> 00:34:13.670 align:middle line:84%
+This is going to depend
+on what state we're in.
+
+00:34:13.670 --> 00:34:20.780 align:middle line:84%
+So let's look at inverted
+pairs in this example
+
+00:34:20.780 --> 00:34:23.780 align:middle line:90%
+and use three examples.
+
+00:34:23.780 --> 00:34:27.500 align:middle line:84%
+So an inverted pair
+is two numbers, so not
+
+00:34:27.500 --> 00:34:30.480 align:middle line:84%
+the blank but two
+numbers between 1 and 8.
+
+00:34:30.480 --> 00:34:32.610 align:middle line:90%
+And I want i less than j.
+
+00:34:32.610 --> 00:34:37.820 align:middle line:84%
+And yet I want j to appear
+before i in the reading order.
+
+00:34:37.820 --> 00:34:43.250 align:middle line:90%
+So for example-- my red chalk--
+
+00:34:43.250 --> 00:34:49.320 align:middle line:84%
+in this picture, this
+state, 2 and 4 are inverted.
+
+00:34:49.320 --> 00:34:55.010 align:middle line:84%
+In reading order, 4 comes before
+2, yet 4 is greater than 2.
+
+00:34:55.010 --> 00:34:55.730 align:middle line:90%
+Any others?
+
+00:34:55.730 --> 00:34:59.242 align:middle line:90%
+
+
+00:34:59.242 --> 00:35:03.260 align:middle line:90%
+8 and 6 are inverted.
+
+00:35:03.260 --> 00:35:05.910 align:middle line:90%
+6 and 7 are inverted.
+
+00:35:05.910 --> 00:35:07.040 align:middle line:90%
+7 is bigger than 6.
+
+00:35:07.040 --> 00:35:08.010 align:middle line:90%
+8 is bigger than 6.
+
+00:35:08.010 --> 00:35:11.250 align:middle line:84%
+But they come earlier than
+6 in the reading order.
+
+00:35:11.250 --> 00:35:13.961 align:middle line:90%
+I think there's one more.
+
+00:35:13.961 --> 00:35:14.790 align:middle line:90%
+3 and--
+
+00:35:14.790 --> 00:35:15.290 align:middle line:90%
+AUDIENCE: 2.
+
+00:35:15.290 --> 00:35:16.460 align:middle line:90%
+ERIK DEMAINE: 2.
+
+00:35:16.460 --> 00:35:17.190 align:middle line:90%
+Thank you.
+
+00:35:17.190 --> 00:35:19.773 align:middle line:84%
+That's one's a little trickier
+because it's on different rows.
+
+00:35:19.773 --> 00:35:21.990 align:middle line:84%
+But in reading order,
+3 comes before 2,
+
+00:35:21.990 --> 00:35:23.580 align:middle line:90%
+and yet 3 is greater than 2.
+
+00:35:23.580 --> 00:35:28.820 align:middle line:84%
+So there are four inverted
+pairs in this example.
+
+00:35:28.820 --> 00:35:32.840 align:middle line:84%
+How many inverted pairs
+are there in this example?
+
+00:35:32.840 --> 00:35:34.910 align:middle line:90%
+Zero.
+
+00:35:34.910 --> 00:35:37.550 align:middle line:90%
+Zero inverted pairs.
+
+00:35:37.550 --> 00:35:38.605 align:middle line:90%
+How about this one?
+
+00:35:38.605 --> 00:35:42.950 align:middle line:90%
+
+
+00:35:42.950 --> 00:35:45.043 align:middle line:90%
+One, yeah.
+
+00:35:45.043 --> 00:35:46.710 align:middle line:84%
+I thought you were
+holding up your hand.
+
+00:35:46.710 --> 00:35:48.085 align:middle line:84%
+But you're holding
+up one finger.
+
+00:35:48.085 --> 00:35:48.780 align:middle line:90%
+[CHUCKLES]
+
+00:35:48.780 --> 00:35:49.280 align:middle line:90%
+
+
+00:35:49.280 --> 00:35:50.850 align:middle line:90%
+6 comes after 5.
+
+00:35:50.850 --> 00:35:52.890 align:middle line:84%
+That was the only
+thing out of order.
+
+00:35:52.890 --> 00:35:55.550 align:middle line:90%
+That's what we started out with.
+
+00:35:55.550 --> 00:35:57.630 align:middle line:84%
+Where do you come
+up with this idea?
+
+00:35:57.630 --> 00:35:59.280 align:middle line:90%
+It just is fundamental.
+
+00:35:59.280 --> 00:36:02.400 align:middle line:84%
+You're supposed to
+magically invent it.
+
+00:36:02.400 --> 00:36:04.350 align:middle line:84%
+But if you fool around
+with the puzzle enough,
+
+00:36:04.350 --> 00:36:06.183 align:middle line:84%
+it's actually somewhat
+intuitive in that you
+
+00:36:06.183 --> 00:36:07.830 align:middle line:84%
+can get where it's
+almost sorted,
+
+00:36:07.830 --> 00:36:09.660 align:middle line:84%
+but there's just one
+pair that's wrong.
+
+00:36:09.660 --> 00:36:10.940 align:middle line:84%
+So you might think,
+well, maybe there's
+
+00:36:10.940 --> 00:36:12.540 align:middle line:84%
+something about
+these inverted pairs.
+
+00:36:12.540 --> 00:36:14.190 align:middle line:84%
+Let's talk about
+them in general,
+
+00:36:14.190 --> 00:36:17.070 align:middle line:84%
+not just about 0-versus-1
+inverted pairs.
+
+00:36:17.070 --> 00:36:18.240 align:middle line:90%
+But let's count them.
+
+00:36:18.240 --> 00:36:22.100 align:middle line:84%
+So over here, we had
+one inverted pair.
+
+00:36:22.100 --> 00:36:24.000 align:middle line:90%
+Here we had zero inverted pairs.
+
+00:36:24.000 --> 00:36:25.710 align:middle line:90%
+Here we had four inverted pairs.
+
+00:36:25.710 --> 00:36:28.250 align:middle line:84%
+And I claim it was possible
+to go from four inverted pairs
+
+00:36:28.250 --> 00:36:33.140 align:middle line:84%
+to zero but impossible to go
+from one inverted pair to zero.
+
+00:36:33.140 --> 00:36:35.870 align:middle line:90%
+Why?
+
+00:36:35.870 --> 00:36:37.705 align:middle line:90%
+Parity, it turns out.
+
+00:36:37.705 --> 00:36:41.000 align:middle line:90%
+
+
+00:36:41.000 --> 00:36:44.660 align:middle line:90%
+"Parity" means odd or even.
+
+00:36:44.660 --> 00:36:54.660 align:middle line:84%
+So P of q is going
+to be that the number
+
+00:36:54.660 --> 00:37:07.200 align:middle line:84%
+of inverted pairs in state
+q is odd, turns out to be.
+
+00:37:07.200 --> 00:37:09.250 align:middle line:84%
+This proof will
+work for either one.
+
+00:37:09.250 --> 00:37:12.640 align:middle line:84%
+But if we want to prove this
+particular impossibility result,
+
+00:37:12.640 --> 00:37:14.580 align:middle line:90%
+odd is what we need.
+
+00:37:14.580 --> 00:37:20.940 align:middle line:84%
+So p of q is going to be
+true for this configuration
+
+00:37:20.940 --> 00:37:23.050 align:middle line:84%
+because it has an odd
+number of inverted pairs.
+
+00:37:23.050 --> 00:37:26.550 align:middle line:84%
+And it's going to be
+false for these two.
+
+00:37:26.550 --> 00:37:28.086 align:middle line:90%
+Why is that interesting?
+
+00:37:28.086 --> 00:37:31.620 align:middle line:90%
+
+
+00:37:31.620 --> 00:37:41.070 align:middle line:84%
+Because over here, we said,
+suppose we can show that P of q
+
+00:37:41.070 --> 00:37:42.190 align:middle line:90%
+is invariant.
+
+00:37:42.190 --> 00:37:43.770 align:middle line:90%
+I claim that's true.
+
+00:37:43.770 --> 00:37:47.130 align:middle line:84%
+If we start from
+here, where P of q
+
+00:37:47.130 --> 00:37:53.010 align:middle line:84%
+starts true, because the number
+of inverted pairs starts odd,
+
+00:37:53.010 --> 00:37:57.990 align:middle line:84%
+and we find another state
+where P of r is false,
+
+00:37:57.990 --> 00:37:59.760 align:middle line:84%
+because here the number
+of inverted pairs
+
+00:37:59.760 --> 00:38:03.400 align:middle line:84%
+is even instead of odd,
+then r is unreachable.
+
+00:38:03.400 --> 00:38:05.760 align:middle line:84%
+That means it's impossible
+to get from this state
+
+00:38:05.760 --> 00:38:06.490 align:middle line:90%
+to this state.
+
+00:38:06.490 --> 00:38:08.670 align:middle line:90%
+That's what we want to prove.
+
+00:38:08.670 --> 00:38:12.160 align:middle line:84%
+So if we can prove this
+invariant property,
+
+00:38:12.160 --> 00:38:16.710 align:middle line:84%
+we can plug it into here and get
+the puzzle impossibility result
+
+00:38:16.710 --> 00:38:18.720 align:middle line:90%
+that we want.
+
+00:38:18.720 --> 00:38:21.510 align:middle line:84%
+That's where everything's
+going to come together.
+
+00:38:21.510 --> 00:38:28.350 align:middle line:90%
+So let's prove that P of q is--
+
+00:38:28.350 --> 00:38:30.820 align:middle line:84%
+ideally, we'd like
+it to be invariant.
+
+00:38:30.820 --> 00:38:32.880 align:middle line:84%
+But to prove
+invariant, we're going
+
+00:38:32.880 --> 00:38:34.946 align:middle line:84%
+to start with proving
+that it's preserved.
+
+00:38:34.946 --> 00:38:57.810 align:middle line:90%
+
+
+00:38:57.810 --> 00:38:59.460 align:middle line:84%
+The reason for the
+8 puzzle, that I
+
+00:38:59.460 --> 00:39:02.920 align:middle line:84%
+want to talk about preserved
+first, is to be invariant,
+
+00:39:02.920 --> 00:39:04.600 align:middle line:90%
+it depends where you start.
+
+00:39:04.600 --> 00:39:07.900 align:middle line:90%
+And that's a little arbitrary.
+
+00:39:07.900 --> 00:39:10.450 align:middle line:84%
+There isn't one natural
+start state for the 8 puzzle.
+
+00:39:10.450 --> 00:39:11.620 align:middle line:90%
+You might start here.
+
+00:39:11.620 --> 00:39:12.610 align:middle line:90%
+You might start here.
+
+00:39:12.610 --> 00:39:13.840 align:middle line:90%
+You might start here.
+
+00:39:13.840 --> 00:39:16.550 align:middle line:90%
+That'd be a very easy puzzle.
+
+00:39:16.550 --> 00:39:20.260 align:middle line:84%
+But preserved is just a general
+property about the system.
+
+00:39:20.260 --> 00:39:23.220 align:middle line:84%
+So I don't need to
+assume anything for that.
+
+00:39:23.220 --> 00:39:24.820 align:middle line:90%
+So we want to do this part.
+
+00:39:24.820 --> 00:39:26.620 align:middle line:84%
+We want to prove P
+of q is preserved.
+
+00:39:26.620 --> 00:39:30.790 align:middle line:84%
+So we consider any transition
+q to r where P of q is true.
+
+00:39:30.790 --> 00:39:33.780 align:middle line:90%
+We need to prove P of r is true.
+
+00:39:33.780 --> 00:39:39.340 align:middle line:84%
+So here, let me plug in the
+outline of step 2 there.
+
+00:39:39.340 --> 00:39:45.260 align:middle line:84%
+Consider any transition
+q to r that's valid,
+
+00:39:45.260 --> 00:39:52.330 align:middle line:90%
+it's in T, where P of q is true.
+
+00:39:52.330 --> 00:39:55.830 align:middle line:84%
+And we want to show
+P of r is true.
+
+00:39:55.830 --> 00:39:59.590 align:middle line:90%
+
+
+00:39:59.590 --> 00:40:03.370 align:middle line:84%
+What do transitions
+look like in this game?
+
+00:40:03.370 --> 00:40:06.890 align:middle line:84%
+Well, relative to reading order,
+reading order talks about rows.
+
+00:40:06.890 --> 00:40:10.550 align:middle line:84%
+So there's really two types
+of moves we care about.
+
+00:40:10.550 --> 00:40:12.410 align:middle line:84%
+There's horizontal
+moves left and right.
+
+00:40:12.410 --> 00:40:14.240 align:middle line:84%
+And there's vertical
+moves up and down.
+
+00:40:14.240 --> 00:40:18.370 align:middle line:84%
+I claim those are
+the two cases that we
+
+00:40:18.370 --> 00:40:19.990 align:middle line:84%
+need to think
+about because we're
+
+00:40:19.990 --> 00:40:22.540 align:middle line:90%
+thinking about reading order.
+
+00:40:22.540 --> 00:40:29.020 align:middle line:84%
+So case 1 is that this
+transition, q to r,
+
+00:40:29.020 --> 00:40:30.480 align:middle line:90%
+is a horizontal move.
+
+00:40:30.480 --> 00:40:39.820 align:middle line:90%
+
+
+00:40:39.820 --> 00:40:40.850 align:middle line:90%
+Horizontal move.
+
+00:40:40.850 --> 00:40:45.830 align:middle line:84%
+So this is like we take some
+number i, and next to it
+
+00:40:45.830 --> 00:40:46.940 align:middle line:90%
+there's an x.
+
+00:40:46.940 --> 00:40:51.910 align:middle line:84%
+And maybe if we move to the
+right, that would be x i.
+
+00:40:51.910 --> 00:40:55.090 align:middle line:84%
+Or if we move to the left,
+it would be like that.
+
+00:40:55.090 --> 00:40:57.070 align:middle line:84%
+It's one of those
+two transitions.
+
+00:40:57.070 --> 00:40:59.260 align:middle line:90%
+x here means the blank.
+
+00:40:59.260 --> 00:41:01.110 align:middle line:84%
+How does that change
+reading order?
+
+00:41:01.110 --> 00:41:05.650 align:middle line:90%
+
+
+00:41:05.650 --> 00:41:06.400 align:middle line:90%
+Yeah?
+
+00:41:06.400 --> 00:41:07.320 align:middle line:90%
+AUDIENCE: Nothing.
+
+00:41:07.320 --> 00:41:08.810 align:middle line:90%
+ERIK DEMAINE: Nothing.
+
+00:41:08.810 --> 00:41:09.860 align:middle line:90%
+Nothing changes.
+
+00:41:09.860 --> 00:41:11.835 align:middle line:90%
+The reading order is the same.
+
+00:41:11.835 --> 00:41:13.460 align:middle line:84%
+When we're talking
+about reading order,
+
+00:41:13.460 --> 00:41:15.770 align:middle line:84%
+we're only talking
+about the numbers.
+
+00:41:15.770 --> 00:41:17.620 align:middle line:90%
+We don't care about the x.
+
+00:41:17.620 --> 00:41:32.440 align:middle line:84%
+So no changes in reading
+order or in the number
+
+00:41:32.440 --> 00:41:39.460 align:middle line:84%
+of inverted pairs because that's
+only dependent on reading order.
+
+00:41:39.460 --> 00:41:42.790 align:middle line:90%
+So we have P of r.
+
+00:41:42.790 --> 00:41:46.030 align:middle line:90%
+Case 1 is easy.
+
+00:41:46.030 --> 00:41:50.865 align:middle line:84%
+Let's prove case
+2 maybe over here.
+
+00:41:50.865 --> 00:41:57.190 align:middle line:90%
+
+
+00:41:57.190 --> 00:41:58.760 align:middle line:90%
+Case 2 is a vertical move here.
+
+00:41:58.760 --> 00:42:00.910 align:middle line:84%
+There's actually
+something to show--
+
+00:42:00.910 --> 00:42:07.830 align:middle line:84%
+more interesting,
+but not much harder.
+
+00:42:07.830 --> 00:42:23.440 align:middle line:90%
+
+
+00:42:23.440 --> 00:42:27.940 align:middle line:84%
+OK, I'm going to draw some
+pictures for intuition.
+
+00:42:27.940 --> 00:42:32.570 align:middle line:84%
+It could be we
+are moving i down,
+
+00:42:32.570 --> 00:42:36.260 align:middle line:84%
+and there's two things
+to the right of i.
+
+00:42:36.260 --> 00:42:42.830 align:middle line:84%
+It could be we're moving
+i in the middle, to here.
+
+00:42:42.830 --> 00:42:49.780 align:middle line:84%
+Or it could be we're moving
+i on the right, down to here.
+
+00:42:49.780 --> 00:42:53.690 align:middle line:90%
+
+
+00:42:53.690 --> 00:42:56.930 align:middle line:90%
+And this is for a down move.
+
+00:42:56.930 --> 00:42:58.350 align:middle line:90%
+Up is going to be symmetric.
+
+00:42:58.350 --> 00:43:00.570 align:middle line:84%
+But let's first think
+about down moves.
+
+00:43:00.570 --> 00:43:04.170 align:middle line:84%
+So in order to do a down
+move, in reading order,
+
+00:43:04.170 --> 00:43:06.620 align:middle line:84%
+there are two items
+that come after i.
+
+00:43:06.620 --> 00:43:09.840 align:middle line:84%
+Because we're moving down,
+there is something after i.
+
+00:43:09.840 --> 00:43:12.990 align:middle line:84%
+There's a whole row
+after i until this x.
+
+00:43:12.990 --> 00:43:16.850 align:middle line:84%
+So if we can move i down,
+there's two numbers between i
+
+00:43:16.850 --> 00:43:19.260 align:middle line:90%
+and the x in reading order.
+
+00:43:19.260 --> 00:43:21.860 align:middle line:84%
+And i starts before those
+numbers if we're going down
+
+00:43:21.860 --> 00:43:24.170 align:middle line:90%
+and ends after.
+
+00:43:24.170 --> 00:43:29.926 align:middle line:84%
+So the move here, we can
+think of it as swapping--
+
+00:43:29.926 --> 00:43:32.660 align:middle line:90%
+
+
+00:43:32.660 --> 00:43:36.150 align:middle line:90%
+we want to swap i with x.
+
+00:43:36.150 --> 00:43:46.790 align:middle line:84%
+But this is equivalent to
+swapping i with j, first of all,
+
+00:43:46.790 --> 00:43:50.720 align:middle line:90%
+and then swapping i with k.
+
+00:43:50.720 --> 00:43:53.340 align:middle line:90%
+Instead of going straight down--
+
+00:43:53.340 --> 00:43:55.550 align:middle line:90%
+and another color--
+
+00:43:55.550 --> 00:43:58.760 align:middle line:84%
+I'm going to think of swapping
+i to first come after j
+
+00:43:58.760 --> 00:44:00.270 align:middle line:90%
+and then come after k.
+
+00:44:00.270 --> 00:44:01.550 align:middle line:90%
+That's the same as the x.
+
+00:44:01.550 --> 00:44:03.690 align:middle line:84%
+And it doesn't matter
+where we started.
+
+00:44:03.690 --> 00:44:05.940 align:middle line:84%
+It could be here,
+and then we go here.
+
+00:44:05.940 --> 00:44:12.530 align:middle line:84%
+Or it could be here, we go
+after j, and then we go after k.
+
+00:44:12.530 --> 00:44:14.280 align:middle line:90%
+The point is if we swap--
+
+00:44:14.280 --> 00:44:17.120 align:middle line:84%
+if we figure out how to swap
+two adjacent numbers in reading
+
+00:44:17.120 --> 00:44:22.400 align:middle line:84%
+order and we swap i twice,
+then i gets to where the x is
+
+00:44:22.400 --> 00:44:25.730 align:middle line:90%
+because this is a 3-by-3.
+
+00:44:25.730 --> 00:44:28.010 align:middle line:90%
+That's why twice.
+
+00:44:28.010 --> 00:44:41.900 align:middle line:84%
+So now what we care about is
+what happens when we swap two
+
+00:44:41.900 --> 00:44:59.630 align:middle line:84%
+adjacent items in reading order,
+so not adjacent in the 3-by-3
+
+00:44:59.630 --> 00:45:02.070 align:middle line:84%
+grid but adjacent
+in reading order.
+
+00:45:02.070 --> 00:45:03.210 align:middle line:90%
+That's what we care about.
+
+00:45:03.210 --> 00:45:05.850 align:middle line:84%
+If we can solve this
+and we do it twice,
+
+00:45:05.850 --> 00:45:10.590 align:middle line:84%
+then we will know what happens
+when we do a vertical move.
+
+00:45:10.590 --> 00:45:13.740 align:middle line:84%
+So what happens when I
+swap two numbers i and j?
+
+00:45:13.740 --> 00:45:15.690 align:middle line:84%
+How does that change
+the reading order?
+
+00:45:15.690 --> 00:45:16.800 align:middle line:90%
+I mean, it swaps i and j.
+
+00:45:16.800 --> 00:45:17.820 align:middle line:90%
+That's all.
+
+00:45:17.820 --> 00:45:19.620 align:middle line:84%
+Everything before i
+is still before i.
+
+00:45:19.620 --> 00:45:21.630 align:middle line:84%
+Everything after j
+is still after j.
+
+00:45:21.630 --> 00:45:23.390 align:middle line:84%
+The only thing is
+we're changing--
+
+00:45:23.390 --> 00:45:25.850 align:middle line:84%
+if they're adjacent
+items i and j,
+
+00:45:25.850 --> 00:45:30.220 align:middle line:84%
+we're only flipping
+whether ij is inverted.
+
+00:45:30.220 --> 00:45:33.010 align:middle line:84%
+If ij was in the correct order
+before, if i was less than j,
+
+00:45:33.010 --> 00:45:35.790 align:middle line:84%
+then, after I do the swap,
+they're an inverted pair.
+
+00:45:35.790 --> 00:45:37.690 align:middle line:84%
+If they were an
+inverted pair initially,
+
+00:45:37.690 --> 00:45:40.330 align:middle line:84%
+if i is bigger than j,
+after I do the swap,
+
+00:45:40.330 --> 00:45:42.900 align:middle line:84%
+they're no longer
+an inverted pair.
+
+00:45:42.900 --> 00:45:47.310 align:middle line:84%
+So swapping two
+adjacent items changes
+
+00:45:47.310 --> 00:45:58.445 align:middle line:84%
+the number of inverted
+pairs by plus or minus 1.
+
+00:45:58.445 --> 00:46:02.250 align:middle line:90%
+
+
+00:46:02.250 --> 00:46:06.070 align:middle line:84%
+If they were inverted before,
+it decreases the number.
+
+00:46:06.070 --> 00:46:08.830 align:middle line:84%
+If they weren't inverted
+before, it increases the number,
+
+00:46:08.830 --> 00:46:10.980 align:middle line:90%
+but always by one.
+
+00:46:10.980 --> 00:46:12.370 align:middle line:90%
+Never stays the same.
+
+00:46:12.370 --> 00:46:16.032 align:middle line:90%
+Never changes by seven.
+
+00:46:16.032 --> 00:46:17.860 align:middle line:84%
+So when we swap
+two adjacent pairs,
+
+00:46:17.860 --> 00:46:19.300 align:middle line:90%
+we change by plus or minus 1.
+
+00:46:19.300 --> 00:46:20.910 align:middle line:84%
+When we do a
+vertical move, we do
+
+00:46:20.910 --> 00:46:28.170 align:middle line:84%
+we want to do two of
+these adjacent swaps.
+
+00:46:28.170 --> 00:46:29.555 align:middle line:90%
+So let's continue over here.
+
+00:46:29.555 --> 00:46:33.480 align:middle line:90%
+
+
+00:46:33.480 --> 00:46:41.280 align:middle line:84%
+So if we do two
+adjacent swaps, this
+
+00:46:41.280 --> 00:46:46.680 align:middle line:84%
+will change the number of
+inverted pairs by plus or minus
+
+00:46:46.680 --> 00:46:52.398 align:middle line:90%
+1, plus plus or minus 1.
+
+00:46:52.398 --> 00:46:53.940 align:middle line:84%
+Were each of these
+pluses or minuses?
+
+00:46:53.940 --> 00:46:54.700 align:middle line:90%
+We don't know.
+
+00:46:54.700 --> 00:46:56.430 align:middle line:90%
+They could be plus or minus.
+
+00:46:56.430 --> 00:47:00.960 align:middle line:84%
+But the point is plus or
+minus 1 is an odd number.
+
+00:47:00.960 --> 00:47:03.220 align:middle line:84%
+Plus or minus 1
+is an odd number.
+
+00:47:03.220 --> 00:47:06.020 align:middle line:84%
+When I add two odd numbers,
+this is an even number.
+
+00:47:06.020 --> 00:47:08.880 align:middle line:90%
+
+
+00:47:08.880 --> 00:47:11.110 align:middle line:84%
+Turns out you can
+draw a little picture.
+
+00:47:11.110 --> 00:47:14.820 align:middle line:84%
+If we start at 0 here and we
+do plus or minus 1, and then
+
+00:47:14.820 --> 00:47:18.630 align:middle line:84%
+from here we do plus or
+minus 1, and from here we
+
+00:47:18.630 --> 00:47:20.400 align:middle line:84%
+do plus or minus
+1-- this is a case
+
+00:47:20.400 --> 00:47:23.730 align:middle line:84%
+analysis of all the things
+you could do-- you either get
+
+00:47:23.730 --> 00:47:28.680 align:middle line:90%
+2 or 0 or minus 2.
+
+00:47:28.680 --> 00:47:31.810 align:middle line:84%
+These three numbers
+are all even.
+
+00:47:31.810 --> 00:47:33.430 align:middle line:90%
+But I don't particularly care.
+
+00:47:33.430 --> 00:47:36.228 align:middle line:84%
+It happens to be just
+these three values.
+
+00:47:36.228 --> 00:47:37.895 align:middle line:84%
+What I care is that
+this number is even.
+
+00:47:37.895 --> 00:47:42.300 align:middle line:90%
+
+
+00:47:42.300 --> 00:47:46.980 align:middle line:84%
+We started with P of q
+being true over here.
+
+00:47:46.980 --> 00:47:48.970 align:middle line:90%
+Assume that P of q is true.
+
+00:47:48.970 --> 00:47:51.960 align:middle line:84%
+That means that the number
+of inverted pairs in state q
+
+00:47:51.960 --> 00:47:53.110 align:middle line:90%
+is odd.
+
+00:47:53.110 --> 00:47:56.760 align:middle line:84%
+And now we change that
+number by an even amount.
+
+00:47:56.760 --> 00:48:01.440 align:middle line:90%
+Therefore, it will be odd still.
+
+00:48:01.440 --> 00:48:06.280 align:middle line:84%
+If we take an odd number, we add
+an even number, it stays odd.
+
+00:48:06.280 --> 00:48:11.040 align:middle line:90%
+Therefore, P of r is true.
+
+00:48:11.040 --> 00:48:11.760 align:middle line:90%
+Question?
+
+00:48:11.760 --> 00:48:14.310 align:middle line:84%
+AUDIENCE: What
+happens if you swap--
+
+00:48:14.310 --> 00:48:17.690 align:middle line:90%
+if you swapped the i and the j?
+
+00:48:17.690 --> 00:48:20.023 align:middle line:84%
+ERIK DEMAINE: So the question
+is, why is this two swaps?
+
+00:48:20.023 --> 00:48:23.530 align:middle line:90%
+
+
+00:48:23.530 --> 00:48:25.750 align:middle line:90%
+So the funny thing here--
+
+00:48:25.750 --> 00:48:26.570 align:middle line:90%
+so it's right.
+
+00:48:26.570 --> 00:48:28.630 align:middle line:90%
+If I swap i and j, then--
+
+00:48:28.630 --> 00:48:32.853 align:middle line:84%
+let me maybe draw a
+picture somewhere here.
+
+00:48:32.853 --> 00:48:37.720 align:middle line:90%
+
+
+00:48:37.720 --> 00:48:39.070 align:middle line:90%
+Let's just go here.
+
+00:48:39.070 --> 00:48:40.160 align:middle line:90%
+Scratch space.
+
+00:48:40.160 --> 00:48:45.340 align:middle line:84%
+So if we have i, j, k,
+x, and I swap i and j,
+
+00:48:45.340 --> 00:48:49.990 align:middle line:90%
+then I get j, i, k, x.
+
+00:48:49.990 --> 00:48:51.950 align:middle line:90%
+And then I swap i and k.
+
+00:48:51.950 --> 00:48:55.810 align:middle line:90%
+Then I get j, k, i, x.
+
+00:48:55.810 --> 00:49:00.106 align:middle line:84%
+And you're right, i is
+not quite where I want it.
+
+00:49:00.106 --> 00:49:01.910 align:middle line:90%
+[CHUCKLES] This is funny.
+
+00:49:01.910 --> 00:49:07.180 align:middle line:84%
+I really want i
+to be here, which
+
+00:49:07.180 --> 00:49:14.640 align:middle line:84%
+I can do like this because that
+doesn't change reading order.
+
+00:49:14.640 --> 00:49:16.520 align:middle line:84%
+OK, it's good that
+we spelled this out.
+
+00:49:16.520 --> 00:49:18.920 align:middle line:84%
+And also, I can do
+horizontal moves for free.
+
+00:49:18.920 --> 00:49:23.500 align:middle line:90%
+So j, k, i.
+
+00:49:23.500 --> 00:49:27.020 align:middle line:84%
+This is maybe a way
+to think about it.
+
+00:49:27.020 --> 00:49:31.780 align:middle line:84%
+The point is that these three
+have the same reading order.
+
+00:49:31.780 --> 00:49:33.970 align:middle line:90%
+So those don't really count.
+
+00:49:33.970 --> 00:49:37.377 align:middle line:84%
+But I'm glad you
+had me spell it out.
+
+00:49:37.377 --> 00:49:39.460 align:middle line:84%
+AUDIENCE: So the [INAUDIBLE]
+we're doing right now
+
+00:49:39.460 --> 00:49:41.520 align:middle line:84%
+are not part of the
+valid transition.
+
+00:49:41.520 --> 00:49:43.040 align:middle line:90%
+It's just to just separate them?
+
+00:49:43.040 --> 00:49:43.873 align:middle line:90%
+ERIK DEMAINE: Right.
+
+00:49:43.873 --> 00:49:47.030 align:middle line:84%
+These are not valid
+transitions, indeed.
+
+00:49:47.030 --> 00:49:50.030 align:middle line:84%
+At the end, we get to something
+that's a valid transition.
+
+00:49:50.030 --> 00:49:53.300 align:middle line:84%
+So the transition goes
+from here directly to here.
+
+00:49:53.300 --> 00:49:55.270 align:middle line:84%
+And we're splitting
+it up into some sub
+
+00:49:55.270 --> 00:49:58.000 align:middle line:84%
+moves that aren't valid
+moves by themselves
+
+00:49:58.000 --> 00:49:59.270 align:middle line:90%
+but easier to analyze.
+
+00:49:59.270 --> 00:50:02.110 align:middle line:84%
+First, we think about what
+happens when we swap i and j.
+
+00:50:02.110 --> 00:50:03.980 align:middle line:90%
+That changes by plus or minus 1.
+
+00:50:03.980 --> 00:50:07.370 align:middle line:90%
+Then we swap i and k.
+
+00:50:07.370 --> 00:50:09.933 align:middle line:84%
+That changes these
+by a plus or minus 1.
+
+00:50:09.933 --> 00:50:11.350 align:middle line:84%
+Then we do these
+horizontal moves,
+
+00:50:11.350 --> 00:50:15.500 align:middle line:84%
+which doesn't change
+anything, or horizontal moves.
+
+00:50:15.500 --> 00:50:20.630 align:middle line:84%
+Moving the x in reading order
+doesn't change anything.
+
+00:50:20.630 --> 00:50:23.020 align:middle line:90%
+Cool?
+
+00:50:23.020 --> 00:50:25.410 align:middle line:90%
+All right, great.
+
+00:50:25.410 --> 00:50:29.560 align:middle line:90%
+
+
+00:50:29.560 --> 00:50:31.790 align:middle line:84%
+I feel like I skipped a
+little bit of a step here.
+
+00:50:31.790 --> 00:50:37.720 align:middle line:90%
+
+
+00:50:37.720 --> 00:50:40.550 align:middle line:90%
+So the point is, when we swap--
+
+00:50:40.550 --> 00:50:47.130 align:middle line:84%
+in case 2, when we
+do a vertical move,
+
+00:50:47.130 --> 00:50:53.470 align:middle line:84%
+we started with an odd
+number of inverted pairs.
+
+00:50:53.470 --> 00:50:57.430 align:middle line:90%
+And then we add an even number.
+
+00:50:57.430 --> 00:51:00.500 align:middle line:90%
+And odd plus even equals odd.
+
+00:51:00.500 --> 00:51:03.340 align:middle line:90%
+Therefore, P of r is true.
+
+00:51:03.340 --> 00:51:05.230 align:middle line:90%
+That's the point.
+
+00:51:05.230 --> 00:51:07.840 align:middle line:84%
+So if we start odd,
+we will stay odd.
+
+00:51:07.840 --> 00:51:10.420 align:middle line:84%
+If you swap odd and
+even in this proof,
+
+00:51:10.420 --> 00:51:15.160 align:middle line:84%
+you can also show that if you
+start even, you stay even.
+
+00:51:15.160 --> 00:51:20.100 align:middle line:84%
+But what we really want
+is, for this part here,
+
+00:51:20.100 --> 00:51:23.870 align:middle line:84%
+we want to get P of q to be
+invariant and find a place where
+
+00:51:23.870 --> 00:51:26.820 align:middle line:84%
+P is false, and then conclude
+that r is unreachable.
+
+00:51:26.820 --> 00:51:28.390 align:middle line:90%
+So let's do that quickly.
+
+00:51:28.390 --> 00:51:31.730 align:middle line:90%
+
+
+00:51:31.730 --> 00:51:38.660 align:middle line:84%
+So let's define
+this state to be q0.
+
+00:51:38.660 --> 00:51:41.240 align:middle line:90%
+
+
+00:51:41.240 --> 00:51:43.323 align:middle line:90%
+So for this q0, we have--
+
+00:51:43.323 --> 00:51:47.510 align:middle line:90%
+
+
+00:51:47.510 --> 00:51:56.430 align:middle line:84%
+or maybe let's say if P of q0
+is true, as in this example
+
+00:51:56.430 --> 00:52:03.110 align:middle line:84%
+because there's an odd number
+of inverted pairs, then P of q
+
+00:52:03.110 --> 00:52:04.626 align:middle line:90%
+is invariant.
+
+00:52:04.626 --> 00:52:09.170 align:middle line:90%
+
+
+00:52:09.170 --> 00:52:18.470 align:middle line:84%
+And so by this property,
+if P of r is false,
+
+00:52:18.470 --> 00:52:23.586 align:middle line:90%
+then r is unreachable.
+
+00:52:23.586 --> 00:52:26.960 align:middle line:90%
+
+
+00:52:26.960 --> 00:52:28.670 align:middle line:84%
+So actually what I
+care about is not
+
+00:52:28.670 --> 00:52:31.383 align:middle line:84%
+p of r but P of the
+final state, qf.
+
+00:52:31.383 --> 00:52:35.300 align:middle line:90%
+
+
+00:52:35.300 --> 00:52:37.045 align:middle line:90%
+So that's exactly the scenario.
+
+00:52:37.045 --> 00:52:38.420 align:middle line:84%
+We start in a
+state where we have
+
+00:52:38.420 --> 00:52:39.750 align:middle line:90%
+an odd number of transitions.
+
+00:52:39.750 --> 00:52:45.630 align:middle line:84%
+We're trying to get to a state
+with zero inverted pairs.
+
+00:52:45.630 --> 00:52:48.770 align:middle line:84%
+And so that's not
+going to be possible
+
+00:52:48.770 --> 00:52:50.730 align:middle line:90%
+because we start with P true.
+
+00:52:50.730 --> 00:52:55.010 align:middle line:84%
+And we somehow are trying to
+reach a state where P is false.
+
+00:52:55.010 --> 00:53:00.140 align:middle line:84%
+But if we can prove this
+invariant property--
+
+00:53:00.140 --> 00:53:02.490 align:middle line:84%
+and we've basically done
+all the hard work here.
+
+00:53:02.490 --> 00:53:04.800 align:middle line:84%
+This is just by the
+invariant principle.
+
+00:53:04.800 --> 00:53:07.090 align:middle line:84%
+So now I'm following the
+outline over on the left.
+
+00:53:07.090 --> 00:53:11.510 align:middle line:90%
+
+
+00:53:11.510 --> 00:53:16.200 align:middle line:84%
+Step 1 is-- or part 1
+is that P of q0 is true.
+
+00:53:16.200 --> 00:53:17.570 align:middle line:90%
+We assume that.
+
+00:53:17.570 --> 00:53:23.630 align:middle line:84%
+Step 2 is that P
+of q is preserved.
+
+00:53:23.630 --> 00:53:25.160 align:middle line:90%
+And we just proved that.
+
+00:53:25.160 --> 00:53:26.995 align:middle line:90%
+This is our theorem.
+
+00:53:26.995 --> 00:53:29.510 align:middle line:90%
+
+
+00:53:29.510 --> 00:53:31.670 align:middle line:84%
+So maybe you don't know
+this word, "corollary"--
+
+00:53:31.670 --> 00:53:33.840 align:middle line:84%
+or "cor-aw-luh-ree"
+if you're Canadian.
+
+00:53:33.840 --> 00:53:36.330 align:middle line:84%
+"Corollary" means
+something that follows.
+
+00:53:36.330 --> 00:53:38.250 align:middle line:84%
+So "theorem" means
+something that's true.
+
+00:53:38.250 --> 00:53:40.760 align:middle line:84%
+Both of these are
+supposed to be true.
+
+00:53:40.760 --> 00:53:43.970 align:middle line:84%
+But these are words to say that
+a theorem was the main thing we
+
+00:53:43.970 --> 00:53:44.880 align:middle line:90%
+wanted to prove.
+
+00:53:44.880 --> 00:53:46.400 align:middle line:84%
+And then corollary
+is something that
+
+00:53:46.400 --> 00:53:47.640 align:middle line:90%
+follows immediately from it.
+
+00:53:47.640 --> 00:53:49.650 align:middle line:84%
+It's almost a
+one-line proof here.
+
+00:53:49.650 --> 00:53:53.270 align:middle line:84%
+Once we have the theorem,
+the corollary is immediate.
+
+00:53:53.270 --> 00:53:55.470 align:middle line:90%
+It's just some terminology.
+
+00:53:55.470 --> 00:53:58.736 align:middle line:84%
+So hopefully you now
+believe this is impossible.
+
+00:53:58.736 --> 00:54:02.510 align:middle line:90%
+
+
+00:54:02.510 --> 00:54:04.540 align:middle line:84%
+Any questions
+about the 8 puzzle?
+
+00:54:04.540 --> 00:54:08.420 align:middle line:90%
+
+
+00:54:08.420 --> 00:54:11.340 align:middle line:84%
+For fun, let's solve
+it one more time.
+
+00:54:11.340 --> 00:54:15.420 align:middle line:84%
+I actually didn't have time this
+morning to implement the "only
+
+00:54:15.420 --> 00:54:16.930 align:middle line:90%
+generate solvable puzzles."
+
+00:54:16.930 --> 00:54:19.360 align:middle line:84%
+So I have no idea whether
+this will be solvable.
+
+00:54:19.360 --> 00:54:20.400 align:middle line:90%
+It's kind of exciting.
+
+00:54:20.400 --> 00:54:24.570 align:middle line:84%
+If you can count the inversions,
+you'll figure it out.
+
+00:54:24.570 --> 00:54:27.840 align:middle line:84%
+But I keep moving it,
+so it's pretty hard.
+
+00:54:27.840 --> 00:54:30.780 align:middle line:84%
+And I'm following a
+particularly slow algorithm
+
+00:54:30.780 --> 00:54:36.010 align:middle line:84%
+for solving this puzzle,
+which I won't describe.
+
+00:54:36.010 --> 00:54:38.020 align:middle line:84%
+But it's on wikiHow
+if you're interested.
+
+00:54:38.020 --> 00:54:38.800 align:middle line:90%
+Oh, I solved it.
+
+00:54:38.800 --> 00:54:39.360 align:middle line:90%
+Great.
+
+00:54:39.360 --> 00:54:43.680 align:middle line:84%
+So I must have started with an
+even number of inverted pairs.
+
+00:54:43.680 --> 00:54:47.070 align:middle line:84%
+In a future version, I
+will add that number.
+
+00:54:47.070 --> 00:54:48.195 align:middle line:90%
+But there we go.
+
+00:54:48.195 --> 00:54:48.695 align:middle line:90%
+Cool.
+
+00:54:48.695 --> 00:54:51.705 align:middle line:90%
+
+
+00:54:51.705 --> 00:54:52.205 align:middle line:90%
+Question?
+
+00:54:52.205 --> 00:54:55.590 align:middle line:84%
+AUDIENCE: [INAUDIBLE]
+final stage [INAUDIBLE]?
+
+00:54:55.590 --> 00:55:01.482 align:middle line:90%
+
+
+00:55:01.482 --> 00:55:03.690 align:middle line:84%
+ERIK DEMAINE: So your question
+is, if, in this state,
+
+00:55:03.690 --> 00:55:06.820 align:middle line:84%
+we move six down, how many
+inverted pairs do we get?
+
+00:55:06.820 --> 00:55:07.670 align:middle line:90%
+Let's draw it.
+
+00:55:07.670 --> 00:55:10.710 align:middle line:90%
+
+
+00:55:10.710 --> 00:55:15.790 align:middle line:90%
+So that is 1, 2, 3, 4, 5, x.
+
+00:55:15.790 --> 00:55:18.770 align:middle line:90%
+It should be 2.
+
+00:55:18.770 --> 00:55:21.100 align:middle line:90%
+7, 8, 6.
+
+00:55:21.100 --> 00:55:22.830 align:middle line:84%
+How many inverted
+pairs are there?
+
+00:55:22.830 --> 00:55:24.900 align:middle line:90%
+7 is inverted with 6.
+
+00:55:24.900 --> 00:55:26.620 align:middle line:90%
+8 is inverted with 6.
+
+00:55:26.620 --> 00:55:28.410 align:middle line:90%
+And that's it.
+
+00:55:28.410 --> 00:55:30.310 align:middle line:90%
+So there's an example in action.
+
+00:55:30.310 --> 00:55:32.080 align:middle line:90%
+Vertical move, changing by 2.
+
+00:55:32.080 --> 00:55:33.900 align:middle line:90%
+Sometimes it changes by 0.
+
+00:55:33.900 --> 00:55:37.030 align:middle line:84%
+If i is sandwiched in
+between j and k numerically,
+
+00:55:37.030 --> 00:55:40.350 align:middle line:84%
+sometimes it changes
+by plus or minus 2.
+
+00:55:40.350 --> 00:55:44.880 align:middle line:84%
+Of course, if we do the
+up move, we subtract 2.
+
+00:55:44.880 --> 00:55:46.030 align:middle line:90%
+There was another question.
+
+00:55:46.030 --> 00:55:47.350 align:middle line:90%
+Yeah?
+
+00:55:47.350 --> 00:55:49.470 align:middle line:84%
+AUDIENCE: Can you
+explain the definition
+
+00:55:49.470 --> 00:55:51.100 align:middle line:90%
+of preservation and invariance?
+
+00:55:51.100 --> 00:55:54.400 align:middle line:90%
+And [INAUDIBLE]?
+
+00:55:54.400 --> 00:55:59.290 align:middle line:84%
+ERIK DEMAINE: OK, question is
+explain preserved and invariant.
+
+00:55:59.290 --> 00:56:02.645 align:middle line:84%
+And where are we using
+the different parts?
+
+00:56:02.645 --> 00:56:06.060 align:middle line:90%
+
+
+00:56:06.060 --> 00:56:10.020 align:middle line:84%
+If I can make an induction
+analogy for a second,
+
+00:56:10.020 --> 00:56:13.050 align:middle line:90%
+preserved means--
+
+00:56:13.050 --> 00:56:14.530 align:middle line:90%
+is like your induction step.
+
+00:56:14.530 --> 00:56:17.770 align:middle line:84%
+It says, every time you do a
+transition, if P started true,
+
+00:56:17.770 --> 00:56:19.230 align:middle line:90%
+it remains true.
+
+00:56:19.230 --> 00:56:22.883 align:middle line:84%
+And invariant is what you
+get out of the induction.
+
+00:56:22.883 --> 00:56:24.800 align:middle line:84%
+Let's go over to the
+invariant principle here.
+
+00:56:24.800 --> 00:56:28.020 align:middle line:90%
+
+
+00:56:28.020 --> 00:56:29.640 align:middle line:84%
+The invariant
+principle basically
+
+00:56:29.640 --> 00:56:31.300 align:middle line:84%
+says preserved
+implies invariant,
+
+00:56:31.300 --> 00:56:34.290 align:middle line:84%
+except you also need to
+check that you start true.
+
+00:56:34.290 --> 00:56:37.560 align:middle line:84%
+If P starts true and
+whenever you do a transition
+
+00:56:37.560 --> 00:56:41.370 align:middle line:84%
+it remains true,
+then it's always
+
+00:56:41.370 --> 00:56:44.250 align:middle line:90%
+true for every reachable state.
+
+00:56:44.250 --> 00:56:46.590 align:middle line:84%
+OK, so crucially in
+this setup, we're
+
+00:56:46.590 --> 00:56:49.080 align:middle line:84%
+ignoring all the
+unreachable states,
+
+00:56:49.080 --> 00:56:52.420 align:middle line:84%
+just talking-- invariant only
+talks about reachable states.
+
+00:56:52.420 --> 00:56:55.860 align:middle line:84%
+It says that every
+reachable state P is true.
+
+00:56:55.860 --> 00:56:58.060 align:middle line:84%
+That's what we're
+concluding from,
+
+00:56:58.060 --> 00:57:00.570 align:middle line:84%
+we start true, and every
+time we start in a true state
+
+00:57:00.570 --> 00:57:03.390 align:middle line:84%
+and we make a transition,
+we remain true.
+
+00:57:03.390 --> 00:57:06.520 align:middle line:90%
+Hopefully that's clear.
+
+00:57:06.520 --> 00:57:08.890 align:middle line:84%
+Takes a little while
+to get comfortable
+
+00:57:08.890 --> 00:57:11.712 align:middle line:84%
+with these definitions,
+but very important,
+
+00:57:11.712 --> 00:57:13.670 align:middle line:84%
+the difference between
+preserved and invariant.
+
+00:57:13.670 --> 00:57:17.650 align:middle line:84%
+So if you forget, read
+the definition, or just
+
+00:57:17.650 --> 00:57:19.145 align:middle line:90%
+follow this template.
+
+00:57:19.145 --> 00:57:20.270 align:middle line:90%
+This makes it pretty clear.
+
+00:57:20.270 --> 00:57:22.150 align:middle line:84%
+Usually, we just want
+to prove invariant.
+
+00:57:22.150 --> 00:57:24.260 align:middle line:90%
+And there's a clear start state.
+
+00:57:24.260 --> 00:57:27.430 align:middle line:84%
+So in fact, the next
+example will have a--
+
+00:57:27.430 --> 00:57:29.000 align:middle line:90%
+well, no, that's not true.
+
+00:57:29.000 --> 00:57:30.770 align:middle line:84%
+But if there's a
+clear start state,
+
+00:57:30.770 --> 00:57:32.420 align:middle line:84%
+you can just follow
+this template.
+
+00:57:32.420 --> 00:57:36.160 align:middle line:84%
+And all you care about
+is proving invariant.
+
+00:57:36.160 --> 00:57:42.216 align:middle line:84%
+OK, let's do the next
+topic, which is termination.
+
+00:57:42.216 --> 00:58:01.210 align:middle line:90%
+
+
+00:58:01.210 --> 00:58:09.970 align:middle line:84%
+And maybe I want to start
+with an example, which
+
+00:58:09.970 --> 00:58:12.126 align:middle line:90%
+is a simple sort of machine.
+
+00:58:12.126 --> 00:58:17.650 align:middle line:90%
+
+
+00:58:17.650 --> 00:58:20.110 align:middle line:90%
+This is another state machine.
+
+00:58:20.110 --> 00:58:23.470 align:middle line:90%
+And it sorts n numbers.
+
+00:58:23.470 --> 00:58:24.970 align:middle line:84%
+This is a problem
+you study a lot
+
+00:58:24.970 --> 00:58:28.245 align:middle line:84%
+in the follow-ons to this
+class, the algorithms classes.
+
+00:58:28.245 --> 00:58:32.650 align:middle line:90%
+
+
+00:58:32.650 --> 00:58:36.970 align:middle line:84%
+So suppose we're given a bunch
+of real numbers, or integers,
+
+00:58:36.970 --> 00:58:38.890 align:middle line:90%
+whatever.
+
+00:58:38.890 --> 00:58:45.765 align:middle line:84%
+We want to sort them
+in increasing order.
+
+00:58:45.765 --> 00:58:53.710 align:middle line:90%
+
+
+00:58:53.710 --> 00:58:57.940 align:middle line:84%
+OK, here is-- so they're given
+in some particular order, a1
+
+00:58:57.940 --> 00:58:58.810 align:middle line:90%
+through an.
+
+00:58:58.810 --> 00:59:01.390 align:middle line:84%
+And I want to rearrange
+them so it has exactly
+
+00:59:01.390 --> 00:59:03.020 align:middle line:90%
+the same set of numbers--
+
+00:59:03.020 --> 00:59:06.110 align:middle line:84%
+or exactly the same numbers
+but in a different order,
+
+00:59:06.110 --> 00:59:07.490 align:middle line:90%
+and this time increasing order.
+
+00:59:07.490 --> 00:59:10.090 align:middle line:84%
+So I want a1 to be less
+than or equal to a2,
+
+00:59:10.090 --> 00:59:12.580 align:middle line:84%
+less than or equal
+to a3, and so on.
+
+00:59:12.580 --> 00:59:14.650 align:middle line:84%
+Here is a very simple
+algorithm to do
+
+00:59:14.650 --> 00:59:25.270 align:middle line:84%
+that, which is while
+there's some index
+
+00:59:25.270 --> 00:59:38.590 align:middle line:84%
+i, where ai is bigger than ai
+plus 1, swap ai with ai plus 1.
+
+00:59:38.590 --> 00:59:41.050 align:middle line:84%
+So I'm just looking
+at consecutive pairs
+
+00:59:41.050 --> 00:59:42.650 align:middle line:90%
+ai to ai plus 1.
+
+00:59:42.650 --> 00:59:45.430 align:middle line:84%
+And if there's some that's
+out of order, i is less than i
+
+00:59:45.430 --> 00:59:48.410 align:middle line:84%
+plus 1 but ai is
+greater than ai plus 1,
+
+00:59:48.410 --> 00:59:50.840 align:middle line:84%
+then I want to swap
+them in the right order.
+
+00:59:50.840 --> 00:59:55.420 align:middle line:84%
+We can see this algorithm
+in action for fun.
+
+00:59:55.420 --> 01:00:00.020 align:middle line:84%
+And then we're going to convert
+this algorithm into a state
+
+01:00:00.020 --> 01:00:01.370 align:middle line:90%
+machine.
+
+01:00:01.370 --> 01:00:04.500 align:middle line:84%
+So just pretend you understand
+algorithms for a second.
+
+01:00:04.500 --> 01:00:06.840 align:middle line:84%
+Here, we have the numbers
+in a particular order.
+
+01:00:06.840 --> 01:00:09.380 align:middle line:84%
+The height corresponds to
+the value that's written,
+
+01:00:09.380 --> 01:00:11.730 align:middle line:90%
+3, 6, 2, 5, 4, 1.
+
+01:00:11.730 --> 01:00:16.100 align:middle line:84%
+And we're just going
+to do an example.
+
+01:00:16.100 --> 01:00:17.490 align:middle line:90%
+But then we do a swap.
+
+01:00:17.490 --> 01:00:20.370 align:middle line:84%
+A swap-- we're always
+swapping adjacent pairs.
+
+01:00:20.370 --> 01:00:22.310 align:middle line:84%
+And then Pac-Man comes
+over to the left,
+
+01:00:22.310 --> 01:00:24.840 align:middle line:90%
+and we get them in sorted order.
+
+01:00:24.840 --> 01:00:28.310 align:middle line:90%
+So that is the algorithm.
+
+01:00:28.310 --> 01:00:32.005 align:middle line:84%
+Let's now analyze it
+as a state machine.
+
+01:00:32.005 --> 01:00:34.970 align:middle line:90%
+
+
+01:00:34.970 --> 01:00:39.920 align:middle line:84%
+So first question is,
+what are the states Q?
+
+01:00:39.920 --> 01:00:42.080 align:middle line:84%
+Well, throughout
+this algorithm-- so
+
+01:00:42.080 --> 01:00:46.520 align:middle line:84%
+this is in our head, what
+we're thinking about doing.
+
+01:00:46.520 --> 01:00:48.352 align:middle line:90%
+And we choose Ii arbitrarily.
+
+01:00:48.352 --> 01:00:50.310 align:middle line:84%
+Now we're going to model
+it as a state machine.
+
+01:00:50.310 --> 01:00:53.840 align:middle line:84%
+This will make precise
+what's actually going on.
+
+01:00:53.840 --> 01:00:57.420 align:middle line:84%
+As we do this, we're taking the
+original items in some order.
+
+01:00:57.420 --> 01:00:59.280 align:middle line:90%
+We're always swapping items.
+
+01:00:59.280 --> 01:01:04.130 align:middle line:84%
+So at any moment in time, what
+we have is some reordering
+
+01:01:04.130 --> 01:01:06.180 align:middle line:90%
+of the ai's.
+
+01:01:06.180 --> 01:01:09.200 align:middle line:90%
+Those are our states.
+
+01:01:09.200 --> 01:01:12.850 align:middle line:84%
+Let's define Q to be
+all possible orderings.
+
+01:01:12.850 --> 01:01:15.350 align:middle line:84%
+These may not all be reachable,
+but this is the thing that's
+
+01:01:15.350 --> 01:01:18.830 align:middle line:90%
+easy to define--
+
+01:01:18.830 --> 01:01:22.525 align:middle line:84%
+all possible
+orderings of a1 to an.
+
+01:01:22.525 --> 01:01:27.800 align:middle line:90%
+
+
+01:01:27.800 --> 01:01:29.130 align:middle line:90%
+For this template--
+
+01:01:29.130 --> 01:01:42.320 align:middle line:90%
+
+
+01:01:42.320 --> 01:01:44.246 align:middle line:90%
+OK, what are the transitions?
+
+01:01:44.246 --> 01:01:58.340 align:middle line:90%
+
+
+01:01:58.340 --> 01:02:01.910 align:middle line:84%
+Transitions are going to
+take some ai ai plus one pair
+
+01:02:01.910 --> 01:02:03.890 align:middle line:90%
+and swap them.
+
+01:02:03.890 --> 01:02:06.890 align:middle line:84%
+So if we start with
+them in this order,
+
+01:02:06.890 --> 01:02:11.810 align:middle line:84%
+they're going to end up
+in the opposite order.
+
+01:02:11.810 --> 01:02:13.970 align:middle line:84%
+And we are only
+allowed to do this when
+
+01:02:13.970 --> 01:02:19.760 align:middle line:90%
+ai is bigger than ai plus 1.
+
+01:02:19.760 --> 01:02:22.820 align:middle line:90%
+So that's the transitions.
+
+01:02:22.820 --> 01:02:25.680 align:middle line:84%
+Implicitly, this specifies
+exactly the algorithm.
+
+01:02:25.680 --> 01:02:28.670 align:middle line:84%
+The algorithm says, take
+some i where ai is bigger
+
+01:02:28.670 --> 01:02:31.742 align:middle line:90%
+than ai plus 1, and swap them.
+
+01:02:31.742 --> 01:02:33.200 align:middle line:84%
+That's exactly what
+the transitions
+
+01:02:33.200 --> 01:02:37.610 align:middle line:84%
+specify because we can
+take any transition that's
+
+01:02:37.610 --> 01:02:38.940 align:middle line:90%
+valid from any state.
+
+01:02:38.940 --> 01:02:43.140 align:middle line:84%
+So if we can find any i where
+ai is greater than ai plus 1,
+
+01:02:43.140 --> 01:02:45.930 align:middle line:84%
+then swapping that pair
+is a valid transition.
+
+01:02:45.930 --> 01:02:47.390 align:middle line:90%
+We don't know which one will do.
+
+01:02:47.390 --> 01:02:50.000 align:middle line:84%
+State machine will
+follow some execution
+
+01:02:50.000 --> 01:02:54.750 align:middle line:84%
+which will do one of these
+until it can't anymore.
+
+01:02:54.750 --> 01:02:56.693 align:middle line:90%
+OK, great.
+
+01:02:56.693 --> 01:03:03.000 align:middle line:90%
+
+
+01:03:03.000 --> 01:03:04.570 align:middle line:90%
+Can't anymore.
+
+01:03:04.570 --> 01:03:08.570 align:middle line:84%
+Let's define a tool
+which is final states.
+
+01:03:08.570 --> 01:03:15.630 align:middle line:90%
+
+
+01:03:15.630 --> 01:03:24.090 align:middle line:84%
+Let's call a state
+q final if there's
+
+01:03:24.090 --> 01:03:31.500 align:middle line:84%
+no transition q to r and T,
+if there's no transition that
+
+01:03:31.500 --> 01:03:33.310 align:middle line:90%
+starts at q and goes somewhere.
+
+01:03:33.310 --> 01:03:36.030 align:middle line:90%
+
+
+01:03:36.030 --> 01:03:40.180 align:middle line:84%
+So in the 8 puzzle, there
+are no final states.
+
+01:03:40.180 --> 01:03:41.470 align:middle line:90%
+You can always make moves.
+
+01:03:41.470 --> 01:03:42.323 align:middle line:90%
+You never are done.
+
+01:03:42.323 --> 01:03:44.740 align:middle line:84%
+You're done only when you
+happen to reach the final state.
+
+01:03:44.740 --> 01:03:46.500 align:middle line:84%
+But there's nothing
+in the move definition
+
+01:03:46.500 --> 01:03:49.680 align:middle line:84%
+that prevents you
+from continuing.
+
+01:03:49.680 --> 01:03:53.480 align:middle line:84%
+In this problem, there
+are final states.
+
+01:03:53.480 --> 01:04:00.390 align:middle line:90%
+
+
+01:04:00.390 --> 01:04:10.980 align:middle line:84%
+I claim it's exactly a0 to
+an, where a1 is less than
+
+01:04:10.980 --> 01:04:13.440 align:middle line:84%
+or equal to a2, is less than
+or equal to a3, and so on,
+
+01:04:13.440 --> 01:04:18.000 align:middle line:84%
+is less than or equal to
+an, namely the sorted order.
+
+01:04:18.000 --> 01:04:19.320 align:middle line:90%
+Why?
+
+01:04:19.320 --> 01:04:22.200 align:middle line:84%
+Well, first of all, I
+claim this state is final
+
+01:04:22.200 --> 01:04:25.680 align:middle line:84%
+because if you look at any
+pair ai, ai plus 1, we have ai
+
+01:04:25.680 --> 01:04:27.610 align:middle line:84%
+is less than or
+equal to ai plus 1.
+
+01:04:27.610 --> 01:04:29.650 align:middle line:84%
+So we don't have a
+transition out of there.
+
+01:04:29.650 --> 01:04:31.540 align:middle line:84%
+So these states are
+definitely final.
+
+01:04:31.540 --> 01:04:33.960 align:middle line:84%
+I also claim that it's
+all the final states
+
+01:04:33.960 --> 01:04:39.870 align:middle line:84%
+because if I had some state
+where this is not true,
+
+01:04:39.870 --> 01:04:43.200 align:middle line:84%
+that means one of these
+inequalities is not true.
+
+01:04:43.200 --> 01:04:46.030 align:middle line:84%
+So that means there's some ai
+that's greater than ai plus 1.
+
+01:04:46.030 --> 01:04:48.240 align:middle line:90%
+And then there's a transition.
+
+01:04:48.240 --> 01:04:52.890 align:middle line:84%
+So that was a spoken argument
+for why the final states are
+
+01:04:52.890 --> 01:04:54.840 align:middle line:90%
+exactly this.
+
+01:04:54.840 --> 01:04:58.750 align:middle line:84%
+Technically, we're proving
+all of these states are final
+
+01:04:58.750 --> 01:05:01.030 align:middle line:84%
+and that all final
+states are of this form,
+
+01:05:01.030 --> 01:05:04.770 align:middle line:84%
+and therefore these are
+all the final states.
+
+01:05:04.770 --> 01:05:06.463 align:middle line:90%
+OK, cool.
+
+01:05:06.463 --> 01:05:09.330 align:middle line:90%
+
+
+01:05:09.330 --> 01:05:16.827 align:middle line:84%
+So this gives us something
+we call partially correct.
+
+01:05:16.827 --> 01:05:18.410 align:middle line:84%
+I'm not going to
+define this formally.
+
+01:05:18.410 --> 01:05:22.170 align:middle line:90%
+
+
+01:05:22.170 --> 01:05:25.890 align:middle line:84%
+Partially correct
+machine is a machine
+
+01:05:25.890 --> 01:05:32.550 align:middle line:84%
+where, if it terminates,
+which I haven't defined,
+
+01:05:32.550 --> 01:05:36.575 align:middle line:90%
+then gives the correct answer.
+
+01:05:36.575 --> 01:05:43.830 align:middle line:90%
+
+
+01:05:43.830 --> 01:05:45.365 align:middle line:90%
+What does "terminate" mean?
+
+01:05:45.365 --> 01:06:39.400 align:middle line:90%
+
+
+01:06:39.400 --> 01:06:42.790 align:middle line:90%
+OK, to terminate means--
+
+01:06:42.790 --> 01:06:45.460 align:middle line:84%
+when we're going to say a state
+machine terminates, really what
+
+01:06:45.460 --> 01:06:47.450 align:middle line:84%
+we're meaning is it
+always terminates.
+
+01:06:47.450 --> 01:06:51.050 align:middle line:84%
+No matter how you execute
+this machine, it stops.
+
+01:06:51.050 --> 01:06:56.842 align:middle line:84%
+And the only way it can stop is
+that it reaches a final state.
+
+01:06:56.842 --> 01:06:58.300 align:middle line:84%
+If you think about
+it for a second,
+
+01:06:58.300 --> 01:07:01.820 align:middle line:84%
+the definition of "execution"
+was a sequence of transitions.
+
+01:07:01.820 --> 01:07:05.290 align:middle line:84%
+And so terminates says
+there's no infinite execution.
+
+01:07:05.290 --> 01:07:08.050 align:middle line:84%
+For an infinite execution,
+that means every state qi,
+
+01:07:08.050 --> 01:07:11.110 align:middle line:84%
+there's some transition
+out of it to qi plus 1.
+
+01:07:11.110 --> 01:07:14.660 align:middle line:84%
+So if that's not possible,
+that means that, at some point,
+
+01:07:14.660 --> 01:07:16.900 align:middle line:90%
+you reach a state that's final.
+
+01:07:16.900 --> 01:07:20.825 align:middle line:84%
+And from there,
+there's no transition.
+
+01:07:20.825 --> 01:07:22.450 align:middle line:84%
+So you could either
+say "it terminates"
+
+01:07:22.450 --> 01:07:25.900 align:middle line:84%
+means there's no infinite
+execution or every execution
+
+01:07:25.900 --> 01:07:27.230 align:middle line:90%
+reaches a final state.
+
+01:07:27.230 --> 01:07:29.166 align:middle line:90%
+These turn out to be equivalent.
+
+01:07:29.166 --> 01:07:32.020 align:middle line:90%
+
+
+01:07:32.020 --> 01:07:35.740 align:middle line:84%
+So now I claim what we've shown
+is that, for the simple sorter
+
+01:07:35.740 --> 01:07:39.400 align:middle line:84%
+machine, it actually sorts in
+this partially correct sense
+
+01:07:39.400 --> 01:07:43.030 align:middle line:84%
+that if the machine
+terminates, then
+
+01:07:43.030 --> 01:07:45.280 align:middle line:84%
+it will give the correct
+answer because if it reaches
+
+01:07:45.280 --> 01:07:47.690 align:middle line:90%
+a final state, it's sorted.
+
+01:07:47.690 --> 01:07:49.840 align:middle line:90%
+That's what we just argued.
+
+01:07:49.840 --> 01:07:52.060 align:middle line:90%
+Now, that's not enough.
+
+01:07:52.060 --> 01:07:54.290 align:middle line:84%
+We also want to show
+that it terminates.
+
+01:07:54.290 --> 01:07:58.960 align:middle line:84%
+And so really, the
+main thing to do--
+
+01:07:58.960 --> 01:08:00.400 align:middle line:90%
+the main thing to do--
+
+01:08:00.400 --> 01:08:03.160 align:middle line:90%
+is to prove termination.
+
+01:08:03.160 --> 01:08:14.590 align:middle line:84%
+And in particular, let's
+say a machine is correct
+
+01:08:14.590 --> 01:08:20.380 align:middle line:84%
+if it terminates and produces
+the right answer, which
+
+01:08:20.380 --> 01:08:21.614 align:middle line:90%
+was partially correct.
+
+01:08:21.614 --> 01:08:26.062 align:middle line:90%
+
+
+01:08:26.062 --> 01:08:27.979 align:middle line:84%
+OK, I haven't formally
+defined "right answer."
+
+01:08:27.979 --> 01:08:29.646 align:middle line:84%
+But for the sorting
+problem, it's clear.
+
+01:08:29.646 --> 01:08:34.779 align:middle line:84%
+We want to get them in order so
+that this holds, a1 is less than
+
+01:08:34.779 --> 01:08:38.859 align:middle line:84%
+or equal to a2, is less than
+or equal to dot, dot, dot.
+
+01:08:38.859 --> 01:08:40.859 align:middle line:84%
+OK, so we've proved
+partially correct.
+
+01:08:40.859 --> 01:08:42.090 align:middle line:90%
+But we need to prove correct.
+
+01:08:42.090 --> 01:08:47.760 align:middle line:84%
+And in particular, we need
+to show that it terminates.
+
+01:08:47.760 --> 01:08:52.550 align:middle line:84%
+So we need some tools
+for proving termination
+
+01:08:52.550 --> 01:08:55.399 align:middle line:90%
+for this machine.
+
+01:08:55.399 --> 01:08:56.770 align:middle line:90%
+Let's go to another board.
+
+01:08:56.770 --> 01:09:02.540 align:middle line:90%
+
+
+01:09:02.540 --> 01:09:06.750 align:middle line:84%
+We want to make sure that this
+algorithm doesn't take forever,
+
+01:09:06.750 --> 01:09:08.330 align:middle line:84%
+it doesn't go in
+an infinite loop
+
+01:09:08.330 --> 01:09:10.750 align:middle line:84%
+and never reaches
+the sorted state.
+
+01:09:10.750 --> 01:09:20.930 align:middle line:90%
+
+
+01:09:20.930 --> 01:09:23.609 align:middle line:84%
+Let me define a
+general tool for this.
+
+01:09:23.609 --> 01:09:26.079 align:middle line:84%
+This is how we will always
+prove termination in this class.
+
+01:09:26.079 --> 01:09:42.710 align:middle line:90%
+
+
+01:09:42.710 --> 01:09:45.740 align:middle line:90%
+It's called a derived variable.
+
+01:09:45.740 --> 01:09:48.550 align:middle line:84%
+This is a reference to
+random variables, which
+
+01:09:48.550 --> 01:09:50.300 align:middle line:84%
+we will see when we
+get to the probability
+
+01:09:50.300 --> 01:09:51.420 align:middle line:90%
+section of the class.
+
+01:09:51.420 --> 01:09:53.420 align:middle line:84%
+Lots of forward
+references today.
+
+01:09:53.420 --> 01:09:54.360 align:middle line:90%
+It's very simple.
+
+01:09:54.360 --> 01:10:00.350 align:middle line:84%
+It's just, for every state, we
+define a real number, x of q,
+
+01:10:00.350 --> 01:10:02.180 align:middle line:90%
+however you want.
+
+01:10:02.180 --> 01:10:08.540 align:middle line:84%
+In other words,
+this is a function
+
+01:10:08.540 --> 01:10:14.258 align:middle line:84%
+from the set of states
+to the real numbers.
+
+01:10:14.258 --> 01:10:15.800 align:middle line:84%
+In our applications,
+we're only going
+
+01:10:15.800 --> 01:10:17.837 align:middle line:84%
+to think of the
+natural numbers here.
+
+01:10:17.837 --> 01:10:19.670 align:middle line:84%
+But in general, this
+could be a real number.
+
+01:10:19.670 --> 01:10:22.320 align:middle line:90%
+
+
+01:10:22.320 --> 01:10:25.520 align:middle line:84%
+And we're going to call it
+a derived variable strictly
+
+01:10:25.520 --> 01:10:42.380 align:middle line:84%
+decreasing if whenever we have
+a transition from q to r in T--
+
+01:10:42.380 --> 01:10:45.860 align:middle line:90%
+it's a valid transition--
+
+01:10:45.860 --> 01:10:52.610 align:middle line:84%
+we have x of q is strictly
+greater than x of r.
+
+01:10:52.610 --> 01:10:55.560 align:middle line:84%
+The new value is strictly
+less than the old value.
+
+01:10:55.560 --> 01:10:57.410 align:middle line:90%
+That's strictly decreasing.
+
+01:10:57.410 --> 01:10:59.410 align:middle line:84%
+This is a very
+strange looking colon.
+
+01:10:59.410 --> 01:11:03.371 align:middle line:90%
+
+
+01:11:03.371 --> 01:11:05.580 align:middle line:84%
+So again, this is
+about a state machine.
+
+01:11:05.580 --> 01:11:07.470 align:middle line:84%
+So we can talk
+about transitions.
+
+01:11:07.470 --> 01:11:11.900 align:middle line:84%
+And every transition strictly
+decreases the derived variable.
+
+01:11:11.900 --> 01:11:14.098 align:middle line:84%
+This is going to be our
+analog to state predicates
+
+01:11:14.098 --> 01:11:15.140 align:middle line:90%
+and preserved invariance.
+
+01:11:15.140 --> 01:11:20.400 align:middle line:84%
+State predicates we map to
+true and false, or 0 and 1.
+
+01:11:20.400 --> 01:11:22.760 align:middle line:84%
+Now we're generalizing
+to allow it to map
+
+01:11:22.760 --> 01:11:25.230 align:middle line:90%
+to any number, any real number.
+
+01:11:25.230 --> 01:11:27.470 align:middle line:90%
+But very similar notion.
+
+01:11:27.470 --> 01:11:29.740 align:middle line:84%
+Just we're outside
+the Boolean realm now.
+
+01:11:29.740 --> 01:11:33.710 align:middle line:90%
+
+
+01:11:33.710 --> 01:11:37.770 align:middle line:84%
+It's very odd to
+talk about strictly
+
+01:11:37.770 --> 01:11:41.140 align:middle line:90%
+decreasing for Booleans.
+
+01:11:41.140 --> 01:11:43.350 align:middle line:90%
+We need this.
+
+01:11:43.350 --> 01:11:46.820 align:middle line:90%
+OK, here is a wonderful theorem.
+
+01:11:46.820 --> 01:11:50.730 align:middle line:90%
+
+
+01:11:50.730 --> 01:11:52.600 align:middle line:84%
+It'll be obvious
+once I state it.
+
+01:11:52.600 --> 01:11:55.870 align:middle line:84%
+But it's very useful
+for proving termination.
+
+01:11:55.870 --> 01:11:57.650 align:middle line:84%
+It's how most
+termination arguments go.
+
+01:11:57.650 --> 01:12:00.330 align:middle line:90%
+
+
+01:12:00.330 --> 01:12:06.410 align:middle line:84%
+So it says, suppose you have
+a derived variable x of q.
+
+01:12:06.410 --> 01:12:14.700 align:middle line:90%
+
+
+01:12:14.700 --> 01:12:17.456 align:middle line:84%
+And suppose it satisfies
+two properties.
+
+01:12:17.456 --> 01:12:20.820 align:middle line:90%
+
+
+01:12:20.820 --> 01:12:26.255 align:middle line:84%
+Property 1 is it's actually over
+the natural numbers, not reals.
+
+01:12:26.255 --> 01:12:30.240 align:middle line:90%
+
+
+01:12:30.240 --> 01:12:36.106 align:middle line:84%
+And property 2 is that
+it's strictly decreasing.
+
+01:12:36.106 --> 01:12:47.310 align:middle line:90%
+
+
+01:12:47.310 --> 01:12:52.376 align:middle line:90%
+Then, state machine terminates.
+
+01:12:52.376 --> 01:13:05.790 align:middle line:90%
+
+
+01:13:05.790 --> 01:13:07.960 align:middle line:84%
+So the "then" is, of
+course, what we want.
+
+01:13:07.960 --> 01:13:10.300 align:middle line:84%
+We want to show that our
+state machine terminates.
+
+01:13:10.300 --> 01:13:12.490 align:middle line:84%
+So I claim this is
+all you need to show.
+
+01:13:12.490 --> 01:13:15.840 align:middle line:84%
+You need to construct some
+derived variable where the value
+
+01:13:15.840 --> 01:13:17.020 align:middle line:90%
+is always a natural number.
+
+01:13:17.020 --> 01:13:18.690 align:middle line:84%
+So crucially, it's
+always non-negative.
+
+01:13:18.690 --> 01:13:21.127 align:middle line:90%
+And it's always an integer.
+
+01:13:21.127 --> 01:13:23.460 align:middle line:84%
+I highlight this instead of
+putting it in the definition
+
+01:13:23.460 --> 01:13:25.543 align:middle line:84%
+because this is something
+we really need to prove.
+
+01:13:25.543 --> 01:13:28.090 align:middle line:84%
+This theorem is false if
+you allow real numbers.
+
+01:13:28.090 --> 01:13:31.070 align:middle line:84%
+It's false if you
+allow negative numbers.
+
+01:13:31.070 --> 01:13:33.710 align:middle line:84%
+Very important that they're
+non-negative integers.
+
+01:13:33.710 --> 01:13:35.480 align:middle line:84%
+So that's something
+we need to check.
+
+01:13:35.480 --> 01:13:37.930 align:middle line:90%
+And it's strictly decreasing.
+
+01:13:37.930 --> 01:13:39.050 align:middle line:90%
+That's all we need.
+
+01:13:39.050 --> 01:13:41.710 align:middle line:84%
+Then we're guaranteed the
+machine will terminate.
+
+01:13:41.710 --> 01:13:43.870 align:middle line:90%
+Why?
+
+01:13:43.870 --> 01:13:46.690 align:middle line:90%
+Any guesses why?
+
+01:13:46.690 --> 01:13:51.040 align:middle line:84%
+Why is this guaranteed that
+our machine terminates?
+
+01:13:51.040 --> 01:13:52.135 align:middle line:90%
+Yeah?
+
+01:13:52.135 --> 01:13:54.740 align:middle line:84%
+AUDIENCE: Well,
+when you reach 0,
+
+01:13:54.740 --> 01:13:56.960 align:middle line:84%
+if x sub q is
+strictly decreasing,
+
+01:13:56.960 --> 01:13:58.190 align:middle line:90%
+there's nowhere to decrease.
+
+01:13:58.190 --> 01:14:00.258 align:middle line:84%
+So there must be no
+more transitions.
+
+01:14:00.258 --> 01:14:01.550 align:middle line:90%
+ERIK DEMAINE: That sounds good.
+
+01:14:01.550 --> 01:14:03.880 align:middle line:90%
+So when x of q reaches 0--
+
+01:14:03.880 --> 01:14:05.755 align:middle line:84%
+I don't know if it does,
+but if it reaches 0,
+
+01:14:05.755 --> 01:14:07.880 align:middle line:84%
+you definitely can't go
+any farther because there's
+
+01:14:07.880 --> 01:14:09.020 align:middle line:90%
+no transitions out of 0.
+
+01:14:09.020 --> 01:14:11.780 align:middle line:84%
+You can't strictly decrease
+from 0 if you're non-negative.
+
+01:14:11.780 --> 01:14:14.075 align:middle line:90%
+Why do we get to zero?
+
+01:14:14.075 --> 01:14:14.575 align:middle line:90%
+Yeah?
+
+01:14:14.575 --> 01:14:16.130 align:middle line:90%
+AUDIENCE: We don't necessarily.
+
+01:14:16.130 --> 01:14:18.560 align:middle line:84%
+But based on the construction
+of natural numbers,
+
+01:14:18.560 --> 01:14:22.945 align:middle line:84%
+we will reach a minimum because
+it's bounded below, [INAUDIBLE].
+
+01:14:22.945 --> 01:14:25.400 align:middle line:84%
+ERIK DEMAINE: OK, we
+don't necessarily reach 0,
+
+01:14:25.400 --> 01:14:27.410 align:middle line:90%
+but we get to some minimum.
+
+01:14:27.410 --> 01:14:30.080 align:middle line:84%
+Yeah, I think these are
+all in the right direction.
+
+01:14:30.080 --> 01:14:32.170 align:middle line:84%
+I'll write down
+what I would call
+
+01:14:32.170 --> 01:14:37.790 align:middle line:84%
+a sketch that's thinking about
+it kind of the other way around.
+
+01:14:37.790 --> 01:14:41.800 align:middle line:84%
+Instead of focusing
+on x of q decreasing,
+
+01:14:41.800 --> 01:14:45.800 align:middle line:84%
+I want to think about
+executions of this machine.
+
+01:14:45.800 --> 01:14:48.290 align:middle line:84%
+We want to prove that
+the machine terminates.
+
+01:14:48.290 --> 01:14:52.040 align:middle line:84%
+That means that there are
+no infinite sequences.
+
+01:14:52.040 --> 01:14:55.610 align:middle line:84%
+In other words, all
+executions have finite length.
+
+01:14:55.610 --> 01:15:11.800 align:middle line:84%
+I claim all executions
+have length at most x of q0
+
+01:15:11.800 --> 01:15:14.710 align:middle line:84%
+because every time I
+take a step, every time I
+
+01:15:14.710 --> 01:15:18.410 align:middle line:84%
+do a transition, x
+decreases by at least one.
+
+01:15:18.410 --> 01:15:21.310 align:middle line:84%
+If it starts at x
+of q0, it can only
+
+01:15:21.310 --> 01:15:23.607 align:middle line:90%
+decrease by 1 that many times.
+
+01:15:23.607 --> 01:15:25.690 align:middle line:84%
+And at that point, it will
+have to have reached 0,
+
+01:15:25.690 --> 01:15:26.690 align:middle line:90%
+and then it has to stop.
+
+01:15:26.690 --> 01:15:28.190 align:middle line:90%
+Maybe it stopped earlier.
+
+01:15:28.190 --> 01:15:31.620 align:middle line:84%
+But this guarantees
+that it stops.
+
+01:15:31.620 --> 01:15:35.880 align:middle line:84%
+Every step I make, I strictly
+decrease x of q by at least one.
+
+01:15:35.880 --> 01:15:36.840 align:middle line:90%
+We start here.
+
+01:15:36.840 --> 01:15:38.250 align:middle line:90%
+We can't go below 0.
+
+01:15:38.250 --> 01:15:40.500 align:middle line:84%
+So the number of
+moves is at most that.
+
+01:15:40.500 --> 01:15:42.440 align:middle line:90%
+You can prove this by induction.
+
+01:15:42.440 --> 01:15:45.900 align:middle line:84%
+But it's kind of
+straightforward.
+
+01:15:45.900 --> 01:15:47.550 align:middle line:90%
+So you're in the right idea.
+
+01:15:47.550 --> 01:15:49.640 align:middle line:84%
+But this is a
+little more precise.
+
+01:15:49.640 --> 01:15:50.180 align:middle line:90%
+Great.
+
+01:15:50.180 --> 01:15:52.310 align:middle line:84%
+So now let's apply our
+termination theorem
+
+01:15:52.310 --> 01:15:54.650 align:middle line:90%
+to the simple sorter machine.
+
+01:15:54.650 --> 01:15:58.070 align:middle line:84%
+But to do that,
+we need to define
+
+01:15:58.070 --> 01:16:00.300 align:middle line:90%
+one of these derived variables.
+
+01:16:00.300 --> 01:16:04.850 align:middle line:90%
+
+
+01:16:04.850 --> 01:16:11.150 align:middle line:84%
+And-- [CHUCKLES] --it's
+actually this one.
+
+01:16:11.150 --> 01:16:13.320 align:middle line:84%
+I'll be mean and
+just erase this.
+
+01:16:13.320 --> 01:16:15.740 align:middle line:90%
+There's our derived variable.
+
+01:16:15.740 --> 01:16:19.220 align:middle line:90%
+I'll rewrite it.
+
+01:16:19.220 --> 01:16:20.840 align:middle line:84%
+So there's a reason
+these two examples
+
+01:16:20.840 --> 01:16:22.230 align:middle line:90%
+are in the same lecture.
+
+01:16:22.230 --> 01:16:26.037 align:middle line:84%
+They use the same idea,
+which is inverted pairs.
+
+01:16:26.037 --> 01:16:28.120 align:middle line:84%
+Oh, perhaps I shouldn't
+have erased the definition
+
+01:16:28.120 --> 01:16:29.000 align:middle line:90%
+of inverted pairs.
+
+01:16:29.000 --> 01:16:30.010 align:middle line:90%
+Sorry.
+
+01:16:30.010 --> 01:16:35.080 align:middle line:84%
+So back to the simple
+sorting machine.
+
+01:16:35.080 --> 01:16:39.130 align:middle line:84%
+We're going to define
+P of q to be the number
+
+01:16:39.130 --> 01:16:45.570 align:middle line:90%
+of inverted pairs in state q.
+
+01:16:45.570 --> 01:16:49.840 align:middle line:90%
+
+
+01:16:49.840 --> 01:16:50.990 align:middle line:90%
+That's some number.
+
+01:16:50.990 --> 01:16:52.610 align:middle line:90%
+It's a natural number.
+
+01:16:52.610 --> 01:16:55.120 align:middle line:84%
+It's always greater
+than or equal to 0.
+
+01:16:55.120 --> 01:16:57.580 align:middle line:84%
+It's always an integer
+because inverted pairs
+
+01:16:57.580 --> 01:16:58.820 align:middle line:90%
+were this discrete object.
+
+01:16:58.820 --> 01:17:00.882 align:middle line:90%
+It was a set ij--
+
+01:17:00.882 --> 01:17:02.840 align:middle line:84%
+oh, maybe I need to
+redefine this a little bit.
+
+01:17:02.840 --> 01:17:04.220 align:middle line:90%
+It's no longer reading order.
+
+01:17:04.220 --> 01:17:05.900 align:middle line:90%
+So what is an inverted pair?
+
+01:17:05.900 --> 01:17:15.100 align:middle line:84%
+This is ij, where
+i is less than j--
+
+01:17:15.100 --> 01:17:21.250 align:middle line:84%
+sorry-- but ai is
+greater than aj.
+
+01:17:21.250 --> 01:17:26.640 align:middle line:84%
+So i and j here are
+indices into this sequence.
+
+01:17:26.640 --> 01:17:30.380 align:middle line:84%
+So in this example,
+let's say 6, 2
+
+01:17:30.380 --> 01:17:33.720 align:middle line:84%
+is inverted because 6
+is to the left of 2.
+
+01:17:33.720 --> 01:17:34.963 align:middle line:90%
+But 6 is greater than 2.
+
+01:17:34.963 --> 01:17:36.630 align:middle line:84%
+And that's the opposite
+of what we want.
+
+01:17:36.630 --> 01:17:38.520 align:middle line:90%
+But also, 6, 1 is inverted.
+
+01:17:38.520 --> 01:17:40.775 align:middle line:84%
+It's not just adjacent
+pairs-- all the pairs.
+
+01:17:40.775 --> 01:17:42.150 align:middle line:84%
+So there's a bunch
+of pairs here.
+
+01:17:42.150 --> 01:17:42.840 align:middle line:90%
+How many?
+
+01:17:42.840 --> 01:17:45.570 align:middle line:84%
+It's exactly the number
+of dots in this diagram.
+
+01:17:45.570 --> 01:17:48.650 align:middle line:84%
+Each dot-- which we
+construct by taking
+
+01:17:48.650 --> 01:17:50.930 align:middle line:84%
+each of these numbers
+of the particular height
+
+01:17:50.930 --> 01:17:54.768 align:middle line:84%
+and drawing a leftward
+ray, a line to the left.
+
+01:17:54.768 --> 01:17:56.310 align:middle line:84%
+And every time we
+hit another number,
+
+01:17:56.310 --> 01:17:58.830 align:middle line:84%
+that means that number
+was taller than I was.
+
+01:17:58.830 --> 01:18:01.520 align:middle line:84%
+So 1, for example, is
+wrong with everybody
+
+01:18:01.520 --> 01:18:04.650 align:middle line:84%
+because it's supposed to
+be all the way on the left.
+
+01:18:04.650 --> 01:18:06.657 align:middle line:84%
+So with this funny
+height diagram,
+
+01:18:06.657 --> 01:18:07.740 align:middle line:90%
+you just draw these lines.
+
+01:18:07.740 --> 01:18:10.350 align:middle line:84%
+Those are the inverted
+pairs-- a nice visualization.
+
+01:18:10.350 --> 01:18:11.270 align:middle line:90%
+Thanks, Zach.
+
+01:18:11.270 --> 01:18:12.380 align:middle line:90%
+TA: And Brynmore.
+
+01:18:12.380 --> 01:18:14.810 align:middle line:90%
+ERIK DEMAINE: And Brynmore.
+
+01:18:14.810 --> 01:18:18.900 align:middle line:84%
+So now we think about what
+happens when we do a swap.
+
+01:18:18.900 --> 01:18:21.390 align:middle line:84%
+So for example, here I
+swap these two items.
+
+01:18:21.390 --> 01:18:22.020 align:middle line:90%
+Oh, great.
+
+01:18:22.020 --> 01:18:25.490 align:middle line:84%
+Before, 6 and 2 were
+inverted; now they're not.
+
+01:18:25.490 --> 01:18:28.070 align:middle line:84%
+And that's all that changed
+because in the algorithm,
+
+01:18:28.070 --> 01:18:31.830 align:middle line:84%
+in the transitions, we're
+only swapping adjacent pairs.
+
+01:18:31.830 --> 01:18:35.400 align:middle line:84%
+If I swap it back,
+the number increases.
+
+01:18:35.400 --> 01:18:36.950 align:middle line:84%
+And now if we watch
+this algorithm,
+
+01:18:36.950 --> 01:18:39.170 align:middle line:84%
+each time it swaps
+an adjacent pair,
+
+01:18:39.170 --> 01:18:44.960 align:middle line:84%
+it decreases by 1, the
+number of inverted pairs.
+
+01:18:44.960 --> 01:18:48.560 align:middle line:90%
+Watch it one more time for fun.
+
+01:18:48.560 --> 01:18:49.666 align:middle line:90%
+I love this animation.
+
+01:18:49.666 --> 01:19:05.810 align:middle line:90%
+
+
+01:19:05.810 --> 01:19:08.640 align:middle line:84%
+I claim this P of q is
+strictly decreasing.
+
+01:19:08.640 --> 01:19:09.380 align:middle line:90%
+Why?
+
+01:19:09.380 --> 01:19:12.650 align:middle line:84%
+Because every time I
+do a transition from q
+
+01:19:12.650 --> 01:19:21.040 align:middle line:84%
+to r, P of r is 1
+smaller than P of q.
+
+01:19:21.040 --> 01:19:24.920 align:middle line:90%
+
+
+01:19:24.920 --> 01:19:27.730 align:middle line:84%
+Let's look at the definition
+of transition over here.
+
+01:19:27.730 --> 01:19:30.890 align:middle line:90%
+
+
+01:19:30.890 --> 01:19:32.750 align:middle line:84%
+When I do a transition
+in this algorithm,
+
+01:19:32.750 --> 01:19:35.640 align:middle line:84%
+I only swap two
+adjacent elements.
+
+01:19:35.640 --> 01:19:39.080 align:middle line:84%
+So the inverted pairs with
+everything else doesn't change.
+
+01:19:39.080 --> 01:19:41.670 align:middle line:84%
+And these guys were
+guaranteed inverted.
+
+01:19:41.670 --> 01:19:44.660 align:middle line:84%
+I told you that ai was bigger
+than ai plus 1 whenever
+
+01:19:44.660 --> 01:19:45.600 align:middle line:90%
+I did a transition.
+
+01:19:45.600 --> 01:19:48.960 align:middle line:84%
+So I decreased by 1 the
+number of inverted pairs here.
+
+01:19:48.960 --> 01:19:53.392 align:middle line:84%
+So I strictly decrease by
+exactly 1 every single time.
+
+01:19:53.392 --> 01:19:55.350 align:middle line:84%
+So in fact, the running
+time of this algorithm,
+
+01:19:55.350 --> 01:19:58.760 align:middle line:84%
+the number of swaps
+that we do is exactly
+
+01:19:58.760 --> 01:20:00.690 align:middle line:90%
+the number of inverted pairs.
+
+01:20:00.690 --> 01:20:03.067 align:middle line:84%
+But in particular, it
+terminates in finite time.
+
+01:20:03.067 --> 01:20:05.150 align:middle line:84%
+That's what we get out of
+this termination theorem
+
+01:20:05.150 --> 01:20:07.890 align:middle line:84%
+because we checked
+this function.
+
+01:20:07.890 --> 01:20:10.110 align:middle line:84%
+This derived variable
+is non-negative.
+
+01:20:10.110 --> 01:20:10.820 align:middle line:90%
+It's an integer.
+
+01:20:10.820 --> 01:20:12.420 align:middle line:90%
+And it's strictly decreasing.
+
+01:20:12.420 --> 01:20:15.276 align:middle line:84%
+Therefore, our sorting
+algorithm actually terminates.
+
+01:20:15.276 --> 01:20:15.776 align:middle line:90%
+Yay.
+
+01:20:15.776 --> 01:20:18.407 align:middle line:90%
+
+
+01:20:18.407 --> 01:20:20.490 align:middle line:84%
+I was supposed to do an
+announcement about problem
+
+01:20:20.490 --> 01:20:20.990 align:middle line:90%
+sets--
+
+01:20:20.990 --> 01:20:21.840 align:middle line:90%
+TA: Yes.
+
+01:20:21.840 --> 01:20:24.690 align:middle line:90%
+ERIK DEMAINE: --which was--
+
+01:20:24.690 --> 01:20:26.710 align:middle line:90%
+the-- oh, yes.
+
+01:20:26.710 --> 01:20:30.060 align:middle line:84%
+We're about to release
+solutions to a problem set--
+
+01:20:30.060 --> 01:20:31.440 align:middle line:90%
+problem set 1.
+
+01:20:31.440 --> 01:20:33.810 align:middle line:84%
+And you may recall you
+can submit your problem
+
+01:20:33.810 --> 01:20:37.210 align:middle line:84%
+set 1 anytime between now
+and the end of semester.
+
+01:20:37.210 --> 01:20:38.170 align:middle line:90%
+So what do you do?
+
+01:20:38.170 --> 01:20:39.970 align:middle line:84%
+Are you allowed to look
+at those solutions?
+
+01:20:39.970 --> 01:20:42.610 align:middle line:84%
+Yes, you're allowed to
+look at the solutions.
+
+01:20:42.610 --> 01:20:45.670 align:middle line:84%
+But you cannot copy
+those solutions.
+
+01:20:45.670 --> 01:20:48.250 align:middle line:84%
+You can look at them,
+then put them aside,
+
+01:20:48.250 --> 01:20:50.530 align:middle line:84%
+remember the solution,
+think about the solution,
+
+01:20:50.530 --> 01:20:52.960 align:middle line:84%
+write it in your own words,
+how that solution works,
+
+01:20:52.960 --> 01:20:55.120 align:middle line:84%
+and put it at the top
+of your document--
+
+01:20:55.120 --> 01:20:56.820 align:middle line:84%
+it says in the
+collaboration policy--
+
+01:20:56.820 --> 01:21:00.150 align:middle line:84%
+"I looked at the solutions,
+but I am not copying them."
+
+01:21:00.150 --> 01:21:03.340 align:middle line:84%
+If you copy them, you
+will be penalized, OK?
+
+01:21:03.340 --> 01:21:06.840 align:middle line:84%
+Just understand how the
+proof works, and then
+
+01:21:06.840 --> 01:21:09.750 align:middle line:84%
+write down how the proof
+works in your own words.
+
+01:21:09.750 --> 01:21:12.020 align:middle line:90%
+See you next time.
+
+01:21:12.020 --> 01:21:16.000 align:middle line:90%

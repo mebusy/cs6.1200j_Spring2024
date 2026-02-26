@@ -1,0 +1,4404 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:02.425 align:middle line:90%
+[SQUEAKING]
+
+00:00:02.425 --> 00:00:04.365 align:middle line:90%
+[RUSTLING]
+
+00:00:04.365 --> 00:00:05.335 align:middle line:90%
+[CLICKING]
+
+00:00:05.335 --> 00:00:10.870 align:middle line:90%
+
+
+00:00:10.870 --> 00:00:12.920 align:middle line:84%
+BRYNMOR CHAPMAN: OK, can
+people hear in the back?
+
+00:00:12.920 --> 00:00:14.600 align:middle line:90%
+Are we good?
+
+00:00:14.600 --> 00:00:16.200 align:middle line:90%
+Yeah, thumbs up?
+
+00:00:16.200 --> 00:00:18.110 align:middle line:90%
+OK, nice one.
+
+00:00:18.110 --> 00:00:23.000 align:middle line:84%
+So you've already seen a couple
+of lectures on number theory
+
+00:00:23.000 --> 00:00:23.820 align:middle line:90%
+now.
+
+00:00:23.820 --> 00:00:28.160 align:middle line:84%
+And so some of you
+have been asking
+
+00:00:28.160 --> 00:00:29.640 align:middle line:90%
+like, why are we doing this?
+
+00:00:29.640 --> 00:00:32.090 align:middle line:90%
+Why is this in 6.1200?
+
+00:00:32.090 --> 00:00:37.580 align:middle line:84%
+And today, we are going to see
+how GCD's and modular arithmetic
+
+00:00:37.580 --> 00:00:41.000 align:middle line:84%
+can be very important
+for something
+
+00:00:41.000 --> 00:00:44.330 align:middle line:84%
+that you use every
+day-- computer security.
+
+00:00:44.330 --> 00:00:51.020 align:middle line:84%
+So cryptography has been a very
+important subject for daily life
+
+00:00:51.020 --> 00:00:53.840 align:middle line:90%
+for the last 20-odd years.
+
+00:00:53.840 --> 00:00:59.420 align:middle line:84%
+Any time you do an online
+credit-card transaction
+
+00:00:59.420 --> 00:01:04.390 align:middle line:84%
+or anything like that, that's
+using modern cryptography.
+
+00:01:04.390 --> 00:01:06.730 align:middle line:84%
+We'll see some
+examples from history
+
+00:01:06.730 --> 00:01:09.460 align:middle line:90%
+where it was quite important.
+
+00:01:09.460 --> 00:01:16.060 align:middle line:84%
+It's very much a computer
+science topic, not just math.
+
+00:01:16.060 --> 00:01:18.800 align:middle line:84%
+But it does use all sorts
+of exciting mathematics,
+
+00:01:18.800 --> 00:01:21.770 align:middle line:90%
+including number theory.
+
+00:01:21.770 --> 00:01:24.440 align:middle line:84%
+So can anybody tell
+me, just in a nutshell,
+
+00:01:24.440 --> 00:01:29.255 align:middle line:84%
+very informally,
+what is cryptography?
+
+00:01:29.255 --> 00:01:29.755 align:middle line:90%
+Anyone?
+
+00:01:29.755 --> 00:01:34.480 align:middle line:90%
+
+
+00:01:34.480 --> 00:01:36.641 align:middle line:90%
+Yeah?
+
+00:01:36.641 --> 00:01:38.600 align:middle line:84%
+AUDIENCE: Insecure
+information over--
+
+00:01:38.600 --> 00:01:40.850 align:middle line:84%
+or sorry, secure information
+over an insecure channel.
+
+00:01:40.850 --> 00:01:42.910 align:middle line:84%
+BRYNMOR CHAPMAN: OK,
+secure information
+
+00:01:42.910 --> 00:01:44.600 align:middle line:90%
+over an insecure channel.
+
+00:01:44.600 --> 00:01:47.710 align:middle line:84%
+Yeah, that's a pretty
+good description.
+
+00:01:47.710 --> 00:01:54.490 align:middle line:84%
+So I would say that it's the art
+or science of dealing with such,
+
+00:01:54.490 --> 00:01:58.490 align:middle line:84%
+dealing with
+protecting information.
+
+00:01:58.490 --> 00:02:02.390 align:middle line:84%
+So the basic idea,
+well, at least
+
+00:02:02.390 --> 00:02:04.310 align:middle line:84%
+for what we're going
+to be looking at today,
+
+00:02:04.310 --> 00:02:07.040 align:middle line:84%
+is suppose you have
+an insecure channel
+
+00:02:07.040 --> 00:02:12.510 align:middle line:84%
+and you want to send some
+message to a recipient,
+
+00:02:12.510 --> 00:02:14.180 align:middle line:84%
+but you don't want
+other people who
+
+00:02:14.180 --> 00:02:16.070 align:middle line:84%
+might be eavesdropping
+on your channel
+
+00:02:16.070 --> 00:02:17.460 align:middle line:90%
+to know what you're doing.
+
+00:02:17.460 --> 00:02:19.520 align:middle line:84%
+So basically,
+you're going to want
+
+00:02:19.520 --> 00:02:23.120 align:middle line:84%
+to garble a message that you
+send privately in such a way
+
+00:02:23.120 --> 00:02:26.080 align:middle line:84%
+that only certain
+parties can read it.
+
+00:02:26.080 --> 00:02:29.635 align:middle line:84%
+So let's take a look
+at what we mean.
+
+00:02:29.635 --> 00:02:34.327 align:middle line:90%
+
+
+00:02:34.327 --> 00:02:37.730 align:middle line:84%
+So the art or science of
+protecting information.
+
+00:02:37.730 --> 00:02:42.800 align:middle line:84%
+So in our setup,
+the convention is
+
+00:02:42.800 --> 00:02:46.160 align:middle line:84%
+that we're going to have two
+parties, Alicekazam and then
+
+00:02:46.160 --> 00:02:47.960 align:middle line:90%
+Bobsaur.
+
+00:02:47.960 --> 00:02:50.390 align:middle line:84%
+And they're going to be
+trying to communicate
+
+00:02:50.390 --> 00:02:55.142 align:middle line:84%
+over this communication channel,
+which may or may not be secure.
+
+00:02:55.142 --> 00:02:57.710 align:middle line:84%
+So maybe Alicekazam
+wants to send a message.
+
+00:02:57.710 --> 00:03:02.900 align:middle line:84%
+It's Pi Day, so she's going
+to send a pie over to Bobsaur.
+
+00:03:02.900 --> 00:03:07.150 align:middle line:84%
+So maybe she puts it in an
+envelope, pops it in the post,
+
+00:03:07.150 --> 00:03:09.410 align:middle line:90%
+and Bobsaur receives it.
+
+00:03:09.410 --> 00:03:13.060 align:middle line:84%
+He can open up the envelope
+and get the message.
+
+00:03:13.060 --> 00:03:16.810 align:middle line:84%
+So does that basic setup
+make sense to people?
+
+00:03:16.810 --> 00:03:20.020 align:middle line:90%
+OK, so nothing too fancy yet.
+
+00:03:20.020 --> 00:03:22.480 align:middle line:90%
+But what could go wrong?
+
+00:03:22.480 --> 00:03:24.780 align:middle line:84%
+Can anybody tell me
+a problem with this?
+
+00:03:24.780 --> 00:03:27.760 align:middle line:90%
+
+
+00:03:27.760 --> 00:03:28.880 align:middle line:90%
+Yeah?
+
+00:03:28.880 --> 00:03:31.030 align:middle line:84%
+AUDIENCE: Somebody
+could come and steal it.
+
+00:03:31.030 --> 00:03:32.410 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah,
+somebody could come and steal
+
+00:03:32.410 --> 00:03:33.350 align:middle line:90%
+the message, right?
+
+00:03:33.350 --> 00:03:37.730 align:middle line:84%
+So maybe we've got some
+eavesdropper, Eevee.
+
+00:03:37.730 --> 00:03:43.100 align:middle line:84%
+And Eevee wants to eavesdrop
+on their conversation,
+
+00:03:43.100 --> 00:03:45.430 align:middle line:84%
+wants to figure out what
+they're talking about.
+
+00:03:45.430 --> 00:03:49.450 align:middle line:84%
+So it's quite possible
+that maybe Alicekazam
+
+00:03:49.450 --> 00:03:52.910 align:middle line:84%
+pops this in the mail,
+Eevee then opens the mail,
+
+00:03:52.910 --> 00:03:55.100 align:middle line:84%
+puts it back in the mail,
+sends it along to Bobsaur,
+
+00:03:55.100 --> 00:03:57.380 align:middle line:84%
+but now Eevee knows
+what the message is.
+
+00:03:57.380 --> 00:04:00.120 align:middle line:90%
+So this is a problem, right?
+
+00:04:00.120 --> 00:04:01.410 align:middle line:90%
+What else could go wrong?
+
+00:04:01.410 --> 00:04:02.155 align:middle line:90%
+Any other ideas?
+
+00:04:02.155 --> 00:04:08.570 align:middle line:90%
+
+
+00:04:08.570 --> 00:04:09.665 align:middle line:90%
+Yeah?
+
+00:04:09.665 --> 00:04:13.610 align:middle line:84%
+AUDIENCE: Maybe they could send
+a message trying to be Alice.
+
+00:04:13.610 --> 00:04:17.240 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah,
+what if Eevee is not
+
+00:04:17.240 --> 00:04:21.400 align:middle line:84%
+just an eavesdropper but
+some meddling adversary?
+
+00:04:21.400 --> 00:04:25.650 align:middle line:84%
+So maybe Bobsaur now wants
+to say thank you for the pie.
+
+00:04:25.650 --> 00:04:28.790 align:middle line:84%
+Bobsaur puts this
+in an envelope,
+
+00:04:28.790 --> 00:04:30.660 align:middle line:90%
+sends it over to Alicekazam.
+
+00:04:30.660 --> 00:04:33.030 align:middle line:84%
+But Eevee's intercepted
+it along the way.
+
+00:04:33.030 --> 00:04:35.460 align:middle line:84%
+And so now, when
+Alicekazam gets it,
+
+00:04:35.460 --> 00:04:38.850 align:middle line:84%
+it's not quite the same
+message as Bobsaur sent.
+
+00:04:38.850 --> 00:04:40.080 align:middle line:90%
+So that's also a problem.
+
+00:04:40.080 --> 00:04:41.430 align:middle line:90%
+We'd also like to prevent this.
+
+00:04:41.430 --> 00:04:44.690 align:middle line:90%
+
+
+00:04:44.690 --> 00:04:47.630 align:middle line:90%
+So what can we do?
+
+00:04:47.630 --> 00:04:50.970 align:middle line:84%
+Well, if we think about
+the actual postal system,
+
+00:04:50.970 --> 00:04:54.370 align:middle line:84%
+we could basically
+put a seal on it,
+
+00:04:54.370 --> 00:04:57.700 align:middle line:90%
+like an old-fashioned wax seal.
+
+00:04:57.700 --> 00:05:01.420 align:middle line:84%
+But basically,
+Alicekazam and Bobsaur
+
+00:05:01.420 --> 00:05:03.290 align:middle line:90%
+are going to share some key.
+
+00:05:03.290 --> 00:05:08.750 align:middle line:84%
+So they have a message
+that they'd like to share.
+
+00:05:08.750 --> 00:05:10.490 align:middle line:90%
+It's supposed to be secret.
+
+00:05:10.490 --> 00:05:13.750 align:middle line:84%
+So instead of just putting
+the envelope in the post,
+
+00:05:13.750 --> 00:05:16.280 align:middle line:84%
+they're going to put
+it in a locked box.
+
+00:05:16.280 --> 00:05:19.150 align:middle line:84%
+And Alicekazam will
+lock it with her key.
+
+00:05:19.150 --> 00:05:22.000 align:middle line:84%
+And now when she sends
+it over the channel,
+
+00:05:22.000 --> 00:05:23.360 align:middle line:90%
+Eevee can't do anything with it.
+
+00:05:23.360 --> 00:05:23.890 align:middle line:90%
+It's locked.
+
+00:05:23.890 --> 00:05:25.430 align:middle line:90%
+Eevee doesn't have the key.
+
+00:05:25.430 --> 00:05:27.200 align:middle line:90%
+But Bobsaur has the same key.
+
+00:05:27.200 --> 00:05:29.900 align:middle line:84%
+So he can now remove the
+lock and open the message.
+
+00:05:29.900 --> 00:05:31.130 align:middle line:90%
+And everything is awesome.
+
+00:05:31.130 --> 00:05:35.508 align:middle line:90%
+
+
+00:05:35.508 --> 00:05:40.690 align:middle line:84%
+So key concepts
+in cryptography--
+
+00:05:40.690 --> 00:05:43.030 align:middle line:90%
+oops, that won't work.
+
+00:05:43.030 --> 00:05:46.870 align:middle line:90%
+OK, so the basic idea--
+
+00:05:46.870 --> 00:05:49.850 align:middle line:84%
+we're trying to send
+private messages.
+
+00:05:49.850 --> 00:05:53.190 align:middle line:84%
+So we're going to want to, what
+we call, encrypt a message.
+
+00:05:53.190 --> 00:05:55.040 align:middle line:84%
+So this means just
+garbling it so
+
+00:05:55.040 --> 00:05:59.360 align:middle line:84%
+that it looks like random
+noise so only parties who
+
+00:05:59.360 --> 00:06:01.930 align:middle line:84%
+share your secret key
+will be able to read it.
+
+00:06:01.930 --> 00:06:04.880 align:middle line:90%
+
+
+00:06:04.880 --> 00:06:06.517 align:middle line:90%
+Decryption is the reverse.
+
+00:06:06.517 --> 00:06:08.600 align:middle line:84%
+You're going to take one
+of these garbled messages
+
+00:06:08.600 --> 00:06:10.350 align:middle line:84%
+if you're the
+intended recipient.
+
+00:06:10.350 --> 00:06:13.820 align:middle line:84%
+And hopefully you can
+ungarble it to recover
+
+00:06:13.820 --> 00:06:15.890 align:middle line:90%
+the original message.
+
+00:06:15.890 --> 00:06:20.606 align:middle line:84%
+But also, hopefully nobody
+else can do the same thing.
+
+00:06:20.606 --> 00:06:23.450 align:middle line:84%
+And in order to do
+both of these things,
+
+00:06:23.450 --> 00:06:26.780 align:middle line:84%
+the two parties are going to
+share a secret key, which is
+
+00:06:26.780 --> 00:06:28.950 align:middle line:90%
+some data that only they have.
+
+00:06:28.950 --> 00:06:30.360 align:middle line:90%
+Nobody else should have it.
+
+00:06:30.360 --> 00:06:33.600 align:middle line:90%
+And it should look random.
+
+00:06:33.600 --> 00:06:36.350 align:middle line:84%
+And it should be hard
+for somebody else
+
+00:06:36.350 --> 00:06:38.520 align:middle line:90%
+to derive or guess.
+
+00:06:38.520 --> 00:06:40.910 align:middle line:90%
+Yeah?
+
+00:06:40.910 --> 00:06:42.660 align:middle line:84%
+AUDIENCE: In that
+analogy you used before,
+
+00:06:42.660 --> 00:06:46.862 align:middle line:84%
+how do they get the keys without
+someone taking the key midway?
+
+00:06:46.862 --> 00:06:48.570 align:middle line:84%
+BRYNMOR CHAPMAN: That's
+a great question.
+
+00:06:48.570 --> 00:06:52.780 align:middle line:84%
+So, yeah, they have to meet
+up and actually share a key.
+
+00:06:52.780 --> 00:06:54.760 align:middle line:84%
+But then that
+allows them to share
+
+00:06:54.760 --> 00:06:57.790 align:middle line:84%
+messages over this
+insecure channel later.
+
+00:06:57.790 --> 00:07:01.480 align:middle line:84%
+But they do have to
+establish a secure way
+
+00:07:01.480 --> 00:07:04.060 align:middle line:90%
+of sharing the key first.
+
+00:07:04.060 --> 00:07:07.120 align:middle line:84%
+So we won't be talking too
+much about how you can actually
+
+00:07:07.120 --> 00:07:08.860 align:middle line:90%
+do that nowadays.
+
+00:07:08.860 --> 00:07:10.970 align:middle line:84%
+But it is in the notes
+if you'd like to read it.
+
+00:07:10.970 --> 00:07:14.890 align:middle line:90%
+
+
+00:07:14.890 --> 00:07:20.300 align:middle line:84%
+OK, so a cryptographic scheme
+is basically just these things.
+
+00:07:20.300 --> 00:07:22.090 align:middle line:84%
+It's an encryption
+algorithm paired
+
+00:07:22.090 --> 00:07:23.660 align:middle line:90%
+with a decryption algorithm.
+
+00:07:23.660 --> 00:07:28.245 align:middle line:84%
+And they should use the same
+secret key to invert each other.
+
+00:07:28.245 --> 00:07:32.380 align:middle line:90%
+
+
+00:07:32.380 --> 00:07:36.610 align:middle line:84%
+So anybody give me examples,
+historical examples,
+
+00:07:36.610 --> 00:07:38.867 align:middle line:90%
+of cryptographic schemes?
+
+00:07:38.867 --> 00:07:40.575 align:middle line:84%
+Does anybody know what
+the first one was?
+
+00:07:40.575 --> 00:07:44.330 align:middle line:90%
+
+
+00:07:44.330 --> 00:07:44.830 align:middle line:90%
+Yeah?
+
+00:07:44.830 --> 00:07:46.110 align:middle line:90%
+AUDIENCE: Caesar cipher.
+
+00:07:46.110 --> 00:07:49.030 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah,
+the Caesar cipher.
+
+00:07:49.030 --> 00:07:51.280 align:middle line:90%
+So what was the Caesar cipher?
+
+00:07:51.280 --> 00:07:56.000 align:middle line:90%
+
+
+00:07:56.000 --> 00:07:57.480 align:middle line:90%
+How do you encrypt a message?
+
+00:07:57.480 --> 00:07:57.985 align:middle line:90%
+Yeah?
+
+00:07:57.985 --> 00:07:59.360 align:middle line:84%
+AUDIENCE: You
+offset every letter
+
+00:07:59.360 --> 00:08:02.370 align:middle line:84%
+in the message by, like,
+n letters after it.
+
+00:08:02.370 --> 00:08:04.010 align:middle line:84%
+BRYNMOR CHAPMAN:
+So the answer was
+
+00:08:04.010 --> 00:08:09.650 align:middle line:84%
+you offset every message in the
+letter by n letters after it.
+
+00:08:09.650 --> 00:08:11.100 align:middle line:90%
+Not quite.
+
+00:08:11.100 --> 00:08:14.070 align:middle line:84%
+You are thinking of something
+very slightly different.
+
+00:08:14.070 --> 00:08:16.190 align:middle line:84%
+The Caesar cipher
+was specifically
+
+00:08:16.190 --> 00:08:20.160 align:middle line:90%
+using 3, not some key n.
+
+00:08:20.160 --> 00:08:23.850 align:middle line:84%
+So you take every letter,
+shift it over by three letters.
+
+00:08:23.850 --> 00:08:26.060 align:middle line:90%
+So C becomes D-E--
+
+00:08:26.060 --> 00:08:31.850 align:middle line:84%
+F. And you shift every
+letter individually
+
+00:08:31.850 --> 00:08:34.390 align:middle line:84%
+and then send the
+shifted message.
+
+00:08:34.390 --> 00:08:36.390 align:middle line:84%
+And to decrypt it,
+you do the reverse.
+
+00:08:36.390 --> 00:08:40.445 align:middle line:90%
+You subtract 3 modulo 26.
+
+00:08:40.445 --> 00:08:43.429 align:middle line:84%
+Does that make
+sense to everybody?
+
+00:08:43.429 --> 00:08:48.610 align:middle line:84%
+Now, what you're thinking
+of is the Caesar shift,
+
+00:08:48.610 --> 00:08:51.320 align:middle line:90%
+which is slightly better.
+
+00:08:51.320 --> 00:08:53.020 align:middle line:84%
+So one problem with
+the Caesar cipher
+
+00:08:53.020 --> 00:08:59.860 align:middle line:90%
+is you don't really have a key.
+
+00:08:59.860 --> 00:09:02.930 align:middle line:84%
+It's kind of what we call
+cryptography by obscurity.
+
+00:09:02.930 --> 00:09:06.730 align:middle line:84%
+So the only reason
+it might be secure
+
+00:09:06.730 --> 00:09:10.420 align:middle line:84%
+is if nobody else
+knows you're doing it.
+
+00:09:10.420 --> 00:09:17.540 align:middle line:84%
+Unfortunately, if you're a Roman
+emperor, legion, or whatever,
+
+00:09:17.540 --> 00:09:22.960 align:middle line:84%
+using the Caesar cipher,
+it doesn't protect
+
+00:09:22.960 --> 00:09:26.920 align:middle line:84%
+against, say, maybe one
+of your generals defects
+
+00:09:26.920 --> 00:09:29.660 align:middle line:84%
+and now goes to the
+enemy and is like,
+
+00:09:29.660 --> 00:09:31.970 align:middle line:84%
+hey, they're using this
+cryptographic scheme.
+
+00:09:31.970 --> 00:09:34.780 align:middle line:84%
+Here's how you can break
+all their messages.
+
+00:09:34.780 --> 00:09:37.390 align:middle line:84%
+And so then, from that point
+forward, nothing you send
+
+00:09:37.390 --> 00:09:39.835 align:middle line:90%
+is secure.
+
+00:09:39.835 --> 00:09:42.440 align:middle line:84%
+So one way we can
+fix that is by,
+
+00:09:42.440 --> 00:09:44.740 align:middle line:90%
+as you said, introducing a key.
+
+00:09:44.740 --> 00:09:49.290 align:middle line:84%
+So the Caesar shift
+is very similar.
+
+00:09:49.290 --> 00:09:50.970 align:middle line:84%
+But instead of
+just shifting by 3,
+
+00:09:50.970 --> 00:09:55.850 align:middle line:84%
+you shift by some secret
+key, k, modulo 26.
+
+00:09:55.850 --> 00:09:57.670 align:middle line:84%
+Does anybody see a
+problem with this?
+
+00:09:57.670 --> 00:10:00.791 align:middle line:90%
+
+
+00:10:00.791 --> 00:10:01.291 align:middle line:90%
+Mhm?
+
+00:10:01.291 --> 00:10:04.790 align:middle line:84%
+AUDIENCE: It's pretty easy to
+just check all these things.
+
+00:10:04.790 --> 00:10:08.840 align:middle line:84%
+BRYNMOR CHAPMAN:
+Yeah, that it is.
+
+00:10:08.840 --> 00:10:10.540 align:middle line:90%
+Oops, let's not capslock that.
+
+00:10:10.540 --> 00:10:16.910 align:middle line:90%
+
+
+00:10:16.910 --> 00:10:19.280 align:middle line:90%
+So here is a--
+
+00:10:19.280 --> 00:10:23.152 align:middle line:90%
+oh, that did not work.
+
+00:10:23.152 --> 00:10:23.860 align:middle line:90%
+What is going on?
+
+00:10:23.860 --> 00:10:27.830 align:middle line:90%
+
+
+00:10:27.830 --> 00:10:31.650 align:middle line:84%
+OK, so here's an
+encrypted message.
+
+00:10:31.650 --> 00:10:37.100 align:middle line:84%
+It's been encrypted
+using the Caesar cipher--
+
+00:10:37.100 --> 00:10:38.365 align:middle line:90%
+sorry, Caesar shift.
+
+00:10:38.365 --> 00:10:41.450 align:middle line:90%
+
+
+00:10:41.450 --> 00:10:46.670 align:middle line:84%
+As you said, it's fairly easy
+to guess what the key is.
+
+00:10:46.670 --> 00:10:49.810 align:middle line:84%
+So does anybody have any
+guesses before I start just
+
+00:10:49.810 --> 00:10:52.240 align:middle line:90%
+putting in values?
+
+00:10:52.240 --> 00:10:53.020 align:middle line:90%
+Yeah?
+
+00:10:53.020 --> 00:10:54.020 align:middle line:90%
+AUDIENCE: 13.
+
+00:10:54.020 --> 00:10:55.490 align:middle line:90%
+BRYNMOR CHAPMAN: 13.
+
+00:10:55.490 --> 00:10:56.055 align:middle line:90%
+Why 13?
+
+00:10:56.055 --> 00:10:58.130 align:middle line:84%
+AUDIENCE: I just guessed
+the first word is "the."
+
+00:10:58.130 --> 00:10:58.630 align:middle line:90%
+I just--
+
+00:10:58.630 --> 00:11:04.660 align:middle line:84%
+BRYNMOR CHAPMAN: [CHUCKLES]
+Yeah, that's a very good guess.
+
+00:11:04.660 --> 00:11:07.610 align:middle line:84%
+So, yeah, knowing some
+information about the message.
+
+00:11:07.610 --> 00:11:10.100 align:middle line:90%
+This is probably in English.
+
+00:11:10.100 --> 00:11:13.820 align:middle line:84%
+You have a standalone
+N in that first line.
+
+00:11:13.820 --> 00:11:16.700 align:middle line:90%
+That's probably an A or an I.
+
+00:11:16.700 --> 00:11:18.670 align:middle line:84%
+You've already got
+lots of information
+
+00:11:18.670 --> 00:11:20.440 align:middle line:84%
+that you can use to
+narrow down the key.
+
+00:11:20.440 --> 00:11:23.590 align:middle line:84%
+And even if you
+don't, like if we just
+
+00:11:23.590 --> 00:11:26.863 align:middle line:84%
+start putting in random
+values here, most of them
+
+00:11:26.863 --> 00:11:28.155 align:middle line:90%
+are going to look like garbage.
+
+00:11:28.155 --> 00:11:32.740 align:middle line:90%
+
+
+00:11:32.740 --> 00:11:35.240 align:middle line:84%
+But one of them is actually
+going to make sense.
+
+00:11:35.240 --> 00:11:38.060 align:middle line:84%
+So when we try all of
+the possible values,
+
+00:11:38.060 --> 00:11:39.700 align:middle line:84%
+we're going to
+figure out something
+
+00:11:39.700 --> 00:11:43.720 align:middle line:84%
+that is almost certainly
+going to be the correct key.
+
+00:11:43.720 --> 00:11:50.120 align:middle line:84%
+So how can we
+avoid this problem?
+
+00:11:50.120 --> 00:11:50.800 align:middle line:90%
+Any ideas?
+
+00:11:50.800 --> 00:11:53.690 align:middle line:90%
+
+
+00:11:53.690 --> 00:11:55.835 align:middle line:90%
+Yeah?
+
+00:11:55.835 --> 00:11:57.530 align:middle line:84%
+AUDIENCE: Change the
+encryption method
+
+00:11:57.530 --> 00:11:59.915 align:middle line:84%
+based on the index
+of the letter.
+
+00:11:59.915 --> 00:12:01.790 align:middle line:84%
+BRYNMOR CHAPMAN: Change
+the encryption method
+
+00:12:01.790 --> 00:12:03.680 align:middle line:84%
+based on the index
+of the letter.
+
+00:12:03.680 --> 00:12:08.480 align:middle line:84%
+OK, so what you're describing is
+what we call the one-time pad.
+
+00:12:08.480 --> 00:12:09.690 align:middle line:90%
+That is a good idea.
+
+00:12:09.690 --> 00:12:11.700 align:middle line:84%
+We will not be
+covering it just yet.
+
+00:12:11.700 --> 00:12:12.290 align:middle line:90%
+Yeah?
+
+00:12:12.290 --> 00:12:17.030 align:middle line:84%
+AUDIENCE: [INAUDIBLE]
+26, [INAUDIBLE] number.
+
+00:12:17.030 --> 00:12:20.390 align:middle line:84%
+BRYNMOR CHAPMAN:
+OK, similar idea.
+
+00:12:20.390 --> 00:12:23.730 align:middle line:84%
+Let's start by making a smaller,
+more incremental change.
+
+00:12:23.730 --> 00:12:24.230 align:middle line:90%
+Yeah?
+
+00:12:24.230 --> 00:12:25.910 align:middle line:90%
+AUDIENCE: Maybe include numbers.
+
+00:12:25.910 --> 00:12:29.540 align:middle line:84%
+BRYNMOR CHAPMAN:
+OK, include numbers.
+
+00:12:29.540 --> 00:12:32.810 align:middle line:84%
+Well, the idea
+that I had in mind
+
+00:12:32.810 --> 00:12:37.100 align:middle line:84%
+was to just use a
+larger key space.
+
+00:12:37.100 --> 00:12:40.715 align:middle line:84%
+Use a permutation
+instead of just a shift.
+
+00:12:40.715 --> 00:12:44.410 align:middle line:84%
+So this is something that
+was done in medieval times.
+
+00:12:44.410 --> 00:12:47.680 align:middle line:84%
+Instead of shifting every
+letter over by the same amount,
+
+00:12:47.680 --> 00:12:50.510 align:middle line:84%
+you'd take a random
+permutation of the letters,
+
+00:12:50.510 --> 00:12:55.470 align:middle line:84%
+and so you're kind of shifting
+each letter differently.
+
+00:12:55.470 --> 00:13:00.310 align:middle line:84%
+Now, can anybody think of a
+way that you could attack this?
+
+00:13:00.310 --> 00:13:02.145 align:middle line:90%
+No, why is this not working?
+
+00:13:02.145 --> 00:13:08.950 align:middle line:90%
+
+
+00:13:08.950 --> 00:13:10.966 align:middle line:90%
+Sorry, technical difficulties.
+
+00:13:10.966 --> 00:13:17.290 align:middle line:90%
+
+
+00:13:17.290 --> 00:13:19.700 align:middle line:84%
+Oh, well, I guess it
+doesn't matter too much.
+
+00:13:19.700 --> 00:13:22.240 align:middle line:90%
+I can describe what's going on.
+
+00:13:22.240 --> 00:13:25.360 align:middle line:84%
+So, yeah, what your
+classmate suggested
+
+00:13:25.360 --> 00:13:28.780 align:middle line:84%
+was that, again, we can
+use the known plaintext
+
+00:13:28.780 --> 00:13:33.400 align:middle line:84%
+attack that we described a
+moment ago with the Caesar
+
+00:13:33.400 --> 00:13:34.605 align:middle line:90%
+shift.
+
+00:13:34.605 --> 00:13:40.262 align:middle line:84%
+If we know something
+about our message,
+
+00:13:40.262 --> 00:13:43.340 align:middle line:84%
+like, for instance, if we
+know that it's probably
+
+00:13:43.340 --> 00:13:48.320 align:middle line:84%
+written in English, then
+we can count how many times
+
+00:13:48.320 --> 00:13:49.860 align:middle line:90%
+each letter appears.
+
+00:13:49.860 --> 00:13:53.270 align:middle line:84%
+And whichever letter appears
+most frequently probably
+
+00:13:53.270 --> 00:13:57.230 align:middle line:84%
+decrypts to E because E is the
+most common English letter.
+
+00:13:57.230 --> 00:14:00.710 align:middle line:84%
+Or even if not, we've
+got a decent guess.
+
+00:14:00.710 --> 00:14:02.700 align:middle line:84%
+It's probably not going
+to be like X or Z.
+
+00:14:02.700 --> 00:14:05.570 align:middle line:84%
+It might be S or T or
+something like that.
+
+00:14:05.570 --> 00:14:07.940 align:middle line:84%
+But the point is, it's very
+easy to start narrowing down
+
+00:14:07.940 --> 00:14:09.920 align:middle line:90%
+the key space.
+
+00:14:09.920 --> 00:14:14.250 align:middle line:84%
+And once we have a guess, we
+can then start building on it.
+
+00:14:14.250 --> 00:14:16.650 align:middle line:84%
+So similarly to what your
+colleague did earlier,
+
+00:14:16.650 --> 00:14:21.200 align:middle line:84%
+if you have E and you see
+three-letter words ending with
+
+00:14:21.200 --> 00:14:24.510 align:middle line:90%
+E, that might be "the."
+
+00:14:24.510 --> 00:14:27.080 align:middle line:84%
+So then you've got
+two more letters.
+
+00:14:27.080 --> 00:14:29.330 align:middle line:90%
+Does that make sense to people?
+
+00:14:29.330 --> 00:14:33.540 align:middle line:84%
+So knowing a little bit of
+information about your key,
+
+00:14:33.540 --> 00:14:37.310 align:middle line:84%
+you can incrementally figure
+out the rest of the key
+
+00:14:37.310 --> 00:14:38.340 align:middle line:90%
+and decrypt the message.
+
+00:14:38.340 --> 00:14:38.840 align:middle line:90%
+Yeah?
+
+00:14:38.840 --> 00:14:41.800 align:middle line:84%
+AUDIENCE: So if you were to
+have a message like that,
+
+00:14:41.800 --> 00:14:44.020 align:middle line:90%
+you could have the same letter--
+
+00:14:44.020 --> 00:14:46.090 align:middle line:84%
+or two different letters
+to the same letter?
+
+00:14:46.090 --> 00:14:47.340 align:middle line:90%
+BRYNMOR CHAPMAN: That's right.
+
+00:14:47.340 --> 00:14:48.650 align:middle line:90%
+So it is a permutation.
+
+00:14:48.650 --> 00:14:51.620 align:middle line:90%
+So it's a one-to-one map.
+
+00:14:51.620 --> 00:14:55.160 align:middle line:90%
+It's a bijection.
+
+00:14:55.160 --> 00:14:56.300 align:middle line:90%
+Other questions?
+
+00:14:56.300 --> 00:15:03.160 align:middle line:90%
+
+
+00:15:03.160 --> 00:15:05.170 align:middle line:84%
+Maybe I can just post
+this demo on the website
+
+00:15:05.170 --> 00:15:07.450 align:middle line:84%
+so that you can
+play around with it.
+
+00:15:07.450 --> 00:15:08.340 align:middle line:90%
+Sorry it didn't work.
+
+00:15:08.340 --> 00:15:15.012 align:middle line:90%
+
+
+00:15:15.012 --> 00:15:17.960 align:middle line:84%
+So the next example
+comes from World War II.
+
+00:15:17.960 --> 00:15:20.890 align:middle line:84%
+Has anybody heard of
+the Enigma cipher?
+
+00:15:20.890 --> 00:15:22.370 align:middle line:90%
+Yeah, a few hands.
+
+00:15:22.370 --> 00:15:23.775 align:middle line:90%
+Can anybody tell me what it did?
+
+00:15:23.775 --> 00:15:28.487 align:middle line:90%
+
+
+00:15:28.487 --> 00:15:29.453 align:middle line:90%
+Mhm?
+
+00:15:29.453 --> 00:15:31.870 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:15:31.870 --> 00:15:33.670 align:middle line:84%
+BRYNMOR CHAPMAN: OK,
+so the answer was it
+
+00:15:33.670 --> 00:15:36.100 align:middle line:84%
+changed the encryption
+method every day.
+
+00:15:36.100 --> 00:15:37.550 align:middle line:90%
+That's not quite true.
+
+00:15:37.550 --> 00:15:38.960 align:middle line:90%
+It changed the key every day.
+
+00:15:38.960 --> 00:15:42.110 align:middle line:84%
+It didn't change the algorithm
+that they were using.
+
+00:15:42.110 --> 00:15:42.980 align:middle line:90%
+Yes?
+
+00:15:42.980 --> 00:15:45.840 align:middle line:90%
+AUDIENCE: [INAUDIBLE] letter.
+
+00:15:45.840 --> 00:15:48.180 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah,
+so it basically-- oh,
+
+00:15:48.180 --> 00:15:51.590 align:middle line:84%
+so the answer was it changed
+the permutation every letter.
+
+00:15:51.590 --> 00:15:57.140 align:middle line:84%
+So, yes, that's the
+basic idea behind Enigma.
+
+00:15:57.140 --> 00:16:00.570 align:middle line:84%
+It started with some
+permutation of the letters.
+
+00:16:00.570 --> 00:16:03.980 align:middle line:84%
+And every time you
+encrypted a letter,
+
+00:16:03.980 --> 00:16:08.690 align:middle line:84%
+it would then apply some
+change to this permutation
+
+00:16:08.690 --> 00:16:11.430 align:middle line:84%
+so that the next letter would
+be encrypted differently.
+
+00:16:11.430 --> 00:16:15.950 align:middle line:84%
+So that made it resistant
+to a frequency analysis.
+
+00:16:15.950 --> 00:16:19.250 align:middle line:84%
+But unfortunately
+for the Germans,
+
+00:16:19.250 --> 00:16:24.674 align:middle line:84%
+it was still viable to do
+a known plaintext attack.
+
+00:16:24.674 --> 00:16:28.250 align:middle line:84%
+So basically, the way
+that the Allies ended up
+
+00:16:28.250 --> 00:16:32.000 align:middle line:84%
+breaking this encryption
+scheme was they
+
+00:16:32.000 --> 00:16:34.910 align:middle line:84%
+knew something
+about the messages
+
+00:16:34.910 --> 00:16:37.130 align:middle line:90%
+that were being sent every day.
+
+00:16:37.130 --> 00:16:41.110 align:middle line:84%
+Many of them were weather
+reports or something.
+
+00:16:41.110 --> 00:16:43.420 align:middle line:84%
+Many of them had the
+phrase "Heil Hitler"
+
+00:16:43.420 --> 00:16:45.115 align:middle line:90%
+or something like that.
+
+00:16:45.115 --> 00:16:46.990 align:middle line:84%
+But if you know that
+you're getting a weather
+
+00:16:46.990 --> 00:16:49.450 align:middle line:84%
+report from a
+certain location, you
+
+00:16:49.450 --> 00:16:50.990 align:middle line:84%
+know the weather
+in that location,
+
+00:16:50.990 --> 00:16:52.540 align:middle line:84%
+you've got a bunch
+of information
+
+00:16:52.540 --> 00:16:56.012 align:middle line:84%
+about how this
+message might start.
+
+00:16:56.012 --> 00:17:01.700 align:middle line:84%
+And so similarly to a
+frequency analysis attack,
+
+00:17:01.700 --> 00:17:06.010 align:middle line:84%
+you can use this information
+to narrow down your key space
+
+00:17:06.010 --> 00:17:07.893 align:middle line:90%
+and figure out the secret key.
+
+00:17:07.893 --> 00:17:10.060 align:middle line:84%
+And once you've got that,
+you can decrypt everything
+
+00:17:10.060 --> 00:17:11.950 align:middle line:90%
+that's being sent that day.
+
+00:17:11.950 --> 00:17:16.990 align:middle line:84%
+And so this is what the Allies
+were doing in Bletchley Park
+
+00:17:16.990 --> 00:17:17.759 align:middle line:90%
+to win the war.
+
+00:17:17.759 --> 00:17:21.538 align:middle line:90%
+
+
+00:17:21.538 --> 00:17:32.410 align:middle line:84%
+So Enigma was kind of the last
+major example of what we--
+
+00:17:32.410 --> 00:17:38.660 align:middle line:84%
+or what I call
+cryptography by hubris.
+
+00:17:38.660 --> 00:17:42.590 align:middle line:84%
+Basically, the security
+relied on some German engineer
+
+00:17:42.590 --> 00:17:45.810 align:middle line:84%
+being smarter than everybody
+else on the planet.
+
+00:17:45.810 --> 00:17:49.730 align:middle line:84%
+He came up with this
+encryption scheme
+
+00:17:49.730 --> 00:17:54.732 align:middle line:84%
+and was like, OK, this
+looks weird and random.
+
+00:17:54.732 --> 00:17:56.190 align:middle line:84%
+I can't figure out
+how to break it.
+
+00:17:56.190 --> 00:17:59.750 align:middle line:90%
+I bet nobody else can either.
+
+00:17:59.750 --> 00:18:01.910 align:middle line:84%
+So the Germans worked
+with this assumption
+
+00:18:01.910 --> 00:18:05.480 align:middle line:84%
+for the duration of the
+war, and it was wrong.
+
+00:18:05.480 --> 00:18:12.950 align:middle line:84%
+So nowadays we like to
+try and prove security
+
+00:18:12.950 --> 00:18:15.950 align:middle line:84%
+based on more reasonable
+assumptions than that.
+
+00:18:15.950 --> 00:18:19.340 align:middle line:84%
+So one example,
+which is in the notes
+
+00:18:19.340 --> 00:18:21.480 align:middle line:84%
+that we won't be
+covering too much today,
+
+00:18:21.480 --> 00:18:23.930 align:middle line:90%
+is called Diffie-Hellman.
+
+00:18:23.930 --> 00:18:28.670 align:middle line:84%
+The one that we'll be
+focusing on, though, is RSA.
+
+00:18:28.670 --> 00:18:35.380 align:middle line:84%
+So RSA was-- it's a modern
+cryptographic scheme named
+
+00:18:35.380 --> 00:18:39.040 align:middle line:84%
+after its inventor,
+Clifford Cocks.
+
+00:18:39.040 --> 00:18:41.890 align:middle line:90%
+That's totally a lie.
+
+00:18:41.890 --> 00:18:45.050 align:middle line:84%
+So Clifford Cocks did, in
+some sense, invent RSA.
+
+00:18:45.050 --> 00:18:47.410 align:middle line:84%
+But he made the rather
+suspicious life choice
+
+00:18:47.410 --> 00:18:49.510 align:middle line:90%
+of working for the government.
+
+00:18:49.510 --> 00:18:53.770 align:middle line:84%
+So his work was classified
+for 20, 25 years, something
+
+00:18:53.770 --> 00:18:54.410 align:middle line:90%
+like that.
+
+00:18:54.410 --> 00:18:57.790 align:middle line:84%
+And in the meantime,
+R, S, and A came along
+
+00:18:57.790 --> 00:19:00.080 align:middle line:90%
+and invented his same scheme.
+
+00:19:00.080 --> 00:19:02.560 align:middle line:90%
+They did it here at MIT.
+
+00:19:02.560 --> 00:19:07.600 align:middle line:84%
+So this was Ron Rivest, Adi
+Shamir, and Leonard Adleman.
+
+00:19:07.600 --> 00:19:08.930 align:middle line:90%
+They got all the credit for it.
+
+00:19:08.930 --> 00:19:09.930 align:middle line:90%
+They won a Turing Award.
+
+00:19:09.930 --> 00:19:14.140 align:middle line:84%
+And poor Mr. Cocks
+was kind of screwed.
+
+00:19:14.140 --> 00:19:16.900 align:middle line:84%
+So moral of the story, don't
+work for the government.
+
+00:19:16.900 --> 00:19:17.690 align:middle line:90%
+Just kidding.
+
+00:19:17.690 --> 00:19:22.750 align:middle line:84%
+But, yeah, kind
+of sucked for him.
+
+00:19:22.750 --> 00:19:31.464 align:middle line:84%
+But, yeah, why don't we get
+into what RSA actually does?
+
+00:19:31.464 --> 00:19:36.026 align:middle line:84%
+So RSA is an example of what we
+call a public key cryptosystem.
+
+00:19:36.026 --> 00:19:56.531 align:middle line:90%
+
+
+00:19:56.531 --> 00:20:00.860 align:middle line:84%
+So before, I described
+what we actually
+
+00:20:00.860 --> 00:20:05.300 align:middle line:84%
+call a private key
+cryptosystem, where
+
+00:20:05.300 --> 00:20:10.560 align:middle line:84%
+both encryption and decryption
+use the same secret key.
+
+00:20:10.560 --> 00:20:14.120 align:middle line:84%
+In a public key cryptosystem,
+that's no longer the case.
+
+00:20:14.120 --> 00:20:15.880 align:middle line:90%
+So we actually have two keys.
+
+00:20:15.880 --> 00:20:20.480 align:middle line:90%
+
+
+00:20:20.480 --> 00:20:26.400 align:middle line:90%
+So let's call them KP and KS.
+
+00:20:26.400 --> 00:20:33.870 align:middle line:84%
+So KP is going to be a public
+key, which everybody can see.
+
+00:20:33.870 --> 00:20:38.170 align:middle line:84%
+And then it's going to be
+paired with the secret key, KS,
+
+00:20:38.170 --> 00:20:42.110 align:middle line:90%
+which you keep to yourself.
+
+00:20:42.110 --> 00:20:45.520 align:middle line:84%
+And now the encryption
+and decryption algorithms,
+
+00:20:45.520 --> 00:20:48.200 align:middle line:84%
+each of them uses
+a different key.
+
+00:20:48.200 --> 00:20:52.500 align:middle line:90%
+So we've got encryption.
+
+00:20:52.500 --> 00:20:56.870 align:middle line:90%
+
+
+00:20:56.870 --> 00:20:59.710 align:middle line:84%
+So our encryption
+algorithm is going
+
+00:20:59.710 --> 00:21:05.881 align:middle line:84%
+to be E of some message
+and our public key.
+
+00:21:05.881 --> 00:21:11.535 align:middle line:84%
+And this will output
+some ciphertext C.
+
+00:21:11.535 --> 00:21:13.660 align:middle line:84%
+And then we're going to
+have a different decryption
+
+00:21:13.660 --> 00:21:25.570 align:middle line:84%
+algorithm, D, which
+will hopefully
+
+00:21:25.570 --> 00:21:31.790 align:middle line:84%
+take this ciphertext C and,
+this time, the secret key.
+
+00:21:31.790 --> 00:21:37.940 align:middle line:84%
+And it should output the
+original plaintext message, M.
+
+00:21:37.940 --> 00:21:43.790 align:middle line:84%
+So slightly different
+from the cryptosystem
+
+00:21:43.790 --> 00:21:45.750 align:middle line:90%
+that I defined earlier.
+
+00:21:45.750 --> 00:21:47.640 align:middle line:84%
+In that one, these two
+keys were the same.
+
+00:21:47.640 --> 00:21:52.100 align:middle line:90%
+And so you can't publish KP.
+
+00:21:52.100 --> 00:21:55.040 align:middle line:84%
+So only people who share
+the same secret key
+
+00:21:55.040 --> 00:21:56.780 align:middle line:90%
+can actually communicate.
+
+00:21:56.780 --> 00:22:03.206 align:middle line:84%
+Here, this allows anybody
+to send a message.
+
+00:22:03.206 --> 00:22:07.160 align:middle line:84%
+So you can think of this
+as, suppose Alicekazam wants
+
+00:22:07.160 --> 00:22:10.040 align:middle line:90%
+to send a message to Bobsaur.
+
+00:22:10.040 --> 00:22:13.700 align:middle line:84%
+So she's going to use
+Bobsaur's public key
+
+00:22:13.700 --> 00:22:14.790 align:middle line:90%
+to send him a message.
+
+00:22:14.790 --> 00:22:18.210 align:middle line:84%
+You can think of this as
+Bobsaur's Gmail address.
+
+00:22:18.210 --> 00:22:21.890 align:middle line:84%
+This is something
+that anybody can find.
+
+00:22:21.890 --> 00:22:25.185 align:middle line:84%
+But then Bobsaur has his Gmail
+password, which he can then
+
+00:22:25.185 --> 00:22:26.185 align:middle line:90%
+use to read the message.
+
+00:22:26.185 --> 00:22:30.160 align:middle line:90%
+
+
+00:22:30.160 --> 00:22:41.190 align:middle line:84%
+OK, so now we are ready to
+actually define how RSA works.
+
+00:22:41.190 --> 00:22:47.140 align:middle line:90%
+
+
+00:22:47.140 --> 00:22:54.310 align:middle line:84%
+OK, so the basic
+idea behind RSA is
+
+00:22:54.310 --> 00:23:00.400 align:middle line:84%
+that the encryption and
+decryption algorithm together
+
+00:23:00.400 --> 00:23:03.730 align:middle line:84%
+should basically make use
+of Fermat's little theorem
+
+00:23:03.730 --> 00:23:06.120 align:middle line:84%
+to make sure that we get
+back to the same message.
+
+00:23:06.120 --> 00:23:09.800 align:middle line:90%
+
+
+00:23:09.800 --> 00:23:22.960 align:middle line:84%
+So we're going to try and come
+up with some e and d and some n
+
+00:23:22.960 --> 00:23:31.530 align:middle line:84%
+such that if we exponentiate,
+first raised to the power of e,
+
+00:23:31.530 --> 00:23:33.260 align:middle line:84%
+then raised again
+to the power of d,
+
+00:23:33.260 --> 00:23:35.550 align:middle line:84%
+we should get back
+to where we started.
+
+00:23:35.550 --> 00:23:40.880 align:middle line:84%
+So we're going to
+want for any m, m
+
+00:23:40.880 --> 00:23:43.760 align:middle line:84%
+to the e, raised
+to the power of d,
+
+00:23:43.760 --> 00:23:46.790 align:middle line:90%
+should be equivalent mod n to m.
+
+00:23:46.790 --> 00:23:51.260 align:middle line:90%
+
+
+00:23:51.260 --> 00:23:53.520 align:middle line:84%
+So let's just start with
+correctness for now.
+
+00:23:53.520 --> 00:23:56.930 align:middle line:84%
+Let's not worry too much
+about security just yet.
+
+00:23:56.930 --> 00:24:00.590 align:middle line:90%
+But how could we achieve this?
+
+00:24:00.590 --> 00:24:05.270 align:middle line:84%
+How could we choose
+n, e, and d such
+
+00:24:05.270 --> 00:24:08.095 align:middle line:84%
+that this will at least work,
+even if it's not secure?
+
+00:24:08.095 --> 00:24:13.370 align:middle line:90%
+
+
+00:24:13.370 --> 00:24:14.215 align:middle line:90%
+Any ideas?
+
+00:24:14.215 --> 00:24:27.880 align:middle line:90%
+
+
+00:24:27.880 --> 00:24:29.685 align:middle line:90%
+So what did Fairmont tell us?
+
+00:24:29.685 --> 00:24:33.430 align:middle line:90%
+
+
+00:24:33.430 --> 00:24:45.670 align:middle line:84%
+So Fairmont tells us
+that m to the p minus 1
+
+00:24:45.670 --> 00:24:48.645 align:middle line:90%
+is congruent mod p to 1.
+
+00:24:48.645 --> 00:24:55.010 align:middle line:90%
+
+
+00:24:55.010 --> 00:24:59.385 align:middle line:84%
+So how can we massage
+this into this?
+
+00:24:59.385 --> 00:25:13.900 align:middle line:90%
+
+
+00:25:13.900 --> 00:25:16.715 align:middle line:84%
+Well, first, how
+might we choose n?
+
+00:25:16.715 --> 00:25:17.215 align:middle line:90%
+Yeah?
+
+00:25:17.215 --> 00:25:19.892 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:25:19.892 --> 00:25:20.850 align:middle line:90%
+BRYNMOR CHAPMAN: Sorry?
+
+00:25:20.850 --> 00:25:23.500 align:middle line:84%
+AUDIENCE: Let e and
+d be factors of n.
+
+00:25:23.500 --> 00:25:25.288 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+00:25:25.288 --> 00:25:33.600 align:middle line:84%
+So the idea was to let
+e and d be factors of n.
+
+00:25:33.600 --> 00:25:37.520 align:middle line:90%
+So e times d equals n.
+
+00:25:37.520 --> 00:25:44.240 align:middle line:90%
+
+
+00:25:44.240 --> 00:25:46.070 align:middle line:84%
+Does anybody see a
+problem with this?
+
+00:25:46.070 --> 00:25:46.880 align:middle line:90%
+Yeah?
+
+00:25:46.880 --> 00:25:49.526 align:middle line:90%
+AUDIENCE: Be like ed plus 1?
+
+00:25:49.526 --> 00:25:52.320 align:middle line:84%
+BRYNMOR CHAPMAN: So
+that's not the problem.
+
+00:25:52.320 --> 00:25:56.760 align:middle line:84%
+So remember, the exponent
+here is p minus 1.
+
+00:25:56.760 --> 00:26:01.100 align:middle line:84%
+So if you multiply both sides
+by m, you get m to the p
+
+00:26:01.100 --> 00:26:04.040 align:middle line:90%
+is congruent mod p to m.
+
+00:26:04.040 --> 00:26:07.040 align:middle line:84%
+So that is actually
+what we want.
+
+00:26:07.040 --> 00:26:10.460 align:middle line:84%
+What assumption
+did we have on p?
+
+00:26:10.460 --> 00:26:12.120 align:middle line:90%
+Yeah?
+
+00:26:12.120 --> 00:26:13.350 align:middle line:90%
+AUDIENCE: p is prime.
+
+00:26:13.350 --> 00:26:14.850 align:middle line:84%
+BRYNMOR CHAPMAN:
+Yeah, p is prime.
+
+00:26:14.850 --> 00:26:16.025 align:middle line:90%
+So we can't do this.
+
+00:26:16.025 --> 00:26:22.730 align:middle line:90%
+
+
+00:26:22.730 --> 00:26:23.970 align:middle line:90%
+It is close, though.
+
+00:26:23.970 --> 00:26:31.360 align:middle line:90%
+
+
+00:26:31.360 --> 00:26:33.580 align:middle line:84%
+So maybe I should
+rewrite this as--
+
+00:26:33.580 --> 00:26:39.760 align:middle line:84%
+the suggestion was e times d
+should be equal to p minus 1
+
+00:26:39.760 --> 00:26:40.620 align:middle line:90%
+plus 1.
+
+00:26:40.620 --> 00:26:45.770 align:middle line:90%
+
+
+00:26:45.770 --> 00:26:48.945 align:middle line:84%
+Does that make it any more clear
+how we can iterate on this?
+
+00:26:48.945 --> 00:27:02.380 align:middle line:90%
+
+
+00:27:02.380 --> 00:27:05.500 align:middle line:84%
+What other things would work
+here instead of p minus 1
+
+00:27:05.500 --> 00:27:06.075 align:middle line:90%
+plus 1?
+
+00:27:06.075 --> 00:27:27.920 align:middle line:90%
+
+
+00:27:27.920 --> 00:27:28.610 align:middle line:90%
+Yeah?
+
+00:27:28.610 --> 00:27:32.052 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:27:32.052 --> 00:27:33.510 align:middle line:84%
+BRYNMOR CHAPMAN:
+Yes, that's right.
+
+00:27:33.510 --> 00:27:34.010 align:middle line:90%
+Sorry.
+
+00:27:34.010 --> 00:27:37.010 align:middle line:84%
+[CHUCKLES] So the answer
+was we can multiply
+
+00:27:37.010 --> 00:27:40.040 align:middle line:90%
+this by whatever we want.
+
+00:27:40.040 --> 00:27:43.970 align:middle line:90%
+any k here, it'll still work.
+
+00:27:43.970 --> 00:27:49.800 align:middle line:84%
+As long as e times d is
+equivalent to 1, mod p minus 1--
+
+00:27:49.800 --> 00:27:55.220 align:middle line:84%
+so ed equivalent
+mod p minus 1 to 1--
+
+00:27:55.220 --> 00:28:02.120 align:middle line:84%
+as long as we satisfy
+this, we get this.
+
+00:28:02.120 --> 00:28:04.580 align:middle line:90%
+Or, sorry, we get this.
+
+00:28:04.580 --> 00:28:07.380 align:middle line:90%
+
+
+00:28:07.380 --> 00:28:07.910 align:middle line:90%
+Yeah?
+
+00:28:07.910 --> 00:28:12.710 align:middle line:84%
+AUDIENCE: [INAUDIBLE] plus
+1 or k times [INAUDIBLE]?
+
+00:28:12.710 --> 00:28:15.200 align:middle line:84%
+BRYNMOR CHAPMAN: So
+the question was like,
+
+00:28:15.200 --> 00:28:16.585 align:middle line:90%
+what are we multiplying by k?
+
+00:28:16.585 --> 00:28:17.960 align:middle line:84%
+We're multiplying
+this p minus 1.
+
+00:28:17.960 --> 00:28:20.630 align:middle line:90%
+
+
+00:28:20.630 --> 00:28:23.440 align:middle line:90%
+Yeah, so the reason--
+
+00:28:23.440 --> 00:28:27.500 align:middle line:84%
+FLT says that m to the p
+minus 1 is congruent to 1.
+
+00:28:27.500 --> 00:28:32.350 align:middle line:84%
+So m to the k times p minus
+1 is going to be 1 to the k.
+
+00:28:32.350 --> 00:28:33.700 align:middle line:90%
+So that's just 1.
+
+00:28:33.700 --> 00:28:37.877 align:middle line:84%
+So no matter what k we put
+here, this will still work.
+
+00:28:37.877 --> 00:28:39.460 align:middle line:84%
+Now, when you multiply
+it by m, that's
+
+00:28:39.460 --> 00:28:41.470 align:middle line:84%
+just adding 1 onto
+the exponents.
+
+00:28:41.470 --> 00:28:45.970 align:middle line:84%
+So then you'll have
+m to the k times
+
+00:28:45.970 --> 00:28:49.300 align:middle line:84%
+p minus 1 plus 1 should
+be congruent to the m.
+
+00:28:49.300 --> 00:28:53.140 align:middle line:90%
+
+
+00:28:53.140 --> 00:28:56.830 align:middle line:84%
+Does this setup make
+sense to people?
+
+00:28:56.830 --> 00:28:59.260 align:middle line:90%
+Yeah?
+
+00:28:59.260 --> 00:29:00.495 align:middle line:90%
+Question?
+
+00:29:00.495 --> 00:29:02.150 align:middle line:84%
+AUDIENCE: Why do you
+add 1 at the end?
+
+00:29:02.150 --> 00:29:04.390 align:middle line:84%
+BRYNMOR CHAPMAN: Ah,
+so the question was,
+
+00:29:04.390 --> 00:29:06.050 align:middle line:84%
+why are we adding
+1 onto the end?
+
+00:29:06.050 --> 00:29:10.090 align:middle line:84%
+So the answer was, FLT tells
+us that we're going to get 1.
+
+00:29:10.090 --> 00:29:11.595 align:middle line:90%
+What we really wanted was m.
+
+00:29:11.595 --> 00:29:14.710 align:middle line:90%
+
+
+00:29:14.710 --> 00:29:18.280 align:middle line:84%
+So what we want
+is m to the ed is
+
+00:29:18.280 --> 00:29:20.840 align:middle line:84%
+congruent to m,
+not congruent to 1.
+
+00:29:20.840 --> 00:29:23.870 align:middle line:90%
+So that's why.
+
+00:29:23.870 --> 00:29:29.280 align:middle line:84%
+So as long as we choose ed
+congruent mod p minus 1 to 1,
+
+00:29:29.280 --> 00:29:30.025 align:middle line:90%
+we'll get this.
+
+00:29:30.025 --> 00:29:35.120 align:middle line:90%
+
+
+00:29:35.120 --> 00:29:38.860 align:middle line:84%
+So more practically speaking,
+how could we generate e and d?
+
+00:29:38.860 --> 00:29:54.590 align:middle line:90%
+
+
+00:29:54.590 --> 00:30:00.316 align:middle line:84%
+How can I find a solution
+to this congruence?
+
+00:30:00.316 --> 00:30:08.720 align:middle line:90%
+
+
+00:30:08.720 --> 00:30:09.800 align:middle line:90%
+Yeah?
+
+00:30:09.800 --> 00:30:11.092 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:30:11.092 --> 00:30:12.050 align:middle line:90%
+BRYNMOR CHAPMAN: Sorry?
+
+00:30:12.050 --> 00:30:14.030 align:middle line:84%
+AUDIENCE: Try
+different values of k.
+
+00:30:14.030 --> 00:30:15.860 align:middle line:84%
+BRYNMOR CHAPMAN: OK, so the
+answer was "try different values
+
+00:30:15.860 --> 00:30:16.360 align:middle line:90%
+of k."
+
+00:30:16.360 --> 00:30:19.314 align:middle line:90%
+
+
+00:30:19.314 --> 00:30:24.710 align:middle line:84%
+So we're going to want to be
+using very large numbers here.
+
+00:30:24.710 --> 00:30:27.220 align:middle line:84%
+So that's going
+to be intractable.
+
+00:30:27.220 --> 00:30:29.106 align:middle line:84%
+We want to be able to
+do it more efficiently.
+
+00:30:29.106 --> 00:30:39.070 align:middle line:90%
+
+
+00:30:39.070 --> 00:30:43.540 align:middle line:84%
+So recall from Tuesday, this
+is saying that e and d are
+
+00:30:43.540 --> 00:30:48.160 align:middle line:84%
+modular inverses,
+modulo p minus 1.
+
+00:30:48.160 --> 00:30:52.300 align:middle line:84%
+How can we compute
+a modular inverse?
+
+00:30:52.300 --> 00:30:55.390 align:middle line:84%
+Well, one way is to
+use the pulverizer.
+
+00:30:55.390 --> 00:31:12.400 align:middle line:84%
+So if we choose e randomly
+and then pulverize,
+
+00:31:12.400 --> 00:31:14.372 align:middle line:90%
+this will give us d.
+
+00:31:14.372 --> 00:31:20.584 align:middle line:90%
+
+
+00:31:20.584 --> 00:31:23.310 align:middle line:84%
+So we've got a way
+to generate keys.
+
+00:31:23.310 --> 00:31:24.720 align:middle line:90%
+We've got a way to encrypt--
+
+00:31:24.720 --> 00:31:25.770 align:middle line:90%
+we raise m to the e.
+
+00:31:25.770 --> 00:31:27.450 align:middle line:90%
+We've got a way to decrypt--
+
+00:31:27.450 --> 00:31:29.870 align:middle line:90%
+we raise c to the d.
+
+00:31:29.870 --> 00:31:33.260 align:middle line:84%
+Can anybody tell
+me a security flaw?
+
+00:31:33.260 --> 00:31:34.710 align:middle line:90%
+Why is this insecure?
+
+00:31:34.710 --> 00:31:48.710 align:middle line:90%
+
+
+00:31:48.710 --> 00:31:51.330 align:middle line:84%
+So remember, for public
+key cryptosystem,
+
+00:31:51.330 --> 00:31:53.470 align:middle line:90%
+everybody knows the public key.
+
+00:31:53.470 --> 00:31:56.945 align:middle line:90%
+
+
+00:31:56.945 --> 00:31:59.960 align:middle line:84%
+And we don't want anybody
+to be able to figure out
+
+00:31:59.960 --> 00:32:03.170 align:middle line:90%
+the private key from that.
+
+00:32:03.170 --> 00:32:08.870 align:middle line:84%
+So in this case, our public
+key is going to be kp,
+
+00:32:08.870 --> 00:32:14.090 align:middle line:84%
+is going to be the
+pair p comma d--
+
+00:32:14.090 --> 00:32:18.640 align:middle line:90%
+oh, sorry, p comma e.
+
+00:32:18.640 --> 00:32:25.690 align:middle line:84%
+And our secret key is going
+to be the pair p comma d.
+
+00:32:25.690 --> 00:32:27.767 align:middle line:84%
+So this is what we need
+in order to encrypt.
+
+00:32:27.767 --> 00:32:29.475 align:middle line:84%
+This is what we need
+in order to decrypt.
+
+00:32:29.475 --> 00:32:34.540 align:middle line:90%
+
+
+00:32:34.540 --> 00:32:38.800 align:middle line:90%
+I claim that this is insecure.
+
+00:32:38.800 --> 00:32:39.520 align:middle line:90%
+Yeah?
+
+00:32:39.520 --> 00:32:43.435 align:middle line:84%
+AUDIENCE: Can't anyone else also
+just pulverize the final thing?
+
+00:32:43.435 --> 00:32:45.560 align:middle line:84%
+BRYNMOR CHAPMAN: Yes,
+so the answer was,
+
+00:32:45.560 --> 00:32:48.860 align:middle line:84%
+can't anybody else do
+exactly what we did?
+
+00:32:48.860 --> 00:32:53.290 align:middle line:84%
+We started with the
+public key and then used
+
+00:32:53.290 --> 00:32:56.680 align:middle line:90%
+it to derive our secret key.
+
+00:32:56.680 --> 00:32:59.900 align:middle line:84%
+If we then share that public
+key with everybody else,
+
+00:32:59.900 --> 00:33:02.720 align:middle line:84%
+everybody else can do
+exactly the same thing.
+
+00:33:02.720 --> 00:33:04.920 align:middle line:84%
+So our secret key
+isn't exactly secret.
+
+00:33:04.920 --> 00:33:09.538 align:middle line:90%
+
+
+00:33:09.538 --> 00:33:13.310 align:middle line:84%
+So we would like to try and
+do something similar to this
+
+00:33:13.310 --> 00:33:20.630 align:middle line:84%
+but in a way where other people
+can't repeat our computation.
+
+00:33:20.630 --> 00:33:22.510 align:middle line:84%
+Can anybody think of
+how we might do this?
+
+00:33:22.510 --> 00:33:30.440 align:middle line:90%
+
+
+00:33:30.440 --> 00:33:32.300 align:middle line:84%
+How can I make sure
+that nobody else
+
+00:33:32.300 --> 00:33:33.920 align:middle line:90%
+can do the same pulverization?
+
+00:33:33.920 --> 00:33:43.040 align:middle line:90%
+
+
+00:33:43.040 --> 00:33:44.275 align:middle line:90%
+Yeah?
+
+00:33:44.275 --> 00:33:47.874 align:middle line:84%
+AUDIENCE: Choose a random d
+and then pulverize to find e.
+
+00:33:47.874 --> 00:33:50.570 align:middle line:84%
+BRYNMOR CHAPMAN: OK, so the
+answer was choose a random d
+
+00:33:50.570 --> 00:33:52.190 align:middle line:90%
+and then pulverize to find e.
+
+00:33:52.190 --> 00:33:54.960 align:middle line:84%
+I claim that this
+is exactly the same.
+
+00:33:54.960 --> 00:33:56.155 align:middle line:90%
+It's the same process.
+
+00:33:56.155 --> 00:33:59.060 align:middle line:90%
+
+
+00:33:59.060 --> 00:34:05.730 align:middle line:84%
+So these two are
+basically symmetric.
+
+00:34:05.730 --> 00:34:08.570 align:middle line:84%
+So if I share one of
+them, then anybody else
+
+00:34:08.570 --> 00:34:09.834 align:middle line:90%
+can then find the other.
+
+00:34:09.834 --> 00:34:23.394 align:middle line:90%
+
+
+00:34:23.394 --> 00:34:30.280 align:middle line:84%
+So the idea behind RSA is
+that this modulus here,
+
+00:34:30.280 --> 00:34:34.224 align:middle line:84%
+the thing that we're
+trying to pulverize with,
+
+00:34:34.224 --> 00:34:41.808 align:middle line:84%
+and the modulus here, the part
+of the key that we're sharing,
+
+00:34:41.808 --> 00:34:45.190 align:middle line:90%
+here, they're off by 1.
+
+00:34:45.190 --> 00:34:48.429 align:middle line:84%
+But in some sense,
+they don't have to be.
+
+00:34:48.429 --> 00:34:54.790 align:middle line:84%
+So we'd like to find a way
+to share this but not have
+
+00:34:54.790 --> 00:34:58.430 align:middle line:90%
+this be so easily computable.
+
+00:34:58.430 --> 00:35:01.270 align:middle line:90%
+
+
+00:35:01.270 --> 00:35:02.145 align:middle line:90%
+How could we do that?
+
+00:35:02.145 --> 00:35:13.940 align:middle line:90%
+
+
+00:35:13.940 --> 00:35:15.840 align:middle line:84%
+Well, instead of
+using a single prime,
+
+00:35:15.840 --> 00:35:17.050 align:middle line:90%
+suppose we have two primes.
+
+00:35:17.050 --> 00:35:27.140 align:middle line:90%
+
+
+00:35:27.140 --> 00:35:28.600 align:middle line:90%
+So let's call them p and q.
+
+00:35:28.600 --> 00:35:37.010 align:middle line:90%
+
+
+00:35:37.010 --> 00:35:46.730 align:middle line:84%
+And now our n is going to
+be their product, p times q.
+
+00:35:46.730 --> 00:35:49.000 align:middle line:84%
+So that's going to be
+what I want to share here.
+
+00:35:49.000 --> 00:35:59.860 align:middle line:90%
+
+
+00:35:59.860 --> 00:36:03.100 align:middle line:84%
+But now this no
+longer quite works.
+
+00:36:03.100 --> 00:36:07.490 align:middle line:90%
+
+
+00:36:07.490 --> 00:36:13.300 align:middle line:84%
+So instead of pulverizing
+with n minus 1,
+
+00:36:13.300 --> 00:36:16.330 align:middle line:90%
+we're going to pulverize with--
+
+00:36:16.330 --> 00:36:20.445 align:middle line:84%
+sorry-- p minus 1
+times q minus 1.
+
+00:36:20.445 --> 00:36:26.275 align:middle line:90%
+
+
+00:36:26.275 --> 00:36:26.775 align:middle line:90%
+Why?
+
+00:36:26.775 --> 00:36:32.500 align:middle line:90%
+
+
+00:36:32.500 --> 00:36:38.030 align:middle line:84%
+Well, suppose we have
+done this already.
+
+00:36:38.030 --> 00:36:46.300 align:middle line:84%
+Suppose that ed
+is congruent mod--
+
+00:36:46.300 --> 00:36:49.420 align:middle line:90%
+let's call this, say, m.
+
+00:36:49.420 --> 00:36:51.043 align:middle line:90%
+No, m is for message.
+
+00:36:51.043 --> 00:36:51.960 align:middle line:90%
+Let's call it n prime.
+
+00:36:51.960 --> 00:36:55.990 align:middle line:90%
+
+
+00:36:55.990 --> 00:36:59.115 align:middle line:90%
+Congruent mod n prime to 1.
+
+00:36:59.115 --> 00:37:07.000 align:middle line:90%
+
+
+00:37:07.000 --> 00:37:10.570 align:middle line:84%
+What happens if we take m
+and raise it to the ed power?
+
+00:37:10.570 --> 00:37:17.330 align:middle line:90%
+
+
+00:37:17.330 --> 00:37:19.825 align:middle line:84%
+What is this
+equivalent to, mod n?
+
+00:37:19.825 --> 00:37:31.490 align:middle line:90%
+
+
+00:37:31.490 --> 00:37:32.090 align:middle line:90%
+Yeah?
+
+00:37:32.090 --> 00:37:33.530 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:37:33.530 --> 00:37:35.370 align:middle line:84%
+BRYNMOR CHAPMAN: OK,
+so the answer was m.
+
+00:37:35.370 --> 00:37:36.200 align:middle line:90%
+Yes.
+
+00:37:36.200 --> 00:37:37.050 align:middle line:90%
+Why?
+
+00:37:37.050 --> 00:37:38.313 align:middle line:90%
+AUDIENCE: I don't know.
+
+00:37:38.313 --> 00:37:39.480 align:middle line:90%
+BRYNMOR CHAPMAN: Don't know.
+
+00:37:39.480 --> 00:37:42.360 align:middle line:90%
+[CHUCKLES] Fair enough.
+
+00:37:42.360 --> 00:37:45.090 align:middle line:84%
+I mean, this is kind of
+what we were aiming for.
+
+00:37:45.090 --> 00:37:48.680 align:middle line:90%
+So very good educated guess.
+
+00:37:48.680 --> 00:37:49.735 align:middle line:90%
+How could we prove this?
+
+00:37:49.735 --> 00:37:52.490 align:middle line:90%
+
+
+00:37:52.490 --> 00:37:53.120 align:middle line:90%
+Yeah?
+
+00:37:53.120 --> 00:37:56.065 align:middle line:84%
+AUDIENCE: Is that supposed
+to be n prime or just--
+
+00:37:56.065 --> 00:37:59.520 align:middle line:84%
+BRYNMOR CHAPMAN: So this
+is supposed to be an n.
+
+00:37:59.520 --> 00:38:03.690 align:middle line:84%
+So remember that when
+we encrypt and decrypt,
+
+00:38:03.690 --> 00:38:06.560 align:middle line:84%
+those computations
+are being done mod n.
+
+00:38:06.560 --> 00:38:10.875 align:middle line:84%
+It's only the pulverizing that
+should be done using n prime.
+
+00:38:10.875 --> 00:38:14.030 align:middle line:90%
+
+
+00:38:14.030 --> 00:38:20.510 align:middle line:84%
+So we're assuming that ed is
+congruent mod n prime to 1.
+
+00:38:20.510 --> 00:38:23.860 align:middle line:84%
+And so we find that by
+pulverizing with n prime.
+
+00:38:23.860 --> 00:38:26.760 align:middle line:84%
+But after that, we can
+forget about n prime.
+
+00:38:26.760 --> 00:38:28.010 align:middle line:90%
+We don't need n prime anymore.
+
+00:38:28.010 --> 00:38:30.177 align:middle line:84%
+We're just going to do all
+of our computations mod n
+
+00:38:30.177 --> 00:38:31.760 align:middle line:90%
+using e and d.
+
+00:38:31.760 --> 00:38:37.298 align:middle line:90%
+
+
+00:38:37.298 --> 00:38:39.190 align:middle line:84%
+So does anybody have
+any ideas how we could
+
+00:38:39.190 --> 00:38:41.175 align:middle line:90%
+prove this statement here?
+
+00:38:41.175 --> 00:38:52.990 align:middle line:90%
+
+
+00:38:52.990 --> 00:38:55.480 align:middle line:84%
+What exactly is this
+statement saying if we go back
+
+00:38:55.480 --> 00:38:56.396 align:middle line:90%
+to the definitions?
+
+00:38:56.396 --> 00:39:05.960 align:middle line:90%
+
+
+00:39:05.960 --> 00:39:06.560 align:middle line:90%
+Yeah?
+
+00:39:06.560 --> 00:39:09.682 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:39:09.682 --> 00:39:15.088 align:middle line:90%
+
+
+00:39:15.088 --> 00:39:16.380 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah, exactly.
+
+00:39:16.380 --> 00:39:18.540 align:middle line:84%
+So you've skipped
+a couple of steps.
+
+00:39:18.540 --> 00:39:22.220 align:middle line:84%
+But, yes, I will get
+to that in a moment.
+
+00:39:22.220 --> 00:39:31.130 align:middle line:84%
+So this is saying that n
+divides m to the ed minus m.
+
+00:39:31.130 --> 00:39:35.540 align:middle line:90%
+
+
+00:39:35.540 --> 00:39:37.610 align:middle line:84%
+Now, at this point, we
+can break apart this n.
+
+00:39:37.610 --> 00:39:42.080 align:middle line:84%
+So all we really need to do is
+prove that p and q separately
+
+00:39:42.080 --> 00:39:56.480 align:middle line:84%
+divide m to the ed minus m, or,
+equivalently, that m to the ed
+
+00:39:56.480 --> 00:40:01.555 align:middle line:84%
+is congruent mod p
+and q separately to m.
+
+00:40:01.555 --> 00:40:07.630 align:middle line:90%
+
+
+00:40:07.630 --> 00:40:09.945 align:middle line:84%
+So if we prove these two
+things, then we're done.
+
+00:40:09.945 --> 00:40:23.791 align:middle line:90%
+
+
+00:40:23.791 --> 00:40:26.590 align:middle line:90%
+So p and q are symmetric.
+
+00:40:26.590 --> 00:40:30.550 align:middle line:90%
+So let's only prove it for p.
+
+00:40:30.550 --> 00:40:32.445 align:middle line:84%
+The same exact proof
+will work for q.
+
+00:40:32.445 --> 00:40:36.982 align:middle line:90%
+
+
+00:40:36.982 --> 00:40:53.660 align:middle line:84%
+So how do we prove now that m to
+the ed is congruent mod p to m?
+
+00:40:53.660 --> 00:40:54.585 align:middle line:90%
+How can we do this?
+
+00:40:54.585 --> 00:41:00.040 align:middle line:90%
+
+
+00:41:00.040 --> 00:41:00.870 align:middle line:90%
+Any ideas?
+
+00:41:00.870 --> 00:41:26.750 align:middle line:90%
+
+
+00:41:26.750 --> 00:41:27.905 align:middle line:90%
+Yeah?
+
+00:41:27.905 --> 00:41:33.618 align:middle line:84%
+AUDIENCE: So use the fact that
+[INAUDIBLE] is [INAUDIBLE]
+
+00:41:33.618 --> 00:41:35.305 align:middle line:90%
+
+
+00:41:35.305 --> 00:41:37.690 align:middle line:90%
+BRYNMOR CHAPMAN: That's right.
+
+00:41:37.690 --> 00:41:41.162 align:middle line:84%
+So the answer was basically
+that we've already done it.
+
+00:41:41.162 --> 00:41:50.336 align:middle line:84%
+So remember that ed is
+congruent mod n prime to 1.
+
+00:41:50.336 --> 00:41:56.530 align:middle line:84%
+So this means that n
+prime divides ed minus 1.
+
+00:41:56.530 --> 00:41:59.540 align:middle line:90%
+
+
+00:41:59.540 --> 00:42:01.190 align:middle line:90%
+Well, what is n prime?
+
+00:42:01.190 --> 00:42:08.920 align:middle line:84%
+n prime equals p
+minus 1 q minus 1.
+
+00:42:08.920 --> 00:42:12.610 align:middle line:90%
+So in particular, q minus 1--
+
+00:42:12.610 --> 00:42:18.240 align:middle line:84%
+no, p minus 1
+divides ed minus 1.
+
+00:42:18.240 --> 00:42:23.249 align:middle line:90%
+
+
+00:42:23.249 --> 00:42:28.845 align:middle line:84%
+So said otherwise, ed is
+congruent mod p minus 1 to 1.
+
+00:42:28.845 --> 00:42:33.244 align:middle line:90%
+
+
+00:42:33.244 --> 00:42:35.900 align:middle line:84%
+So that's exactly the
+condition we had over here.
+
+00:42:35.900 --> 00:42:36.890 align:middle line:90%
+Yeah, question?
+
+00:42:36.890 --> 00:42:39.225 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:42:39.225 --> 00:42:41.093 align:middle line:90%
+
+
+00:42:41.093 --> 00:42:42.670 align:middle line:84%
+BRYNMOR CHAPMAN: So
+the question was,
+
+00:42:42.670 --> 00:42:47.320 align:middle line:84%
+how do we know p minus
+1 divides ed minus 1?
+
+00:42:47.320 --> 00:42:50.080 align:middle line:90%
+p minus 1 divides n prime.
+
+00:42:50.080 --> 00:42:52.780 align:middle line:84%
+We defined n prime to be
+the product of q minus 1
+
+00:42:52.780 --> 00:42:55.280 align:middle line:90%
+and p minus 1.
+
+00:42:55.280 --> 00:42:58.220 align:middle line:84%
+So we know that n
+prime divides this.
+
+00:42:58.220 --> 00:43:00.100 align:middle line:84%
+And one of our rules
+of divisibility
+
+00:43:00.100 --> 00:43:03.235 align:middle line:84%
+was that then any factors
+of n prime also divide it.
+
+00:43:03.235 --> 00:43:06.290 align:middle line:90%
+
+
+00:43:06.290 --> 00:43:10.850 align:middle line:84%
+So we know that p minus
+1 divides ed minus 1.
+
+00:43:10.850 --> 00:43:14.105 align:middle line:84%
+So that's just saying that ed
+is congruent to 1 mod p minus 1.
+
+00:43:14.105 --> 00:43:16.790 align:middle line:90%
+
+
+00:43:16.790 --> 00:43:18.940 align:middle line:84%
+And that's the
+condition we had here.
+
+00:43:18.940 --> 00:43:22.358 align:middle line:90%
+
+
+00:43:22.358 --> 00:43:34.540 align:middle line:84%
+So now, by FLT, m to the
+ed is congruent mod p to m.
+
+00:43:34.540 --> 00:43:39.362 align:middle line:90%
+
+
+00:43:39.362 --> 00:43:43.130 align:middle line:90%
+So did people follow that?
+
+00:43:43.130 --> 00:43:44.770 align:middle line:90%
+So we've got congruence mod p.
+
+00:43:44.770 --> 00:43:47.480 align:middle line:90%
+
+
+00:43:47.480 --> 00:43:49.760 align:middle line:84%
+By symmetry, we also
+have congruence mod q.
+
+00:43:49.760 --> 00:43:52.770 align:middle line:84%
+p and q are-- they're
+basically symmetric.
+
+00:43:52.770 --> 00:43:56.255 align:middle line:90%
+
+
+00:43:56.255 --> 00:44:00.100 align:middle line:84%
+And now, because
+they're prime, we
+
+00:44:00.100 --> 00:44:03.610 align:middle line:84%
+can say that if p and q
+both independently divide
+
+00:44:03.610 --> 00:44:07.342 align:middle line:84%
+this difference, their product
+must divide it as well.
+
+00:44:07.342 --> 00:44:08.800 align:middle line:84%
+So that gives us
+congruence mod pq.
+
+00:44:08.800 --> 00:44:38.320 align:middle line:90%
+
+
+00:44:38.320 --> 00:44:43.220 align:middle line:90%
+OK, questions?
+
+00:44:43.220 --> 00:44:43.720 align:middle line:90%
+Yeah?
+
+00:44:43.720 --> 00:44:48.430 align:middle line:84%
+AUDIENCE: Can you explain how
+we went from ed to [INAUDIBLE] 1
+
+00:44:48.430 --> 00:44:50.860 align:middle line:90%
+[INAUDIBLE]?
+
+00:44:50.860 --> 00:44:52.730 align:middle line:84%
+BRYNMOR CHAPMAN: OK,
+so the question was,
+
+00:44:52.730 --> 00:44:57.070 align:middle line:84%
+can we go into this step
+here in more detail?
+
+00:44:57.070 --> 00:45:00.530 align:middle line:84%
+So remember, that's what
+we were doing over here.
+
+00:45:00.530 --> 00:45:05.480 align:middle line:84%
+So Fermat's little theorem
+says that m to the p minus 1
+
+00:45:05.480 --> 00:45:07.685 align:middle line:90%
+is congruent to 1 mod p.
+
+00:45:07.685 --> 00:45:10.690 align:middle line:90%
+
+
+00:45:10.690 --> 00:45:16.460 align:middle line:84%
+So if we raise these
+to any power k,
+
+00:45:16.460 --> 00:45:18.660 align:middle line:84%
+it's still going to
+be congruent to 1.
+
+00:45:18.660 --> 00:45:24.870 align:middle line:84%
+So m to the k times p minus 1
+will also be congruent to 1.
+
+00:45:24.870 --> 00:45:30.560 align:middle line:84%
+So m to the k times p minus 1
+plus 1 will be congruent to 1.
+
+00:45:30.560 --> 00:45:34.940 align:middle line:90%
+
+
+00:45:34.940 --> 00:45:38.520 align:middle line:84%
+This here is saying
+that ed has that form.
+
+00:45:38.520 --> 00:45:40.975 align:middle line:84%
+It's some multiple
+of p minus 1 plus 1.
+
+00:45:40.975 --> 00:45:44.960 align:middle line:90%
+
+
+00:45:44.960 --> 00:45:49.220 align:middle line:84%
+So basically, we're
+applying FLT repeatedly
+
+00:45:49.220 --> 00:45:50.590 align:middle line:90%
+just as we did over here.
+
+00:45:50.590 --> 00:45:57.970 align:middle line:90%
+
+
+00:45:57.970 --> 00:45:59.730 align:middle line:84%
+Are people reasonably
+happy with this?
+
+00:45:59.730 --> 00:46:10.085 align:middle line:90%
+
+
+00:46:10.085 --> 00:46:10.585 align:middle line:90%
+Yeah?
+
+00:46:10.585 --> 00:46:13.940 align:middle line:84%
+AUDIENCE: How did you get
+p minus 1 and q minus 1
+
+00:46:13.940 --> 00:46:15.850 align:middle line:90%
+[INAUDIBLE]?
+
+00:46:15.850 --> 00:46:18.920 align:middle line:84%
+BRYNMOR CHAPMAN: OK, so why are
+we using p minus 1 and q minus 1
+
+00:46:18.920 --> 00:46:21.415 align:middle line:90%
+in the first place?
+
+00:46:21.415 --> 00:46:23.790 align:middle line:84%
+In short, I pulled them out
+of my ass that it would work.
+
+00:46:23.790 --> 00:46:27.190 align:middle line:90%
+
+
+00:46:27.190 --> 00:46:31.660 align:middle line:84%
+So this is-- it's
+basically a generalization
+
+00:46:31.660 --> 00:46:36.700 align:middle line:90%
+of FLT called Euler's theorem.
+
+00:46:36.700 --> 00:46:43.750 align:middle line:84%
+It turns out that this p
+minus 1 times q minus 1
+
+00:46:43.750 --> 00:46:50.530 align:middle line:84%
+is what we call phi of n, where
+phi is Euler's totient function.
+
+00:46:50.530 --> 00:46:53.050 align:middle line:90%
+This counts the number of--
+
+00:46:53.050 --> 00:46:57.500 align:middle line:84%
+numbers up to n that
+are coprime with n.
+
+00:46:57.500 --> 00:47:02.510 align:middle line:84%
+So basically, we can
+use the same proof
+
+00:47:02.510 --> 00:47:08.390 align:middle line:84%
+as we did Tuesday to
+show that if we want
+
+00:47:08.390 --> 00:47:13.220 align:middle line:84%
+to get rid of this assumption
+that p is prime over here,
+
+00:47:13.220 --> 00:47:17.810 align:middle line:84%
+we can replace this p
+minus 1 with phi of n.
+
+00:47:17.810 --> 00:47:20.035 align:middle line:84%
+And then we get
+congruence mod n.
+
+00:47:20.035 --> 00:47:23.235 align:middle line:90%
+
+
+00:47:23.235 --> 00:47:26.570 align:middle line:84%
+We just proved the
+special case where
+
+00:47:26.570 --> 00:47:28.420 align:middle line:90%
+n is the product of two primes.
+
+00:47:28.420 --> 00:47:31.760 align:middle line:90%
+
+
+00:47:31.760 --> 00:47:36.215 align:middle line:84%
+But, yeah, basically it's
+kind of a guess and check.
+
+00:47:36.215 --> 00:47:38.925 align:middle line:90%
+
+
+00:47:38.925 --> 00:47:41.190 align:middle line:84%
+All we really need to
+know is that this works.
+
+00:47:41.190 --> 00:47:43.765 align:middle line:84%
+We don't really need to
+know how we got there.
+
+00:47:43.765 --> 00:48:04.560 align:middle line:90%
+
+
+00:48:04.560 --> 00:48:08.500 align:middle line:84%
+So we've proven that
+if we encrypt something
+
+00:48:08.500 --> 00:48:12.790 align:middle line:84%
+by raising it to
+the e-th power mod n
+
+00:48:12.790 --> 00:48:16.030 align:middle line:84%
+and then we decrypt it by
+raising it to the e power of mod
+
+00:48:16.030 --> 00:48:20.845 align:middle line:84%
+n, we're going to get back to
+the same thing we started with.
+
+00:48:20.845 --> 00:48:24.260 align:middle line:84%
+So this cryptosystem
+is at least correct.
+
+00:48:24.260 --> 00:48:28.480 align:middle line:84%
+We can encrypt a message
+and then decrypt it again.
+
+00:48:28.480 --> 00:48:29.310 align:middle line:90%
+Is it secure?
+
+00:48:29.310 --> 00:48:43.330 align:middle line:90%
+
+
+00:48:43.330 --> 00:48:46.450 align:middle line:90%
+Oh, sorry.
+
+00:48:46.450 --> 00:48:49.725 align:middle line:84%
+Actually, why don't
+I just do that?
+
+00:48:49.725 --> 00:48:54.112 align:middle line:90%
+
+
+00:48:54.112 --> 00:48:57.690 align:middle line:90%
+So is RSA secure?
+
+00:48:57.690 --> 00:48:59.270 align:middle line:84%
+We said before
+that if we're just
+
+00:48:59.270 --> 00:49:02.610 align:middle line:84%
+using a prime instead of
+this product of two primes,
+
+00:49:02.610 --> 00:49:07.370 align:middle line:84%
+then anybody else can
+compute our secret key.
+
+00:49:07.370 --> 00:49:09.470 align:middle line:90%
+What are we doing now?
+
+00:49:09.470 --> 00:49:21.510 align:middle line:84%
+Well, one, we're choosing
+random primes, large primes.
+
+00:49:21.510 --> 00:49:24.005 align:middle line:84%
+So think of these as like
+having hundreds of digits.
+
+00:49:24.005 --> 00:49:34.160 align:middle line:90%
+
+
+00:49:34.160 --> 00:49:37.730 align:middle line:84%
+Next, we're going to set
+n equals their product.
+
+00:49:37.730 --> 00:49:41.360 align:middle line:84%
+And, let's just
+call it, phi of n
+
+00:49:41.360 --> 00:49:48.290 align:middle line:84%
+now equals p minus
+1 times q minus 1.
+
+00:49:48.290 --> 00:49:59.335 align:middle line:84%
+And next, we're going to choose
+a random e coprime with this.
+
+00:49:59.335 --> 00:50:08.000 align:middle line:90%
+
+
+00:50:08.000 --> 00:50:09.600 align:middle line:84%
+And then we want
+to pulverize it.
+
+00:50:09.600 --> 00:50:11.190 align:middle line:84%
+We want to compute
+an inverse of e.
+
+00:50:11.190 --> 00:50:18.080 align:middle line:90%
+
+
+00:50:18.080 --> 00:50:22.580 align:middle line:90%
+So why don't I write it as this?
+
+00:50:22.580 --> 00:50:32.270 align:middle line:84%
+Compute a multiplicative
+inverse modulo phi of n.
+
+00:50:32.270 --> 00:50:35.540 align:middle line:90%
+
+
+00:50:35.540 --> 00:50:36.990 align:middle line:90%
+Now, what is the public key?
+
+00:50:36.990 --> 00:50:39.770 align:middle line:90%
+Public key is going to be--
+
+00:50:39.770 --> 00:50:45.905 align:middle line:84%
+k sub p is going
+to be n comma e.
+
+00:50:45.905 --> 00:50:49.184 align:middle line:84%
+k sub s is going
+to be n comma d.
+
+00:50:49.184 --> 00:50:52.850 align:middle line:90%
+
+
+00:50:52.850 --> 00:50:55.100 align:middle line:90%
+So before, when we had--
+
+00:50:55.100 --> 00:50:55.900 align:middle line:90%
+oh, question?
+
+00:50:55.900 --> 00:50:59.090 align:middle line:84%
+AUDIENCE: Yeah, how hard is
+it to choose e that's coprime?
+
+00:50:59.090 --> 00:51:01.620 align:middle line:84%
+Or do you just choose a
+relatively small prime?
+
+00:51:01.620 --> 00:51:04.070 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+00:51:04.070 --> 00:51:08.840 align:middle line:84%
+How hard is it to
+choose e that's coprime?
+
+00:51:08.840 --> 00:51:11.390 align:middle line:90%
+It's actually not that hard.
+
+00:51:11.390 --> 00:51:14.120 align:middle line:84%
+So in practice,
+usually you would not
+
+00:51:14.120 --> 00:51:15.270 align:middle line:90%
+choose it totally randomly.
+
+00:51:15.270 --> 00:51:19.850 align:middle line:84%
+You'd have a fairly small e so
+that encryption is efficient.
+
+00:51:19.850 --> 00:51:22.020 align:middle line:84%
+But if you wanted to
+do it totally randomly,
+
+00:51:22.020 --> 00:51:27.115 align:middle line:84%
+like how many things are
+not coprime to phi of n?
+
+00:51:27.115 --> 00:51:32.634 align:middle line:90%
+
+
+00:51:32.634 --> 00:51:33.935 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:51:33.935 --> 00:51:40.370 align:middle line:90%
+
+
+00:51:40.370 --> 00:51:43.500 align:middle line:84%
+BRYNMOR CHAPMAN: So, yeah,
+multiples of the prime factors,
+
+00:51:43.500 --> 00:51:46.212 align:middle line:90%
+yes.
+
+00:51:46.212 --> 00:51:48.120 align:middle line:90%
+So let's see, have you--
+
+00:51:48.120 --> 00:51:50.870 align:middle line:84%
+did we do the
+Carmichael numbers yet?
+
+00:51:50.870 --> 00:51:51.400 align:middle line:90%
+No?
+
+00:51:51.400 --> 00:51:54.190 align:middle line:90%
+OK.
+
+00:51:54.190 --> 00:51:57.710 align:middle line:84%
+Well, it turns out that if
+you choose a random number,
+
+00:51:57.710 --> 00:52:02.320 align:middle line:84%
+it'll actually be coprime with
+reasonably good probability.
+
+00:52:02.320 --> 00:52:06.860 align:middle line:84%
+But in practice, we're going to
+just choose a fairly small e.
+
+00:52:06.860 --> 00:52:18.730 align:middle line:90%
+
+
+00:52:18.730 --> 00:52:23.600 align:middle line:84%
+So we said that if we just
+forget about q, use n equals p,
+
+00:52:23.600 --> 00:52:26.620 align:middle line:84%
+this doesn't work because
+anybody else can then
+
+00:52:26.620 --> 00:52:28.480 align:middle line:84%
+compute our secret
+key in the same way
+
+00:52:28.480 --> 00:52:31.090 align:middle line:90%
+as we computed it ourselves.
+
+00:52:31.090 --> 00:52:34.660 align:middle line:90%
+Why does this not happen here?
+
+00:52:34.660 --> 00:52:39.990 align:middle line:84%
+Why can nobody else compute the
+secret key given the public key?
+
+00:52:39.990 --> 00:52:44.560 align:middle line:90%
+
+
+00:52:44.560 --> 00:52:45.220 align:middle line:90%
+Yeah?
+
+00:52:45.220 --> 00:52:48.640 align:middle line:84%
+AUDIENCE: It's hard
+to find factors and--
+
+00:52:48.640 --> 00:52:51.080 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah,
+so the basic idea
+
+00:52:51.080 --> 00:52:53.065 align:middle line:84%
+is that we're relying
+on factoring being hard.
+
+00:52:53.065 --> 00:53:19.194 align:middle line:90%
+
+
+00:53:19.194 --> 00:53:23.120 align:middle line:84%
+So the basic idea is
+that if you have n,
+
+00:53:23.120 --> 00:53:28.100 align:middle line:84%
+it should be hard to
+come up with p and q.
+
+00:53:28.100 --> 00:53:30.650 align:middle line:84%
+And I claim that this is
+actually a much safer assumption
+
+00:53:30.650 --> 00:53:33.410 align:middle line:84%
+than was used with
+Enigma because this
+
+00:53:33.410 --> 00:53:35.295 align:middle line:90%
+is a very well-studied problem.
+
+00:53:35.295 --> 00:53:37.670 align:middle line:84%
+People have been trying to
+factor things more efficiently
+
+00:53:37.670 --> 00:53:39.180 align:middle line:90%
+for hundreds of years.
+
+00:53:39.180 --> 00:53:43.370 align:middle line:84%
+And mathematicians
+have not found
+
+00:53:43.370 --> 00:53:45.510 align:middle line:90%
+an efficient way of doing this.
+
+00:53:45.510 --> 00:53:49.930 align:middle line:84%
+So in particular, the adversary
+will also presumably not
+
+00:53:49.930 --> 00:53:51.290 align:middle line:90%
+be able to do it.
+
+00:53:51.290 --> 00:53:53.170 align:middle line:84%
+It's not just saying
+like, I personally
+
+00:53:53.170 --> 00:53:55.730 align:middle line:84%
+couldn't come up with a
+good factoring algorithm.
+
+00:53:55.730 --> 00:54:00.650 align:middle line:84%
+This is relying on many years
+of work by many mathematicians.
+
+00:54:00.650 --> 00:54:03.500 align:middle line:84%
+It still is possible that
+factoring isn't hard.
+
+00:54:03.500 --> 00:54:07.523 align:middle line:84%
+And in fact, maybe somebody
+already knows how to do it.
+
+00:54:07.523 --> 00:54:08.690 align:middle line:90%
+They've got their algorithm.
+
+00:54:08.690 --> 00:54:10.930 align:middle line:90%
+They just haven't published it.
+
+00:54:10.930 --> 00:54:15.350 align:middle line:84%
+But the assumption is basically
+like, if one could do it,
+
+00:54:15.350 --> 00:54:19.397 align:middle line:84%
+then one of these mathematicians
+would have figured it out,
+
+00:54:19.397 --> 00:54:20.730 align:middle line:90%
+like one of these world experts.
+
+00:54:20.730 --> 00:54:25.227 align:middle line:90%
+
+
+00:54:25.227 --> 00:54:30.500 align:middle line:84%
+So more formally, though,
+if we could compute the--
+
+00:54:30.500 --> 00:54:33.350 align:middle line:84%
+AUDIENCE: Isn't that
+cryptography by hubris again?
+
+00:54:33.350 --> 00:54:35.110 align:middle line:84%
+BRYNMOR CHAPMAN:
+Ah, OK, question
+
+00:54:35.110 --> 00:54:37.690 align:middle line:84%
+was, isn't this just
+cryptography by hubris?
+
+00:54:37.690 --> 00:54:42.230 align:middle line:84%
+OK, I claim that I'm not relying
+solely on my own intelligence.
+
+00:54:42.230 --> 00:54:45.440 align:middle line:84%
+I'm relying on everybody
+else, like the entire field
+
+00:54:45.440 --> 00:54:47.810 align:middle line:90%
+of mathematics.
+
+00:54:47.810 --> 00:54:51.380 align:middle line:84%
+Many mathematicians have spent
+their entire careers trying
+
+00:54:51.380 --> 00:54:55.252 align:middle line:84%
+to factor things
+quickly, and nobody's
+
+00:54:55.252 --> 00:54:56.460 align:middle line:90%
+figured out how to do it yet.
+
+00:54:56.460 --> 00:54:59.780 align:middle line:84%
+It's not just like, I
+was spending half an hour
+
+00:54:59.780 --> 00:55:02.180 align:middle line:84%
+in my basement, and
+I couldn't figure out
+
+00:55:02.180 --> 00:55:05.410 align:middle line:90%
+a good algorithm in that time.
+
+00:55:05.410 --> 00:55:09.200 align:middle line:84%
+The Enigma engineer, he
+just came up with something
+
+00:55:09.200 --> 00:55:12.510 align:middle line:84%
+and then couldn't figure
+out a way to break it
+
+00:55:12.510 --> 00:55:17.308 align:middle line:84%
+and so just assumed
+security from that.
+
+00:55:17.308 --> 00:55:21.916 align:middle line:84%
+So it's kind of me versus the
+entire field of mathematics.
+
+00:55:21.916 --> 00:55:31.790 align:middle line:90%
+
+
+00:55:31.790 --> 00:55:37.170 align:middle line:84%
+OK, so, yeah, I guess
+the question is, given--
+
+00:55:37.170 --> 00:55:39.260 align:middle line:84%
+so if we had an
+algorithm that would
+
+00:55:39.260 --> 00:55:42.260 align:middle line:84%
+compute the secret key
+from the public key,
+
+00:55:42.260 --> 00:55:43.575 align:middle line:90%
+how would this factor in?
+
+00:55:43.575 --> 00:56:01.900 align:middle line:90%
+
+
+00:56:01.900 --> 00:56:04.180 align:middle line:84%
+Notice that the secret
+key doesn't actually
+
+00:56:04.180 --> 00:56:05.235 align:middle line:90%
+contain p and q.
+
+00:56:05.235 --> 00:56:47.000 align:middle line:90%
+
+
+00:56:47.000 --> 00:56:49.490 align:middle line:84%
+So I suppose, as
+described, we aren't quite
+
+00:56:49.490 --> 00:56:51.060 align:middle line:84%
+relying on the
+hardness of factoring.
+
+00:56:51.060 --> 00:56:52.620 align:middle line:84%
+We're relying on something
+slightly different.
+
+00:56:52.620 --> 00:56:53.120 align:middle line:90%
+Yeah?
+
+00:56:53.120 --> 00:56:55.110 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:56:55.110 --> 00:56:57.010 align:middle line:90%
+BRYNMOR CHAPMAN: Oh, sorry.
+
+00:56:57.010 --> 00:57:02.845 align:middle line:84%
+AUDIENCE: Are you asking how did
+you come up with that p or q--
+
+00:57:02.845 --> 00:57:04.850 align:middle line:84%
+BRYNMOR CHAPMAN:
+So if we could find
+
+00:57:04.850 --> 00:57:08.790 align:middle line:84%
+the private key, the secret
+key given the public key,
+
+00:57:08.790 --> 00:57:11.750 align:middle line:90%
+how would this then factor in?
+
+00:57:11.750 --> 00:57:15.270 align:middle line:84%
+We would like to rely on the
+hardness of factorization.
+
+00:57:15.270 --> 00:57:29.625 align:middle line:90%
+
+
+00:57:29.625 --> 00:57:31.605 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+00:57:31.605 --> 00:57:43.467 align:middle line:90%
+
+
+00:57:43.467 --> 00:57:44.300 align:middle line:90%
+BRYNMOR CHAPMAN: OK.
+
+00:57:44.300 --> 00:57:46.300 align:middle line:84%
+So the answer was
+basically that you
+
+00:57:46.300 --> 00:57:49.330 align:middle line:84%
+have to come up with the
+prime factors p and q
+
+00:57:49.330 --> 00:57:55.190 align:middle line:90%
+before you can compute d from e.
+
+00:57:55.190 --> 00:57:59.500 align:middle line:90%
+
+
+00:57:59.500 --> 00:58:03.350 align:middle line:84%
+We would like to say that
+no matter how you do it,
+
+00:58:03.350 --> 00:58:06.850 align:middle line:84%
+you're still basically going to
+end up with the factors p and q.
+
+00:58:06.850 --> 00:58:11.680 align:middle line:84%
+You will have solved the problem
+even if you didn't intend to.
+
+00:58:11.680 --> 00:58:12.660 align:middle line:90%
+Does that make sense?
+
+00:58:12.660 --> 00:58:20.530 align:middle line:90%
+
+
+00:58:20.530 --> 00:58:27.220 align:middle line:90%
+OK, so suppose I have n, e, d.
+
+00:58:27.220 --> 00:58:30.762 align:middle line:84%
+So suppose I've
+used the public key
+
+00:58:30.762 --> 00:58:31.970 align:middle line:90%
+to come up with a secret key.
+
+00:58:31.970 --> 00:58:36.250 align:middle line:84%
+So now I have these three
+pieces of information.
+
+00:58:36.250 --> 00:58:38.115 align:middle line:84%
+Does this now allow
+me to factor n?
+
+00:58:38.115 --> 00:59:02.852 align:middle line:90%
+
+
+00:59:02.852 --> 00:59:05.030 align:middle line:84%
+Does anybody remember
+the quadratic formula
+
+00:59:05.030 --> 00:59:06.370 align:middle line:90%
+from grade school?
+
+00:59:06.370 --> 00:59:09.140 align:middle line:90%
+
+
+00:59:09.140 --> 00:59:10.345 align:middle line:90%
+It's OK, I don't either.
+
+00:59:10.345 --> 00:59:14.162 align:middle line:90%
+
+
+00:59:14.162 --> 00:59:37.220 align:middle line:84%
+So if I have e and d, ed minus
+1 should be a multiple of p
+
+00:59:37.220 --> 00:59:39.885 align:middle line:90%
+minus 1 times q minus 1.
+
+00:59:39.885 --> 00:59:50.710 align:middle line:90%
+
+
+00:59:50.710 --> 00:59:52.485 align:middle line:84%
+What happens if I
+reduce that mod n?
+
+00:59:52.485 --> 00:59:56.044 align:middle line:90%
+
+
+00:59:56.044 --> 00:59:56.544 align:middle line:90%
+Hm?
+
+00:59:56.544 --> 00:59:57.490 align:middle line:90%
+AUDIENCE: You get 1.
+
+00:59:57.490 --> 00:59:59.080 align:middle line:90%
+BRYNMOR CHAPMAN: I get 1?
+
+00:59:59.080 --> 01:00:01.410 align:middle line:84%
+If I reduce it mod p minus
+1 times q minus 1, I get 1.
+
+01:00:01.410 --> 01:00:07.475 align:middle line:90%
+
+
+01:00:07.475 --> 01:00:07.975 align:middle line:90%
+Yeah?
+
+01:00:07.975 --> 01:00:09.292 align:middle line:90%
+AUDIENCE: You get p and q.
+
+01:00:09.292 --> 01:00:10.500 align:middle line:90%
+BRYNMOR CHAPMAN: Get p and q?
+
+01:00:10.500 --> 01:00:11.125 align:middle line:90%
+AUDIENCE: Yeah.
+
+01:00:11.125 --> 01:00:14.299 align:middle line:90%
+
+
+01:00:14.299 --> 01:00:17.090 align:middle line:84%
+BRYNMOR CHAPMAN: OK, let's
+make it a little bit simpler.
+
+01:00:17.090 --> 01:00:21.310 align:middle line:84%
+Suppose I actually have p
+minus 1, q minus 1-- or p
+
+01:00:21.310 --> 01:00:23.800 align:middle line:90%
+minus 1 times q minus 1.
+
+01:00:23.800 --> 01:00:25.950 align:middle line:90%
+If I had that, could I factor n?
+
+01:00:25.950 --> 01:00:56.510 align:middle line:90%
+
+
+01:00:56.510 --> 01:00:58.770 align:middle line:84%
+So if I had that,
+I could-- oh, yeah.
+
+01:00:58.770 --> 01:01:04.130 align:middle line:84%
+AUDIENCE: If you expand p
+minus 1 times q minus 1,
+
+01:01:04.130 --> 01:01:06.050 align:middle line:84%
+you'll see that the
+expression for that
+
+01:01:06.050 --> 01:01:13.130 align:middle line:90%
+is n pq minus p times q plus 1.
+
+01:01:13.130 --> 01:01:19.860 align:middle line:84%
+And so from there,
+we can see what n is.
+
+01:01:19.860 --> 01:01:20.960 align:middle line:90%
+We're given n.
+
+01:01:20.960 --> 01:01:26.310 align:middle line:84%
+And then we just have, what,
+negative p times q plus 1.
+
+01:01:26.310 --> 01:01:27.840 align:middle line:90%
+And that's easy.
+
+01:01:27.840 --> 01:01:29.750 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+01:01:29.750 --> 01:01:32.690 align:middle line:84%
+So if we actually had p
+minus 1 times q minus 1,
+
+01:01:32.690 --> 01:01:35.420 align:middle line:84%
+we could use that to figure
+out the sum of p and q.
+
+01:01:35.420 --> 01:01:36.410 align:middle line:90%
+We know their product.
+
+01:01:36.410 --> 01:01:37.785 align:middle line:84%
+We can use the
+quadratic formula.
+
+01:01:37.785 --> 01:01:45.160 align:middle line:90%
+
+
+01:01:45.160 --> 01:01:46.900 align:middle line:84%
+What happens if
+we just have ed--
+
+01:01:46.900 --> 01:01:47.870 align:middle line:90%
+sorry, e and d?
+
+01:01:47.870 --> 01:01:53.148 align:middle line:90%
+
+
+01:01:53.148 --> 01:01:54.315 align:middle line:90%
+Can we do something similar?
+
+01:01:54.315 --> 01:02:08.435 align:middle line:90%
+
+
+01:02:08.435 --> 01:02:10.310 align:middle line:84%
+Oh, actually I'm running
+quite short on time.
+
+01:02:10.310 --> 01:02:13.693 align:middle line:84%
+OK, why don't we
+hold off on that?
+
+01:02:13.693 --> 01:02:15.610 align:middle line:84%
+Let's just take it on
+faith that we're relying
+
+01:02:15.610 --> 01:02:16.880 align:middle line:90%
+on factoring being hard.
+
+01:02:16.880 --> 01:02:21.760 align:middle line:84%
+Let's move on to the
+last thing that we
+
+01:02:21.760 --> 01:02:29.590 align:middle line:84%
+wanted to cover today, which is
+a slightly different application
+
+01:02:29.590 --> 01:02:35.690 align:middle line:84%
+of number theory, which you may
+find useful throughout computer
+
+01:02:35.690 --> 01:02:37.610 align:middle line:90%
+science.
+
+01:02:37.610 --> 01:02:39.685 align:middle line:90%
+Notice-- where is it?
+
+01:02:39.685 --> 01:02:43.520 align:middle line:90%
+
+
+01:02:43.520 --> 01:02:44.560 align:middle line:90%
+OK, here.
+
+01:02:44.560 --> 01:02:53.630 align:middle line:90%
+
+
+01:02:53.630 --> 01:03:00.170 align:middle line:84%
+So here, we're
+trying to work mod n.
+
+01:03:00.170 --> 01:03:03.740 align:middle line:90%
+n is the product of two primes.
+
+01:03:03.740 --> 01:03:06.620 align:middle line:84%
+And we said that it's easier--
+instead of working mod n,
+
+01:03:06.620 --> 01:03:10.140 align:middle line:84%
+we're going to work mod the
+two primes individually.
+
+01:03:10.140 --> 01:03:12.380 align:middle line:84%
+So it turns out that
+this is something
+
+01:03:12.380 --> 01:03:15.020 align:middle line:90%
+that you can do in general.
+
+01:03:15.020 --> 01:03:19.286 align:middle line:84%
+This is what we call the
+Chinese remainder theorem.
+
+01:03:19.286 --> 01:03:23.510 align:middle line:84%
+If you have-- in fact, if
+you have two coprime numbers
+
+01:03:23.510 --> 01:03:27.020 align:middle line:84%
+p and q, working
+modulo their product
+
+01:03:27.020 --> 01:03:30.530 align:middle line:84%
+is equivalent to working modulo
+each of them individually.
+
+01:03:30.530 --> 01:03:36.010 align:middle line:84%
+And often working modulo the
+smaller numbers individually
+
+01:03:36.010 --> 01:03:41.870 align:middle line:84%
+is going to be much easier than
+working modulo the large number.
+
+01:03:41.870 --> 01:03:51.940 align:middle line:84%
+So as a very simple example,
+suppose we have the following.
+
+01:03:51.940 --> 01:03:56.110 align:middle line:90%
+Actually, strictly less than 55.
+
+01:03:56.110 --> 01:04:02.335 align:middle line:84%
+And we know that x is
+congruent mod 5 to 4,
+
+01:04:02.335 --> 01:04:07.090 align:middle line:90%
+x congruent mod 11 to 7.
+
+01:04:07.090 --> 01:04:11.590 align:middle line:84%
+OK, I claim that we have
+enough information now
+
+01:04:11.590 --> 01:04:15.190 align:middle line:90%
+to uniquely identify x.
+
+01:04:15.190 --> 01:04:16.215 align:middle line:90%
+Can anybody do it?
+
+01:04:16.215 --> 01:04:27.610 align:middle line:90%
+
+
+01:04:27.610 --> 01:04:28.725 align:middle line:90%
+How might we do it?
+
+01:04:28.725 --> 01:04:36.330 align:middle line:90%
+
+
+01:04:36.330 --> 01:04:36.830 align:middle line:90%
+Yeah?
+
+01:04:36.830 --> 01:04:40.464 align:middle line:90%
+
+
+01:04:40.464 --> 01:04:42.570 align:middle line:84%
+AUDIENCE: This would
+be a slow way to do it.
+
+01:04:42.570 --> 01:04:45.050 align:middle line:84%
+But you could go through
+every number between 0 and 55
+
+01:04:45.050 --> 01:04:47.690 align:middle line:84%
+and figure out what all
+the possibilities were
+
+01:04:47.690 --> 01:04:50.090 align:middle line:90%
+for each of these [INAUDIBLE].
+
+01:04:50.090 --> 01:04:52.040 align:middle line:84%
+BRYNMOR CHAPMAN:
+OK, so the answer
+
+01:04:52.040 --> 01:04:55.010 align:middle line:84%
+was try everything
+between 0 and 55,
+
+01:04:55.010 --> 01:04:57.590 align:middle line:84%
+see what they're congruent
+to mod 5, see what they're
+
+01:04:57.590 --> 01:04:59.870 align:middle line:84%
+congruent to mod 11,
+and see whether it
+
+01:04:59.870 --> 01:05:01.460 align:middle line:90%
+satisfies both of those.
+
+01:05:01.460 --> 01:05:04.520 align:middle line:84%
+I claim that we can do it
+slightly faster than that.
+
+01:05:04.520 --> 01:05:08.090 align:middle line:84%
+Why don't we enumerate
+everything that satisfies
+
+01:05:08.090 --> 01:05:11.070 align:middle line:90%
+this congruence first?
+
+01:05:11.070 --> 01:05:16.030 align:middle line:84%
+So what is congruent to 7
+modulo 11 in this range?
+
+01:05:16.030 --> 01:05:17.780 align:middle line:90%
+So that tells us that--
+
+01:05:17.780 --> 01:05:19.910 align:middle line:84%
+maybe I should
+write it down here.
+
+01:05:19.910 --> 01:05:22.490 align:middle line:84%
+Whoops. x is in
+the following set--
+
+01:05:22.490 --> 01:05:31.270 align:middle line:90%
+7, 18, 29, 40, 51.
+
+01:05:31.270 --> 01:05:33.795 align:middle line:84%
+And if we add 11
+again, we get past 55.
+
+01:05:33.795 --> 01:05:37.714 align:middle line:90%
+
+
+01:05:37.714 --> 01:05:41.110 align:middle line:84%
+Now we only have to
+check five numbers
+
+01:05:41.110 --> 01:05:46.480 align:middle line:84%
+to see which is
+congruent to 4 modulo 5.
+
+01:05:46.480 --> 01:05:49.680 align:middle line:84%
+And if we look at them, 29
+is the only one that works.
+
+01:05:49.680 --> 01:05:53.215 align:middle line:90%
+
+
+01:05:53.215 --> 01:05:57.783 align:middle line:84%
+So it turns out that there's
+a unique answer modulo 55.
+
+01:05:57.783 --> 01:06:03.640 align:middle line:90%
+
+
+01:06:03.640 --> 01:06:06.850 align:middle line:84%
+And we can actually do this in
+general and, in fact, even more
+
+01:06:06.850 --> 01:06:08.080 align:middle line:90%
+efficiently.
+
+01:06:08.080 --> 01:06:13.840 align:middle line:84%
+So Chinese remainder theorem,
+often abbreviated CRT.
+
+01:06:13.840 --> 01:06:28.820 align:middle line:84%
+So suppose p and q are coprime
+and a and b are integers.
+
+01:06:28.820 --> 01:06:32.660 align:middle line:90%
+
+
+01:06:32.660 --> 01:06:37.716 align:middle line:84%
+And we have the following
+system of congruences.
+
+01:06:37.716 --> 01:06:46.802 align:middle line:90%
+
+
+01:06:46.802 --> 01:06:50.520 align:middle line:84%
+So if we have this, then
+there is a unique solution,
+
+01:06:50.520 --> 01:06:54.085 align:middle line:84%
+there's a unique x, that
+satisfies this modulo pq.
+
+01:06:54.085 --> 01:07:21.563 align:middle line:90%
+
+
+01:07:21.563 --> 01:07:23.430 align:middle line:90%
+So how might we prove this?
+
+01:07:23.430 --> 01:07:25.330 align:middle line:84%
+What are the elements
+that we need to prove?
+
+01:07:25.330 --> 01:07:31.480 align:middle line:90%
+
+
+01:07:31.480 --> 01:07:32.110 align:middle line:90%
+Yeah?
+
+01:07:32.110 --> 01:07:34.831 align:middle line:84%
+AUDIENCE: Sorry, I had a
+question about [INAUDIBLE].
+
+01:07:34.831 --> 01:07:38.700 align:middle line:84%
+Which Greek letter are you
+using for the quotient?
+
+01:07:38.700 --> 01:07:40.180 align:middle line:90%
+BRYNMOR CHAPMAN: Sorry?
+
+01:07:40.180 --> 01:07:44.927 align:middle line:84%
+AUDIENCE: For the top right-ish
+board, there's a Greek letter--
+
+01:07:44.927 --> 01:07:46.010 align:middle line:90%
+BRYNMOR CHAPMAN: Oh, here?
+
+01:07:46.010 --> 01:07:47.290 align:middle line:90%
+Phi of n.
+
+01:07:47.290 --> 01:07:48.250 align:middle line:90%
+AUDIENCE: Huh?
+
+01:07:48.250 --> 01:07:49.280 align:middle line:90%
+BRYNMOR CHAPMAN: Here?
+
+01:07:49.280 --> 01:07:49.920 align:middle line:90%
+Phi of n.
+
+01:07:49.920 --> 01:07:51.112 align:middle line:90%
+AUDIENCE: Oh.
+
+01:07:51.112 --> 01:07:52.937 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+01:07:52.937 --> 01:07:55.520 align:middle line:84%
+So you don't have to worry about
+what this is actually called.
+
+01:07:55.520 --> 01:07:57.850 align:middle line:90%
+We could call this n prime.
+
+01:07:57.850 --> 01:08:00.610 align:middle line:90%
+But yeah.
+
+01:08:00.610 --> 01:08:02.350 align:middle line:84%
+Sorry, this was
+just following up
+
+01:08:02.350 --> 01:08:05.115 align:middle line:84%
+on what one of your
+classmates asked earlier.
+
+01:08:05.115 --> 01:08:11.818 align:middle line:90%
+
+
+01:08:11.818 --> 01:08:14.110 align:middle line:84%
+So what are the elements that
+we need to prove in order
+
+01:08:14.110 --> 01:08:15.630 align:middle line:90%
+to prove this theorem here?
+
+01:08:15.630 --> 01:08:23.080 align:middle line:90%
+
+
+01:08:23.080 --> 01:08:27.330 align:middle line:84%
+Well, we need to
+prove existence.
+
+01:08:27.330 --> 01:08:32.236 align:middle line:84%
+And then we need to prove that
+there don't exist two solutions.
+
+01:08:32.236 --> 01:08:36.029 align:middle line:90%
+So let's start with existence.
+
+01:08:36.029 --> 01:08:39.094 align:middle line:90%
+Why does there exist a solution?
+
+01:08:39.094 --> 01:08:42.479 align:middle line:90%
+
+
+01:08:42.479 --> 01:08:44.620 align:middle line:84%
+Maybe we can start thinking
+about a special case.
+
+01:08:44.620 --> 01:08:50.210 align:middle line:84%
+So suppose, for a
+start, that a equals 0.
+
+01:08:50.210 --> 01:08:53.250 align:middle line:90%
+
+
+01:08:53.250 --> 01:09:01.620 align:middle line:84%
+How could we find a solution
+to x congruent to b modulo q
+
+01:09:01.620 --> 01:09:03.874 align:middle line:90%
+and x congruent to 0 modulo p?
+
+01:09:03.874 --> 01:09:06.504 align:middle line:90%
+
+
+01:09:06.504 --> 01:09:07.004 align:middle line:90%
+Yeah?
+
+01:09:07.004 --> 01:09:09.090 align:middle line:84%
+AUDIENCE: I just have
+a question [INAUDIBLE].
+
+01:09:09.090 --> 01:09:10.800 align:middle line:90%
+BRYNMOR CHAPMAN: Sure.
+
+01:09:10.800 --> 01:09:13.110 align:middle line:84%
+AUDIENCE: So for the
+example question,
+
+01:09:13.110 --> 01:09:16.154 align:middle line:90%
+you gave us the [INAUDIBLE].
+
+01:09:16.154 --> 01:09:18.853 align:middle line:90%
+Is that [INAUDIBLE]?
+
+01:09:18.853 --> 01:09:22.620 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah,
+so the relation here
+
+01:09:22.620 --> 01:09:28.310 align:middle line:84%
+is that we've got our
+p and q are 5 and 11.
+
+01:09:28.310 --> 01:09:30.760 align:middle line:90%
+Our a and b are 4 and 7.
+
+01:09:30.760 --> 01:09:33.939 align:middle line:84%
+And so we're saying that
+there's a unique solution
+
+01:09:33.939 --> 01:09:38.180 align:middle line:84%
+to this system of
+congruences modulo 55,
+
+01:09:38.180 --> 01:09:40.899 align:middle line:90%
+which is their product.
+
+01:09:40.899 --> 01:09:42.609 align:middle line:84%
+Or you could also
+phrase that as there
+
+01:09:42.609 --> 01:09:46.390 align:middle line:84%
+is a unique x in this range,
+like a unique integer x
+
+01:09:46.390 --> 01:09:47.054 align:middle line:90%
+in this range.
+
+01:09:47.054 --> 01:09:50.580 align:middle line:90%
+
+
+01:09:50.580 --> 01:09:54.661 align:middle line:84%
+So we're just going
+to generalize this
+
+01:09:54.661 --> 01:10:00.040 align:middle line:84%
+to a more general p and
+q, more general a and b.
+
+01:10:00.040 --> 01:10:02.770 align:middle line:90%
+OK, question?
+
+01:10:02.770 --> 01:10:03.560 align:middle line:90%
+Oh, sorry.
+
+01:10:03.560 --> 01:10:04.060 align:middle line:90%
+OK.
+
+01:10:04.060 --> 01:10:18.520 align:middle line:90%
+
+
+01:10:18.520 --> 01:10:21.370 align:middle line:84%
+Well, if we look
+at the special case
+
+01:10:21.370 --> 01:10:31.010 align:middle line:84%
+where a equals 0, why don't we
+start by defining p minus 1,
+
+01:10:31.010 --> 01:10:48.110 align:middle line:84%
+p inverse to be a modular
+inverse of p modulo q?
+
+01:10:48.110 --> 01:10:54.200 align:middle line:90%
+
+
+01:10:54.200 --> 01:11:01.780 align:middle line:84%
+And now let's multiply that by
+p to get the integer e sub q.
+
+01:11:01.780 --> 01:11:10.630 align:middle line:90%
+
+
+01:11:10.630 --> 01:11:12.655 align:middle line:84%
+Now what can we
+say about e sub q?
+
+01:11:12.655 --> 01:11:41.890 align:middle line:90%
+
+
+01:11:41.890 --> 01:11:44.025 align:middle line:84%
+What is it congruent
+to modulo p?
+
+01:11:44.025 --> 01:11:55.660 align:middle line:90%
+
+
+01:11:55.660 --> 01:11:56.360 align:middle line:90%
+Yeah?
+
+01:11:56.360 --> 01:11:59.450 align:middle line:84%
+AUDIENCE: Wouldn't it be 0
+because it's a multiple of p?
+
+01:11:59.450 --> 01:12:01.480 align:middle line:84%
+BRYNMOR CHAPMAN:
+Yeah, so we defined
+
+01:12:01.480 --> 01:12:03.020 align:middle line:90%
+it to be a multiple of p.
+
+01:12:03.020 --> 01:12:10.600 align:middle line:84%
+So e sub q is going to
+be congruent mod p to 0.
+
+01:12:10.600 --> 01:12:12.623 align:middle line:90%
+What about modulo q?
+
+01:12:12.623 --> 01:12:17.650 align:middle line:90%
+
+
+01:12:17.650 --> 01:12:20.900 align:middle line:84%
+What is it congruent
+to modulo q?
+
+01:12:20.900 --> 01:12:21.600 align:middle line:90%
+Yeah?
+
+01:12:21.600 --> 01:12:22.580 align:middle line:90%
+AUDIENCE: 1.
+
+01:12:22.580 --> 01:12:23.840 align:middle line:90%
+BRYNMOR CHAPMAN: 1.
+
+01:12:23.840 --> 01:12:28.700 align:middle line:84%
+Yeah, so by
+definition, p inverse
+
+01:12:28.700 --> 01:12:31.860 align:middle line:84%
+is a multiplicative
+inverse of p modulo q.
+
+01:12:31.860 --> 01:12:34.850 align:middle line:84%
+So when you multiply
+them, you get 1 mod q.
+
+01:12:34.850 --> 01:12:39.740 align:middle line:90%
+
+
+01:12:39.740 --> 01:12:45.890 align:middle line:84%
+So how can we use
+e sub q to get x?
+
+01:12:45.890 --> 01:12:49.280 align:middle line:84%
+Remember we're thinking of the
+special case where a equals 0.
+
+01:12:49.280 --> 01:12:52.520 align:middle line:84%
+So we're trying to find
+a multiple of p that's
+
+01:12:52.520 --> 01:12:54.370 align:middle line:90%
+congruent to b modulo q.
+
+01:12:54.370 --> 01:13:12.080 align:middle line:90%
+
+
+01:13:12.080 --> 01:13:13.040 align:middle line:90%
+Anybody?
+
+01:13:13.040 --> 01:13:17.585 align:middle line:90%
+
+
+01:13:17.585 --> 01:13:18.085 align:middle line:90%
+Yeah?
+
+01:13:18.085 --> 01:13:24.340 align:middle line:84%
+AUDIENCE: Couldn't we take eq
+as a good one, but [INAUDIBLE]
+
+01:13:24.340 --> 01:13:26.335 align:middle line:90%
+and multiply both sides by d?
+
+01:13:26.335 --> 01:13:30.730 align:middle line:84%
+BRYNMOR CHAPMAN: Yeah, so the
+answer was multiply eq by b.
+
+01:13:30.730 --> 01:13:36.880 align:middle line:84%
+b times eq now is congruent
+to 0 modulo p and 1
+
+01:13:36.880 --> 01:13:39.450 align:middle line:90%
+times b, which is b modulo q.
+
+01:13:39.450 --> 01:13:42.790 align:middle line:90%
+
+
+01:13:42.790 --> 01:13:44.960 align:middle line:84%
+Does that make
+sense to everybody?
+
+01:13:44.960 --> 01:13:50.590 align:middle line:90%
+
+
+01:13:50.590 --> 01:14:00.370 align:middle line:84%
+So for the more general
+case, we are going
+
+01:14:00.370 --> 01:14:05.446 align:middle line:90%
+to define e sub p analogously.
+
+01:14:05.446 --> 01:14:18.750 align:middle line:90%
+
+
+01:14:18.750 --> 01:14:23.010 align:middle line:84%
+Now, how do you think we could
+solve the more general case?
+
+01:14:23.010 --> 01:14:28.105 align:middle line:84%
+Instead of just b times eq,
+how do we then fold ep into it?
+
+01:14:28.105 --> 01:14:40.460 align:middle line:90%
+
+
+01:14:40.460 --> 01:14:42.330 align:middle line:90%
+Yeah?
+
+01:14:42.330 --> 01:14:46.070 align:middle line:84%
+AUDIENCE: You could maybe
+do something more like beq
+
+01:14:46.070 --> 01:14:48.560 align:middle line:90%
+but then add [INAUDIBLE].
+
+01:14:48.560 --> 01:14:50.720 align:middle line:90%
+BRYNMOR CHAPMAN: Yeah.
+
+01:14:50.720 --> 01:15:05.350 align:middle line:84%
+So claim x equals aep
+plus beq is a solution.
+
+01:15:05.350 --> 01:15:21.670 align:middle line:90%
+
+
+01:15:21.670 --> 01:15:27.700 align:middle line:84%
+So we can verify each of these
+two congruences separately.
+
+01:15:27.700 --> 01:15:30.470 align:middle line:84%
+So if we look at the
+first congruence,
+
+01:15:30.470 --> 01:15:35.980 align:middle line:84%
+what happens if we
+reduce this x modulo p?
+
+01:15:35.980 --> 01:15:41.590 align:middle line:84%
+Well, modulo p, this ep
+here, is congruent to 1.
+
+01:15:41.590 --> 01:15:46.060 align:middle line:90%
+So this term becomes a.
+
+01:15:46.060 --> 01:15:50.410 align:middle line:84%
+We said that eq is defined
+to be a multiple of p.
+
+01:15:50.410 --> 01:15:53.050 align:middle line:84%
+So the second term
+just goes away.
+
+01:15:53.050 --> 01:15:59.080 align:middle line:84%
+So modulo p, x is
+now congruent to a.
+
+01:15:59.080 --> 01:16:02.320 align:middle line:84%
+Modulo q, it's
+exactly the opposite.
+
+01:16:02.320 --> 01:16:05.170 align:middle line:84%
+This term goes away
+because the ep was
+
+01:16:05.170 --> 01:16:06.525 align:middle line:90%
+defined to be a multiple of q.
+
+01:16:06.525 --> 01:16:10.240 align:middle line:90%
+
+
+01:16:10.240 --> 01:16:18.600 align:middle line:90%
+And-- sorry-- yes.
+
+01:16:18.600 --> 01:16:21.530 align:middle line:84%
+This is defined to
+be a multiple of q.
+
+01:16:21.530 --> 01:16:27.350 align:middle line:84%
+And I've done it the wrong
+way around, haven't I?
+
+01:16:27.350 --> 01:16:31.440 align:middle line:90%
+eq mod q-- no.
+
+01:16:31.440 --> 01:16:32.840 align:middle line:90%
+No, we're fine.
+
+01:16:32.840 --> 01:16:39.390 align:middle line:90%
+So ep is a multiple of q.
+
+01:16:39.390 --> 01:16:42.695 align:middle line:90%
+The a term goes away.
+
+01:16:42.695 --> 01:16:44.455 align:middle line:90%
+b times eq is going to be 1.
+
+01:16:44.455 --> 01:16:47.942 align:middle line:90%
+
+
+01:16:47.942 --> 01:16:49.705 align:middle line:84%
+Sorry-- b times eq
+is going to be b.
+
+01:16:49.705 --> 01:17:00.530 align:middle line:90%
+
+
+01:17:00.530 --> 01:17:02.086 align:middle line:90%
+So what about uniqueness?
+
+01:17:02.086 --> 01:17:11.420 align:middle line:90%
+
+
+01:17:11.420 --> 01:17:13.026 align:middle line:90%
+How might we prove uniqueness?
+
+01:17:13.026 --> 01:17:19.030 align:middle line:90%
+
+
+01:17:19.030 --> 01:17:21.315 align:middle line:84%
+What is the setup
+going to look like?
+
+01:17:21.315 --> 01:17:35.560 align:middle line:90%
+
+
+01:17:35.560 --> 01:17:36.190 align:middle line:90%
+Yeah?
+
+01:17:36.190 --> 01:17:39.750 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:17:39.750 --> 01:17:42.160 align:middle line:90%
+
+
+01:17:42.160 --> 01:17:44.200 align:middle line:84%
+BRYNMOR CHAPMAN:
+OK, so the idea was
+
+01:17:44.200 --> 01:17:47.710 align:middle line:84%
+to show that any candidate
+solution, so let's say x prime,
+
+01:17:47.710 --> 01:17:50.758 align:middle line:90%
+is actually the same solution.
+
+01:17:50.758 --> 01:17:57.636 align:middle line:84%
+So let x and x prime
+be two solutions.
+
+01:17:57.636 --> 01:18:06.811 align:middle line:90%
+
+
+01:18:06.811 --> 01:18:08.310 align:middle line:90%
+Now what are we trying to show?
+
+01:18:08.310 --> 01:18:14.750 align:middle line:90%
+
+
+01:18:14.750 --> 01:18:15.260 align:middle line:90%
+Yeah?
+
+01:18:15.260 --> 01:18:17.252 align:middle line:90%
+AUDIENCE: [INAUDIBLE]
+
+01:18:17.252 --> 01:18:19.760 align:middle line:90%
+BRYNMOR CHAPMAN: Not equals.
+
+01:18:19.760 --> 01:18:23.610 align:middle line:84%
+So we're not trying to prove
+they are unique integers.
+
+01:18:23.610 --> 01:18:27.620 align:middle line:84%
+We're trying to prove that
+it's unique modulo pq.
+
+01:18:27.620 --> 01:18:30.205 align:middle line:84%
+So we want to show that
+they're congruent modulo pq.
+
+01:18:30.205 --> 01:18:38.940 align:middle line:90%
+
+
+01:18:38.940 --> 01:18:39.835 align:middle line:90%
+How could we do this?
+
+01:18:39.835 --> 01:18:46.400 align:middle line:90%
+
+
+01:18:46.400 --> 01:18:48.780 align:middle line:84%
+Well, what is the definition
+of this equivalence?
+
+01:18:48.780 --> 01:18:53.900 align:middle line:90%
+
+
+01:18:53.900 --> 01:19:01.735 align:middle line:84%
+We could do this by showing
+that pq divides x minus x prime.
+
+01:19:01.735 --> 01:19:07.520 align:middle line:90%
+
+
+01:19:07.520 --> 01:19:11.030 align:middle line:84%
+Now, in order to do that, we
+can look at p and q separately.
+
+01:19:11.030 --> 01:19:14.086 align:middle line:90%
+
+
+01:19:14.086 --> 01:19:17.270 align:middle line:84%
+So why does p divide
+the difference?
+
+01:19:17.270 --> 01:19:26.020 align:middle line:90%
+
+
+01:19:26.020 --> 01:19:28.630 align:middle line:84%
+Well, both of them satisfy
+that first equation,
+
+01:19:28.630 --> 01:19:30.970 align:middle line:90%
+or that first congruence.
+
+01:19:30.970 --> 01:19:34.540 align:middle line:84%
+So both of them are
+congruent to a modulo p.
+
+01:19:34.540 --> 01:19:37.270 align:middle line:90%
+If you subtract them, you get 0.
+
+01:19:37.270 --> 01:19:40.510 align:middle line:90%
+So p divides the difference.
+
+01:19:40.510 --> 01:19:46.000 align:middle line:84%
+Now, because they both
+satisfy the second congruence,
+
+01:19:46.000 --> 01:19:46.990 align:middle line:90%
+you subtract them.
+
+01:19:46.990 --> 01:19:49.540 align:middle line:90%
+You get b minus b.
+
+01:19:49.540 --> 01:19:53.295 align:middle line:84%
+So q divides the
+difference, as well--
+
+01:19:53.295 --> 01:19:56.635 align:middle line:90%
+
+
+01:19:56.635 --> 01:19:58.856 align:middle line:90%
+so p and q individually.
+
+01:19:58.856 --> 01:20:13.359 align:middle line:90%
+
+
+01:20:13.359 --> 01:20:15.840 align:middle line:84%
+And by assumption,
+they're co-prime.
+
+01:20:15.840 --> 01:20:18.510 align:middle line:84%
+So their product must then
+also divide the difference.
+
+01:20:18.510 --> 01:20:40.280 align:middle line:90%
+
+
+01:20:40.280 --> 01:20:46.740 align:middle line:84%
+So that means that x and x prime
+must be congruent modulo pq.
+
+01:20:46.740 --> 01:20:50.000 align:middle line:84%
+So that's all we
+have time for today.
+
+01:20:50.000 --> 01:20:53.840 align:middle line:84%
+Yeah, you'll get more
+practice with RSA and CRT
+
+01:20:53.840 --> 01:20:56.070 align:middle line:90%
+in recitation tomorrow.
+
+01:20:56.070 --> 01:21:00.250 align:middle line:84%
+And, yeah, feel free to come
+up if you have questions.
+
+01:21:00.250 --> 01:21:09.000 align:middle line:90%
