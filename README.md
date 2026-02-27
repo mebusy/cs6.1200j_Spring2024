@@ -53,6 +53,9 @@ F | F | T | F | T
 它的意思是： 如果 “P 推出 Q” 为真， 但 Q 实际上是假的，那么 P 一定是假的。
 
 
+```bash
+
+
 <details>
 <summary>
 真值表证明
@@ -73,7 +76,7 @@ F | F | T | T | T | T | T
 </details>
 
 
-从逻辑结构上理解, Modus Ponens 和 Modus Tollens 是对偶结构。
+从逻辑结构上理解, Modus Ponens 和 Modus Tollens 是对偶结构, 也是 逆否命题的关系。
 
 一个是:
 
