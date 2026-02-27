@@ -24,9 +24,10 @@ in programming language: `~P || Q`
 如果规则成立 + 前提满足 → 结论成立 因此整个公式恒为真。
 ```
 
+
 <details>
 <summary>
-真值表证明
+ 真值表证明...
 </summary>
 
 P | Q | P ⇒ Q | (P ⇒ Q) ∧ P | 整个式子
@@ -53,12 +54,9 @@ F | F | T | F | T
 它的意思是： 如果 “P 推出 Q” 为真， 但 Q 实际上是假的，那么 P 一定是假的。
 
 
-```bash
-
-
 <details>
 <summary>
-真值表证明
+ 真值表证明...
 </summary>
 
 P | Q | P ⇒ Q | ¬Q | (P ⇒ Q) ∧ ¬Q | ¬P | 整体
